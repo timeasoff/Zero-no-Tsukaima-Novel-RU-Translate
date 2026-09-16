@@ -1,2 +1,5 @@
-origs
-images
+origs/*
+images/*
+!images/.gitkeep
+!origs/.gitkeep
+__pycache__
