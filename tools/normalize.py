@@ -216,10 +216,78 @@ def extract_ru(path):
             cur.paras.append(text)
     return sections
 
-# --------------------------- Выравнивание ----------------------------------
+# ----------------------- якорное сходство EN ↔ RU ---------------------------
+# Якоря: числа и имена собственные. EN-имена транслитерируются в кириллицу
+# и сопоставляются с RU-словами нечётко — это позволяет DP-выравниванию
+# «зацепиться» за реальные соответствия, а не только за длину абзацев.
 
-def dp_align(a, b, gap=1.0):
+_EN2RU_CHARS = {"a": "а", "b": "б", "c": "к", "d": "д", "e": "е", "f": "ф",
+                "g": "г", "h": "х", "i": "и", "j": "дж", "k": "к", "l": "л",
+                "m": "м", "n": "н", "o": "о", "p": "п", "q": "к", "r": "р",
+                "s": "с", "t": "т", "u": "у", "v": "в", "w": "в", "x": "кс",
+                "y": "й", "z": "з"}
+_EN2RU_DIGRAPHS = {"kh": "х", "sh": "ш", "ch": "ч", "th": "т", "ck": "к",
+                   "ph": "ф", "ou": "у", "ee": "и", "oo": "у"}
+
+_WORD_RE = re.compile(r"\d+|[A-Za-z]+|[А-Яа-яЁё]+")
+
+_VOWELS = set("аеёиоуыэюя")
+
+
+def _translit_en(s):
+    s = s.lower()
+    out, i = [], 0
+    while i < len(s):
+        if s[i:i + 2] in _EN2RU_DIGRAPHS:
+            out.append(_EN2RU_DIGRAPHS[s[i:i + 2]])
+            i += 2
+        else:
+            out.append(_EN2RU_CHARS.get(s[i], ""))
+            i += 1
+    return "".join(out)
+
+
+def _anchors(text):
+    """Множество якорей: числа ('\\0N') и имена собственные (в нижнем регистре,
+    EN — в транслитерированном виде)."""
+    out = set()
+    for w in _WORD_RE.findall(text):
+        if w.isdigit():
+            out.add("\0" + str(int(w)))
+        elif w[0].isascii():
+            if w[0].isupper():
+                t = _translit_en(w)
+                if len(t) >= 3:
+                    out.add(t)
+        else:
+            if w[0].isupper():
+                out.add(w.lower())
+    return out
+
+
+def _anchor_overlap(a_set, b_set):
+    """Число якорей a, нашедших нечёткую пару в b (порог 0.8)."""
+    if not a_set or not b_set:
+        return 0.0
+    from difflib import SequenceMatcher
+    b_list = list(b_set)
+    cnt = 0
+    for x in a_set:
+        for y in b_list:
+            if x == y:
+                cnt += 1
+                break
+            if x[0] != "\0" and y[0] != "\0" and abs(len(x) - len(y)) <= 3:
+                if SequenceMatcher(None, x, y).ratio() >= 0.8:
+                    cnt += 1
+                    break
+    return cnt
+
+
+def dp_align(a, b, gap=1.0, anchors_a=None, anchors_b=None, anchor_w=1.2):
     """Выравнивание двух списков абзацев по относительной длине.
+    Если переданы якоря (списки множеств той же длины, что a и b),
+    диагональная стоимость уменьшается на anchor_w * число совпавших якорей.
     Возвращает список операций (i|None, j|None)."""
     n, m = len(a), len(b)
     if n == 0 or m == 0:
@@ -240,6 +308,10 @@ def dp_align(a, b, gap=1.0):
             best, move = INF, 0
             if i > 0 and j > 0:
                 c = d[i - 1][j - 1] + abs(na[i - 1] - nb[j - 1]) * 1.5
+                if anchors_a is not None and anchors_b is not None:
+                    c -= anchor_w * _anchor_overlap(anchors_a[i - 1],
+                                                    anchors_b[j - 1])
+                    c = max(0.0, c)
                 if c < best:
                     best, move = c, 1
             if i > 0:
@@ -268,6 +340,8 @@ def dp_align(a, b, gap=1.0):
     ops.reverse()
     return ops
 
+
+# --------------------------- Выравнивание ----------------------------------
 
 def build_groups(ops):
     """Из операций DP — список групп {'a': [idx...], 'b': [idx...]}."""
@@ -318,50 +392,55 @@ def _split_en_sentences(text):
     return [p for p in parts if p.strip()]
 
 
-def ja_en_sentence_map(ja, en):
-    """Сопоставляет JA-абзацы EN-абзацам на уровне предложений.
+def sentence_map(src, en, split_src, use_anchors=True, joiner=""):
+    """Сопоставляет абзацы языка src абзацам EN на уровне предложений.
 
-    Возвращает dict: индекс EN-абзаца -> текст JA (конкатенация предложений,
-    привязавшихся к этому EN-абзацу). JA-абзац, чьи предложения распределились
-    по нескольким EN-абзацам, автоматически «разрезается»."""
-    ja_s, en_s = [] , []     # (индекс абзаца, текст предложения)
-    for pi, p in enumerate(ja):
-        for s in _split_ja_sentences(p):
-            ja_s.append((pi, s))
+    Возвращает dict: индекс EN-абзаца -> текст src (конкатенация предложений,
+    привязавшихся к этому EN-абзацу). Абзац src, чьи предложения распределились
+    по нескольким EN-абзацам, автоматически «разрезается».
+    Используется для JA (split_src=_split_ja_sentences, joiner='') и для RU
+    (split_src=_split_ru_sentences, joiner=' ')."""
+    src_s, en_s = [] , []     # (индекс абзаца, текст предложения)
+    for pi, p in enumerate(src):
+        for s in split_src(p):
+            src_s.append((pi, s))
     for pi, p in enumerate(en):
         for s in _split_en_sentences(p):
             en_s.append((pi, s))
 
-    ops = dp_align([t for _, t in ja_s], [t for _, t in en_s])
-    buckets = {}             # en_para -> список (ja_para, текст предложения)
+    anc_src = [_anchors(t) for _, t in src_s] if use_anchors else None
+    anc_en = [_anchors(t) for _, t in en_s] if use_anchors else None
+    ops = dp_align([t for _, t in src_s], [t for _, t in en_s],
+                   anchors_a=anc_src, anchors_b=anc_en)
+    buckets = {}             # en_para -> список (src_para, текст предложения)
     ii = jj = 0
-    first_ja = []            # JA-предложения до первого совпадения
+    first_src = []           # предложения до первого совпадения
     for i, j in ops:
         if i is not None and j is not None:
-            buckets.setdefault(en_s[jj][0], []).append((ja_s[ii][0], ja_s[ii][1]))
+            buckets.setdefault(en_s[jj][0], []).append((src_s[ii][0], src_s[ii][1]))
             ii += 1; jj += 1
         elif i is not None:
-            # JA-предложение без пары: если бинкеты уже есть — в последний,
+            # предложение без пары: если бакеты уже есть — в последний,
             # иначе ждём первого совпадения
             if buckets:
-                buckets[max(buckets)].append((ja_s[ii][0], ja_s[ii][1]))
+                buckets[max(buckets)].append((src_s[ii][0], src_s[ii][1]))
             else:
-                first_ja.append((ja_s[ii][0], ja_s[ii][1]))
+                first_src.append((src_s[ii][0], src_s[ii][1]))
             ii += 1
         else:
-            jj += 1          # EN-предложение без JA-пары — строка без JA
-    if first_ja:
+            jj += 1          # EN-предложение без пары — строка без src
+    if first_src:
         if buckets:
             key = min(buckets)
-            buckets[key] = first_ja + buckets[key]
+            buckets[key] = first_src + buckets[key]
         else:
-            buckets[0] = first_ja
+            buckets[0] = first_src
 
-    # Пустые EN-строки: JA-предложение могло прилипнуть к соседнему бакету.
-    # 1) «Хвост» из более позднего JA-абзаца в бакете предыдущей строки ->
-    #    переливаем в пустую строку. 2) «Голова» из более раннего JA-абзаца
+    # Пустые EN-строки: предложение могло прилипнуть к соседнему бакету.
+    # 1) «Хвост» из более позднего абзаца src в бакете предыдущей строки ->
+    #    переливаем в пустую строку. 2) «Голова» из более раннего абзаца src
     #    в бакете следующей строки -> тоже переливаем. Проверяем монотонность
-    #    номеров JA-абзацев, чтобы не разрушить порядок.
+    #    номеров абзацев src, чтобы не разрушить порядок.
     def runs(lst):
         out = []
         for item in lst:
@@ -405,13 +484,13 @@ def ja_en_sentence_map(ja, en):
                     buckets[e] = list(head)
                     buckets[q] = buckets[q][len(head):]
 
-    # Финальная подгонка: границы JA-предложений по границам EN-строк.
+    # Финальная подгонка: границы предложений по границам EN-строк.
     # Локальный поиск одиночных сдвигов, минимизирующий отклонение длины
-    # JA-строки от пропорциональной длины EN-строки (JA короче EN по знакам).
+    # строки src от пропорциональной длины EN-строки.
     rows = {e: list(v) for e, v in buckets.items()}
-    ja_total = sum(len(t) for v in rows.values() for _, t in v)
+    src_total = sum(len(t) for v in rows.values() for _, t in v)
     en_total = sum(len(en[e]) for e in rows) or 1
-    ratio = ja_total / en_total
+    ratio = src_total / en_total
 
     def rlen(e):
         return sum(len(t) for _, t in rows.get(e, []))
@@ -442,39 +521,51 @@ def ja_en_sentence_map(ja, en):
         if not improved:
             break
 
-    return {e: "".join(t[1] for t in v) for e, v in sorted(rows.items()) if v}
+    return {e: joiner.join(t[1] for t in v) for e, v in sorted(rows.items()) if v}
+
+
+def _split_ru_sentences(text):
+    parts = _SENT_SPLIT_RE.split(text)
+    return [p for p in parts if p and p.strip()]
+
+
+def ja_en_sentence_map(ja, en):
+    """JA-абзацы -> EN-абзацы (на уровне предложений)."""
+    return sentence_map(ja, en, _split_ja_sentences)
+
+
+def ru_en_sentence_map(ru, en):
+    """RU-абзацы -> EN-абзацы (на уровне предложений, с якорями).
+    RU-абзац, покрывающий несколько EN-абзацев, разрезается по предложениям,
+    а не поровну; RU-текст не теряется ни при каких группах."""
+    return sentence_map(ru, en, _split_ru_sentences, joiner=" ")
 
 
 def align_triple(ja, en, ru, warnings):
     """Возвращает список строк-триплетов (ja_text, en_text, ru_text)."""
-    ops = dp_align(en, ru)
-    g_en_ru = build_groups(ops)
     ja_for_en = ja_en_sentence_map(ja, en)
+    ru_for_en = ru_en_sentence_map(ru, en)
     matched = sum(len(v) for v in ja_for_en.values())
     total = sum(len(p) for p in ja)
     if matched < total * 0.9:
         warnings.append("часть JA не привязалась (%d%%)" %
                         int(100 * matched / max(total, 1)))
+    matched_ru = sum(len(v) for v in ru_for_en.values())
+    total_ru = sum(len(p) for p in ru)
+    if matched_ru < total_ru * 0.9:
+        warnings.append("часть RU не привязалась (%d%%)" %
+                        int(100 * matched_ru / max(total_ru, 1)))
 
     lines = []
-    stats = {"empty_ja": 0, "ru_split": 0}
-    for g in g_en_ru:
-        en_idx, ru_idx = g["a"], g["b"]
-        en_texts = [en[e] for e in en_idx]
-        ru_texts = [ru[r] for r in ru_idx]
-        # RU склеен (EN-абзацев больше): пробуем разрезать по предложениям
-        if len(ru_texts) == 1 and len(en_texts) > 1:
-            parts = split_into(ru_texts[0], len(en_texts))
-            if len(parts) == len(en_texts):
-                ru_texts = parts
-                stats["ru_split"] += 1
-        for k, e in enumerate(en_idx):
-            t_ja = ja_for_en.get(e, "")
-            t_en = en_texts[k]
-            t_ru = ru_texts[k] if k < len(ru_texts) else ""
-            if not t_ja:
-                stats["empty_ja"] += 1
-            lines.append((t_ja, t_en, t_ru))
+    stats = {"empty_ja": 0, "empty_ru": 0, "ru_split": 0}
+    for e, t_en in enumerate(en):
+        t_ja = ja_for_en.get(e, "")
+        t_ru = ru_for_en.get(e, "")
+        if not t_ja:
+            stats["empty_ja"] += 1
+        if not t_ru:
+            stats["empty_ru"] += 1
+        lines.append((t_ja, t_en, t_ru))
     return lines, stats
 
 
@@ -606,8 +697,8 @@ def main():
     distribute_ru_sections(all_langs)
     trios = match_sections(all_langs)
     report = ["# Отчёт выравнивания — том %d" % vol, ""]
-    report.append("| Секция | JA абз. | EN абз. | RU абз. | Строк | Пустых JA | RU разрезано |")
-    report.append("|---|---|---|---|---|---|---|")
+    report.append("| Секция | JA абз. | EN абз. | RU абз. | Строк | Пустых JA | Пустых RU | RU разрезано |")
+    report.append("|---|---|---|---|---|---|---|---|")
 
     for trio in trios:
         sec = trio["en"]
@@ -618,10 +709,14 @@ def main():
         lines, stats = align_triple(ja_p, sec.paras, ru_p, warnings)
 
         ja_lines = [l[0] if l[0].strip() else "<!-- нет пары в JA -->" for l in lines]
+        # RU: пустая строка (нет пары) записывается ЯВНЫМ плейсхолдером,
+        # иначе при чтении пустой абзац схлопывается и вся RU-колонка
+        # в merged сдвигается вверх (рассинхрон).
+        ru_lines = [l[2] if l[2].strip() else "<!-- нет пары в RU -->" for l in lines]
         for lang, sec_lang, content in (
             ("ja", trio["ja"], ja_lines),
             ("en", sec, [l[1] for l in lines]),
-            ("ru", trio["ru"], [l[2] for l in lines]),
+            ("ru", trio["ru"], ru_lines),
         ):
             d = out_base / lang
             d.mkdir(parents=True, exist_ok=True)
@@ -637,9 +732,9 @@ def main():
             for i, l in enumerate(lines, 1)]
         (merged_dir / (slug + ".md")).write_text("\n\n".join(parts) + "\n", encoding="utf-8")
 
-        report.append("| %s | %d | %d | %d | %d | %d | %d |" % (
+        report.append("| %s | %d | %d | %d | %d | %d | %d | %d |" % (
             slug, len(ja_p), len(sec.paras), len(ru_p),
-            len(lines), stats["empty_ja"], stats["ru_split"]))
+            len(lines), stats["empty_ja"], stats["empty_ru"], stats["ru_split"]))
         for w in warnings:
             report.append("  - WARNING %s: %s" % (slug, w))
 
