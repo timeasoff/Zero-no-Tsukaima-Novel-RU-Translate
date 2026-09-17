@@ -58,6 +58,14 @@ def read_paras(path):
 sys.path.insert(0, str(BASE.parent / "tools"))
 from normalize import ru_en_sentence_map  # noqa: E402
 
+# проверка соответствия строк (съезд ED_RU ↔ EN-якорь) выполняется сразу
+# после генерации merged — проблема всплывает здесь, а не при аудите
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+try:
+    import check_alignment as ca  # noqa: E402
+except Exception:
+    ca = None
+
 
 def ru_column(en, ru):
     """Распределяет RU-абзацы по EN-строкам БЕЗ ПОТЕРЬ. Возвращает список
@@ -70,6 +78,12 @@ def ru_column(en, ru):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--file", default=None, help="напр. v14-ch01.md; иначе — все главы")
+    ap.add_argument("--aligned-out", default=None, metavar="DIR",
+                    help="дополнительно собрать выровненные копии в папку DIR: "
+                         "ED_RU пересаживаются на свои EN-строки по "
+                         "DP-выравниванию (для аналитики и итоговой склейки). "
+                         "merged/ всегда остаётся зеркалом output/, output/ не "
+                         "меняется; без этого флага дубликаты не создаются")
     args = ap.parse_args()
 
     names = ([args.file] if args.file
@@ -90,19 +104,80 @@ def main():
         if ed and len(ed) != n:
             note += " (!) ED_RU %d != EN %d — лишние строки отброшены, недостающие — «—»" % (len(ed), n)
             ed = (ed + [""] * n)[:n]
-        parts = []
-        for i in range(n):
-            parts.append("## Абзац %d\n\n**JA:** %s\n\n**EN:** %s\n\n**RU:** %s\n\n**ED_RU:** %s" % (
-                i + 1,
-                ja[i] if i < len(ja) and ja[i] else "—",
-                en[i],
-                ru_col[i] if i < len(ru_col) and ru_col[i] else "—",
-                ed[i] if i < len(ed) and ed[i] else "—"))
+        # --aligned-out DIR: выровненные копии для аналитики. Сам merged/ —
+        # всегда зеркало output/ (по нему правят через fix_block.py), поэтому
+        # выровненный вариант пишется ТОЛЬКО по явному запросу и в указанную
+        # папку (в репозитории дубликатов нет).
+        aligned_ed = None
+        if args.aligned_out and ca is not None and ed and any(ed):
+            plan = ca.align(en, ed, ca.load_names())
+            if plan:
+                old_ed = list(ed)
+                new_ed = [""] * len(ed)
+                for ed_idx, row in sorted(plan.items()):
+                    txt = ed[ed_idx]
+                    if not txt:
+                        continue
+                    if not new_ed[row]:
+                        new_ed[row] = txt
+                    elif txt not in new_ed[row]:
+                        # две ED-строки на одной EN-строке — склейка через « / »
+                        # (тот же принцип, что в ru_column): текст не теряется
+                        new_ed[row] = new_ed[row] + " / " + txt
+                # абзацы, не попавшие в план (пропуск ED в DP), остаются на своих
+                # строках; если строка занята — приклеиваем через « / »
+                for i, txt in enumerate(ed):
+                    if not txt or i in plan:
+                        continue
+                    if not new_ed[i]:
+                        new_ed[i] = txt
+                    elif txt not in new_ed[i]:
+                        new_ed[i] = new_ed[i] + " / " + txt
+                # гарантия: ни один исходный абзац не потерян
+                missing = [t for t in ed if t and not any(t in x for x in new_ed)]
+                if missing:
+                    note += " (!) выравнивание отменено: потеряно абзацев %d" % len(missing)
+                else:
+                    moved = sum(1 for a, b in zip(ed, new_ed) if a != b)
+                    aligned_ed = new_ed
+                    note += " (!) выровненная копия: пересажено %d абзацев" % moved
+
+        def build(ed_list):
+            out = []
+            for i in range(n):
+                out.append("## Абзац %d\n\n**JA:** %s\n\n**EN:** %s\n\n**RU:** %s\n\n**ED_RU:** %s" % (
+                    i + 1,
+                    ja[i] if i < len(ja) and ja[i] else "—",
+                    en[i],
+                    ru_col[i] if i < len(ru_col) and ru_col[i] else "—",
+                    ed_list[i] if i < len(ed_list) and ed_list[i] else "—"))
+            return "# %s\n\n%s\n" % (en_t or name, "\n\n".join(out))
+
         MERGED.mkdir(parents=True, exist_ok=True)
-        (MERGED / name).write_text(
-            "# %s\n\n%s\n" % (en_t or name, "\n\n".join(parts)), encoding="utf-8")
+        (MERGED / name).write_text(build(ed), encoding="utf-8")
+        if aligned_ed is not None:
+            out_dir = Path(args.aligned_out)
+            out_dir.mkdir(parents=True, exist_ok=True)
+            (out_dir / name).write_text(build(aligned_ed), encoding="utf-8")
         done = sum(1 for e in ed if e) if ed else 0
-        print("OK: %s | абзацев %d | ED_RU заполнено %d%s" % (name, n, done, note))
+        print("OK: %s | абзацев %d | ED_RU заполнено %d%s" % (
+            name, n, done, note))
+        if ca is not None and done:
+            try:
+                _signals, _stats = ca.check(MERGED / name, ca.load_names())
+                if _stats["strong"] or _stats["near_miss"]:
+                    _first = next((s for s in _signals
+                                   if s["weight"] == "strong"), None)
+                    print(" (!) построчная сверка: строгих %d, съезд %d%s"
+                          % (_stats["strong"], _stats["near_miss"],
+                             ("; первый: абзац %d (%s) — план пересадки: "
+                              "python scripts/check_alignment.py --file %s "
+                              "--propose --report"
+                              % (_first["para"], _first["kind"], name))
+                             if _first else ""))
+            except Exception as exc:  # сверка не должна ломать генерацию
+                print(" (!) построчная сверка не выполнена: %s" % exc,
+                      file=sys.stderr)
 
 
 if __name__ == "__main__":

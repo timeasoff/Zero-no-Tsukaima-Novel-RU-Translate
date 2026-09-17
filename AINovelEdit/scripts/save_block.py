@@ -14,6 +14,7 @@ save_block.py — безопасное дозаписывание (append) бл�
   * без --text — текст читается из stdin (можно передать через here-string).
 """
 import argparse
+import re
 import sys
 from pathlib import Path
 
@@ -22,6 +23,53 @@ if sys.stdout.encoding and sys.stdout.encoding.lower() != "utf-8":
     sys.stderr.reconfigure(encoding="utf-8")
 
 OUT_DIR = Path(__file__).resolve().parent.parent / "output"
+EN_DIR = Path(__file__).resolve().parent.parent / "translates" / "en"
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+try:
+    import check_alignment as ca  # noqa: E402
+except Exception:
+    ca = None
+
+
+def paragraphs(path):
+    """Абзацы файла (первый блок-заголовок '# ...' — не абзац)."""
+    text = path.read_text(encoding="utf-8")
+    blocks = [b.strip() for b in re.split(r"\n\s*\n", text) if b.strip()]
+    blocks = [b for b in blocks if not b.startswith("<!-- block:")]
+    if blocks and blocks[0].startswith("#"):
+        blocks.pop(0)
+    return blocks
+
+
+def position_check(path):
+    """Профилактика съезда: сравнить позиции абзацев результата с EN-якорем.
+
+    Печатает предупреждение, если значимая часть абзацев по признакам ближе
+    к соседней EN-строке, чем к своей (это будущий съезд в merged).
+    """
+    if ca is None:
+        return
+    en_path = EN_DIR / path.name
+    if not en_path.exists():
+        return
+    try:
+        en = paragraphs(en_path)
+        ed = paragraphs(path)
+        if not en or not ed:
+            return
+        mapping = ca.align(en, ed, ca.load_names())
+        off = [(i + 1, row + 1) for i, row in sorted(mapping.items())
+               if row != i]
+        if len(off) >= 3 and len(off) * 2 >= len(mapping):
+            first = off[0]
+            print(" (!) позиции: %d абзацев ближе к соседней EN-строке, чем к "
+                  "своей (первый: абзац %d → строка %d). Разбиение блока не "
+                  "следует EN — поправь блок и прогони "
+                  "scripts/check_alignment.py --file %s"
+                  % (len(off), first[0], first[1], path.name))
+    except Exception as exc:  # профилактика не должна мешать записи
+        print(" (!) позиционная сверка не выполнена: %s" % exc, file=sys.stderr)
 
 
 def main():
@@ -62,6 +110,7 @@ def main():
     size = path.stat().st_size
     print("OK: %s | режим=%s | блок=%s | %d символов | файл %d байт" % (
         path.name, mode, args.block, len(text), size))
+    position_check(path)
 
 
 if __name__ == "__main__":
