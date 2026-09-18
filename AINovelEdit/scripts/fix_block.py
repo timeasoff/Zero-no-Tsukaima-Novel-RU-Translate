@@ -9,6 +9,7 @@ fix_block.py — точечная замена текста блока в фай
     python scripts/fix_block.py --file v14-ch01.md --block 2 --text "новый текст"
 """
 import argparse
+import os
 import re
 import sys
 from pathlib import Path
@@ -16,6 +17,11 @@ from pathlib import Path
 if sys.stdout.encoding and sys.stdout.encoding.lower() != "utf-8":
     sys.stdout.reconfigure(encoding="utf-8")
     sys.stderr.reconfigure(encoding="utf-8")
+if not sys.stdin.isatty():
+    try:
+        sys.stdin.reconfigure(encoding="utf-8", errors="strict")
+    except (AttributeError, ValueError):
+        pass
 
 OUT_DIR = Path(__file__).resolve().parent.parent / "output"
 
@@ -32,7 +38,15 @@ def main():
         print("ОШИБКА: файл не найден в output/", file=sys.stderr)
         sys.exit(1)
 
-    text = args.text if args.text is not None else sys.stdin.read()
+    text = args.text
+    if text is None:
+        try:
+            text = sys.stdin.read()
+        except UnicodeDecodeError as exc:
+            print("ОШИБКА: stdin не декодируется как UTF-8 (%s); файл НЕ "
+                  "изменён. Запишите текст в файл и подавайте его через "
+                  "перенаправление при PYTHONUTF8=1." % exc, file=sys.stderr)
+            sys.exit(1)
     if not text.strip():
         print("ОШИБКА: пустой текст блока", file=sys.stderr)
         sys.exit(1)
@@ -48,8 +62,29 @@ def main():
     end = start + m.start() if m else len(content)
 
     seg = "\n\n" + text.strip("\n") + "\n\n"
-    path.write_text(content[:start] + seg + content[end:],
-                    encoding="utf-8", newline="\n")
+    new_content = content[:start] + seg + content[end:]
+
+    # Защита от инцидента с обнулённым файлом: сначала полностью готовим и
+    # кодируем новый контекст во временный файл, только затем атомарно
+    # подменяем оригинал. Если кодировка сломана (мусор из конвейера,
+    # суррогаты) — выходим с ошибкой, НЕ трогая исходный файл.
+    try:
+        payload = new_content.encode("utf-8")
+    except UnicodeEncodeError as exc:
+        print("ОШИБКА: новый текст блока содержит не-UTF-8 мусора (%s); "
+              "файл НЕ изменён. Скорее всего, текст пришёл по конвейеру в "
+              "неправильной кодировке — запишите текст в файл и подайте его "
+              "через stdin с PYTHONUTF8=1." % exc, file=sys.stderr)
+        sys.exit(1)
+    if "\x00" in new_content or "\ufffd" in new_content:
+        print("ОШИБКА: в новом тексте блока найдены знаки подстановки/нуля; "
+              "файл НЕ изменён (вероятно, порча кодировки при передаче).",
+              file=sys.stderr)
+        sys.exit(1)
+
+    tmp_path = path.with_name(path.name + ".tmp")
+    tmp_path.write_bytes(payload)
+    os.replace(tmp_path, path)
     print("OK: %s | блок %d заменён | файл %d байт" % (
         path.name, args.block, path.stat().st_size))
 
