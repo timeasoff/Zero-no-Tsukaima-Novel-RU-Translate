@@ -1,6 +1,6 @@
 # Выгрузка предфильтра (соответствие строк merged): v14-ch06.md
 
-Абзацев 281, переведено 281. Сигналов: строгих 5, прочих 95, инфо 9, «съезд» 9, JA-сдвигов 49.
+Абзацев 281, переведено 281. Сигналов: строгих 5, прочих 95, инфо 9, «съезд» 10, JA-сдвигов 49.
 
 По типам: marks 15, names 49, negation 39, numbers 1, speech 5
 
@@ -24,6 +24,12 @@
 
 - EN — реплика, ED_RU — наррация
 - **EN (эталон):** "I'll give you Romalia." Was what the incompetent King said.
+- **ED_RU:** «Ромалию тебе отдам» — тот Бездарный король и вправду так сказал.
+
+### Абзац 54 — shift
+
+- ED_RU ближе к EN +1 (score 7 против 3 у своей строки)
+- **EN (эталон):** To be able to get your hands on a country, at the very least, one can lead a life like a noble. No....if it's a piece of land as large as Romalia, there would be no shame in claiming the title King.
 - **ED_RU:** «Ромалию тебе отдам» — тот Бездарный король и вправду так сказал.
 
 ### Абзац 68 — speech
@@ -52,7 +58,7 @@
 
 ### Абзац 119 — shift
 
-- ED_RU ближе к EN +1 (score 6 против -5 у своей строки)
+- ED_RU ближе к EN +1 (score 9 против -8 у своей строки)
 - **EN (эталон):** Claville repeated the prepared speech: "We are the'Gallia fleet of Volunteers'. We can no longer tolerate the brutality of the Gallian regime and wish to establish the rightful king to the throne. We hope that we can receive the support of Romalia, offering us an escape route."
 - **ED_RU:** Флот Ромалии, разумеется, прекрасно знал, что перед ним галльский объединённый флот. Но тот не поднимал военно-морского флага — так что вопрос был вполне уместен.
 
@@ -108,7 +114,7 @@
 
 ### Абзац 4 — names
 
-- есть в EN, нет в ED_RU: Глава шестая. Тигриный тракт
+- есть в EN, нет в ED_RU: Глава восьмая. Стальной тигр, Глава шестая. Тигриный тракт
 - **EN (эталон):** That is what's known as the 'Tiger's Highway', a narrow street located in the valley that is more than 10 leagues long.
 - **ED_RU:** «Тигрес Гран-Рут» — так называют этот прямой, длиной в десять с лишним лиг, узкий и вытянутый тракт, зажатый в долине.
 
@@ -174,7 +180,7 @@
 
 ### Абзац 27 — names
 
-- есть в EN, нет в ED_RU: Глава шестая. Тигриный тракт
+- есть в EN, нет в ED_RU: Глава восьмая. Стальной тигр, Глава шестая. Тигриный тракт
 - **EN (эталон):** "Two fleets has rebelled and are currently marching towards the 'Tiger's Highway'"
 - **ED_RU:** — В объединённом флоте вспыхнул мятеж! Прямо сейчас он наступает в сторону «Тигриного тракта»!
 
@@ -312,7 +318,7 @@
 
 ### Абзац 118 — names
 
-- есть в ED_RU, нет в EN: Ромалия
+- есть в ED_RU, нет в EN: Ромалия, Ромальская империя
 - **EN (эталон):** "To the unidentified approaching fleet. What lies ahead of you is Romalian territory, please immediately turn back. You are entering Romalian territory."
 - **ED_RU:** — К приближающемуся флоту неустановленной национальной принадлежности: дальше начинается территория Ромалии. Повторяем: дальше начинается территория Ромалии.
 
@@ -360,7 +366,7 @@
 
 ### Абзац 149 — names
 
-- есть в EN, нет в ED_RU: Глава шестая. Тигриный тракт
+- есть в EN, нет в ED_RU: Глава восьмая. Стальной тигр, Глава шестая. Тигриный тракт
 - **EN (эталон):** Claville indicated at the "Tiger's Highway" below.
 - **ED_RU:** Монсеньор Клавиль указал на «Тигриный тракт» внизу.
 
@@ -426,7 +432,7 @@
 
 ### Абзац 178 — names
 
-- есть в EN, нет в ED_RU: Глава шестая. Тигриный тракт
+- есть в EN, нет в ED_RU: Глава восьмая. Стальной тигр, Глава шестая. Тигриный тракт
 - **EN (эталон):** One by one, the armored puppets rushed over to the canyon sandwiched by the two cliffs of "Tiger's Street".
 - **ED_RU:** Доспешные куклы один за другим исчезали в ущелье «Тигриного тракта», зажатом между высоких скал.
 
@@ -444,7 +450,7 @@
 
 ### Абзац 184 — names
 
-- есть в EN, нет в ED_RU: Глава шестая. Тигриный тракт, пушки-черепахи
+- есть в EN, нет в ED_RU: Глава восьмая. Стальной тигр, Глава шестая. Тигриный тракт, пушки-черепахи
 - **EN (эталон):** Seeing the two squads of infantrymen heading into Tiger's street, the "artillery" units paused eating grass, lazily stretching their bodies.
 - **ED_RU:** Когда два пехотных батальона двинулись в поход по Тигриному тракту, «артиллерийский батальон» перестал щипать траву и неспешно поднялся. Поднялась гигантская сухопутная черепаха с панцирем длиной этак в четыре мили.
 
@@ -540,7 +546,7 @@
 
 ### Абзац 231 — names
 
-- есть в EN, нет в ED_RU: Глава шестая. Тигриный тракт; есть в ED_RU, нет в EN: Галлия, Галльский добровольческий флот
+- есть в EN, нет в ED_RU: «Тигр» (танк), Глава восьмая. Стальной тигр, Глава шестая. Тигриный тракт; есть в ED_RU, нет в EN: Галлия, Галльский добровольческий флот
 - **EN (эталон):** A knight, brought news of the standoff between the Romalian and Gallian fleet above the skies of Tiger's street.
 - **ED_RU:** Один рыцарь привёз донесение от ромалийского флота, вставшего в противостояние с галльским у границ.
 
@@ -558,19 +564,19 @@
 
 ### Абзац 240 — names
 
-- есть в EN, нет в ED_RU: Ромалия, младший лейтенант Вилер
+- есть в EN, нет в ED_RU: Ромалия, Ромальская империя, госпожа Святая, младший лейтенант Вилер
 - **EN (эталон):** She is at a foreign country currently, and have no authority over what Romalia decides to do. The feelings of anxiety yet unable to do anything, burned hotter and hotter every second. Despite she technically still has the Ondine Water Spirit Knights and Louise on hand, they are already assigned a jo…
 - **ED_RU:** Она находилась на чужой земле, и никакого права командовать у неё не было. В душе крутилось лишь бессильное раздражение. Из всех её сил оставались только отряд водных духов «Ундина» и Луиза — но и те с недавних пор стояли снаружи, охраняя собор. Сам же папа Витторио заперся в дальней личной приёмной…
 
 ### Абзац 243 — names
 
-- есть в EN, нет в ED_RU: Ромалия; есть в ED_RU, нет в EN: Галлия, Галльский добровольческий флот
+- есть в EN, нет в ED_RU: Ромалия, Ромальская империя; есть в ED_RU, нет в EN: Галлия, Галльский добровольческий флот
 - **EN (эталон):** At this moment, the permanent Gallian ambassador of Romalia, escorted by his own cavalry, showed up with a despising face. In place of Vittorio, the personnel temporarily in charge, the generals, stood up to welcome him.
 - **ED_RU:** И тут явился галльский консул при Аквилее — надменно, в сопровождении свиты из рыцарей. Принять его пришлось военачальникам, временно замещавшим Витторио.
 
 ### Абзац 245 — names
 
-- есть в ED_RU, нет в EN: Ромалия
+- есть в ED_RU, нет в EN: Ромалия, Ромальская империя
 - **EN (эталон):** Completely understanding the situation, the generals declared, without any attempts to decorate their sentences at all, "There is not a chance of letting your army in our borders to suppress these rebels. We have no idiots here who would open bring the wolves in. You tell your Joseph. Our reputed Ro…
 - **ED_RU:** Понимавший суть дела военачальник ответил консулу без всяких обиняков: — Войска для усмирения нам не нужны. И дураков, которые впустили бы к себе в дом сообщников разбойников, здесь нет. Возвращайтесь и передайте Жозефу: благочестивые отборные воины Ромалии перебьют галльских еретиков до последнего …
 
@@ -636,7 +642,7 @@
 
 ### Абзац 271 — names
 
-- есть в EN, нет в ED_RU: Ромалия
+- есть в EN, нет в ED_RU: Ромалия, Ромальская империя
 - **EN (эталон):** Ah, from the start Vittorio was aiming for this ideal, using the entire Romalia and its civilians as stake, and began a one-time gamble to settle this all.
 - **ED_RU:** Ах, вот ради чего Витторио с самого начала готов был поставить на карту страну и весь народ — ради одной отчаянной ставки, которая решит всё.
 
