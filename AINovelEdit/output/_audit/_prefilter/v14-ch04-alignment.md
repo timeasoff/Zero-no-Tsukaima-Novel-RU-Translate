@@ -60,7 +60,7 @@
 
 - EN — наррация, ED_RU — реплика
 - **EN (эталон):** Louise having said that, crossed her arms in amusement and flung her head to one side with a "huh!". Guiche looked sideways at Tiffania, twisting around uncomfortably.
-- **ED_RU:** — у меня ещё нет фамильяра! — договорив, Луиза гордо скрестила руки и отвернулась: фырк! Гиш посмотрел на ёрзающую рядом Тифанию.
+- **ED_RU:** — у меня ещё нет фамильяра! — договорив, Луиза гордо скрестила руки и отвернулась: фырк! Гиш посмотрел на ёрзающую рядом Тиффанию.
 
 ### Абзац 180 — shift
 
@@ -72,7 +72,7 @@
 
 - EN — реплика, ED_RU — наррация
 - **EN (эталон):** "Did-did not" Guiche sighed and snapped his fingers again. Malicorne, wearing a gusset clowns use, started to flick a feather over the body of Tiffania's.
-- **ED_RU:** Гиш снова щёлкнул пальцами. Маликорн, надев клоунский колпак, с азартом принялся щекотать Тифанию пером.
+- **ED_RU:** Гиш снова щёлкнул пальцами. Маликорн, надев клоунский колпак, с азартом принялся щекотать Тиффанию пером.
 
 ### Абзац 212 — speech
 
@@ -452,13 +452,13 @@
 
 - есть в EN, нет в ED_RU: Тиффания
 - **EN (эталон):** Excitedly, the boys leaped towards Tiffania and tied her up in a flash. Louise tried to say something, but was tied up as well.
-- **ED_RU:** Юноши с радостью бросились на Тифанию и замотали её верёвкой с ног до головы. Луиза завизжала и принялась жаловаться — её связали точно так же.
+- **ED_RU:** Юноши с радостью бросились на Тиффанию и замотали её верёвкой с ног до головы. Луиза завизжала и принялась жаловаться — её связали точно так же.
 
 ### Абзац 187 — names
 
 - есть в EN, нет в ED_RU: Тиффания
 - **EN (эталон):** The tied up Tiffania fell down on a side in the phoenix tailed boat, trembling while blushing red.
-- **ED_RU:** Связанную Тифанию перевернули на бок прямо в гондоле; она, пунцовая, дрожала мелкой дрожью.
+- **ED_RU:** Связанную Тиффанию перевернули на бок прямо в гондоле; она, пунцовая, дрожала мелкой дрожью.
 
 ### Абзац 189 — negation
 
@@ -530,7 +530,7 @@
 
 - есть в EN, нет в ED_RU: Тиффания
 - **EN (эталон):** All of a sudden, Guiche felt very helpless. Angrily, he glared at Tiffania. He then lowered his body and hissed in her ear
-- **ED_RU:** Внезапно Гиш почувствовал себя беспомощным. Он уныло повесил голову и злопамятно уставился на Тифанию.
+- **ED_RU:** Внезапно Гиш почувствовал себя беспомощным. Он уныло повесил голову и злопамятно уставился на Тиффанию.
 
 ### Абзац 213 — negation
 
@@ -1102,7 +1102,7 @@
 
 - JA (наррация) и ED_RU (реплика) разного типа — сдвиг выравнивания JA (эталон — EN)
 - **EN (эталон):** "Tie Miss Westwood up."
-- **ED_RU:** — Связать мисс Тифанию.
+- **ED_RU:** — Связать мисс Тиффанию.
 
 ### Абзац 188 — ja-shift
 
@@ -1229,4 +1229,3 @@
 - отрицание EN не передано явно (часто норма при идиоме)
 - **EN (эталон):** Colbert made up a story for himself, and did not pursue.
 - **ED_RU:** _…возможно, его отправили с тайным поручением,_ — подумал он и оставил расспросы.
-
