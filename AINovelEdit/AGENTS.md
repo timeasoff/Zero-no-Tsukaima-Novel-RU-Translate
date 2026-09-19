@@ -63,6 +63,9 @@ AINovelEdit/
 │   │                            #   избыточность, коллокации
 │   ├── check_alignment.py       # построчная сверка merged: съезд ED_RU ↔ EN
 │   │                            #   (+ --propose: план пересадки абзацев)
+│   ├── check_records.py         # контроль прямой речи: слитная запись
+│   │                            #   «наррация. — Реплика» (реплика — с новой
+│   │                            #   строки внутри записи ED_RU)
 │   └── update_merged.py         # обновление зеркала merged/
 ├── translates/
 │   ├── ja/  en/  ru/            # абзацы, разделённые пустой строкой;
@@ -323,6 +326,8 @@ save-progress           → сохранение через save_block.py
                           + update_merged.py + check_alignment.py
 russian-humanizer       → машинность / translationese / AI-штампы
 russian-prose-rules     → оформление русской прозы (речь, мысли, курсив)
+check_records.py        → шаг 0: слитные записи «наррация. — Реплика»
+                          (реплика обязана начинаться с новой строки)
 grammar_scan.py         → шаг 0: механический предфильтр грамматических кандидатов
 russian-grammar-control → грамматика / падежи / актанты / залог (разбор кандидатов)
 style_scan.py           → механический предфильтр стилевых кандидатов

@@ -1,8 +1,8 @@
 # Выгрузка предфильтра (соответствие строк merged): v14-ch08.md
 
-Абзацев 289, переведено 289. Сигналов: строгих 16, прочих 114, инфо 15, «съезд» 17, JA-сдвигов 50.
+Абзацев 289, переведено 289. Сигналов: строгих 14, прочих 112, инфо 15, «съезд» 15, JA-сдвигов 51.
 
-По типам: marks 11, names 71, negation 44, numbers 3, speech 16
+По типам: marks 9, names 70, negation 45, numbers 3, speech 14
 
 Эталон соответствия — EN. `ja-shift` — не ошибка текста: JA выровнен приблизительно (±1–2 абзаца).
 
@@ -30,7 +30,7 @@
 
 - EN — реплика, ED_RU — наррация
 - **EN (эталон):** "Unforgivable."
-- **ED_RU:** *Непростительно*
+- **ED_RU:** *Непростительно.*
 
 ### Абзац 98 — speech
 
@@ -54,7 +54,7 @@
 
 - ED_RU ближе к EN +1 (score 6 против -11 у своей строки)
 - **EN (эталон):** Then... Joseph would also.... with me....
-- **ED_RU:** Лишь бы стереть этих двоих… стереть с лица земли — тогда она будет довольна. И тогда… вот тогда Жозеф наконец… её…
+- **ED_RU:** Лишь бы стереть этих двоих с лица земли — тогда она будет довольна. И тогда… вот тогда Жозеф наконец… её…
 
 ### Абзац 110 — speech
 
@@ -66,7 +66,7 @@
 
 - EN — наррация, ED_RU — реплика
 - **EN (эталон):** Soldiers frantically ran for their lives, no matter what their rank was or how much ammo they had left. This was not strange at all. Despite it being called a "Crusade", facing an opponent immune to your attacks is no different asking death to take you away.
-- **ED_RU:** — Чудище-е-е! Первыми бросились бежать солдаты. За ними, смешав строй, пустились наутёк и офицеры с рыцарями, кто должен был их остановить. Удивляться нечего: как ни назови „священной войной“, гибнуть впустую — сущая бессмыслица, если врага не возьмёшь.
+- **ED_RU:** — Чудище-е-е! Первыми бросились бежать солдаты. За ними, смешав строй, пустились наутёк и офицеры с рыцарями, кто должен был их остановить. Удивляться нечего: как ни назови «священной войной», гибнуть впустую — сущая бессмыслица, если врага не возьмёшь.
 
 ### Абзац 149 — speech
 
@@ -74,89 +74,41 @@
 - **EN (эталон):** "Never give up!"
 - **ED_RU:** *Не сдавайся.*
 
-### Абзац 159 — speech
-
-- EN — реплика, ED_RU — наррация
-- **EN (эталон):** "How long are you going to keep dreaming? Haven't I proved your magic ineffective already? You useless void user really surprise me."
-- **ED_RU:** ‘Звучит как бред. Твоя магия на меня не действует! Ну и «Пустота», право слово, — диву даёшься! А как я добивалась побед?’
-
 ### Абзац 162 — speech
 
 - EN — наррация, ED_RU — реплика
 - **EN (эталон):** Watchdog?
-- **ED_RU:** — У меня и не было фамильяра!
+- **ED_RU:** — Сторожевой пёс?
 
 ### Абзац 162 — shift
 
-- ED_RU ближе к EN +1 (score 6 против -6 у своей строки)
-- **EN (эталон):** "I never had a familiar! I did it all by myself...."
-- **ED_RU:** — У меня и не было фамильяра!
-
-### Абзац 163 — speech
-
-- EN — реплика, ED_RU — наррация
-- **EN (эталон):** "I never had a familiar! I did it all by myself...."
-- **ED_RU:** Я ведь всё сама… Голова Луизы разрывалась от боли. Она снова опустилась на колени.
-
-### Абзац 163 — shift
-
-- ED_RU ближе к EN +1 (score 12 против -13 у своей строки)
-- **EN (эталон):** Suddenly, Louise felt an intense throbbing pain in her head, thus bending down to the ground in agony.
-- **ED_RU:** Я ведь всё сама… Голова Луизы разрывалась от боли. Она снова опустилась на колени.
+- ED_RU ближе к EN -1 (score 6 против 0 у своей строки)
+- **EN (эталон):** "Where did your familiar run off to? That kid always sticks to you like a faithful watchdog, shielding you. Did he leave you out of despair?"
+- **ED_RU:** — Сторожевой пёс?
 
 ### Абзац 165 — shift
 
-- ED_RU ближе к EN -1 (score 12 против 9 у своей строки)
+- ED_RU ближе к EN -1 (score 6 против 3 у своей строки)
 - **EN (эталон):** Suddenly, Louise felt an intense throbbing pain in her head, thus bending down to the ground in agony.
-- **ED_RU:** *«Нежная и глупая. Луиза»*
+- **ED_RU:** Тёмная пропасть на самом дне сердца… разверзшаяся бездна терзала Луизу.
 
 ### Абзац 166 — speech
 
 - EN — реплика, ED_RU — наррация
 - **EN (эталон):** "Gentle? You're really foolish, Louise."
-- **ED_RU:** Слова, некогда сказанные Генриеттой…
+- **ED_RU:** *«Нежная и глупая. Луиза»*
 
 ### Абзац 166 — shift
 
-- ED_RU ближе к EN +1 (score 9 против -17 у своей строки)
-- **EN (эталон):** Being once described like that by Henrietta....
-- **ED_RU:** Слова, некогда сказанные Генриеттой…
+- ED_RU ближе к EN -1 (score 9 против 4 у своей строки)
+- **EN (эталон):** The pitch black fissure in her heart.... the deeply opened up fracture, was blaming Louise.
+- **ED_RU:** *«Нежная и глупая. Луиза»*
 
-### Абзац 167 — shift
+### Абзац 173 — shift
 
-- ED_RU ближе к EN +1 (score 6 против 1 у своей строки)
-- **EN (эталон):** Did she really rely solely on her power to gain victory?
-- **ED_RU:** Неужели я в самом деле побеждала в одиночку?
-
-### Абзац 169 — shift
-
-- ED_RU ближе к EN +1 (score 9 против 1 у своей строки)
-- **EN (эталон):** Who is Saito?
-- **ED_RU:** *«Сайто? Это кто?»*
-
-### Абзац 170 — speech
-
-- EN — наррация, ED_RU — реплика
-- **EN (эталон):** Who is Saito?
-- **ED_RU:** — …Кто?
-
-### Абзац 170 — shift
-
-- ED_RU ближе к EN +1 (score 6 против -3 у своей строки)
-- **EN (эталон):** "....who?"
-- **ED_RU:** — …Кто?
-
-### Абзац 171 — speech
-
-- EN — реплика, ED_RU — наррация
-- **EN (эталон):** "....who?"
-- **ED_RU:** Стоило подумать об этом имени — и тёмный провал на самом дне сердца, точно разверстая дыра, терзавшая её, словно отступал, растворяясь вдали.
-
-### Абзац 175 — speech
-
-- EN — реплика, ED_RU — наррация
-- **EN (эталон):** "Did you really forget? Or was I right about him abandoning you? That makes perfect sense; you are after all a useless waste of space, the most incapable out of all incapables! Ah, thinking about how many times I actually lost to this weak human! Such a shame! However, today will be the end! I will …
-- **ED_RU:** ‘в этом мире кто на самом деле первый.’
+- ED_RU ближе к EN +1 (score 9 против -3 у своей строки)
+- **EN (эталон):** Louise was confused. Seeing her face, Sheffield laughed rudely.
+- **ED_RU:** Чувства, метавшиеся в поисках пристанища, словно обрели дом, куда можно вернуться… Луиза растерялась.
 
 ### Абзац 178 — shift
 
@@ -164,11 +116,23 @@
 - **EN (эталон):** Countless episodes of desperation.
 - **ED_RU:** И себя, всякий раз вырывавшуюся из них.
 
-### Абзац 187 — speech
+### Абзац 184 — speech
 
 - EN — реплика, ED_RU — наррация
-- **EN (эталон):** "Oho, even the legendary void mage gave up and started praying? Compared to my master's power, you puny void user are weaker than a newborn infant. You shame the carriers of void! Suffer my wrath!"
-- **ED_RU:** ‘Ого-го, наконец-то даже заклинание бросила — жизни просишь! Твоя «Пустота» рядом с тем, что владеет мой господин, — детские куличики. Позорище «Пустоты»! Умри!’
+- **EN (эталон):** "Begging for your life? You're actually begging for your life?"
+- **ED_RU:** Опомнившись, Луиза поняла, что в самом деле произносит мольбу о помощи.
+
+### Абзац 184 — shift
+
+- ED_RU ближе к EN -1 (score 10 против -11 у своей строки)
+- **EN (эталон):** Louise pleaded for help without thinking.
+- **ED_RU:** Опомнившись, Луиза поняла, что в самом деле произносит мольбу о помощи.
+
+### Абзац 191 — speech
+
+- EN — наррация, ED_RU — реплика
+- **EN (эталон):** Must live, must definitely live.
+- **ED_RU:** — Спаси меня!
 
 ### Абзац 193 — shift
 
@@ -198,13 +162,25 @@
 
 - ED_RU ближе к EN +1 (score 9 против 6 у своей строки)
 - **EN (эталон):** Things turned out a little bit weird, Saito began to realize.
-- **ED_RU:** Узором оно походило на железный крест, нарисованный на броне. Так ведь это же крест… — Сайто рылся в памяти.
+- **ED_RU:** Узором оно походило на железный крест, нарисованный на броне. *Так ведь это же крест…* — Сайто рылся в памяти.
+
+### Абзац 254 — speech
+
+- EN — наррация, ED_RU — реплика
+- **EN (эталон):** Things turned out a little bit weird, Saito began to realize.
+- **ED_RU:** — Ну и странности же творятся, — буркнул он себе под нос.
+
+### Абзац 259 — speech
+
+- EN — наррация, ED_RU — реплика
+- **EN (эталон):** Still, the one fighting with the enemy is ultimately me.... Saito muttered to himself.
+- **ED_RU:** — Но сражаюсь-то я… — пробормотал Сайто.
 
 ### Абзац 260 — speech
 
 - EN — реплика, ED_RU — наррация
 - **EN (эталон):** "The hell I'd believe for whoever's God this is for!"
-- **ED_RU:** Совсем не ради бога, в которого и не верю.
+- **ED_RU:** *Совсем не ради бога, в которого и не верю.*
 
 ## Слабые сигналы (проверить по смыслу)
 
@@ -212,7 +188,7 @@
 
 - есть в EN, нет в ED_RU: Глава восьмая. Стальной тигр, Глава шестая. Тигриный тракт
 - **EN (эталон):** This was the Inn Street of Tiger's Highway. In this emptied place, Sheffield ordered the Golomontas to stay alert.
-- **ED_RU:** Постоялый городок на „Тигрином тракте“… На опустевших его улицах Шеффилд держала „Ёрмунгандов“ наготове.
+- **ED_RU:** Постоялый городок на «Тигрином тракте»… На опустевших его улицах Шеффилд держала «Ёрмунгандов» наготове.
 
 ### Абзац 9 — names
 
@@ -230,7 +206,7 @@
 
 - есть в EN, нет в ED_RU: Галлия, Галльский добровольческий флот
 - **EN (эталон):** However, lack of ammunition was not the only problem. "Wind stones" were also needed. With the elves' assistance, Gallia manufactured these stones since they are the power source for Golomontas. In other words, the "wind stones" were required for the Golomontas to swiftly swing their beefy armored a…
-- **ED_RU:** А без припасов подступала и другая беда. Движителем магического оружия „Ёрмунганд“, созданного при содействии эльфов, были кристаллы изначальной магии… иначе говоря, „камни ветра“. Чтобы легко двигать тяжёлой бронёй, Ёрмунгандам нужны камни ветра в огромном количестве. Кончатся камни — и Ёрмунганды …
+- **ED_RU:** А без припасов подступала и другая беда. Движителем магического оружия «Ёрмунганд», созданного при содействии эльфов, были кристаллы изначальной магии… иначе говоря, «камни ветра». Чтобы легко двигать тяжёлой бронёй, Ёрмунгандам нужны камни ветра в огромном количестве. Кончатся камни — и Ёрмунганды …
 
 ### Абзац 13 — names
 
@@ -248,7 +224,7 @@
 
 - лишнее отрицание в ED_RU (в EN его нет)
 - **EN (эталон):** For a ship that was completely filled out with guns and cannonballs, withstanding the weight of a Golomonta was absolutely unreasonable. Subsequently, it fell down from the sky. As soon as it crashed on the ground, ten starving Golomontas ripped the ship into pieces, searching for precious wind ston…
-- **ED_RU:** Враг, поди, и во сне не видел, чтобы голем умел „прыгать“. Военный корабль, гружённый пушками и снарядами до последнего предела грузоподъёмности, не выдержал веса Ёрмунганда и рухнул вниз. А на земле десять Ёрмунгандов разодрали корабль на части и вытащили камни ветра.
+- **ED_RU:** Враг, поди, и во сне не видел, чтобы голем умел «прыгать». Военный корабль, гружённый пушками и снарядами до последнего предела грузоподъёмности, не выдержал веса Ёрмунганда и рухнул вниз. А на земле десять Ёрмунгандов разодрали корабль на части и вытащили камни ветра.
 
 ### Абзац 33 — names
 
@@ -362,7 +338,7 @@
 
 - есть в EN, нет в ED_RU: Карло Кристиано Тромбонтино, госпожа Святая
 - **EN (эталон):** Carlo stated his thoughts. Louise's void spell finished being chanted a long time ago. What she had prepared wass the same spell she used in Albion to shatter the Golomotas to pieces, "explosion".
-- **ED_RU:** Это тот самый „Взрыв“, что когда-то на Альбионе разнёс Ёрмунгандов в клочья. Луиза стояла гордо, с жезлом наизготовку, неподвижная, словно в медитации. Стоит произнести заклинание Пустоты… и чёрная дыра в душе чуть-чуть заполняется, и на сердце делается легче.
+- **ED_RU:** Это тот самый «Взрыв», что когда-то на Альбионе разнёс Ёрмунгандов в клочья. Луиза стояла гордо, с жезлом наизготовку, неподвижная, словно в медитации. Стоит произнести заклинание Пустоты… и чёрная дыра в душе чуть-чуть заполняется, и на сердце делается легче.
 
 ### Абзац 107 — names
 
@@ -392,7 +368,7 @@
 
 - есть в EN, нет в ED_RU: Менвил Белое Пламя, Орден Белой Лилии, Отряд водных духов «Ундина», Ундина, госпожа Святая
 - **EN (эталон):** Louise had already aimed at the two Golomontas hunting down the Ondine Knights and unleashed the finished "explosion". A tiny beam of white light shone right in front of the Golomontas' eyes and expanded, consuming both monsters.
-- **ED_RU:** Луиза выпустила готовый „Взрыв“ прямо в двух надвигавшихся Ёрмунгандов. Белый маленький свет родился между двумя Ёрмунгандами… разбух… и поглотил их.
+- **ED_RU:** Луиза выпустила готовый «Взрыв» прямо в двух надвигавшихся Ёрмунгандов. Белый маленький свет родился между двумя Ёрмунгандами… разбух… и поглотил их.
 
 ### Абзац 115 — negation
 
@@ -416,7 +392,7 @@
 
 - лишнее отрицание в ED_RU (в EN его нет)
 - **EN (эталон):** "What a pity just now! Elven technology is capable of imprinting defensive mechanisms within the armor itself. Although the superficial defense was disintegrated by 'void', the power from the remaining fragments weren't enough to go through the armor."
-- **ED_RU:** — Как жаль! Эльфы вкатали защиту в самую броню. Поверхностный „контрзаклинательный слой“ ты Пустотой и стёрла, но оставшейся силы на нижнюю броню не хватило.
+- **ED_RU:** — Как жаль! Эльфы вкатали защиту в самую броню. Поверхностный «контрзаклинательный слой» ты Пустотой и стёрла, но оставшейся силы на нижнюю броню не хватило.
 
 ### Абзац 126 — names
 
@@ -452,7 +428,7 @@
 
 - есть в EN, нет в ED_RU: Глава третья. Гандальв эльфов
 - **EN (эталон):** All sorts of incantations were directed to the Golomonta. Despite their defense magic already being completely shattered, the elven upgrades on the armor was indeed extremely sturdy.
-- **ED_RU:** В Ёрмунгандов полетели самые разные заклинания. Но… хотя „контрзаклинание“ и было стёрто, вкатанная эльфами броня оставалась крепка.
+- **ED_RU:** В Ёрмунгандов полетели самые разные заклинания. Но… хотя «контрзаклинание» и было стёрто, вкатанная эльфами броня оставалась крепка.
 
 ### Абзац 135 — names
 
@@ -476,7 +452,7 @@
 
 - лишнее отрицание в ED_RU (в EN его нет)
 - **EN (эталон):** "You damned girl.... for a long time, I couldn't do anything about you. I won't let you die so easily and quickly. I'll make you pay for showing King Joseph and me contempt!"
-- **ED_RU:** — Ты… как ты мне досаждала, скажи пожалуйста. Не убивать. Только заставить страдать — ровно столько, сколько ты ссорила меня с господином Жозефом.
+- **ED_RU:** — Ты… как ты мне досаждала, скажи пожалуйста. Не убивать. Только заставить страдать — ровно настолько, насколько ты насмехалась надо мной и господином Жозефом.
 
 ### Абзац 140 — numbers
 
@@ -488,7 +464,7 @@
 
 - есть в ED_RU, нет в EN: Луиза, Луиза Нулевая, Луиза-Нулиза
 - **EN (эталон):** Around a couple dozen of rounds blasted the surface of the Golomontas. The "reflection magic" gave a faint shimmer, easily warding off these pitiful attacks.
-- **ED_RU:** Слабое сияние „отражения“ мерцало, отводя все атаки. Вокруг Луизы сыпались осколки ядер. Кто-то из рыцарей водных духов натянул над Луизой магический щит.
+- **ED_RU:** Слабое сияние «отражения» мерцало, отводя все атаки. Вокруг Луизы сыпались осколки ядер. Кто-то из рыцарей водных духов натянул над Луизой магический щит.
 
 ### Абзац 144 — negation
 
@@ -526,53 +502,41 @@
 - **EN (эталон):** Louise's words rang out. These words were unsupportable in Sheffield's head.
 - **ED_RU:** Слова Луизы прозвучали пусто.
 
+### Абзац 159 — marks
+
+- вопрос «?» только в EN
+- **EN (эталон):** "How long are you going to keep dreaming? Haven't I proved your magic ineffective already? You useless void user really surprise me."
+- **ED_RU:** — Звучит как бред. Твоя магия на меня не действует! Ну и «Пустота», право слово, — диву даёшься!
+
 ### Абзац 164 — names
 
 - есть в EN, нет в ED_RU: госпожа Святая
 - **EN (эталон):** Suddenly, Louise felt an intense throbbing pain in her head, thus bending down to the ground in agony.
-- **ED_RU:** Тёмная пропасть на самом дне сердца… разверзшаяся бездна терзала Луизу.
+- **ED_RU:** Голова Луизы разрывалась от боли. Она снова опустилась на колени.
 
 ### Абзац 165 — names
 
 - есть в EN, нет в ED_RU: Чёрный Лес, госпожа Святая
 - **EN (эталон):** The pitch black fissure in her heart.... the deeply opened up fracture, was blaming Louise.
-- **ED_RU:** *«Нежная и глупая. Луиза»*
-
-### Абзац 167 — marks
-
-- вопрос «?» только в ED_RU
-- **EN (эталон):** Being once described like that by Henrietta....
-- **ED_RU:** Неужели я в самом деле побеждала в одиночку?
-
-### Абзац 168 — marks
-
-- вопрос «?» только в EN
-- **EN (эталон):** Did she really rely solely on her power to gain victory?
-- **ED_RU:** Так она спрашивала себя… и вспомнила слова, что Гиш твердил ей снова и снова.
-
-### Абзац 169 — marks
-
-- вопрос «?» только в ED_RU
-- **EN (эталон):** Then... she was reminded of Guiche's countless attempts to persuade her of something.
-- **ED_RU:** *«Сайто? Это кто?»*
-
-### Абзац 172 — names
-
-- есть в ED_RU, нет в EN: Луиза, Луиза Нулевая, Луиза-Нулиза
-- **EN (эталон):** Every time this name popped out, her heart darkened, tormenting the crack in her heart, as if threatening it to widen even more.
-- **ED_RU:** Чувства, метавшиеся в поисках пристанища, словно обрели дом, куда можно вернуться… Луиза растерялась.
+- **ED_RU:** Тёмная пропасть на самом дне сердца… разверзшаяся бездна терзала Луизу.
 
 ### Абзац 173 — names
 
-- есть в ED_RU, нет в EN: Шеффилд
+- есть в ED_RU, нет в EN: Луиза, Луиза Нулевая, Луиза-Нулиза
 - **EN (эталон):** While searching for a light in the pitch blackness of her heart, she suddenly understood everyone's feelings.
+- **ED_RU:** Чувства, метавшиеся в поисках пристанища, словно обрели дом, куда можно вернуться… Луиза растерялась.
+
+### Абзац 174 — names
+
+- есть в EN, нет в ED_RU: Луиза, Луиза Нулевая, Луиза-Нулиза, госпожа Святая
+- **EN (эталон):** Louise was confused. Seeing her face, Sheffield laughed rudely.
 - **ED_RU:** Глядя на неё, Шеффилд покатилась со смеху.
 
-### Абзац 174 — marks
+### Абзац 175 — negation
 
-- вопрос «?» только в ED_RU
-- **EN (эталон):** Louise was confused. Seeing her face, Sheffield laughed rudely.
-- **ED_RU:** ‘Забыла, что ли? Или он тебя по-настоящему бросил? Что ж, неудивительно: ты и вправду безнадёжна, бездарность из бездарностей! Ах, до чего же постыдно — что я, я сама, столько раз валялась в грязи перед такой никчёмностью! Просто самому себя не узнать! Но всё это кончится сегодня. Я покажу Ему твою …
+- лишнее отрицание в ED_RU (в EN его нет)
+- **EN (эталон):** "Did you really forget? Or was I right about him abandoning you? That makes perfect sense; you are after all a useless waste of space, the most incapable out of all incapables! Ah, thinking about how many times I actually lost to this weak human! Such a shame! However, today will be the end! I will …
+- **ED_RU:** — Забыла, что ли? Или он тебя по-настоящему бросил? Что ж, неудивительно: ты и вправду безнадёжна, бездарность из бездарностей! Ах, до чего же постыдно — что я, я сама, столько раз валялась в грязи перед такой никчёмностью! Просто самому себя не узнать! Но всё это кончится сегодня. Я покажу Ему твою…
 
 ### Абзац 176 — names
 
@@ -597,6 +561,12 @@
 - лишнее отрицание в ED_RU (в EN его нет)
 - **EN (эталон):** Like chanting an unknown spell, these words flowed out of Louise's mouth naturally. Even though these words were unknown to Louise's knowledge, as long as this name came out, for some reason she felt like she would definitely be saved.
 - **ED_RU:** Как заклинание на непонятном языке, сорвалось с губ Луизы это слово. Кто это — она не знала. Но ей почудилось: стоит произнести это имя — и всё как-нибудь обойдётся.
+
+### Абзац 187 — marks
+
+- вопрос «?» только в EN
+- **EN (эталон):** "Oho, even the legendary void mage gave up and started praying? Compared to my master's power, you puny void user are weaker than a newborn infant. You shame the carriers of void! Suffer my wrath!"
+- **ED_RU:** — Ого-го, наконец-то даже заклинание бросила — жизни просишь! Твоя «Пустота» рядом с тем, что владеет мой господин, — детские куличики. Позорище «Пустоты»! Умри!
 
 ### Абзац 188 — names
 
@@ -668,7 +638,7 @@
 
 - лишнее отрицание в ED_RU (в EN его нет)
 - **EN (эталон):** The armor of the Golomontas was originally designed to withstand the maximal magical damage possible. Nevertheless, being capable of escaping harmlessly from the most powerful attacks has its own limits.
-- **ED_RU:** Каким бы могущественным ни было изначальное заклинание „отражение“, у него есть предел прочности. Чем сильнее натиск противника, тем быстрее этот предел наступает.
+- **ED_RU:** Каким бы могущественным ни было изначальное заклинание «отражение», у него есть предел прочности. Чем сильнее натиск противника, тем быстрее этот предел наступает.
 
 ### Абзац 214 — negation
 
@@ -788,13 +758,7 @@
 
 - есть в EN, нет в ED_RU: Глава восьмая. Стальной тигр
 - **EN (эталон):** The design was surprisingly similar to the steel cross tattooed on the tank's body. Supposedly, this is a cross.... Saito searched his memory.
-- **ED_RU:** Узором оно походило на железный крест, нарисованный на броне. Так ведь это же крест… — Сайто рылся в памяти.
-
-### Абзац 254 — names
-
-- есть в EN, нет в ED_RU: Сайто Хирага
-- **EN (эталон):** Things turned out a little bit weird, Saito began to realize.
-- **ED_RU:** Ну и странности же творятся, — буркнул он себе под нос.
+- **ED_RU:** Узором оно походило на железный крест, нарисованный на броне. *Так ведь это же крест…* — Сайто рылся в памяти.
 
 ### Абзац 255 — names
 
@@ -812,7 +776,7 @@
 
 - есть в EN, нет в ED_RU: Великая Цель
 - **EN (эталон):** The knight who handed Saito the emblem, cried out to his own army "Everyone! Attention! The great army from Tristain has joined us in our Crusade! Do not fear! We have the protection of our ancestors!"
-- **ED_RU:** Вручивший Сайто знамя рыцарь, крича, галопом помчался к своим: — Господа! Внимание! На нашу священную войну прибыло мощное подкрепление из королевства Тристейн! Не робейте! Благодать Основателя с нами!
+- **ED_RU:** Рыцарь, вручивший Сайто знамя, крича, галопом помчался к своим: — Господа! Внимание! На нашу священную войну прибыло мощное подкрепление из королевства Тристейн! Не робейте! Благодать Основателя с нами!
 
 ### Абзац 261 — names
 
@@ -1084,7 +1048,7 @@
 
 - отрицание EN не передано явно (часто норма при идиоме)
 - **EN (эталон):** As events played out, Sheffield no longer cared about whether or not she could incinerate Romalia. All she wanted to do was to rip those two apart.
-- **ED_RU:** Лишь бы стереть этих двоих… стереть с лица земли — тогда она будет довольна. И тогда… вот тогда Жозеф наконец… её…
+- **ED_RU:** Лишь бы стереть этих двоих с лица земли — тогда она будет довольна. И тогда… вот тогда Жозеф наконец… её…
 
 ### Абзац 106 — ja-shift
 
@@ -1108,7 +1072,7 @@
 
 - отрицание EN не передано явно (часто норма при идиоме)
 - **EN (эталон):** "Long time no see, void user of Tristain! I've been looking forward to this conversation."
-- **ED_RU:** — Сколько лет, сколько зим, „Пустота“ Тристейна. Я с нетерпением ждала дня, когда мы так встретимся.
+- **ED_RU:** — Сколько лет, сколько зим, «Пустота» Тристейна. Я с нетерпением ждала дня, когда мы так встретимся.
 
 ### Абзац 122 — ja-shift
 
@@ -1150,7 +1114,19 @@
 
 - JA (наррация) и ED_RU (реплика) разного типа — сдвиг выравнивания JA (эталон — EN)
 - **EN (эталон):** "Where did your familiar run off to? That kid always sticks to you like a faithful watchdog, shielding you. Did he leave you out of despair?"
-- **ED_RU:** — Сторожевой пёс?
+- **ED_RU:** — А где твой фамильяр? Он ведь всегда, как верный сторожевой пёс, заслонял тебя. Неужели ты его окончательно оттолкнула?
+
+### Абзац 163 — ja-shift
+
+- JA (наррация) и ED_RU (реплика) разного типа — сдвиг выравнивания JA (эталон — EN)
+- **EN (эталон):** "I never had a familiar! I did it all by myself...."
+- **ED_RU:** — У меня и не было фамильяра! Я ведь всё сама…
+
+### Абзац 171 — ja-shift
+
+- JA (наррация) и ED_RU (реплика) разного типа — сдвиг выравнивания JA (эталон — EN)
+- **EN (эталон):** "....who?"
+- **ED_RU:** — …Кто?
 
 ### Абзац 179 — negation
 
@@ -1169,12 +1145,6 @@
 - отрицание EN не передано явно (часто норма при идиоме)
 - **EN (эталон):** Louise pleaded for help without thinking.
 - **ED_RU:** С губ Луизы невольно сорвалось слово. Напряжение исчезло из её взгляда. По щеке скатилась слеза.
-
-### Абзац 184 — ja-shift
-
-- JA (наррация) и ED_RU (реплика) разного типа — сдвиг выравнивания JA (эталон — EN)
-- **EN (эталон):** "Begging for your life? You're actually begging for your life?"
-- **ED_RU:** — Жизни просишь? Ты, ничтожная, у Меня жизни просишь?
 
 ### Абзац 185 — ja-shift
 

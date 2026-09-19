@@ -2,7 +2,7 @@
 
 Абзацев 236, переведено 236. Сигналов: строгих 6, прочих 95, инфо 7, «съезд» 6, JA-сдвигов 66.
 
-По типам: marks 12, names 64, negation 26, speech 6
+По типам: marks 12, names 65, negation 25, speech 6
 
 Эталон соответствия — EN. `ja-shift` — не ошибка текста: JA выровнен приблизительно (±1–2 абзаца).
 
@@ -178,11 +178,11 @@
 - **EN (эталон):** Saito submitted to his anger and yelled. If that were the Louise before she lost her memories, this is not something Saito would have dared said in front of her.
 - **ED_RU:** Сайто выплеснул гнев криком. С памятью или без — для Луизы это было недопустимо: таких слов ему говорить не полагалось.
 
-### Абзац 46 — negation
+### Абзац 46 — names
 
-- лишнее отрицание в ED_RU (в EN его нет)
+- есть в EN, нет в ED_RU: Сайто Хирага
 - **EN (эталон):** Seeing Saito like this, Guiche couldn't help but shake his head "Wrong."
-- **ED_RU:** Услышав это, Гиш покачал головой. — Не то.
+- **ED_RU:** Услышав это, Гиш покачал головой.
 
 ### Абзац 47 — negation
 

@@ -18,7 +18,7 @@
 
 - EN — реплика, ED_RU — наррация
 - **EN (эталон):** "It cannot be increased and it will be defeated in such reason. Because at these times, they are yours. You should know your curfew, no? Everone we meet in this area, we received orders to arrest all, regardless of government position and status case. But, hey, it's just formality. If it's people li…
-- **ED_RU:** Но и молодой рыцарь был при исполнении. — Так пропустить я вас не могу: времена-то нынче какие. О том, что по ночам выходить запрещено, вы ведь знаете? Мне велено задерживать всех, кого встречу в этих местах, невзирая на звания и должности. Впрочем, это всего лишь формальность. Человеку вашего полож…
+- **ED_RU:** Но и молодой рыцарь был при исполнении.
 
 ### Абзац 109 — speech
 
