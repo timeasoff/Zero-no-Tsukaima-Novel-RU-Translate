@@ -1,18 +1,15 @@
 #!/usr/bin/env python3
 """
-Генератор промптов для Cline / AI-агента проекта AINovelEdit.
+Генератор промптов для AI-агента проекта AINovelEdit.
 
 Основные возможности:
-- выбор режима через TUI: ↑ ↓ Enter;
-- Esc — отмена / возврат;
-- Q — быстрый выход;
-- выбор тома и главы только по номерам;
+- выбор режима через числовой ввод в консоли;
+- выбор тома и главы по номерам;
 - автоматические идентификаторы vNN / chYY;
 - централизованный контекст проекта;
 - поддержка отдельных режимов аудита и обработки;
 - режим обработки одного блока;
-- подробное описание режима на экране подтверждения;
-- автоматический перенос длинных описаний;
+- подробное описание режима перед подтверждением;
 - автоматическое копирование готового промпта в буфер обмена.
 
 Запускать из корня проекта:
@@ -22,9 +19,8 @@
 
 from __future__ import annotations
 
-import msvcrt
+import base64
 import os
-import shutil
 import subprocess
 import sys
 import textwrap
@@ -43,7 +39,7 @@ TERMINAL_WIDTH = 78
 
 
 # ============================================================================
-# TUI
+# УТИЛИТЫ ВЫВОДА
 # ============================================================================
 
 def clear_screen() -> None:
@@ -54,48 +50,7 @@ def clear_screen() -> None:
         print("\033[2J\033[H", end="")
 
 
-def read_key() -> str:
-    """
-    Прочитать одну клавишу.
-
-    Возвращает:
-        up
-        down
-        left
-        right
-        enter
-        esc
-        q
-        other
-    """
-    key = msvcrt.getwch()
-
-    # Стрелки и специальные клавиши Windows
-    if key in ("\x00", "\xe0"):
-        key = msvcrt.getwch()
-
-        special_keys = {
-            "H": "up",
-            "P": "down",
-            "K": "left",
-            "M": "right",
-        }
-
-        return special_keys.get(key, "other")
-
-    if key in ("\r", "\n"):
-        return "enter"
-
-    if key == "\x1b":
-        return "esc"
-
-    if key.lower() == "q":
-        return "q"
-
-    return "other"
-
-
-def separator(char: str = "─", width: int = TERMINAL_WIDTH) -> None:
+def separator(char: str = "-", width: int = TERMINAL_WIDTH) -> None:
     """Вывести разделитель."""
     print(char * width)
 
@@ -105,11 +60,7 @@ def print_wrapped(
     width: int = TERMINAL_WIDTH,
     indent: str = "",
 ) -> None:
-    """
-    Вывести текст с автоматическим переносом строк.
-
-    Пустые строки сохраняются.
-    """
+    """Вывести текст с автоматическим переносом строк."""
     if not text:
         print()
         return
@@ -132,80 +83,6 @@ def print_wrapped(
 
         for part in wrapped:
             print(indent + part)
-
-
-def terminal_width() -> int:
-    """Получить ширину терминала."""
-    try:
-        return shutil.get_terminal_size((TERMINAL_WIDTH, 24)).columns
-    except Exception:
-        return TERMINAL_WIDTH
-
-
-def select_option(
-    options: list[tuple[str, str]],
-    title: str = "",
-    footer: str = (
-        "↑ ↓ — выбор    Enter — подтвердить    Esc — отмена"
-    ),
-) -> int | None:
-    """
-    Интерактивный выбор пункта меню.
-
-    options:
-        [
-            ("Название", "Краткое описание"),
-            ...
-        ]
-
-    Возвращает индекс выбранного пункта.
-
-    None = Esc / Q.
-    """
-    if not options:
-        return None
-
-    selected = 0
-    width = terminal_width()
-
-    while True:
-        clear_screen()
-
-        if title:
-            print(title)
-            separator(width=width)
-            print()
-
-        for index, (name, description) in enumerate(options):
-            marker = "❯" if index == selected else " "
-
-            print(f"{marker} {name}")
-
-            # Описание каждого пункта меню тоже переносим.
-            print_wrapped(
-                description,
-                width=width - 2,
-                indent="  ",
-            )
-
-            print()
-
-        separator(width=width)
-        print(footer)
-
-        key = read_key()
-
-        if key == "up":
-            selected = (selected - 1) % len(options)
-
-        elif key == "down":
-            selected = (selected + 1) % len(options)
-
-        elif key == "enter":
-            return selected
-
-        elif key in {"esc", "q"}:
-            return None
 
 
 # ============================================================================
@@ -314,14 +191,13 @@ def ask_int(prompt: str, minimum: int = 1) -> int:
 
         except ValueError:
             print(
-                f"Введите целое число не меньше {minimum}."
+                f"  Введите целое число не меньше {minimum}."
             )
 
 
 def ask_chapter() -> Chapter:
     """Выбрать том и главу."""
-    clear_screen()
-
+    print()
     print("Выбор главы")
     separator()
     print()
@@ -1056,163 +932,106 @@ PROMPTS: list[PromptInfo] = [
 
 
 # ============================================================================
-# ЭКРАН ПОДТВЕРЖДЕНИЯ
+# МЕНЮ (числовой ввод)
 # ============================================================================
 
-def ask_confirmation(
-    title: str,
-    prompt: PromptInfo,
-    ch: Chapter,
-) -> bool:
+def print_menu(ch: Chapter) -> None:
+    """Вывести главное меню."""
+    print()
+    print("AINovelEdit — генератор промптов")
+    separator()
+    print(f"  Текущая глава: {ch.chapter_id_full}")
+    separator()
+    print()
+
+    for i, p in enumerate(PROMPTS, start=1):
+        print(f"  {i:2d}. {p.title}")
+        print(f"      {p.description}")
+        print()
+
+    extra_start = len(PROMPTS) + 1
+    print(f"  {extra_start}. Изменить том / главу")
+    print(f"  {extra_start + 1}. Выход")
+    print()
+
+
+def choose_prompt(ch: Chapter) -> int | str:
     """
-    Экран подтверждения запуска режима.
+    Запросить выбор режима числом.
 
-    ВАЖНО:
-    Здесь намеренно выводятся:
-    1. название режима;
-    2. краткое описание;
-    3. подробное описание;
-    4. вопрос подтверждения.
-
-    Описание больше не зависит от предыдущего экрана.
+    Возвращает:
+        int      — индекс в PROMPTS (от 0)
+        "change" — сменить главу
+        "quit"   — выход
     """
+    while True:
+        print_menu(ch)
 
-    options = ["Да", "Нет"]
-    selected = 0
-    width = terminal_width()
+        raw = input("Введите номер: ").strip().lower()
+
+        if raw in ("q", "quit", "exit", "выход"):
+            return "quit"
+
+        try:
+            number = int(raw)
+        except ValueError:
+            print("  Введите число.")
+            print()
+            input("  Нажмите Enter...")
+            continue
+
+        if 1 <= number <= len(PROMPTS):
+            return number - 1
+
+        if number == len(PROMPTS) + 1:
+            return "change"
+
+        if number == len(PROMPTS) + 2:
+            return "quit"
+
+        print(f"  Введите число от 1 до {len(PROMPTS) + 2}.")
+        print()
+        input("  Нажмите Enter...")
+
+
+# ============================================================================
+# ПОДТВЕРЖДЕНИЕ
+# ============================================================================
+
+def ask_confirmation(prompt: PromptInfo, ch: Chapter) -> bool:
+    """
+    Показать описание режима и спросить подтверждение.
+    """
+    print()
+    print("Подтверждение запуска")
+    separator()
+    print()
+    print(f"  Режим: {prompt.title}")
+    print(f"  Глава: {ch.chapter_id_full}")
+    print()
+
+    print("  Кратко:")
+    print_wrapped(prompt.description, indent="    ")
+    print()
+
+    print("  Что делает этот режим:")
+    print_wrapped(prompt.guide, indent="    ")
+    print()
+    separator()
+    print()
 
     while True:
-        clear_screen()
+        raw = input(
+            f'Запустить "{prompt.title}" для {ch.chapter_id_full}? '
+            "(1 — да, 2 — нет): "
+        ).strip()
 
-        print(title)
-        separator(width=width)
-        print()
-
-        print(f"Режим: {prompt.title}")
-        print(f"Глава: {ch.chapter_id_full}")
-        print()
-
-        # ------------------------------------------------------------
-        # КРАТКОЕ ОПИСАНИЕ
-        # ------------------------------------------------------------
-
-        print("Кратко:")
-        print_wrapped(
-            prompt.description,
-            width=width,
-            indent="  ",
-        )
-
-        print()
-
-        # ------------------------------------------------------------
-        # ПОДРОБНОЕ ОПИСАНИЕ
-        # ------------------------------------------------------------
-
-        print("Что делает этот режим:")
-
-        print_wrapped(
-            prompt.guide,
-            width=width,
-            indent="  ",
-        )
-
-        print()
-        separator(width=width)
-        print()
-
-        print(
-            f'Запустить режим "{prompt.title}" '
-            f"для {ch.chapter_id_full}?"
-        )
-
-        print()
-
-        for index, option in enumerate(options):
-            marker = "❯" if index == selected else " "
-            print(f"{marker} {option}")
-
-        print()
-        separator(width=width)
-
-        print(
-            "↑ ↓ — выбор    "
-            "Enter — подтвердить    "
-            "Esc — отмена    "
-            "Q — отмена"
-        )
-
-        key = read_key()
-
-        if key == "up":
-            selected = (selected - 1) % len(options)
-
-        elif key == "down":
-            selected = (selected + 1) % len(options)
-
-        elif key == "enter":
-            return selected == 0
-
-        elif key in {"esc", "q"}:
+        if raw == "1":
+            return True
+        if raw in ("2", "q", "n", "нет"):
             return False
 
-
-# ============================================================================
-# ВЫБОР РЕЖИМА
-# ============================================================================
-
-def choose_prompt() -> int | str | None:
-    """
-    Возвращает:
-
-        int       — индекс PROMPTS
-        "change"  — изменить том/главу
-        "quit"    — выход
-    """
-
-    options = [
-        (
-            prompt.title,
-            prompt.description,
-        )
-        for prompt in PROMPTS
-    ]
-
-    options.append(
-        (
-            "Изменить том / главу",
-            "Выбрать другой том и главу",
-        )
-    )
-
-    options.append(
-        (
-            "Выход",
-            "Закрыть генератор промптов",
-        )
-    )
-
-    selected = select_option(
-        options,
-        title="AINovelEdit — генератор промптов",
-        footer=(
-            "↑ ↓ — выбор    "
-            "Enter — подтвердить    "
-            "Esc — выход    "
-            "Q — выход"
-        ),
-    )
-
-    if selected is None:
-        return "quit"
-
-    if selected < len(PROMPTS):
-        return selected
-
-    if selected == len(PROMPTS):
-        return "change"
-
-    return "quit"
+        print("  Введите 1 или 2.")
 
 
 # ============================================================================
@@ -1230,26 +1049,19 @@ def generate_prompt(
     if prompt.generator is not None:
         return prompt.generator(ch)
 
-    # Обработка одного блока.
-    # Индекс 8 соответствует PromptInfo
-    # "Обработка одного блока".
+    # Обработка одного блока (индекс 8).
     if prompt_index == 8:
-        clear_screen()
-
+        print()
         print("Обработка одного блока")
         separator()
         print()
-
-        print(f"Том:   {ch.volume_id}")
-        print(f"Глава: {ch.chapter_id}")
+        print(f"  Том:   {ch.volume_id}")
+        print(f"  Глава: {ch.chapter_id}")
         print()
 
         block_number = ask_block_number()
 
-        return prompt_one_block(
-            ch,
-            block_number,
-        )
+        return prompt_one_block(ch, block_number)
 
     return None
 
@@ -1264,39 +1076,19 @@ def show_generated_prompt(
     ch: Chapter,
 ) -> None:
     """Показать полностью сгенерированный промпт."""
-
-    clear_screen()
-
-    width = terminal_width()
-
-    print("AINovelEdit — готовый промпт")
-    separator(width=width)
     print()
-
-    print(f"Режим: {prompt.title}")
-    print(f"Глава: {ch.chapter_id_full}")
-
+    separator("=")
     print()
-    separator(width=width)
+    print(f"  Режим: {prompt.title}")
+    print(f"  Глава: {ch.chapter_id_full}")
     print()
-
+    separator("=")
+    print()
     print(prompt_text)
-
     print()
-    separator(width=width)
+    separator("=")
     print()
-
-    print("Промпт выведен выше.")
-    print("Нажмите Enter для возврата в меню.")
-
-    while True:
-        key = read_key()
-
-        if key == "enter":
-            return
-
-        if key in {"esc", "q"}:
-            return
+    input("  Нажмите Enter для возврата...")
 
 
 # ============================================================================
@@ -1313,10 +1105,6 @@ def copy_to_clipboard(text: str) -> bool:
         return False
 
     try:
-        # Передаём текст в PowerShell как Base64 UTF-8.
-        # Благодаря этому кодировка консоли вообще не участвует.
-        import base64
-
         encoded = base64.b64encode(text.encode("utf-8")).decode("ascii")
 
         command = (
@@ -1354,31 +1142,22 @@ def copy_to_clipboard(text: str) -> bool:
 def main() -> None:
     """Главный цикл программы."""
 
-    if sys.platform != "win32":
-        print(
-            "Предупреждение: TUI использует msvcrt "
-            "и рассчитан на Windows."
-        )
-        print()
+    print()
+    print("AINovelEdit — генератор промптов")
+    separator()
 
     ch = ask_chapter()
 
     while True:
-        result = choose_prompt()
+        result = choose_prompt(ch)
 
-        # ------------------------------------------------------------
-        # ВЫХОД
-        # ------------------------------------------------------------
-
+        # --- Выход ---
         if result == "quit":
-            clear_screen()
+            print()
             print("Выход.")
             return
 
-        # ------------------------------------------------------------
-        # СМЕНА ГЛАВЫ
-        # ------------------------------------------------------------
-
+        # --- Смена главы ---
         if result == "change":
             ch = ask_chapter()
             continue
@@ -1389,85 +1168,45 @@ def main() -> None:
         prompt_index = result
         prompt = PROMPTS[prompt_index]
 
-        # ------------------------------------------------------------
-        # ПОДТВЕРЖДЕНИЕ
-        #
-        # Раньше здесь сначала вызывался show_prompt_info(),
-        # а затем ask_confirmation(), который сразу очищал экран.
-        #
-        # Теперь экран подтверждения полностью сам показывает
-        # всю информацию о режиме.
-        # ------------------------------------------------------------
-
-        if not ask_confirmation(
-            "Подтверждение запуска",
-            prompt,
-            ch,
-        ):
+        # --- Подтверждение ---
+        if not ask_confirmation(prompt, ch):
             continue
 
-        # ------------------------------------------------------------
-        # ГЕНЕРАЦИЯ
-        # ------------------------------------------------------------
-
-        prompt_text = generate_prompt(
-            prompt_index,
-            ch,
-        )
+        # --- Генерация ---
+        prompt_text = generate_prompt(prompt_index, ch)
 
         if not prompt_text:
             continue
 
-        # ------------------------------------------------------------
-        # ГОТОВЫЙ ПРОМПТ
-        # ------------------------------------------------------------
-
-        clear_screen()
-
-        width = terminal_width()
-
-        print("Промпт готов")
-        separator(width=width)
+        # --- Результат ---
         print()
-
-        print(f"Режим: {prompt.title}")
-        print(f"Глава: {ch.chapter_id_full}")
+        separator()
+        print()
+        print(f"  Режим: {prompt.title}")
+        print(f"  Глава: {ch.chapter_id_full}")
         print()
 
         if copy_to_clipboard(prompt_text):
-            print(
-                "Промпт автоматически скопирован "
-                "в буфер обмена."
-            )
+            print("  Промпт скопирован в буфер обмена.")
         else:
-            print(
-                "Не удалось автоматически "
-                "скопировать промпт."
-            )
+            print("  Не удалось скопировать промпт автоматически.")
 
         print()
-        separator(width=width)
+        separator()
         print()
-
-        print("1. Показать полный промпт")
-        print("2. Вернуться в меню")
+        print("  1. Показать полный промпт")
+        print("  2. Вернуться в меню")
         print()
-
-        print("Нажмите Enter для просмотра или Esc/Q для возврата:")
 
         while True:
-            key = read_key()
+            raw = input("  Выберите (1 / 2): ").strip()
 
-            if key == "enter":
-                show_generated_prompt(
-                    prompt_text,
-                    prompt,
-                    ch,
-                )
+            if raw == "1":
+                show_generated_prompt(prompt_text, prompt, ch)
                 break
-
-            if key in {"esc", "q"}:
+            if raw in ("2", "q", ""):
                 break
+            print("  Введите 1 или 2.")
 
 
 # ============================================================================
@@ -1479,17 +1218,13 @@ if __name__ == "__main__":
         main()
 
     except KeyboardInterrupt:
-        clear_screen()
+        print()
         print("Выход.")
 
     except Exception as exc:
-        clear_screen()
-
+        print()
         print("Произошла ошибка:")
         print()
-
-        print(type(exc).__name__)
-        print(exc)
-
+        print(f"  {type(exc).__name__}: {exc}")
         print()
         input("Нажмите Enter для выхода...")
