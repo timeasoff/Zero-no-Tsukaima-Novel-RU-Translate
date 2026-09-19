@@ -1,8 +1,8 @@
 # Выгрузка предфильтра (соответствие строк merged): v14-ch09.md
 
-Абзацев 236, переведено 121. Сигналов: строгих 12, прочих 53, инфо 2, «съезд» 18, JA-сдвигов 33.
+Абзацев 236, переведено 236. Сигналов: строгих 6, прочих 95, инфо 7, «съезд» 6, JA-сдвигов 66.
 
-По типам: marks 10, names 33, negation 12, speech 12
+По типам: marks 12, names 64, negation 26, speech 6
 
 Эталон соответствия — EN. `ja-shift` — не ошибка текста: JA выровнен приблизительно (±1–2 абзаца).
 
@@ -13,48 +13,6 @@
 - EN — наррация, ED_RU — реплика
 - **EN (эталон):** Just as Saito explored from the hatch, he was tightly surrounded by the Ondine Knights.
 - **ED_RU:** — Да это Сайто — прискакал в железном ящике-чудовище! Едва Сайто высунулся из командирской башенки, рыцари «Ундины» повисли на нём.
-
-### Абзац 18 — shift
-
-- ED_RU ближе к EN -1 (score 15 против 9 у своей строки)
-- **EN (эталон):** Did she want to let himself go home that much, Saito gently touched Louise's cheeks with his hands.
-- **ED_RU:** Сайто нежно провёл ладонью по щеке Луизы.
-
-### Абзац 19 — shift
-
-- ED_RU ближе к EN -1 (score 6 против -9 у своей строки)
-- **EN (эталон):** .....Slowly, Louise awoke.
-- **ED_RU:** ……Луиза медленно открыла глаза. Увидев стоявшего перед ней чёрноволосого юношу, она распахнула глаза.
-
-### Абзац 30 — shift
-
-- ED_RU ближе к EN -1 (score 13 против -6 у своей строки)
-- **EN (эталон):** Saito looked at Louise, dumbfounded.
-- **ED_RU:** Использовала? По-настоящему? Онемев, Сайто спросил у Луизы:
-
-### Абзац 31 — speech
-
-- EN — наррация, ED_RU — реплика
-- **EN (эталон):** Under great shock, Saito asked Louise
-- **ED_RU:** — Это я. Ты и вправду всё забыла?
-
-### Абзац 31 — shift
-
-- ED_RU ближе к EN +1 (score 6 против -20 у своей строки)
-- **EN (эталон):** "It's me, did you really forget?"
-- **ED_RU:** — Это я. Ты и вправду всё забыла?
-
-### Абзац 32 — shift
-
-- ED_RU ближе к EN +1 (score 9 против -5 у своей строки)
-- **EN (эталон):** "Uh-huh......" Louise made a low pitched whine like a wild cat angry. Saito found a feeling of helplessness all over his body.
-- **ED_RU:** — У-у… — простонала Луиза. Точь-в-точь как бродячая кошка.
-
-### Абзац 33 — speech
-
-- EN — реплика, ED_RU — наррация
-- **EN (эталон):** "Uh-huh......" Louise made a low pitched whine like a wild cat angry. Saito found a feeling of helplessness all over his body.
-- **ED_RU:** Сайто весь обмяк — силы разом покинули его.
 
 ### Абзац 49 — shift
 
@@ -68,127 +26,67 @@
 - **EN (эталон):** Saito squeezed his hands between legs and yelled "Everyone, you tell this little dumb girl, this innocent girl, how much she loved and wished for me!"
 - **ED_RU:** — Все! Скажите этой простушке — этой вечно цветущей персикововолосой девице — как сильно она меня любила!
 
-### Абзац 100 — speech
-
-- EN — реплика, ED_RU — наррация
-- **EN (эталон):** "Commoner faced....? Perhaps that's true, but Louise, do you know what you did to this commoner face?"
-- **ED_RU:** За работу! Сложив руки на груди, Луиза отчеканила с горделивым видом.
-
-### Абзац 100 — shift
-
-- ED_RU ближе к EN -1 (score 10 против 2 у своей строки)
-- **EN (эталон):** Waving her hand, Louise said cheekily.
-- **ED_RU:** За работу! Сложив руки на груди, Луиза отчеканила с горделивым видом.
-
-### Абзац 102 — speech
-
-- EN — реплика, ED_RU — наррация
-- **EN (эталон):** "Crusade so what!? Your holiness and all go eat my shorts!"
-- **ED_RU:** Но послушай, Луиза. А ты знаешь, что ты сделала с этим «простолюдином»? — А? Да ну! Поскорее!
-
-### Абзац 103 — shift
-
-- ED_RU ближе к EN -1 (score 7 против -3 у своей строки)
-- **EN (эталон):** "Crusade so what!? Your holiness and all go eat my shorts!"
-- **ED_RU:** — Не отвлекайся! Нынче Священная война! — А мне что, Священная война?
-
-### Абзац 104 — speech
-
-- EN — наррация, ED_RU — реплика
-- **EN (эталон):** Louise raised her hand and prepared to slap Saito, but Saito caught it in midair tightly.
-- **ED_RU:** — Да чтобы вам всем богам пусто было!
-
-### Абзац 105 — shift
-
-- ED_RU ближе к EN -1 (score 5 против -10 у своей строки)
-- **EN (эталон):** Louise raised her hand and prepared to slap Saito, but Saito caught it in midair tightly.
-- **ED_RU:** — Не богохульствуй! Луиза занесла ладонь, чтобы ударить Сайто по щеке, но он перехватил её и крепко сжал.
-
-### Абзац 109 — speech
-
-- EN — наррация, ED_RU — реплика
-- **EN (эталон):** Saito continued under a burst of unknown enthusiasm.
-- **ED_RU:** — Ч-что ты мелешь…
-
-### Абзац 109 — shift
-
-- ED_RU ближе к EN +1 (score 6 против -3 у своей строки)
-- **EN (эталон):** "Saying 'you may sleep on my bed' with a blushing face to me."
-- **ED_RU:** — Ч-что ты мелешь…
-
 ### Абзац 110 — speech
 
 - EN — реплика, ED_RU — наррация
 - **EN (эталон):** "Saying 'you may sleep on my bed' with a blushing face to me."
-- **ED_RU:** В непонятном возбуждении Сайто продолжал: — Ты же сказала: «Можешь спать на кровати».
+- **ED_RU:** А сама — с пылающим лицом: «Можешь спать в моей кровати».
 
-### Абзац 110 — shift
+### Абзац 123 — shift
 
-- ED_RU ближе к EN -1 (score 9 против -3 у своей строки)
-- **EN (эталон):** Saito continued under a burst of unknown enthusiasm.
-- **ED_RU:** В непонятном возбуждении Сайто продолжал: — Ты же сказала: «Можешь спать на кровати».
+- ED_RU ближе к EN -1 (score 6 против 2 у своей строки)
+- **EN (эталон):** "There was no love potion."
+- **ED_RU:** — Ну уж нет, врождённой натурой это не назовёшь.
 
-### Абзац 111 — speech
-
-- EN — реплика, ED_RU — наррация
-- **EN (эталон):** "Wa-wait! Know your place....."
-- **ED_RU:** С пылающим лицом: «Можешь спать на моей кровати» — Это…
-
-### Абзац 114 — speech
-
-- EN — реплика, ED_RU — наррация
-- **EN (эталон):** "Louise, pretty brave, aren't you."
-- **ED_RU:** Собравшиеся зрители сдавленно охнули.
-
-### Абзац 114 — shift
-
-- ED_RU ближе к EN -1 (score 6 против -12 у своей строки)
-- **EN (эталон):** The gathered crowd broke into whispers of astonishment.
-- **ED_RU:** Собравшиеся зрители сдавленно охнули.
-
-### Абзац 115 — shift
-
-- ED_RU ближе к EN -1 (score 10 против -9 у своей строки)
-- **EN (эталон):** "Louise, pretty brave, aren't you."
-- **ED_RU:** — Луиза. И вправду такое сказала?
-
-### Абзац 116 — shift
-
-- ED_RU ближе к EN -1 (score 6 против -4 у своей строки)
-- **EN (эталон):** "Did, did not say these kind of things! This guy is lying!"
-- **ED_RU:** — Н-нет! Не говорила! Это он врёт, что в голову взбрело!
-
-### Абзац 117 — shift
-
-- ED_RU ближе к EN -1 (score 12 против -14 у своей строки)
-- **EN (эталон):** "Wearing a black cat's dress, you said 'You are my master today~'; In Albion you told me, 'Hurry up and do it to me'."
-- **ED_RU:** — Костюм чёрной кошки. «Сегодня ты хозяин, нэко». На Альбионе: «Сделай со мной то же самое».
-
-### Абзац 118 — shift
-
-- ED_RU ближе к EN -1 (score 12 против -5 у своей строки)
-- **EN (эталон):** "Louise is incredible!"
-- **ED_RU:** — Луиза, ну ты даёшь!
-
-### Абзац 119 — shift
+### Абзац 132 — shift
 
 - ED_RU ближе к EN -1 (score 6 против 3 у своей строки)
-- **EN (эталон):** "Let's see how she defend This."
-- **ED_RU:** — А то даже как-то жутко.
+- **EN (эталон):** His body just reacted that way.
+- **ED_RU:** Почему-то казалось: Бримир, встреченный во сне, подсказал ему поступить именно так.
 
-### Абзац 120 — shift
+### Абзац 133 — speech
 
-- ED_RU ближе к EN -1 (score 9 против 3 у своей строки)
-- **EN (эталон):** "Even more intense than Saito"
-- **ED_RU:** — Да её аж посильнее Сайто накрыло.
+- EN — реплика, ED_RU — наррация
+- **EN (эталон):** "The bond between a void user and his familiar is unbreakable."
+- **ED_RU:** «Узы хозяина Пустоты и его фамильяра не разорвать».
 
-### Абзац 121 — speech
+### Абзац 141 — speech
 
-- EN — наррация, ED_RU — реплика
-- **EN (эталон):** Hearing this kind of murmurs, Saito openly said
-- **ED_RU:** — Сколько же надо выпить приворотного зелья, чтобы дойти до такого?
+- EN — реплика, ED_RU — наррация
+- **EN (эталон):** "Chirp", their lips parted, Louise cried out intensely
+- **ED_RU:** «Пха!» — оторвавшись от его губ, крикнула Луиза.
+
+### Абзац 143 — shift
+
+- ED_RU ближе к EN +1 (score 6 против 1 у своей строки)
+- **EN (эталон):** "W-w-w-w-w-why...."
+- **ED_RU:** — Вспомнила… Вот и славно.
+
+### Абзац 178 — shift
+
+- ED_RU ближе к EN +1 (score 6 против 3 у своей строки)
+- **EN (эталон):** When fighting strong enemies, you should always retreat in and wait in the shadows, patiently waiting to make good use of any mistakes.
+- **ED_RU:** Стоило ей увидеть Гандальва, бросившегося на помощь носительнице, как кровь ударила в голову. Итог — неуклюжая атака.
+
+### Абзац 183 — speech
+
+- EN — реплика, ED_RU — наррация
+- **EN (эталон):** "Joseph does not actually need me in meaning."
+- **ED_RU:** «Господин Жозеф на самом деле во мне не нуждается».
+
+### Абзац 212 — shift
+
+- ED_RU ближе к EN -1 (score 6 против 3 у своей строки)
+- **EN (эталон):** Completely cornered.
+- **ED_RU:** Ёрмунганд, цеплявшийся за стену с помощью плаща, обрушился сверху. В обеих руках он сжимал бочки с порохом и фитилями.
 
 ## Слабые сигналы (проверить по смыслу)
+
+### Абзац 4 — names
+
+- есть в EN, нет в ED_RU: Глава восьмая. Стальной тигр
+- **EN (эталон):** "Incredible! A cannon installed on a giant steel box!"
+- **ED_RU:** — Вот это да! К железному ящику пушку приделали!
 
 ### Абзац 6 — names
 
@@ -216,21 +114,15 @@
 
 ### Абзац 17 — names
 
-- есть в EN, нет в ED_RU: Луиза, Луиза Нулевая, Луиза-Нулиза, Сайто Хирага, госпожа Святая
+- есть в EN, нет в ED_RU: госпожа Святая
 - **EN (эталон):** Did she want to let himself go home that much, Saito gently touched Louise's cheeks with his hands.
-- **ED_RU:** Вот до чего ей хотелось вернуть меня домой.
+- **ED_RU:** Вот до чего ей хотелось вернуть меня домой. Сайто нежно провёл ладонью по щеке Луизы.
 
 ### Абзац 18 — names
 
-- есть в EN, нет в ED_RU: госпожа Святая; есть в ED_RU, нет в EN: Сайто Хирага
+- есть в EN, нет в ED_RU: госпожа Святая
 - **EN (эталон):** .....Slowly, Louise awoke.
-- **ED_RU:** Сайто нежно провёл ладонью по щеке Луизы.
-
-### Абзац 19 — names
-
-- есть в ED_RU, нет в EN: Луиза, Луиза Нулевая, Луиза-Нулиза
-- **EN (эталон):** Widening her eyes to the unknown teen in front of her
-- **ED_RU:** ……Луиза медленно открыла глаза. Увидев стоявшего перед ней чёрноволосого юношу, она распахнула глаза.
+- **ED_RU:** ……Луиза медленно открыла глаза.
 
 ### Абзац 21 — names
 
@@ -246,9 +138,9 @@
 
 ### Абзац 27 — names
 
-- есть в EN, нет в ED_RU: Тиффания
+- есть в EN, нет в ED_RU: Глава девятая. Память уз
 - **EN (эталон):** "Seems like Tiffania's magic was used to, remove all memories about you."
-- **ED_RU:** — Похоже, тебя стёрла магия мадемуазель Тифании. Твою память.
+- **ED_RU:** — Похоже, твою память стёрли магией мадемуазель Тиффании.
 
 ### Абзац 29 — marks
 
@@ -256,23 +148,23 @@
 - **EN (эталон):** Saito looked at Louise, dumbfounded.
 - **ED_RU:** Сайто, разинув рот, уставился на Луизу. То самое «забвение»?
 
-### Абзац 30 — names
+### Абзац 31 — names
 
-- есть в ED_RU, нет в EN: Луиза, Луиза Нулевая, Луиза-Нулиза, Сайто Хирага
-- **EN (эталон):** That "erasing memory" magic? Used? Really?
-- **ED_RU:** Использовала? По-настоящему? Онемев, Сайто спросил у Луизы:
+- есть в EN, нет в ED_RU: Великая Цель, госпожа Святая
+- **EN (эталон):** Under great shock, Saito asked Louise
+- **ED_RU:** Онемев, Сайто спросил у Луизы:
 
-### Абзац 32 — marks
+### Абзац 33 — names
 
-- вопрос «?» только в EN
-- **EN (эталон):** "It's me, did you really forget?"
-- **ED_RU:** — У-у… — простонала Луиза. Точь-в-точь как бродячая кошка.
+- есть в EN, нет в ED_RU: госпожа Святая
+- **EN (эталон):** "Uh-huh......" Louise made a low pitched whine like a wild cat angry. Saito found a feeling of helplessness all over his body.
+- **ED_RU:** — У-у… — простонала Луиза. Точь-в-точь как бродячая кошка. Сайто весь обмяк — силы разом покинули его.
 
 ### Абзац 37 — marks
 
 - вопрос «?» только в ED_RU
 - **EN (эталон):** "Erasing memories about other people on your own..... what were you thinking!"
-- **ED_RU:** — Стёрть чужую память без спроса… что у тебя в голове творится?
+- **ED_RU:** — Стереть чужую память самовольно… о чём ты только думала?
 
 ### Абзац 39 — names
 
@@ -282,9 +174,9 @@
 
 ### Абзац 44 — names
 
-- есть в EN, нет в ED_RU: госпожа Святая
+- есть в EN, нет в ED_RU: Глава девятая. Память уз, госпожа Святая
 - **EN (эталон):** Saito submitted to his anger and yelled. If that were the Louise before she lost her memories, this is not something Saito would have dared said in front of her.
-- **ED_RU:** Сайто выплеснул гнев криком. С памятью или без — с точки зрения Луизы это было недопустимо: таких слов ему говорить не полагалось.
+- **ED_RU:** Сайто выплеснул гнев криком. С памятью или без — для Луизы это было недопустимо: таких слов ему говорить не полагалось.
 
 ### Абзац 46 — negation
 
@@ -342,9 +234,9 @@
 
 ### Абзац 59 — names
 
-- есть в EN, нет в ED_RU: Тиффания, госпожа Святая
+- есть в EN, нет в ED_RU: госпожа Святая
 - **EN (эталон):** "That, listen to me, Louise, you let Tiffania use the 'forget' magic and erased your own memory!"
-- **ED_RU:** — Слушай меня, Луиза. Это «забвение» Тифании стёрло мою память из твоей головы!
+- **ED_RU:** — Слушай меня, Луиза. Это «забвение» Тиффании стёрло мою память из твоей головы!
 
 ### Абзац 65 — names
 
@@ -369,6 +261,12 @@
 - есть в EN, нет в ED_RU: госпожа Святая
 - **EN (эталон):** Guiche shook his head and told Louise
 - **ED_RU:** Гиш, почёсывая голову, обратился к Луизе:
+
+### Абзац 73 — names
+
+- есть в EN, нет в ED_RU: Глава девятая. Память уз
+- **EN (эталон):** "-Sigh, how should I put it, just like what Saito said, whether you loved him or not, through magic you erased all memories about him, that is completely true."
+- **ED_RU:** — Ну, это… Как ни крути, Сайто прав. Любила ты его или нет — неважно, но то, что ты магией стёрла ему память, — чистая правда.
 
 ### Абзац 74 — names
 
@@ -410,7 +308,7 @@
 
 - есть в EN, нет в ED_RU: Основатель Бримир
 - **EN (эталон):** "You may possibly be my familiar, also, I should thank you for saving me just now. However, I am 'Saint of Aquileia', a girl completely pure! My love is devoted across the entire Halkenia, across all Brimir believers, not to people like you...."
-- **ED_RU:** — Ты, конечно, может, и была моим фамильяром. И за спасение только что — спасибо. Но… не мелите чепуху про «любила»! Я — «Святая Аквилеи»! Святая дева! Моя любовь обращена ко всей Халкегинии и всем верующим Бримира, а вовсе не к таким, как ты…
+- **ED_RU:** — Ты, конечно, может, и была моим фамильяром. И за то, что помогла только что, — спасибо скажу. Но… не мелите чепуху про «любила»! Я — «Святая Аквилеи»! Святая дева! Моя любовь обращена ко всей Халкегинии и всем верующим Бримира, а вовсе не к таким, как ты…
 
 ### Абзац 88 — names
 
@@ -438,75 +336,321 @@
 
 ### Абзац 99 — names
 
-- есть в EN, нет в ED_RU: Луиза, Луиза Нулевая, Луиза-Нулиза, госпожа Святая
+- есть в EN, нет в ED_RU: госпожа Святая
 - **EN (эталон):** Waving her hand, Louise said cheekily.
-- **ED_RU:** Ты же мой фамильяр!
+- **ED_RU:** Сложив руки на груди, Луиза отчеканила это с горделивым видом.
 
-### Абзац 101 — marks
+### Абзац 100 — names
+
+- есть в EN, нет в ED_RU: госпожа Святая
+- **EN (эталон):** "Commoner faced....? Perhaps that's true, but Louise, do you know what you did to this commoner face?"
+- **ED_RU:** — В лицо простолюдина, значит… Ну, может, и так. Но послушай, Луиза. А ты знаешь, что ты сделала с этим «простолюдином»?
+
+### Абзац 102 — marks
 
 - вопрос «?» только в EN
-- **EN (эталон):** "Oh? What are you talking about, we're in the middle of a Crusade! Go and get to--"
-- **ED_RU:** — В лицо простолюдина, значит… Ну, может, и так.
+- **EN (эталон):** "Crusade so what!? Your holiness and all go eat my shorts!"
+- **ED_RU:** — Да хоть священная война, хоть нет! Хоть ты и святая — делай как знаешь!
 
-### Абзац 103 — marks
+### Абзац 103 — negation
 
-- вопрос «?» только в ED_RU
+- лишнее отрицание в ED_RU (в EN его нет)
 - **EN (эталон):** "Such insolence..."
-- **ED_RU:** — Не отвлекайся! Нынче Священная война! — А мне что, Священная война?
+- **ED_RU:** — Не богохульствуй!
 
-### Абзац 105 — negation
+### Абзац 104 — names
 
-- лишнее отрицание в ED_RU (в EN его нет)
-- **EN (эталон):** "Pretended to be asleep."
-- **ED_RU:** — Не богохульствуй! Луиза занесла ладонь, чтобы ударить Сайто по щеке, но он перехватил её и крепко сжал.
+- есть в EN, нет в ED_RU: госпожа Святая
+- **EN (эталон):** Louise raised her hand and prepared to slap Saito, but Saito caught it in midair tightly.
+- **ED_RU:** Луиза занесла ладонь, чтобы ударить Сайто по щеке, но он перехватил её и крепко сжал.
 
-### Абзац 106 — marks
-
-- вопрос «?» только в EN
-- **EN (эталон):** "Huh?"
-- **ED_RU:** — Притворялся спящим.
-
-### Абзац 107 — marks
+### Абзац 114 — marks
 
 - вопрос «?» только в ED_RU
-- **EN (эталон):** "You kissed me when I was pretending to be asleep."
-- **ED_RU:** — А?
-
-### Абзац 115 — marks
-
-- вопрос «?» только в ED_RU
-- **EN (эталон):** "Did, did not say these kind of things! This guy is lying!"
+- **EN (эталон):** "Louise, pretty brave, aren't you."
 - **ED_RU:** — Луиза. И вправду такое сказала?
-
-### Абзац 116 — negation
-
-- лишнее отрицание в ED_RU (в EN его нет)
-- **EN (эталон):** "Wearing a black cat's dress, you said 'You are my master today~'; In Albion you told me, 'Hurry up and do it to me'."
-- **ED_RU:** — Н-нет! Не говорила! Это он врёт, что в голову взбрело!
 
 ### Абзац 117 — names
 
-- есть в EN, нет в ED_RU: Луиза, Луиза Нулевая, Луиза-Нулиза, госпожа Святая; есть в ED_RU, нет в EN: Альбион, Чёрный Лес
+- есть в EN, нет в ED_RU: госпожа Святая
 - **EN (эталон):** "Louise is incredible!"
-- **ED_RU:** — Костюм чёрной кошки. «Сегодня ты хозяин, нэко». На Альбионе: «Сделай со мной то же самое».
-
-### Абзац 118 — names
-
-- есть в ED_RU, нет в EN: Луиза, Луиза Нулевая, Луиза-Нулиза
-- **EN (эталон):** "Let's see how she defend This."
 - **ED_RU:** — Луиза, ну ты даёшь!
 
-### Абзац 119 — names
+### Абзац 120 — marks
+
+- вопрос «?» только в ED_RU
+- **EN (эталон):** "How strong a love potion will need to be to have that kind of effect...."
+- **ED_RU:** — Сколько же надо выпить приворотного зелья, чтобы дойти до такого?
+
+### Абзац 123 — negation
+
+- лишнее отрицание в ED_RU (в EN его нет)
+- **EN (эталон):** "Just what I thought, this is really incredible!"
+- **ED_RU:** — Ну уж нет, врождённой натурой это не назовёшь.
+
+### Абзац 124 — names
+
+- есть в EN, нет в ED_RU: госпожа Святая
+- **EN (эталон):** Malicorne said and put his hand on Louise's shoulders,..... with one sweep of her leg, Malicorne's fat body flew to the distant universe.
+- **ED_RU:** Маликорн, качая головой, положил Луизе руку на плечо. Прилетел удар с разворота — и его грузное тело отлетело прочь.
+
+### Абзац 126 — names
+
+- есть в EN, нет в ED_RU: госпожа Святая
+- **EN (эталон):** Louise's flying leg was stopped by Saito's tight ones this time.
+- **ED_RU:** Луиза попыталась пнуть его другой ногой, но Сайто сжал колени и остановил её.
+
+### Абзац 130 — names
+
+- есть в EN, нет в ED_RU: госпожа Святая
+- **EN (эталон):** Saying so, Saito suddenly hugged Louise, and planted a kiss. Louise blushed to her roots just as suddenly.
+- **ED_RU:** С этими словами Сайто обнял Луизу и приник к её губам. Лицо Луизы вспыхнуло до самых ушей.
+
+### Абзац 132 — names
+
+- есть в EN, нет в ED_RU: Основатель Бримир
+- **EN (эталон):** For an unknown reason, like Brimir in his dreams telling him to do it.
+- **ED_RU:** Почему-то казалось: Бримир, встреченный во сне, подсказал ему поступить именно так.
+
+### Абзац 135 — negation
+
+- лишнее отрицание в ED_RU (в EN его нет)
+- **EN (эталон):** A unbreakable bond even in different worlds,.... how can it disappear from just magic?
+- **ED_RU:** Узы, не разлучающие даже в чужом мире… разве их сотрёт магия?
+
+### Абзац 136 — names
+
+- есть в EN, нет в ED_RU: госпожа Святая
+- **EN (эталон):** Both lips kissed tightly by Saito, Louise let him go his own way, both hands raised highly limped slowly, through the tightly linked lips, something seemed to be flooding Louise.
+- **ED_RU:** Луиза, к губам которой припал Сайто, застыла в оцепенении. Занесённая рука замерла на полпути — из соединённых губ одно за другим что-то в неё вливалось.
+
+### Абзац 138 — negation
+
+- лишнее отрицание в ED_RU (в EN его нет)
+- **EN (эталон):** Blank memories started having its shape, colors.
+- **ED_RU:** Луиза чувствовала: словно на письме без адресата одно за другим проступают имена.
+
+### Абзац 139 — names
+
+- есть в EN, нет в ED_RU: Глава девятая. Память уз
+- **EN (эталон):** Fouquet's Golem, traversing through Albion.... spiking every single part of her memories, simultaneously, every sorts of events surfaced as well, happy ones, embarrassing ones.
+- **ED_RU:** Память, местами зиявшая пустотами, стремительно обретала очертания. Голем Фуке, потом Альбион… воспоминания из самых разных мест оживали, а следом… оживало и множество событий.
+
+### Абзац 143 — names
+
+- есть в EN, нет в ED_RU: Великая Цель
+- **EN (эталон):** "Did you finally remember,..... this is great!"
+- **ED_RU:** — Вспомнила… Вот и славно.
+
+### Абзац 145 — names
+
+- есть в EN, нет в ED_RU: госпожа Святая
+- **EN (эталон):** Louise's pair of eyes were overwhelmed with tears.
+- **ED_RU:** Из глаз Луизы хлынули слёзы.
+
+### Абзац 147 — negation
+
+- лишнее отрицание в ED_RU (в EN его нет)
+- **EN (эталон):** "Why didn't you go back like a good boy" Louise thumped Saito's chest gently with fists.
+- **ED_RU:** — Почему ты не вернулся домой! — выкрикнула она, раз за разом колотя Сайто кулачками в грудь.
+
+### Абзац 148 — marks
+
+- вопрос «?» только в ED_RU
+- **EN (эталон):** "Do I need to explain, of course it's because I have you."
+- **ED_RU:** — А что тут объяснять? Ясно же: потому что здесь ты.
+
+### Абзац 149 — names
+
+- есть в EN, нет в ED_RU: госпожа Святая
+- **EN (эталон):** Hearing this, Louise couldn't hold back any longer, pulling Saito towards her and kissed him deeply.
+- **ED_RU:** От этих слов лицо Луизы поплыло, и она невольно притянула Сайто к себе, сама припав к его губам.
+
+### Абзац 153 — names
+
+- есть в EN, нет в ED_RU: госпожа Святая
+- **EN (эталон):** Louise's lips trembled, trying to say something but couldn't. Eventually, crystal clear tears dropped from her eyes and cried.
+- **ED_RU:** Луиза что-то промычала сквозь сжатые губы, а потом вдруг разрыдалась — навзрыд, взахлёб.
+
+### Абзац 155 — names
+
+- есть в EN, нет в ED_RU: госпожа Святая
+- **EN (эталон):** Saito lifted Louise's head gently and said
+- **ED_RU:** Сайто прижал голову Луизы к себе и мягко сказал:
+
+### Абзац 160 — marks
+
+- вопрос «?» только в ED_RU
+- **EN (эталон):** "Now, we're in a Crusade....~"
+- **ED_RU:** — Смотри-ка, нынче ведь священная война… нэ?
+
+### Абзац 161 — names
+
+- есть в EN, нет в ED_RU: госпожа Святая
+- **EN (эталон):** Saito and Louise both stood up, blushing, intentionally coughing with an "ahem" together.
+- **ED_RU:** Сайто и Луиза, пунцовые, поднялись и разом, в один голос, кашлянули: «кхм».
+
+### Абзац 162 — names
+
+- есть в EN, нет в ED_RU: госпожа Святая
+- **EN (эталон):** Saito let Louise sit on the seat of the tank commander's.
+- **ED_RU:** Сайто усадил Луизу на место командира. В башне стало тесно, но Луиза была маленькой, так что кое-как могла двигаться.
+
+### Абзац 165 — negation
+
+- лишнее отрицание в ED_RU (в EN его нет)
+- **EN (эталон):** "All of them fled? If there were more, they would have attacked us."
+- **ED_RU:** — Да не сбежали ли они уже? Если бы остались, напали бы, я думаю.
+
+### Абзац 168 — names
 
 - есть в EN, нет в ED_RU: Сайто Хирага
-- **EN (эталон):** "Even more intense than Saito"
-- **ED_RU:** — А то даже как-то жутко.
+- **EN (эталон):** This.... has not ended, Saito felt.
+- **ED_RU:** Ещё… не кончено. Такое было чувство.
 
-### Абзац 120 — names
+### Абзац 170 — names
 
-- есть в ED_RU, нет в EN: Сайто Хирага
-- **EN (эталон):** "How strong a love potion will need to be to have that kind of effect...."
-- **ED_RU:** — Да её аж посильнее Сайто накрыло.
+- есть в ED_RU, нет в EN: Тигрес Гран-Рут, Тигриный тракт
+- **EN (эталон):** The teens nodded their heads in agreement, surrounding the Panzer and went into formation.
+- **ED_RU:** Юноши кивнули и обступили «Тигра».
+
+### Абзац 171 — negation
+
+- лишнее отрицание в ED_RU (в EN его нет)
+- **EN (эталон):** "Everyone distant yourself a little behind, you don't have much armor."
+- **ED_RU:** — Держитесь позади на расстоянии. Вы ведь без брони.
+
+### Абзац 172 — names
+
+- есть в EN, нет в ED_RU: Глава восьмая. Стальной тигр, Глава шестая. Тигриный тракт, Отряд водных духов «Ундина»
+- **EN (эталон):** The steel tiger, once again, set forward to the depths of "Tiger's highway", followed closely by the Ondine Knights. After seeing them disappear into the canyon, the Romalian army also followed inside.
+- **ED_RU:** Стальной тигр снова двинулся в глубь «Тигриного тракта», а следом потянулись рыцари «Ундины». Заметив, что они вошли в ущелье, ромалийская армия тоже медленно пришла в движение.
+
+### Абзац 174 — negation
+
+- лишнее отрицание в ED_RU (в EN его нет)
+- **EN (эталон):** Inn street, Sheffield gazed at a portrait of Joseph on her hands. On her face is a face of shock that cannot be faked. Golomonta's large force turned into 2 in almost a blink of an eye.
+- **ED_RU:** …в постоялом городке Шеффилд не сводила глаз с портрета Жозефа в руке. Скрыть потрясение было невозможно: её Ёрмунганды в мгновение ока превратились в двух.
+
+### Абзац 175 — negation
+
+- лишнее отрицание в ED_RU (в EN его нет)
+- **EN (эталон):** Enemy's long ranged cannon.... the armor Golomonta's proud of is merely paper in front of it, the power....
+- **ED_RU:** Дальнобойная пушка, которой враг оснастил свою машину… Её мощь не считается с бронёй Ёрмунганда. Вот какая сила.
+
+### Абзац 178 — names
+
+- есть в EN, нет в ED_RU: Шеффилд
+- **EN (эталон):** Seeing Gandálfr coming to his master's aid, Sheffield's head went hot, and used an incorrect method of approaching.
+- **ED_RU:** Стоило ей увидеть Гандальва, бросившегося на помощь носительнице, как кровь ударила в голову. Итог — неуклюжая атака.
+
+### Абзац 186 — names
+
+- есть в EN, нет в ED_RU: Врата мира
+- **EN (эталон):** They have a strong desire for each other. The reason why she lost was not because of Gandálfr, even less, the weapon from a parallel world.
+- **ED_RU:** Они нужны друг другу. Не способности Гандальва были причиной её поражения и не оружие из другого мира.
+
+### Абзац 188 — names
+
+- есть в EN, нет в ED_RU: младший лейтенант Вилер
+- **EN (эталон):** In a split second, Sheffield felt her whole body almost shaking from anger.
+- **ED_RU:** От негодования Шеффилд затрясло.
+
+### Абзац 190 — names
+
+- есть в EN, нет в ED_RU: Глава восьмая. Стальной тигр
+- **EN (эталон):** Even if it's a complete loss, that "steel box" must be brought down.
+- **ED_RU:** Но даже если суждено погибнуть всем… ту самую «железную коробку» надо прихватить с собой.
+
+### Абзац 196 — names
+
+- есть в EN, нет в ED_RU: Сайто Хирага, госпожа Святая
+- **EN (эталон):** Louise said to Saito, popping out her head from the hatch.
+- **ED_RU:** Высунувшись из командирской башенки, Луиза бросила ему это.
+
+### Абзац 200 — marks
+
+- вопрос «?» только в ED_RU
+- **EN (эталон):** "Waaah! What happened!"
+- **ED_RU:** — Ух! Что это?!
+
+### Абзац 201 — negation
+
+- лишнее отрицание в ED_RU (в EN его нет)
+- **EN (эталон):** The original street trapped in the middle of the valley instantly turned into a stew of fog and smoke, from before, a tiny scope where things are barely visible, to now, where every angle seems to be coloured in brown.
+- **ED_RU:** Узкий городок, зажатый в ущелье, мгновенно наполнился дымом. В прицеле и без того тесного обзора не стало видно ничего.
+
+### Абзац 204 — names
+
+- есть в ED_RU, нет в EN: Табита, Табита Вьюга
+- **EN (эталон):** Quickly chanting wind magic as she says, the dust around rose up in the air swiftly.
+- **ED_RU:** Табита тут же произнесла заклинание ветра, и дым вокруг взметнулся ввысь.
+
+### Абзац 209 — names
+
+- есть в EN, нет в ED_RU: госпожа Святая
+- **EN (эталон):** Next moment, Louise from the Captain's seat called out
+- **ED_RU:** В следующее мгновение… Луиза, высунувшаяся из командирского люка, крикнула:
+
+### Абзац 212 — names
+
+- есть в EN, нет в ED_RU: Чёрный Лес
+- **EN (эталон):** Utilizing its cape to hang on the cliff, the other Golomonta jumped down in midair, his hand holding a giant barrel of black powder already ignited.
+- **ED_RU:** Ёрмунганд, цеплявшийся за стену с помощью плаща, обрушился сверху. В обеих руках он сжимал бочки с порохом и фитилями.
+
+### Абзац 216 — names
+
+- есть в EN, нет в ED_RU: госпожа Святая
+- **EN (эталон):** Saito dragged Louise up in the cabin of the tank.
+- **ED_RU:** Сайто втащил Луизу в танк.
+
+### Абзац 217 — negation
+
+- лишнее отрицание в ED_RU (в EN его нет)
+- **EN (эталон):** But.... after a long period of time, the explosion was still yet to come.
+- **ED_RU:** Но… сколько ни ждал — взрыва всё не было.
+
+### Абзац 220 — names
+
+- есть в EN, нет в ED_RU: Горы Огненного Дракона
+- **EN (эталон):** What only came into sight was a green scaled wind dragon tightly grasping the Golomonta and flying upwards, the throwing it over one side of the cliff.
+- **ED_RU:** Синечешуйный дракон ветра крепко держал Ёрмунганда и поднимал его. Мощно взмыв, дракон швырнул Ёрмунганда за скалу.
+
+### Абзац 223 — names
+
+- есть в EN, нет в ED_RU: Горы Огненного Дракона
+- **EN (эталон):** "Saved by wind dragon, but.... that really is a powerful one."
+- **ED_RU:** — Нас спас дракон ветра. Но силища-то какая…
+
+### Абзац 226 — names
+
+- есть в EN, нет в ED_RU: Горы Огненного Дракона, Карин Могучий Ветер
+- **EN (эталон):** "No, my dragon cannot carry something that heavy."
+- **ED_RU:** — Нет. Мой дракон такую тяжесть не поднимет.
+
+### Абзац 227 — marks
+
+- вопрос «?» только в ED_RU
+- **EN (эталон):** As everyone was pondering who might it be, Julio's laughter sounded from above
+- **ED_RU:** Кто же это мог быть? Пока все недоумевали, с неба донёсся смех Джулио:
+
+### Абзац 229 — names
+
+- есть в EN, нет в ED_RU: «Тигр» (танк)
+- **EN (эталон):** Saito shook his fist in anger, regretting putting the Panzer in danger.
+- **ED_RU:** Сайто с досадой сжал кулаки.
+
+### Абзац 230 — marks
+
+- вопрос «?» только в EN
+- **EN (эталон):** "How is this a debt!?"
+- **ED_RU:** — Какой ещё должок!
+
+### Абзац 233 — names
+
+- есть в EN, нет в ED_RU: Сокрушающий ветер
+- **EN (эталон):** "Whoooooooooo!!!" The Romalian army let out a ground breaking cry.
+- **ED_RU:** — Уо-о-о-о-о-о! — взревели офицеры и солдаты ромалийской армии.
 
 ## JA-сдвиги (известное свойство выравнивания)
 
@@ -515,12 +659,6 @@
 - JA (наррация) и ED_RU (реплика) разного типа — сдвиг выравнивания JA (эталон — EN)
 - **EN (эталон):** " Saito! That's Saito!"
 - **ED_RU:** — Сайто! Это же Сайто!
-
-### Абзац 4 — ja-shift
-
-- JA (наррация) и ED_RU (реплика) разного типа — сдвиг выравнивания JA (эталон — EN)
-- **EN (эталон):** "Incredible! A cannon installed on a giant steel box!"
-- **ED_RU:** — Вот это да! К железному ящику пушку приделали!
 
 ### Абзац 11 — ja-shift
 
@@ -563,6 +701,12 @@
 - JA (наррация) и ED_RU (реплика) разного типа — сдвиг выравнивания JA (эталон — EN)
 - **EN (эталон):** "Oh?"
 - **ED_RU:** — А?
+
+### Абзац 32 — ja-shift
+
+- JA (наррация) и ED_RU (реплика) разного типа — сдвиг выравнивания JA (эталон — EN)
+- **EN (эталон):** "It's me, did you really forget?"
+- **ED_RU:** — Это я. Ты и вправду всё забыла?
 
 ### Абзац 35 — ja-shift
 
@@ -648,12 +792,6 @@
 - **EN (эталон):** "No....., uh, that came out accidentally, it's better to be companions, you know."
 - **ED_RU:** — Да не… это я так, того. Чем больше товарищей, тем лучше же.
 
-### Абзац 73 — ja-shift
-
-- JA (наррация) и ED_RU (реплика) разного типа — сдвиг выравнивания JA (эталон — EN)
-- **EN (эталон):** "-Sigh, how should I put it, just like what Saito said, whether you loved him or not, through magic you erased all memories about him, that is completely true."
-- **ED_RU:** — Ну, это… Как ни крути, Сайто прав. Любила ты его или нет — неважно, но то, что ты магией стёрла ему память, — чистая правда.
-
 ### Абзац 76 — ja-shift
 
 - JA (наррация) и ED_RU (реплика) разного типа — сдвиг выравнивания JA (эталон — EN)
@@ -706,41 +844,251 @@
 
 - JA (наррация) и ED_RU (реплика) разного типа — сдвиг выравнивания JA (эталон — EN)
 - **EN (эталон):** "Do you understand? If so then go attack the enemy, kill every one of those Gallian bunch, come on, aren't you my familiar! Get to work!"
-- **ED_RU:** — Так. Понял? Тогда живо — в погоню за врагом. Раздавите галлийских еретиков всех до единого. Ну!
+- **ED_RU:** — Так. Понял? Тогда живо — в погоню за врагом. Раздавите галлийских еретиков всех до единого. Ну! Ты же мой фамильяр! За работу!
+
+### Абзац 101 — ja-shift
+
+- JA (наррация) и ED_RU (реплика) разного типа — сдвиг выравнивания JA (эталон — EN)
+- **EN (эталон):** "Oh? What are you talking about, we're in the middle of a Crusade! Go and get to--"
+- **ED_RU:** — А? Что ты такое говоришь! Идёт священная война! Живо ступай и…
+
+### Абзац 105 — ja-shift
+
+- JA (наррация) и ED_RU (реплика) разного типа — сдвиг выравнивания JA (эталон — EN)
+- **EN (эталон):** "Pretended to be asleep."
+- **ED_RU:** — Притворялся спящим.
+
+### Абзац 106 — ja-shift
+
+- JA (наррация) и ED_RU (реплика) разного типа — сдвиг выравнивания JA (эталон — EN)
+- **EN (эталон):** "Huh?"
+- **ED_RU:** — А?
+
+### Абзац 107 — ja-shift
+
+- JA (наррация) и ED_RU (реплика) разного типа — сдвиг выравнивания JA (эталон — EN)
+- **EN (эталон):** "You kissed me when I was pretending to be asleep."
+- **ED_RU:** — Ты меня поцеловала, а я притворялся спящим.
 
 ### Абзац 108 — ja-shift
 
 - JA (наррация) и ED_RU (реплика) разного типа — сдвиг выравнивания JA (эталон — EN)
 - **EN (эталон):** "What, What are you talking about!/"
-- **ED_RU:** — Ты поцеловала меня — а я притворялся спящим.
+- **ED_RU:** — Ч-что ты мелешь…
+
+### Абзац 111 — ja-shift
+
+- JA (наррация) и ED_RU (реплика) разного типа — сдвиг выравнивания JA (эталон — EN)
+- **EN (эталон):** "Wa-wait! Know your place....."
+- **ED_RU:** — Погоди! Ну сколько можно…
 
 ### Абзац 112 — ja-shift
 
 - JA (наррация) и ED_RU (реплика) разного типа — сдвиг выравнивания JA (эталон — EN)
 - **EN (эталон):** "Boat, on the boat, you allowed me to 'touch any part of your master's body'."
-- **ED_RU:** — Полно тебе… — А ещё на лодке.
+- **ED_RU:** — А на лодке! На лодке ты сказала: «Могу позволить хозяину потрогать одно местечко — какое выберет».
 
-## Предложение по пересадке (DP-выравнивание)
+### Абзац 115 — ja-shift
 
-Куда, по признакам, должен лечь каждый съехавший ED_RU-абзац. Это ПЛАН, а не правка: первые строки зоны проверить глазами, применять через fix_block.py.
+- JA (наррация) и ED_RU (реплика) разного типа — сдвиг выравнивания JA (эталон — EN)
+- **EN (эталон):** "Did, did not say these kind of things! This guy is lying!"
+- **ED_RU:** — Н-нет! Не говорила! Это он врёт, что в голову взбрело!
 
-- ED_RU 18 → строка 17 (score 15)
-- ED_RU 19 → строка 18 (score 6)
-- ED_RU 30 → строка 31 (score 10)
-- ED_RU 31 → строка 32 (score 6)
-- ED_RU 32 → строка 33 (score 9)
-- ED_RU 100 → строка 99 (score 10)
-- ED_RU 102 → строка 100 (score 4)
-- ED_RU 103 → строка 102 (score 7)
-- ED_RU 104 → строка 103 (score 4)
-- ED_RU 105 → строка 104 (score 5)
-- ED_RU 109 → строка 108 (score 4)
-- ED_RU 110 → строка 109 (score 9)
-- ED_RU 114 → строка 113 (score 6)
-- ED_RU 115 → строка 114 (score 10)
-- ED_RU 116 → строка 115 (score 6)
-- ED_RU 117 → строка 116 (score 12)
-- ED_RU 118 → строка 117 (score 12)
-- ED_RU 120 → строка 119 (score 9)
-- ED_RU 121 → строка 120 (score 4)
+### Абзац 116 — ja-shift
+
+- JA (наррация) и ED_RU (реплика) разного типа — сдвиг выравнивания JA (эталон — EN)
+- **EN (эталон):** "Wearing a black cat's dress, you said 'You are my master today~'; In Albion you told me, 'Hurry up and do it to me'."
+- **ED_RU:** — Костюм чёрной кошки. «Сегодня ты хозяин, нэко». На Альбионе: «Сделай со мной то же самое».
+
+### Абзац 118 — ja-shift
+
+- JA (наррация) и ED_RU (реплика) разного типа — сдвиг выравнивания JA (эталон — EN)
+- **EN (эталон):** "Let's see how she defend This."
+- **ED_RU:** — Вообще-то, это уже перебор.
+
+### Абзац 119 — ja-shift
+
+- JA (наррация) и ED_RU (реплика) разного типа — сдвиг выравнивания JA (эталон — EN)
+- **EN (эталон):** "Even more intense than Saito"
+- **ED_RU:** — Да её аж посильнее Сайто накрыло.
+
+### Абзац 122 — negation
+
+- отрицание EN не передано явно (часто норма при идиоме)
+- **EN (эталон):** "There was no love potion."
+- **ED_RU:** — Это её натура.
+
+### Абзац 125 — ja-shift
+
+- JA (наррация) и ED_RU (реплика) разного типа — сдвиг выравнивания JA (эталон — EN)
+- **EN (эталон):** "Don't, stop telling lies!"
+- **ED_RU:** — В-всё врёшь и врёшь!
+
+### Абзац 127 — negation
+
+- отрицание EN не передано явно (часто норма при идиоме)
+- **EN (эталон):** "All of the are true. Louise, frankly, compared to that,.... you are really it. I may be a dreaming commoner's face, but you are even worse. Honestly, there's no one above you."
+- **ED_RU:** — Всё правда. Слушай, Луиза, честно говоря, ты — это самое. Прямо скажем, слишком это самое. Я и сам изрядный мечтатель с простолюдинским лицом, но ты — куда хлеще. Честно, мало кто за тобой поспеет.
+
+### Абзац 128 — ja-shift
+
+- JA (наррация) и ED_RU (реплика) разного типа — сдвиг выравнивания JA (эталон — EN)
+- **EN (эталон):** "In-insolent! Some-Someone, tie this guy up for me, treat it as a questioning! Insulting the saint of Aquileia with lies....."
+- **ED_RU:** — Н-наглец! Кто-нибудь! Арестуйте его! Отдам под инквизицию! Что этот человек себе позволяет — так говорить аквилейской святой…
+
+### Абзац 129 — ja-shift
+
+- JA (наррация) и ED_RU (реплика) разного типа — сдвиг выравнивания JA (эталон — EN)
+- **EN (эталон):** "But, that's exactly the you I like...."
+- **ED_RU:** — Но мне и нравишься именно такая.
+
+### Абзац 137 — negation
+
+- отрицание EN не передано явно (часто норма при идиоме)
+- **EN (эталон):** A warm current of warmth slowly filled up the crack in her heart, letters without recipients began to named, completed.
+- **ED_RU:** Тёплое, вливавшееся в неё, втягивалось в щели её сердца…
+
+### Абзац 142 — ja-shift
+
+- JA (наррация) и ED_RU (реплика) разного типа — сдвиг выравнивания JA (эталон — EN)
+- **EN (эталон):** "Saito!"
+- **ED_RU:** — Сайто!
+
+### Абзац 144 — ja-shift
+
+- JA (наррация) и ED_RU (реплика) разного типа — сдвиг выравнивания JA (эталон — EN)
+- **EN (эталон):** "W-w-w-w-w-why...."
+- **ED_RU:** — П-п-п-почему…
+
+### Абзац 146 — ja-shift
+
+- JA (наррация) и ED_RU (реплика) разного типа — сдвиг выравнивания JA (эталон — EN)
+- **EN (эталон):** "What?"
+- **ED_RU:** — Что?
+
+### Абзац 151 — ja-shift
+
+- JA (наррация) и ED_RU (реплика) разного типа — сдвиг выравнивания JA (эталон — EN)
+- **EN (эталон):** "W-wait! We're still-still in a battle, what are you doing."
+- **ED_RU:** — Погоди! Идёт же война! Что ты себе позволяешь!
+
+### Абзац 152 — ja-shift
+
+- JA (наррация) и ED_RU (реплика) разного типа — сдвиг выравнивания JA (эталон — EN)
+- **EN (эталон):** "You started it, besides, don't send other people back when you feel like it!"
+- **ED_RU:** — Это ты начала! И вообще — нечего отправлять человека домой по своему произволу!
+
+### Абзац 154 — ja-shift
+
+- JA (наррация) и ED_RU (реплика) разного типа — сдвиг выравнивания JA (эталон — EN)
+- **EN (эталон):** "Because..., because Saito saw a letter from your mother and cried...., you looked so sad, compared to me, didn't you want to go home more.... I thought Saito can only have true happiness only after going home....."
+- **ED_RU:** — Да ведь… Сайто читал письмо от мамы и плакал… и мне стало так его жалко… Я подумала: может, семья ему дороже меня… может, там ты счастливее…
+
+### Абзац 156 — ja-shift
+
+- JA (наррация) и ED_RU (реплика) разного типа — сдвиг выравнивания JA (эталон — EN)
+- **EN (эталон):** "My own future, should be chosen by myself. My happiness, I'm sure is already here...."
+- **ED_RU:** — Своё счастье человек выбирает сам. А моё счастье, по-моему, как раз здесь…
+
+### Абзац 158 — ja-shift
+
+- JA (наррация) и ED_RU (реплика) разного типа — сдвиг выравнивания JA (эталон — EN)
+- **EN (эталон):** "OK~, show's over.... ok? Otherwise, big brother is really going to be angry~"
+- **ED_RU:** — Ну, всё… Пора заканчивать… нэ? А то ведь старший братец разозлится, нэ.
+
+### Абзац 163 — ja-shift
+
+- JA (наррация) и ED_RU (реплика) разного типа — сдвиг выравнивания JA (эталон — EN)
+- **EN (эталон):** "Enemies.... how much are left?"
+- **ED_RU:** — А враги… ещё остались?
+
+### Абзац 169 — ja-shift
+
+- JA (наррация) и ED_RU (реплика) разного типа — сдвиг выравнивания JA (эталон — EN)
+- **EN (эталон):** "Anyhow, let's advance forward for now. Leaving them behind would be troublesome."
+- **ED_RU:** — Ладно, для начала двинемся вперёд. Оставлять их за спиной — себе дороже.
+
+### Абзац 194 — negation
+
+- отрицание EN не передано явно (часто норма при идиоме)
+- **EN (эталон):** "None.... all fled?"
+- **ED_RU:** — Никого… Сбежали, что ли?
+
+### Абзац 195 — ja-shift
+
+- JA (наррация) и ED_RU (реплика) разного типа — сдвиг выравнивания JA (эталон — EN)
+- **EN (эталон):** "Look closely for me."
+- **ED_RU:** — Ищи как следует!
+
+### Абзац 197 — ja-shift
+
+- JA (наррация) и ED_RU (реплика) разного типа — сдвиг выравнивания JA (эталон — EN)
+- **EN (эталон):** "You should look closely, can't you see the outside better on your side."
+- **ED_RU:** — Ты ищи. С твоей-то стороны наружу видно куда лучше!
+
+### Абзац 203 — ja-shift
+
+- JA (наррация) и ED_RU (реплика) разного типа — сдвиг выравнивания JA (эталон — EN)
+- **EN (эталон):** "Black powder."
+- **ED_RU:** — Чёрный порох.
+
+### Абзац 205 — ja-shift
+
+- JA (наррация) и ED_RU (реплика) разного типа — сдвиг выравнивания JA (эталон — EN)
+- **EN (эталон):** "Saito, in the front!"
+- **ED_RU:** — Сайто! Впереди!
+
+### Абзац 206 — negation
+
+- отрицание EN не передано явно (часто норма при идиоме)
+- **EN (эталон):** Colbert cried out, in the fog like a moist morning when the sun is about to rise, a Golomonta showed itself. Saito who always had his hand held tightly on the trigger, pulled without hesitation.
+- **ED_RU:** Прозвучал голос Кольбера. В дымке, что осталась лёгкой пеленой, показался Ёрмунганд. Он потянулся рукой, чтобы схватить ствол, — и в тот самый миг Сайто сжал спусковой рычаг.
+
+### Абзац 210 — ja-shift
+
+- JA (наррация) и ED_RU (реплика) разного типа — сдвиг выравнивания JA (эталон — EN)
+- **EN (эталон):** "Saito, from above!"
+- **ED_RU:** — Сайто! Сверху!
+
+### Абзац 214 — ja-shift
+
+- JA (наррация) и ED_RU (реплика) разного типа — сдвиг выравнивания JA (эталон — EN)
+- **EN (эталон):** "Crap!"
+- **ED_RU:** — Чёрт!
+
+### Абзац 218 — ja-shift
+
+- JA (наррация) и ED_RU (реплика) разного типа — сдвиг выравнивания JA (эталон — EN)
+- **EN (эталон):** "Huh?"
+- **ED_RU:** — Что случилось?
+
+### Абзац 224 — ja-shift
+
+- JA (наррация) и ED_RU (реплика) разного типа — сдвиг выравнивания JA (эталон — EN)
+- **EN (эталон):** "Slipheed?"
+- **ED_RU:** — Сильфида?
+
+### Абзац 228 — ja-shift
+
+- JA (наррация) и ED_RU (реплика) разного типа — сдвиг выравнивания JA (эталон — EN)
+- **EN (эталон):** "Wahahahaahaa! That was really close, no? You sure owe me one~"
+- **ED_RU:** — А-ха-ха! Чуть не попались, да? Считай, с тебя должок!
+
+### Абзац 232 — ja-shift
+
+- JA (наррация) и ED_RU (реплика) разного типа — сдвиг выравнивания JA (эталон — EN)
+- **EN (эталон):** "Look, the arrogant Gallian dogs have been destroyed by us!! May our ancestor's blessing be bestowed upon all of us!"
+- **ED_RU:** — Смотрите! Высокомерные галлийские еретики уничтожены! На нас — благословение Основателя!
+
+### Абзац 235 — ja-shift
+
+- JA (наррация) и ED_RU (реплика) разного типа — сдвиг выравнивания JA (эталон — EN)
+- **EN (эталон):** "What ever did they do?"
+- **ED_RU:** — А эти-то что сделали?
+
+### Абзац 236 — ja-shift
+
+- JA (наррация) и ED_RU (реплика) разного типа — сдвиг выравнивания JA (эталон — EN)
+- **EN (эталон):** "Who knows~~" Reinard answered with his hands open.
+- **ED_RU:** — Кто знает… — Ренар развёл руками.
 

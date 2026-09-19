@@ -1,8 +1,8 @@
 # Выгрузка предфильтра (соответствие строк merged): v14-ch04.md
 
-Абзацев 273, переведено 273. Сигналов: строгих 9, прочих 93, инфо 17, «съезд» 5, JA-сдвигов 79.
+Абзацев 273, переведено 273. Сигналов: строгих 9, прочих 109, инфо 16, «съезд» 5, JA-сдвигов 75.
 
-По типам: marks 15, names 34, negation 61, speech 9
+По типам: marks 15, names 49, negation 61, speech 9
 
 Эталон соответствия — EN. `ja-shift` — не ошибка текста: JA выровнен приблизительно (±1–2 абзаца).
 
@@ -22,7 +22,7 @@
 
 ### Абзац 57 — shift
 
-- ED_RU ближе к EN -1 (score 6 против -13 у своей строки)
+- ED_RU ближе к EN -1 (score 6 против -19 у своей строки)
 - **EN (эталон):** Listening to the shouts of the hawkers, Malicorne sighed. It chimed in resonance with what the other boys had in mind. If they had to rely on Saito no matter wherever they are, the emptiness created by his sudden disappearance just can't be filled by anything else.
 - **ED_RU:** Как ни крути, где-то в глубине души они полагались на Сайто.
 
@@ -82,7 +82,7 @@
 
 ### Абзац 213 — shift
 
-- ED_RU ближе к EN -1 (score 10 против 7 у своей строки)
+- ED_RU ближе к EN -1 (score 10 против 4 у своей строки)
 - **EN (эталон):** "...Since Louise says this kind of things, perhaps she would be better off this way. ... That must have been what you thought, since she did look very painful
 - **ED_RU:** — Я-то мужчина. Так не думаю. Для мужчины воспоминания — драгоценность. Но раз Луиза так решила — может, мне и не стоит лезть.
 
@@ -96,7 +96,7 @@
 
 ### Абзац 1 — names
 
-- есть в EN, нет в ED_RU: Глава вторая. Церемония в честь третьей годовщины восшествия на престол, Ромалия
+- есть в EN, нет в ED_RU: Глава вторая. Церемония в честь третьей годовщины восшествия на престол, Ромалия, Ромальская империя
 - **EN (эталон):** As the day of the third annual coronation ceremony began, Guiche and the Ondine Water Spirit Knights were ordered to maintain order at the gates around the city. Aquileia's narrow alleys were mapped with complicated waterway patterns. All Romalia Pilgrims would be congregating in this tiny place. Th…
 - **ED_RU:** В день трёхлетней годовщины коронации Гиш и отряд водных духов «Ундина» получили приказ поддерживать порядок на улицах города. Аквилея — тесный город, изрезанный запутанным кружевом каналов; а туда со всей Халкегинии съехались паломники, почитатели Бримира. И это было сущей головной болью.
 
@@ -120,7 +120,7 @@
 
 ### Абзац 6 — names
 
-- есть в EN, нет в ED_RU: Ромалия
+- есть в EN, нет в ED_RU: Ромалия, Ромальская империя
 - **EN (эталон):** "Oi, oi, we came here all the way from Romalia! Making an exception here won't kill you!"
 - **ED_RU:** — Эй-эй, мы ради этого из самой Германии пожали! Чуть-чуть-то можно!
 
@@ -182,7 +182,7 @@
 
 - есть в EN, нет в ED_RU: Ундина
 - **EN (эталон):** All of the Ondine Knights darkened their faces. Malicorne replied with a small voice
-- **ED_RU:** Юноши из отряда водных духов скисли. Маликорн тихо проговорил.
+- **ED_RU:** Юноши из отряда водных духов скисли. Маликорн тихо проговорил:
 
 ### Абзац 39 — negation
 
@@ -208,6 +208,12 @@
 - **EN (эталон):** Gimili made a fist and vented his depression on the ground.
 - **ED_RU:** И сердце их всё никак не поспевало за этой внезапной разлукой.
 
+### Абзац 59 — names
+
+- есть в EN, нет в ED_RU: госпожа Святая
+- **EN (эталон):** "...But, her feelings I can also understand. Although I am not clear, but that guy probably came from somewhere far away? I remember he came from the east? I'm sure he'd wanted to see his family as much as we did. Besides, Louise, eventually, is a girl. One day she'd be tired of his fighting, I gues…
+- **ED_RU:** — Вот Луиза, вечно всё по-своему! — Гимли стиснул кулак и стукнул им о землю. — …Но я её понимаю. Тот парень, я точно не знаю, пришёл издалека, да? С востока, кажется? Хочется повидаться с семьёй — у всех так. А Луиза, как ни крути, девчонка; наверняка ей просто стало невмоготу вечно посылать его в …
+
 ### Абзац 61 — negation
 
 - лишнее отрицание в ED_RU (в EN его нет)
@@ -228,7 +234,7 @@
 
 ### Абзац 69 — names
 
-- есть в EN, нет в ED_RU: Врата мира, Ромалия
+- есть в EN, нет в ED_RU: Врата мира, Ромалия, Ромальская империя
 - **EN (эталон):** "How would there be a war! Even Gallia knows the consequences of having a war in this city filled with Romalia Pilgrims. They could become the world's public enemy!"
 - **ED_RU:** — Да какая война! Даже Галлия понимает, что случится, если затеять бойню в городе, куда съехалось столько бримиритов. Врагом всего мира станешь!
 
@@ -298,15 +304,27 @@
 - **EN (эталон):** "So what, it's not like losing is our only choice. Besides..."
 - **ED_RU:** — Да неужели мы обязательно проиграем? К тому же…
 
+### Абзац 117 — names
+
+- есть в EN, нет в ED_RU: госпожа Святая
+- **EN (эталон):** Gimili's eyes landed on the a small window on the Cathedral across the center. There sat a small Louise in nun clothes. Saddened by the sight, he sighed
+- **ED_RU:** Гимли, заметивший в окне собора, видном с площади, маленькую фигурку Луизы в облачении монахини, проговорил с досадой:
+
 ### Абзац 118 — negation
 
 - лишнее отрицание в ED_RU (в EN его нет)
 - **EN (эталон):** "That girl Louise... Even when our morale is at its lowest, she still have the feelings to keep praying.... At least be aware of what we would experience when we'll be fighting with that elf."
 - **ED_RU:** — Ну и Луиза… Мы тут так переживаем, а она молится себе беззаботно… а нам, что ли, не тяжело против эльфа стоять!
 
+### Абзац 119 — names
+
+- есть в EN, нет в ED_RU: госпожа Святая
+- **EN (эталон):** "Hey~ Hey~, compared to us, Louise must be more troubled.
+- **ED_RU:** — Да ну, Луизе куда тяжелее, чем нам.
+
 ### Абзац 121 — names
 
-- есть в EN, нет в ED_RU: Ромалия, шкатулка Основателя
+- есть в EN, нет в ED_RU: Ромалия, Ромальская империя, шкатулка Основателя
 - **EN (эталон):** Hearing this, the boys quieted down. Just this moment, a band wearing silly clothes passed by, starting to play beautiful music. Devoted Romalia Pilgrims roared immediately, complaining "too loud, too loud".
 - **ED_RU:** Юноши приумолкли. Мимо прошла труппа музыкантов, разодетых пёстрыми клоунами, и оглушительно заиграла. От набожных бримиритов посыпалось: «Слишком громко! Слишком громко!»
 
@@ -324,7 +342,7 @@
 
 ### Абзац 127 — names
 
-- есть в EN, нет в ED_RU: Тиффания
+- есть в EN, нет в ED_RU: Тиффания Уэствуд, госпожа Святая
 - **EN (эталон):** Louise claimed happily to the Tiffania beside here.
 - **ED_RU:** С сияющим видом проговорила Луиза Тифании. «Т-точно…», — отозвалась та.
 
@@ -342,7 +360,7 @@
 
 ### Абзац 133 — names
 
-- есть в EN, нет в ED_RU: Тиффания
+- есть в EN, нет в ED_RU: Тиффания Уэствуд, госпожа Святая
 - **EN (эталон):** Tiffania honestly voiced her thoughts, Louise's eyes immediately shone brightly
 - **ED_RU:** Стоило Тифании честно поделиться впечатлением, как Луиза прищурилась.
 
@@ -388,17 +406,35 @@
 - **EN (эталон):** "I reckon if they wanted to do anything, they would've marched their army in already. Anyhow, we're here to -slaps back- relax, -slaps back- enjoy ourselves for good"
 - **ED_RU:** — Тут, если что замышлять, то армию приводи, по-другому ни о чём. Шучу, шучу. Ну так что — оторвёмся как следует? Оторвёмся!
 
+### Абзац 147 — names
+
+- есть в EN, нет в ED_RU: госпожа Святая
+- **EN (эталон):** Unforgivingly, Louise shook her head.
+- **ED_RU:** Но Луиза замотала головой.
+
 ### Абзац 148 — marks
 
 - вопрос «?» только в ED_RU
 - **EN (эталон):** "What are you talking about! Being the sacred nuns, it's exactly now that we should help his holiness. Besides, as soon as we get careless, the enemy will strike. You people should re...Mmm!"
 - **ED_RU:** — Вы что несёте? Мы сейчас служим священными монахинями при Его Святейшестве. И потом, никогда не знаешь, когда враг нападёт. Слушайте хор… ай!
 
+### Абзац 149 — names
+
+- есть в EN, нет в ED_RU: госпожа Святая
+- **EN (эталон):** Guiche didn't wait for Louise to finish and already picked her up, chuckling to himself as he walks out.
+- **ED_RU:** Но Гиш с товарищами взяли Луизу на руки и с криками «вошь-вошь» понесли.
+
 ### Абзац 151 — names
 
-- есть в EN, нет в ED_RU: Ундина
+- есть в EN, нет в ED_RU: Ундина, госпожа Святая
 - **EN (эталон):** The Louise being compelled to get on a phoenix tailed ship floating in the waterway started to quarrel with the leader of Ondine Water Spirit Knights.
 - **ED_RU:** Луизу донесли до гондолы, плавающей в канале, — и пришлось ей приобщиться к дурачьям отряда водных духов.
+
+### Абзац 157 — names
+
+- есть в EN, нет в ED_RU: госпожа Святая
+- **EN (эталон):** Louise stared blankly at Guiche. Guiche's shocked face matched his ridiculous clothes perfectly.
+- **ED_RU:** Но Луиза с недоумённым лицом уставилась на Гиша. У Гиша в его клоунском наряде появилось глупое изумление, как нельзя лучше шедшее к его костюму.
 
 ### Абзац 158 — negation
 
@@ -412,17 +448,41 @@
 - **EN (эталон):** Seeing Louise enraged, Gimili exclaimed
 - **ED_RU:** Вот от такого наскока Гимли не удержался и отпорол:
 
+### Абзац 166 — names
+
+- есть в EN, нет в ED_RU: госпожа Святая
+- **EN (эталон):** "Louise! Louise! Looks like it messed up her brain!"
+- **ED_RU:** — Луиза! Луиза! — совсем из ума вышибло от потрясения!
+
 ### Абзац 167 — negation
 
 - лишнее отрицание в ED_RU (в EN его нет)
 - **EN (эталон):** "You people are really helpless..., just now you mentioned..., yes, this Saito..."
 - **ED_RU:** — Да, ничего не поделаешь… ты ведь так его… того… Сайто…
 
+### Абзац 168 — names
+
+- есть в EN, нет в ED_RU: госпожа Святая
+- **EN (эталон):** Guiche and the rest was on the verge of not being able to hold their breath. This sudden reaction from Louise made the whole boat sway sideways. Finally, Louise couldn't stand it any longer and yelled at Guiche, obviously in fury
+- **ED_RU:** Гиш с товарищами, схватившись за головы, зарыдали. Гондола от этого размашисто закачалась, и Луиза, чуть не свалившись, наорала на них.
+
 ### Абзац 172 — marks
 
 - вопрос «?» только в ED_RU
 - **EN (эталон):** "The male with that weird name Is your familiar, you know."
 - **ED_RU:** — Ты ведь его, того, со странным именем, держала при себе как фамильяра?
+
+### Абзац 175 — names
+
+- есть в EN, нет в ED_RU: Глава девятая. Память уз
+- **EN (эталон):** Speaking of which..., she once removed Saito's fake memories in Albion..."
+- **ED_RU:** *Кстати… она ведь как-то в Альбионе стёрла у Сайто некую «ложную память»…*
+
+### Абзац 176 — negation
+
+- лишнее отрицание в ED_RU (в EN его нет)
+- **EN (эталон):** Was it that magic?
+- **ED_RU:** *Не та ли это магия?*
 
 ### Абзац 178 — negation
 
@@ -432,15 +492,9 @@
 
 ### Абзац 180 — names
 
-- есть в EN, нет в ED_RU: Тиффания
+- есть в EN, нет в ED_RU: Тиффания Уэствуд
 - **EN (эталон):** However, in this case, that is completely unnecessary. Staring at Tiffania's face without moving a muscle, is considered a rare way when treating females. All of the boys bulged their eyes.
 - **ED_RU:** Но сейчас рассуждать об этом было некогда. Гиш пристально вгляделся в лицо Тифании в облачении монахини. Для Гиша, никогда не позволявшего себе такого с женщинами, поступок редкий — юноши вытаращили глаза.
-
-### Абзац 181 — names
-
-- есть в ED_RU, нет в EN: Тиффания
-- **EN (эталон):** "Miss Westwood. I have a question."
-- **ED_RU:** — Мисс Тиффания. У меня к вам вопрос.
 
 ### Абзац 183 — negation
 
@@ -450,15 +504,9 @@
 
 ### Абзац 186 — names
 
-- есть в EN, нет в ED_RU: Тиффания
+- есть в EN, нет в ED_RU: госпожа Святая
 - **EN (эталон):** Excitedly, the boys leaped towards Tiffania and tied her up in a flash. Louise tried to say something, but was tied up as well.
 - **ED_RU:** Юноши с радостью бросились на Тиффанию и замотали её верёвкой с ног до головы. Луиза завизжала и принялась жаловаться — её связали точно так же.
-
-### Абзац 187 — names
-
-- есть в EN, нет в ED_RU: Тиффания
-- **EN (эталон):** The tied up Tiffania fell down on a side in the phoenix tailed boat, trembling while blushing red.
-- **ED_RU:** Связанную Тиффанию перевернули на бок прямо в гондоле; она, пунцовая, дрожала мелкой дрожью.
 
 ### Абзац 189 — negation
 
@@ -494,7 +542,7 @@
 
 - лишнее отрицание в ED_RU (в EN его нет)
 - **EN (эталон):** "Personally, I dislike hurting women. Unfortunately, this all depends on the time and place as well. Malicorne, about whether Tiffania's breasts are real, go and investigate."
-- **ED_RU:** — Я не любитель обижать женщин. Но всё зависит от времени и места. Маликорн, проверь-ка, настоящая ли у мисс Тифании грудь.
+- **ED_RU:** — Я не любитель обижать женщин. Но всё зависит от времени и места. Маликорн, проверь-ка, настоящая ли у мадемуазель Тиффании грудь.
 
 ### Абзац 202 — marks
 
@@ -502,9 +550,21 @@
 - **EN (эталон):** "Hey, you people, what did you do to Tiffania!"
 - **ED_RU:** — Эй, вы! Что вы с Тифанией делаете?!
 
+### Абзац 203 — names
+
+- есть в EN, нет в ED_RU: госпожа Святая
+- **EN (эталон):** Facing the agitated and steaming Louise, Guiche gently said
+- **ED_RU:** Взбешённой Луизе Гиш мягко сказал:
+
+### Абзац 204 — names
+
+- есть в EN, нет в ED_RU: госпожа Святая
+- **EN (эталон):** "My dear Louise, would you care to listen to me?"
+- **ED_RU:** — Ну что, Луиза. Выслушаешь меня?
+
 ### Абзац 207 — names
 
-- есть в EN, нет в ED_RU: Луиза, Луиза-Нулиза
+- есть в EN, нет в ED_RU: Луиза, Луиза Нулевая, Луиза-Нулиза, госпожа Святая
 - **EN (эталон):** Hearing Guiche being so direct, Louise is still in the clouds.
 - **ED_RU:** И он любил тебя.
 
@@ -526,12 +586,6 @@
 - **EN (эталон):** "Ohh. Back then, nothing came out in the end. I was really depressed at that time.... But this can be explained. It has something to do with my magic class, although I can't tell you.... Just watch, after this, I will summon the most ultimate familiar in the world!"
 - **ED_RU:** — Да. У меня тогда в конце концов ничего не вышло. Расстроилась, конечно… Но на то была причина. Причина касается моей стихии, так что вам её не расскажу… Смотрите: в следующий раз я призову лучшего в мире фамильяра!
 
-### Абзац 211 — names
-
-- есть в EN, нет в ED_RU: Тиффания
-- **EN (эталон):** All of a sudden, Guiche felt very helpless. Angrily, he glared at Tiffania. He then lowered his body and hissed in her ear
-- **ED_RU:** Внезапно Гиш почувствовал себя беспомощным. Он уныло повесил голову и злопамятно уставился на Тиффанию.
-
 ### Абзац 213 — negation
 
 - лишнее отрицание в ED_RU (в EN его нет)
@@ -546,9 +600,21 @@
 
 ### Абзац 216 — names
 
-- есть в EN, нет в ED_RU: Тиффания
+- есть в EN, нет в ED_RU: Тиффания Уэствуд, госпожа Святая
 - **EN (эталон):** Hurried by his teammates, the ropes on Louise and Tiffania were finally let loose. As soon as the phoenix tailed boat stopped at the dock, Guiche and the rest jumped off.
 - **ED_RU:** Поторопив товарищей, он развязал верёвки на Луизе и Тифании. Гондола подошла к причалу, и Гиш с остальными выпрыгнули на берег.
+
+### Абзац 217 — names
+
+- есть в EN, нет в ED_RU: госпожа Святая
+- **EN (эталон):** Louise, who was left behind, angrily glared at their backs.
+- **ED_RU:** Оставленная Луиза сердито провожала их спины взглядом.
+
+### Абзац 219 — names
+
+- есть в EN, нет в ED_RU: госпожа Святая
+- **EN (эталон):** Watching Louise like this, Tiffania fell into deep thoughts as well.
+- **ED_RU:** Глядя на такую Луизу, Тиффания тоже глубоко задумалась.
 
 ### Абзац 222 — negation
 
@@ -568,11 +634,23 @@
 - **EN (эталон):** Written on the nobles faces, were all weariness and anxiousness. They really can't be blamed, having to transport and guard such a heavy item all the journey.
 - **ED_RU:** На лицах у дворян читались усталость и напряжение. Что ж, понятно: тащили сюда через всё море огромный и тяжёлый груз…
 
+### Абзац 231 — names
+
+- есть в EN, нет в ED_RU: союз королевских домов
+- **EN (эталон):** A weird, half-cranking, half-creaking sound came out from the bird's beak. A certain object was being transported through magic. The height of this thing was even higher than two buildings..., is the same Panzer Saito saw at the grave underground of Romalia kings.
+- **ED_RU:** Из грузового отсека в глубине клюва донёсся глухой рокот — магией вытягивали наружу что-то огромное. Громадина высотой с двухэтажный дом… тот самый «тигр», что показывали Сайто в подземельях ромалийских королей.
+
 ### Абзац 232 — names
 
-- есть в ED_RU, нет в EN: Ромалия
+- есть в ED_RU, нет в EN: Ромалия, Ромальская империя
 - **EN (эталон):** Right underneath the Panzer, were those logs... the same species of wood of which logs are made from as the ones they would use to transport giant stone blocks a castle is under construction. Only those logs will stand the pressure of the Panzer and roll simultaneously.
 - **ED_RU:** Под «тигром» были выложены те самые брёвна… — так, как когда-то при возведении замков катили огромные камни, решили перекатить и «тигра». Стоя на танке, командовал ромалийскими дворянами Кольбер.
+
+### Абзац 233 — names
+
+- есть в EN, нет в ED_RU: Глава восьмая. Стальной тигр
+- **EN (эталон):** "Everyone please take care! Any plain log, even with the 'harden spell' casted on them will not sustain the weight of this steel lump. It weights as much as 12,000 Libros!"
+- **ED_RU:** — Господа! Соберитесь! Брёвна под «закалкой» против стальной махины весом в сто двадцать тысяч ливров не выстоят — ни за что!
 
 ### Абзац 234 — negation
 
@@ -606,7 +684,7 @@
 
 ### Абзац 250 — names
 
-- есть в EN, нет в ED_RU: Панцирь Дракона
+- есть в EN, нет в ED_RU: Горы Огненного Дракона, Панцирь Дракона
 - **EN (эталон):** "In somewhat way, yeah. It wasn't easy, using 'gasoline' to pilot this 'work of art' and the 'Dragon's Raiment'. Mm, although fundamentally, there are a few big differences. Anyhow, mastering its structure requires time. It's not something that can be done overnight."
 - **ED_RU:** — Ну, как-нибудь справимся. Похоже, это «произведение искусства», как и та «накидка дракона», работает на «бензине». Правда, качество, судя по всему, чуть иное. В общем, нужно время разобраться в конструкции. С ходу не выйдет.
 
@@ -618,7 +696,7 @@
 
 ### Абзац 259 — names
 
-- есть в EN, нет в ED_RU: Кольбер Огненный Змей
+- есть в EN, нет в ED_RU: Глава восьмая. Стальной тигр, Кольбер Огненный Змей
 - **EN (эталон):** However..., with only the power of Colbert, perhaps he might make it move, but for it to go into combat, is definitely out of reach. This needs exactly Saito's power. If Saito isn't here, this is nothing but a giant steel box.
 - **ED_RU:** Но… заставить эту штуку двигаться он, может, и сумеет, а вот «пустить в бой» — никак. Для этого нужна сила левой руки Сайто. Без Сайто это просто большой железный ящик.
 
@@ -638,7 +716,25 @@
 
 - есть в ED_RU, нет в EN: Кольбер Огненный Змей
 - **EN (эталон):** Traveling at this time of the year? Saito Is a part of the Queen's personal guards. Perhaps he is on a secret mission again.''
-- **ED_RU:** _Путешествие? В такое время?_ — недоумевал Кольбер, но Сайто — гвардеец Её Величества.
+- **ED_RU:** *Путешествие? В такое время?* — недоумевал Кольбер, но Сайто — гвардеец Её Величества.
+
+### Абзац 267 — names
+
+- есть в ED_RU, нет в EN: «Тигр» (танк)
+- **EN (эталон):** The black clothed males somehow started to transport the tank into the warehouse, hooking the front with a rope to pull with.
+- **ED_RU:** Люди в чёрном принялись затаскивать танк в склад: к крюку на носу «тигра» зацепили трос.
+
+### Абзац 268 — names
+
+- есть в EN, нет в ED_RU: Левитация
+- **EN (эталон):** The moves started pulling, while the aristocrats applied "levitation" to help out. On the "hardened" logs, this Panzer started to roll again.
+- **ED_RU:** Грузчики налегли на трос, дворяне помогли магией. И «тигр» снова покатился по брёвнам, заговорённым на «закалку».
+
+### Абзац 269 — names
+
+- есть в EN, нет в ED_RU: «Тигр» (танк)
+- **EN (эталон):** Sticking her head out of the Panzer's cabin, Kirche winced her eyes at Julio and Colbert in the midst of some sort of a conversation.
+- **ED_RU:** Высунувшись из люка танка, Кирхе прищуренными глазами наблюдала за Кольбером и Джулио, о чём-то беседовавшими.
 
 ### Абзац 270 — negation
 
@@ -816,12 +912,6 @@
 - **EN (эталон):** Listening to the shouts of the hawkers, Malicorne sighed. It chimed in resonance with what the other boys had in mind. If they had to rely on Saito no matter wherever they are, the emptiness created by his sudden disappearance just can't be filled by anything else.
 - **ED_RU:** Пробормотал Маликорн уныло, слушая выкрики торговцев. Ту же мысль машинально вертели в голове и остальные юноши из отряда.
 
-### Абзац 59 — ja-shift
-
-- JA (наррация) и ED_RU (реплика) разного типа — сдвиг выравнивания JA (эталон — EN)
-- **EN (эталон):** "...But, her feelings I can also understand. Although I am not clear, but that guy probably came from somewhere far away? I remember he came from the east? I'm sure he'd wanted to see his family as much as we did. Besides, Louise, eventually, is a girl. One day she'd be tired of his fighting, I gues…
-- **ED_RU:** — Вот Луиза, вечно всё по-своему! — Гимли стиснул кулак и стукнул им о землю. — …Но я её понимаю. Тот парень, я точно не знаю, пришёл издалека, да? С востока, кажется? Хочется повидаться с семьёй — у всех так. А Луиза, как ни крути, девчонка; наверняка ей просто стало невмоготу вечно посылать его в …
-
 ### Абзац 63 — ja-shift
 
 - JA (наррация) и ED_RU (реплика) разного типа — сдвиг выравнивания JA (эталон — EN)
@@ -954,12 +1044,6 @@
 - **EN (эталон):** "Which is why, we should be happier right now. You only get one chance at living!"
 - **ED_RU:** — Ну, раз так, бежать уже никак нельзя… Вот потому давайте хоть сейчас повеселимся. Жизнь-то одна!
 
-### Абзац 119 — ja-shift
-
-- JA (наррация) и ED_RU (реплика) разного типа — сдвиг выравнивания JA (эталон — EN)
-- **EN (эталон):** "Hey~ Hey~, compared to us, Louise must be more troubled.
-- **ED_RU:** — Да ну, Луизе куда тяжелее, чем нам.
-
 ### Абзац 120 — negation
 
 - отрицание EN не передано явно (часто норма при идиоме)
@@ -1056,12 +1140,6 @@
 - **EN (эталон):** "Are you kidding me! It was because that you insisted, you made Saito..."
 - **ED_RU:** — Ну нельзя же так! Да и вообще это ты сам, по своему хотению, Сайто… ммф!
 
-### Абзац 166 — ja-shift
-
-- JA (наррация) и ED_RU (реплика) разного типа — сдвиг выравнивания JA (эталон — EN)
-- **EN (эталон):** "Louise! Louise! Looks like it messed up her brain!"
-- **ED_RU:** — Луиза! Луиза! — совсем из ума вышибло от потрясения!
-
 ### Абзац 169 — ja-shift
 
 - JA (наррация) и ED_RU (реплика) разного типа — сдвиг выравнивания JA (эталон — EN)
@@ -1092,6 +1170,12 @@
 - **EN (эталон):** Guiche knows that Tiffania wields a fascinating magic, which is also the reason why she is not taken lightly by Henrietta and be assigned as a nun of the Pope.
 - **ED_RU:** Гиш знал, что Луиза и Тиффания владеют какой-то странной магией — потому-то их, как фрейлин Анриетты и монахинь папы, так берегли.
 
+### Абзац 181 — ja-shift
+
+- JA (наррация) и ED_RU (реплика) разного типа — сдвиг выравнивания JA (эталон — EN)
+- **EN (эталон):** "Miss Westwood. I have a question."
+- **ED_RU:** — Мадемуазель Тиффания. У меня к вам вопрос.
+
 ### Абзац 182 — ja-shift
 
 - JA (наррация) и ED_RU (реплика) разного типа — сдвиг выравнивания JA (эталон — EN)
@@ -1102,7 +1186,7 @@
 
 - JA (наррация) и ED_RU (реплика) разного типа — сдвиг выравнивания JA (эталон — EN)
 - **EN (эталон):** "Tie Miss Westwood up."
-- **ED_RU:** — Связать мисс Тиффанию.
+- **ED_RU:** — Связать мадемуазель Тиффанию.
 
 ### Абзац 188 — ja-shift
 
@@ -1128,12 +1212,6 @@
 - **EN (эталон):** "Because, it's for her own good!"
 - **ED_RU:** — Просто мне показалось, так будет лучше!
 
-### Абзац 204 — ja-shift
-
-- JA (наррация) и ED_RU (реплика) разного типа — сдвиг выравнивания JA (эталон — EN)
-- **EN (эталон):** "My dear Louise, would you care to listen to me?"
-- **ED_RU:** — Ну что, Луиза. Выслушаешь меня?
-
 ### Абзац 205 — ja-shift
 
 - JA (наррация) и ED_RU (реплика) разного типа — сдвиг выравнивания JA (эталон — EN)
@@ -1151,12 +1229,6 @@
 - JA (наррация) и ED_RU (реплика) разного типа — сдвиг выравнивания JA (эталон — EN)
 - **EN (эталон):** "Really, what were they thinking!"
 - **ED_RU:** — Вот же, о чём они вообще думают!
-
-### Абзац 221 — negation
-
-- отрицание EN не передано явно (часто норма при идиоме)
-- **EN (эталон):** Is there no other way than this?
-- **ED_RU:** _Не было ли другого пути?_
 
 ### Абзац 223 — ja-shift
 
@@ -1176,12 +1248,6 @@
 - **EN (эталон):** This enormous vessel porting is none other than the "Orient". The nobles standing guard on the deck casted another volley of wind magics, finally stabilizing this monstrous ship. In the end, few figures of pitch blackness sprung out from the warehouse of the docks, grabbing the harness and tied it a…
 - **ED_RU:** В порт вошёл «Остланд», осевший в воду куда глубже обычного. Выстроившиеся на палубе дворяне ещё несколькими ветряными чарами кое-как уняли раскачку исполина. Затем из-за каменных складов порта вынырнули люди в чёрном и один за другим стали кидать канаты, закрепляя корабль у стенки.
 
-### Абзац 233 — ja-shift
-
-- JA (наррация) и ED_RU (реплика) разного типа — сдвиг выравнивания JA (эталон — EN)
-- **EN (эталон):** "Everyone please take care! Any plain log, even with the 'harden spell' casted on them will not sustain the weight of this steel lump. It weights as much as 12,000 Libros!"
-- **ED_RU:** — Господа! Соберитесь! Брёвна под «закалкой» против стальной махины весом в сто двадцать тысяч ливров не выстоят — ни за что!
-
 ### Абзац 236 — ja-shift
 
 - JA (наррация) и ED_RU (реплика) разного типа — сдвиг выравнивания JA (эталон — EN)
@@ -1192,7 +1258,7 @@
 
 - JA (наррация) и ED_RU (реплика) разного типа — сдвиг выравнивания JA (эталон — EN)
 - **EN (эталон):** "It's alright now, Miss Zerbst, Miss Tabitha."
-- **ED_RU:** — Ну вот и всё. Мисс Цербст. Мисс Табита.
+- **ED_RU:** — Ну вот и всё. Фройляйн Цербст. Мадемуазель Табита.
 
 ### Абзац 249 — ja-shift
 
@@ -1228,4 +1294,5 @@
 
 - отрицание EN не передано явно (часто норма при идиоме)
 - **EN (эталон):** Colbert made up a story for himself, and did not pursue.
-- **ED_RU:** _…возможно, его отправили с тайным поручением,_ — подумал он и оставил расспросы.
+- **ED_RU:** *…возможно, его отправили с тайным поручением,* — подумал он и оставил расспросы.
+

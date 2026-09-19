@@ -1,8 +1,8 @@
 # Выгрузка предфильтра (соответствие строк merged): v14-ch05.md
 
-Абзацев 178, переведено 178. Сигналов: строгих 7, прочих 64, инфо 3, «съезд» 5, JA-сдвигов 48.
+Абзацев 178, переведено 178. Сигналов: строгих 7, прочих 67, инфо 3, «съезд» 5, JA-сдвигов 47.
 
-По типам: marks 4, names 36, negation 27, speech 7
+По типам: marks 4, names 39, negation 27, speech 7
 
 Эталон соответствия — EN. `ja-shift` — не ошибка текста: JA выровнен приблизительно (±1–2 абзаца).
 
@@ -306,7 +306,7 @@
 
 ### Абзац 102 — names
 
-- есть в EN, нет в ED_RU: Отряд Мантикор
+- есть в EN, нет в ED_RU: Отряд Мантикор, младший лейтенант Вилер
 - **EN (эталон):** The Valiag troops reached about three hundred meters from them. The range corps started shooting arrows. For a split second, the sky darkened with clouds of arrows. As soon as they reached their maximum height, several hundreds of arrows were pulled by gravity, aiming directly at Saito and the other…
 - **ED_RU:** Варяги, подойдя на триста миль, разом выпустили тучи стрел из длинных луков. Небо на мгновение потемнело от стрел. Сотни стрел, миновав верхнюю точку, под собственной тяжестью посыпались вниз — прямо на Сайто и остальных.
 
@@ -358,6 +358,12 @@
 - **EN (эталон):** "Is the magic still not done! C'mon! We can't fend them off for much longer!"
 - **ED_RU:** — Ну где магия?! Живей! Больше не выстоять!
 
+### Абзац 130 — names
+
+- есть в EN, нет в ED_RU: младший лейтенант Вилер
+- **EN (эталон):** Each second they endured felt like a minute under the endless pressure. The pikes attacked with a whoosh.
+- **ED_RU:** Каждая секунда, густая, забивающая горло, тянулась, как минута, а он всё вертел копьём… и вдруг —
+
 ### Абзац 133 — names
 
 - есть в EN, нет в ED_RU: Основатель Бримир
@@ -370,11 +376,23 @@
 - **EN (эталон):** A white ball of light started to form before Saito's eyes.....then, created a giant explosion. The explosion engulfed the enemy troops. Rays of light spread all over the place, causing destruction and chaos.
 - **ED_RU:** Перед глазами Сайто разбух ослепительно белый шар света… и грянул исполинский взрыв. Он поглотил войско, разбрызгав вокруг разрушение и хаос.
 
+### Абзац 138 — names
+
+- есть в EN, нет в ED_RU: младший лейтенант Вилер
+- **EN (эталон):** Saito bumped into the ground. For a split second, he nearly lost his senses. While whispering, he supported his body. Looks like he wasn't hurt particularly badly, but his entire body still felt numb with pain.
+- **ED_RU:** Шлёпнувшись оземь, Сайто на миг почувствовал, как мутнеет сознание. Кувырок, сделанный инстинктивно, уберёг от серьёзных травм, только нудная ломота расползлась по всему телу.
+
 ### Абзац 139 — names
 
 - есть в EN, нет в ED_RU: Сайто Хирага, Саша
 - **EN (эталон):** Suddenly, someone grabbed Saito's wrist. He looked up. A mud-splattered Sasha stood there.
 - **ED_RU:** Кто-то вдруг схватил его за руку; подняв глаза, он увидел перепачканную грязью Сашу.
+
+### Абзац 141 — names
+
+- есть в EN, нет в ED_RU: госпожа Святая
+- **EN (эталон):** "N-no, not good at all……it had unexpectedly wrapped us up in it....... this is even scarier than Louise....."
+- **ED_RU:** — Д-да не в порядке… да нас же тоже накрыло… Ну и гора — Луиза и рядом не стояла.
 
 ### Абзац 145 — negation
 
@@ -444,7 +462,7 @@
 
 ### Абзац 166 — names
 
-- есть в EN, нет в ED_RU: Врата мира, Основатель Бримир
+- есть в EN, нет в ED_RU: Врата мира, Основатель Бримир, госпожа Святая
 - **EN (эталон):** Saito attentively watched the Founder of Louise's world's back for a long long time.
 - **ED_RU:** Сайто смотрел вслед этому далёкому-далёкому, бесконечно далёкому предку Луизы.
 
@@ -695,12 +713,6 @@
 - JA (наррация) и ED_RU (реплика) разного типа — сдвиг выравнивания JA (эталон — EN)
 - **EN (эталон):** "You also all right?"
 - **ED_RU:** — Живой?
-
-### Абзац 141 — ja-shift
-
-- JA (наррация) и ED_RU (реплика) разного типа — сдвиг выравнивания JA (эталон — EN)
-- **EN (эталон):** "N-no, not good at all……it had unexpectedly wrapped us up in it....... this is even scarier than Louise....."
-- **ED_RU:** — Д-да не в порядке… да нас же тоже накрыло… Ну и гора — Луиза и рядом не стояла.
 
 ### Абзац 142 — negation
 

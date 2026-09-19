@@ -1,8 +1,8 @@
 # Выгрузка предфильтра (соответствие строк merged): v14-ch07.md
 
-Абзацев 314, переведено 314. Сигналов: строгих 7, прочих 133, инфо 6, «съезд» 10, JA-сдвигов 78.
+Абзацев 314, переведено 314. Сигналов: строгих 7, прочих 135, инфо 6, «съезд» 12, JA-сдвигов 78.
 
-По типам: marks 16, names 88, negation 35, speech 7
+По типам: marks 16, names 90, negation 35, speech 7
 
 Эталон соответствия — EN. `ja-shift` — не ошибка текста: JA выровнен приблизительно (±1–2 абзаца).
 
@@ -62,6 +62,12 @@
 - **EN (эталон):** How could this be possible... Saito thought, his strength leaving him.
 - **ED_RU:** — Не может быть… — выдохнул он обессиленно.
 
+### Абзац 240 — shift
+
+- ED_RU ближе к EN +1 (score 6 против 3 у своей строки)
+- **EN (эталон):** This is a sight seen everywhere in Japan.
+- **ED_RU:** Цветочный горшок на нём. Дешёвая фанерная дверь и стальная ручка, которую он держал столько раз…
+
 ### Абзац 249 — shift
 
 - ED_RU ближе к EN -1 (score 6 против 3 у своей строки)
@@ -91,6 +97,12 @@
 - ED_RU ближе к EN -1 (score 6 против 0 у своей строки)
 - **EN (эталон):** He did say that.
 - **ED_RU:** А его опора — это…
+
+### Абзац 253 — shift
+
+- ED_RU ближе к EN +1 (score 6 против 3 у своей строки)
+- **EN (эталон):** All these subtle events were awakened. Yes this is once where he lived.
+- **ED_RU:** Вид этой входной двери пробудил ворох самых разных воспоминаний. Друг детства, живший по соседству, с которым они вместе встречались и шли в школу. Друзья, заходившие после уроков. Как он выскакивал за дверь, боясь опоздать в школу. Как в детстве учился ездить на велосипеде. Как играл в мяч об стену…
 
 ### Абзац 267 — shift
 
@@ -264,7 +276,7 @@
 
 ### Абзац 50 — names
 
-- есть в EN, нет в ED_RU: госпожа Святая
+- есть в EN, нет в ED_RU: Глава девятая. Память уз, госпожа Святая
 - **EN (эталон):** Henrietta's faced showed painful sorrow in it. Tiffania did too good a job at erasing "Saito's memories" out of Louise's brain.
 - **ED_RU:** Генриетте стало печально. Да, «Пустота» Тиффании, верно, стёрла из памяти Луизы «воспоминания о Сайто».
 
@@ -348,7 +360,7 @@
 
 ### Абзац 72 — names
 
-- есть в EN, нет в ED_RU: Глава шестая. Тигриный тракт
+- есть в EN, нет в ED_RU: Глава восьмая. Стальной тигр, Глава шестая. Тигриный тракт
 - **EN (эталон):** "'Eliminate the enemies at Tiger's Highway' is it... That's easy for him to say."
 - **ED_RU:** — «Уничтожить вражеские части, укрывшиеся на „Тигрином тракте“…» Легко ему говорить.
 
@@ -498,7 +510,7 @@
 
 ### Абзац 118 — names
 
-- есть в EN, нет в ED_RU: Глава шестая. Тигриный тракт, Горы Огненного Дракона, Чёрный Лес
+- есть в EN, нет в ED_RU: Глава восьмая. Стальной тигр, Глава шестая. Тигриный тракт, Горы Огненного Дракона, Чёрный Лес
 - **EN (эталон):** As the army progresses, on the other side of the forest an intimidating canyon can be seen. The giant cut suddenly interrupting the Fire Dragon's Valleies... is exactly "Tiger's Highway".
 - **ED_RU:** Когда войско продолжило путь, за лесом открылся гигантский обрывистый каньон. Огромная трещина, зияющая в Горах Огненного Дракона… Это «Тигриный тракт».
 
@@ -528,7 +540,7 @@
 
 ### Абзац 126 — names
 
-- есть в EN, нет в ED_RU: Глава шестая. Тигриный тракт, Чёрный Лес
+- есть в EN, нет в ED_RU: Глава восьмая. Стальной тигр, Глава шестая. Тигриный тракт, Чёрный Лес
 - **EN (эталон):** That instance, black smoke poured out of "Tiger's Highway", followed by explosions which sounded like grenades.
 - **ED_RU:** В следующий миг из входа на «Тигриный тракт» с ужасающей быстротой повалил дым, а следом раздались один за другим взрывы фугасных снарядов.
 
@@ -558,7 +570,7 @@
 
 ### Абзац 134 — names
 
-- есть в EN, нет в ED_RU: Глава шестая. Тигриный тракт, Горы Огненного Дракона
+- есть в EN, нет в ED_RU: Глава восьмая. Стальной тигр, Глава шестая. Тигриный тракт, Горы Огненного Дракона
 - **EN (эталон):** The wide gap of Tiger's Highway was as if a giant dragon capable of devouring everything thing offered. The dangerous looking cliffs had sharp protruding rocks, like teeth that can rip everything apart easily.
 - **ED_RU:** Зияющее жерло «Тигриного тракта» походило на пасть исполинского дракона, готовую проглотить всё. Торчащие из отвесных скал камни казались клыками, способными рассечь что угодно.
 
@@ -766,6 +778,12 @@
 - **EN (эталон):** Despite saying that, Saito's view were fixed on the door. Probably because it opened up, and the contents started to fade in...
 - **ED_RU:** Но, говоря это, Сайто не отрывал взгляда от врат — только что открывшиеся, они понемногу прояснялись…
 
+### Абзац 240 — names
+
+- есть в EN, нет в ED_RU: Глава восьмая. Стальной тигр
+- **EN (эталон):** The cheap wooden door, the stainless steel doorknob...
+- **ED_RU:** Цветочный горшок на нём. Дешёвая фанерная дверь и стальная ручка, которую он держал столько раз…
+
 ### Абзац 241 — negation
 
 - лишнее отрицание в ED_RU (в EN его нет)
@@ -801,6 +819,12 @@
 - есть в EN, нет в ED_RU: Основатель Бримир
 - **EN (эталон):** The words of Brimir suddenly surfaced in his head.
 - **ED_RU:** И тут в памяти всплыли слова Бримира из сна.
+
+### Абзац 253 — names
+
+- есть в EN, нет в ED_RU: Глава девятая. Память уз
+- **EN (эталон):** The vision in front of him triggered a unlimited amount of memories he had. Wait for his best mate to go to school together, the friends coming over to play after school. Barging out the door to get to school in time. Learning how to ride a bicycle when small. Practicing curving a ball at the wall.
+- **ED_RU:** Вид этой входной двери пробудил ворох самых разных воспоминаний. Друг детства, живший по соседству, с которым они вместе встречались и шли в школу. Друзья, заходившие после уроков. Как он выскакивал за дверь, боясь опоздать в школу. Как в детстве учился ездить на велосипеде. Как играл в мяч об стену…
 
 ### Абзац 257 — names
 
@@ -882,7 +906,7 @@
 
 ### Абзац 292 — names
 
-- есть в EN, нет в ED_RU: Глава шестая. Тигриный тракт
+- есть в EN, нет в ED_RU: Глава восьмая. Стальной тигр, Глава шестая. Тигриный тракт
 - **EN (эталон):** "10 miles north of Aquileia, entrance of 'Tiger's Highway'. If it were your plane, it would take around 30 minutes to be delivered."
 - **ED_RU:** — В 10 лигах к северу от Аквилеи, у входа на «Тигриный тракт». На твоём «копье» доберёшься минут за 30.
 

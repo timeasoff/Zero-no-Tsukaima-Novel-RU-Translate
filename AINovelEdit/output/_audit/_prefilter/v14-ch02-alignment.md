@@ -1,12 +1,18 @@
 # Выгрузка предфильтра (соответствие строк merged): v14-ch02.md
 
-Абзацев 356, переведено 356. Сигналов: строгих 11, прочих 109, инфо 12, «съезд» 7, JA-сдвигов 78.
+Абзацев 356, переведено 356. Сигналов: строгих 12, прочих 160, инфо 12, «съезд» 7, JA-сдвигов 64.
 
-По типам: marks 18, names 46, negation 56, numbers 1, speech 11
+По типам: marks 18, names 97, negation 56, numbers 1, speech 12
 
 Эталон соответствия — EN. `ja-shift` — не ошибка текста: JA выровнен приблизительно (±1–2 абзаца).
 
 ## Строгие сигналы (проверить обязательно)
+
+### Абзац 33 — speech
+
+- EN — наррация, ED_RU — реплика
+- **EN (эталон):** Agnes explained to the people in frozen status.
+- **ED_RU:** — Пояснила Аньес остолбеневшей публике.
 
 ### Абзац 35 — shift
 
@@ -16,7 +22,7 @@
 
 ### Абзац 101 — shift
 
-- ED_RU ближе к EN -1 (score 7 против -3 у своей строки)
+- ED_RU ближе к EN -1 (score 7 против -6 у своей строки)
 - **EN (эталон):** Louise closed her eyes and nodded.
 - **ED_RU:** И почему только Луиза отослала Сайто?
 
@@ -126,7 +132,7 @@
 
 ### Абзац 2 — names
 
-- есть в ED_RU, нет в EN: Ромалия
+- есть в ED_RU, нет в EN: Ромалия, Ромальская империя
 - **EN (эталон):** The Romalian church makes intensive preparation towards the journey to Aquileia.
 - **ED_RU:** В соборе Ромалии царила предотъездная суета: готовились к отправлению в Аквилею.
 
@@ -160,6 +166,12 @@
 - **EN (эталон):** "Besides, he is a man who bravely stood against an army of 70,000. How could some feeble plan of Gallia scare him?"
 - **ED_RU:** — Да не в этом дело. Он вышел один против 70 000. Станет он бояться какого-то галльского заговора!
 
+### Абзац 23 — names
+
+- есть в EN, нет в ED_RU: госпожа Святая
+- **EN (эталон):** "It's something which happened yesterday morning. I saw him and Louise walk out of the cathedral side by side."
+- **ED_RU:** — Дело было вчера утром. Я видел, как Сайто вместе с Луизой выходили из собора.
+
 ### Абзац 24 — negation
 
 - лишнее отрицание в ED_RU (в EN его нет)
@@ -177,6 +189,12 @@
 - лишнее отрицание в ED_RU (в EN его нет)
 - **EN (эталон):** Hearing what Gimli said, Guiche shook his head "The one in most danger is actually Saito. That guy messed around with the Gallian enemies a few times. Anyhow, it should be about time he comes out already."
 - **ED_RU:** Гимли сказал это, но Гиш покачал головой: — В опасности больше всех сам Сайто. Он не раз и не два заставил врагов хлебнуть лиха. Так или иначе, ему бы уже пора явиться.
+
+### Абзац 29 — names
+
+- есть в EN, нет в ED_RU: госпожа Святая
+- **EN (эталон):** As Guiche commented, Louise and Henrietta showed up, accompanied by Tiffania and Agnes. Seeing Louise's clothing, Guiche and the group were stunned.
+- **ED_RU:** И точно: в сопровождении Генриетты и Аньес появились Луиза и Тиффания. Увидев, во что одета Луиза, Гиш и остальные выпучили глаза.
 
 ### Абзац 30 — marks
 
@@ -232,6 +250,24 @@
 - **EN (эталон):** But still, all Louise did was hold the holy object tensely. Observing Louise's weird attitude, Henrietta seemed to notice something, and asked her "Louise, you look like you know what happened."
 - **ED_RU:** Но Луиза лишь судорожно стиснула святыню. Генриетта, заметив это, словно что-то поняла и спросила: — Луиза, вы ведь что-то знаете?
 
+### Абзац 42 — names
+
+- есть в EN, нет в ED_RU: госпожа Святая
+- **EN (эталон):** Louise took a long, deep breath and told everyone looking at her
+- **ED_RU:** Луиза глубоко вздохнула и объявила всем, кто смотрел на неё:
+
+### Абзац 44 — names
+
+- есть в EN, нет в ED_RU: госпожа Святая
+- **EN (эталон):** Everyone was too stunned to say anything. Henrietta stared at Louise with wide eyes. Tiffania covered her lips wide open from shock. Guiche, with a surprised tone asked Louise for more details.
+- **ED_RU:** Все онемели. Генриетта смотрела на Луизу круглыми глазами, Тиффания в изумлении прикрыла ладонью раскрытый рот. Гиш поражённым голосом спросил:
+
+### Абзац 46 — names
+
+- есть в EN, нет в ED_RU: госпожа Святая
+- **EN (эталон):** Louise shook her head and replied
+- **ED_RU:** Луиза покачала головой.
+
 ### Абзац 47 — names
 
 - есть в EN, нет в ED_RU: Врата мира
@@ -240,7 +276,7 @@
 
 ### Абзац 48 — names
 
-- есть в EN, нет в ED_RU: Луиза, Луиза-Нулиза
+- есть в EN, нет в ED_RU: Луиза, Луиза Нулевая, Луиза-Нулиза, госпожа Святая
 - **EN (эталон):** Everyone froze like a statue after hearing those words from Louise.
 - **ED_RU:** Услышав это, все застыли на месте.
 
@@ -250,11 +286,23 @@
 - **EN (эталон):** "Louise! What happened! Tell us everything!"
 - **ED_RU:** — Луиза! Что случилось?! Объясни!
 
+### Абзац 50 — names
+
+- есть в EN, нет в ED_RU: госпожа Святая
+- **EN (эталон):** Guiche frantically shook Louise's shoulders. Slowly, she brushed off his hands and replied
+- **ED_RU:** Гиш в панике схватил Луизу за плечи и затряс. Она медленно отвела его руки и ответила:
+
 ### Абзац 53 — names
 
 - есть в EN, нет в ED_RU: Сайто Хирага
 - **EN (эталон):** "... Saito received letters from his mother. It told him to come home"
 - **ED_RU:** — Оттуда пришло письмо от его матери. Она просила его вернуться.
+
+### Абзац 55 — names
+
+- есть в EN, нет в ED_RU: госпожа Святая
+- **EN (эталон):** Louise nodded. Malicorne pulled his hair and screamed.
+- **ED_RU:** Луиза кивнула. Маликорн со стоном схватился за голову.
 
 ### Абзац 56 — negation
 
@@ -264,13 +312,19 @@
 
 ### Абзац 57 — names
 
-- есть в EN, нет в ED_RU: Маликорн де Гранпле
+- есть в EN, нет в ED_RU: Маликорн де Гранпле, госпожа Святая
 - **EN (эталон):** After hearing what Malicorne had to say, Louise gave him a stern look
 - **ED_RU:** Луиза посуровела:
 
+### Абзац 59 — names
+
+- есть в EN, нет в ED_RU: госпожа Святая
+- **EN (эталон):** Louise bit her lip, still holding the holy object tightly, and continued
+- **ED_RU:** Луиза прикусила губу, ещё крепче стиснула святыню и продолжила:
+
 ### Абзац 64 — names
 
-- есть в EN, нет в ED_RU: Луиза, Луиза-Нулиза, Менвил Белое Пламя, Орден Белой Лилии
+- есть в EN, нет в ED_RU: Луиза, Луиза Нулевая, Луиза-Нулиза, Менвил Белое Пламя, Орден Белой Лилии, госпожа Святая
 - **EN (эталон):** Noticing Louise's actions, the Ordine Knights' faces changed to a worrying white.
 - **ED_RU:** При виде этого лица юношей из Отряда «Ундина» побелели от тревоги.
 
@@ -280,15 +334,27 @@
 - **EN (эталон):** "Is it of Saito's own decision? Did Saito himself ever say he 'must go home'?"
 - **ED_RU:** — Это было его собственное решение? Он сам сказал, что должен вернуться домой?
 
+### Абзац 68 — names
+
+- есть в EN, нет в ED_RU: госпожа Святая
+- **EN (эталон):** Louise shook her head.
+- **ED_RU:** Луиза покачала головой.
+
 ### Абзац 71 — negation
 
 - лишнее отрицание в ED_RU (в EN его нет)
 - **EN (эталон):** "That I can't answer."
 - **ED_RU:** — Этого я сказать не могу.
 
+### Абзац 72 — names
+
+- есть в EN, нет в ED_RU: госпожа Святая
+- **EN (эталон):** Everyone standing next to Louise became aware of Henrietta's strained face and stopped further pursuit. Everyone seemed to sense that this involved top secrets of the country.
+- **ED_RU:** Все, кто стоял рядом с Луизой, заметили напряжённое лицо Генриетты и прекратили расспросы: они почувствовали, что дело касается важнейшей государственной тайны.
+
 ### Абзац 73 — names
 
-- есть в EN, нет в ED_RU: Отряд водных духов «Ундина»
+- есть в EN, нет в ED_RU: Отряд водных духов «Ундина», госпожа Святая
 - **EN (эталон):** However, the words of Louise stimulated everyone. Despite the end of dwelling on this subject, voices of blame continued to come out from the mouths of the Ondine Knights.
 - **ED_RU:** Но слова Луизы всех взбудоражили. Расспросы прекратили, однако из уст юных рыцарей «Ундины» один за другим посыпались упрёки:
 
@@ -300,15 +366,21 @@
 
 ### Абзац 78 — names
 
-- есть в EN, нет в ED_RU: Маликорн де Гранпле
+- есть в EN, нет в ED_RU: Маликорн де Гранпле, госпожа Святая
 - **EN (эталон):** The teenagers all concurred with Malicorne's words and nodded vigorously. Louise began to say something, but was interrupted by Henrietta.
-- **ED_RU:** Да и любой на его месте думал бы так. Юноши согласно закивали. Луиза попыталась что-то сказать, но Генриетта её перебила.
+- **ED_RU:** Да и любой на его месте думал бы так. Юноши согласно закивали. Луиза попыталась что-то сказать, но Генриетта её перебила:
 
 ### Абзац 82 — names
 
 - есть в ED_RU, нет в EN: Отряд водных духов «Ундина»
 - **EN (эталон):** "It's a problem to be short of one chevalier, but a bunch of panicking guards because of this is another big issue. And I originally considered all of my handpicked guards to be brave knights..."
 - **ED_RU:** — Отсутствие одного шевалье — беда, но и гвардия, которая из-за этого мечется в панике, — тоже беда. А ведь я полагала, что выбрала в свой отряд храбрых рыцарей…
+
+### Абзац 84 — names
+
+- есть в EN, нет в ED_RU: госпожа Святая
+- **EN (эталон):** Louise entered her cabin that was prepared for them and began to pray as she kneeled on her bed. Tiffania was staring at Louise across the room with concern.
+- **ED_RU:** Войдя в отведённую ей каюту, Луиза опустилась на колени на кровати и принялась молиться. Тиффания, стоявшая в той же каюте, с тревогой смотрела на неё.
 
 ### Абзац 87 — marks
 
@@ -322,6 +394,12 @@
 - **EN (эталон):** ... She said that letters were received by his mother from another world. I don't know how letters can be sent from a different world. But since Louise said so, it is probably true.
 - **ED_RU:** …Луиза ведь сказала, что пришло письмо от его матери. Как письмо могло попасть к ним из иного мира, Тиффания не понимала, но раз Луиза говорит так, значит, это правда.
 
+### Абзац 91 — names
+
+- есть в EN, нет в ED_RU: госпожа Святая
+- **EN (эталон):** She wanted to know the full story from Louise, but decided not to interrupt her praying.
+- **ED_RU:** Подробно расспросить Луизу хотелось, но та целиком ушла в молитву — к ней было не подступиться.
+
 ### Абзац 92 — negation
 
 - лишнее отрицание в ED_RU (в EN его нет)
@@ -334,6 +412,18 @@
 - **EN (эталон):** Henrietta approached Louise but Louise didn't notice her as she continued to pray.
 - **ED_RU:** Генриетта подошла к Луизе, но та в молитвенном самозабвении её не замечала.
 
+### Абзац 96 — names
+
+- есть в EN, нет в ED_RU: госпожа Святая
+- **EN (эталон):** "Louise, please stop praying and look at me."
+- **ED_RU:** — Луиза, прошу, перестань молиться и обернись ко мне.
+
+### Абзац 97 — names
+
+- есть в EN, нет в ED_RU: госпожа Святая
+- **EN (эталон):** Finally, Louise lifted her head in silence, but did not look at Henrietta either.
+- **ED_RU:** Наконец Луиза подняла голову, но так и не взглянула на Генриетту — молчала, потупившись.
+
 ### Абзац 98 — names
 
 - есть в ED_RU, нет в EN: Генриетта
@@ -342,15 +432,27 @@
 
 ### Абзац 99 — names
 
-- есть в EN, нет в ED_RU: Врата мира, Джулио Чезаре
+- есть в EN, нет в ED_RU: Врата мира, Джулио Чезаре, госпожа Святая
 - **EN (эталон):** "Louise, did Saito really go back to his world? You must have spoke to the Pope and Julio(?). Did the Pope really use void magic to send him back"
 - **ED_RU:** — Луиза. Неужели месье Сайто и вправду вернулся в свой мир? Ты ведь недавно о чём-то говорила с Его Святейшеством и месье Чезаре. Неужели его в самом деле отправили назад «Пустотой» Его Святейшества?
 
+### Абзац 100 — names
+
+- есть в EN, нет в ED_RU: госпожа Святая
+- **EN (эталон):** Louise closed her eyes and nodded.
+- **ED_RU:** Луиза с усилием кивнула.
+
 ### Абзац 101 — names
 
-- есть в ED_RU, нет в EN: Луиза, Луиза-Нулиза, Сайто Хирага
+- есть в ED_RU, нет в EN: Луиза, Луиза Нулевая, Луиза-Нулиза, Сайто Хирага
 - **EN (эталон):** What would make her send him back?
 - **ED_RU:** И почему только Луиза отослала Сайто?
+
+### Абзац 103 — names
+
+- есть в EN, нет в ED_RU: госпожа Святая
+- **EN (эталон):** Henrietta placed her hand on Louise's shoulder and whispered to her ears.
+- **ED_RU:** Генриетта положила руку на плечо Луизы и шепнула ей на ухо:
 
 ### Абзац 105 — names
 
@@ -430,6 +532,18 @@
 - **EN (эталон):** When Pope Aegis the 32nd, Vittorio Cervale with dazzling eyes appeared in front of the people, the congregated people of Aquileia involuntarily sighed.
 - **ED_RU:** Когда перед народом предстал Папа Эгидий Тридцать второй, Витторио Селеваре, источая ослепительное сияние, собравшиеся жители Аквилеи невольно вздохнули.
 
+### Абзац 132 — names
+
+- есть в EN, нет в ED_RU: госпожа Святая
+- **EN (эталон):** Tiffania and Louise sat next to Henrietta, and next to them was Agnes. In a fairly distant side of the table sat Guiche with a strained face.
+- **ED_RU:** Тиффания и Луиза сидели подле Генриетты; рядом с ними — Аньес, а поодаль, с напряжённым лицом, — Гиш.
+
+### Абзац 139 — names
+
+- есть в EN, нет в ED_RU: Валгалла
+- **EN (эталон):** "It is undoubtly true. The incompetent king of Gallia wants to rule the entire Halkeginia. Our father in heaven, my ancesestors and myself are all obstacles in his eyes."
+- **ED_RU:** — Именно так. Тот самый галльский «Бездарный король» желает стать королём всей Халкегинии. А для этого помехой ему — Бог, Основатель и я сам.
+
 ### Абзац 144 — names
 
 - есть в EN, нет в ED_RU: Глава вторая. Церемония в честь третьей годовщины восшествия на престол
@@ -471,6 +585,12 @@
 - лишнее отрицание в ED_RU (в EN его нет)
 - **EN (эталон):** If they wanted to completely remove the target, wouldn't it be more sensible to use other methods?
 - **ED_RU:** Если уж уничтожать цель полностью, не вернее ли прибегнуть к другим средствам?
+
+### Абзац 164 — names
+
+- есть в EN, нет в ED_RU: Тиффания Уэствуд
+- **EN (эталон):** "Miss Westwood?"
+- **ED_RU:** — Синьорина Уэствуд?
 
 ### Абзац 168 — names
 
@@ -520,11 +640,35 @@
 - **EN (эталон):** On the other hand, Guiche, not knowing whether it was an act of determination or not, closed his eyes and stared blankly at the ceiling. Agnes was just as expressionless as usual. None of the Ondine Knights had responded much to the conversation either.
 - **ED_RU:** Гиш, словно приняв решение, зажмурился и уставился в потолок. Аньес сохраняла обычное выражение лица. Командиры святых рыцарей тоже ничуть не менялись в лице.
 
+### Абзац 193 — names
+
+- есть в EN, нет в ED_RU: госпожа Святая
+- **EN (эталон):** Henrietta stood up alone and stared at the motionless, silent Louise by her side
+- **ED_RU:** Генриетта поднялась и посмотрела на сидевшую рядом молчаливую, неподвижную Луизу.
+
+### Абзац 194 — names
+
+- есть в EN, нет в ED_RU: госпожа Святая
+- **EN (эталон):** "I am deeply regretful that I may no longer contribute to this conversation. It is because Louise's father and I have agreed to 'never put Louise on the fields of a battle'. Now then, Louise, let us leave."
+- **ED_RU:** — …Но раз так, то участвовать в этом я, к сожалению, больше не могу. Ведь я дала обещание её отцу: Луиза никогда не станет орудием войны. А теперь, Луиза, идём.
+
 ### Абзац 195 — names
 
-- есть в EN, нет в ED_RU: Генриетта
+- есть в EN, нет в ED_RU: Генриетта, госпожа Святая
 - **EN (эталон):** But Louise did not respond to Henrietta's call. All she did was hang her head apologetically.
 - **ED_RU:** Но Луиза не поднялась. Она лишь виновато опустила голову.
+
+### Абзац 196 — names
+
+- есть в EN, нет в ED_RU: госпожа Святая
+- **EN (эталон):** "Louise?"
+- **ED_RU:** — Луиза?
+
+### Абзац 201 — names
+
+- есть в EN, нет в ED_RU: госпожа Святая
+- **EN (эталон):** Uneasily, Louise nodded.
+- **ED_RU:** Луиза с трудом кивнула, и на лице её читалась боль.
 
 ### Абзац 202 — names
 
@@ -537,6 +681,12 @@
 - лишнее отрицание в ED_RU (в EN его нет)
 - **EN (эталон):** Undoubtedly impossible.
 - **ED_RU:** Не может быть.
+
+### Абзац 205 — names
+
+- есть в EN, нет в ED_RU: госпожа Святая
+- **EN (эталон):** Henrietta seemed to realise the conditions Romalia used to lure Louise into swearing under God's name.
+- **ED_RU:** Генриетта поняла, каким условием Ромалия вырвала у Луизы клятву.
 
 ### Абзац 206 — negation
 
@@ -570,7 +720,7 @@
 
 ### Абзац 218 — names
 
-- есть в EN, нет в ED_RU: Генриетта, Ромалия, Сайто Хирага
+- есть в EN, нет в ED_RU: Генриетта, Ромалия, Ромальская империя, Сайто Хирага
 - **EN (эталон):** "Just as thou said, prior to Saito Chevalier De Hiraga becoming Vice-captain of your personal guards, wasn't he a personal familiar of Miss Vallière? Since Miss Vallière, as master of her familiar pleaded us to send him back, I merely acted what any Romalia Pilgrim would have done, to believe in our…
 - **ED_RU:** — С позволения сказать, разве шевалье Хирага не был личным фамильяром мадемуазель Вальер прежде, чем стать заместителем командира вашей гвардии? Его госпожа сказала: «Прошу, отпусти меня», — и я, как бримирец, лишь последовал своей вере. Впрочем, слова Вашего Величества во всём справедливы. То, что …
 
@@ -580,11 +730,29 @@
 - **EN (эталон):** "Affirmative. I opened a gateway to where his soul belongs to. In other words, I sent him back to his home. I believe it was the right choice to make."
 - **ED_RU:** — Да. Я открыл «Врата» туда, где обретается его «душа». Так, я вернул его — ни много ни мало — на «родину». Мне казалось, это то, что я должен был сделать.
 
+### Абзац 223 — names
+
+- есть в EN, нет в ED_RU: госпожа Святая
+- **EN (эталон):** "Louise." Henrietta addressed.
+- **ED_RU:** — Луиза, — окликнула Генриетта.
+
 ### Абзац 226 — names
 
 - есть в EN, нет в ED_RU: Витторио Селеваре, Глава вторая. Церемония в честь третьей годовщины восшествия на престол
 - **EN (эталон):** "Thou are really a scary person. Pope Vittorio, your holiness. After this ceremony has ended, I will have to reconsider the best method to approach the King of United Romalia."
 - **ED_RU:** — Вы поистине страшный человек, Ваше Святейшество. Когда это дело уладится, мне, вероятно, придётся пересмотреть, как общаться с Ромальской империей.
+
+### Абзац 230 — names
+
+- есть в EN, нет в ED_RU: госпожа Святая
+- **EN (эталон):** Louise, alone in her designated bedroom, was praying.
+- **ED_RU:** Луиза в одиночестве молилась в отведённой ей комнате.
+
+### Абзац 231 — names
+
+- есть в EN, нет в ED_RU: госпожа Святая
+- **EN (эталон):** After seeing Saito leave, Louise had almost spent all of her time praying. If she had not done that, she might have had a mental breakdown.
+- **ED_RU:** С тех пор как она рассталась с Сайто, Луиза почти всё время проводила в молитвах. Не делай она этого — сердце бы не выдержало.
 
 ### Абзац 232 — negation
 
@@ -616,6 +784,12 @@
 - **EN (эталон):** If Saito found his love in the other world... would he forget about me? Saito has always said that "he loves me"... yet I never gave him a direct response. Instead, I had to find all sorts of excuses, I had to argue with him, doing these things as if cheating his feelings again and again.
 - **ED_RU:** Там, в том мире, встретив дорогих ему людей… он, верно, забудет о ней. Сайто столько раз говорил, что любит её, а она так и не ответила ему как следует. Она без конца искала отговорки, упрямилась, раз за разом играя его чувствами.
 
+### Абзац 245 — names
+
+- есть в EN, нет в ED_RU: госпожа Святая
+- **EN (эталон):** Louise shook her head.
+- **ED_RU:** Луиза покачала головой.
+
 ### Абзац 248 — marks
 
 - вопрос «?» только в ED_RU
@@ -627,6 +801,12 @@
 - вопрос «?» только в EN
 - **EN (эталон):** I could say, I already am a puppet for Halkeginia. I made my choice when swearing under the name of God, in front of the Pope himself. However, to be bound by the feelings of being discarded, do I even deserve the title of a puppet?
 - **ED_RU:** *Я уже, если можно так сказать, голем Халкегинии: это решилось, когда я дала клятву Папе. Но если я позволяю брошенному сердцу водить себя, то не гожусь даже в големы.*
+
+### Абзац 253 — names
+
+- есть в EN, нет в ED_RU: госпожа Святая
+- **EN (эталон):** Louise knew there was only one method.
+- **ED_RU:** Луиза знала лишь один способ.
 
 ### Абзац 258 — negation
 
@@ -640,23 +820,41 @@
 - **EN (эталон):** Louise, who had left her room, stood in front of Tiffania's bedroom door. Because this place is intended as a resting place for priests and priestesses, the doors left and right all looked the same. Softly, Louise knocked on Tiffania's door, and just as she hoped, Tiffania seemed to still be wide aw…
 - **ED_RU:** Луиза выскользнула из своей комнаты и остановилась перед соседней дверью — дверью Тиффании. Раньше здесь были покои жрецов, поэтому двери направо и налево были одинаковыми. Луиза тихо постучала; Тиффания, похоже, тоже не спала: послышался шорох поднимающейся с постели и сонный оклик.
 
+### Абзац 263 — names
+
+- есть в EN, нет в ED_RU: госпожа Святая
+- **EN (эталон):** As soon as Louise's voice was heard, Tiffania opened the door timidly. A Tiffania in her pajamas welcomed Louise in.
+- **ED_RU:** Едва прозвучал этот голос, как дверь торопливо отворилась. Тиффания в одной ночной рубашке пригласила Луизу войти.
+
 ### Абзац 265 — negation
 
 - лишнее отрицание в ED_RU (в EN его нет)
 - **EN (эталон):** Tiffania seemed to have trouble forming the words in her mouth, but finally "W-Why did you have to send Saito back? Why?...Although what you did was a sensible choice, but Louise, you..."
 - **ED_RU:** Тиффания никак не могла подобрать слова, но наконец выговорила: — П-почему ты отослала Сайто? Почему?.. Хотя, конечно, так было правильно. Но, Луиза, ты…
 
+### Абзац 266 — names
+
+- есть в EN, нет в ED_RU: госпожа Святая
+- **EN (эталон):** Louise lifted her head and interrupted in a soft low voice
+- **ED_RU:** Луиза подняла голову и тихо её перебила:
+
 ### Абзац 272 — names
 
-- есть в EN, нет в ED_RU: Тиффания
+- есть в EN, нет в ED_RU: Тиффания Уэствуд
 - **EN (эталон):** Right in front of Tiffania's bedroom, was none other than Henrietta.
 - **ED_RU:** За дверью стояла не кто иная, как Генриетта.
 
 ### Абзац 273 — names
 
-- есть в EN, нет в ED_RU: Генриетта
+- есть в EN, нет в ED_RU: Генриетта, госпожа Святая
 - **EN (эталон):** "It's that I saw Louise come in..., therefore..." Henrietta mumbled.
 - **ED_RU:** — Я увидела, как Луиза вошла… вот и… — нерешительно пробормотала она.
+
+### Абзац 274 — names
+
+- есть в EN, нет в ED_RU: госпожа Святая
+- **EN (эталон):** As sudden as her knocks on the door, Henrietta took a deep bow towards Louise and Tiffania.
+- **ED_RU:** Так же внезапно, как только что постучала, Генриетта низко поклонилась Луизе и Тиффании.
 
 ### Абзац 281 — marks
 
@@ -676,11 +874,41 @@
 - **EN (эталон):** "...To be honest, I am not sure myself either. I was brought to this world by Saito. Therefore, I would follow his decisions. But now..."
 - **ED_RU:** — …Если честно, я и сама не знаю. Меня вывел в этот мир Сайто. Поэтому я решила следовать его решению. Но теперь…
 
+### Абзац 288 — names
+
+- есть в EN, нет в ED_RU: госпожа Святая
+- **EN (эталон):** "He won't be coming back anymore. I am here to ask Louise and you about this"
+- **ED_RU:** — Он уже вернулся домой. Вот об этом я и пришла спросить тебя, Луиза.
+
+### Абзац 289 — names
+
+- есть в EN, нет в ED_RU: госпожа Святая
+- **EN (эталон):** Henrietta turned to Louise, who was hanging her head
+- **ED_RU:** Генриетта обернулась к Луизе, которая всё это время сидела опустив голову.
+
 ### Абзац 290 — names
 
-- есть в EN, нет в ED_RU: Врата мира
+- есть в EN, нет в ED_RU: Врата мира, госпожа Святая
 - **EN (эталон):** "Why did you return Saito back? Yes, he is not a person from this world. Even if returning him back to his homeworld is the right decision. Louise, aren't you..."
 - **ED_RU:** — Почему ты отослала Сайто? Да, он человек не из этого мира. И возвращение в родной мир — наверное, правильно. Но, Луиза, ты…
+
+### Абзац 291 — names
+
+- есть в EN, нет в ED_RU: госпожа Святая
+- **EN (эталон):** With reference to what Henrietta just said, Tiffania nodded. Saito loves Louise. Moreover, Louise seems to love Saito as well...
+- **ED_RU:** Услышав слова Генриетты, Тиффания кивнула. Сайто любил Луизу. И Луиза, похоже, тоже…
+
+### Абзац 293 — names
+
+- есть в EN, нет в ED_RU: госпожа Святая
+- **EN (эталон):** Louise said, as though neglecting a part of her true feelings.
+- **ED_RU:** Луиза произнесла это так, словно задавила в себе часть собственных чувств.
+
+### Абзац 295 — names
+
+- есть в EN, нет в ED_RU: госпожа Святая
+- **EN (эталон):** A moment of silence fell across the room. Henrietta sighed and muttered "Is that so...", then held Louise's shoulders tightly.
+- **ED_RU:** В комнате повисла тишина. Генриетта вздохнула, пробормотала «вот как…» и крепко обняла Луизу за плечи.
 
 ### Абзац 296 — negation
 
@@ -702,13 +930,25 @@
 
 ### Абзац 301 — names
 
-- есть в EN, нет в ED_RU: Глава вторая. Церемония в честь третьей годовщины восшествия на престол
+- есть в EN, нет в ED_RU: Глава вторая. Церемония в честь третьей годовщины восшествия на престол, госпожа Святая
 - **EN (эталон):** The air became dense with sadness and regret, even Tiffania who was listening silently had a sudden urge to cry. Henrietta's eyes landed on Louise's dress of a nun. Throughout the ceremony, Louise and Tiffania will have to stand next to the Pope wearing this kind of dress. Not only because of the ce…
 - **ED_RU:** В воздухе повисла печаль; слушавшая молча Тиффания тоже готова была заплакать. Генриетта перевела взгляд на монашеское одеяние Луизы. Всю церемонию Луизе и Тиффании предстояло стоять подле Папы в этих одеждах. И не только ради украшения обряда — нет, это было устроено, чтобы «собрать в одном месте в…
 
+### Абзац 303 — names
+
+- есть в EN, нет в ED_RU: госпожа Святая
+- **EN (эталон):** But to Louise, this dress also had another meaning.
+- **ED_RU:** Но Луиза надела это одеяние и по другой причине.
+
+### Абзац 305 — names
+
+- есть в EN, нет в ED_RU: госпожа Святая
+- **EN (эталон):** "No" Louise denied with a shake of her head.
+- **ED_RU:** — Нет, — покачала головой Луиза.
+
 ### Абзац 307 — names
 
-- есть в EN, нет в ED_RU: Луиза, Луиза-Нулиза
+- есть в EN, нет в ED_RU: Луиза, Луиза Нулевая, Луиза-Нулиза, госпожа Святая
 - **EN (эталон):** Henrietta held Louise's hands tightly
 - **ED_RU:** Генриетта крепко сжала её руки.
 
@@ -718,11 +958,41 @@
 - **EN (эталон):** "But, I already... can't handle it much longer"
 - **ED_RU:** — Но я… я всё равно, кажется, не выдержу.
 
+### Абзац 310 — names
+
+- есть в EN, нет в ED_RU: госпожа Святая
+- **EN (эталон):** Louise said helplessly. Then, as if determined to do this, she turned to Tiffania.
+- **ED_RU:** Луиза тихо вымолвила это. А затем, словно решившись, повернулась к Тиффании:
+
 ### Абзац 312 — negation
 
 - лишнее отрицание в ED_RU (в EN его нет)
 - **EN (эталон):** "Louise, do you intend to..."
 - **ED_RU:** — Луиза. Ты не хочешь ли…
+
+### Абзац 313 — names
+
+- есть в EN, нет в ED_RU: госпожа Святая
+- **EN (эталон):** Tiffania realised Louise's intention and immediately went pale.
+- **ED_RU:** Тиффания поняла, о чём просит Луиза, и побледнела.
+
+### Абзац 314 — names
+
+- есть в EN, нет в ED_RU: Глава девятая. Память уз
+- **EN (эталон):** "That's right. I want you to remove all my memories of Saito" "What!"
+- **ED_RU:** — Да. Я хочу, чтобы ты стёрла из меня память о Сайто.
+
+### Абзац 317 — names
+
+- есть в EN, нет в ED_RU: Глава девятая. Память уз
+- **EN (эталон):** "It is exactly because of this, my memories should be erased!"
+- **ED_RU:** — Именно поэтому и надо стереть!
+
+### Абзац 318 — names
+
+- есть в EN, нет в ED_RU: госпожа Святая
+- **EN (эталон):** Louise yelled grasping her holy object tightly.
+- **ED_RU:** Стиснув святыню, крикнула Луиза.
 
 ### Абзац 319 — names
 
@@ -730,11 +1000,23 @@
 - **EN (эталон):** "We will never meet again. I am sure of it. It's because I chose it for myself. But if I continue like this, then for what purpose am I living for! Even becoming a nun of Halkeginia would be an impossible task. That's why..."
 - **ED_RU:** — Мы больше никогда не увидимся. Я это знаю — я сама так решила. Но если всё останется как есть, от меня не будет никакого проку. Святой Халкегинии из меня не выйдет. Поэтому…
 
+### Абзац 320 — names
+
+- есть в EN, нет в ED_RU: госпожа Святая
+- **EN (эталон):** "Louise, Louise, I cannot agree to this request. Because, if you do this, you would not be the same person as you are right now"
+- **ED_RU:** — Луиза, Луиза, я не могу исполнить такую просьбу. Ведь если ты это сделаешь, ты перестанешь быть собой.
+
 ### Абзац 321 — marks
 
 - вопрос «?» только в EN
 - **EN (эталон):** "Am I not better off that way?"
 - **ED_RU:** — Так ведь и лучше.
+
+### Абзац 322 — names
+
+- есть в EN, нет в ED_RU: госпожа Святая
+- **EN (эталон):** Louise yelled with tears rolling down her cheeks.
+- **ED_RU:** Выкрикнула Луиза, а по щекам её катились слёзы.
 
 ### Абзац 324 — negation
 
@@ -748,15 +1030,39 @@
 - **EN (эталон):** "...I plead you as well. Being alive yet unable to see each other..., how is this different from being dead. It is still indescribably miserable."
 - **ED_RU:** — …Я тоже прошу тебя. Жить и больше никогда не встретиться… это ведь так же горько, как разлука со смертью.
 
+### Абзац 326 — names
+
+- есть в EN, нет в ED_RU: госпожа Святая
+- **EN (эталон):** Tiffania hesitated for a period of time..., then looked into Louise's eyes seriously.
+- **ED_RU:** Тиффания колебалась какое-то время… потом серьёзно взглянула Луизе в глаза.
+
+### Абзац 327 — names
+
+- есть в EN, нет в ED_RU: Глава девятая. Память уз
+- **EN (эталон):** "Are you sure? If I erase your memories about Saito... you will lose all your precious memories. To you, you will lose this precious time as though a gem, for an eternity. Are you still fine with it?"
+- **ED_RU:** — Ты уверена? Если я сотру память о Сайто… исчезнут и все дорогие воспоминания. Для тебя навсегда потеряется время, что было драгоценно, как самоцвет. И всё равно?
+
+### Абзац 328 — names
+
+- есть в EN, нет в ED_RU: госпожа Святая
+- **EN (эталон):** Louise reached into her pockets and pulled out a pin. It's the pin Saito bought for Louise as a present back in Tristain. In silence, Louise handed it over to Tiffania.
+- **ED_RU:** Луиза вытащила из кармана монашеского одеяния брошь. Когда-то давно её купил ей в Тристании Сайто. Молча Луиза протянула её Тиффании.
+
 ### Абзац 330 — names
 
-- есть в EN, нет в ED_RU: Луиза, Луиза-Нулиза
+- есть в EN, нет в ED_RU: Луиза, Луиза Нулевая, Луиза-Нулиза, госпожа Святая
 - **EN (эталон):** Tiffania shook her head in sadness, but submitted to Louise's plead.
 - **ED_RU:** Тиффания печально покачала головой и всё же уступила.
 
+### Абзац 331 — names
+
+- есть в EN, нет в ED_RU: госпожа Святая
+- **EN (эталон):** "I will never forget about Saito. Because he is my most important friend. but Louise, to you, in this memory... just the part of recalling emotions is enough to make you suffer. Despite that, I still don't think... that your decision is right. But if it is all for your sake... because, to me you are…
+- **ED_RU:** — Я никогда не забуду Сайто. Он был мне дорогим другом. Но тебе, Луиза, эта память… — одни лишь чувства, что в ней заключены, — будут тебя мучить. И всё же я не думаю, что твоё решение верное. Но если так будет лучше для тебя… ведь ты мне тоже дорога.
+
 ### Абзац 334 — names
 
-- есть в EN, нет в ED_RU: Врата мира
+- есть в EN, нет в ED_RU: Врата мира, Глава девятая. Память уз, госпожа Святая
 - **EN (эталон):** As Tiffania chanted, Louise treasured every last drop of memory she recalled about Saito. She felt like she loved these disappearing memories more than anything in the world.
 - **ED_RU:** Под напев заклинания Тиффании Луиза перебирала одно за другим воспоминания о Сайто. Те воспоминания, которым суждено исчезнуть, казались ей дороже всего на свете.
 
@@ -771,6 +1077,12 @@
 - лишнее отрицание в ED_RU (в EN его нет)
 - **EN (эталон):** Because from now on, I... will definitely become "void". Literally void. Like a flask void of water, a human void of feelings...
 - **ED_RU:** *Ведь отныне я стану «Пустотой» — и по имени, и по сути. Совсем пустой: как фляга без воды, как кукла без сердца…*
+
+### Абзац 354 — names
+
+- есть в EN, нет в ED_RU: госпожа Святая
+- **EN (эталон):** To be suited for my void magic, Louise thought.
+- **ED_RU:** Именно такой облик подобает её стихии, подумала Луиза.
 
 ## JA-сдвиги (известное свойство выравнивания)
 
@@ -791,12 +1103,6 @@
 - JA (наррация) и ED_RU (реплика) разного типа — сдвиг выравнивания JA (эталон — EN)
 - **EN (эталон):** "What!?"
 - **ED_RU:** — Что?!
-
-### Абзац 23 — ja-shift
-
-- JA (наррация) и ED_RU (реплика) разного типа — сдвиг выравнивания JA (эталон — EN)
-- **EN (эталон):** "It's something which happened yesterday morning. I saw him and Louise walk out of the cathedral side by side."
-- **ED_RU:** — Дело было вчера утром. Я видел, как Сайто вместе с Луизой выходили из собора.
 
 ### Абзац 26 — ja-shift
 
@@ -912,12 +1218,6 @@
 - **EN (эталон):** "Henrietta-sama."
 - **ED_RU:** — Ваше Величество.
 
-### Абзац 96 — ja-shift
-
-- JA (наррация) и ED_RU (реплика) разного типа — сдвиг выравнивания JA (эталон — EN)
-- **EN (эталон):** "Louise, please stop praying and look at me."
-- **ED_RU:** — Луиза, прошу, перестань молиться и обернись ко мне.
-
 ### Абзац 104 — ja-shift
 
 - JA (наррация) и ED_RU (реплика) разного типа — сдвиг выравнивания JA (эталон — EN)
@@ -935,12 +1235,6 @@
 - JA (наррация) и ED_RU (реплика) разного типа — сдвиг выравнивания JA (эталон — EN)
 - **EN (эталон):** "I am familiar with the plan, but is it true that Gallia plans to attack the pope?"
 - **ED_RU:** — О плане я наслышан… но неужели Галлия в самом деле покушается на жизнь Его Святейшества?
-
-### Абзац 139 — ja-shift
-
-- JA (наррация) и ED_RU (реплика) разного типа — сдвиг выравнивания JA (эталон — EN)
-- **EN (эталон):** "It is undoubtly true. The incompetent king of Gallia wants to rule the entire Halkeginia. Our father in heaven, my ancesestors and myself are all obstacles in his eyes."
-- **ED_RU:** — Именно так. Тот самый галльский «Бездарный король» желает стать королём всей Халкегинии. А для этого помехой ему — Бог, Основатель и я сам.
 
 ### Абзац 140 — negation
 
@@ -971,12 +1265,6 @@
 - JA (наррация) и ED_RU (реплика) разного типа — сдвиг выравнивания JA (эталон — EN)
 - **EN (эталон):** "Of course, that is not all. We would also cast several folds of 'air shields' to ensure the Pope's safety. Common magic or guns would be ineffective against this."
 - **ED_RU:** — И это ещё не всё. Вокруг Папы мы возведём несколько слоёв «Воздушных щитов», чтобы защитить его особу. Обычная магия или пули тут не помогут.
-
-### Абзац 164 — ja-shift
-
-- JA (наррация) и ED_RU (реплика) разного типа — сдвиг выравнивания JA (эталон — EN)
-- **EN (эталон):** "Miss Westwood?"
-- **ED_RU:** — Мисс Уэствуд?
 
 ### Абзац 166 — ja-shift
 
@@ -1050,18 +1338,6 @@
 - **EN (эталон):** "The choice is not in my hands, but in Gallia's. Even now the chance of having a war is only fifty-fifty."
 - **ED_RU:** — Выбор не за мной, а за Галлией. И сейчас вероятность войны — лишь пятьдесят на пятьдесят.
 
-### Абзац 194 — ja-shift
-
-- JA (наррация) и ED_RU (реплика) разного типа — сдвиг выравнивания JA (эталон — EN)
-- **EN (эталон):** "I am deeply regretful that I may no longer contribute to this conversation. It is because Louise's father and I have agreed to 'never put Louise on the fields of a battle'. Now then, Louise, let us leave."
-- **ED_RU:** — …Но раз так, то участвовать в этом я, к сожалению, больше не могу. Ведь я дала обещание её отцу: Луиза никогда не станет орудием войны. А теперь, Луиза, идём.
-
-### Абзац 196 — ja-shift
-
-- JA (наррация) и ED_RU (реплика) разного типа — сдвиг выравнивания JA (эталон — EN)
-- **EN (эталон):** "Louise?"
-- **ED_RU:** — Луиза?
-
 ### Абзац 198 — ja-shift
 
 - JA (наррация) и ED_RU (реплика) разного типа — сдвиг выравнивания JA (эталон — EN)
@@ -1103,12 +1379,6 @@
 - JA (наррация) и ED_RU (реплика) разного типа — сдвиг выравнивания JA (эталон — EN)
 - **EN (эталон):** "Did you really send him back?"
 - **ED_RU:** — Неужели вы в самом деле отправили его назад?
-
-### Абзац 223 — ja-shift
-
-- JA (наррация) и ED_RU (реплика) разного типа — сдвиг выравнивания JA (эталон — EN)
-- **EN (эталон):** "Louise." Henrietta addressed.
-- **ED_RU:** — Луиза, — окликнула Генриетта.
 
 ### Абзац 224 — negation
 
@@ -1194,12 +1464,6 @@
 - **EN (эталон):** "You are absolutely right. Perhaps it is because you are my cousin, I instinctively spewed out everything."
 - **ED_RU:** — Вы правы. Верно, оттого, что вы моя двоюродная сестра, у меня язык и развязывается.
 
-### Абзац 288 — ja-shift
-
-- JA (наррация) и ED_RU (реплика) разного типа — сдвиг выравнивания JA (эталон — EN)
-- **EN (эталон):** "He won't be coming back anymore. I am here to ask Louise and you about this"
-- **ED_RU:** — Он уже вернулся домой. Вот об этом я и пришла спросить тебя, Луиза.
-
 ### Абзац 292 — ja-shift
 
 - JA (наррация) и ED_RU (реплика) разного типа — сдвиг выравнивания JA (эталон — EN)
@@ -1224,12 +1488,6 @@
 - **EN (эталон):** "... You are not planning to live in a monastery, are you?"
 - **ED_RU:** — …Ты ведь собираешься уйти в монастырь? Так ведь?
 
-### Абзац 305 — ja-shift
-
-- JA (наррация) и ED_RU (реплика) разного типа — сдвиг выравнивания JA (эталон — EN)
-- **EN (эталон):** "No" Louise denied with a shake of her head.
-- **ED_RU:** — Нет, — покачала головой Луиза.
-
 ### Абзац 306 — ja-shift
 
 - JA (наррация) и ED_RU (реплика) разного типа — сдвиг выравнивания JA (эталон — EN)
@@ -1248,47 +1506,17 @@
 - **EN (эталон):** "Therefore, please Tiffania"
 - **ED_RU:** — Поэтому, Тиффания, прошу тебя.
 
-### Абзац 314 — ja-shift
-
-- JA (наррация) и ED_RU (реплика) разного типа — сдвиг выравнивания JA (эталон — EN)
-- **EN (эталон):** "That's right. I want you to remove all my memories of Saito" "What!"
-- **ED_RU:** — Да. Я хочу, чтобы ты стёрла из меня память о Сайто.
-
 ### Абзац 316 — ja-shift
 
 - JA (наррация) и ED_RU (реплика) разного типа — сдвиг выравнивания JA (эталон — EN)
 - **EN (эталон):** "Impossible! How can this be done...because, because, Saito is... is your..."
 - **ED_RU:** — Нельзя! Как можно… ведь, ведь месье Сайто… он же ваш…
 
-### Абзац 317 — ja-shift
-
-- JA (наррация) и ED_RU (реплика) разного типа — сдвиг выравнивания JA (эталон — EN)
-- **EN (эталон):** "It is exactly because of this, my memories should be erased!"
-- **ED_RU:** — Именно поэтому и надо стереть!
-
-### Абзац 320 — ja-shift
-
-- JA (наррация) и ED_RU (реплика) разного типа — сдвиг выравнивания JA (эталон — EN)
-- **EN (эталон):** "Louise, Louise, I cannot agree to this request. Because, if you do this, you would not be the same person as you are right now"
-- **ED_RU:** — Луиза, Луиза, я не могу исполнить такую просьбу. Ведь если ты это сделаешь, ты перестанешь быть собой.
-
 ### Абзац 323 — ja-shift
 
 - JA (наррация) и ED_RU (реплика) разного типа — сдвиг выравнивания JA (эталон — EN)
 - **EN (эталон):** "Do you understand me... Tiffania, if it is another void magic user, I hope that you understand my actions. I can't stand it any longer. I no longer have the faith to last any longer. Therefore... please"
 - **ED_RU:** — Пойми… Тиффания. Ты тоже носительница Пустоты — я хочу, чтобы ты меня поняла. Я больше не могу терпеть. У меня нет больше сил терпеть. Поэтому… прошу тебя.
-
-### Абзац 327 — ja-shift
-
-- JA (наррация) и ED_RU (реплика) разного типа — сдвиг выравнивания JA (эталон — EN)
-- **EN (эталон):** "Are you sure? If I erase your memories about Saito... you will lose all your precious memories. To you, you will lose this precious time as though a gem, for an eternity. Are you still fine with it?"
-- **ED_RU:** — Ты уверена? Если я сотру память о Сайто… исчезнут и все дорогие воспоминания. Для тебя навсегда потеряется время, что было драгоценно, как самоцвет. И всё равно?
-
-### Абзац 331 — ja-shift
-
-- JA (наррация) и ED_RU (реплика) разного типа — сдвиг выравнивания JA (эталон — EN)
-- **EN (эталон):** "I will never forget about Saito. Because he is my most important friend. but Louise, to you, in this memory... just the part of recalling emotions is enough to make you suffer. Despite that, I still don't think... that your decision is right. But if it is all for your sake... because, to me you are…
-- **ED_RU:** — Я никогда не забуду Сайто. Он был мне дорогим другом. Но тебе, Луиза, эта память — одни лишь чувства, что в ней заключены, — будет тебя мучить. И всё же я не думаю, что твоё решение верное. Но если так будет лучше для тебя… ведь ты мне тоже дорога.
 
 ### Абзац 333 — ja-shift
 

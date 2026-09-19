@@ -1,8 +1,8 @@
 # Выгрузка предфильтра (соответствие строк merged): v14-ch08.md
 
-Абзацев 289, переведено 289. Сигналов: строгих 16, прочих 110, инфо 15, «съезд» 16, JA-сдвигов 50.
+Абзацев 289, переведено 289. Сигналов: строгих 16, прочих 114, инфо 15, «съезд» 17, JA-сдвигов 50.
 
-По типам: marks 11, names 67, negation 44, numbers 3, speech 16
+По типам: marks 11, names 71, negation 44, numbers 3, speech 16
 
 Эталон соответствия — EN. `ja-shift` — не ошибка текста: JA выровнен приблизительно (±1–2 абзаца).
 
@@ -30,7 +30,7 @@
 
 - EN — реплика, ED_RU — наррация
 - **EN (эталон):** "Unforgivable."
-- **ED_RU:** _Непростительно_
+- **ED_RU:** *Непростительно*
 
 ### Абзац 98 — speech
 
@@ -72,7 +72,7 @@
 
 - EN — реплика, ED_RU — наррация
 - **EN (эталон):** "Never give up!"
-- **ED_RU:** _Не сдавайся._
+- **ED_RU:** *Не сдавайся.*
 
 ### Абзац 159 — speech
 
@@ -108,7 +108,7 @@
 
 - ED_RU ближе к EN -1 (score 12 против 9 у своей строки)
 - **EN (эталон):** Suddenly, Louise felt an intense throbbing pain in her head, thus bending down to the ground in agony.
-- **ED_RU:** _«Нежная и глупая. Луиза»_
+- **ED_RU:** *«Нежная и глупая. Луиза»*
 
 ### Абзац 166 — speech
 
@@ -132,7 +132,7 @@
 
 - ED_RU ближе к EN +1 (score 9 против 1 у своей строки)
 - **EN (эталон):** Who is Saito?
-- **ED_RU:** _«Сайто? Это кто?»_
+- **ED_RU:** *«Сайто? Это кто?»*
 
 ### Абзац 170 — speech
 
@@ -194,6 +194,12 @@
 - **EN (эталон):** BOOM.
 - **ED_RU:** Снова дёрнул рычаг спуска.
 
+### Абзац 253 — shift
+
+- ED_RU ближе к EN +1 (score 9 против 6 у своей строки)
+- **EN (эталон):** Things turned out a little bit weird, Saito began to realize.
+- **ED_RU:** Узором оно походило на железный крест, нарисованный на броне. Так ведь это же крест… — Сайто рылся в памяти.
+
 ### Абзац 260 — speech
 
 - EN — реплика, ED_RU — наррация
@@ -204,7 +210,7 @@
 
 ### Абзац 2 — names
 
-- есть в EN, нет в ED_RU: Глава шестая. Тигриный тракт
+- есть в EN, нет в ED_RU: Глава восьмая. Стальной тигр, Глава шестая. Тигриный тракт
 - **EN (эталон):** This was the Inn Street of Tiger's Highway. In this emptied place, Sheffield ordered the Golomontas to stay alert.
 - **ED_RU:** Постоялый городок на „Тигрином тракте“… На опустевших его улицах Шеффилд держала „Ёрмунгандов“ наготове.
 
@@ -296,7 +302,7 @@
 
 - лишнее отрицание в ED_RU (в EN его нет)
 - **EN (эталон):** Golomontas climbed slowly, seemingly enjoying themselves. The spread out Romalian army pointed all their guns at the entrance. If flanked from both sides, they would definitely fall into chaos, and Louise's plan would fail horribly.
-- **ED_RU:** Медленно, не спеша Ёрмунганды поднимались вверх. Развернувшиеся ромалийские войска держали пушки нацеленными на вход. Если враг спустится по обоим обрывам и ударит, свои переполошатся, и план с Луизой провалится.
+- **ED_RU:** Медленно, не спеша Ёрмунганды карабкались вверх. Развернувшиеся ромалийские войска держали пушки нацеленными на вход. Если враг спустится по обоим обрывам и ударит, свои переполошатся, и план с Луизой провалится.
 
 ### Абзац 56 — negation
 
@@ -530,7 +536,7 @@
 
 - есть в EN, нет в ED_RU: Чёрный Лес, госпожа Святая
 - **EN (эталон):** The pitch black fissure in her heart.... the deeply opened up fracture, was blaming Louise.
-- **ED_RU:** _«Нежная и глупая. Луиза»_
+- **ED_RU:** *«Нежная и глупая. Луиза»*
 
 ### Абзац 167 — marks
 
@@ -548,7 +554,7 @@
 
 - вопрос «?» только в ED_RU
 - **EN (эталон):** Then... she was reminded of Guiche's countless attempts to persuade her of something.
-- **ED_RU:** _«Сайто? Это кто?»_
+- **ED_RU:** *«Сайто? Это кто?»*
 
 ### Абзац 172 — names
 
@@ -582,7 +588,7 @@
 
 ### Абзац 181 — names
 
-- есть в EN, нет в ED_RU: госпожа Святая
+- есть в EN, нет в ED_RU: Глава девятая. Память уз, госпожа Святая
 - **EN (эталон):** A silhouette of somebody tampered around with Louise's heart. That gentle silhouette. That projection, encouraging her in her memories, shielding her from attacks…
 - **ED_RU:** Чёрный силуэт скользнул в сердце Луизы. Нежный силуэт. Он отгонял прочь себя в воспоминаниях и вставал у неё перед глазами.
 
@@ -708,25 +714,25 @@
 
 ### Абзац 231 — names
 
-- есть в EN, нет в ED_RU: Глава вторая. Церемония в честь третьей годовщины восшествия на престол, Глава шестая. Тигриный тракт; есть в ED_RU, нет в EN: Кольбер Огненный Змей
+- есть в EN, нет в ED_RU: Глава восьмая. Стальной тигр, Глава вторая. Церемония в честь третьей годовщины восшествия на престол, Глава шестая. Тигриный тракт; есть в ED_RU, нет в EN: Кольбер Огненный Змей
 - **EN (эталон):** Bursting out of the door, arriving at the mentioned warehouse, Saito found the repaired Tiger I Panzer, accompanied by Kirche and the others. They seemed to have somehow gotten this tank while the ceremony was progressing.
 - **ED_RU:** Выбежав из общежития, Сайто, как ему было велено, направился к складу — и там нашёл отремонтированный Кольбером «Тигр» и Кирхе с остальными.
 
 ### Абзац 232 — names
 
-- есть в ED_RU, нет в EN: Тигрес Гран-Рут, Тигриный тракт
+- есть в ED_RU, нет в EN: «Тигр» (танк), Тигрес Гран-Рут, Тигриный тракт
 - **EN (эталон):** Saito filled the tank with gasoline initially used for the Zero fighter plane, and left promptly. Originally, Saito handled the controls and Colbert watched him excitedly from the side. But, soon Colbert was able to replace Saito, since he learned quite quickly thanks to his past experiences of repa…
 - **ED_RU:** Похоже, они всю церемонию просидели там за ремонтом. Сайто залил в «Тигр» уйму бензина для «Зеро» и своим ходом доехал сюда. Сначала рулил он, а затем его сменил Кольбер, всё это время наблюдавший за его действиями. Кольбер, знавший конструкцию досконально после ремонта, быстро освоился с управление…
 
 ### Абзац 233 — names
 
-- есть в EN, нет в ED_RU: Глава шестая. Тигриный тракт; есть в ED_RU, нет в EN: Тигрес Гран-Рут, Тигриный тракт
+- есть в EN, нет в ED_RU: Глава восьмая. Стальной тигр, Глава шестая. Тигриный тракт; есть в ED_RU, нет в EN: Тигрес Гран-Рут, Тигриный тракт
 - **EN (эталон):** "This is called 'Tiger', right? Controlling this tank is definitely much easier than that 'airplane'. Just pull this, and it moves forward..."
 - **ED_RU:** — Эту «Тигрес», значит? Управлять танком куда проще, чем той «летательной машиной»! Нажмёшь сюда — и он едет вперёд…
 
 ### Абзац 234 — names
 
-- есть в EN, нет в ED_RU: Глава шестая. Тигриный тракт
+- есть в EN, нет в ED_RU: Глава восьмая. Стальной тигр, Глава шестая. Тигриный тракт
 - **EN (эталон):** Colbert stepped hard on the accelerator. Instantly, the Panzer's engine roared to life. Hiding behind the dense bushes behind the hills, they were able to observe Tiger's Highway completely.
 - **ED_RU:** Кольбер до отказа вдавил акселератор. Мотор «Тигра» взревел, и танк вынырнул из зарослей на макушке холма — оттуда, с холма, вход в «Тигриный тракт» виднелся как на ладони.
 
@@ -744,9 +750,15 @@
 
 ### Абзац 239 — names
 
-- есть в EN, нет в ED_RU: Глава шестая. Тигриный тракт
+- есть в EN, нет в ED_RU: Глава восьмая. Стальной тигр, Глава шестая. Тигриный тракт
 - **EN (эталон):** Roaring numerous times, the Panzer dashed to the entrance of "Tiger's Highway". Mixed emotions of jubilation and tearfulness exploded from the fleeing Romalian army once they discovered that two Golomontas had perished.
 - **ED_RU:** «Тигр», гремя и сотрясая землю, рванул к входу в «Тигриный тракт». А увидев стальной монстр, только что разнёсший двух Ёрмунгандов, отступавшие ромалийцы подняли ликующий вопль.
+
+### Абзац 245 — names
+
+- есть в EN, нет в ED_RU: «Тигр» (танк)
+- **EN (эталон):** The Panzer roared strongly and charged toward the Canyon's entrance, pushing soil around its sides. There gathered Romalian soldiers and generals.
+- **ED_RU:** Взревев и бороздя землю, танк нёсся к входу в тракт. К нему сбегались солдаты и офицеры ромалийской армии.
 
 ### Абзац 248 — names
 
@@ -771,6 +783,12 @@
 - есть в EN, нет в ED_RU: жрец-воин
 - **EN (эталон):** Saito was a little bit muddled. Tabitha poked her head out the hole beside and told him "Crusader's flag."
 - **ED_RU:** Пока Сайто хлопал глазами, Табита, выглянувшая из соседнего люка, пояснила: «Знамя священной войны».
+
+### Абзац 253 — names
+
+- есть в EN, нет в ED_RU: Глава восьмая. Стальной тигр
+- **EN (эталон):** The design was surprisingly similar to the steel cross tattooed on the tank's body. Supposedly, this is a cross.... Saito searched his memory.
+- **ED_RU:** Узором оно походило на железный крест, нарисованный на броне. Так ведь это же крест… — Сайто рылся в памяти.
 
 ### Абзац 254 — names
 
@@ -802,11 +820,23 @@
 - **EN (эталон):** Above the Crusader's flag, Saito hung his own cape.
 - **ED_RU:** Сверху на знамя священной войны Сайто привязал снятый собственный плащ.
 
+### Абзац 267 — names
+
+- есть в EN, нет в ED_RU: «Тигр» (танк)
+- **EN (эталон):** Skidding across the ground, the Panzer spat dust in the air, and finally halted.
+- **ED_RU:** Танк, подняв облако пыли, затормозил.
+
 ### Абзац 269 — negation
 
 - лишнее отрицание в ED_RU (в EN его нет)
 - **EN (эталон):** From the triangular scope, the Golomonta's distinct silhouette was revealed. With Halkeginia's technology, making a periscope this powerful and precise was absolutely impossible.
 - **ED_RU:** В окуляре прицела Ёрмунганд вырисовывался рельефно, в ряду треугольников прицельной сетки. Телескопическая картинка, о какой халкегинская техника и мечтать не могла…
+
+### Абзац 274 — names
+
+- есть в EN, нет в ED_RU: «Тигр» (танк)
+- **EN (эталон):** The shells of the cannons flew in the Panzer's direction, screeching loudly while slicing through the air. Where they landed, dust and dirt exploded violently.
+- **ED_RU:** Разрывы вокруг, взметнулась земля.
 
 ### Абзац 277 — negation
 
@@ -858,7 +888,7 @@
 
 ### Абзац 289 — names
 
-- есть в EN, нет в ED_RU: Гран-Труа
+- есть в EN, нет в ED_RU: Гран-Труа; есть в ED_RU, нет в EN: «Тигр» (танк)
 - **EN (эталон):** In front of a grand and wide plain with no cover whatsoever, charging together towards the tank.... was suicide.
 - **ED_RU:** Атаковать пушку «Тигра» в открытом поле, где ни единого укрытия… — верный способ расстаться с жизнью.
 
@@ -1253,25 +1283,4 @@
 - отрицание EN не передано явно (часто норма при идиоме)
 - **EN (эталон):** Golomontas were no different from sitting ducks, called to death one by one by the Panzer. Because of the sudden appearance of Gandálfr, a hot-headed Sheffield lost her senses and actually ordered the entire army to charge forward.
 - **ED_RU:** Как мишени в тире, «Тигр» валил бросившихся в атаку Ёрмунгандов. Шеффилд, вскружённая появлением Гандальва, потеряла хладнокровие и приказала идти в лобовую атаку.
-
-## Предложение по пересадке (DP-выравнивание)
-
-Куда, по признакам, должен лечь каждый съехавший ED_RU-абзац. Это ПЛАН, а не правка: первые строки зоны проверить глазами, применять через fix_block.py.
-
-- ED_RU 11 → строка 10 (score 3)
-- ED_RU 13 → строка 12 (score -6)
-- ED_RU 93 → строка 94 (score 0)
-- ED_RU 99 → строка 100 (score 12)
-- ED_RU 100 → строка 101 (score 6)
-- ED_RU 144 → строка 143 (score 1)
-- ED_RU 162 → строка 163 (score 6)
-- ED_RU 163 → строка 164 (score 12)
-- ED_RU 166 → строка 167 (score 9)
-- ED_RU 167 → строка 168 (score 6)
-- ED_RU 169 → строка 170 (score 9)
-- ED_RU 170 → строка 171 (score 6)
-- ED_RU 171 → строка 173 (score 3)
-- ED_RU 172 → строка 174 (score 9)
-- ED_RU 192 → строка 191 (score 4)
-- ED_RU 193 → строка 192 (score 10)
 

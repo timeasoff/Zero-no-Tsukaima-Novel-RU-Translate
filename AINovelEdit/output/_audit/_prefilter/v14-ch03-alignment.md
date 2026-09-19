@@ -1,6 +1,6 @@
 # Выгрузка предфильтра (соответствие строк merged): v14-ch03.md
 
-Абзацев 237, переведено 236. Сигналов: строгих 48, прочих 116, инфо 6, «съезд» 82, JA-сдвигов 35.
+Абзацев 237, переведено 236. Сигналов: строгих 48, прочих 116, инфо 6, «съезд» 80, JA-сдвигов 35.
 
 По типам: marks 43, names 36, negation 43, speech 48
 
@@ -26,33 +26,27 @@
 - **EN (эталон):** "What?"
 - **ED_RU:** — Что?
 
-### Абзац 4 — shift
-
-- ED_RU ближе к EN -1 (score 6 против 2 у своей строки)
-- **EN (эталон):** No, that can't be possible. I'm inside Romania's church with Louise. Something is odd with her alluring presence......then, in the room, she drank wine. The wine is mixed with some kind of medicine....
-- **ED_RU:** _Нет, этого не может быть. Я же был в соборе Ромалии. Потом мы с Луизой отправились на прогулку, и она держалась как-то странно… а после, в комнате, в вино что-то подмешали…_
-
 ### Абзац 5 — shift
 
-- ED_RU ближе к EN -1 (score 12 против 0 у своей строки)
+- ED_RU ближе к EN -1 (score 12 против -3 у своей строки)
 - **EN (эталон):** Does this mean that Louise carried me here?
-- **ED_RU:** _Значит, Луиза принесла меня сюда?.. Но зачем?_
+- **ED_RU:** *Значит, Луиза принесла меня сюда?.. Но зачем?*
 
 ### Абзац 6 — shift
 
 - ED_RU ближе к EN -1 (score 6 против 1 у своей строки)
 - **EN (эталон):** Where is this place anyways?
-- **ED_RU:** _И где это я вообще?_
+- **ED_RU:** *И где это я вообще?*
 
 ### Абзац 7 — shift
 
-- ED_RU ближе к EN -1 (score 9 против 3 у своей строки)
+- ED_RU ближе к EN -1 (score 9 против 0 у своей строки)
 - **EN (эталон):** Saito shook his head as he sleepily eyed his surroundings in confusion. He was sleeping on a hill that seemed bit taller than usual, leaning against an old man's tree's roots. Intense sunlight lit the same hill, making it a desert-like oasis. With a piece of shade around, only bits of sunlight leake…
 - **ED_RU:** Сайто приподнялся, встряхнул затуманенную голову и осмотрелся. Он спал на склоне невысокого холма, у корней одинокого дерева. Солнце палило вовсю, и лишь этот пятачок под кроной оставался прохладным, точно оазис в пустыне. Сквозь листву пробивались яркие блики — Сайто невольно зажмурился.
 
 ### Абзац 8 — shift
 
-- ED_RU ближе к EN -1 (score 6 против 3 у своей строки)
+- ED_RU ближе к EN -1 (score 9 против 0 у своей строки)
 - **EN (эталон):** The grass field is distant; mountains and forests can be seen.
 - **ED_RU:** Луга тянулись до самого горизонта; вдали виднелись горы и леса.
 
@@ -64,13 +58,13 @@
 
 ### Абзац 11 — shift
 
-- ED_RU ближе к EN -1 (score 7 против -5 у своей строки)
+- ED_RU ближе к EN -1 (score 7 против -11 у своей строки)
 - **EN (эталон):** Truly nerve-wracking. Saito shook his head at his situation. His body seemed fine, in its usual sweater and jeans, prior to the wearing a cloak.
-- **ED_RU:** _Ну и влип…_ — подумал Сайто, проверяя себя. Всё вроде на месте: обычные свитер и джинсы; плащ он снял и не надевал.
+- **ED_RU:** *Ну и влип…* — подумал Сайто, проверяя себя. Всё вроде на месте: обычные свитер и джинсы; плащ он снял и не надевал.
 
 ### Абзац 12 — shift
 
-- ED_RU ближе к EN -1 (score 7 против -5 у своей строки)
+- ED_RU ближе к EN -1 (score 7 против -8 у своей строки)
 - **EN (эталон):** He had been dressed like this during his times with Louise. Simply, finding himself moved here after regaining conscious in a church shouldn't be an issue.
 - **ED_RU:** Одет он был так же, как тогда, когда был с Луизой. Как бы то ни было… одно несомненно: он потерял сознание в одной из комнат собора, и его перенесли сюда.
 
@@ -78,7 +72,7 @@
 
 - EN — реплика, ED_RU — наррация
 - **EN (эталон):** "Each time I lose conscious, I wind up in some incredibly ridiculous place," he mused.
-- **ED_RU:** _Но почему я сплю на лугу?.._
+- **ED_RU:** *Но почему я сплю на лугу?..*
 
 ### Абзац 14 — speech
 
@@ -96,7 +90,7 @@
 
 - ED_RU ближе к EN -1 (score 6 против -4 у своей строки)
 - **EN (эталон):** Who is it?
-- **ED_RU:** _Кто бы это мог быть?_
+- **ED_RU:** *Кто бы это мог быть?*
 
 ### Абзац 17 — shift
 
@@ -204,7 +198,7 @@
 
 - EN — реплика, ED_RU — наррация
 - **EN (эталон):** "Thank you for the water. I'm very grateful. By the way, what do you mean by people who know about elves being 'rare?'" "I also don't know, the barbarians I've met have never seen my kind. Really, what countryside is this."
-- **ED_RU:** _Редкость?_ Сайто ощутил в этом слове лёгкую неувязку: в Халкегинии не сыскать человека, который не знал бы об эльфах.
+- **ED_RU:** *Редкость?* Сайто ощутил в этом слове лёгкую неувязку: в Халкегинии не сыскать человека, который не знал бы об эльфах.
 
 ### Абзац 35 — speech
 
@@ -240,7 +234,7 @@
 
 - ED_RU ближе к EN -1 (score 9 против -1 у своей строки)
 - **EN (эталон):** No idea what Halkeginia is?! How is that possible？Saito couldn't help but feel anxious. But based on what was said……at least, this place isn't Halkeginia?
-- **ED_RU:** _Халкегинию не знает?! Как такое возможно?_ — Сайто невольно разволновался. _Но, судя по её словам… по крайней мере, это место — не Халкегиния?_
+- **ED_RU:** *Халкегинию не знает?! Как такое возможно?* — Сайто невольно разволновался. *Но, судя по её словам… по крайней мере, это место — не Халкегиния?*
 
 ### Абзац 41 — speech
 
@@ -312,25 +306,25 @@
 
 - ED_RU ближе к EN -1 (score 9 против -1 у своей строки)
 - **EN (эталон):** Igujestansea....never heard of that name.
-- **ED_RU:** _Игуджистансея… Никогда не слышал такого названия._
+- **ED_RU:** *Игуджистансея… Никогда не слышал такого названия.*
 
 ### Абзац 51 — shift
 
 - ED_RU ближе к EN -1 (score 6 против 3 у своей строки)
 - **EN (эталон):** Who is responsible for this?
-- **ED_RU:** _И кто это устроил?_
+- **ED_RU:** *И кто это устроил?*
 
 ### Абзац 52 — shift
 
 - ED_RU ближе к EN -1 (score 9 против 5 у своей строки)
 - **EN (эталон):** Could it be that Pope？But what good would it do to leave me here？Or maybe, this is one of King Joseph's ulterior motives?
-- **ED_RU:** _Может, тот Папа? Но зачем ему выбрасывать меня сюда? Или это одна из уловок короля Жозефа?_
+- **ED_RU:** *Может, тот Папа? Но зачем ему выбрасывать меня сюда? Или это одна из уловок короля Жозефа?*
 
 ### Абзац 54 — shift
 
 - ED_RU ближе к EN -1 (score 9 против 1 у своей строки)
 - **EN (эталон):** King Joseph?
-- **ED_RU:** _Король Жозеф?_
+- **ED_RU:** *Король Жозеф?*
 
 ### Абзац 55 — speech
 
@@ -444,7 +438,7 @@
 
 - ED_RU ближе к EN -1 (score 9 против 3 у своей строки)
 - **EN (эталон):** Saito then thought: Elves and humans are definitely alike; each individual was unique to their own.
-- **ED_RU:** _Стало быть, и среди эльфов встречаются всякие,_ — заключил про себя Сайто.
+- **ED_RU:** *Стало быть, и среди эльфов встречаются всякие,* — заключил про себя Сайто.
 
 ### Абзац 73 — speech
 
@@ -614,12 +608,6 @@
 - **EN (эталон):** The boy grasped Saito's hand near his face.
 - **ED_RU:** — Прошу! Познакомь меня со своим господином!
 
-### Абзац 197 — shift
-
-- ED_RU ближе к EN +1 (score 6 против -5 у своей строки)
-- **EN (эталон):** "Quick! Let me see your master!"
-- **ED_RU:** — Прошу! Познакомь меня со своим господином!
-
 ### Абзац 198 — speech
 
 - EN — реплика, ED_RU — наррация
@@ -678,19 +666,19 @@
 
 - EN — реплика, ED_RU — наррация
 - **EN (эталон):** "Brimir of Nidabelio. Brimir Ru Rumiru Nidabelio."
-- **ED_RU:** _Бримир?_
+- **ED_RU:** *Бримир?*
 
 ### Абзац 209 — shift
 
 - ED_RU ближе к EN +1 (score 6 против 3 у своей строки)
 - **EN (эталон):** Wait, wait wait.
-- **ED_RU:** _Стоп. Неужели это… это…_
+- **ED_RU:** *Стоп. Неужели это… это…*
 
 ### Абзац 210 — shift
 
 - ED_RU ближе к EN +1 (score 9 против 3 у своей строки)
 - **EN (эталон):** That's....that's.....the mainland of Halkeginia's widely respected.....
-- **ED_RU:** _То самое имя, которому поклоняется весь народ Халкегинии…_
+- **ED_RU:** *То самое имя, которому поклоняется весь народ Халкегинии…*
 
 ### Абзац 211 — speech
 
@@ -720,13 +708,13 @@
 
 - ED_RU ближе к EN +1 (score 9 против -2 у своей строки)
 - **EN (эталон):** A void user couldn't possibly not know about Founder Brimir. That person before him doesn't seem like some ordinary person who coincidentally shares Brimir's name.
-- **ED_RU:** _Носитель Пустоты не может не знать об Основателе Бримире. Значит, это не просто случайный тёзка._
+- **ED_RU:** *Носитель Пустоты не может не знать об Основателе Бримире. Значит, это не просто случайный тёзка.*
 
 ### Абзац 216 — shift
 
 - ED_RU ближе к EN +1 (score 6 против 1 у своей строки)
 - **EN (эталон):** So....
-- **ED_RU:** _Стало быть…_
+- **ED_RU:** *Стало быть…*
 
 ### Абзац 222 — shift
 
@@ -744,7 +732,7 @@
 
 - ED_RU ближе к EN +1 (score 6 против -4 у своей строки)
 - **EN (эталон):** Is this really not a dream?
-- **ED_RU:** _И впрямь — не сон ли это?_
+- **ED_RU:** *И впрямь — не сон ли это?*
 
 ### Абзац 231 — speech
 
@@ -762,7 +750,7 @@
 
 - ED_RU ближе к EN +1 (score 6 против 1 у своей строки)
 - **EN (эталон):** This is no dream.
-- **ED_RU:** _Не сон. Уж точно не сон._
+- **ED_RU:** *Не сон. Уж точно не сон.*
 
 ### Абзац 235 — speech
 
@@ -794,35 +782,35 @@
 
 - вопрос «?» только в ED_RU
 - **EN (эталон):** No, that can't be possible. I'm inside Romania's church with Louise. Something is odd with her alluring presence......then, in the room, she drank wine. The wine is mixed with some kind of medicine....
-- **ED_RU:** _Я… разве я спал в таком месте?_
+- **ED_RU:** *Я… разве я спал в таком месте?*
 
 ### Абзац 4 — marks
 
 - вопрос «?» только в EN
 - **EN (эталон):** Does this mean that Louise carried me here?
-- **ED_RU:** _Нет, этого не может быть. Я же был в соборе Ромалии. Потом мы с Луизой отправились на прогулку, и она держалась как-то странно… а после, в комнате, в вино что-то подмешали…_
+- **ED_RU:** *Нет, этого не может быть. Я же был в соборе Ромалии. Потом мы с Луизой отправились на прогулку, и она держалась как-то странно… а после, в комнате, в вино что-то подмешали…*
 
 ### Абзац 5 — names
 
-- есть в ED_RU, нет в EN: Луиза, Луиза-Нулиза
+- есть в ED_RU, нет в EN: Луиза, Луиза Нулевая, Луиза-Нулиза
 - **EN (эталон):** Where is this place anyways?
-- **ED_RU:** _Значит, Луиза принесла меня сюда?.. Но зачем?_
+- **ED_RU:** *Значит, Луиза принесла меня сюда?.. Но зачем?*
 
 ### Абзац 6 — marks
 
 - вопрос «?» только в ED_RU
 - **EN (эталон):** Saito shook his head as he sleepily eyed his surroundings in confusion. He was sleeping on a hill that seemed bit taller than usual, leaning against an old man's tree's roots. Intense sunlight lit the same hill, making it a desert-like oasis. With a piece of shade around, only bits of sunlight leake…
-- **ED_RU:** _И где это я вообще?_
+- **ED_RU:** *И где это я вообще?*
 
 ### Абзац 7 — names
 
-- есть в ED_RU, нет в EN: Сайто Хирага
+- есть в EN, нет в ED_RU: Горы Огненного Дракона; есть в ED_RU, нет в EN: Сайто Хирага
 - **EN (эталон):** The grass field is distant; mountains and forests can be seen.
 - **ED_RU:** Сайто приподнялся, встряхнул затуманенную голову и осмотрелся. Он спал на склоне невысокого холма, у корней одинокого дерева. Солнце палило вовсю, и лишь этот пятачок под кроной оставался прохладным, точно оазис в пустыне. Сквозь листву пробивались яркие блики — Сайто невольно зажмурился.
 
 ### Абзац 8 — names
 
-- есть в EN, нет в ED_RU: Сайто Хирага
+- есть в EN, нет в ED_RU: Сайто Хирага; есть в ED_RU, нет в EN: Горы Огненного Дракона
 - **EN (эталон):** Still, Saito lifted his legs and sat down, stretching his neck.
 - **ED_RU:** Луга тянулись до самого горизонта; вдали виднелись горы и леса.
 
@@ -836,13 +824,13 @@
 
 - вопрос «?» только в ED_RU
 - **EN (эталон):** Truly nerve-wracking. Saito shook his head at his situation. His body seemed fine, in its usual sweater and jeans, prior to the wearing a cloak.
-- **ED_RU:** _Неужели это один из лугов Ромалии?_
+- **ED_RU:** *Неужели это один из лугов Ромалии?*
 
 ### Абзац 11 — negation
 
 - лишнее отрицание в ED_RU (в EN его нет)
 - **EN (эталон):** He had been dressed like this during his times with Louise. Simply, finding himself moved here after regaining conscious in a church shouldn't be an issue.
-- **ED_RU:** _Ну и влип…_ — подумал Сайто, проверяя себя. Всё вроде на месте: обычные свитер и джинсы; плащ он снял и не надевал.
+- **ED_RU:** *Ну и влип…* — подумал Сайто, проверяя себя. Всё вроде на месте: обычные свитер и джинсы; плащ он снял и не надевал.
 
 ### Абзац 12 — negation
 
@@ -860,7 +848,7 @@
 
 - вопрос «?» только в ED_RU
 - **EN (эталон):** Out of habit, Saito reached towards his back, but Derflinger wasn't there. He had left it in the room. Aside from feeling a bit uncomfortable, there shouldn't be much of a problem; the approaching person's footsteps were leisure and slow，indicating no hostility.
-- **ED_RU:** _Кто бы это мог быть?_
+- **ED_RU:** *Кто бы это мог быть?*
 
 ### Абзац 17 — names
 
@@ -938,7 +926,7 @@
 
 - вопрос «?» только в ED_RU
 - **EN (эталон):** Saito began to believe that he was dreaming, but, "Ah!" That hurts! Looks like it wasn't a dream. With how things are, Saito couldn't help but slap himself in the face.
-- **ED_RU:** _Халкегинию не знает?! Как такое возможно?_ — Сайто невольно разволновался. _Но, судя по её словам… по крайней мере, это место — не Халкегиния?_
+- **ED_RU:** *Халкегинию не знает?! Как такое возможно?* — Сайто невольно разволновался. *Но, судя по её словам… по крайней мере, это место — не Халкегиния?*
 
 ### Абзац 43 — marks
 
@@ -956,31 +944,31 @@
 
 - вопрос «?» только в EN
 - **EN (эталон):** Besides, why did I find myself awakening in such a place?
-- **ED_RU:** _Игуджистансея… Никогда не слышал такого названия._
+- **ED_RU:** *Игуджистансея… Никогда не слышал такого названия.*
 
 ### Абзац 51 — names
 
 - есть в EN, нет в ED_RU: Жозеф
 - **EN (эталон):** Could it be that Pope？But what good would it do to leave me here？Or maybe, this is one of King Joseph's ulterior motives?
-- **ED_RU:** _И кто это устроил?_
+- **ED_RU:** *И кто это устроил?*
 
 ### Абзац 52 — marks
 
 - вопрос «?» только в ED_RU
 - **EN (эталон):** However, the heart of Romania, the Church，is not such an easy place to access, even for King Joseph...Wait...if say he used that "Void" Magic, it might be possible.
-- **ED_RU:** _Может, тот Папа? Но зачем ему выбрасывать меня сюда? Или это одна из уловок короля Жозефа?_
+- **ED_RU:** *Может, тот Папа? Но зачем ему выбрасывать меня сюда? Или это одна из уловок короля Жозефа?*
 
 ### Абзац 53 — marks
 
 - вопрос «?» только в EN
 - **EN (эталон):** King Joseph?
-- **ED_RU:** _Но ведь я был в главном соборе Ромалии. Даже королю Жозефу туда не дотянуться. Хотя… у него же «Пустота». Проникнуть туда для него — плёвое дело._
+- **ED_RU:** *Но ведь я был в главном соборе Ромалии. Даже королю Жозефу туда не дотянуться. Хотя… у него же «Пустота». Проникнуть туда для него — плёвое дело.*
 
 ### Абзац 54 — marks
 
 - вопрос «?» только в ED_RU
 - **EN (эталон):** Suddenly, he remembered something important.
-- **ED_RU:** _Король Жозеф?_
+- **ED_RU:** *Король Жозеф?*
 
 ### Абзац 56 — marks
 
@@ -1014,7 +1002,7 @@
 
 ### Абзац 67 — names
 
-- есть в EN, нет в ED_RU: Тиффания; есть в ED_RU, нет в EN: Сайто Хирага
+- есть в EN, нет в ED_RU: Тиффания Уэствуд; есть в ED_RU, нет в EN: Сайто Хирага
 - **EN (эталон):** She had the same golden hair that Tiffania had, along with pupils that appear as if they were transparent emeralds adorned with long lashes above them. Despite the sharpness of her eyes, its lines had an enchanting and gentle feel to them. She was essentially like Tiffania with all traces of childis…
 - **ED_RU:** Впервые увидев настоящую эльфийку, Сайто невольно принялся её разглядывать.
 
@@ -1026,7 +1014,7 @@
 
 ### Абзац 69 — names
 
-- есть в EN, нет в ED_RU: Глава третья. Гандальв эльфов, Тиффания
+- есть в EN, нет в ED_RU: Глава третья. Гандальв эльфов, Тиффания Уэствуд
 - **EN (эталон):** The reason why Tiffania seemed approachable was that she was half-human....but facing this true elven female, he didn't feel an ounce of fear, despite having witnessed the elven Bishadal's unnerving presence.
 - **ED_RU:** А высокая, стройная фигура, укутанная плащом, дышала какой-то бесполой, отстранённой аурой.
 
@@ -1040,7 +1028,7 @@
 
 - есть в ED_RU, нет в EN: Сайто Хирага
 - **EN (эталон):** He once again eyed his surroundings. It was around noon. Distant clouds slowly grew larger.
-- **ED_RU:** _Стало быть, и среди эльфов встречаются всякие,_ — заключил про себя Сайто.
+- **ED_RU:** *Стало быть, и среди эльфов встречаются всякие,* — заключил про себя Сайто.
 
 ### Абзац 72 — negation
 
@@ -1064,7 +1052,7 @@
 
 - лишнее отрицание в ED_RU (в EN его нет)
 - **EN (эталон):** Is that so，Saito couldn't help but sigh. Speaking of that, he himself didn't feel distant, in the slightest, around Sasha. Even if he was close to Tiffania and has faced life and death situations, before an elf, who was believed to be one of the strongest and most feared creatures in Hakaginia, on i…
-- **ED_RU:** _Надо же,_ — подумал Сайто. В самом деле: и он сам не испытывал к Саше ничего похожего на страх. Пусть он и знал Тиффанию, но перед ним была настоящая эльфийка — из тех, кто когда-то мучил их и поныне считается в Халкегинии сильнейшим и страшнейшим врагом…
+- **ED_RU:** *Надо же,* — подумал Сайто. В самом деле: и он сам не испытывал к Саше ничего похожего на страх. Пусть он и знал Тиффанию, но перед ним была настоящая эльфийка — из тех, кто когда-то мучил их и поныне считается в Халкегинии сильнейшим и страшнейшим врагом…
 
 ### Абзац 80 — marks
 
@@ -1238,7 +1226,7 @@
 
 - вопрос «?» только в ED_RU
 - **EN (эталон):** Uncivilized magic....that's an indicator that it's "void," right？
-- **ED_RU:** _Дикая магия… Неужто это «Пустота»?_
+- **ED_RU:** *Дикая магия… Неужто это «Пустота»?*
 
 ### Абзац 148 — negation
 
@@ -1394,13 +1382,13 @@
 
 - есть в EN, нет в ED_RU: Основатель Бримир
 - **EN (эталон):** Brimir
-- **ED_RU:** _Стоп. Неужели это… это…_
+- **ED_RU:** *Стоп. Неужели это… это…*
 
 ### Абзац 210 — names
 
 - есть в ED_RU, нет в EN: Халкегиния
 - **EN (эталон):** Wait, wait wait.
-- **ED_RU:** _То самое имя, которому поклоняется весь народ Халкегинии…_
+- **ED_RU:** *То самое имя, которому поклоняется весь народ Халкегинии…*
 
 ### Абзац 212 — marks
 
@@ -1412,19 +1400,19 @@
 
 - лишнее отрицание в ED_RU (в EN его нет)
 - **EN (эталон):** Something suddenly clicked in Saito's head.
-- **ED_RU:** _Носитель Пустоты не может не знать об Основателе Бримире. Значит, это не просто случайный тёзка._
+- **ED_RU:** *Носитель Пустоты не может не знать об Основателе Бримире. Значит, это не просто случайный тёзка.*
 
 ### Абзац 217 — negation
 
 - лишнее отрицание в ED_RU (в EN его нет)
 - **EN (эталон):** So....
-- **ED_RU:** _Да нет, не может быть._
+- **ED_RU:** *Да нет, не может быть.*
 
 ### Абзац 219 — negation
 
 - лишнее отрицание в ED_RU (в EN его нет)
 - **EN (эталон):** How's that possible?
-- **ED_RU:** _Но можно ли утверждать, что такого не бывает?_
+- **ED_RU:** *Но можно ли утверждать, что такого не бывает?*
 
 ### Абзац 220 — marks
 
@@ -1466,25 +1454,25 @@
 
 - вопрос «?» только в ED_RU
 - **EN (эталон):** That is to say, in Halkeginia, six thousand years ago.
-- **ED_RU:** _И впрямь — не сон ли это?_
+- **ED_RU:** *И впрямь — не сон ли это?*
 
 ### Абзац 227 — marks
 
 - вопрос «?» только в EN
 - **EN (эталон):** Is this really not a dream?
-- **ED_RU:** _Нет._
+- **ED_RU:** *Нет.*
 
 ### Абзац 233 — negation
 
 - лишнее отрицание в ED_RU (в EN его нет)
 - **EN (эталон):** That feeling that passes through his skin and that motion.
-- **ED_RU:** _И всё это вместе — не сон._
+- **ED_RU:** *И всё это вместе — не сон.*
 
 ### Абзац 234 — negation
 
 - лишнее отрицание в ED_RU (в EN его нет)
 - **EN (эталон):** All these things told Saito that this could possibly be a dream.
-- **ED_RU:** _Не сон. Уж точно не сон._
+- **ED_RU:** *Не сон. Уж точно не сон.*
 
 ## JA-сдвиги (известное свойство выравнивания)
 
@@ -1726,11 +1714,11 @@
 
 - отрицание EN не передано явно (часто норма при идиоме)
 - **EN (эталон):** A void user couldn't possibly not know about Founder Brimir. That person before him doesn't seem like some ordinary person who coincidentally shares Brimir's name.
-- **ED_RU:** _Стало быть…_
+- **ED_RU:** *Стало быть…*
 
 ### Абзац 228 — negation
 
 - отрицание EN не передано явно (часто норма при идиоме)
 - **EN (эталон):** No.
-- **ED_RU:** _Это ощущение воздуха._
+- **ED_RU:** *Это ощущение воздуха.*
 
