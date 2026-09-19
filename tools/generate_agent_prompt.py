@@ -447,8 +447,10 @@ def prompt_first_launch(ch: Chapter) -> str:
 непереведённое название дороги, титула или местности) НЕ являются поводом
 останавливать работу и спрашивать пользователя: выбери наиболее
 обоснованную рабочую (provisional) форму, зафиксируй её в журнале
-с пометкой PROVISIONAL и продолжай (AGENTS.md, «Неопределённость:
-non-blocking и blocking»; UNCERTAINTY ≠ STOP, PROVISIONAL ≠ CANONICAL).
+с пометкой PROVISIONAL и продолжай без ожидания подтверждения
+(AGENTS.md, «Неопределённость: non-blocking и blocking»; UNCERTAINTY ≠
+STOP, PROVISIONAL ≠ CANONICAL, PROVISIONAL ≠ WAIT). Новый
+PROVISIONAL-термин обязательно укажи в итоговом отчёте блока/главы.
 Запрос пользователю — только для по-настоящему блокирующей
 неопределённости.
 

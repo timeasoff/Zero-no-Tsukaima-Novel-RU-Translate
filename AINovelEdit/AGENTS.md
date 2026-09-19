@@ -256,17 +256,30 @@ DETECT → INVESTIGATE → COMPARE → CLASSIFY → DECIDE → EDIT → RECHECK 
 
 ### PROVISIONAL ≠ CANONICAL
 
+**PROVISIONAL не означает WAIT**: обнаружение нового provisional-термина
+само по себе не является блокирующей неопределённостью — подтверждение
+пользователя не ожидается.
+
 Запрещено записывать неподтверждённую форму как окончательный канон
-словаря. Путь решения:
+словаря. Запись provisional-формы в `dictionary.md` допустима **только
+с явным статусом `PROVISIONAL`**; такая запись автоматически каноном
+не считается. Путь решения:
 
 ```text
 PROVISIONAL → USER CONFIRMED → CANONICAL
 PROVISIONAL → REJECTED → REPLACE ALL AFFECTED OCCURRENCES
 ```
 
-Все места использования provisional-формы должны быть прослеживаемы:
-запись в журнале + явная пометка `PROVISIONAL` в `dictionary.md`
-(вместо канонической).
+Обязательная цепочка:
+
+```text
+PROVISIONAL → LOG → USE → CONTINUE → REPORT → CONFIRM → CANONICAL
+```
+
+в том числе: **сообщить о каждом новом PROVISIONAL-термине в итоговом
+отчёте блока/главы**. Все места использования provisional-формы должны
+быть прослеживаемы: запись в журнале + явная пометка `PROVISIONAL`
+в `dictionary.md` (вместо канонической).
 
 ### Ключевое правило автоматизации
 
