@@ -39,14 +39,13 @@ if sys.stdout.encoding and sys.stdout.encoding.lower() != "utf-8":
     sys.stdout.reconfigure(encoding="utf-8")
     sys.stderr.reconfigure(encoding="utf-8")
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import merged_io  # noqa: E402
+
 BASE = Path(__file__).resolve().parent.parent
 MERGED = BASE / "translates" / "_report" / "merged"
 AUDIT = BASE / "output" / "_audit" / "_prefilter"
 DICT = BASE / "dictionary.md"
-
-PARA_RE = re.compile(r"^##\s*Абзац\s+(\d+)\s*$", re.M)
-FIELD_RE = re.compile(r"^\*\*(JA|EN|RU|ED_RU):\*\*\s*(.*)$", re.M)
-HTML_COMMENT_RE = re.compile(r"<!--.*?-->", re.S)
 EN_OPEN_QUOTE_RE = re.compile(r'^[\s"]*"')
 RU_SPEECH_RE = re.compile(r"^\s*(?:<!--.*?-->\s*)*—")
 DIGIT_RE = re.compile(r"(?<![\d,.\-–—])\d[\d\s]*")
@@ -173,29 +172,29 @@ def score(en, ed, pairs):
 
 
 def read_paras(path):
-    text = path.read_text(encoding="utf-8")
-    marks = list(PARA_RE.finditer(text))
-    items = []
-    for i, m in enumerate(marks):
-        end = marks[i + 1].start() if i + 1 < len(marks) else len(text)
-        fields = {k: v.strip() for k, v in FIELD_RE.findall(text[m.end():end])}
-        items.append((int(m.group(1)), fields))
-    return items
+    """Блоки (новый формат) или абзацы (старый) — единый разбор merged_io."""
+    return merged_io.read_merged(path)
 
 
 def clean(s):
-    return HTML_COMMENT_RE.sub(" ", s).strip()
+    return merged_io.clean(s)
 
 
 def check(path, pairs):
-    """Возвращает (сигналы, статистику)."""
+    """Возвращает (сигналы, статистику).
+
+    blocks_mode=True — merged в блочном формате: блоки уже выровнены,
+    поэтому проверка «съезда»/ja-shift не имеет смысла и отключается.
+    """
     items = read_paras(path)
+    blocks_mode = merged_io.is_block_format(path)
     en_list = [clean(f.get("EN", "")) for _, f in items]
     ed_list = [clean(f.get("ED_RU", "")) for _, f in items]
     ja_list = [clean(f.get("JA", "")) for _, f in items]
     signals = []
     stats = {"paragraphs": len(items), "translated": 0, "strong": 0, "weak": 0,
-             "info": 0, "ja_shift": 0, "near_miss": 0, "kinds": {}}
+             "info": 0, "ja_shift": 0, "near_miss": 0, "kinds": {},
+             "blocks_mode": blocks_mode}
 
     for idx, (num, _f) in enumerate(items):
         en, ed, ja = en_list[idx], ed_list[idx], ja_list[idx]
@@ -207,11 +206,21 @@ def check(path, pairs):
 
         s_own, en_n, ed_n, en_names, ed_names = score(en, ed, pairs)
         kind, detail, weight = None, "", "weak"
-        if is_speech_en(en) != is_speech_ru(ed):
-            kind, weight = "speech", "strong"
-            detail = "EN — %s, ED_RU — %s" % (
-                "реплика" if is_speech_en(en) else "наррация",
-                "реплика" if is_speech_ru(ed) else "наррация")
+        if blocks_mode:
+            # единица — смысловой блок: реплики ищем по наличию в блоке,
+            # а не по первому знаку (блок может начинаться наррацией)
+            en_sp = '"' in en
+            ed_sp = ("—" in ed) or ("«" in ed) or ('"' in ed)
+        else:
+            en_sp = is_speech_en(en)
+            ed_sp = is_speech_ru(ed)
+        if en_sp != ed_sp:
+            kind = "speech"
+            weight = "weak" if blocks_mode else "strong"
+            detail = "%s — %s, ED_RU — %s" % (
+                "блок: наличие реплик" if blocks_mode else "EN",
+                "реплика" if en_sp else "наррация",
+                "реплика" if ed_sp else "наррация")
         elif ("?" in en) != ("?" in ed):
             kind = "marks"
             detail = "вопрос «?» только в %s" % ("EN" if "?" in en else "ED_RU")
@@ -249,14 +258,15 @@ def check(path, pairs):
                             "detail": detail, "en": en, "ed": ed,
                             "score": s_own})
 
-        # съезд: ED_RU ближе к соседнему EN-абзацу, чем к своему
+        # съезд: только для абзацной сетки (в блочной блоки уже выровнены)
         near = []
-        for step in (-1, 1):
-            j = idx + step
-            if 0 <= j < len(items):
-                s_near, *_ = score(en_list[j], ed, pairs)
-                if s_near >= 5 and s_near > s_own + 2:
-                    near.append((step, s_near))
+        if not blocks_mode:
+            for step in (-1, 1):
+                j = idx + step
+                if 0 <= j < len(items):
+                    s_near, *_ = score(en_list[j], ed, pairs)
+                    if s_near >= 5 and s_near > s_own + 2:
+                        near.append((step, s_near))
         if near:
             step, s_near = max(near, key=lambda x: x[1])
             stats["near_miss"] += 1
@@ -266,8 +276,8 @@ def check(path, pairs):
                           % (step, s_near, s_own),
                 "en": en_list[idx + step], "ed": ed, "score": s_near})
 
-        # JA-сдвиг: с EN согласовано, но JA-абзац другого типа
-        if (ja and ja != "—" and not kind
+        # JA-сдвиг: только для абзацной сетки; в блочной JA уже в своём блоке
+        if (not blocks_mode and ja and ja != "—" and not kind
                 and is_speech_ru(ed) != is_speech_en(ja)):
             stats["ja_shift"] += 1
             signals.append({
@@ -282,19 +292,24 @@ def check(path, pairs):
 
 
 def render(name, signals, stats, proposal=None):
-    lines = ["# Выгрузка предфильтра (соответствие строк merged): %s" % name, ""]
-    lines.append("Абзацев %d, переведено %d. Сигналов: строгих %d, прочих %d, "
+    unit = "Блоков" if stats.get("blocks_mode") else "Абзацев"
+    lines = ["# Выгрузка предфильтра (соответствие merged): %s" % name, ""]
+    lines.append("%s %d, переведено %d. Сигналов: строгих %d, прочих %d, "
                  "инфо %d, «съезд» %d, JA-сдвигов %d." % (
-                     stats["paragraphs"], stats["translated"], stats["strong"],
-                     stats["weak"], stats["info"], stats["near_miss"],
-                     stats["ja_shift"]))
+                     unit, stats["paragraphs"], stats["translated"],
+                     stats["strong"], stats["weak"], stats["info"],
+                     stats["near_miss"], stats["ja_shift"]))
     kinds = stats.get("kinds", {})
     if kinds:
         lines.append("")
         lines.append("По типам: " + ", ".join(
             "%s %d" % (k, kinds[k]) for k in sorted(kinds)))
-    lines += ["", "Эталон соответствия — EN. `ja-shift` — не ошибка текста: "
-                  "JA выровнен приблизительно (±1–2 абзаца).", ""]
+    if stats.get("blocks_mode"):
+        lines += ["", "Единица — смысловой блок: блоки JA/EN/RU выровнены при "
+                      "нормализации, проверка «съезда» не требуется.", ""]
+    else:
+        lines += ["", "Эталон соответствия — EN. `ja-shift` — не ошибка текста: "
+                      "JA выровнен приблизительно (±1–2 абзаца).", ""]
 
     strong = [s for s in signals if s["weight"] == "strong"]
     weak = [s for s in signals if s["weight"] == "weak"]
@@ -306,7 +321,9 @@ def render(name, signals, stats, proposal=None):
         lines.append("## %s" % title)
         lines.append("")
         for s in group:
-            lines.append("### Абзац %d — %s" % (s["para"], s["kind"]))
+            lines.append("### %s %d — %s" % (unit.lower().rstrip("ов")
+                                             if unit == "Блоков" else "Абзац",
+                                             s["para"], s["kind"]))
             lines.append("")
             lines.append("- %s" % s["detail"])
             en = s["en"] if len(s["en"]) <= 300 else s["en"][:300] + "…"
@@ -445,7 +462,7 @@ def main():
         ed_list = [clean(f.get("ED_RU", "")) for _, f in items]
         signals, stats = check(path, pairs)
         proposal = (propose(en_list, ed_list, pairs)
-                    if args.propose else None)
+                    if args.propose and not stats["blocks_mode"] else None)
         if not stats["translated"]:
             print("OK: %s | ED_RU пуст — проверять нечего" % name)
             continue

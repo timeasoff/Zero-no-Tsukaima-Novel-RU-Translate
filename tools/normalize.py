@@ -2,13 +2,26 @@
 # -*- coding: utf-8 -*-
 """
 normalize.py — нормализация сырых исходников тома (JA epub / EN pdf / RU docx)
-в выровненные по абзацам markdown-файлы для проекта AINovelEdit.
+в markdown-файлы проекта AINovelEdit, выровненные по СМЫСЛОВЫМ БЛОКАМ.
 
-Использование (из папки, где лежат origs/ и AINovelEdit/):
+Смысловой блок (микросцена) — кластер соседних абзацев, объединённых одним
+действием/говорящим (реплика + атрибуция, диалоговая пара). Блоки нумеруются
+маркером `<!-- block: N -->` и одинаковы во всех языках: перевод и сравнение
+идут по блокам, а не по «абзац №N». Это устраняет «съезд», который давала
+прежняя жёсткая EN-якорная абзацная сетка (JA-абзац, разбитый в EN на два,
+сдвигал весь поток на +1 и давал перекрёстную подмену JA/EN/ED_RU).
+
+Внутри блока абзацы языка могут не совпадать по числу и границам — это норма.
+
+Использование (из корня репозитория, где лежат origs/ и AINovelEdit/):
     python tools/normalize.py --volume 14
+    python tools/normalize.py --volume 14 --out tmp_test   # не трогать проект
+    python tools/normalize.py --volume 14 --legacy         # старая абзацная сетка
 """
 import argparse
+import os
 import re
+import sys
 import zipfile
 from dataclasses import dataclass, field
 from html.parser import HTMLParser
@@ -16,6 +29,9 @@ from pathlib import Path
 
 import pymupdf
 import docx
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import semantic_blocks as sb  # noqa: E402
 
 KANJI_DIGITS = {"一": 1, "二": 2, "三": 3, "四": 4, "五": 5,
                 "六": 6, "七": 7, "八": 8, "九": 9}
@@ -659,6 +675,169 @@ def distribute_ru_sections(all_langs):
     print("[ru] заголовков глав не найдено — абзацы распределены по главам EN "
           "пропорционально объёму (границы глав приблизительны!)")
 
+# ---------------------- смысловые блоки (микросцены) -----------------------
+
+def build_blocks(ja, en, ru, glossary, params):
+    """Строит смысловые блоки: JA-кластеры + привязка EN- и RU-абзацев.
+
+    Возвращает список {'ja': [...], 'en': [...], 'ru': [...]} — индексы
+    абзацев каждого языка (0-based). Каждый EN/RU-абзац попадает ровно в один
+    блок; блоки JA покрывают все JA-абзацы.
+    """
+    if not ja:
+        # без JA опираемся на EN (JA пуст)
+        units = sb.cluster_blocks(en, params["narr_max"],
+                                  params["max_paras"], params["max_chars"]) if en else []
+        return [{"ja": [], "en": list(b), "ru": []} for b in units]
+
+    ja_blocks = sb.cluster_blocks(ja, params["narr_max"],
+                                  params["max_paras"], params["max_chars"])
+    unit_texts = ["".join(ja[i] for i in b) for b in ja_blocks]
+
+    def map_paras(other, lang):
+        out = [[] for _ in ja_blocks]
+        if not other or not unit_texts:
+            return out
+        anc_a = [sb.anchors_for(t, glossary, "ja") for t in unit_texts]
+        anc_b = [sb.anchors_for(p, glossary, lang) for p in other]
+        ops = dp_align(unit_texts, other, anchors_a=anc_a, anchors_b=anc_b,
+                       anchor_w=params["anchor_w"])
+        last = 0
+        for gr in build_groups(ops):
+            if gr["a"]:
+                last = gr["a"][0]        # блок-приёмник; для «только b» — прежний
+            if gr["b"]:
+                out[last].extend(gr["b"])
+        return out
+
+    en_by = map_paras(en, "en")
+    ru_per_en = map_paras_ru(en, ru, glossary, params["anchor_w"])
+    # RU-абзацы переносим в блок того EN-абзаца, к которому они привязаны
+    en_to_block = {}
+    for k, idxs in enumerate(en_by):
+        for j in idxs:
+            en_to_block[j] = k
+    ru_by = [[] for _ in ja_blocks]
+    last = 0
+    for j, ru_idxs in enumerate(ru_per_en):
+        if j in en_to_block:
+            last = en_to_block[j]
+        ru_by[last].extend(ru_idxs)
+    blocks = [{"ja": list(b), "en": sorted(en_by[k]), "ru": sorted(ru_by[k])}
+              for k, b in enumerate(ja_blocks)]
+    _fill_empty(blocks, "en")
+    _fill_empty(blocks, "ru")
+    return blocks
+
+
+def map_paras_ru(en, ru, glossary, anchor_w):
+    """Привязка RU-абзацев к EN-абзацам (список длины len(en)).
+
+    RU — машинный перевод EN: структура предложений и имена ближе к EN, чем
+    к JA, поэтому соответствие ищется EN ↔ RU, а не JA ↔ RU.
+    """
+    out = [[] for _ in en]
+    if not en or not ru:
+        return out
+    anc_en = [sb.anchors_for(p, glossary, "en") for p in en]
+    anc_ru = [sb.anchors_for(p, glossary, "ru") for p in ru]
+    ops = dp_align(en, ru, anchors_a=anc_en, anchors_b=anc_ru,
+                   anchor_w=anchor_w)
+    last = 0
+    for gr in build_groups(ops):
+        if gr["a"]:
+            last = gr["a"][0]
+        if gr["b"]:
+            out[last].extend(gr["b"])
+    return out
+
+
+def _fill_empty(blocks, key):
+    """Гарантирует каждому блоку хотя бы один абзац языка key.
+
+    Границы микросцен размыты: если выравнивание оставило блок без абзацев
+    другого языка, забираем ближайший абзац у соседа с избытком — иначе блок
+    теряет опору (нечего сравнивать) и в merged остаётся «—».
+    """
+    changed = True
+    while changed:
+        changed = False
+        for k in range(len(blocks)):
+            if blocks[k][key]:
+                continue
+            for cand in (k - 1, k + 1):
+                if 0 <= cand < len(blocks) and len(blocks[cand][key]) >= 2:
+                    idx = (blocks[cand][key][-1] if cand < k
+                           else blocks[cand][key][0])
+                    blocks[cand][key].remove(idx)
+                    blocks[k][key] = sorted(blocks[k][key] + [idx])
+                    changed = True
+                    break
+    return blocks
+
+
+def write_block_file(path, title, paras, blocks, lang):
+    """Markdown языка: блоки разделены маркером `<!-- block: N -->`."""
+    lines = ["# %s" % title, ""]
+    for bid, b in enumerate(blocks, 1):
+        idxs = b.get(lang) or []
+        if not idxs:
+            continue
+        lines.append("<!-- block: %d -->" % bid)
+        lines.append("")
+        for i in idxs:
+            t = paras[i].strip()
+            if t:
+                lines.append(t)
+                lines.append("")
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text("\n".join(lines).rstrip() + "\n", encoding="utf-8")
+
+
+def _col(paras, idxs):
+    txt = "\n".join(paras[i].strip() for i in idxs
+                    if i < len(paras) and paras[i].strip())
+    return txt or "—"
+
+
+def write_merged(path, title, ja, en, ru, blocks):
+    """Трёхъязычный merged: единица — блок (`## Блок N`), поля многострочные."""
+    parts = []
+    for bid, b in enumerate(blocks, 1):
+        parts.append("## Блок %d\n\n**JA:**\n%s\n\n**EN:**\n%s\n\n**RU:**\n%s\n"
+                     % (bid, _col(ja, b["ja"]), _col(en, b["en"]),
+                        _col(ru, b["ru"])))
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text("# %s\n\n%s\n" % (title, "\n".join(parts)), encoding="utf-8")
+
+
+def write_blocks_json(path, slug, ja, en, ru, glossary, blocks):
+    """Карта соответствия Block_ID -> [JA_indices], [EN_indices], [RU_indices]."""
+    import json
+
+    def anc(paras, idxs, lang):
+        s = set()
+        for i in idxs:
+            if i < len(paras):
+                s |= sb.anchors_for(paras[i], glossary, lang)
+        return sorted(s)
+
+    data = {"file": slug + ".md", "n_blocks": len(blocks), "blocks": []}
+    for bid, b in enumerate(blocks, 1):
+        data["blocks"].append({
+            "id": bid,
+            "ja_paras": [i + 1 for i in b["ja"]],
+            "en_paras": [i + 1 for i in b["en"]],
+            "ru_paras": [i + 1 for i in b["ru"]],
+            "anchors": {"ja": anc(ja, b["ja"], "ja"),
+                        "en": anc(en, b["en"], "en"),
+                        "ru": anc(ru, b["ru"], "ru")},
+        })
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(data, ensure_ascii=False, indent=1),
+                    encoding="utf-8")
+
+
 # --------------------------------- main ------------------------------------
 
 def main():
@@ -666,12 +845,31 @@ def main():
     ap.add_argument("--volume", type=int, required=True)
     ap.add_argument("--origs", default="origs")
     ap.add_argument("--project", default="AINovelEdit")
+    ap.add_argument("--out", default=None,
+                    help="куда писать translates/ (по умолчанию <project>/translates)")
+    ap.add_argument("--glossary", default=None,
+                    help="путь к dictionary.md (по умолчанию <project>/dictionary.md)")
+    ap.add_argument("--narr-max", type=int, default=90,
+                    help="порог «короткой» наррации для склейки с репликой")
+    ap.add_argument("--max-paras", type=int, default=8,
+                    help="максимум абзацев в одном смысловом блоке")
+    ap.add_argument("--max-chars", type=int, default=700,
+                    help="максимум символов в одном смысловом блоке")
+    ap.add_argument("--anchor-w", type=float, default=4.0,
+                    help="вес словарных/числовых якорей при выравнивании блоков")
+    ap.add_argument("--legacy", action="store_true",
+                    help="старая абзацная сетка (EN-якорь); не рекомендуется")
     args = ap.parse_args()
 
     origs = Path(args.origs)
     project = Path(args.project)
-    out_base = project / "translates"
+    out_base = Path(args.out) if args.out else project / "translates"
+    glossary_path = (Path(args.glossary) if args.glossary
+                     else project / "dictionary.md")
+    glossary = sb.load_glossary(glossary_path)
     vol = args.volume
+    params = {"narr_max": args.narr_max, "max_paras": args.max_paras,
+              "max_chars": args.max_chars, "anchor_w": args.anchor_w}
 
     ru_docx = origs / ("%d-ru.docx" % vol)
     ru_md = origs / ("%d-ru.md" % vol)
@@ -696,10 +894,60 @@ def main():
 
     distribute_ru_sections(all_langs)
     trios = match_sections(all_langs)
+
+    if args.legacy:
+        _run_legacy(trios, out_base, vol)
+        return
+
+    print("Режим смысловых блоков; словарь: %d терминов" % len(glossary))
+    report = ["# Отчёт смысловых блоков — том %d" % vol, ""]
+    report.append("Единица — смысловой блок (микросцена). translates/* и merged/ "
+                  "разбиты по блокам (`<!-- block: N -->` / `## Блок N`); "
+                  "абзацы внутри блока могут не совпадать по числу и границам.")
+    report.append("")
+    report.append("| Секция | JA абз. | EN абз. | RU абз. | Блоков | Пустых JA |")
+    report.append("|---|---|---|---|---|---|")
+
+    for trio in trios:
+        sec = trio["en"]
+        slug = "v%d-%s" % (vol, sec.slug)
+        ja_p = trio["ja"].paras if trio["ja"] else []
+        ru_p = trio["ru"].paras if trio["ru"] else []
+        en_p = sec.paras
+        blocks = build_blocks(ja_p, en_p, ru_p, glossary, params)
+
+        titles = {}
+        for lang, sec_lang in (("ja", trio["ja"]), ("en", sec),
+                               ("ru", trio["ru"])):
+            titles[lang] = sec_lang.title if sec_lang else sec.title
+        write_block_file(out_base / "ja" / (slug + ".md"),
+                         titles["ja"], ja_p, blocks, "ja")
+        write_block_file(out_base / "en" / (slug + ".md"),
+                         titles["en"], en_p, blocks, "en")
+        write_block_file(out_base / "ru" / (slug + ".md"),
+                         titles["ru"], ru_p, blocks, "ru")
+        write_merged(out_base / "_report" / "merged" / (slug + ".md"),
+                     titles["en"], ja_p, en_p, ru_p, blocks)
+        write_blocks_json(out_base / "_report" / "blocks" / (slug + ".json"),
+                          slug, ja_p, en_p, ru_p, glossary, blocks)
+
+        empty_ja = sum(1 for b in blocks if not b["ja"])
+        report.append("| %s | %d | %d | %d | %d | %d |" % (
+            slug, len(ja_p), len(en_p), len(ru_p), len(blocks), empty_ja))
+
+    rep_dir = out_base / "_report"
+    rep_dir.mkdir(parents=True, exist_ok=True)
+    (rep_dir / ("v%d-alignment.md" % vol)).write_text(
+        "\n".join(report) + "\n", encoding="utf-8")
+    print("Готово. Секций: %d. Блоки: %s/{ja,en,ru}, %s/blocks/*.json; отчёт: %s"
+          % (len(trios), out_base, rep_dir, rep_dir / ("v%d-alignment.md" % vol)))
+
+
+def _run_legacy(trios, out_base, vol):
+    """Старая абзацная сетка (EN-якорь) — только для совместимости/сравнения."""
     report = ["# Отчёт выравнивания — том %d" % vol, ""]
     report.append("| Секция | JA абз. | EN абз. | RU абз. | Строк | Пустых JA | Пустых RU | RU разрезано |")
     report.append("|---|---|---|---|---|---|---|---|")
-
     for trio in trios:
         sec = trio["en"]
         slug = "v%d-%s" % (vol, sec.slug)
@@ -707,41 +955,34 @@ def main():
         ja_p = trio["ja"].paras if trio["ja"] else []
         ru_p = trio["ru"].paras if trio["ru"] else []
         lines, stats = align_triple(ja_p, sec.paras, ru_p, warnings)
-
         ja_lines = [l[0] if l[0].strip() else "<!-- нет пары в JA -->" for l in lines]
-        # RU: пустая строка (нет пары) записывается ЯВНЫМ плейсхолдером,
-        # иначе при чтении пустой абзац схлопывается и вся RU-колонка
-        # в merged сдвигается вверх (рассинхрон).
         ru_lines = [l[2] if l[2].strip() else "<!-- нет пары в RU -->" for l in lines]
         for lang, sec_lang, content in (
-            ("ja", trio["ja"], ja_lines),
-            ("en", sec, [l[1] for l in lines]),
-            ("ru", trio["ru"], ru_lines),
-        ):
+                ("ja", trio["ja"], ja_lines),
+                ("en", sec, [l[1] for l in lines]),
+                ("ru", trio["ru"], ru_lines)):
             d = out_base / lang
             d.mkdir(parents=True, exist_ok=True)
-            title = sec_lang.title if sec_lang else sec.title
-            text = "# %s\n\n%s\n" % (title, "\n\n".join(content))
-            (d / (slug + ".md")).write_text(text, encoding="utf-8")
-
-        # merged-копия для визуальной свечки человеком (не для агента)
+            t = sec_lang.title if sec_lang else sec.title
+            (d / (slug + ".md")).write_text(
+                "# %s\n\n%s\n" % (t, "\n\n".join(content)), encoding="utf-8")
         merged_dir = out_base / "_report" / "merged"
         merged_dir.mkdir(parents=True, exist_ok=True)
         parts = ["## Абзац %d\n\n**JA:** %s\n\n**EN:** %s\n\n**RU:** %s" % (
             i, l[0] or "—", l[1] or "—", l[2] or "—")
             for i, l in enumerate(lines, 1)]
-        (merged_dir / (slug + ".md")).write_text("\n\n".join(parts) + "\n", encoding="utf-8")
-
+        (merged_dir / (slug + ".md")).write_text(
+            "\n\n".join(parts) + "\n", encoding="utf-8")
         report.append("| %s | %d | %d | %d | %d | %d | %d | %d |" % (
-            slug, len(ja_p), len(sec.paras), len(ru_p),
-            len(lines), stats["empty_ja"], stats["empty_ru"], stats["ru_split"]))
+            slug, len(ja_p), len(sec.paras), len(ru_p), len(lines),
+            stats["empty_ja"], stats["empty_ru"], stats["ru_split"]))
         for w in warnings:
             report.append("  - WARNING %s: %s" % (slug, w))
-
     rep_dir = out_base / "_report"
     rep_dir.mkdir(parents=True, exist_ok=True)
-    (rep_dir / ("v%d-alignment.md" % vol)).write_text("\n".join(report) + "\n", encoding="utf-8")
-    print("Готово. Секций: %d. Отчёт: %s" % (len(trios), rep_dir / ("v%d-alignment.md" % vol)))
+    (rep_dir / ("v%d-alignment.md" % vol)).write_text(
+        "\n".join(report) + "\n", encoding="utf-8")
+    print("Готово (legacy, абзацная сетка). Секций: %d." % len(trios))
 
 
 if __name__ == "__main__":

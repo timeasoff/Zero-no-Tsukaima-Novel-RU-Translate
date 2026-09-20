@@ -5,14 +5,23 @@ update_merged.py — обновление merged-файлов (JA/EN/RU/ED_RU).
 
 Агент вызывает этот скрипт ПОСЛЕ сохранения блока — merged-файлы руками
 не редактировать. ED_RU берётся из output/<имя>.md (отредактированный
-перевод); для ещё не отредактированных абзацев ставится «—».
+перевод); для ещё не отредактированных единиц ставится «—».
+
+ДВА формата (выбирается автоматически по наличию `<!-- block: N -->` в
+translates/en/<file>):
+
+* БЛОЧНЫЙ (новые тома, tools/normalize.py): единица — смысловой блок.
+  Блоки уже выровнены при нормализации, поэтому merged строится напрямую:
+  блок N исходников и блок N output/ — одна и та же микросцена. Никакого
+  DP-выравнивания и «съезда» — главная причина прежних рассинхронов
+  устранена в корне.
+
+* АБЗАЦНЫЙ (старые тома, --legacy в normalize.py): EN-якорная абзацная
+  сетка. RU-колонка строится выравниванием по длине (DP, общая логика
+  с tools/normalize.py), ED_RU пересаживается по DP.
 
 ВАЖНО: translates/{ja,en,ru} — ИСХОДНИКИ, скрипт читает их и НИКОГДА не
-пишет в них (пишет только в translates/_report/merged/). RU-колонка строится
-НЕ позиционно (RU-абзацев меньше, чем EN — позиционность давала рассинхрон),
-а выравниванием по длине (DP, копия логики tools/normalize.py). Абзацы RU
-распределяются по EN-строкам БЕЗ ПОТЕРЬ: если RU-абзацев в группе больше,
-чем EN-строк, остаток присоединяется к последней строке группы через « / ».
+пишет в них (пишет только в translates/_report/merged/).
 
 Использование:
     python scripts/update_merged.py --file v14-ch01.md
@@ -61,10 +70,68 @@ from normalize import ru_en_sentence_map  # noqa: E402
 # проверка соответствия строк (съезд ED_RU ↔ EN-якорь) выполняется сразу
 # после генерации merged — проблема всплывает здесь, а не при аудите
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+import merged_io  # noqa: E402
 try:
     import check_alignment as ca  # noqa: E402
 except Exception:
     ca = None
+
+
+def read_title(path):
+    """Заголовок главы (первая строка '# ...')."""
+    try:
+        for line in path.read_text(encoding="utf-8").splitlines():
+            if line.startswith("# "):
+                return line[2:].strip()
+    except OSError:
+        pass
+    return ""
+
+
+def update_block_mode(name):
+    """Новый (блочный) формат: merged строится по смысловым блокам.
+
+    Блоки уже выровнены при нормализации (`<!-- block: N -->` одинаков во всех
+    файлах), поэтому никакое DP-выравнивание не требуется: блок N исходников
+    и блок N output/ — это одна и та же микросцена.
+    """
+    ja_blocks, _ = merged_io.read_source_blocks(TR / "ja" / name)
+    en_blocks, _ = merged_io.read_source_blocks(TR / "en" / name)
+    ru_blocks, _ = merged_io.read_source_blocks(TR / "ru" / name)
+    out_path = OUT / name
+    ed_blocks, _ = (merged_io.read_source_blocks(out_path)
+                    if out_path.exists() else ([], None))
+
+    def by_id(blocks):
+        return {n: "\n".join(ps) for n, ps in (blocks or [])}
+
+    ja_by, en_by = by_id(ja_blocks), by_id(en_blocks)
+    ru_by, ed_by = by_id(ru_blocks), by_id(ed_blocks)
+    ids = sorted(set(ja_by) | set(en_by) | set(ru_by) | set(ed_by))
+    parts = []
+    for bid in ids:
+        parts.append(
+            "## Блок %d\n\n**JA:**\n%s\n\n**EN:**\n%s\n\n**RU:**\n%s\n\n"
+            "**ED_RU:**\n%s\n" % (
+                bid,
+                ja_by.get(bid) or "—",
+                en_by.get(bid) or "—",
+                ru_by.get(bid) or "—",
+                ed_by.get(bid) or "—"))
+    MERGED.mkdir(parents=True, exist_ok=True)
+    (MERGED / name).write_text(
+        "# %s\n\n%s\n" % (read_title(TR / "en" / name) or name,
+                          "\n".join(parts)), encoding="utf-8")
+    done = sum(1 for bid in ids if ed_by.get(bid))
+    print("OK: %s | блоков %d | ED_RU заполнено %d (блочный формат)" % (
+        name, len(ids), done))
+    if ca is not None and done:
+        try:
+            _s, _st = ca.check(MERGED / name, ca.load_names())
+            print("   сверка блоков: строгих %d, прочих %d, инфо %d" % (
+                _st["strong"], _st["weak"], _st["info"]))
+        except Exception as exc:  # сверка не должна ломать генерацию
+            print("   сверка не выполнена: %s" % exc, file=sys.stderr)
 
 
 def ru_column(en, ru):
@@ -89,6 +156,11 @@ def main():
     names = ([args.file] if args.file
              else sorted(p.name for p in (TR / "en").glob("v*.md")))
     for name in names:
+        # блочный формат (новые тома): merged строится по смысловым блокам
+        en_src = TR / "en" / name
+        if en_src.exists() and "<!-- block:" in en_src.read_text(encoding="utf-8"):
+            update_block_mode(name)
+            continue
         ja_t, ja = read_paras(TR / "ja" / name)
         en_t, en = read_paras(TR / "en" / name)
         _, ru = read_paras(TR / "ru" / name)

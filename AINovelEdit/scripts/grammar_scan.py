@@ -42,13 +42,13 @@ if sys.stdout.encoding and sys.stdout.encoding.lower() != "utf-8":
     sys.stdout.reconfigure(encoding="utf-8")
     sys.stderr.reconfigure(encoding="utf-8")
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import merged_io  # noqa: E402
+
 BASE = Path(__file__).resolve().parent.parent
 MERGED = BASE / "translates" / "_report" / "merged"
 AUDIT = BASE / "output" / "_audit" / "_prefilter"
 
-PARA_RE = re.compile(r"^##\s*Абзац\s+(\d+)\s*$", re.M)
-FIELD_RE = re.compile(r"^\*\*(JA|EN|RU|ED_RU):\*\*\s*(.*)$", re.M)
-HTML_COMMENT_RE = re.compile(r"<!--.*?-->", re.S)
 SENT_RE = re.compile(r"[^.!?…]+[.!?…]*")
 
 # ---------- RU: возвратные глаголы ----------
@@ -114,20 +114,16 @@ CHECKS = ("voice", "possessive", "passive-ru", "agreement", "numbers")
 
 
 def read_paras(path):
-    """Возвращает список (номер абзаца, {поле: текст}) из merged-файла."""
-    text = path.read_text(encoding="utf-8")
-    marks = list(PARA_RE.finditer(text))
-    items = []
-    for i, m in enumerate(marks):
-        end = marks[i + 1].start() if i + 1 < len(marks) else len(text)
-        chunk = text[m.end():end]
-        fields = {k: v.strip() for k, v in FIELD_RE.findall(chunk)}
-        items.append((int(m.group(1)), fields))
-    return items
+    """Возвращает список (номер блока/абзаца, {поле: текст}) из merged-файла.
+
+    Единица — смысловой блок (новый формат) или абзац (старый); разбор
+    выполняет общий модуль merged_io.
+    """
+    return merged_io.read_merged(path)
 
 
 def clean(s):
-    return HTML_COMMENT_RE.sub(" ", s).strip()
+    return merged_io.clean(s)
 
 
 def sentences(text):

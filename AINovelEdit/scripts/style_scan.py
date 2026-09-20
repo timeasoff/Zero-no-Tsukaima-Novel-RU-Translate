@@ -214,8 +214,8 @@ def parse_blocks(path: Path):
                 paragraphs.append("\n".join(cur))
                 cur = []
         else:
-            if line.startswith("# "):
-                continue
+            if line.startswith("# ") or line.strip().startswith("<!--"):
+                continue          # заголовок и маркеры <!-- block: N -->
             cur.append(line)
     if cur:
         paragraphs.append("\n".join(cur))

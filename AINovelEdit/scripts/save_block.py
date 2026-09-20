@@ -43,10 +43,14 @@ def paragraphs(path):
 
 
 def position_check(path):
-    """Профилактика съезда: сравнить позиции абзацев результата с EN-якорем.
+    """Профилактика съезда: сверка результата с исходником.
 
-    Печатает предупреждение, если значимая часть абзацев по признакам ближе
-    к соседней EN-строке, чем к своей (это будущий съезд в merged).
+    Блочный формат (новые тома): сверяются НОМЕРА смысловых блоков —
+    блок N output/ обязан существовать в translates/en (блоки выровнены
+    при нормализации, абзацных сравнений не требуется).
+
+    Абзацный формат (старые тома): сравнить позиции абзацев результата
+    с EN-якорем и предупредить о съезде.
     """
     if ca is None:
         return
@@ -54,6 +58,19 @@ def position_check(path):
     if not en_path.exists():
         return
     try:
+        en_text = en_path.read_text(encoding="utf-8")
+        if "<!-- block:" in en_text:
+            en_ids = {int(m) for m in
+                      re.findall(r"<!--\s*block:\s*(\d+)\s*-->", en_text)}
+            out_text = path.read_text(encoding="utf-8")
+            out_ids = [int(m) for m in
+                       re.findall(r"<!--\s*block:\s*(\d+)\s*-->", out_text)]
+            unknown = sorted({n for n in out_ids if n not in en_ids})
+            if unknown:
+                print(" (!) блоки %s отсутствуют в EN-исходнике — проверь "
+                      "номер смыслового блока (блоки выровнены normalize.py)"
+                      % unknown)
+            return
         en = paragraphs(en_path)
         ed = paragraphs(path)
         if not en or not ed:
