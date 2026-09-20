@@ -47,7 +47,7 @@
 // (см. _typst_break_input), здесь ничего делать не нужно.
 // ─────────────────────────────────────────────────────────────────────────────
 
-#let header_corner = image("header_border_trim.webp", width: 1.7cm)
+#let header_corner = image("border_header.webp", width: 1.7cm)
 
 #show heading.where(level: 1): it => block(
   above: 3em,
