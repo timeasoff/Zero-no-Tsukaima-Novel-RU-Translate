@@ -86,6 +86,11 @@ MARKDOWN_DIR = PROJECT_ROOT / "AINovelEdit" / "output"
 # images/
 IMAGES_ROOT = PROJECT_ROOT / "images"
 
+# Папка с предисловиями переводчика (заполняются вручную).
+# Файл тома N: prefaces/vN.md — добавляется в начало смерженного тома
+# как отдельный блок. Скрипт его никогда не изменяет.
+PREFACES_ROOT = PROJECT_ROOT / "prefaces"
+
 
 # ============================================================
 # Регулярные выражения
@@ -189,6 +194,98 @@ def collect_markdown_files(volume):
     )
 
     return files
+
+
+# ============================================================
+# Предисловие переводчика
+# ============================================================
+
+PREFACE_SEPARATOR = "***"
+
+
+def find_preface(volume):
+    """
+    Возвращает путь к предисловию тома или None.
+
+    Ищется файл prefaces/v<N>.md (например, prefaces/v14.md).
+    Файл заполняется вручную и скриптом не изменяется.
+    """
+
+    candidates = [
+        PREFACES_ROOT / f"v{volume}.md",
+        PREFACES_ROOT / f"v{volume}-preface.md",
+    ]
+
+    for path in candidates:
+
+        if path.is_file():
+            return path
+
+    return None
+
+
+def load_preface(
+    volume,
+    markdown_output,
+):
+    """
+    Читает предисловие тома и обрабатывает его как обычный Markdown
+    (block-маркеры удаляются, img-маркеры заменяются изображениями).
+
+    Возвращает (text, missing). text = None, если предисловия нет
+    или оно пустое.
+    """
+
+    path = find_preface(volume)
+
+    if path is None:
+
+        print()
+        print(
+            "Предисловие не найдено "
+            f"({PREFACES_ROOT / f'v{volume}.md'}) — пропускаю."
+        )
+
+        return (
+            None,
+            [],
+        )
+
+    print()
+    print(
+        "Предисловие:"
+    )
+    print(
+        f"  {path}"
+    )
+
+    text = path.read_text(
+        encoding="utf-8",
+    )
+
+    (text, _found, missing) = process_markdown(
+        text,
+        markdown_output,
+    )
+
+    text = text.strip()
+
+    if not text:
+
+        print()
+        print(
+            "Предисловие пустое, пропускаю."
+        )
+
+        return (
+            None,
+            missing,
+        )
+
+    return (
+        text,
+        missing,
+    )
 
 
 # ============================================================
@@ -359,11 +456,26 @@ def process_markdown(
 def merge_markdown_files(
     files,
     markdown_output,
+    preface=None,
 ):
     chunks = []
 
     inserted = []
     missing = []
+
+    # --------------------------------------------------------
+    # Предисловие переводчика — отдельный блок в начале тома
+    # --------------------------------------------------------
+
+    if preface:
+
+        chunks.append(
+            preface.strip() + "\n\n" + PREFACE_SEPARATOR
+        )
+
+        print(
+            "  Предисловие добавлено в начало тома"
+        )
 
     for path in files:
 
@@ -665,6 +777,15 @@ def main():
         "Обработка Markdown:"
     )
 
+    # --------------------------------------------------------
+    # Предисловие переводчика (ручной файл)
+    # --------------------------------------------------------
+
+    (preface, preface_missing) = load_preface(
+        volume,
+        md_output,
+    )
+
     (
         merged,
         inserted,
@@ -672,12 +793,16 @@ def main():
     ) = merge_markdown_files(
         files,
         md_output,
+        preface,
     )
 
     md_output.write_text(
         merged,
         encoding="utf-8",
     )
+
+    # не найденные изображения из предисловия учитываются в общей статистике
+    missing.extend(preface_missing)
 
     print()
     print(
