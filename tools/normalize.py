@@ -156,7 +156,19 @@ def extract_ja(path):
 # ----------------------------- EN (pdf) ------------------------------------
 
 EN_HEAD_RE = re.compile(
-    r"^(Chapter\s+(\d+)\s*[:.]\s*.+|Prologue|Epilogue|Afterword|Interlude)(\s*[:.].*)?$")
+    r"^(?:Chapter\s+(?P<num>\d+|[Oo]ne|[Tt]wo|[Tt]hree|[Ff]our|[Ff]ive|[Ss]ix|"
+    r"[Ss]even|[Ee]ight|[Nn]ine|[Tt]en|[Ee]leven|[Tt]welve|[Tt]hirteen|"
+    r"[Ff]ourteen|[Ff]ifteen|[Ss]ixteen|[Ss]eventeen|[Ee]ighteen|[Nn]ineteen|"
+    r"[Tt]wenty)\s*[:.]?\s*|(?P<word>Prologue|Epilogue|Afterword|Interlude))"
+    r"(?P<rest>.*)$")
+
+EN_WORD_NUM = {
+    "one": 1, "two": 2, "three": 3, "four": 4, "five": 5, "six": 6,
+    "seven": 7, "eight": 8, "nine": 9, "ten": 10, "eleven": 11,
+    "twelve": 12, "thirteen": 13, "fourteen": 14, "fifteen": 15,
+    "sixteen": 16, "seventeen": 17, "eighteen": 18, "nineteen": 19,
+    "twenty": 20,
+}
 
 
 def _ends_sentence(s):
@@ -172,23 +184,41 @@ def extract_en(path):
         blocks = sorted(page.get_text("blocks"), key=lambda b: (b[1], b[0]))
         for b in blocks:
             raw = re.sub(r"(\w)-\n(\w)", r"\1\2", b[4])
-            text = clean_ws(raw)
-            if not text or re.fullmatch(r"\d{1,3}", text):
+            lines = []
+            for line in raw.splitlines():
+                line = clean_ws(line)
+                if not line or re.fullmatch(r"\d{1,3}", line):
+                    continue
+                lines.append(line)
+            if not lines:
                 continue
+            buf = []
+            for line in lines:
+                m = EN_HEAD_RE.match(line)
+                if m and len(line) < 120:
+                    # заголовок главы: сбрасываем накопленный текст
+                    if buf:
+                        if cur is not None:
+                            cur.paras.append(" ".join(buf))
+                        buf = []
+                    num = m.group("num")
+                    if num is not None:
+                        kind = "chapter"
+                        num = (int(num) if num.isdigit()
+                               else EN_WORD_NUM[num.lower()])
+                    else:
+                        kind = m.group("word").lower()
+                        num = None
+                    cur = Section(kind, num, line)
+                    sections.append(cur)
+                else:
+                    buf.append(line)
+            if not buf:
+                continue
+            text = " ".join(buf)
             if carry:
                 text = carry + " " + text
                 carry = ""
-            head_text = text.replace("\n", " ")
-            m = EN_HEAD_RE.match(head_text)
-            if m and len(head_text) < 120:
-                if m.group(2):
-                    kind, num = "chapter", int(m.group(2))
-                else:
-                    kind = head_text.split(":")[0].strip().lower()
-                    num = None
-                cur = Section(kind, num, head_text)
-                sections.append(cur)
-                continue
             if cur is not None:
                 cur.paras.append(text)
         # абзац оборван на границе страниц — переносим на следующую
@@ -354,6 +384,22 @@ def match_sections(all_langs):
             else:
                 trio[lang] = None
         result.append(trio)
+
+    # Секции, которых нет в EN (например, послесловие только в JA/RU):
+    # всё равно нормализуем, опираясь на JA или RU.
+    for lang, other in (("ja", "ru"), ("ru", "ja")):
+        for idx, s in enumerate(all_langs[lang]):
+            if idx in used[lang]:
+                continue
+            trio = {"en": None, lang: s}
+            trio[other] = None
+            for jdx, t in enumerate(all_langs[other]):
+                if jdx not in used[other] and t.kind == s.kind:
+                    used[other].add(jdx)
+                    trio[other] = t
+                    break
+            used[lang].add(idx)
+            result.append(trio)
     return result
 
 # ----------------------------- RU (markdown) -------------------------------
@@ -422,29 +468,32 @@ def distribute_ru_sections(all_langs):
 # ---------------------- смысловые блоки (микросцены) -----------------------
 
 def build_blocks(ja, en, ru, glossary, params):
-    """Строит смысловые блоки: JA-кластеры + привязка EN- и RU-абзацев.
+    """Строит смысловые блоки: кластеры базового языка + привязка остальных.
 
-    Возвращает список {'ja': [...], 'en': [...], 'ru': [...]} — индексы
-    абзацев каждого языка (0-based). Каждый EN/RU-абзац попадает ровно в один
-    блок; блоки JA покрывают все JA-абзацы.
+    База — JA; если JA нет (например, послесловие есть только в RU) — EN,
+    если нет и EN — RU. Возвращает список {'ja': [...], 'en': [...],
+    'ru': [...]} — индексы абзацев каждого языка (0-based).
     """
-    if not ja:
-        # без JA опираемся на EN (JA пуст)
-        units = sb.cluster_blocks(en, params["narr_max"],
-                                  params["max_paras"], params["max_chars"]) if en else []
-        return [{"ja": [], "en": list(b), "ru": []} for b in units]
+    if not (ja or en or ru):
+        return []
+    if ja:
+        base, base_lang = ja, "ja"
+    elif en:
+        base, base_lang = en, "en"
+    else:
+        base, base_lang = ru, "ru"
 
-    ja_blocks = sb.cluster_blocks(ja, params["narr_max"],
-                                  params["max_paras"], params["max_chars"])
-    unit_texts = ["".join(ja[i] for i in b) for b in ja_blocks]
+    base_blocks = sb.cluster_blocks(base, params["narr_max"],
+                                    params["max_paras"], params["max_chars"])
+    unit_texts = ["".join(base[i] for i in b) for b in base_blocks]
+    unit_anc = [sb.anchors_for(t, glossary, base_lang) for t in unit_texts]
 
     def map_paras(other, lang):
-        out = [[] for _ in ja_blocks]
+        out = [[] for _ in base_blocks]
         if not other or not unit_texts:
             return out
-        anc_a = [sb.anchors_for(t, glossary, "ja") for t in unit_texts]
         anc_b = [sb.anchors_for(p, glossary, lang) for p in other]
-        ops = dp_align(unit_texts, other, anchors_a=anc_a, anchors_b=anc_b,
+        ops = dp_align(unit_texts, other, anchors_a=unit_anc, anchors_b=anc_b,
                        anchor_w=params["anchor_w"])
         last = 0
         for gr in build_groups(ops):
@@ -454,23 +503,34 @@ def build_blocks(ja, en, ru, glossary, params):
                 out[last].extend(gr["b"])
         return out
 
-    en_by = map_paras(en, "en")
-    ru_per_en = map_paras_ru(en, ru, glossary, params["anchor_w"])
-    # RU-абзацы переносим в блок того EN-абзаца, к которому они привязаны
-    en_to_block = {}
-    for k, idxs in enumerate(en_by):
-        for j in idxs:
-            en_to_block[j] = k
-    ru_by = [[] for _ in ja_blocks]
-    last = 0
-    for j, ru_idxs in enumerate(ru_per_en):
-        if j in en_to_block:
-            last = en_to_block[j]
-        ru_by[last].extend(ru_idxs)
-    blocks = [{"ja": list(b), "en": sorted(en_by[k]), "ru": sorted(ru_by[k])}
-              for k, b in enumerate(ja_blocks)]
-    _fill_empty(blocks, "en")
-    _fill_empty(blocks, "ru")
+    own = [list(b) for b in base_blocks]
+    by = {"ja": [], "en": [], "ru": []}
+    by[base_lang] = own
+    for lang in ("ja", "en", "ru"):
+        if lang == base_lang:
+            continue
+        by[lang] = map_paras({"ja": ja, "en": en, "ru": ru}[lang], lang)
+
+    # Если база не RU, а EN есть: RU — машинный перевод EN, поэтому RU-абзацы
+    # привязываем через EN (точнее, чем напрямую к JA).
+    if base_lang != "ru" and en:
+        ru_per_en = map_paras_ru(en, ru, glossary, params["anchor_w"])
+        en_to_block = {}
+        for k, idxs in enumerate(by["en"]):
+            for j in idxs:
+                en_to_block[j] = k
+        ru_by = [[] for _ in base_blocks]
+        last = 0
+        for j, ru_idxs in enumerate(ru_per_en):
+            if j in en_to_block:
+                last = en_to_block[j]
+            ru_by[last].extend(ru_idxs)
+        by["ru"] = ru_by
+
+    blocks = [{"ja": sorted(by["ja"][k]), "en": sorted(by["en"][k]),
+               "ru": sorted(by["ru"][k])} for k in range(len(base_blocks))]
+    for key in ("ja", "en", "ru"):
+        _fill_empty(blocks, key)
     return blocks
 
 
@@ -593,11 +653,11 @@ def main():
                     help="куда писать translates/ (по умолчанию <project>/translates)")
     ap.add_argument("--glossary", default=None,
                     help="путь к dictionary.md (по умолчанию <project>/dictionary.md)")
-    ap.add_argument("--narr-max", type=int, default=90,
+    ap.add_argument("--narr-max", type=int, default=150,
                     help="порог «короткой» наррации для склейки с репликой")
-    ap.add_argument("--max-paras", type=int, default=8,
+    ap.add_argument("--max-paras", type=int, default=16,
                     help="максимум абзацев в одном смысловом блоке")
-    ap.add_argument("--max-chars", type=int, default=700,
+    ap.add_argument("--max-chars", type=int, default=1600,
                     help="максимум символов в одном смысловом блоке")
     ap.add_argument("--anchor-w", type=float, default=4.0,
                     help="вес словарных/числовых якорей при выравнивании блоков")
@@ -648,6 +708,17 @@ def main():
     distribute_ru_sections(all_langs)
     trios = match_sections(all_langs)
 
+    # В одном томе может быть несколько книг со сквозной нумерацией глав
+    # («Глава 1» начинается заново). Если номера дублируются — перенумеровываем
+    # главы EN последовательно, иначе slug'и (vXX-chNN) перезапишут друг друга.
+    _en_nums = [s.number for s in all_langs["en"] if s.kind == "chapter"]
+    if len(_en_nums) != len(set(_en_nums)):
+        _counter = 0
+        for _sec in all_langs["en"]:
+            if _sec.kind == "chapter":
+                _counter += 1
+                _sec.number = _counter
+
     print("Режим смысловых блоков; словарь: %d терминов" % len(glossary))
     report = ["# Отчёт смысловых блоков — том %d" % vol, ""]
     report.append("Единица — смысловой блок (микросцена). translates/* и merged/ "
@@ -658,15 +729,15 @@ def main():
     report.append("|---|---|---|---|---|---|")
 
     for trio in trios:
-        sec = trio["en"]
+        sec = trio["en"] or trio["ja"] or trio["ru"]
         slug = "v%d-%s" % (vol, sec.slug)
         ja_p = trio["ja"].paras if trio["ja"] else []
         ru_p = trio["ru"].paras if trio["ru"] else []
-        en_p = sec.paras
+        en_p = trio["en"].paras if trio["en"] else []
         blocks = build_blocks(ja_p, en_p, ru_p, glossary, params)
 
         titles = {}
-        for lang, sec_lang in (("ja", trio["ja"]), ("en", sec),
+        for lang, sec_lang in (("ja", trio["ja"]), ("en", trio["en"]),
                                ("ru", trio["ru"])):
             titles[lang] = sec_lang.title if sec_lang else sec.title
         write_block_file(out_base / "ja" / (slug + ".md"),
