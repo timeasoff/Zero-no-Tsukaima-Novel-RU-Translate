@@ -24,69 +24,45 @@ if sys.stdout.encoding and sys.stdout.encoding.lower() != "utf-8":
 
 OUT_DIR = Path(__file__).resolve().parent.parent / "output"
 EN_DIR = Path(__file__).resolve().parent.parent / "translates" / "en"
+REGISTRY = Path(__file__).resolve().parent.parent / "completed.md"
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-try:
-    import check_alignment as ca  # noqa: E402
-except Exception:
-    ca = None
-
-
-def paragraphs(path):
-    """Абзацы файла (первый блок-заголовок '# ...' — не абзац)."""
-    text = path.read_text(encoding="utf-8")
-    blocks = [b.strip() for b in re.split(r"\n\s*\n", text) if b.strip()]
-    blocks = [b for b in blocks if not b.startswith("<!-- block:")]
-    if blocks and blocks[0].startswith("#"):
-        blocks.pop(0)
-    return blocks
+import completed  # noqa: E402
 
 
 def position_check(path):
-    """Профилактика съезда: сверка результата с исходником.
+    """Сверка результата с исходником по смысловым блокам.
 
-    Блочный формат (новые тома): сверяются НОМЕРА смысловых блоков —
-    блок N output/ обязан существовать в translates/en (блоки выровнены
-    при нормализации, абзацных сравнений не требуется).
-
-    Абзацный формат (старые тома): сравнить позиции абзацев результата
-    с EN-якорем и предупредить о съезде.
+    Проверяет, что каждый номер блока в `output/` существует в
+    `translates/en/<глава>` (блоки выровнены при нормализации), — то есть
+    агент не создал «лишний» блок и не сдвинул нумерацию.
     """
-    if ca is None:
-        return
     en_path = EN_DIR / path.name
     if not en_path.exists():
         return
     try:
         en_text = en_path.read_text(encoding="utf-8")
-        if "<!-- block:" in en_text:
-            en_ids = {int(m) for m in
-                      re.findall(r"<!--\s*block:\s*(\d+)\s*-->", en_text)}
-            out_text = path.read_text(encoding="utf-8")
-            out_ids = [int(m) for m in
-                       re.findall(r"<!--\s*block:\s*(\d+)\s*-->", out_text)]
-            unknown = sorted({n for n in out_ids if n not in en_ids})
-            if unknown:
-                print(" (!) блоки %s отсутствуют в EN-исходнике — проверь "
-                      "номер смыслового блока (блоки выровнены normalize.py)"
-                      % unknown)
+        if "<!-- block:" not in en_text:
+            print(" (!) %s: нет маркеров смысловых блоков — том не "
+                  "нормализован текущим tools/normalize.py" % path.name,
+                  file=sys.stderr)
             return
-        en = paragraphs(en_path)
-        ed = paragraphs(path)
-        if not en or not ed:
-            return
-        mapping = ca.align(en, ed, ca.load_names())
-        off = [(i + 1, row + 1) for i, row in sorted(mapping.items())
-               if row != i]
-        if len(off) >= 3 and len(off) * 2 >= len(mapping):
-            first = off[0]
-            print(" (!) позиции: %d абзацев ближе к соседней EN-строке, чем к "
-                  "своей (первый: абзац %d → строка %d). Разбиение блока не "
-                  "следует EN — поправь блок и прогони "
-                  "scripts/check_alignment.py --file %s"
-                  % (len(off), first[0], first[1], path.name))
+        en_ids = {int(m) for m in
+                  re.findall(r"<!--\s*block:\s*(\d+)\s*-->", en_text)}
+        out_text = path.read_text(encoding="utf-8")
+        out_ids = [int(m) for m in
+                   re.findall(r"<!--\s*block:\s*(\d+)\s*-->", out_text)]
+        unknown = sorted({n for n in out_ids if n not in en_ids})
+        if unknown:
+            print(" (!) блоки %s отсутствуют в EN-исходнике — проверь номер "
+                  "смыслового блока (нумерация выровнена normalize.py)"
+                  % unknown)
+        n_en, n_out = len(en_ids), len(set(out_ids))
+        if n_out > n_en:
+            print(" (!) в результате %d блоков, в EN-исходнике %d — лишние "
+                  "блоки/номер пропущен" % (n_out, n_en))
     except Exception as exc:  # профилактика не должна мешать записи
-        print(" (!) позиционная сверка не выполнена: %s" % exc, file=sys.stderr)
+        print(" (!) блочная сверка не выполнена: %s" % exc, file=sys.stderr)
 
 
 def main():
@@ -108,6 +84,13 @@ def main():
         sys.exit(1)
     if not path.name.endswith(".md"):
         print("ОШИБКА: разрешены только .md файлы", file=sys.stderr)
+        sys.exit(1)
+
+    vol = completed.volume_of(path.name)
+    if completed.is_frozen(vol, REGISTRY):
+        print("ОШИБКА: том %s завершён и заморожен (completed.md) — "
+              "редактировать его текст запрещено. Правки терминов вносятся "
+              "в dictionary.md вручную." % vol, file=sys.stderr)
         sys.exit(1)
 
     text = args.text if args.text is not None else sys.stdin.read()

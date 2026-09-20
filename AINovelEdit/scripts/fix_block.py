@@ -24,6 +24,10 @@ if not sys.stdin.isatty():
         pass
 
 OUT_DIR = Path(__file__).resolve().parent.parent / "output"
+REGISTRY = Path(__file__).resolve().parent.parent / "completed.md"
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import completed  # noqa: E402
 
 
 def main():
@@ -34,6 +38,13 @@ def main():
     args = ap.parse_args()
 
     path = (OUT_DIR / args.file).resolve()
+
+    vol = completed.volume_of(path.name)
+    if completed.is_frozen(vol, REGISTRY):
+        print("ОШИБКА: том %s завершён и заморожен (completed.md) — "
+              "редактировать его текст запрещено." % vol, file=sys.stderr)
+        sys.exit(1)
+
     if path.parent != OUT_DIR or not path.exists():
         print("ОШИБКА: файл не найден в output/", file=sys.stderr)
         sys.exit(1)
