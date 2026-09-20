@@ -112,6 +112,8 @@ PROJECT_ROOT = Path(__file__).resolve().parent.parent
 # AINovelEdit/output/
 MARKDOWN_DIR = PROJECT_ROOT / "AINovelEdit" / "output"
 
+MERGE_DIR = MARKDOWN_DIR / "merge"
+
 # images/
 IMAGES_ROOT = PROJECT_ROOT / "images"
 
@@ -254,6 +256,37 @@ def find_preface(volume):
             return path
 
     return None
+
+
+def extract_volume_title(preface_path):
+    """
+    Извлекает название тома из файла prefaces/v<N>.md.
+
+    Ожидаемый формат:
+
+        **Название тома:** Святая Аквилеи
+
+    Возвращает название без пробелов по краям.
+    Если строка не найдена — возвращает None.
+    """
+
+    if preface_path is None or not preface_path.is_file():
+        return None
+
+    text = preface_path.read_text(encoding="utf-8")
+
+    match = re.search(
+        r"^\s*\*\*Название тома:\*\*\s*(.+?)\s*$",
+        text,
+        re.MULTILINE,
+    )
+
+    if not match:
+        return None
+
+    title = match.group(1).strip()
+
+    return title or None
 
 
 def load_preface(
@@ -1118,6 +1151,42 @@ def main():
     )
 
     # --------------------------------------------------------
+    # Название тома из prefaces/v<N>.md
+    # --------------------------------------------------------
+
+    preface_path = find_preface(volume)
+
+    if preface_path is None:
+        print()
+        print(
+            "ОШИБКА: файл предисловия не найден:"
+        )
+        print(
+            f"  {PREFACES_ROOT / f'v{volume}.md'}"
+        )
+        return 1
+
+    volume_title = extract_volume_title(preface_path)
+
+    if not volume_title:
+        print()
+        print(
+            "ОШИБКА: в предисловии не найдено название тома:"
+        )
+        print(
+            "  **Название тома:** ..."
+        )
+        print(
+            f"  Файл: {preface_path}"
+        )
+        return 1
+
+    print()
+    print(
+        f"Название тома: {volume_title}"
+    )
+
+    # --------------------------------------------------------
     # Проверяем структуру
     # --------------------------------------------------------
 
@@ -1174,13 +1243,13 @@ def main():
     # --------------------------------------------------------
 
     md_output = (
-        MARKDOWN_DIR
-        / f"{volume}-merged.md"
+        MERGE_DIR
+        / f"Том {volume} — {volume_title}.md"
     )
 
     pdf_output = (
-        MARKDOWN_DIR
-        / f"{volume}-merged.pdf"
+        MERGE_DIR
+        / f"Том {volume} — {volume_title}.pdf"
     )
 
     # --------------------------------------------------------

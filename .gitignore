@@ -6,3 +6,6 @@ __pycache__
 
 *.pdf
 .obsidian
+
+AINovelEdit/output/merge/*.md
+AINovelEdit/output/merge/*.pdf
