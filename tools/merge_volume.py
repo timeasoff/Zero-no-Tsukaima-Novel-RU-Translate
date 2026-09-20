@@ -58,19 +58,48 @@ Markdown-маркеры:
     AINovelEdit/output/14-merged.md
     AINovelEdit/output/14-merged.pdf
 
+Предисловие переводчика (ручной файл prefaces/v<N>.md, например
+prefaces/v14.md) добавляется в начало тома как отдельный блок.
+Файл заполняется вручную и скриптом никогда не изменяется.
+
+PDF собирается автоматически:
+    * есть typst/xelatex/lualatex/pdflatex → pandoc --pdf-engine=<движок>;
+    * иначе (без LaTeX) → pandoc → HTML → headless Chrome/Edge
+      (кириллица и изображения обрабатываются браузером);
+    * движок можно задать явно: --pdf-engine browser|typst|xelatex|
+      lualatex|pdflatex|none (none — только Markdown без PDF).
+
+Оформление PDF:
+    * цвет ссылок — --pdf-link-color (по умолчанию #1f4e79); в Typst он
+      задаётся правилом `#show link` (через -V linkcolor нельзя: значение
+      попадает в разметку, где «#» начинает код);
+    * рамка и прочие стили — ручной файл prefaces/pdf-header.typ
+      (--pdf-header <файл>). Пути к картинкам в Typst — от корня проекта
+      (`image("border.webp")`); абсолютные и выходящие за корень запрещены.
 
 Запуск:
 
     cd /d/skills/NovelEdit/noverl
-    python tools/merge_volume.py --volume 14
+
+    python tools/merge_volume.py --volume 14                    # авто (сейчас — Chrome)
+    python tools/merge_volume.py --volume 14 --pdf-engine browser   # принудительно браузер
+    python tools/merge_volume.py --volume 14 --pdf-engine none      # только Markdown
 """
 
 import argparse
 import os
 import re
+import shutil
 import subprocess
 import sys
 from pathlib import Path
+
+# Консоль Windows по умолчанию не в UTF-8: символы «✓»/«✗» в отчёте
+# (и кириллица при перенаправлении вывода) вызывали UnicodeEncodeError
+# ДО создания PDF. Принудительно включаем UTF-8.
+if sys.stdout.encoding and sys.stdout.encoding.lower() != "utf-8":
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+    sys.stderr.reconfigure(encoding="utf-8", errors="replace")
 
 
 # ============================================================
@@ -90,6 +119,9 @@ IMAGES_ROOT = PROJECT_ROOT / "images"
 # Файл тома N: prefaces/vN.md — добавляется в начало смерженного тома
 # как отдельный блок. Скрипт его никогда не изменяет.
 PREFACES_ROOT = PROJECT_ROOT / "prefaces"
+
+# Цвет ссылок в PDF (работает и для typst, и для браузерной печати)
+PDF_LINK_COLOR = "#1f4e79"
 
 
 # ============================================================
@@ -200,7 +232,7 @@ def collect_markdown_files(volume):
 # Предисловие переводчика
 # ============================================================
 
-PREFACE_SEPARATOR = "***"
+PREFACE_SEPARATOR = "<!-- PREFACE_END -->"
 
 
 def find_preface(volume):
@@ -526,26 +558,126 @@ def merge_markdown_files(
 # Создание PDF
 # ============================================================
 
-def create_pdf(
-    markdown_file,
-    pdf_file,
-):
+# ============================================================
+# Движки PDF
+# ============================================================
+
+# порядок предпочтения: typst, затем LaTeX (xelatex/lualatex умеют кириллицу)
+PANDOC_PDF_ENGINES = ("typst", "xelatex", "lualatex", "pdflatex")
+LATEX_ENGINES = ("xelatex", "lualatex", "pdflatex")
+
+BROWSER_CANDIDATES = (
+    r"C:\Program Files\Google\Chrome\Application\chrome.exe",
+    r"C:\Program Files (x86)\Google\Chrome\Application\chrome.exe",
+    r"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe",
+    r"C:\Program Files\Microsoft\Edge\Application\msedge.exe",
+)
+
+# Стиль для браузерной печати (A4, поля, кириллица, абзацный отступ).
+# Цвет ссылок подставляется из --pdf-link-color.
+PDF_CSS_TEMPLATE = """\
+@page { size: A4; margin: 2cm; }
+body { font-family: "PT Serif", Georgia, "Times New Roman", serif;
+       font-size: 11.5pt; line-height: 1.5; text-align: justify;
+       hyphens: auto; }
+h1 { page-break-before: always; text-align: center; }
+h1:first-of-type { page-break-before: avoid; }
+p { margin: 0 0 0.6em 0; text-indent: 1.4em; }
+img { max-width: 100%; height: auto; display: block; margin: 0.6em auto; }
+hr { border: none; border-top: 1px solid #999; margin: 1.2em 0;
+     break-after: page; }
+a { color: %(link)s; }
+code, pre { font-family: Consolas, "Courier New", monospace; }
+"""
+
+
+def pdf_css(link_color):
     """
-    Создаёт PDF через:
-
-        Pandoc
-        XeLaTeX
+    CSS для браузерной печати с заданным цветом ссылок.
     """
 
-    # В resource-path добавляем:
-    #
-    # 1. папку Markdown
-    # 2. корень images
-    #
-    # Благодаря этому Pandoc сможет
-    # разрешить ../../images/v14/14-1.jpeg
+    return PDF_CSS_TEMPLATE % {"link": link_color}
 
-    resource_paths = os.pathsep.join(
+
+def find_pandoc_pdf_engine():
+    """
+    Первый доступный движок pandoc (typst/LaTeX) или None.
+    """
+
+    for engine in PANDOC_PDF_ENGINES:
+
+        if shutil.which(engine):
+            return engine
+
+    return None
+
+
+def find_browser():
+    """
+    Путь к Chrome/Edge/Chromium (для печати HTML → PDF) или None.
+    """
+
+    for name in ("chrome", "msedge", "chromium", "chromium-browser"):
+
+        found = shutil.which(name)
+
+        if found:
+            return found
+
+    for candidate in BROWSER_CANDIDATES:
+
+        if Path(candidate).is_file():
+            return candidate
+
+    return None
+
+
+def _run(command, cwd=None):
+    """
+    Запускает внешнюю команду. Возвращает (returncode, stdout, stderr).
+    """
+
+    result = subprocess.run(
+        command,
+        check=False,
+        capture_output=True,
+        text=True,
+        encoding="utf-8",
+        errors="replace",
+        cwd=cwd,
+    )
+
+    return (
+        result.returncode,
+        result.stdout or "",
+        result.stderr or "",
+    )
+
+
+def _link_color_typ_file(pdf_file, link_color):
+    """
+    Пишет временный Typst-файл с правилом цвета ссылок.
+
+    ВАЖНО: через `-V linkcolor=...` цвет не передать — в шаблоне pandoc
+    значение попадает в разметку `[...]`, где `#1f4e79` парсится как код
+    («invalid number suffix»). Поэтому правило задаётся явным `#show link`.
+    """
+
+    path = pdf_file.with_suffix(".link-color.typ")
+    path.write_text(
+        '#show link: set text(fill: rgb("{}"))\n'.format(link_color),
+        encoding="utf-8",
+    )
+    return path
+
+
+def _resource_path(markdown_file):
+    """
+    resource-path для pandoc: папка Markdown + корень images
+    (чтобы разрешались ссылки вида ../../images/v14/14-1.jpeg).
+    """
+
+    return os.pathsep.join(
         [
             str(
                 markdown_file.parent.resolve()
@@ -556,30 +688,341 @@ def create_pdf(
         ]
     )
 
+
+def find_pdf_header():
+    """
+    Ручной Typst-файл для тонкой настройки PDF (рамки, стили):
+    prefaces/pdf-header.typ. Подключается только для движка typst.
+    """
+
+    candidates = [
+        PREFACES_ROOT / "pdf-header.typ",
+        PREFACES_ROOT / "pdf-header.typ.txt",
+    ]
+
+    for candidate in candidates:
+
+        if Path(candidate).is_file():
+            return candidate
+
+    return None
+
+
+def _typst_break_input(markdown_file, out_file):
+    """
+    Готовит копию Markdown с явными разрывами страниц (typst):
+
+    * после предисловия (после разделителя «***») — чтобы иллюстрации и
+      первая глава не шли на странице предисловия;
+    * перед каждым заголовком уровня 1, КРОМЕ первого (предисловия) —
+      чтобы каждая глава начиналась с новой страницы и не появлялось
+      пустой первой страницы.
+
+    Возвращает число вставленных разрывов.
+    """
+
+    lines = markdown_file.read_text(encoding="utf-8").splitlines()
+    out = []
+    seen_h1 = 0
+    seen_sep = False
+    in_fence = False
+    breaks = 0
+
+    for line in lines:
+
+        if line.startswith("```"):
+            in_fence = not in_fence
+
+        # разрыв перед каждой главой (кроме первой — предисловия)
+        if (not in_fence and line.startswith("# ")
+                and not line.startswith("## ")):
+
+            seen_h1 += 1
+
+            if seen_h1 > 1:
+                out += ["```{=typst}", "#pagebreak()", "```", ""]
+                breaks += 1
+
+        out.append(line)
+
+        # разрыв после предисловия (после разделителя ***), чтобы
+        # следующие за ним иллюстрации не попадали на страницу предисловия
+        if (not in_fence and not seen_sep
+                and line.strip() == PREFACE_SEPARATOR):
+
+            seen_sep = True
+            out += ["", "```{=typst}", "#pagebreak()", "```", ""]
+            breaks += 1
+
+    out_file.write_text(
+        "\n".join(out) + "\n",
+        encoding="utf-8",
+    )
+
+    return breaks
+
+
+def _create_pdf_pandoc(
+    markdown_file,
+    pdf_file,
+    engine,
+    link_color,
+    typst_header=None,
+):
+    """
+    PDF через pandoc --pdf-engine=<engine> (LaTeX/Typst).
+    """
+
     command = [
         "pandoc",
         str(markdown_file),
         "-o",
         str(pdf_file),
-        "--pdf-engine=pdflatex",
-        f"--resource-path={resource_paths}",
-        "-V",
-        "geometry:margin=2cm",
+        f"--pdf-engine={engine}",
+        f"--resource-path={_resource_path(markdown_file)}",
     ]
+
+    if engine in LATEX_ENGINES:
+
+        command += [
+            "-V",
+            "geometry:margin=2cm",
+        ]
+
+    link_file = None
+    break_file = None
+
+    if engine == "typst":
+
+        # цвет ссылок — отдельным подключаемым файлом (см. _link_color_typ_file)
+        link_file = _link_color_typ_file(pdf_file, link_color)
+        command += [
+            "--include-in-header",
+            str(link_file),
+        ]
+
+        # каждая глава — с новой страницы (pandoc сам разрывов не делает):
+        # собираем копию Markdown с явными #pagebreak() перед главами
+        break_file = pdf_file.with_suffix(".typst.md")
+        n_breaks = _typst_break_input(markdown_file, break_file)
+        command[1] = str(break_file)
+
+        if n_breaks:
+            print(
+                "Разрывы страниц (предисловие и главы): %d" % n_breaks
+            )
+
+        # ручной файл стилей (рамки и пр.) — prefaces/pdf-header.typ
+        if typst_header is None:
+            typst_header = find_pdf_header()
+
+        if typst_header:
+            command += [
+                "--include-in-header",
+                str(typst_header),
+            ]
+            print(
+                f"Typst-стили: {typst_header}"
+            )
+
+    (returncode, out, err) = _run(command, cwd=str(PROJECT_ROOT))
+
+    if returncode == 0:
+
+        # временные файлы сборки больше не нужны (при ошибке остаются)
+        for tmp_file in (link_file, break_file):
+
+            if tmp_file is not None:
+                tmp_file.unlink(missing_ok=True)
+
+    if returncode == 0:
+        return True
+
+    print()
+    print(
+        f"ОШИБКА pandoc (движок {engine}):"
+    )
+
+    if out:
+        print(out)
+
+    if err:
+        print(err)
+
+    return False
+
+
+def _create_pdf_browser(
+    markdown_file,
+    pdf_file,
+    link_color,
+):
+    """
+    PDF без LaTeX: pandoc → HTML (встроенные ресурсы) → печать headless
+    Chrome/Edge. Кириллица и картинки обрабатываются браузером.
+    """
+
+    browser = find_browser()
+
+    if browser is None:
+
+        print()
+        print(
+            "ОШИБКА: не найден ни LaTeX/Typst-движок, ни Chrome/Edge."
+        )
+        print(
+            "Установите Chrome (или MiKTeX для pdflatex) — тогда PDF соберётся."
+        )
+
+        return False
+
+    html_file = pdf_file.with_suffix(".html")
+    css_file = pdf_file.with_suffix(".css")
+
+    css_file.write_text(
+        pdf_css(link_color),
+        encoding="utf-8",
+    )
+
+    command = [
+        "pandoc",
+        str(markdown_file),
+        "-o",
+        str(html_file),
+        "--standalone",
+        "--embed-resources",
+        f"--resource-path={_resource_path(markdown_file)}",
+        f"--css={css_file}",
+        "--metadata",
+        f"title={pdf_file.stem}",
+    ]
+
+    (returncode, out, err) = _run(command)
+
+    if returncode != 0:
+
+        print()
+        print(
+            "ОШИБКА pandoc (Markdown → HTML):"
+        )
+
+        if out:
+            print(out)
+
+        if err:
+            print(err)
+
+        return False
+
+    profile = pdf_file.parent / ".chrome-profile"
+
+    command = [
+        browser,
+        "--headless=new",
+        "--disable-gpu",
+        "--no-pdf-header-footer",
+        f"--user-data-dir={profile}",
+        f"--print-to-pdf={pdf_file}",
+        html_file.resolve().as_uri(),
+    ]
+
+    (returncode, out, err) = _run(command)
+
+    shutil.rmtree(
+        profile,
+        ignore_errors=True,
+    )
+
+    if returncode == 0 and pdf_file.exists():
+
+        # промежуточные HTML/CSS больше не нужны (при ошибке — остаются
+        # для разбора причины)
+        for tmp_file in (html_file, css_file):
+
+            try:
+                tmp_file.unlink()
+            except OSError:
+                pass
+
+        return True
+
+    print()
+    print(
+        "ОШИБКА печати PDF через браузер:"
+    )
+
+    if out:
+        print(out)
+
+    if err:
+        print(err)
+
+    return False
+
+
+def create_pdf(
+    markdown_file,
+    pdf_file,
+    engine="auto",
+    link_color=PDF_LINK_COLOR,
+    typst_header=None,
+):
+    """
+    Создаёт PDF из склеенного Markdown.
+
+    engine:
+        auto     — движок pandoc (typst/LaTeX), иначе headless Chrome/Edge;
+        typst | xelatex | lualatex | pdflatex — конкретный движок pandoc;
+        browser  — принудительно pandoc → HTML → Chrome/Edge (без LaTeX);
+        none     — PDF не создаётся.
+
+    link_color — цвет ссылок; typst_header — ручной Typst-файл стилей
+    (prefaces/pdf-header.typ): рамки, фоны и прочие show/set-правила.
+    """
 
     print()
     print(
         "Создание PDF..."
     )
 
+    if engine == "none":
+
+        print(
+            "PDF пропущен (engine=none)."
+        )
+
+        return False
+
+    choice = engine
+
+    if choice == "auto":
+
+        choice = find_pandoc_pdf_engine() or "browser"
+
     try:
 
-        result = subprocess.run(
-            command,
-            check=False,
-            capture_output=True,
-            text=True,
-            encoding="utf-8",
+        if choice == "browser":
+
+            print(
+                "Движок PDF: headless Chrome/Edge (LaTeX/Typst не найден)."
+            )
+
+            return _create_pdf_browser(
+                markdown_file,
+                pdf_file,
+                link_color,
+            )
+
+        print(
+            f"Движок PDF: pandoc --pdf-engine={choice}"
+        )
+
+        return _create_pdf_pandoc(
+            markdown_file,
+            pdf_file,
+            choice,
+            link_color,
+            typst_header,
         )
 
     except FileNotFoundError:
@@ -594,26 +1037,6 @@ def create_pdf(
         )
 
         return False
-
-    if result.returncode == 0:
-        return True
-
-    print()
-    print(
-        "ОШИБКА при создании PDF:"
-    )
-
-    if result.stdout:
-        print(
-            result.stdout
-        )
-
-    if result.stderr:
-        print(
-            result.stderr
-        )
-
-    return False
 
 
 # ============================================================
@@ -636,6 +1059,42 @@ def main():
         help=(
             "Номер тома. "
             "Например: 14"
+        ),
+    )
+
+    parser.add_argument(
+        "--pdf-engine",
+        default="auto",
+        choices=(
+            "auto",
+            "browser",
+            "typst",
+            "xelatex",
+            "lualatex",
+            "pdflatex",
+            "none",
+        ),
+        help=(
+            "Движок PDF: auto — pandoc (typst/LaTeX), иначе headless "
+            "Chrome/Edge; browser — принудительно через браузер; "
+            "none — PDF не создавать"
+        ),
+    )
+
+    parser.add_argument(
+        "--pdf-link-color",
+        default=PDF_LINK_COLOR,
+        metavar="COLOR",
+        help=f"цвет ссылок в PDF (по умолчанию {PDF_LINK_COLOR})",
+    )
+
+    parser.add_argument(
+        "--pdf-header",
+        default=None,
+        metavar="FILE",
+        help=(
+            "Typst-файл стилей PDF (рамки, фоны; только для движка typst). "
+            "По умолчанию используется prefaces/pdf-header.typ, если есть"
         ),
     )
 
@@ -873,6 +1332,9 @@ def main():
     pdf_success = create_pdf(
         md_output,
         pdf_output,
+        args.pdf_engine,
+        args.pdf_link_color,
+        args.pdf_header,
     )
 
     if pdf_success:

@@ -20,7 +20,7 @@
 В частности, один из проектов: ремастер-перевод игры с PS2 по ZnT на ПК (renpy).
 Скачать и попробовать её можете [здесь](https://timeasoff.itch.io/zero-no-tsukaima-remaster-1)
 
-***
+<!-- PREFACE_END -->
 
 
 ![](../../images/v14/14-1.jpeg)
