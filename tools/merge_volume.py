@@ -728,6 +728,12 @@ def _typst_break_input(markdown_file, out_file):
     in_fence = False
     breaks = 0
 
+    # «Глава первая. Название» → после точки явный перенос строки,
+    # чтобы номер главы и название главы были отдельными «абзацами»
+    # внутри одного заголовка (и внутри одного блока с уголками).
+    # Raw inline `{=typst}` вставляется pandoc'ом напрямую в Typst-разметку.
+    chapter_split = re.compile(r"^(#\s+Глава\s+[^.]*\.)\s+(.+)$")
+
     for line in lines:
 
         if line.startswith("```"):
@@ -742,6 +748,13 @@ def _typst_break_input(markdown_file, out_file):
             if seen_h1 > 1:
                 out += ["```{=typst}", "#pagebreak()", "```", ""]
                 breaks += 1
+
+        # «Глава первая. Название» → разрыв строки после точки
+        if not in_fence and chapter_split.match(line):
+            line = chapter_split.sub(
+                r"\1 `#linebreak() #v(0.5em, weak: true)`{=typst} \2",
+                line,
+            )
 
         out.append(line)
 
