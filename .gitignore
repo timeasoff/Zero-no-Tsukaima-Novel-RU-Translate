@@ -3,3 +3,5 @@ images/*
 !images/.gitkeep
 !origs/.gitkeep
 __pycache__
+
+.obsidian
