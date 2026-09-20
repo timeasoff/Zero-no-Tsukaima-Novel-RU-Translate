@@ -37,7 +37,7 @@ FIELD_RE = re.compile(
     r"^\*\*(JA|EN|RU|ED_RU):\*\*[ \t]*(.*?)"
     r"(?=^\*\*(?:JA|EN|RU|ED_RU):\*\*|^##\s|\Z)",
     re.M | re.S)
-BLOCK_MARK_RE = re.compile(r"^<!--\s*block:\s*(\d+)\s*-->\s*$")
+BLOCK_MARK_RE = re.compile(r"^<!--\s*block:\s*(\d+)\s*-->\s*$", re.M)
 COMMENT_RE = re.compile(r"<!--.*?-->", re.S)
 
 
