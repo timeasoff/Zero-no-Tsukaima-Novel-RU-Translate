@@ -30,7 +30,7 @@
 
 - EN — реплика, ED_RU — наррация
 - **EN (эталон):** "Unforgivable."
-- **ED_RU:** *Непростительно.*
+- **ED_RU:** _Непростительно._
 
 ### Абзац 98 — speech
 
@@ -72,7 +72,7 @@
 
 - EN — реплика, ED_RU — наррация
 - **EN (эталон):** "Never give up!"
-- **ED_RU:** *Не сдавайся.*
+- **ED_RU:** _Не сдавайся._
 
 ### Абзац 162 — speech
 
@@ -96,13 +96,13 @@
 
 - EN — реплика, ED_RU — наррация
 - **EN (эталон):** "Gentle? You're really foolish, Louise."
-- **ED_RU:** *«Нежная и глупая. Луиза»*
+- **ED_RU:** _«Нежная и глупая. Луиза»_
 
 ### Абзац 166 — shift
 
 - ED_RU ближе к EN -1 (score 9 против 4 у своей строки)
 - **EN (эталон):** The pitch black fissure in her heart.... the deeply opened up fracture, was blaming Louise.
-- **ED_RU:** *«Нежная и глупая. Луиза»*
+- **ED_RU:** _«Нежная и глупая. Луиза»_
 
 ### Абзац 173 — shift
 
@@ -162,7 +162,7 @@
 
 - ED_RU ближе к EN +1 (score 9 против 6 у своей строки)
 - **EN (эталон):** Things turned out a little bit weird, Saito began to realize.
-- **ED_RU:** Узором оно походило на железный крест, нарисованный на броне. *Так ведь это же крест…* — Сайто рылся в памяти.
+- **ED_RU:** Узором оно походило на железный крест, нарисованный на броне. _Так ведь это же крест…_ — Сайто рылся в памяти.
 
 ### Абзац 254 — speech
 
@@ -180,7 +180,7 @@
 
 - EN — реплика, ED_RU — наррация
 - **EN (эталон):** "The hell I'd believe for whoever's God this is for!"
-- **ED_RU:** *Совсем не ради бога, в которого и не верю.*
+- **ED_RU:** _Совсем не ради бога, в которого и не верю._
 
 ## Слабые сигналы (проверить по смыслу)
 
@@ -462,7 +462,7 @@
 
 ### Абзац 143 — names
 
-- есть в ED_RU, нет в EN: Луиза, Луиза Нулевая, Луиза-Нулиза
+- есть в ED_RU, нет в EN: Луиза, Луиза-Нулиза, Луиза-Нулиза
 - **EN (эталон):** Around a couple dozen of rounds blasted the surface of the Golomontas. The "reflection magic" gave a faint shimmer, easily warding off these pitiful attacks.
 - **ED_RU:** Слабое сияние «отражения» мерцало, отводя все атаки. Вокруг Луизы сыпались осколки ядер. Кто-то из рыцарей водных духов натянул над Луизой магический щит.
 
@@ -522,13 +522,13 @@
 
 ### Абзац 173 — names
 
-- есть в ED_RU, нет в EN: Луиза, Луиза Нулевая, Луиза-Нулиза
+- есть в ED_RU, нет в EN: Луиза, Луиза-Нулиза, Луиза-Нулиза
 - **EN (эталон):** While searching for a light in the pitch blackness of her heart, she suddenly understood everyone's feelings.
 - **ED_RU:** Чувства, метавшиеся в поисках пристанища, словно обрели дом, куда можно вернуться… Луиза растерялась.
 
 ### Абзац 174 — names
 
-- есть в EN, нет в ED_RU: Луиза, Луиза Нулевая, Луиза-Нулиза, госпожа Святая
+- есть в EN, нет в ED_RU: Луиза, Луиза-Нулиза, Луиза-Нулиза, госпожа Святая
 - **EN (эталон):** Louise was confused. Seeing her face, Sheffield laughed rudely.
 - **ED_RU:** Глядя на неё, Шеффилд покатилась со смеху.
 
@@ -546,7 +546,7 @@
 
 ### Абзац 178 — names
 
-- есть в EN, нет в ED_RU: Луиза, Луиза Нулевая, Луиза-Нулиза, госпожа Святая
+- есть в EN, нет в ED_RU: Луиза, Луиза-Нулиза, Луиза-Нулиза, госпожа Святая
 - **EN (эталон):** Crises conquered by Louise.
 - **ED_RU:** И себя, всякий раз вырывавшуюся из них.
 
@@ -582,13 +582,13 @@
 
 ### Абзац 192 — names
 
-- есть в EN, нет в ED_RU: Луиза, Луиза Нулевая, Луиза-Нулиза, госпожа Святая
+- есть в EN, нет в ED_RU: Луиза, Луиза-Нулиза, Луиза-Нулиза, госпожа Святая
 - **EN (эталон):** If she died.... she could never recognize the gentle shadow again. Louise knew that this would be something much worse that dying.
 - **ED_RU:** Умереть не хочется. Совсем не хочется. Если умру… — я больше никогда не увижу тот нежный силуэт.
 
 ### Абзац 193 — names
 
-- есть в ED_RU, нет в EN: Луиза, Луиза Нулевая, Луиза-Нулиза
+- есть в ED_RU, нет в EN: Луиза, Луиза-Нулиза, Луиза-Нулиза
 - **EN (эталон):** ....Expecting that instant to be her last, these thoughts zipped through her mind.
 - **ED_RU:** Для Луизы это казалось печальнее самой смерти.
 
@@ -618,7 +618,7 @@
 
 ### Абзац 202 — names
 
-- есть в ED_RU, нет в EN: Луиза, Луиза Нулевая, Луиза-Нулиза
+- есть в ED_RU, нет в EN: Луиза, Луиза-Нулиза, Луиза-Нулиза
 - **EN (эталон):** Guiche, who was constantly getting her out of trouble, dashed towards her. He picked her up and ran away from the enormous golems.
 - **ED_RU:** Гиш с товарищами, всё это время поджидавшие случая её выручить, кинулись к ней. Подняв Луизу на руки, они бросились прочь от Ёрмунгандов.
 
@@ -698,7 +698,7 @@
 
 - есть в EN, нет в ED_RU: Глава восьмая. Стальной тигр, Глава шестая. Тигриный тракт; есть в ED_RU, нет в EN: Тигрес Гран-Рут, Тигриный тракт
 - **EN (эталон):** "This is called 'Tiger', right? Controlling this tank is definitely much easier than that 'airplane'. Just pull this, and it moves forward..."
-- **ED_RU:** — Эту «Тигрес», значит? Управлять танком куда проще, чем той «летательной машиной»! Нажмёшь сюда — и он едет вперёд…
+- **ED_RU:** — «Тигр», правильно? Управлять танком куда проще, чем той «летательной машиной»! Нажмёшь сюда — и он едет вперёд…
 
 ### Абзац 234 — names
 
@@ -758,7 +758,7 @@
 
 - есть в EN, нет в ED_RU: Глава восьмая. Стальной тигр
 - **EN (эталон):** The design was surprisingly similar to the steel cross tattooed on the tank's body. Supposedly, this is a cross.... Saito searched his memory.
-- **ED_RU:** Узором оно походило на железный крест, нарисованный на броне. *Так ведь это же крест…* — Сайто рылся в памяти.
+- **ED_RU:** Узором оно походило на железный крест, нарисованный на броне. _Так ведь это же крест…_ — Сайто рылся в памяти.
 
 ### Абзац 255 — names
 
@@ -1253,4 +1253,3 @@
 - отрицание EN не передано явно (часто норма при идиоме)
 - **EN (эталон):** Golomontas were no different from sitting ducks, called to death one by one by the Panzer. Because of the sudden appearance of Gandálfr, a hot-headed Sheffield lost her senses and actually ordered the entire army to charge forward.
 - **ED_RU:** Как мишени в тире, «Тигр» валил бросившихся в атаку Ёрмунгандов. Шеффилд, вскружённая появлением Гандальва, потеряла хладнокровие и приказала идти в лобовую атаку.
-

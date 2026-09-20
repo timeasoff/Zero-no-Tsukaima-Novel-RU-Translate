@@ -108,7 +108,7 @@
 
 ### Абзац 24 — names
 
-- есть в EN, нет в ED_RU: Луиза, Луиза Нулевая, Луиза-Нулиза, госпожа Святая
+- есть в EN, нет в ED_RU: Луиза, Луиза-Нулиза, Луиза-Нулиза, госпожа Святая
 - **EN (эталон):** Hearing Louise say it like that, Saito pointed out directly
 - **ED_RU:** Тут Сайто сказал твёрдо:
 
@@ -162,7 +162,7 @@
 
 ### Абзац 43 — names
 
-- есть в EN, нет в ED_RU: Глава девятая. Память уз, Луиза, Луиза Нулевая, Луиза-Нулиза, госпожа Святая
+- есть в EN, нет в ED_RU: Глава девятая. Память уз, Луиза, Луиза-Нулиза, Луиза-Нулиза, госпожа Святая
 - **EN (эталон):** In those memories, Louise appeared like a character on stage, in synchronization with her objective point of view, creating something new.
 - **ED_RU:** В этих воспоминаниях она сама была «персонажем».
 
@@ -180,7 +180,7 @@
 
 ### Абзац 46 — names
 
-- есть в EN, нет в ED_RU: Сайто Хирага; есть в ED_RU, нет в EN: Луиза, Луиза Нулевая, Луиза-Нулиза
+- есть в EN, нет в ED_RU: Сайто Хирага; есть в ED_RU, нет в EN: Луиза, Луиза-Нулиза, Луиза-Нулиза
 - **EN (эталон):** Like watching a movie, she recalled all the events and time she spent with Saito together.
 - **ED_RU:** Словно глядя спектакль, Луиза заново переживала воспоминания.
 
@@ -455,4 +455,3 @@
 - JA (наррация) и ED_RU (реплика) разного типа — сдвиг выравнивания JA (эталон — EN)
 - **EN (эталон):** "Say, Crusade, really is beginning."
 - **ED_RU:** — Кстати, оно ведь и правда началось. «Священная война».
-

@@ -228,7 +228,7 @@
 
 ### Абзац 58 — names
 
-- есть в EN, нет в ED_RU: Луиза, Луиза Нулевая, Луиза-Нулиза, госпожа Святая
+- есть в EN, нет в ED_RU: Луиза, Луиза-Нулиза, Луиза-Нулиза, госпожа Святая
 - **EN (эталон):** Louise couldn't help but repeat the name she'd heard so many times. Then.... this teen is her familiar? Yet, to her, there is no recognition at all.
 - **ED_RU:** То самое имя, что сорвалось с её губ мгновение назад. И… этот юноша — её фамильяр? Но… в его лице она и вправду не находила ничего знакомого.
 
@@ -1091,4 +1091,3 @@
 - JA (наррация) и ED_RU (реплика) разного типа — сдвиг выравнивания JA (эталон — EN)
 - **EN (эталон):** "Who knows~~" Reinard answered with his hands open.
 - **ED_RU:** — Кто знает… — Ренар развёл руками.
-

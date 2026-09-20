@@ -48,7 +48,7 @@
 
 - EN — реплика, ED_RU — наррация
 - **EN (эталон):** "Over being a Saint, Zero Louise is much better," looking at her face, Malicorne whispered with pity.
-- **ED_RU:** Глядя на это, Маликорн с горечью тихо обронил: — Нет, «Луиза Нулевая» была всё-таки получше, чем святая.
+- **ED_RU:** Глядя на это, Маликорн с горечью тихо обронил: — Нет, «Луиза-Нулиза» была всё-таки получше, чем святая.
 
 ### Абзац 212 — speech
 
@@ -150,7 +150,7 @@
 
 ### Абзац 5 — names
 
-- есть в EN, нет в ED_RU: Луиза, Луиза Нулевая, Луиза-Нулиза, госпожа Святая
+- есть в EN, нет в ED_RU: Луиза, Луиза-Нулиза, Луиза-Нулиза, госпожа Святая
 - **EN (эталон):** "However, to the true believers of Brimir, there is nothing to worry about. Our God and Ancestors have already sent down a 'Saint' to save us all. She is... the one acting as a nun all the time, Miss Louise Vallière!"
 - **ED_RU:** — Но вам, благочестивым бримирцам, беспокоиться решительно не о чем. Бог и Основатель ниспослали нам «святую» именно ради этого бедственного дня. Это она… та, что служила при мне монахиней, мадемуазель Вальер.
 
@@ -174,7 +174,7 @@
 
 ### Абзац 12 — names
 
-- есть в EN, нет в ED_RU: Великая Цель, Луиза, Луиза Нулевая, Луиза-Нулиза, госпожа Святая
+- есть в EN, нет в ED_RU: Великая Цель, Луиза, Луиза-Нулиза, Луиза-Нулиза, госпожа Святая
 - **EN (эталон):** "As long as she is with us, Romalia the sacred country of God, the city of water Aquileia will never perish! Here I wish Louise who will be heading to the front lines our best wishes! Dear God! May you take great care over the Saint of Aquileia!"
 - **ED_RU:** — Пока она с нами, Ромалия, страна Божья, и этот город воды Аквилея не погибнут вовеки! Благословение ей, отправляющейся на передовую! Боже, ниспошли благодать Святой Аквилеи!
 
@@ -198,7 +198,7 @@
 
 ### Абзац 21 — names
 
-- есть в ED_RU, нет в EN: Луиза, Луиза Нулевая, Луиза-Нулиза
+- есть в ED_RU, нет в EN: Луиза, Луиза-Нулиза, Луиза-Нулиза
 - **EN (эталон):** Protecting herself and the country, came only from her magic?
 - **ED_RU:** Неужели её и её родину защищала одна лишь её магия? Сомнение странно мягко, почти уютно скользнуло в неё и поколебало сердце Луизы.
 
@@ -270,7 +270,7 @@
 
 ### Абзац 46 — names
 
-- есть в EN, нет в ED_RU: Луиза, Луиза Нулевая, Луиза-Нулиза, госпожа Святая
+- есть в EN, нет в ED_RU: Луиза, Луиза-Нулиза, Луиза-Нулиза, госпожа Святая
 - **EN (эталон):** Henrietta immediately understood what Louise was feeling. Having lost a love herself, towards this feeling of Louise's she completely knows it through and through.
 - **ED_RU:** Генриетта тотчас разгадала, что это. Когда-то потеряв возлюбленного, она понимала причину этого чувства как на ладони.
 
@@ -290,11 +290,11 @@
 
 - вопрос «?» только в ED_RU
 - **EN (эталон):** "I... if there was that kind of 'love', then it should be the love towards the people of Halkeginia's. Your highness, please be proud of me. I am already listed as one of the great protectors. The one taken lightly, jeered as Zero Louise... is now the 'Saint of Aquileia'."
-- **ED_RU:** — Что вы такое… Если во мне и есть «любовь», то её следует называть любовью ко всей Халкегинии. Ваше Величество, прошу, похвалите меня. Меня возвели в сонм святых. Меня, которую без конца дразнили Луизой Нулевой… «Святая Аквилеи». Разве бывает титул, которым можно гордиться больше?
+- **ED_RU:** — Что вы такое… Если во мне и есть «любовь», то её следует называть любовью ко всей Халкегинии. Ваше Величество, прошу, похвалите меня. Меня возвели в сонм святых. Меня, которую без конца дразнили Луизой-Нулизой… «Святая Аквилеи». Разве бывает титул, которым можно гордиться больше?
 
 ### Абзац 54 — names
 
-- есть в ED_RU, нет в EN: Луиза, Луиза Нулевая, Луиза-Нулиза
+- есть в ED_RU, нет в EN: Луиза, Луиза-Нулиза, Луиза-Нулиза
 - **EN (эталон):** Though she says, she still show signs of pain.
 - **ED_RU:** Хоть она это и говорила, лицо у Луизы было какое-то страдальческое.
 
@@ -306,7 +306,7 @@
 
 ### Абзац 57 — names
 
-- есть в EN, нет в ED_RU: Луиза, Луиза Нулевая, Луиза-Нулиза
+- есть в EN, нет в ED_RU: Луиза, Луиза-Нулиза, Луиза-Нулиза
 - **EN (эталон):** "Saint Louise your holiness! Everything is prepared! Please ready yourself to travel!"
 - **ED_RU:** — Госпожа Святая! Всё готово! Прошу собираться в поход!
 
@@ -392,7 +392,7 @@
 
 - есть в EN, нет в ED_RU: госпожа Святая
 - **EN (эталон):** Somehow sometime, the Zero Louise transformed into the Queen's Louise, now she's assigned by the Pope himself as the Saint of Aquileia. This is really like the frog in Princess and the frog.
-- **ED_RU:** «Луиза Нулевая» незаметно стала Луизой Её Величества, а теперь сам Папа честит её Святой Аквилеи. Какой всё-таки головокружительный взлёт.
+- **ED_RU:** «Луиза-Нулиза» незаметно стала Луизой Её Величества, а теперь сам Папа честит её Святой Аквилеи. Какой всё-таки головокружительный взлёт.
 
 ### Абзац 85 — names
 
@@ -452,13 +452,13 @@
 
 - есть в EN, нет в ED_RU: Гран-Труа
 - **EN (эталон):** "God will guarantee it. God is all-knowing. If we die in this Crusade, our souls will be sent to Heaven. There, we will join God's army. Is there a more grand title than this?"
-- **ED_RU:** — За это поручится Бог. Бог видит всякое деяние. Если погибнешь в «Священной войне», душа твоя будет отослана в Валгаллу. Там тебя зачислят в воинство Бога. Разве есть честь выше этой?
+- **ED_RU:** — За это поручится Бог. Бог видит всякое деяние. Если погибнешь в «Священной войне», душа твоя будет отослана в Вальхаллу. Там тебя зачислят в воинство Бога. Разве есть честь выше этой?
 
 ### Абзац 103 — negation
 
 - лишнее отрицание в ED_RU (в EN его нет)
 - **EN (эталон):** The Ondine Water Spirit Knights, hearing to the Crusader's confident voice, showed faces of awkwardness in contrast. Hearing other people talk about "Heaven" in such a straight face makes them feel awkward.
-- **ED_RU:** Юноши отряда водных духов обомлели от напыщенного голоса жреца-воина. Когда тебе с каменным лицом толкуют про «Валгаллу», поневоле становится не по себе.
+- **ED_RU:** Юноши отряда водных духов обомлели от напыщенного голоса жреца-воина. Когда тебе с каменным лицом толкуют про «Вальхаллу», поневоле становится не по себе.
 
 ### Абзац 104 — names
 
@@ -468,7 +468,7 @@
 
 ### Абзац 105 — names
 
-- есть в EN, нет в ED_RU: Луиза, Луиза Нулевая, Луиза-Нулиза
+- есть в EN, нет в ED_RU: Луиза, Луиза-Нулиза, Луиза-Нулиза
 - **EN (эталон):** "A magnificent description, Saint Louise."
 - **ED_RU:** — Превосходная проповедь, госпожа Святая.
 
@@ -582,7 +582,7 @@
 
 ### Абзац 141 — names
 
-- есть в EN, нет в ED_RU: Луиза, Луиза Нулевая, Луиза-Нулиза
+- есть в EN, нет в ED_RU: Луиза, Луиза-Нулиза, Луиза-Нулиза
 - **EN (эталон):** "Of course. We have the important duties of guarding Saint Louise her holiness. You people just cannot substitute. That's why you must do what you are only capable of. Now thank me for it."
 - **ED_RU:** — Разумеется. Мы обязаны охранять госпожу Святую. Для вас эта задача невыполнима. Потому я и даю вам работу, которая вам по силам. Так что будьте благодарны.
 
@@ -1102,7 +1102,7 @@
 
 - JA (наррация) и ED_RU (реплика) разного типа — сдвиг выравнивания JA (эталон — EN)
 - **EN (эталон):** "Yes! The enemy out there is golem-like, in armours of total height around 25 metres. We have seen so far around 10 of them. Already this is an impenetrable force... the first team sent forward are all dead. All Dead! Right now, to scout out the surroundings, we have sent another small team..."
-- **ED_RU:** — Да! Враг — доспешные куклы, похожие на големов, высотой около 25 милей. Насчитывают их около десяти, но сила у них, скажу вам, неимоверная… Выдвинутый вперёд смешанный полк Тибори уничтожен. Уничтожен в буквальном смысле! Прямо сейчас, чтобы разглядеть всё подробнее, мы выслали разведотряд, но…
+- **ED_RU:** — Да! Враг — куклы в доспехах, похожие на големов, высотой около 25 милей. Насчитывают их около десяти, но сила у них, скажу вам, неимоверная… Выдвинутый вперёд смешанный полк Тибори уничтожен. Уничтожен в буквальном смысле! Прямо сейчас, чтобы разглядеть всё подробнее, мы выслали разведотряд, но…
 
 ### Абзац 128 — negation
 
@@ -1439,4 +1439,3 @@
 - JA (наррация) и ED_RU (реплика) разного типа — сдвиг выравнивания JA (эталон — EN)
 - **EN (эталон):** "Then let me try. That size, I should be able to manage."
 - **ED_RU:** — Попробую. С таким размером я как-нибудь справлюсь.
-
