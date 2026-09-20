@@ -138,7 +138,7 @@
 
 ### Абзац 3 — names
 
-- есть в EN, нет в ED_RU: Призыв слуги; есть в ED_RU, нет в EN: Глава вторая. Церемония в честь третьей годовщины восшествия на престол
+- есть в EN, нет в ED_RU: Призыв подручного; есть в ED_RU, нет в EN: Глава вторая. Церемония в честь третьей годовщины восшествия на престол
 - **EN (эталон):** Inside a courtyard surrounded by five towers and one main tower, every single civil servant, commander and priest board ships, each decorated with specific religious crests. In comparison, the main tower harbours a gigantic warship for the sole usage of the pope. The pier aboard the main tower is on…
 - **ED_RU:** Во внутреннем дворе, окружённом пятью башнями и исполинской главной башней, чиновники, военные и жрецы поднимались на драконьи ладьи, украшенные гербами их орденов. А над главной башней стоял на приколе огромный корабль для Папы, ожидая, когда Святейший взойдёт на борт. Пристань там дозволяется испо…
 

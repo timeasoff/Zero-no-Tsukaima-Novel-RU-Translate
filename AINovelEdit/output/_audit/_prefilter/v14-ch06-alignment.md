@@ -648,7 +648,7 @@
 
 ### Абзац 273 — names
 
-- есть в EN, нет в ED_RU: Призыв слуги
+- есть в EN, нет в ED_RU: Призыв подручного
 - **EN (эталон):** "Gallian heretics, have allied themselves with the elves, attempting to destroy us. I, as a servant of God and Founder Brimir, hereby announce, the begin of a 'Crusade'!"
 - **ED_RU:** — Галльские еретики вступили в союз с эльфами и замышляют наше истребление. Я, как слуга Бога и Основателя, объявляю здесь «Священную войну»!
 
