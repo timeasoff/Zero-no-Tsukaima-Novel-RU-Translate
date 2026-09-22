@@ -99,7 +99,7 @@ def main():
     args = ap.parse_args()
 
     files = ([OUT / args.file] if args.file
-             else sorted(OUT.glob("v14-*.md")))
+             else sorted(OUT.glob("v*.md")))
     total = 0
     for path in files:
         if not path.exists():

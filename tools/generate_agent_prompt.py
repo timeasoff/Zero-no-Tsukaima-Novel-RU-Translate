@@ -106,8 +106,16 @@ class Chapter:
         return f"{self.volume_id}-{self.chapter_id}"
 
     @property
+    def volume_file_id(self) -> str:
+        """Идентификатор тома для имён ФАЙЛОВ: без ведущего нуля (v1, v2, v14)."""
+        return f"v{self.volume}"
+
+    @property
     def file_name(self) -> str:
-        return f"{self.chapter_id_full}.md"
+        # Файлы глав в проекте — без ведущего нуля (v2-ch06.md): translates/,
+        # output/, merged/, _prefilter/. «v02» остаётся идентификатором тома
+        # в заголовках и в отчётах полного аудита.
+        return f"{self.volume_file_id}-{self.chapter_id}.md"
 
     @property
     def output_path(self) -> str:
@@ -115,11 +123,21 @@ class Chapter:
 
     @property
     def log_path(self) -> str:
-        return os.path.join(AINOVELEDIT, "output", "_log", f"{self.volume_id}-log.md")
+        return os.path.join(AINOVELEDIT, "output", "_log",
+                            f"{self.volume_file_id}-log.md")
 
     @property
     def audit_path(self) -> str:
-        return os.path.join(AINOVELEDIT, "output", "_audit", self.file_name)
+        # Отчёты аудита: том 2 ведётся как v02-chYY.md (шаблон AGENTS.md
+        # «vXX-chYY»), том 1 — как v1-chYY.md. Если существует вариант без
+        # ведущего нуля (и vNN-варианта нет) — берём его; новый файл — по vNN.
+        padded = os.path.join(AINOVELEDIT, "output", "_audit",
+                              f"{self.volume_id}-{self.chapter_id}.md")
+        plain = os.path.join(AINOVELEDIT, "output", "_audit",
+                             f"{self.volume_file_id}-{self.chapter_id}.md")
+        if os.path.exists(plain) and not os.path.exists(padded):
+            return plain
+        return padded
 
     @property
     def ja_path(self) -> str:
@@ -365,6 +383,9 @@ def prompt_full_audit(ch: Chapter) -> str:
 и disposition по модели AGENTS.md (FIXED / FALSE POSITIVE /
 PRESERVED — ... / USER DECISION / ???); обнаружение сигнала — повод для
 проверки, а не разрешение на правку. Ноль правок — допустимый итог.
+Перед запуском сканеров обнови merged (scripts/update_merged.py). Прогони
+также check_records.py и address_scan.py; при подозрении на пропуски
+используй отдельный режим «Поиск пропущенных отрывков (GAP-аудит)».
 В конце сформируй итоговый отчёт в output/_audit/vXX-chYY.md.
 """.strip()
 
