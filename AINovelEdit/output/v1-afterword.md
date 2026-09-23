@@ -20,36 +20,4 @@
 
 Любовь и приключения в ином мире, а ещё аристократическая честь — вот что такое романтика, думаю я отравленной вином головой. Романтика всегда заставляет моё сердце биться сильнее и чаще.
 
-Нобору Ямагути
-
-Автор
-
-Нобору Ямагути (Yamaguchi Noboru)
-
-Родился в феврале 1972 года в префектуре Ибараки. Дебютировал с _«Canary / This Thought on a Song»_ (Kadokawa Sneaker Bunko). Среди его книг — _«Mahouyaku-uri no Marea: Sennichi Kagerou»_, _«Strike Witches»_ (Kadokawa Sneaker Bunko), _«Kakikake no Love Letter»_, _«Tooku 6 Mile no Kanojo»_ (Fujimi Mystery Bunko), _«Santa Clarice Crisis»_ (Fujimi Fantasia Bunko), _«Zero no Tsukaima»_ (MF Bunko J) и многие другие. Также активно работает сценаристом игр: _«Green Green»_, _«Gonna Be??»_, _«Yukiuta»_, _«Shiritsu Akihabara Gakuen»_, _«Makai Tenshi Gibriel»_, _«Sorauta»_ и другие.
-
-Иллюстратор
-
-Эйдзи Усацука (Usatsuka Eiji)
-
-Родился 16 августа. Осака: родом из Осаки, живёт в Осаке, осакец.
-
-<!-- block: 2 -->
-
-Сейчас совмещаю работу в компании с рисованием иллюстраций.
-
-Список иллюстраторских работ:
-
-«Doushi-sama to Issho» (Dengeki Bunko)
-
-«Futari wa Nameko-jiru» (Dengeki hp)
-
-серия «Shinkyoku Soukai Polyphonica: Blue» (GA Bunko)
-
-«Akumatsuki no Mezame» (Fujimi Dragon Book)
-
-«Zero no Tsukaima» (MF Bunko J)
-
-и другие.
-
-Первый сборник иллюстраций «Usatsuka Eiji Zro: Zero no Tsukaima Illustration Collection» (Media Factory) также успешно продаётся.
+Нобору Ямагути.
