@@ -165,13 +165,18 @@ python tools/normalize.py --volume 15
 
 ## Склейка тома и предисловие переводчика
 
-Финальный том собирается из готовых глав:
+Финальный том собирается из готовых глав и неглавных секций тома:
 
 ```bash
 python tools/merge_volume.py --volume 14
 ```
 
-Результат: `AINovelEdit/output/14-merged.md` и `14-merged.pdf`.
+Берутся все файлы `AINovelEdit/output/v<NN>-*.md`: главы (`vNN-chNN.md`
+по номеру), затем `vNN-epilogue.md` (эпилог), `vNN-afterword.md`
+(послесловие) и прочие служебные секции, если они есть.
+
+Результат: `AINovelEdit/output/merge/Том <NN> — <Название тома>.md`
+и `.pdf` (название тома — из `prefaces/v<NN>.md`).
 
 PDF собирается автоматически: если установлен LaTeX/Typst-движок
 (`typst` / `xelatex` / `lualatex` / `pdflatex`) — через `pandoc`, иначе

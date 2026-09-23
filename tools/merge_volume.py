@@ -29,7 +29,22 @@ merge_volume.py
             ├── v14-ch02.md
             ├── ...
             ├── v14-ch09.md
-            └── v14-epilogue.md
+            ├── v14-epilogue.md
+            └── v14-afterword.md
+
+
+Порядок склейки (в том виде, как идёт по книге):
+
+    v<N>-ch00.md        служебные страницы (обложки, описание персонажей)
+    v<N>-prologue.md    пролог, если есть
+    v<N>-ch01.md …
+    v<N>-chNN.md        главы по номеру
+    v<N>-epilogue.md    эпилог, если есть
+    v<N>-afterword.md   послесловие (あとがき), если есть
+    v<N>-other.md       прочие секции — в самый конец
+
+Все перечисленные неглавные секции подхватываются автоматически
+(см. SECTION_SLUGS); файлы с неизвестными именами игнорируются.
 
 
 Markdown-маркеры:
@@ -142,6 +157,51 @@ BLOCK_MARKER_RE = re.compile(
 
 
 # ============================================================
+# Секции тома
+# ============================================================
+
+# Неглавные секции тома (имя файла после «vNN-»), которые участвуют
+# в склейке. Список согласован с slug'ами tools/normalize.py
+# (Section.slug: prologue / epilogue / afterword / other).
+SECTION_SLUGS = (
+    "prologue",
+    "epilogue",
+    "afterword",
+    "interlude",
+    "other",
+)
+
+# Порядок неглавных секций в хвосте тома.
+BACK_SECTION_ORDER = {
+    "epilogue": 0,
+    "afterword": 1,
+    "interlude": 2,
+    "other": 3,
+}
+
+
+def section_slug(stem):
+    """
+    Служебная секция из имени файла без расширения:
+
+        v1-afterword → afterword
+        v14-epilogue → epilogue
+
+    Если префикс «vNN-» не найден — возвращает имя как есть.
+    """
+
+    match = re.match(
+        r"v[0-9]+-(.+)$",
+        stem,
+    )
+
+    if match:
+        return match.group(1)
+
+    return stem
+
+
+# ============================================================
 # Сортировка Markdown
 # ============================================================
 
@@ -149,11 +209,14 @@ def markdown_sort_key(path):
     """
     Порядок:
 
+        v14-ch00.md
+        v14-prologue.md
         v14-ch01.md
         v14-ch02.md
         ...
         v14-ch09.md
         v14-epilogue.md
+        v14-afterword.md
     """
 
     name = path.stem.lower()
@@ -166,19 +229,35 @@ def markdown_sort_key(path):
     if match:
         chapter_number = int(match.group(1))
 
+        # ch00 — служебные страницы (обложки, описание персонажей):
+        # всегда в самом начале тома.
+        group = 0 if chapter_number == 0 else 1
+
         return (
-            0,
+            group,
             chapter_number,
+            name,
         )
 
-    if name.endswith("-epilogue"):
+    slug = section_slug(name)
+
+    if slug == "prologue":
         return (
             1,
             0,
+            name,
+        )
+
+    if slug in BACK_SECTION_ORDER:
+        return (
+            2,
+            BACK_SECTION_ORDER[slug],
+            name,
         )
 
     return (
-        2,
+        3,
+        0,
         name,
     )
 
@@ -193,33 +272,40 @@ def collect_markdown_files(volume):
 
     Для volume=14:
 
+        v14-ch00.md
         v14-ch01.md
         v14-ch02.md
         ...
         v14-ch09.md
         v14-epilogue.md
+        v14-afterword.md
+
+    Неглавные секции берутся из SECTION_SLUGS (эпилог, послесловие и т. п.):
+    раньше учитывались только главы и эпилог, из-за чего послесловие
+    (`vNN-afterword.md`) молча пропадало из смерженного тома.
     """
 
     files = []
 
+    prefix = f"v{volume}-"
+
     chapter_pattern = re.compile(
-        rf"v{volume}-ch[0-9]+\.md",
+        rf"{re.escape(prefix)}ch[0-9]+\.md",
         re.IGNORECASE,
     )
 
-    epilogue_name = (
-        f"v{volume}-epilogue.md"
-    ).lower()
-
     for path in MARKDOWN_DIR.glob("*.md"):
 
-        name = path.name
+        name = path.name.lower()
 
         if chapter_pattern.fullmatch(name):
             files.append(path)
             continue
 
-        if name.lower() == epilogue_name:
+        if not name.startswith(prefix):
+            continue
+
+        if section_slug(path.stem.lower()) in SECTION_SLUGS:
             files.append(path)
             continue
 
@@ -1316,6 +1402,10 @@ def main():
 
         print(
             f"  v{volume}-epilogue.md"
+        )
+
+        print(
+            f"  v{volume}-afterword.md"
         )
 
         return 1
