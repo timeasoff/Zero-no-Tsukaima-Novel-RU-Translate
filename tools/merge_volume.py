@@ -704,6 +704,26 @@ def _link_color_typ_file(pdf_file, link_color):
     return path
 
 
+def _separator_typ_file(pdf_file):
+    """
+    Временный Typst-файл: разделители «---» → декоративный separator.webp.
+
+    pandoc подставляет в шаблон `#let horizontalrule = line(...)`, а файлы
+    --include-in-header подключаются ПОЗЖЕ — поэтому повторный #let
+    перекрывает стандартное правило (второй binding выигрывает).
+    Картинка указывается от корня проекта (как в pdf-header.typ),
+    по центру, шириной ~2 см. Переопределить можно в pdf-header.typ —
+    его подключают последним.
+    """
+
+    path = pdf_file.with_suffix(".separator.typ")
+    path.write_text(
+        '#let horizontalrule = align(center, image("separator.webp", width: 2cm))\n',
+        encoding="utf-8",
+    )
+    return path
+
+
 def _resource_path(markdown_file):
     """
     resource-path для pandoc: папка Markdown + корень images
@@ -837,6 +857,7 @@ def _create_pdf_pandoc(
 
     link_file = None
     break_file = None
+    separator_file = None
 
     if engine == "typst":
 
@@ -845,6 +866,15 @@ def _create_pdf_pandoc(
         command += [
             "--include-in-header",
             str(link_file),
+        ]
+
+        # разделители «---» — декоративная картинка separator.webp
+        # (2 см по центру; подключается до pdf-header.typ, чтобы ручной
+        # файл стилей мог переопределить horizontalrule)
+        separator_file = _separator_typ_file(pdf_file)
+        command += [
+            "--include-in-header",
+            str(separator_file),
         ]
 
         # каждая глава — с новой страницы (pandoc сам разрывов не делает):
@@ -876,7 +906,7 @@ def _create_pdf_pandoc(
     if returncode == 0:
 
         # временные файлы сборки больше не нужны (при ошибке остаются)
-        for tmp_file in (link_file, break_file):
+        for tmp_file in (link_file, separator_file, break_file):
 
             if tmp_file is not None:
                 tmp_file.unlink(missing_ok=True)
