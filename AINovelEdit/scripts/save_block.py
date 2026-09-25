@@ -4,14 +4,23 @@
 save_block.py — безопасное дозаписывание (append) блока перевода в output/.
 
 Использование:
-    python scripts/save_block.py --file v14-ch01.md --new --block 1 --text "..."
+    # безопасный способ (кириллица НЕ проходит через командную строку):
+    python scripts/save_block.py --file v14-ch01.md --new --block 1 --text-file block.txt
+    python scripts/save_block.py --file v14-ch01.md --block 2 --text-file block.txt
+    # только для ASCII-текста:
     python scripts/save_block.py --file v14-ch01.md --block 2 --text "..."
 
 Агент Agent-IDE вызывает этот скрипт вместо прямой записи файлов:
   * без --new  — текст ДОПИСЫВАЕТСЯ в конец (перезапись невозможна);
   * с --new    — файл создаётся заново (только для первого блока главы);
   * --block N  — добавляет маркер <!-- block: N --> для отслеживания прогресса;
-  * без --text — текст читается из stdin (можно передать через here-string).
+  * --text-file — UTF-8 файл с текстом блока: безопасный канал для не-ASCII
+    (командная строка остаётся ASCII, Python читает файл напрямую);
+  * без --text/--text-file — текст читается из stdin (предпочтительно из
+    Python-драйвера; конвейер через shell для кириллицы ненадёжен).
+
+После записи скрипт проверяет результат (UTF-8, уникальность и порядок
+маркеров, наличие текста) и откатывает файл при расхождении.
 """
 import argparse
 import re
@@ -21,6 +30,11 @@ from pathlib import Path
 if sys.stdout.encoding and sys.stdout.encoding.lower() != "utf-8":
     sys.stdout.reconfigure(encoding="utf-8")
     sys.stderr.reconfigure(encoding="utf-8")
+if not sys.stdin.isatty():
+    try:
+        sys.stdin.reconfigure(encoding="utf-8", errors="strict")
+    except (AttributeError, ValueError):
+        pass
 
 OUT_DIR = Path(__file__).resolve().parent.parent / "output"
 EN_DIR = Path(__file__).resolve().parent.parent / "translates" / "en"
@@ -28,6 +42,9 @@ REGISTRY = Path(__file__).resolve().parent.parent / "completed.md"
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import completed  # noqa: E402
+
+MARKER_RE = re.compile(r"<!-- block: (\d+) -->")
+BLOCK_MARK_RE = re.compile(r"<!--\s*block:\s*\d+\s*-->")
 
 
 def position_check(path):
@@ -74,7 +91,11 @@ def main():
     ap.add_argument("--block", type=int, default=None,
                     help="номер блока (маркер прогресса)")
     ap.add_argument("--text", default=None,
-                    help="текст блока; если не задан — читается из stdin")
+                    help="текст блока (только ASCII; для кириллицы — "
+                         "--text-file); если не задан — stdin")
+    ap.add_argument("--text-file", default=None,
+                    help="UTF-8 файл с текстом блока — безопасный канал "
+                         "для не-ASCII (по пути читает Python)")
     args = ap.parse_args()
 
     OUT_DIR.mkdir(exist_ok=True)
@@ -93,10 +114,50 @@ def main():
               "в dictionary.md вручную." % vol, file=sys.stderr)
         sys.exit(1)
 
-    text = args.text if args.text is not None else sys.stdin.read()
+    # --- чтение payload: --text-file (безопасно) | --text (ASCII) | stdin ---
+    if args.text_file is not None:
+        src = Path(args.text_file)
+        if not src.exists():
+            print("ОШИБКА: файл с текстом не найден: %s" % src, file=sys.stderr)
+            sys.exit(1)
+        try:
+            text = src.read_text(encoding="utf-8")
+        except UnicodeDecodeError as exc:
+            print("ОШИБКА: %s не декодируется как UTF-8 (%s); файл НЕ "
+                  "изменён." % (src, exc), file=sys.stderr)
+            sys.exit(1)
+        if "\ufffd" in text:
+            print("ОШИБКА: в %s признаки порчи кодировки (\\ufffd); файл НЕ "
+                  "изменён." % src, file=sys.stderr)
+            sys.exit(1)
+    elif args.text is not None:
+        text = args.text
+    else:
+        try:
+            text = sys.stdin.read()
+        except UnicodeDecodeError as exc:
+            print("ОШИБКА: stdin не декодируется как UTF-8 (%s); файл НЕ "
+                  "изменён. Запишите текст в файл и подавайте через "
+                  "--text-file." % exc, file=sys.stderr)
+            sys.exit(1)
     if not text.strip():
         print("ОШИБКА: пустой текст блока", file=sys.stderr)
         sys.exit(1)
+    if BLOCK_MARK_RE.search(text):
+        print("ОШИБКА: текст содержит маркер <!-- block: N --> — скрипт "
+              "добавляет маркер сам, возможен дубль; текст НЕ записан.",
+              file=sys.stderr)
+        sys.exit(1)
+
+    existed = path.exists()
+    before_bytes = path.read_bytes() if existed else None
+    if existed and not args.new and args.block is not None:
+        nums = [int(x) for x in
+                MARKER_RE.findall(path.read_text(encoding="utf-8"))]
+        if args.block in nums:
+            print("ОШИБКА: маркер блока %d уже есть в %s — дубль; текст НЕ "
+                  "записан." % (args.block, path.name), file=sys.stderr)
+            sys.exit(1)
 
     mode = "w" if args.new else "a"
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -107,9 +168,40 @@ def main():
         if not text.endswith("\n"):
             f.write("\n")
 
+    # --- контроль после записи: при расхождении откат к before_bytes ---
+    problems = []
+    try:
+        written = path.read_text(encoding="utf-8")
+    except (OSError, UnicodeDecodeError) as exc:
+        problems.append("записанный файл не читается как UTF-8: %s" % exc)
+        written = None
+    if written is not None:
+        if "\ufffd" in written or "\x00" in written:
+            problems.append("признаки порчи кодировки (\\ufffd/\\x00)")
+        nums = [int(x) for x in MARKER_RE.findall(written)]
+        if len(nums) != len(set(nums)) or nums != sorted(nums):
+            problems.append("маркеры блоков повреждены (дубли/порядок): %s"
+                            % nums)
+        if text.strip() not in written:
+            problems.append("записанный текст не найден в файле")
+    if problems:
+        if before_bytes is None:
+            try:
+                path.unlink()
+            except OSError:
+                pass
+        else:
+            path.write_bytes(before_bytes)
+        print("ОШИБКА: проверка после записи провалена — файл ОТКАЧЕН "
+              "(созданный — удалён):", file=sys.stderr)
+        for p in problems:
+            print("  - %s" % p, file=sys.stderr)
+        sys.exit(1)
+
     size = path.stat().st_size
-    print("OK: %s | режим=%s | блок=%s | %d символов | файл %d байт" % (
-        path.name, mode, args.block, len(text), size))
+    print("OK: %s | режим=%s | блок=%s | %d символов | файл %d байт | "
+          "проверка после записи: пройдена"
+          % (path.name, mode, args.block, len(text), size))
     position_check(path)
 
 
