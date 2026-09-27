@@ -1,0 +1,528 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+format_scan.py — механический предфильтр оформления русского текста
+(скилл russian-prose-rules; работает по output-файлу главы).
+
+Скрипт НИЧЕГО не правит и не выносит вердиктов: он даёт список КАНДИДАТОВ,
+каждый из которых агент обязан разобрать — исправить через fix_block.py
+по russian-prose-rules либо отклонить с обоснованием в отчёте аудита
+(disposition). Принудительных замен нет: «обнаружение ≠ вердикт».
+
+Проверки (подтверждённые классы ручных правок manual-fix коммитов):
+  lowercase   — предложение (или абзац целиком) начинается со строчной буквы
+                («мадемуазель Лонгвиль чуть улыбнулась…»); исключения —
+                сокращения («т. д.», «напр.»), многоточие не считается
+                концом предложения.
+  title       — титул («её высочество», «ваше величество», «его светлость»…):
+                по правилам художественной прозы заглавная буква — только при
+                прямом обращении. Кандидаты в обе стороны: строчный титул
+                внутри реплики (возможно обращение) и заглавный в наррации
+                (возможно косвенное упоминание). Решение — по контексту JA/EN.
+  thought     — внутренняя речь в кавычках: «…», — подумал он → по russian-
+                prose-rules мысль оформляется курсивом _…_. Речь вида
+                «Луиза сказала: „Вон там“» НЕ затрагивается (глагол речи,
+                а не глагол мысли).
+  attribution — строка-атрибуция отдельным абзацем: «— спросил Осман.» после
+                реплики (кандидат на слияние; дополнение к check_records.py,
+                который ищет противоположное — слитную запись).
+  paragraph   — абзацы «слиплись»: две текстовые строки подряд без пустой
+                строки между ними; `---` без пустой строки по краям.
+                Многострочный курсив (стихи, песни, письма) не затрагивается.
+  italic      — нечётное число `_` во всём файле (незакрытый курсив).
+  blockmark   — маркеры `<!-- block: N -->` идут с нарушением последователь-
+                ности (дубли или регресс номера).
+  gender_vocative — рассогласование рода в обращениях: мужской глагол перед
+                женским обращением («понял, Луиза?» → «поняла, Луиза?»),
+                женский — перед мужским («слышала, Сайто?»), обращение на
+                «ты/вы» с противоположным родом глагола («Луиза, ты … видел»,
+                «Сайто, ты … пришла?») и бранное слово не того рода
+                («в тебе, дуре» о Сайто → «дураке»). Имена — из
+                FEM_VOC_NAMES/MASC_VOC_NAMES; при новом персонаже — дополни
+                списки.
+
+ВНЕ зоны проверок (специально): `<!-- img_ -->` — ставит только человек;
+`---`-разделитель сцены по смыслу (смена локации/времени) — решение агента,
+его отсутствие не является ошибкой; смысл и перевод — translation-audit;
+слитные записи прямой речи — check_records.py.
+
+Использование:
+    python scripts/format_scan.py --file output/v14-ch04.md
+    python scripts/format_scan.py --file output/v14-ch04.md --report
+    python scripts/format_scan.py --file output/v14-ch04.md --only title,thought
+    python scripts/format_scan.py --selftest
+"""
+import argparse
+import re
+import sys
+from pathlib import Path
+
+if sys.stdout.encoding and sys.stdout.encoding.lower() != "utf-8":
+    sys.stdout.reconfigure(encoding="utf-8")
+    sys.stderr.reconfigure(encoding="utf-8")
+
+OUT = Path(__file__).resolve().parent.parent / "output"
+AUDIT = OUT / "_audit" / "_prefilter"
+
+KIND_TITLES = {
+    "lowercase": "Регистр: предложение/абзац со строчной буквы",
+    "title": "Титул: заглавная/строчная буква (прямое обращение?)",
+    "thought": "Мысль в кавычках вместо курсива",
+    "attribution": "Строка-атрибуция «— сказал он.» отдельным абзацем",
+    "paragraph": "Слипшиеся абзацы / `---` без пустой строки",
+    "italic": "Незакрытый курсив (нечётное число `_` в файле)",
+    "blockmark": "Нарушена последовательность маркеров блоков",
+    "gender_vocative": "Несогласованный род глагола/существительного при обращении",
+}
+
+KIND_HINT = {
+    "lowercase": "Русские предложения и абзацы начинаются с заглавной буквы "
+                 "(russian-prose-rules). Проверь: не сокращение ли перед "
+                 "точкой («т. д.», «напр.») — тогда ложное срабатывание.",
+    "title": "По правилам художественной прозы титул с заглавной буквы — "
+             "только при ПРЯМОМ ОБРАЩЕНИИ; в косвенном упоминании — строчная "
+             "(«её высочество»). Определи по контексту JA/EN: обращение это "
+             "или косвенное; при сомнении — `<!-- ??? -->` и решение человека.",
+    "thought": "Внутренняя речь оформляется курсивом _…_ без кавычек "
+               "(russian-prose-rules, «Мысли и внутренняя речь»). Сначала "
+               "убедись, что это МЫСЛЬ, а не реплика: речь в «…» остаётся "
+               "репликой и не переписывается в курсив.",
+    "attribution": "Авторские слова отдельным абзацем не начинаются с тире; "
+                   "атрибуция после реплики встраивается в реплику "
+                   "(«— Реплика, — сказал он.») либо идёт самостоятельным "
+                   "абзацем без тире. Проверь функцию абзаца по JA/EN "
+                   "(russian-prose-rules, «Абзацное оформление прямой речи»).",
+    "paragraph": "Абзацы output-файла разделяются пустой строкой (формат "
+                 "проекта). Проверь по JA/EN, не слиплись ли два разных "
+                 "абзаца; стихи/письма в курсиве — не слипшиеся абзацы.",
+    "italic": "Курсив в проекте — только Markdown `_…_` и он обязан быть "
+              "закрыт (russian-prose-rules). Проверь конец файла.",
+    "blockmark": "Маркеры `<!-- block: N -->` идут последовательно 1, 2, 3… "
+                 "без дублей и пропусков: единица обработки — смысловой "
+                 "блок (AGENTS.md).",
+    "gender_vocative": "Глагол в прошедшем времени или бранное слово не "
+                       "согласованы по роду с персонажем, к которому обращаются "
+                       "(например, мужской глагол при обращении к Луизе: "
+                       "«понял, Луиза?» вместо «поняла, Луиза?», либо «дуре» о Сайто).",
+}
+
+CHECKS = ("lowercase", "title", "thought", "attribution",
+          "paragraph", "italic", "blockmark", "gender_vocative")
+
+BLOCK_RE = re.compile(r"^<!--\s*block:\s*(\d+)\s*-->\s*$")
+# предложение: точка/восклиц./вопрос. (+ закр. кавычка) + пробел + строчная.
+# многоточие «…» НЕ является концом предложения (пауза в реплике)
+SENT_LOWER_RE = re.compile(r"[.!?][»\"']?\s+([а-яё][а-яё\-]*)")
+# первое слово абзаца со строчной
+LINE_LOWER_RE = re.compile(r"^[а-яё]")
+# титулы: «её высочество», «ваше величество», «его светлость»…
+TITLE_RE = re.compile(
+    r"\b(Её|её|Ваше|ваше|Его|его|Их|их)\s+"
+    r"(Высочеств|высочеств|Величеств|величеств|Светлост|светлост|"
+    r"Святейшеств|святейшеств)\w*")
+# мысль в кавычках + глагол мысли (глаголы речи сюда не входят)
+THOUGHT_RE = re.compile(
+    r"«([^»]{1,120})»\s*,?\s*—\s*"
+    r"(подумал|подумала|решил|решила|понял|поняла|вспомнил|вспомнила|"
+    r"заметил|заметила|обдумывал|сообразил)\b")
+# строка-атрибуция: «— [наречие] глагол речи…»
+_ATTR_VERBS = (
+    r"(?:сказал|проговорил|пробормотал|промолвил|произнёс|произнес|"
+    r"спросил|ответил|воскликнул|крикнул|вскричал|вскрикнул|шепнул|"
+    r"прошептал|добавил|продолжил|заметил|повторил|возразил|тараторил|"
+    r"буркнул|рявкнул|гаркнул|протянул|пропел|фыркнул|хмыкнул|рыкнул|"
+    r"огласил|вопросил|переспросил)"
+)
+ATTR_START_RE = re.compile(
+    r"^—\s+(?:[а-яё]{3,}[оеую]\s+)?" + _ATTR_VERBS + r"а?\b", re.I)
+# сокращения: слово ПЕРЕД точкой / ПОСЛЕ точки
+ABBREV_BEFORE = {"напр", "проф", "др", "тт", "гл", "стр", "букв", "см",
+                 "т", "д", "п", "ч", "е", "н", "г", "р", "к", "в", "с",
+                 "о", "я", "и", "а", "у", "ф", "л", "м"}
+ABBREV_AFTER = {"напр", "проф", "др", "тт", "гл", "стр", "см", "т", "д",
+                "п", "ч", "е", "н", "г", "р", "к", "в", "с", "о", "у"}
+
+# Согласование рода в обращениях и звательных конструкциях (подтверждено manual-fix)
+MASC_PAST_FORM = r"[а-яё]+(?:[аяиену]л|[еёо]г|[ёео]к|шёл|мёр|тер|нёс|вёз|рос|пас)"
+FEM_PAST_FORM = r"[а-яё]+(?:[аяиену]ла|[еёо]гла|шла|мёрла|терла|несла|везла|росла)"
+FEM_VOC_NAMES = r"(?:Луиз[аеу]|Кирх[еу]|Табит[еу]|Сиест[еу]|Генриетт[еу]|принцесс[аеу]|королев[аеу]|девушк[аеу]|мадемуазель)"
+MASC_VOC_NAMES = r"(?:Сайто|Гиш[ауе]|Вард[ауе]|Уэльс[ауе]|Кольбер[ауе]|Дерфлингер[ауе]|Осман[ауе]|герцог[ауе]|принц[ауе]|парен[ьяе])"
+
+NOT_MASC_PAST_VERBS = {
+    "человек", "стол", "зол", "пол", "угол", "козёл", "осел", "посол",
+    "ствол", "узел", "орёл", "сокол", "щегол", "пепел", "идол", "дятел",
+    "хохол", "укол", "мул", "гул", "купол", "титул", "умысел", "помысел",
+    "вымысел", "промысел", "удел", "раздел", "предел", "отдел", "задел",
+    "надел", "обстрел", "прострел", "выстрел", "пострел"
+}
+NOT_FEM_PAST_VERBS = {
+    "скала", "мгла", "смола", "зола", "игла", "пила", "хвала", "хула", "стрела"
+}
+
+VOC_M_TO_F_RE = re.compile(
+    rf"(?<![а-яёА-ЯЁ])({MASC_PAST_FORM})\s*,\s*({FEM_VOC_NAMES})(?![а-яёА-ЯЁ])", re.I)
+VOC_F_TO_M_RE = re.compile(
+    rf"(?<![а-яёА-ЯЁ])({FEM_PAST_FORM})\s*,\s*({MASC_VOC_NAMES})(?![а-яёА-ЯЁ])", re.I)
+VOC_SAITO_FEM_NOUN_RE = re.compile(
+    r"(?<![а-яёА-ЯЁ])в\s+тебе,\s*дуре(?![а-яёА-ЯЁ])", re.I)
+# Обратный порядок: «Луиза, ты … видел?» / «Сайто, ты почему не пришла?» —
+# первый глагол после обращения (до первой запятой) с 2-м лицом в сегменте.
+_2ND_PERSON_RE = re.compile(
+    r"(?<![а-яёА-ЯЁ])(?:ты|тебе|тебя|тобой|твой|твоя|тво[йюе]|вы|вам|вас|"
+    r"вами|ваш|ваше|ваша)(?![а-яёА-ЯЁ])", re.I)
+
+STRUCT_PREFIXES = ("|", "- ", "* ", "> ")
+
+
+def _word_before(text, pos):
+    """Слово непосредственно перед позицией pos (без точки)."""
+    m = re.search(r"[А-Яа-яЁё\-]+$", text[:pos])
+    return m.group(0).lower() if m else ""
+
+
+_VOC_AT_START_RE = re.compile(
+    rf"^\s*(?:—\s*)?({FEM_VOC_NAMES}|{MASC_VOC_NAMES})\s*,\s*([^,.!?…]*)")
+_FIRST_PAST_RE = re.compile(
+    rf"(?<![а-яёА-ЯЁ])({MASC_PAST_FORM}|{FEM_PAST_FORM})(?![а-яёА-ЯЁ])", re.I)
+_FEM_ONLY_FORM_RE = re.compile(rf"^(?:{FEM_PAST_FORM})$", re.I)
+
+
+def _check_vocative_order(s, lineno, add):
+    """«Луиза, ты … видел?» / «Сайто, ты почему не пришла?» — до первой
+    запятой после обращения, только при 2-м лице в сегменте."""
+    m = _VOC_AT_START_RE.match(s)
+    if not m:
+        return
+    voc, seg = m.group(1), m.group(2)
+    if not _2ND_PERSON_RE.search(seg):
+        return                      # не обращение на «ты/вы» — не наш случай
+    v = _FIRST_PAST_RE.search(seg)
+    if not v:
+        return
+    verb = v.group(1)
+    is_fem_voc = bool(re.match(rf"^(?:{FEM_VOC_NAMES})$", voc, re.I))
+    if is_fem_voc and not _FEM_ONLY_FORM_RE.match(verb):
+        add(lineno, "gender_vocative",
+            "мужской глагол после обращения к женщине: «%s, %s» → проверить род"
+            % (voc, verb))
+    elif not is_fem_voc and _FEM_ONLY_FORM_RE.match(verb):
+        add(lineno, "gender_vocative",
+            "женский глагол после обращения к мужчине: «%s, %s» → проверить род"
+            % (voc, verb))
+
+
+
+def scan_lines(lines, only=None):
+    """Ядро проверки: список строк → [(номер строки, kind, сообщение)]."""
+    only = set(only) if only else set(CHECKS)
+    findings = []
+    italic_open = 0          # накопленная сумма `_` по обработанным строкам
+    prev_text = None         # (номер строки, текст) предыдущей текстовой строки
+    prev_blank = True
+    block_marks = []         # (номер строки, номер блока)
+
+    def add(lineno, kind, msg):
+        if kind in only:
+            findings.append((lineno, kind, msg))
+
+    for lineno, raw in enumerate(lines, 1):
+        s = raw.strip()
+
+        if not s:                       # граница абзацев
+            prev_blank = True
+            prev_text = None
+            continue
+
+        if s == "---":                  # разделитель: пустая строка по краям
+            if not prev_blank and prev_text is not None:
+                add(lineno, "paragraph",
+                    "`---` без пустой строки перед ним (слипание)")
+            nxt = lines[lineno].strip() if lineno < len(lines) else ""
+            if nxt and not nxt.startswith("#"):
+                add(lineno, "paragraph",
+                    "`---` без пустой строки после него (слипание)")
+            prev_blank = False
+            prev_text = None
+            continue
+
+        if s.startswith("#") or s.startswith("<!--"):
+            m = BLOCK_RE.match(s)
+            if m:
+                block_marks.append((lineno, int(m.group(1))))
+            prev_blank = False
+            prev_text = None
+            continue
+
+        if s.startswith(STRUCT_PREFIXES):   # списки, таблицы, цитаты
+            prev_blank = False
+            prev_text = None
+            continue
+
+        # строки внутри многострочного курсива (стихи, письма) не трогаем
+        if italic_open % 2 == 1:
+            italic_open += s.count("_")
+            prev_blank = False
+            prev_text = None
+            continue
+
+        # ================= текстовая строка =============================
+
+        if LINE_LOWER_RE.match(s):
+            add(lineno, "lowercase",
+                "абзац начинается со строчной буквы: «%s»" % s[:90])
+
+        for m in SENT_LOWER_RE.finditer(s):
+            before = _word_before(s, m.start())
+            after = m.group(1).lower()
+            if len(before) <= 2 or len(after) <= 2:
+                continue
+            if before in ABBREV_BEFORE or after in ABBREV_AFTER:
+                continue
+            if "-" in after or "-" in before:
+                continue          # стилизация речи: заикание «б-будто», «ха-ха»
+            add(lineno, "lowercase",
+                "предложение после «%s.» начинается со строчной «%s»"
+                % (before, m.group(1)))
+
+
+        # title: контекст реплики / наррации
+        dial = s.startswith("— ")
+        for m in TITLE_RE.finditer(s):
+            cap = m.group(0)[0].isupper()
+            if dial and not cap:
+                add(lineno, "title",
+                    "строчный титул внутри реплики (если прямое обращение — "
+                    "нужна заглавная): «%s»" % m.group(0))
+            elif not dial and cap:
+                add(lineno, "title",
+                    "заглавный титул вне прямого обращения (в наррации; по "
+                    "правилу — строчная): «%s»" % m.group(0))
+
+        # thought: мысль в кавычках (глагол мысли, не глагол речи)
+        for m in THOUGHT_RE.finditer(s):
+            if m.start() > 0 and s[m.start() - 1] == "_":
+                continue                  # уже курсив — не кандидат
+            add(lineno, "thought",
+                "мысль в кавычках с глаголом мысли: «%s» — %s → по правилу "
+                "курсив _…_" % (m.group(1), m.group(2)))
+
+        # attribution: строка-атрибуция отдельным абзацем
+        if ATTR_START_RE.match(s):
+            add(lineno, "attribution",
+                "строка начинается с атрибуции после тире: «%s» — вероятно, "
+                "кандидат на слияние с предыдущей репликой" % s[:70])
+
+        # paragraph: две текстовые строки подряд (слипание)
+        if prev_text is not None and not prev_blank:
+            add(lineno, "paragraph",
+                "нет пустой строки после строки %d (абзацы слиплись): «%s»"
+                % (prev_text[0], s[:70]))
+
+        # gender_vocative: рассогласование рода в обращениях
+        if dial:
+            _check_vocative_order(s, lineno, add)
+            for m in VOC_M_TO_F_RE.finditer(s):
+                verb, name = m.group(1), m.group(2)
+                if verb.lower() not in NOT_MASC_PAST_VERBS:
+                    add(lineno, "gender_vocative",
+                        "мужской глагол прошедшего времени перед женским обращением: "
+                        "«%s, %s» → проверить род («%sа, %s»?)"
+                        % (verb, name, verb, name))
+            for m in VOC_F_TO_M_RE.finditer(s):
+                verb, name = m.group(1), m.group(2)
+                if verb.lower() not in NOT_FEM_PAST_VERBS:
+                    add(lineno, "gender_vocative",
+                        "женский глагол прошедшего времени перед мужским обращением: "
+                        "«%s, %s» → проверить род"
+                        % (verb, name))
+            if VOC_SAITO_FEM_NOUN_RE.search(s):
+                add(lineno, "gender_vocative",
+                    "«в тебе, дуре» в контексте Сайто → мужской род «в тебе, дураке»")
+
+        prev_text = (lineno, s)
+        prev_blank = False
+        italic_open += s.count("_")
+
+    # italic: незакрытый курсив по всему файлу
+    if italic_open % 2 == 1:
+        findings.append((len(lines), "italic",
+                         "нечётное число `_` в файле — курсив не закрыт "
+                         "(russian-prose-rules: только `_…_`)"))
+
+    # blockmark: последовательность 1, 2, 3… без дублей/регрессий
+    if "blockmark" in only and block_marks:
+        prev_n = None
+        for lineno, n in block_marks:
+            if prev_n is not None and n <= prev_n:
+                add(lineno, "blockmark",
+                    "маркер блока %d идёт после блока %d (дубль/регресс)"
+                    % (n, prev_n))
+            prev_n = n
+
+    findings.sort(key=lambda x: (x[0], x[1]))
+    return findings
+
+
+def scan_file(path, only=None):
+    text = Path(path).read_text(encoding="utf-8")
+    return scan_lines(text.splitlines(), only)
+
+
+
+def render(name, findings):
+    kinds = {}
+    for _, kind, _ in findings:
+        kinds[kind] = kinds.get(kind, 0) + 1
+    lines = ["# Выгрузка предфильтра (оформление, кандидаты): %s" % name, ""]
+    lines.append("Кандидатов на разбор: **%d** (%s)." % (
+        len(findings),
+        ", ".join("%s %d" % (k, kinds[k]) for k in sorted(kinds)) or "нет"))
+    lines += ["",
+              "Скрипт — не истина и НЕ ПРАВИТ ТЕКСТ: каждый пункт либо "
+              "исправляется через fix_block.py по russian-prose-rules, либо "
+              "отклоняется с обоснованием в отчёте аудита (disposition). "
+              "`<!-- img_ -->` и смысл разделителей `---` скрипт не проверяет "
+              "(зона человека/решение агента).", ""]
+    for lineno, kind, msg in findings:
+        lines.append("## Строка %d — %s" % (lineno, KIND_TITLES[kind]))
+        lines.append("")
+        lines.append("- **Кандидат:** %s" % msg)
+        lines.append("- **Подсказка:** %s" % KIND_HINT[kind])
+        lines.append("")
+    return "\n".join(lines) + "\n"
+
+
+# ---------------------------------------------------------------------------
+# Selftest: подтверждённые классы ручных правок (must find) и границы (must not)
+# ---------------------------------------------------------------------------
+
+POSITIVE_CASES = [
+    (["Он вошёл в зал. мадемуазель Лонгвиль чуть улыбнулась."], {"lowercase"}),
+    (["мадемуазель Лонгвиль чуть улыбнулась."], {"lowercase"}),
+    (["— Тебя ждёт её высочество принцесса."], {"title"}),
+    (["Её Величество королева кивнула."], {"title"}),
+    (["«Дурачит меня», — подумал он."], {"thought"}),
+    (["— Итак, кто был свидетелем происшествия?",
+      "— спросил Осман."], {"attribution"}),
+    (["Первая строка абзаца.",
+      "Вторая строка прилипла без пустой строки."], {"paragraph"}),
+    (["Текст перед разделителем.", "---"], {"paragraph"}),
+    (["_Незакрытая мысль без точки."], {"italic"}),
+    (["<!-- block: 1 -->", "", "<!-- block: 1 -->"], {"blockmark"}),
+    (["— Теперь понял, Луиза? Он не защитит тебя."], {"gender_vocative"}),
+    (["— Слышала, Сайто? Пора идти."], {"gender_vocative"}),
+    (["— Не знаю, что она в тебе, дуре, нашла."], {"gender_vocative"}),
+    (["— Луиза, ты же сам это видел!"], {"gender_vocative"}),
+    (["— Сайто, ты почему не пришла?"], {"gender_vocative"}),
+]
+
+NEGATIVE_CASES = [
+    # речь в кавычках — НЕ мысль (пример v2-ch06:501)
+    (["Пробормотал Сайто, и Луиза сказала: «Вон там» — и показала в небо."],),
+    # мысль уже в курсиве (пример v2-ch06:657)
+    (["_Как же всё-таки жалко получилось,_ — подумал он."],),
+    (["Он ушёл. Она осталась."],),
+    (["Он пришёл. И она улыбнулась."],),
+    (["— Реплика, — сказала она."],),
+    (["— Я сказал — пустяки!"],),
+    (["— Спроси её, — продолжил он. Опять молчание."],),
+    (["Он пришёл. т. д. и опять ушёл."],),      # сокращение
+    (["— Ну… вообще-то вчера я видел Сайто."],),  # многоточие — не конец предл.
+    (["— Н-нет… вовсе не решено."],),            # заикание/стилизация речи
+    (["Он сказал: Ага. ха-ха, вот так."],),      # смех со строчной — речь
+    (["_Закрытая мысль._"],),                   # `_` чётно
+    (["<!-- block: 1 -->", "", "<!-- block: 2 -->"],),
+    (["— Он человек, принцесса."],),             # человек — существительное, не глагол
+    (["— Теперь поняла, Луиза?"],),              # верный род
+    (["— Слышал, Сайто?"],),                     # верный род
+    (["— Луиза, ты же сама это видела!"],),      # верный род
+    (["— Сайто, ты почему не пришёл?"],),        # верный род
+    (["— Сайто, она пришла раньше."],),          # 3-е лицо — не обращение на «ты»
+]
+
+
+
+def run_selftest() -> int:
+    failed = []
+    for lines, want in POSITIVE_CASES:
+        got = {k for _, k, _ in scan_lines(lines)}
+        if not (got & want):
+            failed.append(("FIND", " ".join(lines)))
+            print("  FAIL FIND (нет %s): %s" % (
+                ",".join(sorted(want)), " ".join(lines)))
+        else:
+            print("  OK   FIND: %s" % " ".join(lines))
+    for (lines,) in NEGATIVE_CASES:
+        found = scan_lines(lines)
+        if found:
+            failed.append(("PASS", " ".join(lines)))
+            print("  FAIL PASS (сработало: %s): %s" % (
+                "; ".join(k for _, k, _ in found), " ".join(lines)))
+        else:
+            print("  OK   PASS: %s" % " ".join(lines))
+    if failed:
+        print("\n[selftest] ПРОВАЛЕНО: %d из %d" % (
+            len(failed), len(POSITIVE_CASES) + len(NEGATIVE_CASES)))
+        return 1
+    print("\n[selftest] OK: все %d контрольных кейсов пройдены" % (
+        len(POSITIVE_CASES) + len(NEGATIVE_CASES)))
+    return 0
+
+
+def main():
+    ap = argparse.ArgumentParser(
+        description="Механический предфильтр оформления output-файла "
+                    "(russian-prose-rules)")
+    ap.add_argument("--file", help="путь к output-файлу главы "
+                                   "(напр. output/v14-ch04.md)")
+    ap.add_argument("--only", default=",".join(CHECKS),
+                    help="проверки через запятую (по умолчанию все: %s)"
+                         % ", ".join(CHECKS))
+    ap.add_argument("--report", action="store_true",
+                    help="записать выгрузку в output/_audit/_prefilter/"
+                         "<глава>-format.md")
+    ap.add_argument("--strict", action="store_true",
+                    help="вернуть код 1, если найдены кандидаты")
+    ap.add_argument("--selftest", action="store_true",
+                    help="прогнать контрольные тесты")
+    args = ap.parse_args()
+
+    if args.selftest:
+        return run_selftest()
+
+    if not args.file:
+        ap.error("нужен --file или --selftest")
+
+    only = {x.strip() for x in args.only.split(",") if x.strip()}
+    unknown = sorted(only - set(CHECKS))
+    if unknown or not only:
+        print("ОШИБКА: неизвестная проверка %s. Доступны: %s"
+              % (", ".join(unknown) or "(пусто)", ", ".join(CHECKS)),
+              file=sys.stderr)
+        sys.exit(2)
+
+    path = Path(args.file)
+    if not path.exists():
+        print("[format_scan] файл не найден: %s" % path, file=sys.stderr)
+        sys.exit(2)
+
+    findings = scan_file(path, only)
+    report = render(path.name, findings)
+
+    if args.report:
+        AUDIT.mkdir(parents=True, exist_ok=True)
+        dst = AUDIT / ("%s-format.md" % path.stem)
+        dst.write_text(report, encoding="utf-8", newline="\n")
+        print("OK: выгрузка → output/_audit/_prefilter/%s | кандидатов %d"
+              % (dst.name, len(findings)))
+    else:
+        sys.stdout.write(report)
+
+    if args.strict and findings:
+        sys.exit(1)
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())
+

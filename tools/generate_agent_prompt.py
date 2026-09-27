@@ -319,7 +319,13 @@ PROVISIONAL-термин обязательно укажи в итоговом �
 ANALYSIS → CLASSIFICATION → PROVISIONAL RESOLUTION → EXECUTION
 и сразу начни первый блок главы: создай файл результата через
 `scripts/save_block.py --new --block 1` и выполни полный pipeline
-(см. `.agents/skills/novel-editor/SKILL.md`). Краткий план — это рабочий
+(см. `.agents/skills/novel-editor/SKILL.md`). В pipeline каждого блока
+входят механические предфильтры: после сохранения — `grammar_scan.py`,
+`format_scan.py` (оформление: регистр, титулы, мысли, атрибуции,
+слипшиеся абзацы) и `style_scan.py`, каждый кандидат получает
+classification и disposition; `format_scan.py` запускается по
+output-файлу, `grammar_scan.py` — по merged (нужен `update_merged.py`).
+Краткий план — это рабочий
 ориентир внутри исполнения, а не повод завершить ответ.
 Запрещено в этом режиме: спрашивать «начинать ли / продолжать ли»,
 возвращать только план, завершать ответ после подготовки, ждать
@@ -362,7 +368,14 @@ def prompt_full_audit(ch: Chapter) -> str:
 6. grammar_scan.py + russian-grammar-control
 (grammar_scan.py — шаг 0 предфильтра, затем разбор по схемам RGC)
 7. style_scan.py + russian-style-audit
-8. FINAL AUDIT (оба сводных итога: GRAMMAR и STYLE)
+8. format_scan.py — механический предфильтр оформления
+(регистр предложений/титулов, мысли в кавычках, строки-атрибуции,
+слипшиеся абзацы, незакрытый курсив, маркеры блоков, согласование рода
+звательных форм; разбор — по russian-prose-rules)
+9. drift_scan.py — ОПЦИОНАЛЬНЫЙ инструмент: используется только при необходимости
+сравнить две ветки или ревизии (например, `python scripts/drift_scan.py --file vXX-chYY.md
+--against <SHA/branch>`). Для первичного пайплайна главы НЕ обязателен.
+10. FINAL AUDIT (сводные итоги: GRAMMAR, STYLE, FORMAT; при сравнении веток — также DRIFT)
 Проверяй не только наличие проблем, но и контекст.
 Не исправляй текст автоматически только потому,
 что механический сканер отметил подозрительное место.
@@ -384,9 +397,12 @@ def prompt_full_audit(ch: Chapter) -> str:
 PRESERVED — ... / USER DECISION / ???); обнаружение сигнала — повод для
 проверки, а не разрешение на правку. Ноль правок — допустимый итог.
 Перед запуском сканеров обнови merged (scripts/update_merged.py). Прогони
-также check_records.py и address_scan.py; при подозрении на пропуски
-используй отдельный режим «Поиск пропущенных отрывков (GAP-аудит)».
-В конце сформируй итоговый отчёт в output/_audit/vXX-chYY.md.
+также check_records.py, address_scan.py и format_scan.py (format_scan читает
+output-файл напрямую); при необходимости сравнить ревизии — drift_scan.py;
+при подозрении на пропуски используй отдельный режим «Поиск пропущенных отрывков (GAP-аудит)».
+В конце сформируй итоговый отчёт в output/_audit/vXX-chYY.md:
+GRAMMAR, STYLE, FORMAT (и DRIFT при сравнении веток) — с судьбой каждого кандидата
+format_scan.py (FIXED / FALSE POSITIVE / PRESERVED — … / USER DECISION / ???).
 """.strip()
 
 def prompt_quick_audit(ch: Chapter) -> str:
@@ -457,7 +473,11 @@ def prompt_style_audit(ch: Chapter) -> str:
 - неудачные коллокации;
 - кальки;
 - избыточные номинализации;
-- неестественный порядок слов.
+- неестественный порядок слов;
+- монотонность эпитетов (трек MONOTONY: один описательный эпитет —
+  «исполинский», «гигантский» и т.п. — повторяется в главе слишком часто,
+  синонимы не применяются; слово не запрещено, но нужны синонимы:
+  огромный / громадный / большой / гигантский; кандидат — chapter-level).
 Не дублируй проверки других скиллов: смысл и соответствие JA/EN —
 translation-audit; залог и актанты — russian-grammar-control;
 оформление речи и мыслей — russian-prose-rules; канцелярит и
@@ -589,11 +609,14 @@ def prompt_one_block(
 3. self-review — проверка на галлюцинации (перед сохранением)
 4. russian-humanizer — канцелярит, кальки, AI-штампы
 5. russian-prose-rules — оформление речи, мыслей, курсива
+(fix/проверка оформления — подсказки format_scan.py)
 6. russian-grammar-control — grammar_scan.py (шаг 0) + разбор схем
 7. save-progress — сохранение через save_block.py
 + update_merged.py + check_alignment.py
 8. style_scan.py + russian-style-audit
-9. FINAL AUDIT
+9. format_scan.py — предфильтр оформления output-блока (регистр, мысли,
+атрибуции, слипшиеся абзацы)
+10. FINAL AUDIT
 Сначала проверь смысл относительно JA / EN.
 Затем выполни редактуру.
 Не меняй соседние блоки без крайней необходимости.
@@ -730,7 +753,7 @@ Select-String). Ключ с «0 вхождений» при наличии в JA
 - фрагмент найден в другом месте output → FALSE POSITIVE (сдвиг).
 Правки: только fix_block.py полным текстом блока (существующие
 абзацы + восстановленные), затем update_merged.py и RECHECK:
-check_records, grammar_scan, style_scan, check_alignment.
+check_records, grammar_scan, style_scan, format_scan, check_alignment.
 Восстановленный текст — живая русская проза по russian-prose-rules;
 досочинять запрещено: только JA-содержимое (EN/RU — вспомогательная
 сверка формы). Самопроверка (self-review) каждого восстановленного

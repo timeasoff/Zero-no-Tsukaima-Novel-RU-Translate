@@ -13,6 +13,10 @@ check_alignment.py — механическая сверка merged по СМЫ�
   speech         — наличие реплик расходится: EN и ED_RU.
   marks          — расхождение знаков «?» / «!» с EN.
   negation       — расхождение отрицания (EN not/no/never ↔ RU не/ни/без/нет).
+  pronouns       — подмена местоименного лица (подтверждённый класс ручных
+                   правок «нас/вас»): в EN 1-е л. мн. (we/us/our), а в ED_RU
+                   есть 2-е л. (ты/вы) и нет мы/нам/нас. Кандидат широкий
+                   (на блок) — разбирается по JA/EN; EN «we» бывает авторским.
   numbers        — числа EN не подтверждаются в ED_RU (цифрой или словом).
   names          — имена из dictionary.md: есть в EN и нет в ED_RU (или наоборот).
 
@@ -44,6 +48,15 @@ AUDIT = BASE / "output" / "_audit" / "_prefilter"
 DICT = BASE / "dictionary.md"
 EN_NEG_RE = re.compile(r"\b(?:not|no|never|none|nothing|without|n't|nor)\b", re.I)
 RU_NEG_RE = re.compile(r"\b(?:не|ни|нет|без|никогда|ничего|никто)\b", re.I)
+# местоименные лица (подмена «нас/вас»): EN ↔ RU, консервативно
+EN_PERSON = {
+    "1-е л. мн. (we/us)": re.compile(r"\b(?:we|us|our|ours)\b", re.I),
+}
+RU_PERSON = {
+    "1-е л. мн.": re.compile(r"\b(?:мы|нам|нас|нами|наш|наша|наше|наши)\b", re.I),
+    "2-е л.": re.compile(r"\b(?:ты|тебе|тебя|тобой|твой|твоя|твои|"
+                         r"вы|вам|вас|вами|ваш|ваша|ваше|ваши)\b", re.I),
+}
 WORD_RE = re.compile(r"[А-Яа-яЁёA-Za-z][А-Яа-яЁёA-Za-z'’\-]+", re.U)
 
 # числительные 1–10 по корню (проект: однозначные — словами)
@@ -178,6 +191,20 @@ def check(path, pairs):
         if bool(EN_NEG_RE.search(en)) != bool(RU_NEG_RE.search(ed)):
             add(num, "negation", "weak",
                 "отрицание: EN и ED_RU расходятся", en, ed)
+
+        # подмена местоименного лица — подтверждённый класс ручных правок
+        # («Точно благословляют вас двоих» → «нас двоих»): EN 1-е л. мн.
+        # (we/us/our), а в ED_RU есть 2-е л. (ты/вы) и НЕТ 1-го л. мн.
+        # Кандидат ШИРОКИЙ (на блок): EN «we» бывает и авторским «мы», поэтому
+        # каждый случай разбирается по JA/EN; правило с EN «you» не
+        # используется — русский свободно опускает «ты/вы» (pro-drop).
+        en1 = EN_PERSON["1-е л. мн. (we/us)"].search(en)
+        ru1 = RU_PERSON["1-е л. мн."].search(ed)
+        ru2 = RU_PERSON["2-е л."].search(ed)
+        if en1 and ru2 and not ru1:
+            add(num, "pronouns", "weak",
+                "местоименное лицо: EN — 1-е л. мн. (we/us), в ED_RU — 2-е л. "
+                "(ты/вы) без мы/нам/нас (подмена «нас/вас»)", en, ed)
 
         en_n, ed_n = numbers_in(en), numbers_in(ed)
         missing = {n for n in en_n if not number_confirmed(n, ed)}

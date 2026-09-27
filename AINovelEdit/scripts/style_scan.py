@@ -12,6 +12,9 @@
 из корпуса проекта + POSITIVE_CASE + зелёного --selftest. Расширение
 «на будущее» («иногда бывает ошибкой», «на всякий случай») запрещено:
 ложное срабатывание опаснее пропуска сомнительного кандидата.
+Класс CALQUE — подтверждённые ручными правками (manual-fix) кальки:
+«не пойму ты», «полегчайте», «за ржавчину», «им не по дороге» и т.п.
+(см. контрастивную таблицу в скиллах russian-humanizer / translation-audit).
 
 Отсутствие кандидатов НЕ означает отсутствие стилистических проблем.
 
@@ -73,6 +76,32 @@ BUREAUCRATIC = [
     "в связи с тем", "в рамках", "в целях", "осуществляет",
     "данный", "имеет место", "с точки зрения",
 ]
+
+# Неестественные машинные кальки и псевдослова (подтверждено manual-fix коммитами).
+CALQUE_PATTERNS = [
+    (re.compile(r"(?<![а-яёА-ЯЁ])не\s+пойму\s+ты(?![а-яёА-ЯЁ])", re.I),
+     "«не пойму ты» — неестественная калька («тебе не понять» / «не поймёшь»)"),
+    (re.compile(r"(?<![а-яёА-ЯЁ])полегчайте(?![а-яёА-ЯЁ])", re.I),
+     "«полегчайте» — искусственная словоформа («поддаваться не умею» / «полегче»)"),
+    (re.compile(r"(?<![а-яёА-ЯЁ])за\s+ржавчину(?![а-яёА-ЯЁ])", re.I),
+     "«за ржавчину» — неестественная калька («из-за ржавого вида»)"),
+    (re.compile(r"(?<![а-яёА-ЯЁ])им\s+не\s+по\s+дороге(?![а-яёА-ЯЁ])", re.I),
+     "«им не по дороге» — проверить контекст (если о боевом уровне — «совсем другого уровня»)"),
+    (re.compile(r"(?<![а-яёА-ЯЁ])руки-ноги\s+сделались\s+бесполезны(?![а-яёА-ЯЁ])", re.I),
+     "«руки-ноги сделались бесполезны» — калька («сделать совершенно беспомощными»)"),
+    (re.compile(r"(?<![а-яёА-ЯЁ])громила-особа(?![а-яёА-ЯЁ])", re.I),
+     "«громила-особа» — искусственная конструкция"),
+]
+
+# Монотонность эпитетов (подтверждено ручными правками manual-fix): один
+# описательный эпитет используется в главе слишком часто, синонимы не
+# применяются. Слова не запрещены — кандидат на разнообразие.
+# Порог выведен из данных: до правок «исполинский» 8–9 раз/глава (доля
+# 62–82% от всех эпитетов группы); после правок — 1–4 раза.
+EPITHET_GROUP = ("исполинск", "гигантск", "огромн", "громадн",
+                 "колоссальн", "грандиозн", "чудовищн")
+EPITHET_MIN = 5        # минимум вхождений одного эпитета в главе
+EPITHET_SHARE = 0.6    # и его доля от всех эпитетов группы
 
 # Служебные слова, повторы которых не считаем.
 STOPWORDS = {
@@ -168,7 +197,12 @@ def scan_paragraph(idx, text):
         if phrase in low_text:
             findings.append((idx, "COLLOCATION", f"«{phrase}» — канцелярская связка"))
 
-    # 4. Повтор одного значимого слова в абзаце
+    # 4. Неестественные машинные кальки
+    for pattern, msg in CALQUE_PATTERNS:
+        if pattern.search(text):
+            findings.append((idx, "CALQUE", msg))
+
+    # 5. Повтор одного значимого слова в абзаце
     counts = {}
     for t in tokens:
         lw = t.lower()
@@ -204,6 +238,30 @@ def scan_paragraph(idx, text):
     return findings
 
 
+def scan_epithet_monotony(paragraphs):
+    """Chapter-level: один эпитет группы слишком часто (нет синонимов)."""
+    counts = {}
+    first_at = {}
+    for idx, p in enumerate(paragraphs, start=1):
+        for t in tokenize(p):
+            lw = t.lower()
+            for root in EPITHET_GROUP:
+                if lw.startswith(root):
+                    counts[root] = counts.get(root, 0) + 1
+                    first_at.setdefault(root, idx)
+    total = sum(counts.values())
+    findings = []
+    if total < EPITHET_MIN:
+        return findings
+    for root, n in sorted(counts.items(), key=lambda x: -x[1]):
+        if n >= EPITHET_MIN and n / total >= EPITHET_SHARE:
+            findings.append((first_at[root], "MONOTONY",
+                             f"эпитет-корень «{root}…» {n} раз из {total} "
+                             f"({int(100 * n / total)}%) — применить синонимы "
+                             f"(огромный/громадный/большой/гигантский/…)"))
+    return findings
+
+
 def parse_blocks(path: Path):
     """Разбивает файл на абзацы (разделитель — пустая строка)."""
     text = path.read_text(encoding="utf-8")
@@ -233,6 +291,9 @@ POSITIVE_CASES = [
     "Он быстро подошёл к двери и быстрым движением открыл её.",
     "Мы осуществили проверку документов.",
     "Он вернулся обратно к дому.",
+    "Встарь… не пойму ты, разумеется, об этом.",
+    "Я неуклюжий, полегчайте не смогу.",
+    "Это тебя за ржавчину недооценивают.",
 ]
 
 NEGATIVE_CASES = [
@@ -262,11 +323,27 @@ def run_selftest() -> int:
             print(f"  FAIL PASS (сработало: {msgs}): {text}")
         else:
             print(f"  OK   PASS: {text}")
+
+    # Монотонность эпитетов — chapter-level, отдельные кейсы
+    mono_positive = [["Исполинский голем шагнул."] * 6]
+    mono_negative = [["Исполинский голем шагнул.", "Громадная тень упала.",
+                      "Огромный кулак взметнулся.", "Гигантская нога топнула.",
+                      "Чудовищный грохот раздался.", "Большая туча набежала."]]
+    for label, cases, want in (("FIND", mono_positive, True),
+                               ("PASS", mono_negative, False)):
+        for paras in cases:
+            found = scan_epithet_monotony(paras)
+            if bool(found) != want:
+                failed.append((label, paras[0]))
+                print(f"  FAIL {label} (монотонность): {paras[0]} → {found}")
+            else:
+                print(f"  OK   {label} (монотонность): {paras[0]}")
+
     if failed:
         print(f"\n[selftest] ПРОВАЛЕНО: {len(failed)} из "
-              f"{len(POSITIVE_CASES) + len(NEGATIVE_CASES)}")
+              f"{len(POSITIVE_CASES) + len(NEGATIVE_CASES) + 2}")
         return 1
-    print(f"\n[selftest] OK: все {len(POSITIVE_CASES) + len(NEGATIVE_CASES)} "
+    print(f"\n[selftest] OK: все {len(POSITIVE_CASES) + len(NEGATIVE_CASES) + 2} "
           "контрольных кейсов пройдены")
     return 0
 
@@ -297,6 +374,7 @@ def main():
     all_findings = []
     for i, p in enumerate(paragraphs, start=1):
         all_findings.extend(scan_paragraph(i, p))
+    all_findings.extend(scan_epithet_monotony(paragraphs))
 
     print(f"[style_scan] {path.name}: {len(paragraphs)} абзацев, "
           f"{len(all_findings)} кандидатов\n")
