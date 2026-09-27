@@ -73,6 +73,12 @@ EN_NAME_STOP = {
     "spirits", "knights", "knight", "academy", "church", "sword", "swords",
     "saint", "spell", "spells", "flame", "lily", "rose", "cross", "wand",
     "wands", "people", "guard", "guards", "crown", "royal", "lady", "lord",
+    # короткие (4 буквы и меньше) общие EN-слова из словарных колонок:
+    # без стопа порог {3,} превращает их в «имена» (см. load_names)
+    "ball", "book", "cold", "door", "duke", "east", "fire", "five",
+    "gate", "king", "land", "line", "love", "mage", "miss", "oath",
+    "ring", "room", "ruby", "twin", "void", "wind", "your", "zero",
+    "holy", "dirt", "mann", "jean", "sun", "sile", "skua", "wynn",
 }
 
 
@@ -95,7 +101,7 @@ def load_names():
         en, ru = cells[1], cells[2]
         if en.startswith("---") or ru.startswith("---"):
             continue
-        en_forms = {w.lower() for w in re.findall(r"\b[A-Z][A-Za-z'\-]{4,}", en)
+        en_forms = {w.lower() for w in re.findall(r"\b[A-Z][A-Za-z'\-]{3,}", en)
                     if w.lower() not in EN_NAME_STOP}
         ru_words = re.findall(r"[А-Яа-яЁё]+", ru)
         ru_base = ru_words[0].lower().replace("ё", "е")[:4] if ru_words else ""
