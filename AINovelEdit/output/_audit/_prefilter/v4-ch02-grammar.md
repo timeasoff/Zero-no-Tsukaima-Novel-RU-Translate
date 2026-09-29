@@ -21,14 +21,14 @@ russian-grammar-control, либо отклоняется с обосновани
 ## Блок 2 — Актанты: EN «X's Y was …» (субъект RU — не X) (RGC: статься)
 
 - **EN:** After the airship fleet's annihilation, Albion's army was routed.
-- **ED_RU:** _
-_«В „Святой земле“, может статься, есть зацепки…
+- **ED_RU:** \_
+  \_«В „Святой земле“, может статься, есть зацепки…
 - **Подсказка:** RGC-1: «X's Y was stolen» ≠ «X лишился Y». Правильно: «X лишили Y» / «у X отобрали Y» / «Y у X отобрали».
 
 ## Блок 5 — Актанты: EN «X's Y was …» (субъект RU — не X) (RGC: пользовался)
 
 - **EN:** "It is said that Tristain's army was led by Henrietta.
-- **ED_RU:** Утраченная система «Пустота», которой пользовался Основатель Бримир.
+- **ED_RU:** Утраченная стихия «Пустота», которой пользовался Основатель Бримир.
 - **Подсказка:** RGC-1: «X's Y was stolen» ≠ «X лишился Y». Правильно: «X лишили Y» / «у X отобрали Y» / «Y у X отобрали».
 
 ## Блок 6 — Актанты: EN «X's Y was …» (субъект RU — не X) (RGC: хранилась)
@@ -40,7 +40,7 @@ _«В „Святой земле“, может статься, есть зац�
 ## Блок 9 — Залог/актанты: EN пассив ↔ RU возвратный глагол (RGC: попыталась)
 
 - **EN:** "
-After that, Henrietta faced Saito who was left out up till now.
+  After that, Henrietta faced Saito who was left out up till now.
 - **ED_RU:** И всё же Луиза попыталась сделать вид, что не понимает.
 - **Подсказка:** RGC-1: в JA 受身/EN пассив подлежащее — то, ЧТО претерпело действие. Возвратный глагол делает подлежащим того, КТО действует. Проверь схему: кто → что делает → кого/чего.
 
@@ -55,4 +55,3 @@ After that, Henrietta faced Saito who was left out up till now.
 - **EN:** While usually the willpower is recovered while sleeping at night, the amount needed is too large for you…
 - **ED_RU:** — А что если сила духа копилась и копилась, потому что прежде ты не могла нормально произносить заклинания?
 - **Подсказка:** RGC-1: «X's Y was stolen» ≠ «X лишился Y». Правильно: «X лишили Y» / «у X отобрали Y» / «Y у X отобрали».
-
