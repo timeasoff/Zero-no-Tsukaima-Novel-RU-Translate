@@ -16,6 +16,12 @@
 «не пойму ты», «полегчайте», «за ржавчину», «им не по дороге» и т.п.
 (см. контрастивную таблицу в скиллах russian-humanizer / translation-audit).
 
+Класс REPETITION работает на двух уровнях: внутри абзаца (правила ниже) и
+МЕЖАБЗАЦНО в пределах близкого контекста микросцены — содержательное слово
+4+ раз в окне ~120 слов по ≥3 абзацам (подтверждено manual-fix v3-ch01:
+«хлопот» ×4 — абзацный уровень повтор не видел). Межабзацный повтор —
+кандидат, не ошибка: намеренный повтор учитывается disposition.
+
 Отсутствие кандидатов НЕ означает отсутствие стилистических проблем.
 
 Использование:
@@ -262,6 +268,47 @@ def scan_epithet_monotony(paragraphs):
     return findings
 
 
+# Служебные слова: их повтор в близких абзацах — норма, а не лексический повтор.
+FUNC_WORDS = {
+    "чтобы", "после", "здесь", "тогда", "потом", "очень", "более", "тому",
+    "этого", "этому", "который", "которого", "которые", "которой", "также",
+    "между", "перед", "через", "около", "против", "вместо", "потому",
+    "однако", "словно", "будто", "каждый", "каждого", "снова", "сначала",
+    "наконец", "сразу", "просто", "теперь", "опять", "всего", "только",
+}
+
+
+def scan_scene_repetition(paras, window=120, count=4, min_paras=3):
+    """Межабзацный повтор одной микросцены: содержательное слово ≥ count раз
+    в окне window токенов, разнесённое по ≥ min_paras абзацам.
+
+    Уровень «предложение/абзац» покрывается scan_paragraph; этот проход ловит
+    повтор, размазанный по близким абзацам микросцены (manual-fix v3-ch01:
+    «хлопот» ×4). Совпадение — кандидат, не ошибка (disposition по SKILL.md)."""
+    words = []
+    for pi, p in enumerate(paras):
+        for w in re.findall(r"[а-яёА-ЯЁ]+", p):
+            words.append((w.lower(), w, pi))
+    seen = {}
+    for idx, (wl, w, _pi) in enumerate(words):
+        if len(wl) < 5 or w[0].isupper() or wl in FUNC_WORDS:
+            continue          # имена и служебные слова не считаем
+        seen.setdefault(wl, []).append(idx)
+    findings = []
+    for wl, idxs in seen.items():
+        for start in idxs:
+            win = [j for j in idxs if start <= j <= start + window]
+            paras_in = sorted({words[j][2] for j in win})
+            if len(win) >= count and len(paras_in) >= min_paras:
+                findings.append((paras_in[0] + 1, "REPETITION",
+                                 f"«{wl}» ×{len(win)} в близких абзацах (абз. "
+                                 f"{', '.join(str(p + 1) for p in paras_in)}) — "
+                                 f"лексический повтор микросцены; кандидат "
+                                 f"(намеренный повтор возможен)"))
+                break
+    return findings
+
+
 def parse_blocks(path: Path):
     """Разбивает файл на абзацы (разделитель — пустая строка)."""
     text = path.read_text(encoding="utf-8")
@@ -339,11 +386,34 @@ def run_selftest() -> int:
             else:
                 print(f"  OK   {label} (монотонность): {paras[0]}")
 
+    # Межабзацный повтор микросцены (manual-fix v3-ch01: «хлопот» ×4)
+    scene_positive = [[
+        "Он остался там, чтобы не доставить Генриетте хлопот.",
+        "Принц остался в той стране, чтобы не причинить хлопот ни вам, ни Тристейну.",
+        "Чтобы не причинить мне хлопот?",
+        "И всё же он не хотел причинять вам хлопот. Уж поверьте.",
+    ]]
+    scene_negative = [[
+        "Чтобы выжить, нужно двигаться.",
+        "Чтобы не отстать, он шёл впереди.",
+        "Чтобы успеть, пришлось бежать.",
+        "Чтобы добраться, нужна лошадь.",
+    ]]
+    for label, cases, want in (("FIND", scene_positive, True),
+                               ("PASS", scene_negative, False)):
+        for paras in cases:
+            found = scan_scene_repetition(paras)
+            if bool(found) != want:
+                failed.append((label, paras[0]))
+                print(f"  FAIL {label} (межабзацный повтор): {paras[0]} → {found}")
+            else:
+                print(f"  OK   {label} (межабзацный повтор): {paras[0]}")
+
     if failed:
         print(f"\n[selftest] ПРОВАЛЕНО: {len(failed)} из "
-              f"{len(POSITIVE_CASES) + len(NEGATIVE_CASES) + 2}")
+              f"{len(POSITIVE_CASES) + len(NEGATIVE_CASES) + 4}")
         return 1
-    print(f"\n[selftest] OK: все {len(POSITIVE_CASES) + len(NEGATIVE_CASES) + 2} "
+    print(f"\n[selftest] OK: все {len(POSITIVE_CASES) + len(NEGATIVE_CASES) + 4} "
           "контрольных кейсов пройдены")
     return 0
 
@@ -375,6 +445,7 @@ def main():
     for i, p in enumerate(paragraphs, start=1):
         all_findings.extend(scan_paragraph(i, p))
     all_findings.extend(scan_epithet_monotony(paragraphs))
+    all_findings.extend(scan_scene_repetition(paragraphs))
 
     print(f"[style_scan] {path.name}: {len(paragraphs)} абзацев, "
           f"{len(all_findings)} кандидатов\n")
