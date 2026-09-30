@@ -13,3 +13,4 @@ AINovelEdit/output/merge/*.pdf
 # рабочие артефакты аудитов (регенерируются скриптами, не коммитятся)
 AINovelEdit/output/_audit/_fix/*.json
 AINovelEdit/output/_audit/_prefilter/*-alignment.md
+.vscode
