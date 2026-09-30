@@ -12,7 +12,10 @@
 - режим поиска пропущенных отрывков (GAP-аудит);
 - разбор решений пользователя (OPEN / DEFERRED, PROVISIONAL);
 - подробное описание режима перед подтверждением;
-- автоматическое копирование готового промпта в буфер обмена.
+- автоматическое копирование готового промпта в буфер обмена;
+- сохранение готового промпта в markdown-файл `agent_prompt.md`
+  в корне проекта, на который можно сослаться в задаче агенту
+  (файл в .gitignore, перезаписывается при каждой генерации).
 Запускать из корня проекта:
 python tools/generate_agent_prompt.py
 """
@@ -25,6 +28,7 @@ import subprocess
 import sys
 import textwrap
 from dataclasses import dataclass
+from datetime import datetime
 from typing import Callable
 
 # ============================================================================
@@ -33,6 +37,10 @@ from typing import Callable
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 AINOVELEDIT = os.path.join(ROOT, "AINovelEdit")
 TERMINAL_WIDTH = 78
+# Готовый промпт-инструкция сохраняется в корне проекта под этим именем
+# (md-файл добавлен в .gitignore, перезаписывается при каждой генерации).
+PROMPT_FILE_NAME = "agent_prompt.md"
+PROMPT_FILE = os.path.join(ROOT, PROMPT_FILE_NAME)
 
 # ============================================================================
 # УТИЛИТЫ ВЫВОДА
@@ -1262,6 +1270,39 @@ def copy_to_clipboard(text: str) -> bool:
         return False
 
 # ============================================================================
+# СОХРАНЕНИЕ В ФАЙЛ
+# ============================================================================
+def save_prompt_to_file(
+    prompt_text: str,
+    prompt: PromptInfo,
+    ch: Chapter,
+) -> str | None:
+    """
+    Сохранить готовый промпт в markdown-файл в корне проекта.
+
+    Файл перезаписывается при каждой генерации, чтобы на него можно
+    было сослаться в задаче агенту («см. agent_prompt.md»).
+    Возвращает путь к файлу либо None при ошибке записи.
+    """
+    header = (
+        "# Промпт-инструкция для агента\n"
+        "\n"
+        f"- Режим: {prompt.title}\n"
+        f"- Глава: {ch.chapter_id_full}\n"
+        f"- Сгенерировано: {datetime.now().strftime('%Y-%m-%d %H:%M')}\n"
+        "- Источник: tools/generate_agent_prompt.py\n"
+        "\n"
+        "---\n"
+        "\n"
+    )
+    try:
+        with open(PROMPT_FILE, "w", encoding="utf-8", newline="\n") as fh:
+            fh.write(header + prompt_text + "\n")
+    except OSError:
+        return None
+    return PROMPT_FILE
+
+# ============================================================================
 # ОСНОВНОЙ ЦИКЛ
 # ============================================================================
 def main() -> None:
@@ -1346,6 +1387,11 @@ def main() -> None:
             print("  Промпт скопирован в буфер обмена.")
         else:
             print("  Не удалось скопировать промпт автоматически.")
+        if save_prompt_to_file(prompt_text, prompt_obj, ch):
+            print(f"  Промпт сохранён в файл: {PROMPT_FILE}")
+            print(f"  На него можно сослаться: {PROMPT_FILE_NAME}")
+        else:
+            print(f"  Не удалось сохранить промпт в {PROMPT_FILE_NAME}.")
         print()
         separator()
 
@@ -1378,7 +1424,8 @@ def main() -> None:
                     prompt_text = generate_prompt(prompt_index, ch)
                     if prompt_text:
                         copy_to_clipboard(prompt_text)
-                        print(f"\n  Сгенерировано и скопировано для {ch.chapter_id_full}")
+                        save_prompt_to_file(prompt_text, prompt_obj, ch)
+                        print(f"\n  Сгенерировано для {ch.chapter_id_full}: промпт скопирован и сохранён в {PROMPT_FILE_NAME}")
                     else:
                         print("  Ошибка генерации.")
                         prompt_index = None
@@ -1392,7 +1439,8 @@ def main() -> None:
                     prompt_text = generate_prompt(prompt_index, ch)
                     if prompt_text:
                         copy_to_clipboard(prompt_text)
-                        print(f"\n  Сгенерировано и скопировано для {ch.chapter_id_full}")
+                        save_prompt_to_file(prompt_text, prompt_obj, ch)
+                        print(f"\n  Сгенерировано для {ch.chapter_id_full}: промпт скопирован и сохранён в {PROMPT_FILE_NAME}")
                     else:
                         print("  Ошибка генерации.")
                         prompt_index = None
