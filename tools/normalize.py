@@ -62,6 +62,7 @@ class Section:
     number: object      # int | None
     title: str
     paras: list = field(default_factory=list)
+    story: object = None   # № рассказа в сборнике (EN «Story N» / RU «История N»)
 
     @property
     def slug(self):
@@ -170,6 +171,10 @@ EN_WORD_NUM = {
     "twenty": 20,
 }
 
+# Сборники (том 5, 12): «Story 1: …» — граница рассказа, главы внутри него
+# нумеруются заново. Заголовок может переноситься на следующую строку.
+EN_STORY_RE = re.compile(r"^Story\s*(\d+)\s*[:.]", re.I)
+
 
 def _ends_sentence(s):
     return bool(re.search(r'[.!?…:;]["»\'”’)]?\s*$', s))
@@ -179,6 +184,8 @@ def extract_en(path):
     sections = []
     cur = None
     carry = ""   # незавершённый абзац, продолжающийся на следующей странице
+    cur_story = None      # текущий рассказ сборника («Story N»)
+    story_title = False   # продолжение заголовка «Story N: …»
     doc = pymupdf.open(path)
     for page in doc:
         blocks = sorted(page.get_text("blocks"), key=lambda b: (b[1], b[0]))
@@ -197,6 +204,7 @@ def extract_en(path):
                 m = EN_HEAD_RE.match(line)
                 if m and len(line) < 120:
                     # заголовок главы: сбрасываем накопленный текст
+                    story_title = False
                     if buf:
                         if cur is not None:
                             cur.paras.append(" ".join(buf))
@@ -209,10 +217,18 @@ def extract_en(path):
                     else:
                         kind = m.group("word").lower()
                         num = None
-                    cur = Section(kind, num, line)
+                    cur = Section(kind, num, line, story=cur_story)
                     sections.append(cur)
-                else:
-                    buf.append(line)
+                    continue
+                ms = EN_STORY_RE.match(line)
+                if ms and len(line) < 120:
+                    # граница рассказа: заголовок не текст главы
+                    cur_story = int(ms.group(1))
+                    story_title = True
+                    continue
+                if story_title:
+                    continue      # вторая строка перенесённого «Story N: …»
+                buf.append(line)
             if not buf:
                 continue
             text = " ".join(buf)
@@ -229,10 +245,42 @@ def extract_en(path):
 
 # ----------------------------- RU (docx) -----------------------------------
 
+RU_HEAD_RE = re.compile(r"^(Глава|Пролог|Эпилог|Послесловие)\s*(\d+)?\s*[:.]?\s*(.*)$")
+# «Глава первая: Фон Цербст» (том 11) — номер главы словом
+RU_WORD_NUM = {"первая": 1, "вторая": 2, "третья": 3, "четвертая": 4,
+               "четвёртая": 4, "пятая": 5, "шестая": 6, "седьмая": 7,
+               "восьмая": 8, "девятая": 9, "десятая": 10, "одиннадцатая": 11,
+               "двенадцатая": 12, "тринадцатая": 13, "четырнадцатая": 14,
+               "пятнадцатая": 15, "шестнадцатая": 16, "семнадцатая": 17,
+               "восемнадцатая": 18, "девятнадцатая": 19, "двадцатая": 20}
+# Сборники без «Глава N» (том 5): «История N: …» / «Часть M».
+RU_PART_RE = re.compile(r"^Часть\s*(\d+)\b", re.I)
+RU_STORY_RE = re.compile(r"^История\s*(\d+)\s*[:：]", re.I)
+# приложение/примечания — словарные приложения, в текст глав не входят
+RU_STOP_RE = re.compile(r"[Пп]римечани|[Пп]риложени")
+
+
+def _ru_chapter_number(text):
+    """Номер главы из заголовка: цифра, иначе порядковое слово («первая»)."""
+    m = re.match(r"^Глава\s*(\d+)", text)
+    if m:
+        return int(m.group(1))
+    m = re.match(r"^Глава\s*([^\s:.\d]+)", text)
+    if m:
+        return RU_WORD_NUM.get(m.group(1).lower())
+    return None
+
+
 def extract_ru(path):
+    """RU-абзацы по секциям. Секции — заголовки `Глава N`/`Пролог`/…;
+    в сборниках, где глав нет, — заголовки `Часть M` внутри `История N`
+    (номер главы — сквозной внутри рассказа, как в EN). Всё до первого
+    заголовка секции не принадлежит главе (обложка, описание героев)."""
     sections = []
     cur = None
     stopped = False
+    cur_story = None   # № рассказа сборника
+    part_seq = 0       # № главы внутри рассказа
     d = docx.Document(path)
     for p in d.paragraphs:
         if stopped:
@@ -242,18 +290,34 @@ def extract_ru(path):
         if not text:
             continue
         if style.startswith("Heading"):
-            if re.search(r"[Пп]римечани", text):
+            if RU_STOP_RE.search(text):
                 stopped = True
                 continue
-            m = re.match(r"^(Глава|Пролог|Эпилог|Послесловие)\s*(\d+)?\s*[:.]?\s*(.*)$", text)
+            m = RU_HEAD_RE.match(text)
             if m:
                 if m.group(1) == "Глава":
-                    kind, num = "chapter", int(m.group(2))
+                    kind, num = "chapter", _ru_chapter_number(text)
+                    if num is None:
+                        print("[ru] не распознан номер главы: %r — "
+                              "сопоставление пойдёт по порядку" % text)
+                    part_seq = num or part_seq
                 else:
                     kind = {"Пролог": "prologue", "Эпилог": "epilogue",
                             "Послесловие": "afterword"}[m.group(1)]
                     num = None
-                cur = Section(kind, num, text)
+                cur = Section(kind, num, text, story=cur_story)
+                sections.append(cur)
+                continue
+            ms = RU_STORY_RE.match(text)
+            if ms:
+                # граница рассказа: текст до «Часть M» главой не является
+                cur_story, part_seq = int(ms.group(1)), 0
+                cur = None
+                continue
+            pm = RU_PART_RE.match(text)
+            if pm:
+                part_seq += 1
+                cur = Section("chapter", part_seq, text, story=cur_story)
                 sections.append(cur)
                 continue
         if re.fullmatch(r"\d{1,3}", text):
@@ -359,31 +423,121 @@ def build_groups(ops):
     return groups
 
 
-def match_sections(all_langs):
+def _find_section(sections, used, sec):
+    """Секция языка, отвечающая секции EN: сначала по номеру, иначе — по порядку."""
+    for idx, s in enumerate(sections):
+        if idx in used:
+            continue
+        if s.kind == sec.kind and (s.number == sec.number or s.number is None):
+            return idx
+    for idx, s in enumerate(sections):
+        if idx not in used and s.kind == sec.kind:
+            return idx
+    return None
+
+
+def _story_groups(sections):
+    """Индексы секций, сгруппированные по рассказу (EN «Story N» / RU «История N»).
+    Если истории не размечены — одна группа, поведение прежнее."""
+    groups, cur = [], None
+    for i, s in enumerate(sections):
+        if not groups or (s.story is not None and s.story != cur):
+            groups.append([])
+            cur = s.story
+        groups[-1].append(i)
+    return groups
+
+
+def _split_proportional(n, weights):
+    """Индексы 0..n-1, разделённые по весам (пропорционально объёму)."""
+    total = sum(weights) or 1
+    parts, pos = [], 0
+    for w in weights:
+        nxt = min(n, pos + int(round(n * w / total)))
+        parts.append(list(range(pos, nxt)))
+        pos = nxt
+    if pos < n:
+        parts[-1].extend(range(pos, n))
+    return parts
+
+
+def _split_story(ja_sec, en_secs, glossary, params):
+    """Делит JA-секцию (рассказ целиком) на части по главам EN.
+
+    Абзацы JA выравниваются с абзацами всех глав рассказа (DP + якоря),
+    границы глав EN становятся границами частей. Возвращает столько секций,
+    сколько глав, с kind/number/title главы EN."""
+    ja = ja_sec.paras
+    en_all = [p for s in en_secs for p in s.paras]
+    parts = None
+    if ja and en_all:
+        anc_ja = ([sb.anchors_for(p, glossary, "ja") for p in ja]
+                  if glossary else None)
+        anc_en = ([sb.anchors_for(p, glossary, "en") for p in en_all]
+                  if glossary else None)
+        ops = dp_align(ja, en_all, anchors_a=anc_ja, anchors_b=anc_en,
+                       anchor_w=params["anchor_w"])
+        ch_of = []
+        for k, s in enumerate(en_secs):
+            ch_of.extend([k] * len(s.paras))
+        parts, cur = [[] for _ in en_secs], 0
+        for i, j in ops:
+            if j is not None:
+                cur = min(ch_of[j], len(parts) - 1)
+            if i is not None:
+                parts[cur].append(i)
+        if any(not p for p in parts):
+            parts = None      # не удалось развести — делим пропорционально
+    if parts is None:
+        parts = (_split_proportional(len(ja), [len(s.paras) for s in en_secs])
+                 if ja else [[] for _ in en_secs])
+    return [Section(s.kind, s.number, s.title, [ja[i] for i in sorted(p)],
+                    s.story)
+            for s, p in zip(en_secs, parts)]
+
+
+def match_sections(all_langs, glossary=None, params=None):
+    """Сопоставляет секции EN (база) с JA и RU.
+
+    В сборниках (том 5) EN размечен по рассказам «Story N», а JA-эпизод —
+    это весь рассказ сразу, без глав. Если JA содержит ровно столько же
+    секций-рассказов, сколько историй в EN, каждая JA-секция режется по
+    главам её рассказа — и JA/EN/RU сходятся по главе.
+    """
     base = all_langs["en"]
     result = []
     used = {"ja": set(), "ru": set()}
-    for sec in base:
-        trio = {"en": sec}
-        for lang in ("ja", "ru"):
-            found = None
-            for idx, s in enumerate(all_langs[lang]):
-                if idx in used[lang]:
-                    continue
-                if s.kind == sec.kind and (s.number == sec.number or s.number is None):
-                    found = idx
-                    break
-            if found is None:
-                for idx, s in enumerate(all_langs[lang]):
-                    if idx not in used[lang] and s.kind == sec.kind:
-                        found = idx
-                        break
-            if found is not None:
-                used[lang].add(found)
-                trio[lang] = all_langs[lang][found]
+    groups = _story_groups(base)
+    ja_chaps = [i for i, s in enumerate(all_langs["ja"]) if s.kind == "chapter"]
+    # одна JA-секция на весь рассказ → режем её по главам EN
+    ja_by_story = (ja_chaps if len(groups) > 1 and len(ja_chaps) == len(groups)
+                   else None)
+
+    for gi, gidx in enumerate(groups):
+        en_secs = [base[i] for i in gidx]
+        ja_single = ja_by_story[gi] if ja_by_story is not None else None
+        if ja_single is not None:
+            used["ja"].add(ja_single)
+        slices = (_split_story(all_langs["ja"][ja_single], en_secs,
+                               glossary, params)
+                  if ja_single is not None and len(en_secs) > 1 else None)
+        for pos, sec in enumerate(en_secs):
+            trio = {"en": sec}
+            if slices is not None:
+                trio["ja"] = slices[pos]
+            elif ja_single is not None:
+                trio["ja"] = all_langs["ja"][ja_single]
             else:
-                trio[lang] = None
-        result.append(trio)
+                found = _find_section(all_langs["ja"], used["ja"], sec)
+                if found is not None:
+                    used["ja"].add(found)
+                trio["ja"] = (all_langs["ja"][found] if found is not None
+                              else None)
+            found = _find_section(all_langs["ru"], used["ru"], sec)
+            if found is not None:
+                used["ru"].add(found)
+            trio["ru"] = all_langs["ru"][found] if found is not None else None
+            result.append(trio)
 
     # Секции, которых нет в EN (например, послесловие только в JA/RU):
     # всё равно нормализуем, опираясь на JA или RU.
@@ -403,8 +557,7 @@ def match_sections(all_langs):
     return result
 
 # ----------------------------- RU (markdown) -------------------------------
-
-RU_HEAD_RE = re.compile(r"^(Глава|Пролог|Эпилог|Послесловие)\s*(\d+)?\s*[:.]?\s*(.*)$")
+# RU_HEAD_RE общий с extract_ru (см. раздел RU docx).
 
 
 def extract_ru_md(path):
@@ -459,7 +612,7 @@ def distribute_ru_sections(all_langs):
     for s, c in zip(en_secs, chars):
         acc += c
         target = min(max(int(round(len(paras) * acc / total)), pos), len(paras))
-        res.append(Section(s.kind, s.number, s.title, paras[pos:target]))
+        res.append(Section(s.kind, s.number, s.title, paras[pos:target], s.story))
         pos = target
     all_langs["ru"] = res
     print("[ru] заголовков глав не найдено — абзацы распределены по главам EN "
@@ -706,7 +859,7 @@ def main():
         print("[%s] %s: секций %d, абзацев %d" % (lang, path.name, len(all_langs[lang]), total))
 
     distribute_ru_sections(all_langs)
-    trios = match_sections(all_langs)
+    trios = match_sections(all_langs, glossary, params)
 
     # В одном томе может быть несколько книг со сквозной нумерацией глав
     # («Глава 1» начинается заново). Если номера дублируются — перенумеровываем
