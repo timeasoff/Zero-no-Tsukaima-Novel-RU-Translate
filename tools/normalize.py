@@ -28,7 +28,6 @@ from html.parser import HTMLParser
 from pathlib import Path
 
 import pymupdf
-import docx
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import semantic_blocks as sb  # noqa: E402
@@ -271,6 +270,66 @@ def _ru_chapter_number(text):
     return None
 
 
+def _docx_read(z, name):
+    """Чтение части docx, терпимое к битым CRC (в исходниках повреждены
+    картинки word/media/*.jpeg — python-docx роняет весь разбор на них,
+    хотя текст лежит в word/document.xml и цел)."""
+    try:
+        with z.open(name) as f:
+            return f.read()
+    except (zipfile.BadZipFile, zipfile.LargeZipFile, OSError) as e:
+        raise SystemExit("docx: не удалось прочитать %s — %s" % (name, e))
+
+
+def _docx_paragraphs(path):
+    """Абзацы docx как (текст, имя стиля) — без загрузки медиафайлов.
+
+    Эквивалент `Document(path).paragraphs` (только абзацы верхнего уровня
+    body), но читает OOXML напрямую: не зависит от целостности картинок и
+    от того, как python-docx регистрирует встроенные имена стилей."""
+    import xml.etree.ElementTree as ET
+
+    W = "{http://schemas.openxmlformats.org/wordprocessingml/2006/main}"
+    with zipfile.ZipFile(path) as z:
+        styles_xml = _docx_read(z, "word/styles.xml")
+        doc_xml = _docx_read(z, "word/document.xml")
+    id2name = {}
+    for st in ET.fromstring(styles_xml).iter(W + "style"):
+        sid = st.get(W + "styleId")
+        nm = st.find(W + "name")
+        id2name[sid] = nm.get(W + "val") if nm is not None else sid
+    body = ET.fromstring(doc_xml).find(W + "body")
+    out = []
+    if body is None:
+        return out
+    for child in body:
+        if child.tag != W + "p":
+            continue
+        sid = None
+        pPr = child.find(W + "pPr")
+        if pPr is not None:
+            ps = pPr.find(W + "pStyle")
+            if ps is not None:
+                sid = ps.get(W + "val")
+        parts = []
+        for el in child.iter():
+            if el.tag == W + "t":
+                parts.append(el.text or "")
+            elif el.tag == W + "tab":
+                parts.append("\t")
+            elif el.tag in (W + "br", W + "cr"):
+                parts.append("\n")
+        out.append(("".join(parts), id2name.get(sid, sid) or ""))
+    return out
+
+
+def _is_heading(style):
+    """Заголовок секции. В OOXML встроенные стили называются «heading 1»
+    (в нижнем регистре), в отдельных шаблонах — «Heading 1»; python-docx
+    дополнительно нормализует регистр. Сравниваем без учёта регистра."""
+    return style.lower().startswith("heading")
+
+
 def extract_ru(path):
     """RU-абзацы по секциям. Секции — заголовки `Глава N`/`Пролог`/…;
     в сборниках, где глав нет, — заголовки `Часть M` внутри `История N`
@@ -281,15 +340,13 @@ def extract_ru(path):
     stopped = False
     cur_story = None   # № рассказа сборника
     part_seq = 0       # № главы внутри рассказа
-    d = docx.Document(path)
-    for p in d.paragraphs:
+    for raw_text, style in _docx_paragraphs(path):
         if stopped:
             break
-        style = p.style.name or ""
-        text = clean_ws(p.text)
+        text = clean_ws(raw_text)
         if not text:
             continue
-        if style.startswith("Heading"):
+        if _is_heading(style):
             if RU_STOP_RE.search(text):
                 stopped = True
                 continue
@@ -405,7 +462,7 @@ def build_groups(ops):
     pend_a, pend_b = [], []
     for i, j in ops:
         if i is not None and j is not None:
-            groups.append({"a": [i] + pend_a, "b": [j] + pend_b})
+            groups.append({"a": pend_a + [i], "b": pend_b + [j]})
             pend_a, pend_b = [], []
         elif i is not None:
             if groups:
@@ -757,13 +814,44 @@ def _col(paras, idxs):
     return txt or "—"
 
 
-def write_merged(path, title, ja, en, ru, blocks):
-    """Трёхъязычный merged: единица — блок (`## Блок N`), поля многострочные."""
+def read_ed_ru(path):
+    """ED_RU из `output/<имя>.md`: {номер блока: текст}.
+
+    Нужен, чтобы повторная нормализация не затирала отредактированный
+    перевод в `translates/_report/merged/` (merged — зеркало output/;
+    формат блок-файла — см. `scripts/merged_io.read_source_blocks`).
+    Если файла нет (глава ещё не обработана) — пусто, поле будет «—»."""
+    p = Path(path)
+    if not p.exists():
+        return {}
+    blocks, num, cur = {}, None, []
+    for line in p.read_text(encoding="utf-8").splitlines():
+        s = line.strip()
+        m = re.match(r"^<!--\s*block:\s*(\d+)\s*-->$", s)
+        if m:
+            if num is not None:
+                blocks[num] = "\n".join(cur)
+            num, cur = int(m.group(1)), []
+        elif not s or line.startswith("# ") or s.startswith("<!--"):
+            continue
+        else:
+            cur.append(s)
+    if num is not None:
+        blocks[num] = "\n".join(cur)
+    return {k: v for k, v in blocks.items() if v}
+
+
+def write_merged(path, title, ja, en, ru, blocks, ed=None):
+    """Трёхъязычный merged: единица — блок (`## Блок N`), поля многострочные.
+
+    `ed` — ED_RU из output/; без него поле пишется как «—»."""
+    ed = ed or {}
     parts = []
     for bid, b in enumerate(blocks, 1):
-        parts.append("## Блок %d\n\n**JA:**\n%s\n\n**EN:**\n%s\n\n**RU:**\n%s\n"
+        parts.append("## Блок %d\n\n**JA:**\n%s\n\n**EN:**\n%s\n\n**RU:**\n%s\n\n"
+                     "**ED_RU:**\n%s\n"
                      % (bid, _col(ja, b["ja"]), _col(en, b["en"]),
-                        _col(ru, b["ru"])))
+                        _col(ru, b["ru"]), ed.get(bid) or "—"))
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text("# %s\n\n%s\n" % (title, "\n".join(parts)), encoding="utf-8")
 
@@ -900,7 +988,8 @@ def main():
         write_block_file(out_base / "ru" / (slug + ".md"),
                          titles["ru"], ru_p, blocks, "ru")
         write_merged(out_base / "_report" / "merged" / (slug + ".md"),
-                     titles["en"], ja_p, en_p, ru_p, blocks)
+                     titles["en"], ja_p, en_p, ru_p, blocks,
+                     read_ed_ru(project / "output" / (slug + ".md")))
         write_blocks_json(out_base / "_report" / "blocks" / (slug + ".json"),
                           slug, ja_p, en_p, ru_p, glossary, blocks)
 
