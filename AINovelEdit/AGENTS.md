@@ -130,7 +130,11 @@ AINovelEdit/
 │   ├── vNN-chYY.md              # финальный отредактированный текст
 │   ├── merge/                   # склеенные тома (tools/merge_volume.py)
 │   ├── _log/vNN-log.md          # журнал решений (удаления, сомнения, термины)
-│   └── _audit/vNN-chYY.md       # отчёты аудита; _audit/_prefilter/ — предфильтры
+│   ├── _audit/vNN-chYY.md       # отчёты аудита; _audit/_prefilter/ — предфильтры
+│   └── _audit/sma/<chapter>/    # рабочая архитектура SMA: a/ b/ analysis/
+├── legacy/                      # ВЫНЕСЕННЫЙ legacy-код (НЕ в pipeline)
+│   └── semantic-audit-auto/     # автоматический semantic audit: НЕ реализован,
+│                                #   НЕ поддерживается; см. LEGACY.md (задел/история)
 ├── dictionary.md                # канон терминов (каноническая идентичность;
 │                                #   НЕ механическая строковая замена)
 ├── completed.md                 # реестр завершённых томов (источник истины)
@@ -486,6 +490,29 @@ signal ≠ доказательство ошибки). Финальное реш
 локация/место/время, но пропуск разделителя не считается ошибкой;
 проверок на их наличие/отсутствие нет. Предфильтр оформления работает по
 output-файлу (`output/vXX-chYY.md`), не по merged.
+
+## Legacy: автоматический semantic audit (НЕ реализован)
+
+Рабочая архитектура смыслового аудита — только:
+
+```text
+Semantic Audit A  →  Semantic Audit B  →  Semantic Analyzer A+B
+```
+
+Результаты — `output/_audit/sma/<chapter>/{a,b,analysis}/`; запуск промптов —
+через `tools/generate_agent_prompt.py` (режимы «Смысловой аудит A/B» и
+«Смысловой анализатор A+B»). Каждый запуск A/B получает уникальный
+`audit_run_id` и не перезаписывает предыдущие.
+
+Автоматический (orchestrator) контур смыслового аудита вынесен в
+[legacy/semantic-audit-auto/](legacy/semantic-audit-auto/LEGACY.md) и имеет
+статус **НЕ РЕАЛИЗОВАН / НЕ ПОДДЕРЖИВАЕТСЯ**: `run_semantic_audit.py`,
+`merge_findings.py`, `verify_findings.py` (+ скилл `verifier`). Этот контур
+использует устаревшую flat-раскладку (`output/_audit/<chapter>-sma-*`) и
+другой resolver; он **не используется** в текущем pipeline и **не должен**
+на него опираться. Не переносить legacy-код на `sma/<chapter>/...` и не
+подключать его к рабочим задачам — это отдельная будущая задача, если будет
+решено его реализовать.
 
 ## Отчёты: обнаружение ≠ решение
 

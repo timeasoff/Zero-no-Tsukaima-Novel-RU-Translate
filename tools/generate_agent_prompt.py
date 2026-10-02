@@ -12,6 +12,9 @@
 - режим поиска пропущенных отрывков (GAP-аудит);
 - разбор решений пользователя (OPEN / DEFERRED, PROVISIONAL);
 - подробное описание режима перед подтверждением;
+- независимый смысловой аудит (SMA): отдельные режимы Auditor A, Auditor B
+  и Analyzer A+B (уникальный audit_run_id на каждый запуск, изоляция
+  запусков, результаты внутри output/_audit/sma/<chapter>/<a|b|analysis>/);
 - автоматическое копирование готового промпта в буфер обмена;
 - сохранение готового промпта в markdown-файл `agent_prompt.md`
   в корне проекта, на который можно сослаться в задаче агенту
@@ -27,6 +30,7 @@ import re
 import subprocess
 import sys
 import textwrap
+import uuid
 from dataclasses import dataclass
 from datetime import datetime
 from typing import Callable
@@ -283,6 +287,157 @@ def project_context(ch: Chapter) -> str:
 фиксируй в отчёте аудита, решение — в пользу формы из завершённого тома
 (исключение — ручная правка пользователем в dictionary.md/addresses.md).
 """.strip()
+
+# ============================================================================
+# SMA (НЕЗАВИСИМЫЙ СМЫСЛОВОЙ АУДИТ): ID, ПУТИ, КОНТЕКСТ
+# ============================================================================
+# Новая архитектура смыслового аудита:
+#   один текущий RU → Auditor A (своя сессия) ‖ Auditor B (своя сессия)
+#   → Analyzer (своя сессия) → правка только ясных ошибок, спорное — в отчёт.
+# Каждый запуск A/B — самостоятельный эксперимент: у него свой audit_run_id,
+# свой выходной файл и НЕТ доступа к результатам других запусков.
+SMA_AUDIT_DIR = "_audit"                  # output/_audit/
+SMA_DIR_NAME = "sma"                      # output/_audit/sma/
+SMA_REL_ROOT = f"output/{SMA_AUDIT_DIR}/{SMA_DIR_NAME}"
+SMA_KINDS = ("a", "b", "analysis")        # типы результатов внутри главы
+_SMA_ISSUED_IDS: set[str] = set()         # гарантия уникальности в процессе
+
+# Формулировки изоляции (используются и в промптах, и в self-test).
+SMA_AUTONOMY_NOTE = (
+    "РАБОТАЙ АВТОНОМНО. Все данные для аудита приведены в этом задании. "
+    "Не перечисляй содержимое каталогов и не открывай никакие файлы, кроме "
+    "перечисленных в задании."
+)
+SMA_OWN_FILE_NOTE = (
+    "Единственный файл, который ты создаёшь, — результат этого запуска "
+    "(см. OUTPUT FILE). Любые другие файлы в папке результата в задание не "
+    "входят: не читай их, не сравнивай с ними свой результат и не делай "
+    "выводов из их наличия или отсутствия."
+)
+
+def sma_chapter_id(ch: Chapter) -> str:
+    """Идентификатор главы для каталогов SMA: как в именах файлов output/.
+
+    ``v3`` + ``ch03`` → ``v3-ch03`` (ведущий ноль тома не используется:
+    так же назван файл output/v3-ch03.md).
+    """
+    return f"{ch.volume_file_id}-{ch.chapter_id}"
+
+def sma_chapter_dir(ch: Chapter, kind: str) -> str:
+    """Абсолютный путь каталога результатов одного типа для этой главы."""
+    return os.path.join(AINOVELEDIT, "output", SMA_AUDIT_DIR, SMA_DIR_NAME,
+                        sma_chapter_id(ch), kind)
+
+def sma_result_rel_path(ch: Chapter, kind: str, run_id: str, ext: str = "json") -> str:
+    """Путь результата относительно корня AINovelEdit (прямые слэши)."""
+    return f"{SMA_REL_ROOT}/{sma_chapter_id(ch)}/{kind}/{run_id}.{ext}"
+
+def sma_result_abs_path(ch: Chapter, kind: str, run_id: str, ext: str = "json") -> str:
+    """Абсолютный путь файла результата (kind: a / b / analysis)."""
+    return os.path.join(sma_chapter_dir(ch, kind), f"{run_id}.{ext}")
+
+def _sma_run_id_taken(ch: Chapter, run_id: str) -> bool:
+    """True, если идентификатор запуска уже занят файлом результата."""
+    for kind in SMA_KINDS:
+        folder = sma_chapter_dir(ch, kind)
+        for ext in ("json", "md"):
+            if os.path.exists(os.path.join(folder, f"{run_id}.{ext}")):
+                return True
+    return False
+
+def new_audit_run_id(ch: Chapter | None = None) -> str:
+    """Уникальный идентификатор запуска аудита: ``YYYYMMDD-HHMMSS-xxxx``.
+
+    Генерируется при создании prompt, поэтому повторные запуски A/B не
+    перезаписывают предыдущие результаты: каждый запуск пишет свой файл.
+    Номер вручную увеличивать не нужно.
+    """
+    while True:
+        run_id = f"{datetime.now():%Y%m%d-%H%M%S}-{uuid.uuid4().hex[:4]}"
+        if run_id in _SMA_ISSUED_IDS:
+            continue
+        if ch is not None and _sma_run_id_taken(ch, run_id):
+            continue
+        _SMA_ISSUED_IDS.add(run_id)
+        return run_id
+
+def sma_existing_runs(ch: Chapter, kind: str) -> list[str]:
+    """Уже существующие run_id результатов A/B/Analyzer для этой главы.
+
+    Используется Analyzer'ом: он учитывает ВСЕ выбранные запуски, а не
+    только последний. Ничего не создаёт и не изменяет.
+    """
+    folder = sma_chapter_dir(ch, kind)
+    if not os.path.isdir(folder):
+        return []
+    ids = [os.path.splitext(name)[0] for name in os.listdir(folder)
+           if name.lower().endswith(".json")]
+    return sorted(ids)
+
+def _load_merged_io():
+    """Ленивый импорт scripts/merged_io.py (общий разбор блок-файлов)."""
+    scripts_dir = os.path.join(AINOVELEDIT, "scripts")
+    if scripts_dir not in sys.path:
+        sys.path.insert(0, scripts_dir)
+    try:
+        import merged_io  # type: ignore
+    except Exception:
+        return None
+    return merged_io
+
+def sma_block_inventory(ch: Chapter) -> tuple[list[int], list[int]]:
+    """Номера смысловых блоков JA и текущего RU (пустые — если разбор недоступен).
+
+    Переиспользует существующий scripts/merged_io.py вместо собственного
+    разбора маркеров ``<!-- block: N -->``.
+    """
+    merged_io = _load_merged_io()
+    if merged_io is None:
+        return [], []
+
+    def numbers(path: str) -> list[int]:
+        try:
+            return sorted(num for num, _ in merged_io.read_source_blocks(path))
+        except Exception:
+            return []
+
+    return numbers(ch.ja_path), numbers(ch.output_path)
+
+def semantic_audit_context(ch: Chapter) -> str:
+    """Минимальный контекст для Auditor A / Auditor B (не project_context!).
+
+    Отличие от ``project_context``: НЕ раскрываются audit-отчёты, лог,
+    словарь, AGENTS.md и прочие пути проекта. Аудитору нужны только JA,
+    текущий RU, EN (вспомогательная опора) и зеркало блоков для соседнего
+    контекста. Сведения о путях старых результатов отсутствуют намеренно —
+    архитектурно аудитору не нужен доступ к каталогу output/_audit/sma/.
+    """
+    ja_blocks, ru_blocks = sma_block_inventory(ch)
+    if ja_blocks:
+        block_info = (
+            f"Блоков в JA: {len(ja_blocks)} (номера {ja_blocks[0]}–{ja_blocks[-1]}).\n"
+            f"Блоков в текущем RU: {len(ru_blocks)}."
+        )
+    else:
+        block_info = "Нумерация блоков — по маркерам <!-- block: N --> в файлах."
+    return f"""КОНТЕКСТ СМЫСЛОВОГО АУДИТА
+Проект: AINovelEdit
+Глава: {sma_chapter_id(ch)}
+Японский оригинал (JA — основной смысловой источник):
+{ch.ja_path}
+Текущий русский результат (RU — предмет аудита):
+{ch.output_path}
+Английский перевод (EN — вспомогательная опора, не истина):
+{ch.en_path}
+Трёхъязычное зеркало по смысловым блокам (JA/EN/RU, соседний контекст):
+{ch.merged_path}
+{block_info}
+Единица аудита — смысловой блок <!-- block: N -->. Блоки берутся из JA;
+RU выровнен по тем же маркерам (границы могут слегка сдвигаться на соседние
+сцены). Соседние блоки нужны ТОЛЬКО как контекст: находка относится к тому
+блоку, в котором находится расхождение.
+Материал аудита ограничен: JA, текущий RU, EN (опора) и соседний контекст
+блоков. Никакие другие материалы в задание не входят."""
 
 # ============================================================================
 # ПРОМПТЫ
@@ -852,6 +1007,11 @@ FALSE POSITIVE / PRESERVED.
 
 
 def prompt_dual_semantic_audit(ch: Chapter) -> str:
+    # LEGACY / DEPRECATED: единый режим A+B больше НЕ используется как рабочий
+    # prompt (см. prompt_semantic_a / prompt_semantic_b /
+    # prompt_semantic_analyzer). Из списка PROMPTS удалён, функция сохранена
+    # только для истории. Не подключать повторно: она смешивает A и B в одном
+    # задании, что противоречит архитектуре изолированных запусков.
     return f"""
 {project_context(ch)}
 РЕЖИМ: ДВОЙНОЙ СМЫСЛОВОЙ АУДИТ (A + B)
@@ -907,6 +1067,341 @@ def prompt_dual_semantic_audit(ch: Chapter) -> str:
 - Не исправляй текст — только фиксируй находки
 - Если проблем нет — верни пустой массив findings
 """.strip()
+
+def prompt_semantic_a(ch: Chapter) -> str:
+    """Prompt ТОЛЬКО для Auditor A (лексическая точность и оттенки смысла).
+
+    Полностью изолирован: в тексте нет ссылок на второго аудитора, на его
+    результаты, на старые отчёты аудита и на поиск в каталоге
+    output/_audit/sma/. Аудитор получает свой уникальный audit_run_id и
+    единственный выходной файл внутри output/_audit/sma/<chapter>/a/.
+    """
+    run_id = new_audit_run_id(ch)
+    out_rel = sma_result_rel_path(ch, "a", run_id, "json")
+    out_abs = sma_result_abs_path(ch, "a", run_id, "json")
+    return f"""ЗАДАЧА: независимый смысловой аудит перевода JA → RU. Ты — Semantic Auditor A.
+
+{SMA_AUTONOMY_NOTE}
+
+{semantic_audit_context(ch)}
+
+ФОКУС AUDITOR A — лексическая точность и оттенки смысла:
+- точность выбора русского слова для японского (лексическая точность);
+- оттенки значения, тонкие различия близких японских слов;
+- эмоции и эмоциональная окраска;
+- мимика (выражение лица, улыбки, взгляды);
+- жесты и язык тела;
+- интонация и стилистические особенности речи;
+- степень выраженности (сила эмоции, интенсивность действия);
+- потеря небольшого смыслового компонента (пропал оттенок или деталь);
+- добавление небольшого смыслового компонента, которого нет в JA.
+
+НАПРАВЛЕНИЕ ПРОВЕРКИ: JA → RU. Сначала установи смысл японского фрагмента,
+затем сверь, как этот смысл передан в текущем русском результате.
+
+ЧТО НЕ ВХОДИТ В ЗАДАЧУ (не проверяй и не фиксируй):
+- грамматика (согласование, управление, падежи) — это russian-grammar-control;
+- стиль (тавтология, повторы, кальки) — это russian-style-audit;
+- оформление текста (кавычки, тире, курсив) — это russian-prose-rules;
+- общее «очеловечивание» текста — это russian-humanizer;
+- автоматические исправления: ты НИЧЕГО не исправляешь и ничего не пишешь
+  в output/.
+
+ПРОЦЕДУРА:
+1. Прочитай скилл .agents/skills/semantic-audit-a/SKILL.md.
+2. Для каждого смыслового блока <!-- block: N --> главы:
+   - прочитай JA-блок и соответствующий RU-блок;
+   - прочитай соседние блоки ТОЛЬКО как контекст;
+   - сверь лексику, оттенки, эмоции, мимику, жесты, интонацию (JA → RU);
+   - зафиксируй расхождения.
+3. Находку относи только к тому блоку, где находится расхождение.
+
+ФОРМАТ РЕЗУЛЬТАТА (ровно один JSON-объект, без markdown-обёртки):
+{{
+  "audit_id": "sma-a",
+  "audit_type": "semantic-audit-a",
+  "audit_run_id": "{run_id}",
+  "chapter": "{sma_chapter_id(ch)}",
+  "findings": [
+    {{
+      "block": 75,
+      "source": "JA-фрагмент",
+      "current": "RU-фрагмент",
+      "problem": "Тип проблемы",
+      "reason": "Обоснование",
+      "suggestion": "Предложенный вариант",
+      "severity": "ERROR"
+    }}
+  ]
+}}
+
+ПРАВИЛА:
+- severity: только ERROR / WARNING / CANDIDATE.
+- Если проблем нет — "findings": [] (пустой массив, объект всё равно обязателен).
+- source и current — точные цитаты, без пересказа.
+- Литературное предпочтение — не ошибка: вариант «красивее» находкой не является.
+- Не выдумывай: нет уверенности — не включай находку.
+
+{SMA_OWN_FILE_NOTE}
+
+OUTPUT FILE (единственный файл этого запуска):
+{out_rel}
+(абсолютный путь: {out_abs})
+Запиши результат строго в описанном JSON-формате. Ничего больше не создавай
+и не изменяй."""
+
+def prompt_semantic_b(ch: Chapter) -> str:
+    """Prompt ТОЛЬКО для Auditor B (смысловые связи и контекст).
+
+    Полностью изолирован: в тексте нет ссылок на первого аудитора, на его
+    результаты, на старые отчёты аудита и на поиск в каталоге
+    output/_audit/sma/. Аудитор получает свой уникальный audit_run_id и
+    единственный выходной файл внутри output/_audit/sma/<chapter>/b/.
+    """
+    run_id = new_audit_run_id(ch)
+    out_rel = sma_result_rel_path(ch, "b", run_id, "json")
+    out_abs = sma_result_abs_path(ch, "b", run_id, "json")
+    return f"""ЗАДАЧА: независимый смысловой аудит перевода JA → RU. Ты — Semantic Auditor B.
+
+{SMA_AUTONOMY_NOTE}
+
+{semantic_audit_context(ch)}
+
+ФОКУС AUDITOR B — смысловые связи, логика и контекст:
+- субъект и объект (кто выполняет действие, на кого оно направлено);
+- действие (тип, характер, направленность);
+- состояние и его изменения;
+- причинно-следственные связи (почему, зачем, следствие);
+- временные отношения (последовательность, одновременность, длительность);
+- логические связи между частями высказывания;
+- местоименные связи (к чему/к кому относится местоимение);
+- модальность (возможность, необходимость, вероятность, сомнение);
+- идиомы и устойчивые выражения;
+- метафоры и переносные значения;
+- контекст, раскрывающий смысл из соседних блоков;
+- неоднозначные конструкции, допускающие несколько прочтений;
+- намерение персонажа, стоящее за действием или репликой.
+
+НАПРАВЛЕНИЕ ПРОВЕРКИ: JA → RU. Сначала установи смысл японского фрагмента
+(с учётом контекста), затем сверь, как этот смысл передан в текущем русском
+результате.
+
+ЧТО НЕ ВХОДИТ В ЗАДАЧУ (не проверяй и не фиксируй):
+- грамматика (согласование, управление, падежи) — это russian-grammar-control;
+- стиль (тавтология, повторы, кальки) — это russian-style-audit;
+- оформление текста (кавычки, тире, курсив) — это russian-prose-rules;
+- общее «очеловечивание» текста — это russian-humanizer;
+- автоматические исправления: ты НИЧЕГО не исправляешь и ничего не пишешь
+  в output/.
+
+ПРОЦЕДУРА:
+1. Прочитай скилл .agents/skills/semantic-audit-b/SKILL.md.
+2. Для каждого смыслового блока <!-- block: N --> главы:
+   - прочитай JA-блок и соответствующий RU-блок;
+   - прочитай соседние блоки как контекст (они проясняют связи);
+   - проверь субъект/объект, связи, время, модальность, идиомы, метафоры,
+     неоднозначные конструкции (JA → RU);
+   - зафиксируй расхождения.
+3. Находку относи только к тому блоку, где находится расхождение.
+
+ФОРМАТ РЕЗУЛЬТАТА (ровно один JSON-объект, без markdown-обёртки):
+{{
+  "audit_id": "sma-b",
+  "audit_type": "semantic-audit-b",
+  "audit_run_id": "{run_id}",
+  "chapter": "{sma_chapter_id(ch)}",
+  "findings": [
+    {{
+      "block": 75,
+      "source": "JA-фрагмент",
+      "current": "RU-фрагмент",
+      "problem": "Тип проблемы",
+      "reason": "Обоснование",
+      "suggestion": "Предложенный вариант",
+      "severity": "WARNING"
+    }}
+  ]
+}}
+
+ПРАВИЛА:
+- severity: только ERROR / WARNING / CANDIDATE.
+- Если проблем нет — "findings": [] (пустой массив, объект всё равно обязателен).
+- source и current — точные цитаты, без пересказа.
+- Литературное предпочтение — не ошибка: вариант «красивее» находкой не является.
+- Если JA допускает несколько прочтений — укажи это как неоднозначность,
+  а не как ошибку.
+- Не выдумывай: нет уверенности — не включай находку.
+
+{SMA_OWN_FILE_NOTE}
+
+OUTPUT FILE (единственный файл этого запуска):
+{out_rel}
+(абсолютный путь: {out_abs})
+Запиши результат строго в описанном JSON-формате. Ничего больше не создавай
+и не изменяй."""
+
+# ---------------------------------------------------------------------------
+# ANALYZER (A+B): prompt собирается из трёх частей, чтобы держать функции
+# компактными: head (роль и входы) + rules (порядок и политика правок) +
+# format (формат JSON/MD и пути результата).
+# ---------------------------------------------------------------------------
+def prompt_semantic_analyzer(ch: Chapter) -> str:
+    """Prompt для СМЫСЛОВОГО АНАЛИЗАТОРА (Analyzer A+B).
+
+    Analyzer — единственный агент, которому сознательно разрешено читать
+    результаты независимых аудитов A/B (выбранные запуски ЭТОЙ главы). Он
+    самостоятельно сверяет candidates с JA/RU, исправляет только
+    CONFIRMED_ERROR и записывает спорные случаи в отчёт analysis/.
+    """
+    analysis_id = new_audit_run_id(ch)
+    return "\n\n".join([
+        _sma_analyzer_head(ch, analysis_id),
+        _sma_analyzer_rules(),
+        _sma_analyzer_format(ch, analysis_id),
+    ])
+
+def _sma_analyzer_head(ch: Chapter, analysis_id: str) -> str:
+    chap = sma_chapter_id(ch)
+    a_dir = f"{SMA_REL_ROOT}/{chap}/a/"
+    b_dir = f"{SMA_REL_ROOT}/{chap}/b/"
+    an_dir = f"{SMA_REL_ROOT}/{chap}/analysis/"
+    a_runs = sma_existing_runs(ch, "a")
+    b_runs = sma_existing_runs(ch, "b")
+    a_list = ", ".join(a_runs) if a_runs else "(пока нет ни одного запуска A)"
+    b_list = ", ".join(b_runs) if b_runs else "(пока нет ни одного запуска B)"
+    return f"""ЗАДАЧА: смысловой анализатор (Analyzer) независимых аудитов A и B.
+Глава: {chap}. Запуск анализа: {analysis_id}.
+
+РОЛЬ
+Ты НЕ независимый аудитор: ты получаешь результаты уже выполненных
+независимых аудитов A и B и выносишь итоговое решение по каждому кандидату.
+Доступ к результатам A/B — сознательное исключение именно для Analyzer.
+
+ВХОДНЫЕ ДАННЫЕ ЭТОЙ ГЛАВЫ
+JA (источник смысла): {ch.ja_path}
+Текущий RU (актуальный результат): {ch.output_path}
+EN (вспомогательная опора): {ch.en_path}
+Зеркало блоков (JA/EN/RU, соседний контекст): {ch.merged_path}
+Результаты Auditor A (читай ТОЛЬКО этот каталог): {a_dir}
+Результаты Auditor B (читай ТОЛЬКО этот каталог): {b_dir}
+Каталог результатов Analyzer (куда писать): {an_dir}
+
+НАБОР EVIDENCE (inputs этой главы)
+a_runs: {a_list}
+b_runs: {b_list}
+ПРАВИЛА EVIDENCE:
+- Учитывай ВСЕ выбранные запуски, а не только последний. Если в a/ или b/
+  появились другие <run_id>.json — включи их как выбранные запуски.
+- Результаты ДРУГИХ глав не используй: анализируй только эту главу.
+- Если в a/ и b/ нет ни одного <run_id>.json — сообщи, что сначала нужно
+  выполнить аудит A и B, и остановись (правки не вноси)."""
+
+def _sma_analyzer_rules() -> str:
+    return """ПОРЯДОК РАБОТЫ ПО КАЖДОМУ ЛОГИЧЕСКОМУ CANDIDATE
+Шаг 0. Собери ВСЕ findings из всех выбранных запусков A и B. Логически
+совпадающие candidates сгруппируй и сохрани происхождение: какие A-запуски и
+какие B-запуски нашли этот candidate (sources.a / sources.b).
+
+ФАЗА 1 — самостоятельная проверка (ДО анализа мнений A/B):
+  1) прочитай JA;
+  2) прочитай текущий RU;
+  3) прочитай контекст соседних блоков;
+  4) самостоятельно установи смысл JA;
+  5) самостоятельно установи смысл RU;
+  6) определи, есть ли расхождение и в чём именно.
+
+ФАЗА 2 — анализ A/B (ТОЛЬКО после фазы 1):
+  1) посмотри findings A;
+  2) посмотри findings B;
+  3) сопоставь их с собственной оценкой;
+  4) определи, подтверждается ли candidate;
+  5) реши, достаточно ли оснований для автоматической правки.
+
+ЗАПРЕЩЕНО:
+- majority vote; «A + A + B → ошибка»; «BOTH_FOUND → ERROR автоматически»;
+- считать количество обнаружений доказательством: это только evidence;
+- принимать решение вместо проверки JA → RU.
+
+СТАТУСЫ (каждому candidate обязателен один)
+- CONFIRMED_ERROR — ясная смысловая ошибка: JA однозначен, RU передаёт другой
+  смысл, исправление формулируется однозначно → МОЖНО исправлять.
+- DISPUTED — расхождение мнений A/B или неоднозначность JA → НЕ исправлять.
+- FALSE_POSITIVE — finding не подтверждается → НЕ исправлять.
+- OPTIONAL — допустимое улучшение, текущий перевод правилен → НЕ исправлять.
+
+ПРАВКА (только текущая глава)
+- WARNING / CANDIDATE сами по себе НЕ разрешают правку; исправляй ТОЛЬКО
+  CONFIRMED_ERROR.
+- Перед правкой зафиксируй исходное состояние блока: сохрани RU-блок «before»
+  и подготовь «after».
+- Правку вноси ТОЛЬКО через scripts/fix_block.py (текст блока — через
+  --text-file или --replace-file). НЕ перезаписывай output/vXX-chYY.md вручную.
+- После каждой правки: scripts/update_merged.py, затем повторная проверка
+  изменённого блока (grammar/style/format — по текущему pipeline) и сверка с JA.
+- Ничего не меняй «заодно»; соседние блоки без необходимости не редактируй.
+- После исправления одного блока следующие candidates проверяй по АКТУАЛЬНОМУ
+  RU (а findings A/B остаются историческими).
+- НЕ делай цикл A → B → Analyzer → правка → A → B → … : после Analyzer цикл
+  заканчивается; повторный аудит — отдельный ручной запуск.
+
+НЕИЗМЕНЯЕМОСТЬ EVIDENCE
+- findings A/B — исторические результаты: НЕ редактируй, не удаляй и не
+  переписывай файлы в a/ и b/. Даже исправленный finding остаётся в истории.
+- Старые отчёты output/_audit/vXX-chYY.md не являются источником истины и не
+  подменяют A/B.
+- Результаты Analyzer пишутся только в каталог analysis/ этой главы."""
+
+def _sma_analyzer_format(ch: Chapter, analysis_id: str) -> str:
+    chap = sma_chapter_id(ch)
+    a_runs = sma_existing_runs(ch, "a")
+    b_runs = sma_existing_runs(ch, "b")
+    a_json = ", ".join(f'"{r}"' for r in a_runs)
+    b_json = ", ".join(f'"{r}"' for r in b_runs)
+    out_rel = sma_result_rel_path(ch, "analysis", analysis_id, "json")
+    out_md_rel = sma_result_rel_path(ch, "analysis", analysis_id, "md")
+    out_abs = sma_result_abs_path(ch, "analysis", analysis_id, "json")
+    out_md_abs = sma_result_abs_path(ch, "analysis", analysis_id, "md")
+    return f"""ФОРМАТ РЕЗУЛЬТАТА (ровно один JSON-объект, без markdown-обёртки):
+{{
+  "analysis_id": "{analysis_id}",
+  "chapter": "{chap}",
+  "inputs": {{
+    "a_runs": [{a_json}],
+    "b_runs": [{b_json}]
+  }},
+  "results": [
+    {{
+      "block": 11,
+      "candidate_id": "C-11-01",
+      "sources": {{ "a": ["<run_id>"], "b": ["<run_id>"] }},
+      "source": "JA fragment",
+      "current": "RU fragment",
+      "status": "CONFIRMED_ERROR",
+      "reason": "Обоснование Analyzer",
+      "suggestion": "Исправленный вариант",
+      "action": "FIXED",
+      "before": "RU-блок до правки (обязательно для FIXED)",
+      "after": "RU-блок после правки (обязательно для FIXED)"
+    }}
+  ]
+}}
+
+Разрешённые status: CONFIRMED_ERROR / DISPUTED / FALSE_POSITIVE / OPTIONAL.
+Разрешённые action: FIXED / REPORT_ONLY / PRESERVED.
+- FIXED — только для CONFIRMED_ERROR (правка внесена через fix_block.py).
+- REPORT_ONLY — DISPUTED / OPTIONAL (в отчёт, перевод не менять).
+- PRESERVED — FALSE_POSITIVE (оставлено как есть).
+Для каждого FIXED обязательны before и after.
+
+OUTPUT FILES (этой главы, запуск {analysis_id})
+JSON: {out_rel}
+MD:   {out_md_rel}
+(абсолютные пути: {out_abs} и {out_md_abs})
+JSON — машинный результат; MD — человекочитаемый отчёт с таблицей по каждому
+candidate (block, candidate_id, sources A/B, status, reason, action,
+before/after для FIXED; отдельно сводка по DISPUTED и OPTIONAL).
+Пиши только в каталог analysis/ этой главы; другие файлы не создавай и не
+изменяй."""
 
 # ============================================================================
 # СПИСОК ПРОМПТОВ
@@ -1141,23 +1636,78 @@ PROMPTS: list[PromptInfo] = [
         prompt_rules_recheck,
     ),
     PromptInfo(
-        "Двойной смысловой аудит (A + B)",
-        "Два независимых смысловых аудита одного перевода",
+        "Смысловой аудит A",
+        "Изолированный аудит A: лексика, оттенки, эмоции (независимый запуск)",
         """
-        Генерирует два полностью независимых задания для смыслового аудита:
-        Semantic Auditor A (лексическая точность, оттенки, эмоции) и
-        Semantic Auditor B (субъект/объект, связи, контекст).
+        Генерирует задание для ОДНОГО независимого смыслового аудитора A.
+        Фокус A: лексическая точность, оттенки значения, эмоции, мимика,
+        жесты, интонация, степень выраженности, потеря/добавление небольшого
+        смыслового компонента; направление проверки JA → RU.
 
-        Каждое задание содержит только свои данные. Аудиторы не видят
-        результаты друг друга.
+        Задание изолировано: в нём нет ни малейшей ссылки на второго
+        аудитора, на его результаты, на старые отчёты аудита и на каталог
+        output/_audit/sma/. Аудитор получает уникальный audit_run_id и ровно
+        один выходной файл:
+        output/_audit/sma/<chapter>/a/<audit_run_id>.json
 
-        Задания сохраняются в отдельные файлы для запуска в разных
-        агентских сессиях.
+        Каждый запуск — самостоятельный эксперимент: повторный вызов даёт
+        новый audit_run_id и не перезаписывает предыдущий результат.
 
-        Использовать для независимой проверки перевода перед финальной
-        редактурой.
+        Грамматика, стиль и оформление в задачу НЕ входят; текст аудитор не
+        исправляет — только фиксирует находки.
         """.strip(),
-        prompt_dual_semantic_audit,
+        prompt_semantic_a,
+    ),
+    PromptInfo(
+        "Смысловой аудит B",
+        "Изолированный аудит B: связи, логика, контекст (независимый запуск)",
+        """
+        Генерирует задание для ОДНОГО независимого смыслового аудитора B.
+        Фокус B: субъект/объект, действие, состояние, причинно-следственные
+        и временные связи, логика, местоименные связи, модальность, идиомы,
+        метафоры, контекст, неоднозначные конструкции, намерение персонажа.
+
+        Задание изолировано: в нём нет ни малейшей ссылки на первого
+        аудитора, на его результаты, на старые отчёты аудита и на каталог
+        output/_audit/sma/. Аудитор получает уникальный audit_run_id и ровно
+        один выходной файл:
+        output/_audit/sma/<chapter>/b/<audit_run_id>.json
+
+        Каждый запуск — самостоятельный эксперимент: повторный вызов даёт
+        новый audit_run_id и не перезаписывает предыдущий результат.
+
+        Грамматика, стиль и оформление в задачу НЕ входят; текст аудитор не
+        исправляет — только фиксирует находки.
+        """.strip(),
+        prompt_semantic_b,
+    ),
+    PromptInfo(
+        "Смысловой анализатор A+B",
+        "Analyzer: объединяет результаты A/B и правит только ясные ошибки",
+        """
+        Генерирует задание для смыслового АНАЛИЗАТОРА (Analyzer) независимых
+        аудитов A и B. Analyzer — не независимый аудитор: он специально
+        получает результаты A/B.
+
+        Он читает:
+        - JA, текущий RU, EN и зеркало блоков (соседний контекст);
+        - результаты всех выбранных запусков этой главы
+          output/_audit/sma/<chapter>/a/*.json и .../b/*.json.
+
+        Порядок: сначала Analyzer самостоятельно сверяет candidate с JA → RU
+        (фаза 1), и только затем сопоставляет его с findings A/B (фаза 2).
+        Majority vote и «BOTH_FOUND → ERROR» запрещены: количество
+        обнаружений — только evidence, решение — по JA → RU.
+
+        Статусы: CONFIRMED_ERROR (можно исправлять через fix_block.py),
+        DISPUTED, FALSE_POSITIVE, OPTIONAL (в отчёт, перевод не менять).
+        Findings A/B — неизменяемое evidence; старые отчёты аудита не
+        источник истины. Результаты Analyzer:
+        output/_audit/sma/<chapter>/analysis/<analysis_id>.json и .md
+        (с before/after для каждого FIXED). После Analyzer цикл A/B не
+        повторяется автоматически — повторный аудит запускается вручную.
+        """.strip(),
+        prompt_semantic_analyzer,
     ),
 ]
 
@@ -1380,6 +1930,231 @@ def save_prompt_to_file(
     return PROMPT_FILE
 
 # ============================================================================
+# SELF-TEST SMA (dry-run: ничего не пишет на диск, перевод не меняет)
+# ============================================================================
+# Запрещённые подстроки: сигнализируют об утечке чужого контекста в prompt A/B.
+_SMA_FORBIDDEN_A = (
+    "semantic-audit-b", "sma-b", "-sma-b", "/b/", "\\b\\", "analysis/",
+    "Auditor B", "аудитор B", "результаты B", "результат B", "B findings",
+    "B report", "-sma-a.json", "-sma-b.json", "sma-merged", "manual-sma",
+    "_audit/v",
+)
+_SMA_FORBIDDEN_B = (
+    "semantic-audit-a", "sma-a", "-sma-a", "/a/", "\\a\\", "analysis/",
+    "Auditor A", "аудитор A", "результаты A", "результат A", "A findings",
+    "A report", "-sma-a.json", "-sma-b.json", "sma-merged", "manual-sma",
+    "_audit/v",
+)
+# Инструменты обхода каталогов — в задании A/B их быть не должно.
+_SMA_SEARCH_TOOLS = ("Get-ChildItem", "os.listdir", "Select-String", "grep ")
+# Путь вида .../_audit/sma/<chapter>/<kind>/...
+_SMA_PATH_RE = re.compile(r"_audit[\\/]+sma[\\/]+[^\\/\s\"']+[\\/]+([a-z]+)[\\/]")
+# Имя подпапки/файла сразу после output/_audit/
+_SMA_AUDIT_CHILD_RE = re.compile(r"_audit[\\/]+([A-Za-z0-9_.-]+)")
+
+def _sma_path_kinds(prompt: str) -> set[str]:
+    """Множество типов (<a|b|analysis>) в путях output/_audit/sma/ промпта."""
+    return set(_SMA_PATH_RE.findall(prompt))
+
+def _sma_audit_children(prompt: str) -> set[str]:
+    """Что упомянуто сразу после output/_audit/ (для проверки утечек)."""
+    return set(_SMA_AUDIT_CHILD_RE.findall(prompt))
+
+def _sma_hits(prompt: str, needles) -> list[str]:
+    """Подстроки из needles, найденные в prompt (для отчёта self-test)."""
+    return [n for n in needles if n in prompt]
+
+def _sma_json_field(prompt: str, field: str) -> str:
+    """Значение строкового поля в JSON-шаблоне промпта (для self-test)."""
+    match = re.search(rf'"{re.escape(field)}":\s*"([^"]+)"', prompt)
+    return match.group(1) if match else ""
+
+def _sma_checks_a(ch: Chapter, pa1: str, pa2: str) -> list[tuple[str, bool, str]]:
+    """Проверки изоляции prompt Auditor A (пары имя/ok/деталь)."""
+    chap = sma_chapter_id(ch)
+    run_id_1 = _sma_json_field(pa1, "audit_run_id")
+    run_id_2 = _sma_json_field(pa2, "audit_run_id")
+    own_path = f"{SMA_REL_ROOT}/{chap}/a/{run_id_1}.json"
+    old_name = re.compile(rf"{re.escape(chap)}-sma-[ab]")
+    leak = _sma_hits(pa1, _SMA_FORBIDDEN_A)
+    kinds = _sma_path_kinds(pa1)
+    children = _sma_audit_children(pa1)
+    return [
+        ("A: mentions B — NO",
+         not leak,
+         f"утечки: {leak}" if leak else "упоминаний второго аудитора нет"),
+        ("A: mentions B results — NO",
+         not _sma_hits(pa1, ("результаты B", "результат B", "B findings", "B report")),
+         ""),
+        ("A: mentions old audit results — NO",
+         not (old_name.search(pa1) or _sma_hits(
+             pa1, ("-sma-a.json", "-sma-b.json", "sma-merged", "manual-sma"))),
+         ""),
+        ("A: mentions output/_audit old reports — NO",
+         children == {"sma"},
+         f"под output/_audit/: {sorted(children)}"),
+        ("A: has own output path — YES",
+         own_path in pa1,
+         own_path),
+        ("A: has unique audit_run_id — YES",
+         bool(run_id_1) and run_id_1 != run_id_2 and pa1 != pa2,
+         f"{run_id_1} / повторный запуск: {run_id_2}"),
+        ("A: own output path ведёт только в папку a/ — YES",
+         kinds == {"a"},
+         f"типы путей в промпте: {sorted(kinds)}"),
+        ("A: автономность и единственность файла зафиксированы — YES",
+         SMA_AUTONOMY_NOTE in pa1 and SMA_OWN_FILE_NOTE in pa1,
+         ""),
+        ("A: не просит перечислять каталоги — YES",
+         not _sma_hits(pa1, _SMA_SEARCH_TOOLS),
+         ""),
+    ]
+
+def _sma_checks_b(ch: Chapter, pb: str) -> list[tuple[str, bool, str]]:
+    """Проверки изоляции prompt Auditor B (пары имя/ok/деталь)."""
+    chap = sma_chapter_id(ch)
+    run_id = _sma_json_field(pb, "audit_run_id")
+    own_path = f"{SMA_REL_ROOT}/{chap}/b/{run_id}.json"
+    old_name = re.compile(rf"{re.escape(chap)}-sma-[ab]")
+    leak = _sma_hits(pb, _SMA_FORBIDDEN_B)
+    kinds = _sma_path_kinds(pb)
+    children = _sma_audit_children(pb)
+    return [
+        ("B: mentions A — NO",
+         not leak,
+         f"утечки: {leak}" if leak else "упоминаний первого аудитора нет"),
+        ("B: mentions A results — NO",
+         not _sma_hits(pb, ("результаты A", "результат A", "A findings", "A report")),
+         ""),
+        ("B: mentions old audit results — NO",
+         not (old_name.search(pb) or _sma_hits(
+             pb, ("-sma-a.json", "-sma-b.json", "sma-merged", "manual-sma"))),
+         ""),
+        ("B: mentions output/_audit old reports — NO",
+         children == {"sma"},
+         f"под output/_audit/: {sorted(children)}"),
+        ("B: has own output path — YES",
+         own_path in pb,
+         own_path),
+        ("B: has unique audit_run_id — YES",
+         bool(run_id),
+         run_id),
+        ("B: own output path ведёт только в папку b/ — YES",
+         kinds == {"b"},
+         f"типы путей в промпте: {sorted(kinds)}"),
+        ("B: автономность и единственность файла зафиксированы — YES",
+         SMA_AUTONOMY_NOTE in pb and SMA_OWN_FILE_NOTE in pb,
+         ""),
+        ("B: не просит перечислять каталоги — YES",
+         not _sma_hits(pb, _SMA_SEARCH_TOOLS),
+         ""),
+    ]
+
+def self_test_semantic_prompts(
+    ch: Chapter,
+) -> tuple[list[tuple[str, bool, str]], dict[str, str]]:
+    """Dry-run проверка prompt A / B / Analyzer.
+
+    Ничего не пишет на диск и не меняет перевод: только генерирует промпты в
+    память и проверяет изоляцию, пути и формат. Возвращает пары
+    (проверки, промпты) — промпты нужны для опционального показа (--show-sma).
+    """
+    pa1 = prompt_semantic_a(ch)
+    pa2 = prompt_semantic_a(ch)
+    pb = prompt_semantic_b(ch)
+    pc = prompt_semantic_analyzer(ch)
+    chap = sma_chapter_id(ch)
+    a_dir = f"{SMA_REL_ROOT}/{chap}/a/"
+    b_dir = f"{SMA_REL_ROOT}/{chap}/b/"
+    an_dir = f"{SMA_REL_ROOT}/{chap}/analysis/"
+    analysis_id = _sma_json_field(pc, "analysis_id")
+    kinds = _sma_path_kinds(pc)
+    checks = _sma_checks_a(ch, pa1, pa2)
+    checks += _sma_checks_b(ch, pb)
+    checks += [
+        ("Analyzer: reads selected A results — YES",
+         a_dir in pc, a_dir),
+        ("Analyzer: reads selected B results — YES",
+         b_dir in pc, b_dir),
+        ("Analyzer: пишет только в analysis/ — YES",
+         an_dir in pc and kinds == {"a", "b", "analysis"},
+         f"типы путей в промпте: {sorted(kinds)}"),
+        ("Analyzer: has unique analysis_id и путь результата — YES",
+         bool(analysis_id) and f"{an_dir}{analysis_id}.json" in pc,
+         analysis_id),
+        ("Analyzer: может править output через fix_block.py — YES",
+         "fix_block.py" in pc and "update_merged.py" in pc,
+         ""),
+        ("Analyzer: запрещено менять evidence A/B — YES",
+         "НЕ редактируй, не удаляй и не" in pc and "a/ и b/" in pc,
+         ""),
+        ("Analyzer: запрет majority vote — YES",
+         "majority vote" in pc and "только evidence" in pc,
+         ""),
+        ("Analyzer: не берёт результаты другой главы — YES",
+         "Результаты ДРУГИХ глав не используй" in pc,
+         ""),
+        ("Analyzer: фиксирует before/after для FIXED — YES",
+         '"before"' in pc and '"after"' in pc,
+         ""),
+    ]
+    prompts = {"A": pa1, "B": pb, "Analyzer": pc}
+    return checks, prompts
+
+def _parse_selftest_chapter(argv: list[str]) -> Chapter | None:
+    """Разобрать --self-test-sma <volume> <chapter> | <vN-chYY>."""
+    if "--self-test-sma" not in argv:
+        return None
+    index = argv.index("--self-test-sma")
+    rest = [arg for arg in argv[index + 1:] if not arg.startswith("--")]
+    if not rest:
+        return None
+    match = re.match(r"^v?(\d+)-ch(\d+)$", rest[0], re.IGNORECASE)
+    if match:
+        return Chapter(int(match.group(1)), str(int(match.group(2))))
+    if len(rest) >= 2:
+        try:
+            volume = int(rest[0])
+        except ValueError:
+            return None
+        return Chapter(volume, clean_chapter_input(rest[1]))
+    return None
+
+def run_sma_self_test(argv: list[str]) -> int:
+    """CLI dry-run: печатает self-test A / B / Analyzer. Ничего не пишет."""
+    try:
+        sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+    except Exception:
+        pass
+    ch = _parse_selftest_chapter(argv)
+    if ch is None:
+        print("Использование: python tools/generate_agent_prompt.py "
+              "--self-test-sma <volume> <chapter>")
+        print("  например: --self-test-sma 3 3   или   --self-test-sma v3-ch03")
+        print("  опция --show-sma — дополнительно напечатать промпты A/B/Analyzer")
+        return 2
+    checks, prompts = self_test_semantic_prompts(ch)
+    separator("=")
+    print(f"SMA self-test (dry-run) — глава {sma_chapter_id(ch)}")
+    separator("=")
+    for name, ok, detail in checks:
+        print(f"  [{'PASS' if ok else 'FAIL'}] {name}")
+        if detail:
+            print(f"         {detail}")
+    separator("=")
+    passed = sum(1 for _, ok, _ in checks if ok)
+    print(f"  Итог: {passed}/{len(checks)} проверок пройдено.")
+    print("  Файлы не создавались, перевод не изменялся (dry-run).")
+    if "--show-sma" in argv:
+        for title in ("A", "B", "Analyzer"):
+            print()
+            separator("=")
+            print(f"  PROMPT {title}")
+            separator("=")
+            print(prompts[title])
+    return 0 if passed == len(checks) else 1
+
+# ============================================================================
 # ОСНОВНОЙ ЦИКЛ
 # ============================================================================
 def main() -> None:
@@ -1534,6 +2309,10 @@ def main() -> None:
 # ENTRY POINT
 # ============================================================================
 if __name__ == "__main__":
+    # Dry-run SMA: печатает self-test A / B / Analyzer и выходит, ничего не
+    # создавая (перевод и audit-файлы не затрагиваются).
+    if "--self-test-sma" in sys.argv:
+        sys.exit(run_sma_self_test(sys.argv))
     try:
         main()
     except KeyboardInterrupt:

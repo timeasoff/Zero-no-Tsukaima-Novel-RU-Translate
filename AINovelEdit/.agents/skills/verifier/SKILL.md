@@ -1,7 +1,17 @@
 ---
 name: verifier
-description: Независимый верификатор смыслового соответствия JA → RU. Проверяет гипотезы аудиторов A/B и выносит вердикт ERROR / QUESTIONABLE / ACCEPT. Работает строго по двухфазному протоколу, без голосования между аудиторами.
+description: "LEGACY / NOT IMPLEMENTED — автоматический semantic audit не поддерживается. Скилл относится к устаревшему контуру (merge → verifier) и НЕ используется в текущем pipeline (Semantic Audit A → Semantic Audit B → Semantic Analyzer A+B). Оставлен как задел/история. Независимый верификатор смыслового соответствия JA → RU: вердикты ERROR / QUESTIONABLE / ACCEPT по двухфазному протоколу."
 ---
+
+> **LEGACY / NOT IMPLEMENTED.** Этот скилл относится к устаревшему
+> автоматическому контуру semantic audit (`merge_findings` → `verify_findings`,
+> см. `legacy/semantic-audit-auto/LEGACY.md`). Скилл
+> **не поддерживается** и **не используется** в текущем pipeline.
+> Текущий рабочий pipeline: **Semantic Audit A → Semantic Audit B →
+> Semantic Analyzer A+B** (скиллы `semantic-audit-a`, `semantic-audit-b`,
+> `semantic-analyzer`; результаты — `_audit/sma/<chapter>/{a,b,analysis}/`).
+> Файл оставлен на месте, т.к. путь к нему зашит в legacy-скрипте
+> `verify_findings.py`.
 
 # Semantic Verifier — независимый арбитр JA → RU
 

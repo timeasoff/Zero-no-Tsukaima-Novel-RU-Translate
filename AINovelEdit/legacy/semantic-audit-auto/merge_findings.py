@@ -1,13 +1,19 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
+LEGACY / NOT IMPLEMENTED — автоматический semantic audit (merge A+B).
+
+Статус: НЕ РЕАЛИЗОВАН / НЕ ПОДДЕРЖИВАЕТСЯ. Не использовать в текущем
+pipeline. Сохранён только как задел/история. Подробности:
+legacy/semantic-audit-auto/LEGACY.md.
+
 merge_findings.py — объединение находок двух независимых смысловых аудитов.
 
 Работает на уровне отдельных findings, а не только блоков.
 Поддерживает: BOTH_FOUND, ONLY_A, ONLY_B, DIFFERENT_FINDINGS.
 
-Использование:
-    python scripts/merge_findings.py --a vXX-chYY-sma-a.json --b vXX-chYY-sma-b.json --output vXX-chYY-sma-merged.json
+Использование (LEGACY — не в текущем pipeline):
+    python legacy/semantic-audit-auto/merge_findings.py --a vXX-chYY-sma-a.json --b vXX-chYY-sma-b.json --output vXX-chYY-sma-merged.json
 """
 import argparse
 import json

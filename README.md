@@ -54,7 +54,12 @@ AINovelEdit/
 │                                 # + blocks/ (карта Block_ID → индексы абзацев)
 ├── output/                      # РЕЗУЛЬТАТ работы агента
 │   ├── _log/                    # журнал решений (удаления, сомнения, термины)
-│   └── _audit/                  # отчёты аудита глав; _prefilter/ — выгрузки предфильтров
+│   ├── _audit/                  # отчёты аудита глав; _prefilter/ — выгрузки предфильтров
+│   │                             #   _audit/sma/<chapter>/ — рабочий SMA (a/ b/ analysis/)
+│   └── ...
+├── legacy/                      # ВЫНЕСЕННЫЙ legacy-код (НЕ в pipeline)
+│   └── semantic-audit-auto/     # автоматический semantic audit — НЕ реализован,
+│                                 #   НЕ поддерживается; см. LEGACY.md
 ├── completed.md                 # реестр завершённых томов (источник истины; read-only)
 └── dictionary.md                # канон терминов (каноническая идентичность;
                                   #   НЕ механическая строковая замена)
@@ -111,6 +116,19 @@ FINAL AUDIT
 ↓
 Проверка результата по всем слоям
 ````
+
+### Legacy: автоматический semantic audit
+
+Рабочая архитектура смыслового аудита — **Semantic Audit A → Semantic Audit B
+→ Semantic Analyzer A+B**, результаты в `output/_audit/sma/<chapter>/{a,b,analysis}/`
+(запуск промптов — `tools/generate_agent_prompt.py`).
+
+Автоматический (orchestrator) контур смыслового аудита вынесен в
+[`AINovelEdit/legacy/semantic-audit-auto/`](AINovelEdit/legacy/semantic-audit-auto/LEGACY.md)
+со статусом **НЕ РЕАЛИЗОВАН / НЕ ПОДДЕРЖИВАЕТСЯ** (`run_semantic_audit.py`,
+`merge_findings.py`, `verify_findings.py`, скилл `verifier`). Он использует
+устаревшую flat-раскладку `output/_audit/<chapter>-sma-*` и не входит в
+текущий pipeline.
 
 ### Архитектура
 

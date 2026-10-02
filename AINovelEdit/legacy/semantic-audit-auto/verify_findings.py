@@ -1,6 +1,15 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
+LEGACY / NOT IMPLEMENTED — автоматический semantic audit (verifier).
+
+Статус: НЕ РЕАЛИЗОВАН / НЕ ПОДДЕРЖИВАЕТСЯ. Не использовать в текущем
+pipeline. Сохранён только как задел/история. Подробности:
+legacy/semantic-audit-auto/LEGACY.md.
+
+Текущий рабочий pipeline: Semantic Audit A → Semantic Audit B →
+Semantic Analyzer A+B (output/_audit/sma/<chapter>/{a,b,analysis}/).
+
 verify_findings.py — независимый Verifier для двойного смыслового аудита.
 
 Pipeline (этап 5):
@@ -15,8 +24,8 @@ Pipeline (этап 5):
 * verify_findings.py — собирает verifier input (candidates + JA/RU/context),
   строит промпт, запускает LLM через runtime adapter, валидирует ответ,
   пишет только вердикты;
-* llm_runtime.py — способ запуска модели (сейчас Cline; семантика от него
-  не зависит).
+* llm_runtime.py — способ запуска модели (`--runtime cline|opencode`;
+  семантика от него не зависит).
 
 Verifier:
 
@@ -36,11 +45,12 @@ Verifier:
     6 — PROCESS_ERROR
     7 — частичный результат (часть блоков не верифицирована)
 
-Использование:
-    python scripts/verify_findings.py --file v5-ch02.md --blocks 6
-    python scripts/verify_findings.py --case test.json --output out.json
-    python scripts/verify_findings.py --file v5-ch02.md --dry-run
-    python scripts/verify_findings.py --self-test
+Использование (LEGACY — не в текущем pipeline)
+---------------------------------------------
+    python legacy/semantic-audit-auto/verify_findings.py --file v5-ch02.md --blocks 6
+    python legacy/semantic-audit-auto/verify_findings.py --case test.json --output out.json
+    python legacy/semantic-audit-auto/verify_findings.py --file v5-ch02.md --dry-run
+    python legacy/semantic-audit-auto/verify_findings.py --self-test
 """
 from __future__ import annotations
 
@@ -54,10 +64,13 @@ import tempfile
 import time
 from pathlib import Path
 
-SCRIPTS_DIR = Path(__file__).resolve().parent
-AINOVELEDIT = SCRIPTS_DIR.parent
-TOOLS_DIR = AINOVELEDIT.parent / "tools"
-for _p in (str(SCRIPTS_DIR), str(TOOLS_DIR)):
+# LEGACY relocation shim: файл вынесен в legacy/semantic-audit-auto/.
+# Пересчёт путей после переноса (НЕ переписывание под sma/<chapter>/...).
+LEGACY_DIR = Path(__file__).resolve().parent
+AINOVELEDIT = LEGACY_DIR.parent.parent          # AINovelEdit/
+SCRIPTS_DIR = AINOVELEDIT / "scripts"           # общие модули проекта
+TOOLS_DIR = AINOVELEDIT.parent / "tools"        # generate_agent_prompt.py
+for _p in (str(LEGACY_DIR), str(SCRIPTS_DIR), str(TOOLS_DIR)):
     if _p not in sys.path:
         sys.path.insert(0, _p)
 
@@ -92,7 +105,13 @@ RT_ERROR_EXIT = {
     rt.MODEL_ERROR: EXIT_MODEL,
     rt.TIMEOUT: EXIT_TIMEOUT,
     rt.PROCESS_ERROR: EXIT_PROCESS,
+    rt.HTTP_ERROR: EXIT_PROCESS,
+    rt.AUTH_ERROR: EXIT_PROCESS,
+    rt.RUNTIME_ERROR: EXIT_PROCESS,
+    rt.INVALID_RESPONSE: EXIT_MODEL,
 }
+
+RUNTIMES = ("cline", "opencode")
 
 if sys.stdout.encoding and sys.stdout.encoding.lower() != "utf-8":
     sys.stdout.reconfigure(encoding="utf-8")
@@ -676,8 +695,17 @@ def main() -> int:
     ap.add_argument("--case", action="append", default=[],
                     help="готовый verifier input (JSON); можно несколько")
     ap.add_argument("--output", help="путь verdict.json (обязателен для --case)")
-    ap.add_argument("--model", default=DEFAULT_MODEL)
-    ap.add_argument("--provider", default=DEFAULT_PROVIDER)
+    ap.add_argument("--runtime", choices=RUNTIMES, default="cline",
+                    help="способ запуска модели (по умолчанию cline)")
+    ap.add_argument("--model", default=None,
+                    help=f"model ID (по умолчанию для cline: {DEFAULT_MODEL})")
+    ap.add_argument("--provider", default=None,
+                    help="явный provider (по умолчанию для cline: "
+                         f"{DEFAULT_PROVIDER}; для opencode определяется по model)")
+    ap.add_argument("--server-url", default=None,
+                    help="opencode: подключиться к запущенному серверу вместо spawn")
+    ap.add_argument("--server-password", default=None,
+                    help="opencode: пароль сервера (иначе из service.json/env)")
     ap.add_argument("--timeout", type=int, default=300)
     ap.add_argument("--retries", type=int, default=1)
     ap.add_argument("--self-test", action="store_true",
@@ -767,8 +795,21 @@ def main() -> int:
         return EXIT_OK
 
     # --- запуск ------------------------------------------------------------
+    model = args.model or (DEFAULT_MODEL if args.runtime == "cline" else None)
+    provider = args.provider if args.provider is not None else (
+        DEFAULT_PROVIDER if args.runtime == "cline" else None)
+    if not model:
+        print("ОШИБКА: для --runtime opencode укажите --model \"<MODEL_ID>\" "
+              "(провайдер — опциональный --provider); выдумывать ID нельзя")
+        return EXIT_USAGE
+
     try:
-        adapter = rt.get_adapter("cline", model=args.model, provider=args.provider)
+        if args.runtime == "opencode":
+            adapter = rt.get_adapter(
+                "opencode", model=model, provider=provider,
+                server_url=args.server_url, server_password=args.server_password)
+        else:
+            adapter = rt.get_adapter("cline", model=model, provider=provider)
     except (RuntimeError, ValueError) as exc:
         print(f"ОШИБКА: {exc}")
         return EXIT_PROCESS
@@ -776,35 +817,45 @@ def main() -> int:
     run_id = f"{time.strftime('%Y%m%d-%H%M%S')}-{os.getpid()}"
     base = RUN_ROOT / run_id
     cwd = base / "verifier"
-    data_dir = base / "cline-data"
+    data_dir = base / "cline-data" if args.runtime == "cline" else None
     cwd.mkdir(parents=True, exist_ok=True)
-    try:
-        rt.prepare_data_dir(data_dir, args.model, args.provider)
-    except (OSError, ValueError) as exc:
-        print(f"ОШИБКА: не удалось подготовить изолированный data-dir: {exc}")
-        return EXIT_PROCESS
+    if data_dir is not None:
+        try:
+            rt.prepare_data_dir(data_dir, model, provider)
+        except (OSError, ValueError) as exc:
+            print(f"ОШИБКА: не удалось подготовить изолированный data-dir: {exc}")
+            adapter.close()
+            return EXIT_PROCESS
 
-    print(f"\nRuntime: provider={args.provider} model={args.model}")
-    print(f"cwd: {cwd} (пустой)\ndata-dir: {data_dir} (изолирован)")
+    print(f"\nRuntime: {args.runtime} provider={provider or '(по model)'} "
+          f"model={model}")
+    print(f"cwd: {cwd} (пустой)")
+    if data_dir is not None:
+        print(f"data-dir: {data_dir} (изолирован)")
 
     failures = 0
     code = EXIT_MODEL
     kill_grace = int(os.environ.get("AINOVELEDIT_KILL_GRACE", "60"))
-    for case, out in zip(cases, outputs):
-        print(f"\nблок {case['block']}: {len(case['candidates'])} candidate(s)")
-        payload, error, code = run_case(
-            case, skill_text, adapter, data_dir, cwd,
-            args.timeout, args.retries, kill_grace)
-        if payload is None:
-            print(f"  ОШИБКА: {error}")
-            failures += 1
-            continue
-        written = write_outputs(out, payload, not args.no_md)
-        print(f"  OK: {', '.join(p.name for p in written)}")
-        for res in payload["results"]:
-            print(f"    {res['candidate_id']} "
-                  f"[{'+'.join(res['sources'])}/{res['status']}] → "
-                  f"{res['verdict']} ({res['confidence']})")
+    try:
+        for case, out in zip(cases, outputs):
+            print(f"\nблок {case['block']}: {len(case['candidates'])} candidate(s)")
+            payload, error, code = run_case(
+                case, skill_text, adapter, data_dir, cwd,
+                args.timeout, args.retries, kill_grace)
+            if payload is None:
+                print(f"  ОШИБКА: {error}")
+                failures += 1
+                continue
+            written = write_outputs(out, payload, not args.no_md)
+            print(f"  OK: {', '.join(p.name for p in written)}")
+            for res in payload["results"]:
+                print(f"    {res['candidate_id']} "
+                      f"[{'+'.join(res['sources'])}/{res['status']}] → "
+                      f"{res['verdict']} ({res['confidence']})")
+    finally:
+        close = getattr(adapter, "close", None)
+        if callable(close):
+            close()
 
     if args.keep_temp:
         print(f"\n  временные каталоги сохранены: {base}")

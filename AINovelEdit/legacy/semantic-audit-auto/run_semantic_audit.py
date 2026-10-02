@@ -1,6 +1,16 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
+LEGACY / NOT IMPLEMENTED — автоматический semantic audit.
+
+Статус: НЕ РЕАЛИЗОВАН / НЕ ПОДДЕРЖИВАЕТСЯ. Не использовать в текущем
+pipeline. Сохранён только как задел/история для возможной будущей
+реализации. Подробности: legacy/semantic-audit-auto/LEGACY.md.
+
+Текущий рабочий pipeline: Semantic Audit A → Semantic Audit B →
+Semantic Analyzer A+B (output/_audit/sma/<chapter>/{a,b,analysis}/);
+запуск — через tools/generate_agent_prompt.py.
+
 run_semantic_audit.py — оркестратор ДВОЙНОГО независимого смыслового аудита (A + B).
 
 Запускает два НЕЗАВИСИМЫх процесса Cline (CLI 3.0.62) ПАРАЛЛЕЛЬНО:
@@ -38,18 +48,30 @@ output/_audit/<ch>-sma-a.json и <ch>-sma-b.json → вызывается
 merge_findings.py → <ch>-sma-merged.{json,md} → временные каталоги удаляются.
 
 Коды выхода: 0 — ок; 1 — ошибка входа/аргументов; 2 — упал A; 3 — упал B;
-4 — невалидный результат (JSON/схема); 5 — ошибка merge; 6 — Cline не найден.
+4 — невалидный результат (JSON/схема); 5 — ошибка merge; 6 — runtime не найден
+(Cline или opencode-cli).
+
+Runtime (--runtime, по умолчанию cline)
+---------------------------------------
+* `cline` — два процесса Cline, история сессий из ~/.cline (как раньше);
+* `opencode` — OpenCode → OmniRoute → модель из --model: у каждого запуска
+  СВОЯ session OpenCode (A, B — разные sessions), сервер поднимает адаптер,
+  глобальный ~/.config/opencode/opencode.json не меняется. Проверки
+  sessionId/параллельности берутся из результатов адаптера, а не из
+  истории Cline. Семантика A/B, prompts и SKILL.md не меняются.
 
 Кодировка: промпт передаётся в аргументах процесса через CreateProcessW
 (UTF-16) БЕЗ shell — каналы PowerShell и `|` не используются, поэтому
 не-ASCII текст не искажается (правило AGENTS.md о порче символов в shell).
 
-Использование
--------------
-    python scripts/run_semantic_audit.py --file v5-ch02.md --blocks 5-7
-    python scripts/run_semantic_audit.py --file v5-ch02.md --blocks 6 --self-test
-    python scripts/run_semantic_audit.py --file v5-ch02.md --dry-run
-    python scripts/run_semantic_audit.py --file v5-ch02.md            # вся глава
+Использование (LEGACY — не в текущем pipeline)
+---------------------------------------------
+    python legacy/semantic-audit-auto/run_semantic_audit.py --file v5-ch02.md --blocks 5-7
+    python legacy/semantic-audit-auto/run_semantic_audit.py --file v5-ch02.md --blocks 6 --self-test
+    python legacy/semantic-audit-auto/run_semantic_audit.py --file v5-ch02.md --dry-run
+    python legacy/semantic-audit-auto/run_semantic_audit.py --file v5-ch02.md            # вся глава
+    python legacy/semantic-audit-auto/run_semantic_audit.py --file v5-ch02.md --runtime opencode \
+        --model "<MODEL_ID>"                                          # OpenCode
 """
 from __future__ import annotations
 
@@ -61,21 +83,28 @@ import shutil
 import subprocess
 import sys
 import tempfile
+import threading
 import time
 from pathlib import Path
 
 # ---------------------------------------------------------------------------
 # ПУТИ И ИМПОРТЫ ПРОЕКТА
 # ---------------------------------------------------------------------------
-SCRIPTS_DIR = Path(__file__).resolve().parent
-AINOVELEDIT = SCRIPTS_DIR.parent
-TOOLS_DIR = AINOVELEDIT.parent / "tools"
+# LEGACY relocation shim: файл вынесен в legacy/semantic-audit-auto/.
+# Это НЕ переписывание под новую архитектуру sma/<chapter>/..., а только
+# пересчёт путей после переноса. Общие модули (merged_io, llm_runtime)
+# остаются в AINovelEdit/scripts/, а generate_agent_prompt — в tools/.
+LEGACY_DIR = Path(__file__).resolve().parent
+AINOVELEDIT = LEGACY_DIR.parent.parent          # AINovelEdit/
+SCRIPTS_DIR = AINOVELEDIT / "scripts"           # общие модули проекта
+TOOLS_DIR = AINOVELEDIT.parent / "tools"        # generate_agent_prompt.py
 
-for _p in (str(SCRIPTS_DIR), str(TOOLS_DIR)):
+for _p in (str(LEGACY_DIR), str(SCRIPTS_DIR), str(TOOLS_DIR)):
     if _p not in sys.path:
         sys.path.insert(0, _p)
 
 import merged_io                      # noqa: E402  (общий разбор блок-файлов)
+import llm_runtime as rt              # noqa: E402  (runtime adapters)
 from generate_agent_prompt import Chapter  # noqa: E402  (пути главы без дублирования)
 
 OUT_DIR = AINOVELEDIT / "output" / "_audit"
@@ -108,7 +137,10 @@ EXIT_RUN_A = 2
 EXIT_RUN_B = 3
 EXIT_VALIDATE = 4
 EXIT_MERGE = 5
-EXIT_NO_CLINE = 6
+EXIT_NO_RUNTIME = 6
+EXIT_NO_CLINE = EXIT_NO_RUNTIME   # старое имя (совместимость)
+
+RUNTIMES = ("cline", "opencode")
 
 
 # ---------------------------------------------------------------------------
@@ -535,7 +567,7 @@ def run_merge(node: str, cline_bin: str, ch: Chapter,
     """merge_findings.py (существующий скрипт) вызывается как есть."""
     out_json = OUT_DIR / f"{ch.chapter_id_full}-sma-merged.json"
     out_md = OUT_DIR / f"{ch.chapter_id_full}-sma-merged.md"
-    cmd = [sys.executable, str(SCRIPTS_DIR / "merge_findings.py"),
+    cmd = [sys.executable, str(LEGACY_DIR / "merge_findings.py"),
            "--a", str(path_a), "--b", str(path_b),
            "--output", str(out_json), "--report", str(out_md)]
     proc = subprocess.run(cmd, capture_output=True, encoding="utf-8")
@@ -603,16 +635,147 @@ def overlaps(a: dict, b: dict) -> bool:
     return s_a <= e_b and s_b <= e_a
 
 
+def _iso(ts: float) -> str:
+    return time.strftime("%Y-%m-%dT%H:%M:%S", time.localtime(ts))
+
+
+# ---------------------------------------------------------------------------
+# RUNTIME BACKEND (wrapper поверх start_run/collect_run — семантика A/B та же)
+# ---------------------------------------------------------------------------
+class ClineRunner:
+    """Два процесса Cline; sessionId/перекрытие — из истории Cline."""
+
+    name = "cline"
+
+    def __init__(self, node: str, cline_bin: str):
+        self.node, self.cline_bin = node, cline_bin
+
+    def start(self, base: Path, kind: str, prompt: str, timeout: int) -> dict:
+        return run_batch(self.node, self.cline_bin, base, kind, prompt, timeout)
+
+    def alive(self, run: dict) -> bool:
+        return run["proc"].poll() is None
+
+    def handles(self, runs: list[dict]) -> str:
+        return "PIDs: " + ", ".join(str(r["proc"].pid) for r in runs)
+
+    def collect(self, run: dict, timeout: int, kill_grace: int) -> dict:
+        res = collect_run(run["proc"], run["kind"].upper(), timeout, run["started"])
+        res["cwd"] = str(run["cwd"])
+        res["pid"] = run["proc"].pid
+        res["prompt"] = run["prompt"]
+        res["session_id"] = ""
+        return res
+
+    def session_report(self, base: Path) -> list[dict]:
+        entries = cline_history(self.node, self.cline_bin, limit=30)
+        return history_sessions(entries, base)
+
+    def close(self) -> None:          # процессы уже завершены collect_run
+        pass
+
+
+class OpenCodeRunner:
+    """A и B — два потока на один adapter OpenCode: у каждого запуска СВОЯ
+    session (adapter.run создаёт новую), sessionId берём из результата."""
+
+    name = "opencode"
+
+    def __init__(self, adapter):
+        self.adapter = adapter
+        self.records: list[dict] = []
+
+    def start(self, base: Path, kind: str, prompt: str, timeout: int) -> dict:
+        cwd = base / kind.upper()
+        cwd.mkdir(parents=True, exist_ok=True)
+        run = {"kind": kind, "cwd": cwd, "prompt": prompt, "timeout": timeout,
+               "started": time.time(), "box": {}, "thread": None}
+
+        def worker() -> None:
+            run["box"]["outcome"] = self.adapter.run(
+                prompt, cwd, timeout, None,
+                kill_grace=int(os.environ.get("AINOVELEDIT_KILL_GRACE", "60")))
+
+        thread = threading.Thread(target=worker, daemon=True, name=f"oc-{kind}")
+        run["thread"] = thread
+        thread.start()
+        return run
+
+    def alive(self, run: dict) -> bool:
+        return run["thread"].is_alive()
+
+    def handles(self, runs: list[dict]) -> str:
+        return "threads: " + ", ".join(str(r["thread"].ident) for r in runs)
+
+    def collect(self, run: dict, timeout: int, kill_grace: int) -> dict:
+        run["thread"].join(timeout + max(kill_grace, 0) + 60)
+        ended = time.time()
+        outcome = run["box"].get("outcome")
+        if outcome is None:
+            failure, text, finish, session_id = \
+                "поток не завершился в отведённое время", "", None, ""
+        else:
+            failure = None if outcome.ok else f"{outcome.error}: {outcome.detail}"
+            if not failure and not outcome.text.strip():
+                failure = "пустой результат"
+            text, finish, session_id = outcome.text, outcome.finish_reason, \
+                outcome.session_id
+        self.records.append({
+            "sessionId": session_id or None, "pid": None,
+            "startedAt": _iso(run["started"]), "endedAt": _iso(ended),
+            "cwd": str(run["cwd"]),
+        })
+        return {"label": run["kind"].upper(), "exit": None, "finish": finish,
+                "text": text, "events": 0,
+                "error_events": [failure] if failure else [],
+                "stdout": "", "stderr": "", "duration": round(ended - run["started"], 1),
+                "failure": failure, "cwd": str(run["cwd"]), "pid": None,
+                "prompt": run["prompt"], "session_id": session_id}
+
+    def session_report(self, base: Path) -> list[dict]:
+        prefix = str(base).lower()
+        return [s for s in self.records
+                if str(s.get("cwd", "")).lower().startswith(prefix)]
+
+    def close(self) -> None:
+        self.adapter.close()
+
+
 # ---------------------------------------------------------------------------
 # ОСНОВНОЙ ПРОГОН
 # ---------------------------------------------------------------------------
 def audit(chapter_arg: str, volume: int | None, blocks_spec: str | None,
           timeout: int, batch_size: int, self_test: bool, dry_run: bool,
-          keep_temp: bool, no_merge: bool, force: bool, retries: int) -> int:
-    node, cline_bin = resolve_cline()
-    if not node or not cline_bin:
-        print("ОШИБКА: Cline не найден (задайте CLINE_BIN или установите cline).")
-        return EXIT_NO_CLINE
+          keep_temp: bool, no_merge: bool, force: bool, retries: int,
+          runtime: str = "cline", model: str | None = None,
+          provider: str | None = None, server_url: str | None = None,
+          server_password: str | None = None) -> int:
+    if runtime not in RUNTIMES:
+        print(f"ОШИБКА: неизвестный runtime {runtime!r} "
+              f"(доступны: {', '.join(RUNTIMES)})")
+        return EXIT_USAGE
+
+    node, cline_bin = None, None
+    if runtime == "cline":
+        node, cline_bin = resolve_cline()
+        if not node or not cline_bin:
+            print("ОШИБКА: Cline не найден (задайте CLINE_BIN или установите cline).")
+            return EXIT_NO_RUNTIME
+        runner: ClineRunner | OpenCodeRunner = ClineRunner(node, cline_bin)
+    else:
+        # opencode: модель НЕ выдумывается — только из --model.
+        if not (model or "").strip():
+            print("ОШИБКА: для --runtime opencode укажите --model \"<MODEL_ID>\" "
+                  "(провайдер — опциональный --provider); выдумывать ID нельзя")
+            return EXIT_NO_RUNTIME
+        try:
+            adapter = rt.OpenCodeAdapter(
+                model=model.strip(), provider=(provider or None),
+                server_url=server_url, server_password=server_password)
+        except (RuntimeError, ValueError) as exc:
+            print(f"ОШИБКА: {exc}")
+            return EXIT_NO_RUNTIME
+        runner = OpenCodeRunner(adapter)
 
     try:
         ch = parse_chapter_arg(chapter_arg, volume)
@@ -656,7 +819,12 @@ def audit(chapter_arg: str, volume: int | None, blocks_spec: str | None,
     print(f"  RU: {ch.output_path}")
     print(f"  блоки аудита: {', '.join(str(b) for b in targets)}")
     print(f"  партий (A‖B): {len(chunks)}")
-    print(f"  Cline: {cline_bin}")
+    if runtime == "cline":
+        print(f"  Cline: {cline_bin}")
+    else:
+        print(f"  runtime: opencode, model={model}"
+              + (f" (provider={provider})" if provider else " (provider: по model)")
+              + (f", server={server_url}" if server_url else ""))
 
     # Существующие результаты мешают правилу «файлы появляются только после
     # успешного завершения обоих аудиторов» — убираем их ДО запуска.
@@ -756,6 +924,7 @@ def audit(chapter_arg: str, volume: int | None, blocks_spec: str | None,
         wrote_after_both = True
         written_at: float | None = None
         files_before = _audit_snapshot(ch)
+        kill_grace = int(os.environ.get("AINOVELEDIT_KILL_GRACE", "60"))
 
         for i, group in enumerate(chunks):
             print(f"\nпартия {i + 1}/{len(chunks)}: блоки {group} — запуск A ‖ B")
@@ -766,27 +935,25 @@ def audit(chapter_arg: str, volume: int | None, blocks_spec: str | None,
 
             for attempt in range(1, retries + 2):
                 runs = [
-                    run_batch(node, cline_bin, base, kind, prompts[kind][i], timeout)
+                    runner.start(base, kind, prompts[kind][i], timeout)
                     for kind in ("a", "b")
                 ]
                 time.sleep(1.0)
-                both_alive = len(runs) == 2 and all(
-                    r["proc"].poll() is None for r in runs
-                )
+                both_alive = len(runs) == 2 and all(runner.alive(r) for r in runs)
                 alive_flags.append(both_alive)
-                print(f"  процессы одновременно активны: {'да' if both_alive else 'нет'} "
-                      f"(PIDs: {', '.join(str(r['proc'].pid) for r in runs)})")
+                print(f"  запуски одновременно активны: {'да' if both_alive else 'нет'} "
+                      f"({runner.handles(runs)})")
 
                 finished = {}
                 for r in runs:
-                    res = collect_run(r["proc"], r["kind"].upper(), timeout, r["started"])
-                    res["cwd"] = str(r["cwd"])
-                    res["pid"] = r["proc"].pid
-                    res["prompt"] = r["prompt"]
+                    res = runner.collect(r, timeout, kill_grace)
                     finished[r["kind"]] = res
                     timing[r["kind"]] = time.time()
                     status = "OK" if not res["failure"] else f"FAIL ({res['failure']})"
-                    print(f"  {r['kind'].upper()}: exit={res['exit']} "
+                    ident = ("session=" + res["session_id"]
+                             if res.get("session_id")
+                             else f"exit={res['exit']}")
+                    print(f"  {r['kind'].upper()}: {ident} "
                           f"finish={res['finish']} {res['duration']}с — {status}")
 
                 last_errors = []
@@ -820,15 +987,18 @@ def audit(chapter_arg: str, volume: int | None, blocks_spec: str | None,
                         if any(e.startswith(kind.upper() + ":") for e in last_errors):
                             print(f"  {kind.upper()} сырой ответ: {res['text'][:600]}")
                         continue
-                    print(f"  {kind.upper()}: exit={res.get('exit')} "
-                          f"finish={res.get('finish')}")
+                    print(f"  {kind.upper()}: "
+                          + (f"session={res.get('session_id')} "
+                             if res.get("session_id")
+                             else f"exit={res.get('exit')} ")
+                          + f"finish={res.get('finish')}")
                     if res.get("error_events"):
                         print(f"    события ошибок: {res['error_events']}")
                     if (res.get("stderr") or "").strip():
                         print(f"    stderr: {res['stderr'].strip()[:400]}")
                     if not (res.get("text") or "").strip():
                         print(f"    stdout: {res['stdout'][:400]}")
-                _cleanup(base, keep_temp)
+                _cleanup(base, keep_temp, runner)
                 run_failed = [k for k in ("a", "b") if finished.get(k, {}).get("failure")]
                 if run_failed:
                     return EXIT_RUN_A if run_failed[0] == "a" else EXIT_RUN_B
@@ -869,20 +1039,20 @@ def audit(chapter_arg: str, volume: int | None, blocks_spec: str | None,
             print(f"\nOK: записаны {path_a.name} и {path_b.name} "
                   f"(после завершения обоих: {'да' if wrote_after_both else 'НЕТ'})")
             if no_merge:
-                _cleanup(base, keep_temp)
+                _cleanup(base, keep_temp, runner)
                 return EXIT_OK
             out_json, out_md = run_merge(node, cline_bin, ch, path_a, path_b)
             if out_json is None:
                 print("ОШИБКА: merge_findings.py не выполнился.")
-                _cleanup(base, keep_temp)
+                _cleanup(base, keep_temp, runner)
                 return EXIT_MERGE
             print(f"OK: merged → {out_json.name}, отчёт → {out_md.name}")
 
         # --- история: sessionId, перекрытие интервалов ---------------------
-        entries = cline_history(node, cline_bin, limit=30)
-        sessions = history_sessions(entries, base)
+        sessions = runner.session_report(base)
         session_ids = [s.get("sessionId") for s in sessions]
-        distinct = len(session_ids) >= 2 and len(set(session_ids)) == len(session_ids)
+        distinct = (len(session_ids) >= 2 and all(session_ids)
+                    and len(set(session_ids)) == len(session_ids))
         overlap_ok = any(
             overlaps(sessions[i], sessions[j])
             for i in range(len(sessions))
@@ -905,21 +1075,29 @@ def audit(chapter_arg: str, volume: int | None, blocks_spec: str | None,
                 leak = True
 
         parallel_started = bool(alive_flags) and all(alive_flags)
-        pids = {k: results[k]["pid"] for k in ("a", "b") if k in results}
+        ident = {k: (results[k].get("pid") or results[k].get("session_id"))
+                 for k in ("a", "b") if k in results}
+        par_label = (
+            "процессы запускались одновременно (poll обеих Popen)"
+            if runtime == "cline" else
+            "запуски шли одновременно (обе нити адаптера активны)"
+        )
+        hist_label = ("история Cline" if runtime == "cline"
+                      else "записи адаптера OpenCode")
         dynamic_checks: list[tuple[str, bool, str]] = [
             ("A и B имеют разные sessionId",
              distinct,
-             session_detail + f" | Popen PID (факт): {pids}"),
-            ("процессы запускались одновременно (poll обеих Popen)",
+             session_detail + f" | PID/session (факт): {ident}"),
+            (par_label,
              parallel_started,
              f"параллельных запусков проверено: {len(alive_flags)}; "
-             f"PID из Popen: {pids}"),
-            ("интервалы сессий пересекаются (история Cline)",
+             f"PID/session из запусков: {ident}"),
+            (f"интервалы сессий пересекаются ({hist_label})",
              overlap_ok,
              session_detail),
             ("файлы результатов появились только после завершения обоих",
              wrote_after_both,
-             "запись выполнена после collect_run обоих процессов"
+             "запись выполнена после сбора результатов обоих запусков"
              if written_at else
              "self-test: во время прогонов файлы output/_audit не изменялись"),
             ("текст одного агента отсутствует в промпте другого",
@@ -935,12 +1113,12 @@ def audit(chapter_arg: str, volume: int | None, blocks_spec: str | None,
         passed = sum(1 for _, ok, _ in all_checks if ok)
         print(f"\nИтог: {passed}/{len(all_checks)} проверок пройдено")
 
-        _cleanup(base, keep_temp)
+        _cleanup(base, keep_temp, runner)
         if not ok_of(all_checks):
             return EXIT_VALIDATE
         return EXIT_OK
     except Exception as exc:  # noqa: BLE001 — единая точка очистки temp
-        _cleanup(base, keep_temp)
+        _cleanup(base, keep_temp, runner)
         print(f"ОШИБКА: {type(exc).__name__}: {exc}")
         return EXIT_USAGE
 
@@ -969,7 +1147,12 @@ def _audit_snapshot(ch: Chapter) -> dict[str, tuple[int, int]]:
     return snap
 
 
-def _cleanup(base: Path, keep: bool) -> None:
+def _cleanup(base: Path, keep: bool, runner=None) -> None:
+    if runner is not None:
+        try:
+            runner.close()          # opencode: остановить свой serve-процесс
+        except Exception as exc:    # noqa: BLE001 — очистка не должна падать
+            print(f"  предупреждение: runtime не закрылся: {exc}", file=sys.stderr)
     if keep:
         print(f"  временные каталоги сохранены: {base}")
         return
@@ -986,7 +1169,8 @@ def ok_of(checks: list[tuple[str, bool, str]]) -> bool:
 def main() -> int:
     setup_encoding()
     ap = argparse.ArgumentParser(
-        description="Оркестратор двойного независимого смыслового аудита (A + B, Cline)"
+        description="Оркестратор двойного независимого смыслового аудита "
+                    "(A + B; runtime: cline | opencode)"
     )
     ap.add_argument("--file", required=True,
                     help="глава: v5-ch02.md / v5-ch02 / v05-ch02")
@@ -994,8 +1178,24 @@ def main() -> int:
                     help="том, если глава указана без префикса vN-")
     ap.add_argument("--blocks", default=None,
                     help="диапазон блоков, напр. 5-7 или 6,8-9 (по умолчанию все)")
+    ap.add_argument("--runtime", choices=list(RUNTIMES), default="cline",
+                    help="бэкенд запуска A/B: cline (по умолчанию) или opencode "
+                         "(OpenCode → OmniRoute → модель из --model)")
+    ap.add_argument("--model", default=None,
+                    help="model ID для --runtime opencode (ОБЯЗАТЕЛЕН для opencode): "
+                         "<MODEL_ID> или <provider>/<MODEL_ID>; не выдумывается")
+    ap.add_argument("--provider", default=None,
+                    help="providerID для --runtime opencode "
+                         "(по умолчанию определяется по model/списку сервера)")
+    ap.add_argument("--server-url", default=None,
+                    help="подключиться к уже запущенному opencode serve "
+                         "вместо запуска своего")
+    ap.add_argument("--server-password", default=None,
+                    help="пароль opencode serve (иначе OPENCODE_SERVER_PASSWORD "
+                         "или ~/.config/opencode/service.json)")
     ap.add_argument("--timeout", type=int, default=300,
-                    help="таймаут одного запуска Cline, сек (по умолчанию 300)")
+                    help="таймаут одного запуска (Cline/OpenCode), сек "
+                         "(по умолчанию 300)")
     ap.add_argument("--batch-size", type=int, default=0,
                     help="максимум блоков в одном прогоне (0 = автоподбор по длине)")
     ap.add_argument("--self-test", action="store_true",
@@ -1009,7 +1209,7 @@ def main() -> int:
     ap.add_argument("--no-merge", action="store_true",
                     help="не запускать merge_findings.py")
     ap.add_argument("--retries", type=int, default=0,
-                    help="число повторных прогонов партии при сбое Cline "
+                    help="число повторных прогонов партии при сбое runtime "
                          "или невалидном ответе (по умолчанию 0)")
     args = ap.parse_args()
 
@@ -1025,6 +1225,11 @@ def main() -> int:
         no_merge=args.no_merge,
         force=args.force,
         retries=args.retries,
+        runtime=args.runtime,
+        model=args.model,
+        provider=args.provider,
+        server_url=args.server_url,
+        server_password=args.server_password,
     )
 
 
