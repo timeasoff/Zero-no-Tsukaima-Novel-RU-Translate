@@ -1,0 +1,10 @@
+{
+  "analysis_id": "20261002-034455-4f02",
+  "chapter": "v3-ch03",
+  "inputs": {
+    "a_runs": [],
+    "b_runs": []
+  },
+  "results": [],
+  "note": "Анализ не выполнен: в каталогах output/_audit/sma/v3-ch03/a/ и output/_audit/sma/v3-ch03/b/ нет ни одного файла <run_id>.json. Обнаружены только ручные legacy-отчёты a/legacy-manual-a.md и b/legacy-manual-b.md, которые не являются выбранными запусками A/B (a_runs/b_runs пусты). Согласно ПРАВИЛАМ EVIDENCE: сначала нужно выполнить аудит A и B (семантический аудит A/B с уникальными run_id), после чего повторить запуск Analyzer. Правки в output/v3-ch03.md и соседние файлы не вносились; finding'и в a/ и b/ не изменялись."
+}
