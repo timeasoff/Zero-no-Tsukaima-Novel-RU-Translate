@@ -95,11 +95,16 @@ EN — reference only (только справочный материал).
     в `analysis/<id>.phase1.json`.
 - **ФАЗА 2 — EVIDENCE REVIEW.** Только после завершённой Фазы 1 ты получаешь
   findings A/B/C, evidence omission pre-check и своё слепое заключение Фазы 1,
-  и сопоставляешь их.
+  и сопоставляешь их. Задание адресует слепой вывод **конкретным файлом**
+  (`analysis/<phase1_id>.phase1.json`), а не маской: если слепых прогонов
+  несколько, бери самый свежий (он назван в задании «по умолчанию») и не
+  смешивай выводы разных прогонов. Имя фактически использованного файла
+  обязательно фиксируй в `inputs.phase1` результата.
 
 Изоляция Фазы 1 — не декларация, а свойство сформированного задания: её
 промпт проверяется self-test'ом
-(`python tools/agent_workflow.py --self-test-sma`) на отсутствие
+(`python tools/agent_workflow.py --self-test-sma v3-ch03` — нужен параметр
+главы) на отсутствие
 путей/списков/evidence A/B/C/precheck. Если в задании Фазы 1 оказались такие
 данные — это ошибка генерации, сообщи о ней.
 
@@ -142,10 +147,12 @@ findings из разных запусков A/B/C, относящаяся к о�
 
 ### Шаг 1 — ФАЗА 2: сбор evidence (ТОЛЬКО после Фазы 1)
 
-0. Если `analysis/<id>.phase1.json` для этой главы нет — **STOP**: Фазу 1
-   выполнять в рамках Фазы 2 НЕЛЬЗЯ (задание уже содержит evidence, слепота
-   утрачена). Сначала отдельное задание «Смысловой анализатор — Фаза 1
-   (blind)», после его завершения — отдельное задание Фазы 2.
+0. Работай ровно с тем файлом Фазы 1, который назван в задании; если в
+   задании перечислено несколько слепых выводов, бери самый свежий (он же
+   «по умолчанию») и не смешивай прогоны. Если файла Фазы 1 нет — **STOP**:
+   Фазу 1 выполнять в рамках Фазы 2 НЕЛЬЗЯ (задание уже содержит evidence,
+   слепота утрачена). Сначала отдельное задание «Смысловой анализатор —
+   Фаза 1 (blind)», после его завершения — отдельное задание Фазы 2.
 1. Собери ВСЕ findings из ВСЕХ существующих запусков A, B и C этой главы
    (не только последний файл; ручного выбора отдельных run_id нет).
 2. Прочитай evidence Omission Pre-check
@@ -282,9 +289,10 @@ pre-check, — и вправе создать candidate, даже если pre-c
 | непонятно, допустимо ли сокращение / неясны границы | `DISPUTED` | `REPORT_ONLY` |
 
 Обязательные поля для omission-finding: `issue_type`, `omission_scope`,
-`omission_kind` (`FULL`/`PARTIAL`), `ja_span`, `ru_before`, `ru_after`,
-`missing_content`, `not_compression_reason`; по желанию `evidence`,
-`severity`, `confidence`.
+`omission_kind` (`FULL`/`PARTIAL`), `ja_span`, `ru_before`,
+`missing_content`, `not_compression_reason`; `ru_after` — если после пропуска
+есть текст; по желанию `evidence`, `severity`, `confidence`.
+Полный канонический набор проверяет `scripts/semantic_findings.py`.
 
 ### Отчёт по omission
 
@@ -365,7 +373,8 @@ JSON (`analysis/<analysis_id>.json`):
     "a_runs": ["20261002-004512-a7f3"],
     "b_runs": ["20261002-004629-b91c"],
     "c_runs": ["20261002-004802-d21a"],
-    "precheck": "precheck/omission-precheck.json"
+    "precheck": "output/_audit/sma/v3-ch03/precheck/omission-precheck.json",
+    "phase1": "20261002-005930-c0de.phase1.json"
   },
   "results": [
     {
@@ -384,7 +393,7 @@ JSON (`analysis/<analysis_id>.json`):
     {
       "block": 15,
       "candidate_id": "C-15-01",
-      "sources": {"a": [], "b": [], "c": [], "precheck": "omission-precheck.json"},
+      "sources": {"a": [], "b": [], "c": [], "precheck": true},
       "issue_type": "MISSING_TRANSLATION",
       "omission_scope": "DIALOGUE_FRAGMENT",
       "omission_kind": "PARTIAL",
@@ -414,16 +423,23 @@ JSON (`analysis/<analysis_id>.json`):
 - `inputs.a_runs` / `inputs.b_runs` / `inputs.c_runs` — все существующие
   запуски этой главы на момент анализа (ручного выбора run_id нет);
   в режиме A+B поле `c_runs` пустое.
-- `inputs.precheck` — путь к evidence Omission Pre-check, если он участвовал;
-  поле отсутствует/`null`, когда pre-check не запускался (старые главы).
+- `inputs.precheck` — ПОЛНЫЙ относительный путь к evidence Omission Pre-check
+  (`output/_audit/sma/<chapter>/precheck/omission-precheck.json`), если он
+  участвовал; поле `null`, когда pre-check не запускался (старые главы).
+- `inputs.phase1` — имя файла слепого вывода Фазы 1, с которым сверялся этот
+  результат: provenance слепой фазы, такой же обязательный, как
+  `sources.a/b/c` для аудиторов. `null` означает, что Фазы 1 для главы не
+  было — такой результат недействителен, работу продолжать нельзя (STOP).
 - `sources` каждого candidate — из каких запусков A/B/C он собран; пустой
   список означает, что этот аудит находку не находил.
-- `sources.precheck` — маркер того, что candidate пришёл от Omission Pre-check;
-  это **evidence, а не голос** и не заменяет `sources.a/b/c`.
+- `sources.precheck` — **булево** (`true`/`false`): `true` означает, что
+  candidate пришёл от Omission Pre-check (это **evidence, а не голос**
+  и не заменяет `sources.a/b/c`). Имя файла pre-check здесь не пишется —
+  оно живёт в `inputs.precheck`.
 - `issue_type` — класс finding; для `MISSING_TRANSLATION` обязательны
-  `omission_scope`, `omission_kind`, `ja_span`, `ru_before`, `ru_after`,
-  `missing_content`, `not_compression_reason` (канонический набор и валидатор —
-  `scripts/semantic_findings.py`).
+  `omission_scope`, `omission_kind`, `ja_span`, `ru_before`, `missing_content`,
+  `not_compression_reason` (`ru_after` — если после пропуска есть текст;
+  канонический набор и валидатор — `scripts/semantic_findings.py`).
 
 MD (`analysis/<analysis_id>.md`) — человекочитаемый отчёт: таблица по каждому
 candidate (block, candidate_id, sources A/B/C, status, reason, action,
@@ -451,4 +467,6 @@ output/_audit/sma/<chapter>/analysis/<analysis_id>.md
 `b/` — evidence Auditor B, `c/` — evidence Auditor C, `precheck/` —
 детерминированное omission-evidence (не аудитор и не run kind),
 `analysis/` — финальные результаты Analyzer и слепые выводы Фазы 1
-(`<id>.phase1.json` — не обычные final-запуски).
+(`<id>.phase1.json` — не обычные final-запуски). Фаза 2 адресует Фазу 1
+конкретным файлом (при нескольких прогонах — самый свежий) и фиксирует
+выбранный файл в `inputs.phase1` результата.

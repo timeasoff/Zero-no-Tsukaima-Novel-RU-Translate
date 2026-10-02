@@ -26,7 +26,9 @@ ACTIONS — технические действия оркестратора (Ac
   фазах — «Фаза 1 (blind)» (только JA + RU + контекст, без evidence) и
   «Фаза 2 (evidence review)» (A/B/C + omission pre-check) — (уникальный
   audit_run_id на каждый запуск, изоляция запусков, результаты внутри
-  output/_audit/sma/<chapter>/<a|b|c|analysis|precheck>/);
+  output/_audit/sma/<chapter>/<a|b|c|analysis|precheck>/); Фаза 2 адресует
+  слепой вывод Фазы 1 конкретным файлом (при нескольких прогонах — самый
+  свежий) и фиксирует выбранный файл в inputs.phase1 результата;
 - автоматическое копирование готового промпта в буфер обмена;
 - сохранение готового промпта в markdown-файл `agent_prompt.md`
   в корне проекта, на который можно сослаться в задаче агенту
@@ -325,6 +327,9 @@ SMA_REL_ROOT = f"output/{SMA_AUDIT_DIR}/{SMA_DIR_NAME}"
 #   precheck/ детерминированное omission-evidence (НЕ аудитор, НЕ run kind)
 #   analysis/ финальные результаты Analyzer + слепые выводы Фазы 1
 #             (<id>.phase1.json — не обычные final-запуски)
+#             Фаза 2 адресует Фазу 1 конкретным файлом (при нескольких
+#             прогонах — самый свежий по mtime, см. sma_phase1_files) и
+#             фиксирует выбранный файл в inputs.phase1 результата
 SMA_KINDS = ("a", "b", "c", "analysis")   # типы результатов внутри главы
 # Общий Omission Pre-check (scripts/omission_precheck.py) кладёт evidence в
 # отдельный каталог главы; это НЕ каталог аудитора, НЕ run_id-результат и
@@ -453,6 +458,71 @@ def sma_existing_phase1_runs(ch: Chapter) -> list[str]:
         return []
     return sorted(os.path.splitext(name)[0] for name in os.listdir(folder)
                   if name.lower().endswith(".phase1.json"))
+
+def _sma_phase1_file_name(value: str) -> str:
+    """Привести значение к имени файла Фазы 1 (``<id>.phase1.json``).
+
+    Принимает имя файла, ``<id>.phase1`` или голый ``<id>``: нужно и при
+    чтении каталога, и для симуляции в self-test.
+    """
+    name = os.path.basename(str(value).strip())
+    if name.endswith(".json"):
+        return name
+    if name.endswith(".phase1"):
+        return f"{name}.json"
+    return f"{name}.phase1.json"
+
+def _sma_phase1_sort(found: list[tuple[float, str]]) -> list[str]:
+    """Имена файлов Фазы 1 в порядке «самый свежий — первым».
+
+    ``found`` — пары (mtime, имя файла); при равном mtime порядок по имени.
+    Чистая функция: вызывается и при чтении каталога, и в self-test.
+    """
+    return [name for _, name in
+            sorted((-mtime, name) for mtime, name in found)]
+
+def sma_phase1_files(ch: Chapter) -> list[str]:
+    """Файлы слепых выводов Фазы 1 этой главы, самый свежий — первым.
+
+    Имена — с расширением (``<run_id>.phase1.json``); порядок по времени
+    изменения файла (mtime), при равенстве — по имени. Пустой список
+    означает, что Фаза 1 для главы ещё не выполнялась: Фаза 2 в этом случае
+    работать не может. Ничего не создаёт и не изменяет.
+    """
+    folder = sma_chapter_dir(ch, "analysis")
+    if not os.path.isdir(folder):
+        return []
+    found: list[tuple[float, str]] = []
+    for name in os.listdir(folder):
+        if not name.lower().endswith(".phase1.json"):
+            continue
+        try:
+            mtime = os.path.getmtime(os.path.join(folder, name))
+        except OSError:
+            mtime = 0.0
+        found.append((mtime, name))
+    return _sma_phase1_sort(found)
+
+def _sma_phase1_files_for(ch: Chapter,
+                          runs: dict[str, list[str]] | None) -> list[str]:
+    """Файлы Фазы 1 для промпта Фазы 2 (с диска или из симуляции self-test).
+
+    ``runs["phase1"]`` (только self-test) задаёт список в порядке «самый
+    свежий — первым»; в рабочем режиме порядок берётся из ``sma_phase1_files``.
+    """
+    if runs is not None and "phase1" in runs:
+        return [_sma_phase1_file_name(v) for v in runs["phase1"]]
+    return sma_phase1_files(ch)
+
+def _sma_phase1_order_selftest() -> bool:
+    """Проверка порядка файлов Фазы 1 (без записи на диск).
+
+    Самый свежий mtime — первым; при равном mtime порядок по имени.
+    """
+    found = [(100.0, "b.phase1.json"), (300.0, "a.phase1.json"),
+             (200.0, "c.phase1.json"), (300.0, "z.phase1.json")]
+    return _sma_phase1_sort(found) == ["a.phase1.json", "z.phase1.json",
+                                       "c.phase1.json", "b.phase1.json"]
 
 def sma_precheck_rel_path(ch: Chapter) -> str:
     """Путь evidence Omission Pre-check относительно корня AINovelEdit."""
@@ -796,8 +866,9 @@ references/false-positives.md).
 - формулировки, которые формально правильны,
 но не звучат естественно по-русски.
 Ограничения этого проекта (перекрывают каталог скилла):
-- курсив `*…*` и blockquote `>` — НЕ «следы Markdown», это разметка
-по russian-prose-rules;
+- курсив `_…_` и blockquote `>` — НЕ «следы Markdown», это разметка
+по russian-prose-rules; устаревший вариант курсива `*…*` (главы v3/v4)
+в новом и правимом тексте заменяется на `_…_`;
 - реплики персонажей — голос персонажа: характер речи не улучшать;
 - модальные слова («возможно», «кажется») править только после
 сверки с JA;
@@ -1679,8 +1750,15 @@ def prompt_semantic_analyzer(ch: Chapter, runs: dict[str, list[str]] | None = No
     - A+B+C — если запуски C существуют.
     Наличие C не обязательно; majority vote запрещён в обоих режимах.
 
-    ``runs`` — только для self-test (симуляция содержимого каталогов a/b/c);
-    в рабочем режиме список запусков читается с диска.
+    Фаза 1 адресуется КОНКРЕТНЫМ файлом, а не маской: в задание попадает
+    реальный путь ``analysis/<phase1_id>.phase1.json`` (при нескольких слепых
+    прогонах — самый свежий, он же по умолчанию), а имя использованного файла
+    обязательно фиксируется в ``inputs.phase1`` результата. Если файлов Фазы 1
+    нет, задание прямо сообщает об этом и требует STOP.
+
+    ``runs`` — только для self-test (симуляция содержимого каталогов a/b/c и
+    списка файлов Фазы 1 через ключ ``"phase1"``); в рабочем режиме запуски и
+    файлы Фазы 1 читаются с диска.
     """
     analysis_id = new_audit_run_id(ch)
     return "\n\n".join([
@@ -1708,6 +1786,30 @@ def _sma_analyzer_head(ch: Chapter, analysis_id: str,
     pc_path = sma_precheck_rel_path(ch)
     pc_note = (f"{pc_path} (есть — учти как evidence)" if sma_precheck_exists(ch)
                else f"{pc_path} (не найден — работай без него, это норма)")
+    p1_files = _sma_phase1_files_for(ch, runs)
+    if not p1_files:
+        p1_note = (
+            f"ФАЙЛА ФАЗЫ 1 НЕТ: в {an_dir} нет ни одного <id>.phase1.json.\n"
+            "Слепого заключения для этой главы не существует, поэтому эта\n"
+            "схема работать не может. Сначала ОТДЕЛЬНОЕ задание «Смысловой\n"
+            "анализатор — Фаза 1 (blind)», после него — заново сгенерированная\n"
+            "Фаза 2."
+        )
+    elif len(p1_files) == 1:
+        p1_note = (f"{an_dir}{p1_files[0]}\n"
+                   "(единственный слепой вывод Фазы 1 этой главы —\n"
+                   "работай ровно с ним)")
+    else:
+        listed = "\n".join(f"  {i}) {an_dir}{name}"
+                           for i, name in enumerate(p1_files, 1))
+        p1_note = (
+            f"ВНИМАНИЕ: в {an_dir} НЕСКОЛЬКО слепых выводов Фазы 1 (самый\n"
+            f"свежий — первым):\n{listed}\n"
+            f"  По умолчанию используй САМЫЙ СВЕЖИЙ: {an_dir}{p1_files[0]}\n"
+            "  Не смешивай выводы разных слепых прогонов (они не голоса и не\n"
+            "  дополняют друг друга). Выбранный файл обязательно зафиксируй\n"
+            "  в inputs.phase1."
+        )
     return f"""ЗАДАЧА: смысловой анализатор (Analyzer) независимых аудитов A, B и прагматического аудита C.
 Глава: {chap}. Запуск анализа: {analysis_id}.
 
@@ -1722,8 +1824,9 @@ JA — authoritative source of truth (источник смысла): {ch.ja_pat
 RU — text under review (текущий результат): {ch.output_path}
 EN — reference only (только справочный материал): {ch.en_path}
 Зеркало блоков (JA/EN/RU, соседний контекст): {ch.merged_path}
-Слепой вывод Фазы 1 (твоё собственное ПЕРВОНАЧАЛЬНОЕ заключение, файл
-{an_dir}*.phase1.json — сделано БЕЗ evidence):
+Слепой вывод Фазы 1 (твоё собственное ПЕРВОНАЧАЛЬНОЕ заключение, сделано
+БЕЗ evidence) — конкретный файл этого запуска:
+  {p1_note}
 Результаты Auditor A (читай ТОЛЬКО этот каталог): {a_dir}
 Результаты Auditor B (читай ТОЛЬКО этот каталог): {b_dir}
 Результаты Pragmatic Auditor C (читай ТОЛЬКО этот каталог): {c_dir}
@@ -1738,6 +1841,7 @@ a_runs: {a_list}
 b_runs: {b_list}
 c_runs: {c_list}
 precheck: {pc_note}
+phase1: {p1_files[0] if p1_files else "(нет файла Фазы 1 — работать нельзя)"}
 
 РЕЖИМ ЭТОГО ЗАПУСКА: {mode}
 - Режим A + B — если в c/ нет ни одного <run_id>.json: работай только с
@@ -1763,12 +1867,23 @@ def _sma_analyzer_rules() -> str:
 Фаза 1 выполнялась ОТДЕЛЬНЫМ заданием, куда не передавалось НИКАКОГО
 evidence: ни findings A/B/C, ни данных детерминированного pre-check, ни
 происхождения находок, ни прежних analysis-результатов. Её вывод лежит в
-analysis/*.phase1.json — это твоё СОБСТВЕННОЕ ПЕРВОНАЧАЛЬНОЕ заключение
-по чистой сверке JA → RU: есть ли mismatch, есть ли OMISSION, есть ли
-добавленный смысл, есть ли другие существенные ошибки.
-- Если такого файла нет — STOP: Фазу 1 выполнять в этом задании НЕЛЬЗЯ.
+analysis/<phase1_id>.phase1.json — это твоё СОБСТВЕННОЕ ПЕРВОНАЧАЛЬНОЕ
+заключение по чистой сверке JA → RU: есть ли mismatch, есть ли OMISSION,
+есть ли добавленный смысл, есть ли другие существенные ошибки.
+- В задании назван КОНКРЕТНЫЙ файл Фазы 1 (см. блок «конкретный файл этого
+  запуска» и строку phase1 в наборе evidence) — работай ровно с ним, а не с
+  «каким-нибудь» файлом из каталога analysis/.
+- Если задание перечислило НЕСКОЛЬКО слепых выводов Фазы 1 (повторный
+  прогон слепой фазы — норма), бери САМЫЙ СВЕЖИЙ: он указан первым и назван
+  «по умолчанию». Слепые выводы разных прогонов НЕ смешивай: они не голоса и
+  не дополняют друг друга — это два независимых первоначальных заключения.
+- inputs.phase1 результата — обязательный provenance слепой фазы, такой же,
+  как sources.a/b/c для аудиторов: запиши туда имя фактически использованного
+  файла. Без него нельзя проверить, с каким слепым выводом сверялся анализ.
+- Если файла Фазы 1 нет (задание прямо говорит «ФАЙЛА ФАЗЫ 1 НЕТ», а
+  inputs.phase1 = null) — STOP: Фазу 1 выполнять в этом задании НЕЛЬЗЯ.
   Это задание уже содержит evidence, поэтому слепая проверка внутри него
-  невозможна (blindness утрачен). НЕ пытайся выполнить Фазу 1 в рамках
+  невозможна (blindness утрачена). НЕ пытайся выполнить Фазу 1 в рамках
   Фазы 2: сначала запусти ОТДЕЛЬНОЕ задание «Смысловой анализатор —
   Фаза 1 (blind)», сохрани его вывод в analysis/<id>.phase1.json, и только
   после завершения Фазы 1 выполняй Фазу 2.
@@ -1866,6 +1981,10 @@ def _sma_analyzer_format(ch: Chapter, analysis_id: str,
     # inputs.precheck: путь к evidence pre-check или null (pre-check не гонялся)
     pc_input = (f'"{sma_precheck_rel_path(ch)}"' if sma_precheck_exists(ch)
                 else "null")
+    # inputs.phase1: имя файла слепого вывода Фазы 1 (по умолчанию — самый
+    # свежий) или null, если Фазы 1 для главы не было.
+    p1_files = _sma_phase1_files_for(ch, runs)
+    p1_input = f'"{p1_files[0]}"' if p1_files else "null"
     return f"""ФОРМАТ РЕЗУЛЬТАТА (ровно один JSON-объект, без markdown-обёртки):
 {{
   "analysis_id": "{analysis_id}",
@@ -1874,7 +1993,8 @@ def _sma_analyzer_format(ch: Chapter, analysis_id: str,
     "a_runs": [{a_json}],
     "b_runs": [{b_json}],
     "c_runs": [{c_json}],
-    "precheck": {pc_input}
+    "precheck": {pc_input},
+    "phase1": {p1_input}
   }},
   "results": [
     {{
@@ -1903,6 +2023,11 @@ def _sma_analyzer_format(ch: Chapter, analysis_id: str,
   этой главы на момент анализа (в режиме A+B поле c_runs пустое).
 - inputs.precheck — путь к evidence детерминированного omission pre-check
   либо null, если pre-check для главы не прогонялся (это норма).
+- inputs.phase1 — имя файла слепого вывода Фазы 1, с которым сверялся этот
+  результат (по умолчанию — самый свежий, см. задание); provenance слепой
+  фазы, такой же обязательный, как sources.a/b/c. Если файла Фазы 1 не было,
+  там null — это признак того, что анализ выполнен без слепой фазы (STOP, а
+  не валидный результат).
 - sources каждого candidate — из каких запусков A/B/C он собран; пустой
   список означает, что этот аудит находку не находил.
 - sources.precheck — маркер того, что candidate пришёл от omission pre-check:
@@ -2086,7 +2211,7 @@ PROMPTS: list[PromptInfo] = [
         prompt_encoding,
     ),
     PromptInfo(
-        "Решения пользователя (OPEN / PROVISIONAL)",
+        "Решения пользователя (OPEN / DEFERRED / PROVISIONAL)",
         "Применить решения по отложенным вопросам и временным значениям словаря",
         """
 Разбирает решения пользователя по вопросам со статусом OPEN / DEFERRED
@@ -2254,7 +2379,12 @@ PROMPTS: list[PromptInfo] = [
         Вторая фаза: сюда сознательно передаются ВСЕ evidence — findings A,
         B и C, а также evidence детерминированного omission pre-check
         (scripts/omission_precheck.py) — и собственное слепое заключение
-        Фазы 1 (analysis/*.phase1.json).
+        Фазы 1: в задании указывается КОНКРЕТНЫЙ файл
+        (analysis/<phase1_id>.phase1.json; при нескольких прогонах слепой
+        фазы — самый свежий, он же по умолчанию), а имя использованного
+        файла обязательно фиксируется в inputs.phase1 результата.
+        Если файлов Фазы 1 для главы нет, задание требует STOP: сначала
+        отдельный запуск Фазы 1, затем заново сгенерированная Фаза 2.
 
         Analyzer сопоставляет evidence со своим первоначальным выводом:
         он может подтвердить finding, отвергнуть его, создать нового или
@@ -2923,6 +3053,90 @@ def _no_old_module_deps() -> bool:
                 return False
     return True
 
+# ============================================================================
+# SELF-TEST: РЕГРЕСС-СТРАЖИ СКИЛЛОВ
+# ============================================================================
+# Формулировки, которые уже один раз расходились с каноном и потому
+# проверяются механически (dry-run, только чтение файлов скиллов).
+SKILLS_REL_ROOT = os.path.join("AINovelEdit", ".agents", "skills")
+_SKILL_FORBIDDEN_PATTERNS = (
+    (re.compile(r'--text\s+"\.\.\."'),
+     'шаблон `--text "..."`: не-ASCII текст в аргументах CLI запрещён '
+     "(AGENTS.md, «Канал передачи текста правок»; нужен --text-file/"
+     "--replace-file)"),
+    (re.compile(r"\|\s*python\s+scripts/(?:save_block|fix_block)\.py"),
+     "передача текста через конвейер PowerShell (запрещено AGENTS.md)"),
+    (re.compile(r"--file\s+v14-"),
+     "пример команды на замороженном томе v14 (completed.md; скрипты "
+     "откажутся работать)"),
+)
+
+
+def _iter_skill_files() -> list[str]:
+    """Все .md-файлы скиллов (SKILL.md и references/)."""
+    root = os.path.join(ROOT, SKILLS_REL_ROOT)
+    files: list[str] = []
+    for dirpath, _dirs, names in os.walk(root):
+        for name in sorted(names):
+            if name.lower().endswith(".md"):
+                files.append(os.path.join(dirpath, name))
+    return files
+
+
+def _read_text_or_empty(path: str) -> str:
+    try:
+        with open(path, encoding="utf-8") as fh:
+            return fh.read()
+    except OSError:
+        return ""
+
+
+def _skills_regression_selftest() -> list[tuple[str, bool, str]]:
+    """Регресс-стражи формулировок скиллов (dry-run, ничего не пишется).
+
+    Проверяются только реально найденные ранее расхождения: запрещённый
+    канал передачи не-ASCII текста, примеры команд на замороженном томе,
+    взаимные упоминания изолированных аудиторов A/B.
+    """
+    files = _iter_skill_files()
+    hits: list[str] = []
+    for path in files:
+        text = _read_text_or_empty(path)
+        rel = os.path.relpath(path, ROOT).replace("\\", "/")
+        for pattern, why in _SKILL_FORBIDDEN_PATTERNS:
+            if pattern.search(text):
+                hits.append(f"{rel}: {why}")
+    cross: list[str] = []
+    for folder, needle in (("semantic-audit-a", "semantic-audit-b"),
+                           ("semantic-audit-b", "semantic-audit-a")):
+        path = os.path.join(ROOT, SKILLS_REL_ROOT, folder, "SKILL.md")
+        text = _read_text_or_empty(path)
+        if not text:
+            cross.append(f"{folder}/SKILL.md: не читается")
+        elif needle in text:
+            cross.append(f"{folder} упоминает {needle}")
+    return [
+        ("Скиллы: канал --text/пайп и примеры на замороженном томе — NO",
+         bool(files) and not hits,
+         "; ".join(hits) if hits else f"проверено файлов: {len(files)}"),
+        ("Скиллы: A/B не упоминают скилл друг друга (изоляция) — NO",
+         not cross, "; ".join(cross) if cross else ""),
+    ]
+
+
+def _prompt_format_selftest(pa: str, pb: str, pc: str,
+                            ph: str) -> list[tuple[str, bool, str]]:
+    """Инварианты формата промптов A/B/C и разметки в промпте humanizer."""
+    prompts = (pa, pb, pc)
+    return [
+        ("A/B/C: один JSON-объект на запуск с audit_run_id — YES",
+         all('"audit_run_id"' in p for p in prompts)
+         and all("выводи JSON-массив находок" not in p for p in prompts),
+         ""),
+        ("Humanizer: канон курсива `_…_`, `*…*` не объявлен нормой — YES",
+         "курсив `_…_`" in ph and "курсив `*…*`" not in ph, ""),
+    ]
+
 def self_test_semantic_prompts(
     ch: Chapter,
 ) -> tuple[list[tuple[str, bool, str]], dict[str, str]]:
@@ -2936,6 +3150,8 @@ def self_test_semantic_prompts(
     - ``pan``  — реальное состояние каталогов главы (A+B или A+B+C);
     - ``pan_abc`` — симуляция: запуски A, B и C уже существуют;
     - ``pan_ab``  — симуляция: запусков C нет (режим A+B для старых A/B).
+    Плюс три симуляции адресации Фазы 1 из Фазы 2 (``pan_p1`` — один файл
+    Фазы 1, ``pan_p1_many`` — несколько, ``pan_p1_none`` — ни одного).
     """
     pa1 = prompt_semantic_a(ch)
     pa2 = prompt_semantic_a(ch)
@@ -2947,18 +3163,31 @@ def self_test_semantic_prompts(
         "a": ["sim-a-run-1", "sim-a-run-2"],
         "b": ["sim-b-run-1", "sim-b-run-2"],
         "c": ["sim-c-run-1", "sim-c-run-2"],
+        "phase1": ["sim-p1-1"],
     })
     pan_ab = prompt_semantic_analyzer(ch, runs={
         "a": sma_existing_runs(ch, "a"),
         "b": sma_existing_runs(ch, "b"),
         "c": [],
+        "phase1": ["sim-p1-1"],
     })
+    # симуляции адресации Фазы 1: один файл / несколько / ни одного
+    pan_p1 = prompt_semantic_analyzer(ch, runs={
+        "a": ["sim-a-run-1"], "b": ["sim-b-run-1"], "c": [],
+        "phase1": ["sim-p1-1"]})
+    pan_p1_many = prompt_semantic_analyzer(ch, runs={
+        "a": ["sim-a-run-1"], "b": ["sim-b-run-1"], "c": [],
+        "phase1": ["sim-p1-1", "sim-p1-2"]})
+    pan_p1_none = prompt_semantic_analyzer(ch, runs={
+        "a": ["sim-a-run-1"], "b": ["sim-b-run-1"], "c": [],
+        "phase1": []})
     pan1 = prompt_semantic_analyzer_phase1(ch)
     rr = prompt_rules_recheck(ch)
+    ph = prompt_humanizer(ch)
     # глава без pre-check: проверка, что его отсутствие не ломает Фазу 2
     ch_nopc = Chapter(99, "99")
     pan_nopc = prompt_semantic_analyzer(ch_nopc, runs={
-        "a": ["sim-x"], "b": ["sim-x"], "c": []})
+        "a": ["sim-x"], "b": ["sim-x"], "c": [], "phase1": ["sim-p1-1"]})
     chap = sma_chapter_id(ch)
     a_dir = f"{SMA_REL_ROOT}/{chap}/a/"
     b_dir = f"{SMA_REL_ROOT}/{chap}/b/"
@@ -3088,8 +3317,32 @@ def self_test_semantic_prompts(
         ("Фаза 2: провенанс (sources) присутствует — YES",
          '"sources"' in pan and "ПРОИСХОЖДЕНИЕ (sources) НЕ ГОЛОСУЕТ" in pan,
          ""),
-        ("Фаза 2: ссылка на слепой вывод Фазы 1 — YES",
-         "*.phase1.json" in pan and "ПЕРВОНАЧАЛЬНОЕ" in pan, ""),
+        # ---- ФАЗА 2 ↔ ФАЗА 1: конкретный ФАЙЛ, а не маска *.phase1.json ----
+        ("Фаза 2: один файл Фазы 1 → конкретный путь (без glob) — YES",
+         f"{an_dir}sim-p1-1.phase1.json" in pan_p1
+         and "*.phase1.json" not in pan_p1
+         and "ПЕРВОНАЧАЛЬНОЕ" in pan_p1,
+         "sim-p1-1.phase1.json"),
+        ("Фаза 2: выбранный файл Фазы 1 записан в inputs.phase1 — YES",
+         '"phase1": "sim-p1-1.phase1.json"' in pan_p1
+         and "inputs.phase1" in pan_p1,
+         ""),
+        ("Фаза 2: несколько файлов Фазы 1 → перечислены, по умолчанию свежий — YES",
+         f"{an_dir}sim-p1-1.phase1.json" in pan_p1_many
+         and f"{an_dir}sim-p1-2.phase1.json" in pan_p1_many
+         and "НЕСКОЛЬКО слепых выводов Фазы 1" in pan_p1_many
+         and "САМЫЙ СВЕЖИЙ" in pan_p1_many
+         and '"phase1": "sim-p1-1.phase1.json"' in pan_p1_many,
+         ""),
+        ("Фаза 2: слепые прогоны не смешиваются и не голосуют — YES",
+         "Не смешивай выводы разных слепых прогонов" in pan_p1_many
+         and "они не голоса" in pan_p1_many, ""),
+        ("Фаза 2: нет файла Фазы 1 → inputs.phase1 = null и отказ — YES",
+         "ФАЙЛА ФАЗЫ 1 НЕТ" in pan_p1_none
+         and '"phase1": null' in pan_p1_none
+         and "нет файла Фазы 1 — работать нельзя" in pan_p1_none, ""),
+        ("Фаза 2: порядок файлов Фазы 1 — по mtime (свежий первым) — YES",
+         _sma_phase1_order_selftest(), ""),
         # ---- ФАЗА 2 БЕЗ phase1: STOP + отдельный запуск Фазы 1 ----
         # (внутри evidence-review задания Фазу 1 выполнять НЕЛЬЗЯ: blindness
         # утрачен — проверяется по тексту сгенерированного prompt)
@@ -3156,6 +3409,10 @@ def self_test_semantic_prompts(
          and "Отсутствие `---` при явной смене сцены — WARNING" not in rr
          and "обязательные разделители сцен" not in rr,
          ""),
+        # ---- ФОРМАТ ПРОМПТОВ A/B/C И РАЗМЕТКА HUMANIZER ----
+        *_prompt_format_selftest(pa1, pb, pc1, ph),
+        # ---- РЕГРЕСС-СТРАЖИ СКИЛЛОВ (канал текста, изоляция A/B) ----
+        *_skills_regression_selftest(),
         # ---- LEGACY: GAP-аудит не активен, функция сохранена ----
         ("prompt_gap_audit: больше не в активном меню PROMPTS — YES",
          not any(getattr(p, "generator", None) is prompt_gap_audit

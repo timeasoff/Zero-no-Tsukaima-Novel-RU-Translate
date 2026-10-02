@@ -63,9 +63,11 @@ JA > EN при конфликте
 
 Список завершённых томов ведётся в [completed.md](completed.md). Правила:
 
-- **Завершённые тома не редактируются**: `normalize.py`, `update_merged.py`,
-  `save_block.py`, `fix_block.py` отказываются их обрабатывать. Текст
-  `output/vNN-*.md` завершённых томов — read-only.
+- **Завершённые тома не редактируются**: `tools/normalize.py`,
+  `update_merged.py`, `save_block.py`, `fix_block.py` отказываются их
+  обрабатывать. Текст `output/vNN-*.md` завершённых томов — read-only.
+  (`tools/` — каталог в корне РЕПОЗИТОРИЯ, рядом с `AINovelEdit/`; внутри
+  `AINovelEdit/` лежит только `scripts/`.)
 - **При расхождении терминов, имён, названий, заклинаний, титулов и форм
   обращений истина — форма из завершённого тома.** Словарь `dictionary.md`
   при этом остаётся каноном лексической идентичности; если словарь и
@@ -506,10 +508,15 @@ FINAL AUDIT             → проверка результата по всем 
                           всех исправлений; при сравнении ревизий — также DRIFT)
 ```
 
-Диаграмма описывает оба режима: при первичной обработке (скилл novel-editor)
-слои до save-progress идут на черновике, после save-progress — механические
-сканеры (им нужен обновлённый merged); в режиме аудита текст уже сохранён,
-self-review предшествует каждой правке fix_block.py, остальные слои идут
+Диаграмма перечисляет слои, а не задаёт жёсткий однопроходный порядок.
+При первичной обработке блока (скилл `novel-editor`, режим «Обработка одного
+блока») порядок такой: `translation-audit` → `novel-editor` →
+`russian-humanizer` → `russian-prose-rules` → ручной разбор
+`russian-grammar-control` → `save-progress` (save_block + update_merged) →
+`self-review` перед каждой правкой → механические сканеры
+(`check_records`, `grammar_scan`, `style_scan`, `format_scan` — им нужен
+обновлённый merged) → FINAL AUDIT. В режиме аудита текст уже сохранён,
+`self-review` предшествует каждой правке `fix_block.py`, остальные слои идут
 сверху вниз с RECHECK после правок. Поиск пропусков — общий детерминированный
 `scripts/omission_precheck.py` (см. «Legacy: автоматический semantic audit»);
 старый режим генератора промптов «Поиск пропущенных отрывков (GAP-аудит)»
@@ -629,7 +636,9 @@ precheck/ детерминированное omission-evidence
           (НЕ аудитор, НЕ run kind, НЕ входит в SMA_KINDS)
 analysis/ финальные результаты Analyzer (<id>.json / <id>.md)
           + слепые выводы Фазы 1 (<id>.phase1.json — не обычные
-          final-запуски; учитывает их helper sma_existing_phase1_runs)
+          final-запуски; учитывает их helper sma_existing_phase1_runs;
+          Фаза 2 адресует Фазу 1 конкретным файлом, при нескольких
+          прогонах — самый свежий, см. sma_phase1_files)
 ```
 
 Результаты — `output/_audit/sma/<chapter>/{a,b,c,analysis,precheck}/`; запуск
@@ -653,7 +662,13 @@ Analyzer работает в двух режимах и ДВУХ НЕЗАВИС�
   и сверкой с этой документацией). Никаких вердиктов Phase 1 не выносит —
   только `analysis/<id>.phase1.json`.
 - **Phase 2 — EVIDENCE REVIEW**: только после Phase 1 приходят A/B/C и omission
-  pre-check и сверяются с собственным первоначальным выводом. Если
+  pre-check и сверяются с собственным первоначальным выводом. Задание
+  адресует слепой вывод **конкретным файлом**
+  (`analysis/<phase1_id>.phase1.json`), а не маской: если слепых прогонов
+  несколько, берётся самый свежий (он же «по умолчанию»; порядок —
+  `sma_phase1_files`), прогоны не смешиваются, а имя фактически
+  использованного файла обязательно фиксируется в `inputs.phase1` результата
+  (provenance слепой фазы, как `sources.a/b/c` для аудиторов). Если
   `analysis/<id>.phase1.json` отсутствует — Phase 2 **останавливается**:
   сначала отдельный запуск Phase 1, после его завершения — отдельный
   Phase 2; выполнять Phase 1 внутри evidence-review задания запрещено
@@ -684,10 +699,14 @@ semantic mismatch. Поле `issue_type` (опционально, обратна
   аудиторы промолчали (majority vote запрещён).
 - Pre-check — **evidence, а не голос и не Auditor D**: он выдаёт только
   `severity=CANDIDATE` с `confidence` и никогда не `CONFIRMED_ERROR`.
-- Обязательные поля omission-finding: `missing_content` (что именно исчезло)
-  и `not_compression_reason` (почему это потеря содержания, а не компрессия).
-  «JA длиннее RU» сам по себе пропуском не считается; слияние абзацев и
-  повтор — тоже.
+- Обязательные поля omission-finding: `issue_type` (=
+  `MISSING_TRANSLATION`), `omission_scope`, `omission_kind`, `ja_span`,
+  `ru_before`, `missing_content` и `not_compression_reason` (`ru_after` —
+  если после пропуска есть текст); полный канонический набор проверяет
+  `scripts/semantic_findings.py`. `missing_content` (что именно исчезло)
+  и `not_compression_reason` (почему это потеря содержания, а не компрессия)
+  — ключевые: «JA длиннее RU» сам по себе пропуском не считается; слияние
+  абзацев и повтор — тоже.
 - Решение по omission (принимает только Analyzer): однозначный пропуск →
   `CONFIRMED_ERROR` (+ `FIXED`, когда правка разрешена); неясно, допустимо ли
   сокращение → `DISPUTED` + `REPORT_ONLY`; компрессия оказалась допустимой →

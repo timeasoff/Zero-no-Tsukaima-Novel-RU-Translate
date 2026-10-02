@@ -33,7 +33,11 @@ engulfed by the furious peasants around.
 
 # Когда запускать (обязательные точки)
 
-1. В цикле novel-editor — сразу после russian-humanizer и ДО save_block.py.
+1. В цикле novel-editor — сразу после russian-humanizer и ДО save_block.py
+   (ручной разбор схем по черновику). **Шаг 0 (механический предфильтр)
+   идёт отдельно и позже**: `grammar_scan.py` читает merged-файл, поэтому
+   запускай его только после сохранения блока и `update_merged.py`
+   (иначе увидишь старое состояние; см. скилл `novel-editor`, п. 7).
 2. После КАЖДОЙ правки через fix_block.py: правки аудита — самый частый
    источник новых грамматических ошибок; правка без повторного
    грамматического контроля запрещена.
@@ -41,10 +45,11 @@ engulfed by the furious peasants around.
 
 # Процедура
 
-**Шаг 0. Механический предфильтр** (сужает зону поиска):
+**Шаг 0. Механический предфильтр** (сужает зону поиска; требует свежий
+merged — после `update_merged.py`):
 
 ```
-python scripts/grammar_scan.py --file v14-chXX.md --report
+python scripts/grammar_scan.py --file vXX-chYY.md --report
 ```
 
 Скрипт читает merged-файл (после update_merged.py) и печатает кандидатов:
@@ -110,7 +115,10 @@ EN-пассив ↔ RU возвратный глагол, EN «X's Y was …», 
   AGENTS.md, «Classification и disposition».
 * Черновик блока (ещё не сохранён) — правь прямо в черновике.
 * Сохранённый блок — только через `fix_block.py`
-  (`--file vXX-chYY.md --block N --text "..."`), затем
+  (`--file vXX-chYY.md --block N --replace-file fixes.json` для замен
+  «было → стало» или `--text-file new_block.txt` для замены блока целиком;
+  не-ASCII текст в аргументах командной строки запрещён — AGENTS.md,
+  «Канал передачи текста правок»), затем
   `python scripts/update_merged.py --file vXX-chYY.md` и повторный прогон
   шагов 0–2 по этому блоку: правка — это новый, ещё не проверенный текст.
 * Файл `output/_audit/_prefilter/vXX-chYY-grammar.md` от `--report` — вспомогательная
