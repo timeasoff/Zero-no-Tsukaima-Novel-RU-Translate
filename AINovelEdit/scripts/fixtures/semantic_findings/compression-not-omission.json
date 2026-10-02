@@ -1,0 +1,21 @@
+{
+  "case": "compression-not-omission",
+  "note": "Негативный кейс (защита от ложного срабатывания): JA длиннее RU, но omission НЕ доказан — переводчик законно сжал формулировку. Finding ошибочно помечен как MISSING_TRANSLATION, однако не называет, ЧТО исчезло (missing_content пуст), опираясь лишь на разницу длины. Валидатор обязан отклонить такой finding.",
+  "expect": "INVALID",
+  "expect_error": "missing_content",
+  "finding": {
+    "block": 7,
+    "issue_type": "MISSING_TRANSLATION",
+    "omission_scope": "MULTI_SENTENCE",
+    "omission_kind": "PARTIAL",
+    "severity": "WARNING",
+    "source": "その場の全員が、息をのんで、固まっていた。",
+    "ja_span": "その場の全員が、息をのんで、固まっていた。",
+    "current": "Все замерли.",
+    "ru_before": "Все замерли.",
+    "ru_after": "",
+    "missing_content": "",
+    "not_compression_reason": "",
+    "reason": "JA-предложение длиннее RU-перевода."
+  }
+}

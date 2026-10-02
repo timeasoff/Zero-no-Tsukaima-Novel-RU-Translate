@@ -132,9 +132,15 @@ description: Независимый прагматический аудит пе
 | `problem` | Тип проблемы (коротко) |
 | `reason` | Объяснение расхождения по JA → RU |
 | `pragmatic_reason` | Почему это ИМЕННО прагматическая проблема, а не литературное предпочтение |
+| `issue_type` | Класс finding (опционально): `MISTRANSLATION` / `NUANCE_SHIFT` / `LEXICAL_MISMATCH` / `PRAGMATIC_SHIFT` / `STYLE_ISSUE` / `MISSING_TRANSLATION` / `ADDED_CONTENT` / `AMBIGUITY` / `OTHER` |
 | `confidence` | `HIGH` / `MEDIUM` / `LOW` |
 | `suggestion` | Предложенный вариант (опционально) |
 | `severity` | `ERROR` / `WARNING` / `CANDIDATE` |
+
+Для `issue_type: MISSING_TRANSLATION` дополнительно обязательны
+`omission_scope`, `omission_kind`, `ja_span`, `ru_before`, `missing_content`,
+`not_compression_reason` (`ru_after` — если после пропуска есть текст). Валидатор
+схемы — `scripts/semantic_findings.py`.
 
 ### Уровни severity
 
@@ -149,7 +155,30 @@ description: Независимый прагматический аудит пе
 - `LOW` — только при `severity: CANDIDATE`; нет уверенности — не включай
   находку вообще
 
+## Пропуски (MISSING_TRANSLATION): не отдельная обязанность C
+
+Систематический поиск пропусков — **НЕ твоя задача**. Его выполняет общий
+детерминированный слой **Omission Pre-check** (`scripts/omission_precheck.py`)
+до запуска аудиторских сессий. Отдельный универсальный omission scan не
+выполняй и не ходи по тексту в поисках всех пропусков.
+
+Если отсутствие реплики/хода непосредственно проявилось как прагматическая
+проблема в рамках твоей обычной проверки — сообщи это, это нормально:
+
+- `issue_type: MISSING_TRANSLATION`;
+- обязательные поля `omission_scope`, `omission_kind`, `ja_span`,
+  `ru_before`, `missing_content`, `not_compression_reason`
+  (валидатор — `scripts/semantic_findings.py`).
+
+Граница классов: `PRAGMATIC_SHIFT` — речевой акт **передан, но иначе**;
+`MISSING_TRANSLATION` — акта/реплики **нет вовсе**.
+
+Не считай omission признаком того, что «JA длиннее RU»: опущены служебные и
+риторические элементы, повтор — норма, если акт и подтекст сохранены.
+**Отсутствие omission-findings у C — нормальное и ожидаемое поведение.**
+
 ## Примеры проблем, которые ты ищешь
+
 
 ### Пример 1: Намёк → прямое утверждение
 

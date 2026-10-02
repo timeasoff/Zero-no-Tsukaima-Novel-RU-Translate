@@ -116,6 +116,14 @@ AINovelEdit/
 │   │                            #   строки внутри записи ED_RU)
 │   ├── address_scan.py          # предфильтр обращений (мисс/господин + имя)
 │   │                            #   → кандидаты forms-of-address
+│   ├── semantic_findings.py     # схема смысловых findings A/B/C+Analyzer:
+│   │                            #   issue_type, сквозной MISSING_TRANSLATION,
+│   │                            #   omission_scope, --selftest/--validate/--render
+│   │                            #   (+ fixtures/semantic_findings/, регрессия
+│   │                            #   v3-ch04/бл.15)
+│   ├── omission_precheck.py     # Common Omission Pre-check: общий слой ДО A/B/C,
+│   │                            #   JA↔ED_RU, сигналы S1/S2/S3, --selftest
+│   │                            #   (evidence: output/_audit/sma/<ch>/precheck/)
 │   ├── merged_io.py             # общий разбор merged (## Блок N) и блок-файлов
 │   ├── completed.py             # реестр завершённых томов (completed.md)
 │   └── update_merged.py         # обновление зеркала merged/
@@ -463,9 +471,11 @@ FINAL AUDIT             → проверка результата по всем 
 слои до save-progress идут на черновике, после save-progress — механические
 сканеры (им нужен обновлённый merged); в режиме аудита текст уже сохранён,
 self-review предшествует каждой правке fix_block.py, остальные слои идут
-сверху вниз с RECHECK после правок. Отдельный режим генератора промптов —
-«Поиск пропущенных отрывков (GAP-аудит)» — механическая проверка полноты
-покрытия JA (счёт реплик, якорные ключи, сцено-чек-лист).
+сверху вниз с RECHECK после правок. Поиск пропусков — общий детерминированный
+`scripts/omission_precheck.py` (см. «Legacy: автоматический semantic audit»);
+старый режим генератора промптов «Поиск пропущенных отрывков (GAP-аудит)»
+(`tools/generate_agent_prompt.py::prompt_gap_audit`) помечен LEGACY, из
+активного меню убран и в текущем pipeline НЕ используется.
 
 **Важно:** `grammar_scan.py`, `style_scan.py`, `format_scan.py` (и опционально
 `drift_scan.py`) — механические предфильтры кандидатов, а не источник
@@ -493,15 +503,51 @@ output-файлу (`output/vXX-chYY.md`), не по merged.
 
 ## Legacy: автоматический semantic audit (НЕ реализован)
 
+**К той же категории легаси относится и `prompt_gap_audit()`**
+(`tools/generate_agent_prompt.py`) — старый LLM-режим GAP-аудита: самостоятельный
+поиск/классификация/исправление пропусков через `fix_block.py`,
+`update_merged.py`, отчёт в `output/_audit/vXX-chYY.md` и `_log`. Помечен
+`LEGACY / DEPRECATED / NOT USED IN CURRENT PIPELINE`, из активного меню
+`generate_agent_prompt.py` удалён, функция сохранена только как исторический
+задел (в нём есть полезные эвристики, потенциально пригодные для
+`scripts/omission_precheck.py`: сверка сдвига границ блоков, повторная проверка
+несколькими ключами, выборка середины, поиск фрагмента в другом блоке,
+сцено-чек-лист). Он НЕ переписан под новую архитектуру, НЕ интегрирован в
+Analyzer и НЕ создаёт отдельного аудитора. Реальный GAP-аудит не запускается.
+
 Рабочая архитектура смыслового аудита — только:
 
 ```text
-Semantic Audit A ──┐
-                   ├→ Semantic Analyzer A+B+C
-Semantic Audit B ──┤
-                   │
-Pragmatic Audit C ─┘
+            JA / RU (+ контекст)
+                   ↓
+       Common Omission Pre-check          ← scripts/omission_precheck.py
+                   ↓                      (детерминированный, НЕ LLM-аудитор)
+      ┌────────────┼────────────┐
+      ↓            ↓            ↓
+Semantic Audit A  Semantic Audit B  Pragmatic Audit C
+      └────────────┼────────────┘
+                   ↓
+              Semantic Analyzer            ← ДВЕ НЕЗАВИСИМЫЕ ФАЗЫ
+              ├─ Phase 1 (BLIND): только JA + RU + контекст,
+              │  без findings/evidence/sources → analysis/<id>.phase1.json
+              └─ Phase 2 (EVIDENCE): A/B/C + omission pre-check
+                 сверяются с собственным выводом Phase 1
 ```
+
+**Common Omission Pre-check** (`scripts/omission_precheck.py`) — общий слой,
+запускаемый **до** независимых аудиторских сессий. Он детерминированно сверяет
+JA ↔ ED_RU, находит потенциально непокрытые содержательные JA-фрагменты
+(обрыв хвоста, пустой RU, числовой якорь), вычисляет приблизительный
+`omission_scope` и кладёт evidence в
+`output/_audit/sma/<chapter>/precheck/omission-precheck.json` (и `.md`).
+
+- Это **не Auditor D**: не LLM-аудитор, не голос, не вердикт — только
+  evidence уровня `severity=CANDIDATE` с `confidence`.
+- A/B/C **не обязаны** искать пропуски систематически (их специализации не
+  менялись); если пропуск попадается им в рамках обычной работы — находка
+  допустима. Отсутствие omission-findings у A/B/C — норма.
+- Окончательное решение (CONFIRMED_ERROR / DISPUTED / FALSE_POSITIVE /
+  OPTIONAL) принимает Analyzer по сверке JA → RU.
 
 Слои разделены по классу проблем:
 
@@ -524,22 +570,60 @@ A, B и C независимы: каждый работает в изолиро�
 JA / текущий RU / EN / соседние блоки, самостоятельно формирует evidence и
 не видит результатов других аудиторов (и не читает Analyzer).
 
-Результаты — `output/_audit/sma/<chapter>/{a,b,c,analysis}/`; запуск промптов —
-через `tools/generate_agent_prompt.py` (режимы «Смысловой аудит A»,
-«Смысловой аудит B», «Прагматический аудит C», «Смысловой анализатор A+B+C»).
-Каждый запуск A/B/C получает уникальный `audit_run_id` и не перезаписывает
-предыдущие.
+Результаты — `output/_audit/sma/<chapter>/{a,b,c,analysis,precheck}/`; запуск
+промптов — через `tools/generate_agent_prompt.py` (режимы «Смысловой аудит A»,
+«Смысловой аудит B», «Прагматический аудит C», «Смысловой анализатор — Фаза 1
+(blind)» и «Смысловой анализатор — Фаза 2 (evidence review)»). Каждый запуск
+A/B/C получает уникальный `audit_run_id` и не перезаписывает предыдущие.
 
-Analyzer работает в двух режимах с прежней логикой (сначала самостоятельная
-проверка JA → RU — фаза 1, и только потом findings аудиторов — фаза 2;
-majority vote запрещён, статусы и действия не менялись):
+Analyzer работает в двух режимах и ДВУХ НЕЗАВИСИМЫХ ФАЗАХ
+(majority vote запрещён, статусы и действия не менялись):
 
+- **Phase 1 — BLIND**: вход только JA + RU + контекст; findings A/B/C,
+  evidence pre-check, `sources`, списки запусков и прежние analysis-результаты
+  в это задание физически не передаются (проверяется self-test по итоговому
+  тексту промпта). Никаких вердиктов Phase 1 не выносит — только
+  `analysis/<id>.phase1.json`.
+- **Phase 2 — EVIDENCE REVIEW**: только после Phase 1 приходят A/B/C и omission
+  pre-check и сверяются с собственным первоначальным выводом.
 - `A + B` — если запусков C ещё нет: C необязателен для старых глав;
 - `A + B + C` — если запуски C существуют; «A+B+C согласны → ошибка» и
-  «только C нашёл → false positive» одинаково недопустимы.
+  «только C нашёл → false positive» одинаково недопустимы;
+- отсутствие pre-check не мешает работе.
 
 Provenance каждого candidate — `sources.a` / `sources.b` / `sources.c`
-(все выбранные запуски каждой линии).
+(все выбранные запуски каждой линии) и `sources.precheck` (маркер
+детерминированного pre-check; это evidence, а не голос).
+
+**Сквозный класс пропусков перевода (`MISSING_TRANSLATION`).** Пропуск
+содержательного фрагмента JA в RU — отдельный тип finding, а не частный
+semantic mismatch. Поле `issue_type` (опционально, обратная совместимость) и
+масштаб `omission_scope` (`PHRASE` → `SENTENCE` → `DIALOGUE_FRAGMENT` →
+`MULTI_SENTENCE` → `BLOCK_PART` → `FULL_BLOCK` → `MULTI_BLOCK`) канонизированы
+в `scripts/semantic_findings.py` (валидатор + `--selftest` + фикстуры).
+
+- Первичное обнаружение — **Common Omission Pre-check**
+  (`scripts/omission_precheck.py`), общий детерминированный слой, запускаемый
+  **до** A/B/C. A/B/C пропуски систематически **не ищут** (их специализации не
+  менялись); пропуск, попавшийся им в рамках обычной работы, — допустимая
+  находка. Analyzer дополнительно обязан проверять полноту покрытия в фазе 1
+  самостоятельно и вправе создать candidate, даже если pre-check и все
+  аудиторы промолчали (majority vote запрещён).
+- Pre-check — **evidence, а не голос и не Auditor D**: он выдаёт только
+  `severity=CANDIDATE` с `confidence` и никогда не `CONFIRMED_ERROR`.
+- Обязательные поля omission-finding: `missing_content` (что именно исчезло)
+  и `not_compression_reason` (почему это потеря содержания, а не компрессия).
+  «JA длиннее RU» сам по себе пропуском не считается; слияние абзацев и
+  повтор — тоже.
+- Решение по omission (принимает только Analyzer): однозначный пропуск →
+  `CONFIRMED_ERROR` (+ `FIXED`, когда правка разрешена); неясно, допустимо ли
+  сокращение → `DISPUTED` + `REPORT_ONLY`; компрессия оказалась допустимой →
+  `FALSE_POSITIVE` + `PRESERVED`.
+- Regression-эталон: pre-check обязан обнаружить v3-ch04 / блок 15 в
+  ДОфиксовом состоянии и молчать на текущем исправленном блоке
+  (`python scripts/omission_precheck.py --selftest`, кейсы 4 и 7); fixture —
+  `scripts/fixtures/semantic_findings/v3-ch04-block15.omission.json`.
+  Существующие A/B/C evidence и старые analysis-JSON не изменяются.
 
 Автоматический (orchestrator) контур смыслового аудита вынесен в
 [legacy/semantic-audit-auto/](legacy/semantic-audit-auto/LEGACY.md) и имеет

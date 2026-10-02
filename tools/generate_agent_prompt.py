@@ -9,13 +9,17 @@
 - централизованный контекст проекта;
 - поддержка отдельных режимов аудита и обработки;
 - режим обработки одного блока;
-- режим поиска пропущенных отрывков (GAP-аудит);
+- режим поиска пропущенных отрывков (GAP-аудит) — LEGACY/DEPRECATED,
+  из активного меню убран (см. prompt_gap_audit); поиск пропусков выполняет
+  AINovelEdit/scripts/omission_precheck.py;
 - разбор решений пользователя (OPEN / DEFERRED, PROVISIONAL);
 - подробное описание режима перед подтверждением;
 - независимый смысловой аудит (SMA): отдельные режимы Auditor A, Auditor B,
-  Pragmatic Auditor C (прагматика / подтекст) и Analyzer A+B+C (уникальный
+  Pragmatic Auditor C (прагматика / подтекст) и Analyzer в двух НЕЗАВИСИМЫХ
+  фазах — «Фаза 1 (blind)» (только JA + RU + контекст, без evidence) и
+  «Фаза 2 (evidence review)» (A/B/C + omission pre-check) — (уникальный
   audit_run_id на каждый запуск, изоляция запусков, результаты внутри
-  output/_audit/sma/<chapter>/<a|b|c|analysis>/);
+  output/_audit/sma/<chapter>/<a|b|c|analysis|precheck>/);
 - автоматическое копирование готового промпта в буфер обмена;
 - сохранение готового промпта в markdown-файл `agent_prompt.md`
   в корне проекта, на который можно сослаться в задаче агенту
@@ -305,6 +309,10 @@ SMA_AUDIT_DIR = "_audit"                  # output/_audit/
 SMA_DIR_NAME = "sma"                      # output/_audit/sma/
 SMA_REL_ROOT = f"output/{SMA_AUDIT_DIR}/{SMA_DIR_NAME}"
 SMA_KINDS = ("a", "b", "c", "analysis")   # типы результатов внутри главы
+# Общий Omission Pre-check (scripts/omission_precheck.py) кладёт evidence в
+# отдельный каталог главы; это НЕ каталог аудитора и НЕ run_id-результат.
+SMA_PRECHECK_KIND = "precheck"
+SMA_PRECHECK_FILE = "omission-precheck.json"
 _SMA_ISSUED_IDS: set[str] = set()         # гарантия уникальности в процессе
 
 # Формулировки изоляции (используются и в промптах, и в self-test).
@@ -378,6 +386,25 @@ def sma_existing_runs(ch: Chapter, kind: str) -> list[str]:
     ids = [os.path.splitext(name)[0] for name in os.listdir(folder)
            if name.lower().endswith(".json")]
     return sorted(ids)
+
+def sma_precheck_rel_path(ch: Chapter) -> str:
+    """Путь evidence Omission Pre-check относительно корня AINovelEdit."""
+    return (f"{SMA_REL_ROOT}/{sma_chapter_id(ch)}/{SMA_PRECHECK_KIND}/"
+            f"{SMA_PRECHECK_FILE}")
+
+def sma_precheck_abs_path(ch: Chapter) -> str:
+    """Абсолютный путь evidence Omission Pre-check."""
+    return os.path.join(sma_chapter_dir(ch, SMA_PRECHECK_KIND),
+                        SMA_PRECHECK_FILE)
+
+def sma_precheck_exists(ch: Chapter) -> bool:
+    """True, если для этой главы уже прогнан Omission Pre-check."""
+    return os.path.isfile(sma_precheck_abs_path(ch))
+
+def sma_phase1_rel_path(ch: Chapter, phase1_id: str) -> str:
+    """Путь слепого вывода Фазы 1 (её собственный результат, не evidence)."""
+    return sma_result_rel_path(ch, "analysis", f"{phase1_id}.phase1", "json")
+
 
 def _load_merged_io():
     """Ленивый импорт scripts/merged_io.py (общий разбор блок-файлов)."""
@@ -567,7 +594,10 @@ PRESERVED — ... / USER DECISION / ???); обнаружение сигнала 
 Перед запуском сканеров обнови merged (scripts/update_merged.py). Прогони
 также check_records.py, address_scan.py и format_scan.py (format_scan читает
 output-файл напрямую); при необходимости сравнить ревизии — drift_scan.py;
-при подозрении на пропуски используй отдельный режим «Поиск пропущенных отрывков (GAP-аудит)».
+при подозрении на пропуски прогони детерминированный pre-check
+scripts/omission_precheck.py (его evidence для Analyzer —
+output/_audit/sma/<chapter>/precheck/); старый режим «GAP-аудит»
+— LEGACY и в меню недоступен.
 В конце сформируй итоговый отчёт в output/_audit/vXX-chYY.md:
 GRAMMAR, STYLE, FORMAT (и DRIFT при сравнении веток) — с судьбой каждого кандидата
 format_scan.py (FIXED / FALSE POSITIVE / PRESERVED — … / USER DECISION / ???).
@@ -871,6 +901,30 @@ CLOSED (оставлено как есть, но решение пользова
 """.strip()
 
 def prompt_gap_audit(ch: Chapter) -> str:
+    # LEGACY / DEPRECATED / NOT USED IN CURRENT PIPELINE.
+    #
+    # Этот prompt относится к СТАРОЙ архитектуре поиска пропусков и НЕ должен
+    # использоваться как рабочий способ поиска omission. Сейчас пропуски
+    # ищет общий детерминированный слой:
+    #
+    #     JA + RU → Common Omission Pre-check (AINovelEdit/scripts/omission_precheck.py)
+    #                 → candidate evidence (severity=CANDIDATE)
+    #                 → A + B + C (независимые аудиторы, пропуски НЕ ищут
+    #                               систематически)
+    #                 → Analyzer (Phase 1 BLIND, Phase 2 EVIDENCE) — решает сам
+    #
+    # prompt_gap_audit убран из активного меню PROMPTS (как prompt_dual_
+    # semantic_audit), функция сохранена только как legacy-задел: здесь есть
+    # полезные эвристики, которые могут быть перенесены в omission_precheck.py
+    # как будущие сигналы (проверка сдвига границ блоков, повторная сверка
+    # несколькими ключами, выборочная проверка середины, поиск фрагмента в
+    # другом блоке, сцено-чек-лист). НЕ переписывать под новую архитектуру,
+    # НЕ интегрировать в Analyzer, НЕ превращать в ещё одного аудитора.
+    # См. также: legacy/semantic-audit-auto/ — тот же статус легаси.
+    #
+    # Само тело prompt ниже — исторический текст (старый LLM-workflow:
+    # собственная классификация, FIXED, fix_block.py, update_merged.py,
+    # отчёт в output/_audit/vXX-chYY.md + _log). Оставлено без изменений.
     return f"""
 {project_context(ch)}
 РЕЖИМ: ПОИСК ПРОПУЩЕННЫХ ОТРЫВКОВ (GAP-АУДИТ)
@@ -1385,8 +1439,122 @@ OUTPUT FILE (единственный файл этого запуска):
 # компактными: head (роль и входы) + rules (порядок и политика правок) +
 # format (формат JSON/MD и пути результата).
 # ---------------------------------------------------------------------------
+def prompt_semantic_analyzer_phase1(ch: Chapter) -> str:
+    """ФАЗА Analyzer 1 — ПОЛНОСТЬЮ BLIND (только JA + RU + контекст).
+
+    В этот промпт физически НЕ передаются: findings A/B/C, evidence Omission
+    Pre-check, provenance (sources), списки запусков и результаты прежних
+    анализов. Изоляция проверяется self-test по итоговому тексту промпта
+    (см. ``self_test_semantic_prompts``), а не только по формулировкам.
+
+    Роль: независимая оценка JA → RU. Никакого отдельного алгоритма поиска
+    пропусков здесь не запускается — просто самостоятельное сравнение
+    перевода целиком.
+    """
+    phase1_id = new_audit_run_id(ch)
+    return "\n\n".join([
+        _sma_analyzer_p1_head(ch, phase1_id),
+        _sma_analyzer_p1_rules(),
+        _sma_analyzer_p1_format(ch, phase1_id),
+    ])
+
+def _sma_analyzer_p1_head(ch: Chapter, phase1_id: str) -> str:
+    chap = sma_chapter_id(ch)
+    p1_out = sma_phase1_rel_path(ch, phase1_id)
+    return f"""ЗАДАЧА: смысловой анализатор (Analyzer), ФАЗА 1 — СЛЕПАЯ ПРОВЕРКА.
+Глава: {chap}. Запуск фазы: {phase1_id}.
+
+РОЛЬ
+Ты — СМЫСЛОВОЙ АНАЛИЗАТОР, но в Фазе 1 ты работаешь как чистая независимая
+сверка JA → RU. Ты ещё не видел ничьих находок и ничьих выводов — и не должен
+их видеть. Фаза 1 обязана быть настоящей независимой оценкой, а не повтором
+чужого мнения.
+
+ВХОДНЫЕ ДАННЫЕ ЭТОЙ ФАЗЫ (и БОЛЬШЕ НИЧЕГО)
+JA (источник смысла): {ch.ja_path}
+Текущий RU (актуальный результат): {ch.output_path}
+EN (вспомогательная опора): {ch.en_path}
+Зеркало блоков (соседний контекст): {ch.merged_path}
+Куда записать свой вывод Фазы 1: {p1_out}
+
+{SMA_AUTONOMY_NOTE}
+
+ОГРАНИЧЕНИЕ ФАЗЫ 1
+Это задание содержит только перечисленные выше файлы. Никакие другие
+каталоги, файлы результатов, списки запусков и прошлые выводы в него не
+входят и открываться не должны. Если тебе передали что-то сверх списка выше —
+не используй это и сообщи о ошибке генерации задания.
+
+После Фазы 1 будет отдельное задание Фазы 2, куда тебе передадут
+результаты независимых проверок для сопоставления с твоим первоначальным
+выводом. Сейчас об этом не думай: сделай самостоятельную оценку."""
+
+def _sma_analyzer_p1_rules() -> str:
+    return """ПОРЯДОК РАБОТЫ ФАЗЫ 1 (слепо, по каждому смысловому блоку)
+  1) прочитай JA-блок;
+  2) прочитай текущий RU-блок;
+  3) прочитай соседние блоки для контекста;
+  4) самостоятельно установи смысл JA;
+  5) самостоятельно установи смысл RU;
+  6) ответь на вопросы по существу:
+     - есть ли semantic mismatch и в чём именно;
+     - есть ли OMISSION — содержательный фрагмент JA, которому в RU нет
+       никакого соответствия (полный обрыв, частичный обрыв, выпавшая
+       реплика или событие);
+     - есть ли ДОБАВЛЕННЫЙ смысл — в RU есть то, чего в JA нет;
+     - есть ли другие существенные ошибки.
+
+О МЕТОДЕ ПРОВЕРКИ ПОЛНОТЫ
+Отдельный алгоритм поиска пропусков в Фазе 1 НЕ запускается. Ты просто
+самостоятельно сравниваешь JA и RU как перевод в целом: если русский текст
+заканчивается раньше японского, последовательность реплик или событий не
+покрыта, либо фрагмент явно отсутствует — зафиксируй это как кандидата
+omission. «JA длиннее RU» само по себе пропуском не является: сжатие,
+слияние абзацев и убранный повтор — норма, если содержание сохранено.
+
+ЗАПРЕЩЕНО В ФАЗЕ 1
+- ссылаться на находки, оценки, статусы или вердикты других этапов:
+  ты их не видел и не должен о них знать;
+- подбирать заключение под чужие мнения: этих данных в Фазу 1 не передают
+  и передавать не будут;
+- править текст: правки вносятся только в Фазе 2 после сверки с
+  переданным evidence;
+- останавливаться и спрашивать разрешения: нулевое число находок —
+  допустимый итог Фазы 1."""
+
+def _sma_analyzer_p1_format(ch: Chapter, phase1_id: str) -> str:
+    chap = sma_chapter_id(ch)
+    p1_out = sma_phase1_rel_path(ch, phase1_id)
+    return f"""ФОРМАТ ВЫВОДА ФАЗЫ 1 (ровно один JSON-объект, сохранить в {p1_out}):
+{{
+  "analysis_id": "{phase1_id}.phase1",
+  "chapter": "{chap}",
+  "phase": 1,
+  "scope": "blind",
+  "results": [
+    {{
+      "block": 15,
+      "finding": "MISSING_TRANSLATION",
+      "note": "Кратко: что именно отсутствует и почему это не компрессия",
+      "confidence": "HIGH"
+    }}
+  ]
+}}
+
+Значения finding: MISTRANSLATION / NUANCE_SHIFT / LEXICAL_MISMATCH /
+PRAGMATIC_SHIFT / ADDED_CONTENT / AMBIGUITY / MISSING_TRANSLATION / OTHER /
+NONE.
+- NONE — блок проверен, существенных ошибок нет.
+- confidence: HIGH / MEDIUM / LOW.
+- Это ПРЕДВАРИТЕЛЬНОЕ заключение слепой проверки, а не финальный вердикт:
+  никакие финальные статусы и действия ЗДЕСЬ не выносятся — они появляются
+  только в Фазе 2 после сверки с переданным evidence.
+- Пустой список results = «существенных ошибок не найдено»; это допустимый
+  итог, не повод останавливаться.
+- Ничего, кроме этого JSON, в файл не пиши и никакие другие файлы не создавай."""
+
 def prompt_semantic_analyzer(ch: Chapter, runs: dict[str, list[str]] | None = None) -> str:
-    """Prompt для СМЫСЛОВОГО АНАЛИЗАТОРА (Analyzer A+B+C).
+    """ФАЗА Analyzer 2 — EVIDENCE REVIEW (после слепой Фазы 1).
 
     Analyzer — единственный агент, которому сознательно разрешено читать
     результаты независимых аудитов A/B/C (выбранные запуски ЭТОЙ главы). Он
@@ -1424,6 +1592,9 @@ def _sma_analyzer_head(ch: Chapter, analysis_id: str,
     b_list = ", ".join(b_runs) if b_runs else "(пока нет ни одного запуска B)"
     c_list = ", ".join(c_runs) if c_runs else "(пока нет ни одного запуска C)"
     mode = "A + B + C" if c_runs else "A + B"
+    pc_path = sma_precheck_rel_path(ch)
+    pc_note = (f"{pc_path} (есть — учти как evidence)" if sma_precheck_exists(ch)
+               else f"{pc_path} (не найден — работай без него, это норма)")
     return f"""ЗАДАЧА: смысловой анализатор (Analyzer) независимых аудитов A, B и прагматического аудита C.
 Глава: {chap}. Запуск анализа: {analysis_id}.
 
@@ -1438,15 +1609,20 @@ JA (источник смысла): {ch.ja_path}
 Текущий RU (актуальный результат): {ch.output_path}
 EN (вспомогательная опора): {ch.en_path}
 Зеркало блоков (JA/EN/RU, соседний контекст): {ch.merged_path}
+Слепой вывод Фазы 1 (твоё собственное ПЕРВОНАЧАЛЬНОЕ заключение, файл
+{an_dir}*.phase1.json — сделано БЕЗ evidence):
 Результаты Auditor A (читай ТОЛЬКО этот каталог): {a_dir}
 Результаты Auditor B (читай ТОЛЬКО этот каталог): {b_dir}
 Результаты Pragmatic Auditor C (читай ТОЛЬКО этот каталог): {c_dir}
+Evidence общего Omission Pre-check (детерминированный pre-check, НЕ аудитор):
+  {pc_path}
 Каталог результатов Analyzer (куда писать): {an_dir}
 
 НАБОР EVIDENCE (inputs этой главы)
 a_runs: {a_list}
 b_runs: {b_list}
 c_runs: {c_list}
+precheck: {pc_note}
 
 РЕЖИМ ЭТОГО ЗАПУСКА: {mode}
 - Режим A + B — если в c/ нет ни одного <run_id>.json: работай только с
@@ -1456,6 +1632,8 @@ c_runs: {c_list}
   с findings A и B (тот же порядок работы, тот же статус, тот же разбор).
 Наличие C НЕ обязательно: анализ главы, где C не запускался, выполняется
 в прежнем объёме A+B.
+Наличие pre-check НЕ обязательно: если его файла нет — работай без него и не
+останавливайся.
 
 ПРАВИЛА EVIDENCE:
 - Учитывай ВСЕ выбранные запуски, а не только последний. Если в a/, b/ или c/
@@ -1465,31 +1643,45 @@ c_runs: {c_list}
   выполнить аудит, и остановись (правки не вноси)."""
 
 def _sma_analyzer_rules() -> str:
-    return """ПОРЯДОК РАБОТЫ ПО КАЖДОМУ ЛОГИЧЕСКОМУ CANDIDATE
-Шаг 0. Собери ВСЕ findings из всех выбранных запусков A, B и C. Логически
-совпадающие candidates сгруппируй и сохрани происхождение: какие A-запуски,
-какие B-запуски и какие C-запуски нашли этот candidate
-(sources.a / sources.b / sources.c).
+    return """ШАГ 0 — УБЕДИСЬ, ЧТО ФАЗА 1 УЖЕ ВЫПОЛНЕНА (слепо, без evidence)
+Фаза 1 выполнялась ОТДЕЛЬНЫМ заданием, куда не передавалось НИКАКОГО
+evidence: ни findings A/B/C, ни данных детерминированного pre-check, ни
+происхождения находок, ни прежних analysis-результатов. Её вывод лежит в
+analysis/*.phase1.json — это твоё СОБСТВЕННОЕ ПЕРВОНАЧАЛЬНОЕ заключение
+по чистой сверке JA → RU: есть ли mismatch, есть ли OMISSION, есть ли
+добавленный смысл, есть ли другие существенные ошибки.
+- Если такого файла нет — сначала выполни Фазу 1 (только JA + RU + контекст)
+  и лишь после этого возвращайся к Фазе 2.
+- Вывод Фазы 1 — входные данные, а НЕ evidence и не чужое мнение: он не
+  голосует и не является основанием для правки.
 
-ФАЗА 1 — самостоятельная проверка (ДО анализа мнений A/B/C):
-  1) прочитай JA;
-  2) прочитай текущий RU;
-  3) прочитай контекст соседних блоков;
-  4) самостоятельно установи смысл JA;
-  5) самостоятельно установи смысл RU;
-  6) определи, есть ли расхождение и в чём именно.
-Для прагматического candidate (речевой акт, подтекст, сила реплики,
-категоричность) фаза 1 означает: самостоятельно установи, что говорящий
-делает своей репликой в JA и что он делает в RU — ДО того, как посмотришь
-находку C.
+ШАГ 1 — СБОР EVIDENCE (Фаза 2 начинается здесь)
+Собери ВСЕ findings из всех выбранных запусков A, B и C ЭТОЙ главы плюс
+evidence детерминированного omission pre-check. Логически совпадающие
+candidates сгруппируй и сохрани происхождение: какие A-запуски, какие
+B-запуски и какие C-запуски нашли этот candidate (sources.a / sources.b /
+sources.c) и отмечен ли он pre-check'ом (precheck).
 
-ФАЗА 2 — анализ A/B/C (ТОЛЬКО после фазы 1):
-  1) посмотри findings A;
-  2) посмотри findings B;
-  3) посмотри findings C;
-  4) сопоставь их с собственной оценкой;
-  5) определи, подтверждается ли candidate;
-  6) реши, достаточно ли оснований для автоматической правки.
+ФАЗА 2 — EVIDENCE REVIEW (ТОЛЬКО после завершённой Фазы 1)
+  1) воспроизведи своё заключение Фазы 1 — каким оно было ДО evidence;
+  2) посмотри findings A;
+  3) посмотри findings B;
+  4) посмотри findings C;
+  5) посмотри evidence omission pre-check;
+  6) сопоставь всё со своим первоначальным выводом;
+  7) реши по каждому candidate: подтвердить, отвергнуть или создать нового;
+  8) реши, достаточно ли оснований для правки.
+
+ДОПУСТИМЫЕ ИСХОДЫ (все перечисленные — норма, не ошибка процесса)
+- pre-check нашёл пропуск, Фаза 1 его не заметила → после сверки с JA → RU
+  можно CONFIRMED_ERROR (и FIXED, если правка разрешена).
+- Фаза 1 считает перевод корректным, а pre-check подозревает пропуск → после
+  проверки DISPUTED (границы/допустимость неясны) либо FALSE_POSITIVE
+  (компрессия допустима).
+- pre-check и аудиторы молчат, а Фаза 1 нашла ошибку → candidate создаёшь ты.
+- pre-check отсутствует → работай с A/B/C в прежнем объёме.
+- Фаза 1 сама не заметила то, что подтвердилось в Фазе 2 — это не порок
+  слепой проверки: именно поэтому фазы разделены.
 
 ЗАПРЕЩЕНО:
 - majority vote; «A + B + C → ошибка»; «BOTH_FOUND → ERROR автоматически»;
@@ -1547,6 +1739,9 @@ def _sma_analyzer_format(ch: Chapter, analysis_id: str,
     out_md_rel = sma_result_rel_path(ch, "analysis", analysis_id, "md")
     out_abs = sma_result_abs_path(ch, "analysis", analysis_id, "json")
     out_md_abs = sma_result_abs_path(ch, "analysis", analysis_id, "md")
+    # inputs.precheck: путь к evidence pre-check или null (pre-check не гонялся)
+    pc_input = (f'"{sma_precheck_rel_path(ch)}"' if sma_precheck_exists(ch)
+                else "null")
     return f"""ФОРМАТ РЕЗУЛЬТАТА (ровно один JSON-объект, без markdown-обёртки):
 {{
   "analysis_id": "{analysis_id}",
@@ -1554,13 +1749,14 @@ def _sma_analyzer_format(ch: Chapter, analysis_id: str,
   "inputs": {{
     "a_runs": [{a_json}],
     "b_runs": [{b_json}],
-    "c_runs": [{c_json}]
+    "c_runs": [{c_json}],
+    "precheck": {pc_input}
   }},
   "results": [
     {{
       "block": 11,
       "candidate_id": "C-11-01",
-      "sources": {{ "a": ["<run_id>"], "b": ["<run_id>"], "c": ["<run_id>"] }},
+      "sources": {{ "a": ["<run_id>"], "b": ["<run_id>"], "c": ["<run_id>"], "precheck": false }},
       "source": "JA fragment",
       "current": "RU fragment",
       "status": "CONFIRMED_ERROR",
@@ -1581,8 +1777,12 @@ def _sma_analyzer_format(ch: Chapter, analysis_id: str,
 Для каждого FIXED обязательны before и after.
 - inputs.a_runs / inputs.b_runs / inputs.c_runs — все выбранные запуски этого
   запуска анализа (в режиме A+B поле c_runs пустое).
+- inputs.precheck — путь к evidence детерминированного omission pre-check
+  либо null, если pre-check для главы не прогонялся (это норма).
 - sources каждого candidate — из каких запусков A/B/C он собран; пустой
   список означает, что этот аудит находку не находил.
+- sources.precheck — маркер того, что candidate пришёл от omission pre-check:
+  это evidence, а не голос (как и sources.a/b/c).
 
 OUTPUT FILES (этой главы, запуск {analysis_id})
 JSON: {out_rel}
@@ -1781,26 +1981,11 @@ PROMPTS: list[PromptInfo] = [
 """.strip(),
         prompt_resolve_decisions,
     ),
-    PromptInfo(
-        "Поиск пропущенных отрывков (GAP-аудит)",
-        "Механический поиск сцен и абзацев JA, которых нет в результате",
-        """
-Отдельный режим поиска пропущенных микросцен: проверяет полноту
-покрытия JA-оригинала русским результатом ПОБЛОЧНО — счётом реплик
-и абзацев, якорными ключами (grep по характерным словам), сценым
-чек-листом и выборками случайных абзацев из середины блоков.
-Обычный смысловой аудит опирается на связность текста и может
-пропустить целые сцены: пропущенный фрагмент не оставляет видимой
-дыры — соседние абзацы смыкаются. Этот режим доказывает полноту
-механически, а не «на глаз», и не доверяет заявлениям предыдущих
-отчётов о полноте.
-Использовать после первичной обработки главы, после чужих аудитов
-(особенно если есть подозрение, что отчёты заявляли полноту без
-проверки) и перед закрытием главы, когда нужна уверенность, что
-в JA ничего не потеряно.
-""".strip(),
-        prompt_gap_audit,
-    ),
+    # GAP-аудит (prompt_gap_audit) УДАЛЁН из активного меню: это LEGACY.
+    # Поиск пропусков выполняет общий Omission Pre-check
+    # (AINovelEdit/scripts/omission_precheck.py) → evidence для Analyzer.
+    # Функция prompt_gap_audit сохранена ниже как исторический задел и из
+    # меню недоступна (аналогично prompt_dual_semantic_audit).
     PromptInfo(
         "Реконтроль готовой главы (новые правила)",
         "Проверка уже переведённой и прошедшей аудит главы по новым правилам",
@@ -1911,37 +2096,56 @@ PROMPTS: list[PromptInfo] = [
         prompt_pragmatic_c,
     ),
     PromptInfo(
-        "Смысловой анализатор A+B+C",
-        "Analyzer: объединяет результаты A/B/C и правит только ясные ошибки",
+        "Смысловой анализатор — Фаза 1 (blind)",
+        "Analyzer: слепая самостоятельная сверка JA → RU, БЕЗ какого-либо evidence",
         """
-        Генерирует задание для смыслового АНАЛИЗАТОРА (Analyzer) независимых
-        аудитов A, B и прагматического аудита C. Analyzer — не независимый
-        аудитор: он специально получает результаты A/B/C.
+        Первая из двух НЕЗАВИСИМЫХ фаз работы Analyzer.
 
-        Он читает:
-        - JA, текущий RU, EN и зеркало блоков (соседний контекст);
-        - результаты всех выбранных запусков этой главы
-          output/_audit/sma/<chapter>/a/*.json, .../b/*.json и .../c/*.json.
+        Задание содержит ТОЛЬКО: JA, текущий RU, EN и зеркало блоков
+        (соседний контекст). Физически не передаются и не должны передаваться:
+        findings A/B/C, evidence omission pre-check, происхождение находок
+        (sources), списки запусков и результаты прежних анализов.
 
-        Два режима одного и того же анализа:
-        - A + B — если запусков C ещё нет (C необязателен для старых A/B);
-        - A + B + C — если запуски C существуют.
+        Analyzer сам отвечает: есть ли semantic mismatch, есть ли OMISSION
+        (содержательный фрагмент JA без соответствия в RU), есть ли
+        добавленный смысл, есть ли другие существенные ошибки. Отдельный
+        алгоритм поиска пропусков здесь НЕ запускается — просто
+        самостоятельное сравнение перевода целиком.
 
-        Порядок: сначала Analyzer самостоятельно сверяет candidate с JA → RU
-        (фаза 1), и только затем сопоставляет его с findings A/B/C (фаза 2).
-        Majority vote запрещён: «A+B+C согласны → ошибка» и «только C нашёл →
-        false positive» одинаково недопустимы; количество обнаружений — только
-        evidence, решение — по JA → RU. Provenance каждого candidate —
-        sources.a / sources.b / sources.c (все выбранные запуски).
+        Никаких вердиктов (CONFIRMED_ERROR / DISPUTED / ...) Фаза 1 не
+        выносит — только предварительное заключение в
+        output/_audit/sma/<chapter>/analysis/<id>.phase1.json.
 
-        Статусы: CONFIRMED_ERROR (можно исправлять через fix_block.py),
-        DISPUTED, FALSE_POSITIVE, OPTIONAL (в отчёт, перевод не менять).
-        Findings A/B/C — неизменяемое evidence; старые отчёты аудита не
-        источник истины. Результаты Analyzer:
-        output/_audit/sma/<chapter>/analysis/<analysis_id>.json и .md
-        (с before/after для каждого FIXED). После Analyzer цикл не
-        повторяется автоматически — повторный аудит запускается вручную.
-        """.strip(),
+        Запускать ПЕРЕД «Смысловой анализатор — Фаза 2».
+        Изоляция проверяется self-test (tools/generate_agent_prompt.py
+        --self-test-sma).
+        """,
+        prompt_semantic_analyzer_phase1,
+    ),
+    PromptInfo(
+        "Смысловой анализатор — Фаза 2 (evidence review)",
+        "Analyzer: сверяет свой слепой вывод Фазы 1 с A/B/C + omission pre-check",
+        """
+        Вторая фаза: сюда сознательно передаются ВСЕ evidence — findings A,
+        B и C, а также evidence детерминированного omission pre-check
+        (scripts/omission_precheck.py) — и собственное слепое заключение
+        Фазы 1 (analysis/*.phase1.json).
+
+        Analyzer сопоставляет evidence со своим первоначальным выводом:
+        он может подтвердить finding, отвергнуть его, создать нового или
+        принять кандидат pre-check, которого сам в Фазе 1 не заметил.
+
+        Pre-check — evidence, а не голос и не Auditor D; A/B/C — тоже
+        evidence. Majority vote запрещён: «A+B+C согласны → ошибка» и
+        «только C нашёл → false positive» одинаково недопустимы.
+
+        Два режима сохранены: A + B (C не запускался) и A + B + C;
+        отсутствие pre-check не мешает работе. Статусы CONFIRMED_ERROR /
+        DISPUTED / FALSE_POSITIVE / OPTIONAL; правка только через
+        fix_block.py. Результат: output/_audit/sma/<chapter>/analysis/.
+
+        Запускать ПОСЛЕ «Смысловой анализатор — Фаза 1».
+        """,
         prompt_semantic_analyzer,
     ),
 ]
@@ -2397,6 +2601,11 @@ def self_test_semantic_prompts(
         "b": sma_existing_runs(ch, "b"),
         "c": [],
     })
+    pan1 = prompt_semantic_analyzer_phase1(ch)
+    # глава без pre-check: проверка, что его отсутствие не ломает Фазу 2
+    ch_nopc = Chapter(99, "99")
+    pan_nopc = prompt_semantic_analyzer(ch_nopc, runs={
+        "a": ["sim-x"], "b": ["sim-x"], "c": []})
     chap = sma_chapter_id(ch)
     a_dir = f"{SMA_REL_ROOT}/{chap}/a/"
     b_dir = f"{SMA_REL_ROOT}/{chap}/b/"
@@ -2415,7 +2624,7 @@ def self_test_semantic_prompts(
         ("Analyzer: reads selected C results — YES",
          c_dir in pan, c_dir),
         ("Analyzer: пишет только в analysis/ — YES",
-         an_dir in pan and kinds == {"a", "b", "c", "analysis"},
+         an_dir in pan and kinds == {"a", "b", "c", "analysis", "precheck"},
          f"типы путей в промпте: {sorted(kinds)}"),
         ("Analyzer: has unique analysis_id и путь результата — YES",
          bool(analysis_id) and f"{an_dir}{analysis_id}.json" in pan,
@@ -2449,7 +2658,7 @@ def self_test_semantic_prompts(
          ""),
         ("Analyzer: фаза 1 (самостоятельная JA → RU) раньше фазы 2 — YES",
          "ФАЗА 1" in pan and "ФАЗА 2" in pan
-         and "ТОЛЬКО после фазы 1" in pan
+         and "ТОЛЬКО после завершённой Фазы 1" in pan
          and pan.find("ФАЗА 1") < pan.find("ФАЗА 2"),
          ""),
         ("Analyzer: режим A+B+C видит несколько запусков A/B/C — YES",
@@ -2458,7 +2667,7 @@ def self_test_semantic_prompts(
          and '"c_runs": ["sim-c-run-1", "sim-c-run-2"]' in pan_abc,
          ""),
         ("Analyzer: sources.a / sources.b / sources.c в формате — YES",
-         '"sources": { "a": ["<run_id>"], "b": ["<run_id>"], "c": ["<run_id>"] }'
+         '"sources": { "a": ["<run_id>"], "b": ["<run_id>"], "c": ["<run_id>"], "precheck": false }'
          in pan_abc, ""),
         ("Analyzer: режим A+B+C объявлен в prompt — YES",
          "РЕЖИМ ЭТОГО ЗАПУСКА: A + B + C" in pan_abc, ""),
@@ -2472,8 +2681,81 @@ def self_test_semantic_prompts(
          "Отсутствие запусков C — норма" in pan_ab
          and "прежнем объёме A+B" in pan_ab,
          ""),
+        # ---- ФАЗА 1: фактическая (не декларативная) изоляция промпта ----
+        ("Фаза 1: в промпте НЕТ каталогов A/B/C — YES",
+         not _sma_hits(pan1, (a_dir, b_dir, c_dir)),
+         ""),
+        ("Фаза 1: в промпте НЕТ путей в a/, b/, c/ — YES",
+         not _sma_hits(pan1, (f"/{chap}/a/", f"/{chap}/b/", f"/{chap}/c/")),
+         ""),
+        ("Фаза 1: в промпте НЕТ evidence omission pre-check — YES",
+         not _sma_hits(pan1, (sma_precheck_rel_path(ch),
+                              f"/{chap}/{SMA_PRECHECK_KIND}/",
+                              SMA_PRECHECK_FILE)),
+         ""),
+        ("Фаза 1: в промпте НЕТ списков запусков (a_runs/b_runs/c_runs) — YES",
+         not _sma_hits(pan1, ('"a_runs"', '"b_runs"', '"c_runs"')),
+         ""),
+        ("Фаза 1: в промпте НЕТ provenance (sources) — YES",
+         not _sma_hits(pan1, ('"sources"', 'sources.a', 'sources.b',
+                              'sources.c')),
+         ""),
+        ("Фаза 1: в промпте НЕТ прежних analysis-результатов — YES",
+         not _sma_hits(pan1, [f"{chap}/analysis/{r}." for r in
+                              sma_existing_runs(ch, "analysis")]),
+         ""),
+        ("Фаза 1: в промпте НЕТ findings A/B/C и их аудиторов — YES",
+         not _sma_hits(pan1, ("Auditor A", "Auditor B", "Pragmatic Auditor C",
+                              "findings A", "findings B", "findings C",
+                              "НАБОР EVIDENCE")),
+         ""),
+        ("Фаза 1: в промпте НЕТ вердиктов/статусов — YES",
+         not _sma_hits(pan1, ("CONFIRMED_ERROR", "DISPUTED", "FALSE_POSITIVE",
+                              "REPORT_ONLY", "majority vote")),
+         ""),
+        ("Фаза 1: путь только в analysis (собственный вывод) — YES",
+         _sma_path_kinds(pan1) <= {"analysis"},
+         f"типы путей: {sorted(_sma_path_kinds(pan1))}"),
+        ("Фаза 1: содержит JA + RU + контекст и вывод phase1 — YES",
+         ch.ja_path in pan1 and ch.output_path in pan1
+         and ch.merged_path in pan1 and ".phase1.json" in pan1,
+         ""),
+        # ---- ФАЗА 2: evidence приходит только сюда ----
+        ("Фаза 2: содержит каталог A — YES", a_dir in pan, ""),
+        ("Фаза 2: содержит каталог B — YES", b_dir in pan, ""),
+        ("Фаза 2: содержит каталог C — YES", c_dir in pan, ""),
+        ("Фаза 2: содержит evidence omission pre-check — YES",
+         sma_precheck_rel_path(ch) in pan
+         and f"/{chap}/{SMA_PRECHECK_KIND}/" in pan, ""),
+        ("Фаза 2: провенанс (sources) присутствует — YES",
+         '"sources"' in pan and "ПРОИСХОЖДЕНИЕ (sources) НЕ ГОЛОСУЕТ" in pan,
+         ""),
+        ("Фаза 2: ссылка на слепой вывод Фазы 1 — YES",
+         "*.phase1.json" in pan and "ПЕРВОНАЧАЛЬНОЕ" in pan, ""),
+        ("Фаза 2: pre-check — evidence, а не голос — YES",
+         "НЕ аудитор" in pan and "Наличие pre-check НЕ обязательно" in pan, ""),
+        ("Фаза 2: без pre-check работает (chapter без файла) — YES",
+         sma_precheck_rel_path(ch_nopc) in pan_nopc
+         and "работай без него" in pan_nopc
+         and '"precheck": null' in pan_nopc, ""),
+        # ---- LEGACY: GAP-аудит не активен, функция сохранена ----
+        ("prompt_gap_audit: больше не в активном меню PROMPTS — YES",
+         not any(getattr(p, "generator", None) is prompt_gap_audit
+                 for p in PROMPTS)
+         and not any("GAP" in p.title for p in PROMPTS),
+         f"пунктов меню: {len(PROMPTS)}"),
+        ("prompt_gap_audit: функция сохранена (legacy-задел) — YES",
+         callable(prompt_gap_audit), ""),
+        ("Меню: пункт «Обработка одного блока» остался на индексе 8 — YES",
+         len(PROMPTS) > 8 and PROMPTS[8].title == "Обработка одного блока",
+         f"PROMPTS[8] = {PROMPTS[8].title if len(PROMPTS) > 8 else '(нет)'}"),
+        ("Меню: обе фазы Analyzer присутствуют — YES",
+         any(p.generator is prompt_semantic_analyzer_phase1 for p in PROMPTS)
+         and any(p.generator is prompt_semantic_analyzer for p in PROMPTS),
+         ""),
     ]
-    prompts = {"A": pa1, "B": pb, "C": pc1, "Analyzer": pan}
+    prompts = {"A": pa1, "B": pb, "C": pc1,
+               "Analyzer Phase 1": pan1, "Analyzer Phase 2": pan}
     return checks, prompts
 
 def _parse_selftest_chapter(argv: list[str]) -> Chapter | None:
@@ -2521,7 +2803,7 @@ def run_sma_self_test(argv: list[str]) -> int:
     print(f"  Итог: {passed}/{len(checks)} проверок пройдено.")
     print("  Файлы не создавались, перевод не изменялся (dry-run).")
     if "--show-sma" in argv:
-        for title in ("A", "B", "C", "Analyzer"):
+        for title in prompts:
             print()
             separator("=")
             print(f"  PROMPT {title}")
