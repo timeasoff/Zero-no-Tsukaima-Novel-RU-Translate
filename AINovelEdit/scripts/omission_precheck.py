@@ -49,6 +49,11 @@ S3  Числовой якорь: в JA-звенье есть число, кот�
 Куда пишется:
     output/_audit/sma/<chapter>/precheck/omission-precheck.json   (evidence)
     output/_audit/sma/<chapter>/precheck/omission-precheck.md     (human-readable)
+
+Раскладка каталогов главы: a/ — evidence Auditor A, b/ — evidence Auditor B,
+c/ — evidence Auditor C, precheck/ — ЭТОТ детерминированный слой (не аудитор,
+не run kind, не входит в SMA_KINDS), analysis/ — финальные результаты
+Analyzer и слепые выводы Фазы 1 (<id>.phase1.json).
 """
 from __future__ import annotations
 

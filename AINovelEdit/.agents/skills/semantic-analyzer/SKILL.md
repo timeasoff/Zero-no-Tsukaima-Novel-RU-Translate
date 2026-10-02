@@ -142,8 +142,12 @@ findings из разных запусков A/B/C, относящаяся к о�
 
 ### Шаг 1 — ФАЗА 2: сбор evidence (ТОЛЬКО после Фазы 1)
 
-1. Собери ВСЕ findings из ВСЕХ выбранных запусков A, B и C этой главы
-   (не только последний файл).
+0. Если `analysis/<id>.phase1.json` для этой главы нет — **STOP**: Фазу 1
+   выполнять в рамках Фазы 2 НЕЛЬЗЯ (задание уже содержит evidence, слепота
+   утрачена). Сначала отдельное задание «Смысловой анализатор — Фаза 1
+   (blind)», после его завершения — отдельное задание Фазы 2.
+1. Собери ВСЕ findings из ВСЕХ существующих запусков A, B и C этой главы
+   (не только последний файл; ручного выбора отдельных run_id нет).
 2. Прочитай evidence Omission Pre-check
    (`precheck/omission-precheck.json`), если он есть. Записывай его
    происхождение отдельно: `sources.precheck`.
@@ -407,8 +411,9 @@ JSON (`analysis/<analysis_id>.json`):
 - `FIXED` — только для `CONFIRMED_ERROR`; для него обязательны `before` и `after`.
 - `REPORT_ONLY` — `DISPUTED` / `OPTIONAL`.
 - `PRESERVED` — `FALSE_POSITIVE`.
-- `inputs.a_runs` / `inputs.b_runs` / `inputs.c_runs` — все выбранные запуски
-  этого анализа; в режиме A+B поле `c_runs` пустое.
+- `inputs.a_runs` / `inputs.b_runs` / `inputs.c_runs` — все существующие
+  запуски этой главы на момент анализа (ручного выбора run_id нет);
+  в режиме A+B поле `c_runs` пустое.
 - `inputs.precheck` — путь к evidence Omission Pre-check, если он участвовал;
   поле отсутствует/`null`, когда pre-check не запускался (старые главы).
 - `sources` каждого candidate — из каких запусков A/B/C он собран; пустой
@@ -441,3 +446,9 @@ output/_audit/sma/<chapter>/analysis/<analysis_id>.md
 ```
 
 Другие файлы не создавай и не изменяй.
+
+Каталоги главы (`output/_audit/sma/<chapter>/`): `a/` — evidence Auditor A,
+`b/` — evidence Auditor B, `c/` — evidence Auditor C, `precheck/` —
+детерминированное omission-evidence (не аудитор и не run kind),
+`analysis/` — финальные результаты Analyzer и слепые выводы Фазы 1
+(`<id>.phase1.json` — не обычные final-запуски).

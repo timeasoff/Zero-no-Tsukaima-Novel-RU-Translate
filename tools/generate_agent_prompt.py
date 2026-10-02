@@ -308,9 +308,17 @@ def project_context(ch: Chapter) -> str:
 SMA_AUDIT_DIR = "_audit"                  # output/_audit/
 SMA_DIR_NAME = "sma"                      # output/_audit/sma/
 SMA_REL_ROOT = f"output/{SMA_AUDIT_DIR}/{SMA_DIR_NAME}"
+# Каноническая раскладка каталогов главы (storage):
+#   a/        evidence Auditor A
+#   b/        evidence Auditor B
+#   c/        evidence Auditor C
+#   precheck/ детерминированное omission-evidence (НЕ аудитор, НЕ run kind)
+#   analysis/ финальные результаты Analyzer + слепые выводы Фазы 1
+#             (<id>.phase1.json — не обычные final-запуски)
 SMA_KINDS = ("a", "b", "c", "analysis")   # типы результатов внутри главы
 # Общий Omission Pre-check (scripts/omission_precheck.py) кладёт evidence в
-# отдельный каталог главы; это НЕ каталог аудитора и НЕ run_id-результат.
+# отдельный каталог главы; это НЕ каталог аудитора, НЕ run_id-результат и
+# НЕ член SMA_KINDS (kind="precheck" существует только как путь).
 SMA_PRECHECK_KIND = "precheck"
 SMA_PRECHECK_FILE = "omission-precheck.json"
 _SMA_ISSUED_IDS: set[str] = set()         # гарантия уникальности в процессе
@@ -319,13 +327,24 @@ _SMA_ISSUED_IDS: set[str] = set()         # гарантия уникально�
 SMA_AUTONOMY_NOTE = (
     "РАБОТАЙ АВТОНОМНО. Все данные для аудита приведены в этом задании. "
     "Не перечисляй содержимое каталогов и не открывай никакие файлы, кроме "
-    "перечисленных в задании."
+    "перечисленных в задании; единственное исключение — OWN SKILL, если он "
+    "явно указан в задании (это инструкции самого аудитора, а не чужие "
+    "результаты)."
 )
 SMA_OWN_FILE_NOTE = (
     "Единственный файл, который ты создаёшь, — результат этого запуска "
     "(см. OUTPUT FILE). Любые другие файлы в папке результата в задание не "
     "входят: не читай их, не сравнивай с ними свой результат и не делай "
     "выводов из их наличия или отсутствия."
+)
+# Чего A/B/C по-прежнему НЕ видят (собственный skill разрешён, всё остальное
+# закрыто). Проверяется self-test вместе со SMA_AUTONOMY_NOTE / OWN SKILL.
+SMA_FORBIDDEN_INPUTS_NOTE = (
+    "ЗАПРЕЩЁННЫЕ ВХОДЫ (не читай и не используй, даже если попадутся): "
+    "чужие skill-файлы, AGENTS.md, dictionary.md, addresses.md, "
+    "результаты/evidence других запусков и других этапов, старые отчёты "
+    "аудита. Если такой материал оказался в задании — не используй его "
+    "и сообщи об ошибке генерации."
 )
 
 # Иерархия источников для промптов Analyzer ОБЕИХ фаз:
@@ -396,17 +415,34 @@ def new_audit_run_id(ch: Chapter | None = None) -> str:
         return run_id
 
 def sma_existing_runs(ch: Chapter, kind: str) -> list[str]:
-    """Уже существующие run_id результатов A/B/C/Analyzer для этой главы.
+    """Уже существующие run_id результатов A/B/C/final-Analyzer этой главы.
 
-    Используется Analyzer'ом: он учитывает ВСЕ выбранные запуски, а не
-    только последний. Ничего не создаёт и не изменяет.
+    Используется Analyzer'ом: он учитывает ВСЕ существующие запуски (механизма
+    ручного выбора отдельных run_id нет), а не только последний. Слепые выводы
+    Фазы 1 (``<id>.phase1.json``) сюда НЕ попадают — это не финальные
+    analysis-результаты; для них есть ``sma_existing_phase1_runs``.
+    Ничего не создаёт и не изменяет.
     """
     folder = sma_chapter_dir(ch, kind)
     if not os.path.isdir(folder):
         return []
     ids = [os.path.splitext(name)[0] for name in os.listdir(folder)
-           if name.lower().endswith(".json")]
+           if name.lower().endswith(".json")
+           and not name.lower().endswith(".phase1.json")]
     return sorted(ids)
+
+def sma_existing_phase1_runs(ch: Chapter) -> list[str]:
+    """Существующие слепые выводы Фазы 1 (``analysis/<id>.phase1.json``).
+
+    Отдельный helper: phase1-файлы лежат в том же каталоге ``analysis/``, но
+    семантически НЕ являются обычными финальными analysis-запусками и не
+    должны путаться с ними. Ничего не создаёт и не изменяет.
+    """
+    folder = sma_chapter_dir(ch, "analysis")
+    if not os.path.isdir(folder):
+        return []
+    return sorted(os.path.splitext(name)[0] for name in os.listdir(folder)
+                  if name.lower().endswith(".phase1.json"))
 
 def sma_precheck_rel_path(ch: Chapter) -> str:
     """Путь evidence Omission Pre-check относительно корня AINovelEdit."""
@@ -1013,7 +1049,7 @@ def prompt_rules_recheck(ch: Chapter) -> str:
 РЕЖИМ: РЕКОНТРОЛЬ ГОТОВОЙ ГЛАВЫ ПО НОВЫМ ПРАВИЛАМ
 Контекст: глава уже полностью переведена и прошла полный аудит ДО того,
 как в проект были введены новые правила (согласование рода в обращениях,
-каталог калькированных реплик, обязательные разделители сцен). Текст
+каталог калькированных реплик, отбивка разделителей сцен). Текст
 менять без причины НЕЛЬЗЯ — режим ищет только классы ошибок, которые
 предыдущий аудит не проверял. Повторный полный смысловой аудит НЕ нужен:
 JA/EN сверяй ТОЛЬКО там, где кандидат требует решения по смыслу.
@@ -1046,12 +1082,17 @@ JA/EN сверяй ТОЛЬКО там, где кандидат требует �
    контекстное решение: почтительная заглавная допустима и не только в
    обращении (russian-prose-rules, «Титулы: регистр»). Спорное —
    CANDIDATE, регистр не править механически ни в одну сторону.
-5. РАЗДЕЛИТЕЛИ СЦЕН: сверись с JA/RU-translates: каждая смена
-   локации/времени/ракурса, отмеченная в оригинале, должна получить
-   `---` в output (пустая строка до и после — проверяется format_scan,
-   kind=paragraph). Отсутствие `---` при явной смене сцены — WARNING,
-   FIX: вставить разделитель через fix_block.py. Точный смысл границы
-   — по JA; сомнение → `<!-- ??? -->`.
+5. РАЗДЕЛИТЕЛИ СЦЕН (`---`): необязательный композиционный инструмент.
+   Отсутствие `---` само по себе НЕ является ошибкой и НЕ создаёт
+   WARNING: обязательного разделителя нет, механического правила
+   «каждая смена сцены должна получить ---» в проекте нет. Ставить или
+   не ставить `---` — решение по контексту: агент может его поставить
+   при подтверждённой смене локации/времени/ракурса (смысл границы — по
+   JA); если разделитель композиционно действительно нужен, вставляй его
+   осознанно и обосновывай по контексту, а не по правилу. format_scan
+   (kind=paragraph) проверяет только отбивку УЖЕ существующих
+   разделителей (пустая строка до и после), но не их наличие.
+   Сомнение → `<!-- ??? -->`.
 6. ФОРМАТ МЫСЛЕЙ: внутренняя речь — курсив _…_ без кавычек; мысль
    в «…», — подумал он → кандидат (kind=thought). Проверь также, что
    после курсива есть пустая строка перед следующим абзацем и что
@@ -1163,7 +1204,13 @@ def prompt_semantic_a(ch: Chapter) -> str:
 
 {SMA_AUTONOMY_NOTE}
 
+OWN SKILL (единственный разрешённый файл за пределами задания):
+AINovelEdit/.agents/skills/semantic-audit-a/SKILL.md
+{SMA_FORBIDDEN_INPUTS_NOTE}
+
 {semantic_audit_context(ch)}
+
+{SMA_SOURCE_HIERARCHY_NOTE}
 
 ФОКУС AUDITOR A — лексическая точность и оттенки смысла:
 - точность выбора русского слова для японского (лексическая точность);
@@ -1245,7 +1292,13 @@ def prompt_semantic_b(ch: Chapter) -> str:
 
 {SMA_AUTONOMY_NOTE}
 
+OWN SKILL (единственный разрешённый файл за пределами задания):
+AINovelEdit/.agents/skills/semantic-audit-b/SKILL.md
+{SMA_FORBIDDEN_INPUTS_NOTE}
+
 {semantic_audit_context(ch)}
+
+{SMA_SOURCE_HIERARCHY_NOTE}
 
 ФОКУС AUDITOR B — смысловые связи, логика и контекст:
 - субъект и объект (кто выполняет действие, на кого оно направлено);
@@ -1260,7 +1313,10 @@ def prompt_semantic_b(ch: Chapter) -> str:
 - метафоры и переносные значения;
 - контекст, раскрывающий смысл из соседних блоков;
 - неоднозначные конструкции, допускающие несколько прочтений;
-- намерение персонажа, стоящее за действием или репликой.
+- намерение/цель персонажа как часть содержания ситуации (что он хочет
+  сделать и почему это вытекает из событий), связи событий и логика
+  происходящего — НЕ прагматика самой реплики (речевой акт, сила,
+  подтекст — это слой прагматики, вне твоей компетенции).
 
 НАПРАВЛЕНИЕ ПРОВЕРКИ: JA → RU. Сначала установи смысл японского фрагмента
 (с учётом контекста), затем сверь, как этот смысл передан в текущем русском
@@ -1271,6 +1327,8 @@ def prompt_semantic_b(ch: Chapter) -> str:
 - стиль (тавтология, повторы, кальки) — это russian-style-audit;
 - оформление текста (кавычки, тире, курсив) — это russian-prose-rules;
 - общее «очеловечивание» текста — это russian-humanizer;
+- коммуникативная функция самой реплики — речевой акт, прагматическая сила,
+  подтекст, implied meaning: это прагматический слой, не макро-семантика;
 - автоматические исправления: ты НИЧЕГО не исправляешь и ничего не пишешь
   в output/.
 
@@ -1340,7 +1398,13 @@ def prompt_pragmatic_c(ch: Chapter) -> str:
 
 {SMA_AUTONOMY_NOTE}
 
+OWN SKILL (единственный разрешённый файл за пределами задания):
+AINovelEdit/.agents/skills/pragmatic-audit/SKILL.md
+{SMA_FORBIDDEN_INPUTS_NOTE}
+
 {semantic_audit_context(ch)}
+
+{SMA_SOURCE_HIERARCHY_NOTE}
 
 ФОКУС AUDITOR C — коммуникативный смысл (прагматика) высказывания:
 - что говорящий фактически делает своей репликой (речевой акт): сообщает,
@@ -1387,7 +1451,8 @@ def prompt_pragmatic_c(ch: Chapter) -> str:
   выбора русского слова, оттенки значения, эмоции, мимика, жесты, интонация —
   это слой микро-семантики, не прагматика;
 - субъект/объект, обычные причинно-следственные и временные отношения,
-  местоименные связи, обычная логика событий, идиомы, метафоры — это слой
+  местоименные связи, обычная логика событий, намерение/цель персонажа
+  как часть содержания ситуации, идиомы, метафоры — это слой
   макро-семантики и логики, не прагматика;
 - грамматика (согласование, управление, падежи) — это russian-grammar-control;
 - стиль (тавтология, повторы, кальки) — это russian-style-audit;
@@ -1580,7 +1645,8 @@ def prompt_semantic_analyzer(ch: Chapter, runs: dict[str, list[str]] | None = No
     """ФАЗА Analyzer 2 — EVIDENCE REVIEW (после слепой Фазы 1).
 
     Analyzer — единственный агент, которому сознательно разрешено читать
-    результаты независимых аудитов A/B/C (выбранные запуски ЭТОЙ главы). Он
+    результаты независимых аудитов A/B/C (все существующие запуски ЭТОЙ
+    главы; механизма ручного выбора run_id нет). Он
     самостоятельно сверяет candidates с JA/RU, исправляет только
     CONFIRMED_ERROR и записывает спорные случаи в отчёт analysis/.
 
@@ -1661,8 +1727,9 @@ precheck: {pc_note}
 останавливайся.
 
 ПРАВИЛА EVIDENCE:
-- Учитывай ВСЕ выбранные запуски, а не только последний. Если в a/, b/ или c/
-  появились другие <run_id>.json — включи их как выбранные запуски.
+- Учитывай ВСЕ существующие запуски этой главы, а не только последний:
+  если в a/, b/ или c/ появились другие <run_id>.json — включи их все
+  (ручного выбора отдельных запусков нет).
 - Результаты ДРУГИХ глав не используй: анализируй только эту главу.
 - Если в a/, b/ и c/ нет ни одного <run_id>.json — сообщи, что сначала нужно
   выполнить аудит, и остановись (правки не вноси)."""
@@ -1675,13 +1742,17 @@ evidence: ни findings A/B/C, ни данных детерминированн�
 analysis/*.phase1.json — это твоё СОБСТВЕННОЕ ПЕРВОНАЧАЛЬНОЕ заключение
 по чистой сверке JA → RU: есть ли mismatch, есть ли OMISSION, есть ли
 добавленный смысл, есть ли другие существенные ошибки.
-- Если такого файла нет — сначала выполни Фазу 1 (только JA + RU + контекст)
-  и лишь после этого возвращайся к Фазе 2.
+- Если такого файла нет — STOP: Фазу 1 выполнять в этом задании НЕЛЬЗЯ.
+  Это задание уже содержит evidence, поэтому слепая проверка внутри него
+  невозможна (blindness утрачен). НЕ пытайся выполнить Фазу 1 в рамках
+  Фазы 2: сначала запусти ОТДЕЛЬНОЕ задание «Смысловой анализатор —
+  Фаза 1 (blind)», сохрани его вывод в analysis/<id>.phase1.json, и только
+  после завершения Фазы 1 выполняй Фазу 2.
 - Вывод Фазы 1 — входные данные, а НЕ evidence и не чужое мнение: он не
   голосует и не является основанием для правки.
 
 ШАГ 1 — СБОР EVIDENCE (Фаза 2 начинается здесь)
-Собери ВСЕ findings из всех выбранных запусков A, B и C ЭТОЙ главы плюс
+Собери ВСЕ findings из всех существующих запусков A, B и C ЭТОЙ главы плюс
 evidence детерминированного omission pre-check. Логически совпадающие
 candidates сгруппируй и сохрани происхождение: какие A-запуски, какие
 B-запуски и какие C-запуски нашли этот candidate (sources.a / sources.b /
@@ -1804,8 +1875,8 @@ def _sma_analyzer_format(ch: Chapter, analysis_id: str,
 - REPORT_ONLY — DISPUTED / OPTIONAL (в отчёт, перевод не менять).
 - PRESERVED — FALSE_POSITIVE (оставлено как есть).
 Для каждого FIXED обязательны before и after.
-- inputs.a_runs / inputs.b_runs / inputs.c_runs — все выбранные запуски этого
-  запуска анализа (в режиме A+B поле c_runs пустое).
+- inputs.a_runs / inputs.b_runs / inputs.c_runs — все существующие запуски
+  этой главы на момент анализа (в режиме A+B поле c_runs пустое).
 - inputs.precheck — путь к evidence детерминированного omission pre-check
   либо null, если pre-check для главы не прогонялся (это норма).
 - sources каждого candidate — из каких запусков A/B/C он собран; пустой
@@ -2023,8 +2094,9 @@ PROMPTS: list[PromptInfo] = [
         аудит, но делала это ДО введения новых правил проекта: согласования
         рода в обращениях («понял, Луиза?»), каталога машинных кальк
         («полегчайте не смогу», «им не по дороге»), регистра титулов в прямой
-        речи («ваше высочество» → «Ваше Высочество»), обязательных разделителей
-        сцен `---`, курсива внутренней речи, отбивки маркеров блоков
+        речи («ваше высочество» → «Ваше Высочество»), отбивки разделителей
+        сцен `---` (сам разделитель необязателен — проверяется только его
+        оформление), курсива внутренней речи, отбивки маркеров блоков
         (blockgap), реплик в кавычках вместо тире (quotespeech), мыслей,
         слитых с нарративом (thoughtinline), искажений имён (namespell) и
         падежа геоназваний («до самого Тристейна»).
@@ -2486,6 +2558,18 @@ def _sma_checks_a(ch: Chapter, pa1: str, pa2: str) -> list[tuple[str, bool, str]
         ("A: автономность и единственность файла зафиксированы — YES",
          SMA_AUTONOMY_NOTE in pa1 and SMA_OWN_FILE_NOTE in pa1,
          ""),
+        ("A: OWN SKILL разрешён (противоречие с autonomy снято) — YES",
+         "OWN SKILL" in pa1
+         and "AINovelEdit/.agents/skills/semantic-audit-a/SKILL.md" in pa1
+         and SMA_FORBIDDEN_INPUTS_NOTE in pa1,
+         ""),
+        ("A: иерархия JA authoritative / RU under review / EN reference only / JA > EN — YES",
+         all(s in pa1 for s in ("JA — authoritative source of truth",
+                                "RU — text under review",
+                                "EN — reference only",
+                                "JA has priority over EN",
+                                "EN must not be treated as authority")),
+         ""),
         ("A: не просит перечислять каталоги — YES",
          not _sma_hits(pa1, _SMA_SEARCH_TOOLS),
          ""),
@@ -2525,6 +2609,18 @@ def _sma_checks_b(ch: Chapter, pb: str) -> list[tuple[str, bool, str]]:
          f"типы путей в промпте: {sorted(kinds)}"),
         ("B: автономность и единственность файла зафиксированы — YES",
          SMA_AUTONOMY_NOTE in pb and SMA_OWN_FILE_NOTE in pb,
+         ""),
+        ("B: OWN SKILL разрешён (противоречие с autonomy снято) — YES",
+         "OWN SKILL" in pb
+         and "AINovelEdit/.agents/skills/semantic-audit-b/SKILL.md" in pb
+         and SMA_FORBIDDEN_INPUTS_NOTE in pb,
+         ""),
+        ("B: иерархия JA authoritative / RU under review / EN reference only / JA > EN — YES",
+         all(s in pb for s in ("JA — authoritative source of truth",
+                               "RU — text under review",
+                               "EN — reference only",
+                               "JA has priority over EN",
+                               "EN must not be treated as authority")),
          ""),
         ("B: не просит перечислять каталоги — YES",
          not _sma_hits(pb, _SMA_SEARCH_TOOLS),
@@ -2576,6 +2672,18 @@ def _sma_checks_c(ch: Chapter, pc1: str, pc2: str) -> list[tuple[str, bool, str]
         ("C: автономность и единственность файла зафиксированы — YES",
          SMA_AUTONOMY_NOTE in pc1 and SMA_OWN_FILE_NOTE in pc1,
          ""),
+        ("C: OWN SKILL разрешён (противоречие с autonomy снято) — YES",
+         "OWN SKILL" in pc1
+         and "AINovelEdit/.agents/skills/pragmatic-audit/SKILL.md" in pc1
+         and SMA_FORBIDDEN_INPUTS_NOTE in pc1,
+         ""),
+        ("C: иерархия JA authoritative / RU under review / EN reference only / JA > EN — YES",
+         all(s in pc1 for s in ("JA — authoritative source of truth",
+                                "RU — text under review",
+                                "EN — reference only",
+                                "JA has priority over EN",
+                                "EN must not be treated as authority")),
+         ""),
         ("C: не просит перечислять каталоги — YES",
          not _sma_hits(pc1, _SMA_SEARCH_TOOLS),
          ""),
@@ -2597,6 +2705,47 @@ def _sma_checks_c(ch: Chapter, pc1: str, pc2: str) -> list[tuple[str, bool, str]
          all(s in pc1 for s in ("russian-grammar-control", "russian-style-audit",
                                 "russian-prose-rules", "микро-семантики",
                                 "макро-семантики")),
+         ""),
+    ]
+
+def _sma_phase1_inputs_match_doc(doc: str, pan1: str) -> bool:
+    """Оба текста описывают один вход Фазы 1: JA + RU + EN (reference) + зеркало."""
+    return ("зеркало блоков" in doc.lower()
+            and "EN — reference only" in doc
+            and "Зеркало блоков (соседний контекст)" in pan1)
+
+def _sma_phase1_doc_sync(pan1: str) -> list[tuple[str, bool, str]]:
+    """Сверка документации Phase 1 (AGENTS.md) с generated prompt.
+
+    Гарантия, что описание входа Фазы 1 в AGENTS.md и в реально сгенерированном
+    prompt — одно и то же: JA authoritative / RU text under review /
+    EN reference only / JA > EN, а EN в Фазе 1 явно справочный, не evidence
+    A/B/C и не источник истины. Ничего не пишет на диск.
+    """
+    agents_path = os.path.join(AINOVELEDIT, "AGENTS.md")
+    try:
+        with open(agents_path, encoding="utf-8") as fh:
+            agents = fh.read()
+    except OSError as exc:
+        return [("Фаза 1: AGENTS.md доступен для сверки документации — YES",
+                 False, f"{agents_path}: {exc}")]
+    start = agents.find("**Phase 1 — BLIND**")
+    end = (agents.find("**Phase 2 — EVIDENCE REVIEW**", start + 1)
+           if start >= 0 else -1)
+    doc = agents[start:end] if start >= 0 and end > start else ""
+    shared = ("JA — authoritative source of truth", "RU — text under review",
+              "EN — reference only", "JA > EN")
+    return [
+        ("Фаза 1: вход AGENTS.md = вход prompt (JA/RU/EN/зеркало) — YES",
+         bool(doc) and all(p in doc for p in shared)
+         and all(p in pan1 for p in shared)
+         and _sma_phase1_inputs_match_doc(doc, pan1),
+         f"AGENTS: {agents_path}"),
+        ("Фаза 1: EN в AGENTS.md — справка, не evidence и не истина — YES",
+         all(s in doc for s in ("EN — reference only",
+                                "не является evidence A/B/C",
+                                "не является источником истины",
+                                "JA > EN")),
          ""),
     ]
 
@@ -2631,6 +2780,7 @@ def self_test_semantic_prompts(
         "c": [],
     })
     pan1 = prompt_semantic_analyzer_phase1(ch)
+    rr = prompt_rules_recheck(ch)
     # глава без pre-check: проверка, что его отсутствие не ломает Фазу 2
     ch_nopc = Chapter(99, "99")
     pan_nopc = prompt_semantic_analyzer(ch_nopc, runs={
@@ -2646,11 +2796,11 @@ def self_test_semantic_prompts(
     checks += _sma_checks_b(ch, pb)
     checks += _sma_checks_c(ch, pc1, pc2)
     checks += [
-        ("Analyzer: reads selected A results — YES",
+        ("Analyzer: reads ALL existing A results — YES",
          a_dir in pan, a_dir),
-        ("Analyzer: reads selected B results — YES",
+        ("Analyzer: reads ALL existing B results — YES",
          b_dir in pan, b_dir),
-        ("Analyzer: reads selected C results — YES",
+        ("Analyzer: reads ALL existing C results — YES",
          c_dir in pan, c_dir),
         ("Analyzer: пишет только в analysis/ — YES",
          an_dir in pan and kinds == {"a", "b", "c", "analysis", "precheck"},
@@ -2729,9 +2879,10 @@ def self_test_semantic_prompts(
          not _sma_hits(pan1, ('"sources"', 'sources.a', 'sources.b',
                               'sources.c')),
          ""),
-        ("Фаза 1: в промпте НЕТ прежних analysis-результатов — YES",
+        ("Фаза 1: в промпте НЕТ прежних analysis-результатов (final + phase1) — YES",
          not _sma_hits(pan1, [f"{chap}/analysis/{r}." for r in
-                              sma_existing_runs(ch, "analysis")]),
+                              sma_existing_runs(ch, "analysis")
+                              + sma_existing_phase1_runs(ch)]),
          ""),
         ("Фаза 1: в промпте НЕТ findings A/B/C и их аудиторов — YES",
          not _sma_hits(pan1, ("Auditor A", "Auditor B", "Pragmatic Auditor C",
@@ -2745,10 +2896,14 @@ def self_test_semantic_prompts(
         ("Фаза 1: путь только в analysis (собственный вывод) — YES",
          _sma_path_kinds(pan1) <= {"analysis"},
          f"типы путей: {sorted(_sma_path_kinds(pan1))}"),
-        ("Фаза 1: содержит JA + RU + контекст и вывод phase1 — YES",
+        ("Фаза 1: содержит JA + RU + EN + контекст и вывод phase1 — YES",
          ch.ja_path in pan1 and ch.output_path in pan1
+         and ch.en_path in pan1
          and ch.merged_path in pan1 and ".phase1.json" in pan1,
          ""),
+        # ---- ДОКУМЕНТАЦИЯ ↔ PROMPT: описание входа Фазы 1 в AGENTS.md
+        # совпадает с фактическим generated prompt ----
+        *_sma_phase1_doc_sync(pan1),
         # ---- ФАЗА 2: evidence приходит только сюда ----
         ("Фаза 2: содержит каталог A — YES", a_dir in pan, ""),
         ("Фаза 2: содержит каталог B — YES", b_dir in pan, ""),
@@ -2761,6 +2916,18 @@ def self_test_semantic_prompts(
          ""),
         ("Фаза 2: ссылка на слепой вывод Фазы 1 — YES",
          "*.phase1.json" in pan and "ПЕРВОНАЧАЛЬНОЕ" in pan, ""),
+        # ---- ФАЗА 2 БЕЗ phase1: STOP + отдельный запуск Фазы 1 ----
+        # (внутри evidence-review задания Фазу 1 выполнять НЕЛЬЗЯ: blindness
+        # утрачен — проверяется по тексту сгенерированного prompt)
+        ("Фаза 2: phase1 отсутствует → STOP, сначала отдельный Фаза 1 — YES",
+         "STOP: Фазу 1 выполнять в этом задании НЕЛЬЗЯ" in pan
+         and "ОТДЕЛЬНОЕ задание «Смысловой анализатор —" in pan
+         and "после завершения Фазы 1 выполняй Фазу 2" in pan,
+         ""),
+        ("Фаза 2: НЕ инструктирует выполнить Фазу 1 внутри себя — YES",
+         "сначала выполни Фазу 1" not in pan
+         and "и лишь после этого возвращайся к Фазе 2" not in pan,
+         ""),
         ("Фаза 2: pre-check — evidence, а не голос — YES",
          "НЕ аудитор" in pan and "Наличие pre-check НЕ обязательно" in pan, ""),
         ("Фаза 2: без pre-check работает (chapter без файла) — YES",
@@ -2808,6 +2975,13 @@ def self_test_semantic_prompts(
         ("Фаза 2: evidence/EN против JA → ориентир JA, совпадение с EN ≠ доказательство — YES",
          "если evidence аудитора или EN противоречит JA, ориентируйся на JA" in pan
          and "не доказывает корректности" in pan, ""),
+        # ---- РЕКОНТРОЛЬ: разделитель сцены необязателен (как в AGENTS.md) ----
+        ("prompt_rules_recheck: --- необязателен, отсутствие не WARNING — YES",
+         "необязательный композиционный инструмент" in rr
+         and "Отсутствие `---` само по себе НЕ является ошибкой" in rr
+         and "Отсутствие `---` при явной смене сцены — WARNING" not in rr
+         and "обязательные разделители сцен" not in rr,
+         ""),
         # ---- LEGACY: GAP-аудит не активен, функция сохранена ----
         ("prompt_gap_audit: больше не в активном меню PROMPTS — YES",
          not any(getattr(p, "generator", None) is prompt_gap_audit
