@@ -95,7 +95,7 @@ JA > EN при конфликте
 
 Корень рабочей директории агента — `AINovelEdit/`. Конкретные абсолютные пути
 для текущего тома/главы указываются в промпте, который генерируется
-инструментом `tools/generate_agent_prompt.py` (не меняй пути вручную).
+инструментом `tools/agent_workflow.py` (не меняй пути вручную).
 Имена файлов тома — без ведущего нуля: `v2-ch06.md`, `v2-log.md`
 (translates/, output/, merged/, _prefilter/). В `output/_audit/` том 2
 ведётся как `v02-chYY.md` (полный аудит; шаблон «vXX-chYY»), отчёты
@@ -513,7 +513,7 @@ self-review предшествует каждой правке fix_block.py, о�
 сверху вниз с RECHECK после правок. Поиск пропусков — общий детерминированный
 `scripts/omission_precheck.py` (см. «Legacy: автоматический semantic audit»);
 старый режим генератора промптов «Поиск пропущенных отрывков (GAP-аудит)»
-(`tools/generate_agent_prompt.py::prompt_gap_audit`) помечен LEGACY, из
+(`tools/agent_workflow.py::prompt_gap_audit`) помечен LEGACY, из
 активного меню убран и в текущем pipeline НЕ используется.
 
 **Важно:** `grammar_scan.py`, `style_scan.py`, `format_scan.py` (и опционально
@@ -543,11 +543,11 @@ output-файлу (`output/vXX-chYY.md`), не по merged.
 ## Legacy: автоматический semantic audit (НЕ реализован)
 
 **К той же категории легаси относится и `prompt_gap_audit()`**
-(`tools/generate_agent_prompt.py`) — старый LLM-режим GAP-аудита: самостоятельный
+(`tools/agent_workflow.py`) — старый LLM-режим GAP-аудита: самостоятельный
 поиск/классификация/исправление пропусков через `fix_block.py`,
 `update_merged.py`, отчёт в `output/_audit/vXX-chYY.md` и `_log`. Помечен
 `LEGACY / DEPRECATED / NOT USED IN CURRENT PIPELINE`, из активного меню
-`generate_agent_prompt.py` удалён, функция сохранена только как исторический
+`agent_workflow.py` удалён, функция сохранена только как исторический
 задел (в нём есть полезные эвристики, потенциально пригодные для
 `scripts/omission_precheck.py`: сверка сдвига границ блоков, повторная проверка
 несколькими ключами, выборка середины, поиск фрагмента в другом блоке,
@@ -633,7 +633,7 @@ analysis/ финальные результаты Analyzer (<id>.json / <id>.md)
 ```
 
 Результаты — `output/_audit/sma/<chapter>/{a,b,c,analysis,precheck}/`; запуск
-промптов — через `tools/generate_agent_prompt.py` (режимы «Смысловой аудит A»,
+промптов — через `tools/agent_workflow.py` (режимы «Смысловой аудит A»,
 «Смысловой аудит B», «Прагматический аудит C», «Смысловой анализатор — Фаза 1
 (blind)» и «Смысловой анализатор — Фаза 2 (evidence review)»). Каждый запуск
 A/B/C получает уникальный `audit_run_id` и не перезаписывает предыдущие.

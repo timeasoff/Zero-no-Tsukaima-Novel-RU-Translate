@@ -122,7 +122,7 @@ FINAL AUDIT
 Рабочая архитектура смыслового аудита — **независимые Pragmatic/Semantic
 Audit A, B и C → Semantic Analyzer A+B+C**, результаты в
 `output/_audit/sma/<chapter>/{a,b,c,analysis}/` (запуск промптов —
-`tools/generate_agent_prompt.py`):
+`tools/agent_workflow.py`):
 
 ```text
 Semantic Audit A ──┐
@@ -263,7 +263,7 @@ PDF (кириллица и изображения обрабатываются �
 Открыть `AINovelEdit/` в Agent-IDE и дать задачу. Промпты для конкретных
 томов, глав и режимов (первый запуск, продолжение, аудиты, обработка
 блока, разбор решений пользователя по OPEN / DEFERRED и PROVISIONAL)
-генерирует `tools/generate_agent_prompt.py` — он сам подставляет
+генерирует `tools/agent_workflow.py` — он сам подставляет
 все пути; вручную пути в промптах не меняются. Готовый промпт он также
 сохраняет в `agent_prompt.md` в корне проекта — на этот файл можно
 сослаться в задаче агенту (файл в `.gitignore`, регенерируется при каждом

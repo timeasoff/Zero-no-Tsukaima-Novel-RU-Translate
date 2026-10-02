@@ -12,7 +12,7 @@
 Semantic Audit A  →  Semantic Audit B  →  Semantic Analyzer A+B
 ```
 
-- Запуск промптов: `python tools/generate_agent_prompt.py`
+- Запуск промптов: `python tools/agent_workflow.py`
   (режимы «Смысловой аудит A», «Смысловой аудит B», «Смысловой анализатор A+B»).
 - Структура результатов:
 
@@ -45,7 +45,7 @@ output/_audit/sma/<chapter>/
 
 - `AINovelEdit/scripts/llm_runtime.py` — runtime-адаптеры (`cline`/`opencode`);
 - `AINovelEdit/scripts/merged_io.py` — общий разбор блок-файлов;
-- `tools/generate_agent_prompt.py` — источник класса `Chapter` (пути главы).
+- `tools/agent_workflow.py` — источник класса `Chapter` (пути главы).
 
 ## Причина вывода из pipeline
 

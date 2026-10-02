@@ -15,5 +15,5 @@ AINovelEdit/output/_audit/_fix/*.json
 AINovelEdit/output/_audit/_prefilter/*-alignment.md
 .vscode
 
-# промпт-инструкция для агента (регенерируется tools/generate_agent_prompt.py)
+# промпт-инструкция для агента (регенерируется tools/agent_workflow.py)
 /agent_prompt.md

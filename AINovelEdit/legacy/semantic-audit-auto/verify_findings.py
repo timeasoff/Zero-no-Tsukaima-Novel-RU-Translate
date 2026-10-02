@@ -69,7 +69,7 @@ from pathlib import Path
 LEGACY_DIR = Path(__file__).resolve().parent
 AINOVELEDIT = LEGACY_DIR.parent.parent          # AINovelEdit/
 SCRIPTS_DIR = AINOVELEDIT / "scripts"           # общие модули проекта
-TOOLS_DIR = AINOVELEDIT.parent / "tools"        # generate_agent_prompt.py
+TOOLS_DIR = AINOVELEDIT.parent / "tools"        # agent_workflow.py
 for _p in (str(LEGACY_DIR), str(SCRIPTS_DIR), str(TOOLS_DIR)):
     if _p not in sys.path:
         sys.path.insert(0, _p)

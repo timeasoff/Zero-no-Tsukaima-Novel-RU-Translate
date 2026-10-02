@@ -99,7 +99,7 @@ EN — reference only (только справочный материал).
 
 Изоляция Фазы 1 — не декларация, а свойство сформированного задания: её
 промпт проверяется self-test'ом
-(`python tools/generate_agent_prompt.py --self-test-sma`) на отсутствие
+(`python tools/agent_workflow.py --self-test-sma`) на отсутствие
 путей/списков/evidence A/B/C/precheck. Если в задании Фазы 1 оказались такие
 данные — это ошибка генерации, сообщи о ней.
 

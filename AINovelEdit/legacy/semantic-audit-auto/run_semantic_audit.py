@@ -9,7 +9,7 @@ pipeline. Сохранён только как задел/история для 
 
 Текущий рабочий pipeline: Semantic Audit A → Semantic Audit B →
 Semantic Analyzer A+B (output/_audit/sma/<chapter>/{a,b,analysis}/);
-запуск — через tools/generate_agent_prompt.py.
+запуск — через tools/agent_workflow.py.
 
 run_semantic_audit.py — оркестратор ДВОЙНОГО независимого смыслового аудита (A + B).
 
@@ -93,11 +93,11 @@ from pathlib import Path
 # LEGACY relocation shim: файл вынесен в legacy/semantic-audit-auto/.
 # Это НЕ переписывание под новую архитектуру sma/<chapter>/..., а только
 # пересчёт путей после переноса. Общие модули (merged_io, llm_runtime)
-# остаются в AINovelEdit/scripts/, а generate_agent_prompt — в tools/.
+# остаются в AINovelEdit/scripts/, а agent_workflow — в tools/.
 LEGACY_DIR = Path(__file__).resolve().parent
 AINOVELEDIT = LEGACY_DIR.parent.parent          # AINovelEdit/
 SCRIPTS_DIR = AINOVELEDIT / "scripts"           # общие модули проекта
-TOOLS_DIR = AINOVELEDIT.parent / "tools"        # generate_agent_prompt.py
+TOOLS_DIR = AINOVELEDIT.parent / "tools"        # agent_workflow.py
 
 for _p in (str(LEGACY_DIR), str(SCRIPTS_DIR), str(TOOLS_DIR)):
     if _p not in sys.path:
@@ -105,7 +105,7 @@ for _p in (str(LEGACY_DIR), str(SCRIPTS_DIR), str(TOOLS_DIR)):
 
 import merged_io                      # noqa: E402  (общий разбор блок-файлов)
 import llm_runtime as rt              # noqa: E402  (runtime adapters)
-from generate_agent_prompt import Chapter  # noqa: E402  (пути главы без дублирования)
+from agent_workflow import Chapter  # noqa: E402  (пути главы без дублирования)
 
 OUT_DIR = AINOVELEDIT / "output" / "_audit"
 SKILL_DIR = AINOVELEDIT / ".agents" / "skills"

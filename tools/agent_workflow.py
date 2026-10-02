@@ -1,6 +1,13 @@
 #!/usr/bin/env python3
 """
-Генератор промптов для AI-агента проекта AINovelEdit.
+Оркестратор рабочего процесса AI-агента проекта AINovelEdit.
+
+Внутри два независимых раздела:
+PROMPTS — LLM-промпты (PromptInfo): генерация готового задания агенту,
+  копирование в буфер и сохранение в agent_prompt.md;
+ACTIONS — технические действия оркестратора (ActionInfo): запускают
+  детерминированные скрипты проекта и НЕ создают LLM-промптов.
+
 Основные возможности:
 - выбор режима через числовой ввод в консоли;
 - выбор тома и главы (поддержка числовых и строковых идентификаторов);
@@ -23,9 +30,12 @@
 - автоматическое копирование готового промпта в буфер обмена;
 - сохранение готового промпта в markdown-файл `agent_prompt.md`
   в корне проекта, на который можно сослаться в задаче агенту
-  (файл в .gitignore, перезаписывается при каждой генерации).
+  (файл в .gitignore, перезаписывается при каждой генерации);
+- ACTIONS оркестратора: Omission Pre-check — детерминированная проверка
+  пропусков перед A/B/C (запускает AINovelEdit/scripts/omission_precheck.py;
+  не является LLM-аудитом и не изменяет перевод).
 Запускать из корня проекта:
-python tools/generate_agent_prompt.py
+python tools/agent_workflow.py
 """
 from __future__ import annotations
 
@@ -537,6 +547,20 @@ class PromptInfo:
     description: str
     guide: str
     generator: Callable[[Chapter], str] | None = None
+
+@dataclass
+class ActionInfo:
+    """Техническое действие оркестратора (НЕ LLM-промпт).
+
+    В отличие от PromptInfo действие не генерирует задание для агента, а
+    выполняет детерминированный технический шаг проекта: ``execute``
+    получает текущую главу и возвращает код завершения процесса (0 — успех).
+
+    ActionInfo НЕ наследуется от PromptInfo и НЕ входит в PROMPTS.
+    """
+    name: str
+    description: str
+    execute: Callable[[Chapter], int]
 
 def prompt_first_launch(ch: Chapter) -> str:
     return f"""
@@ -2218,7 +2242,7 @@ PROMPTS: list[PromptInfo] = [
         output/_audit/sma/<chapter>/analysis/<id>.phase1.json.
 
         Запускать ПЕРЕД «Смысловой анализатор — Фаза 2».
-        Изоляция проверяется self-test (tools/generate_agent_prompt.py
+        Изоляция проверяется self-test (tools/agent_workflow.py
         --self-test-sma).
         """,
         prompt_semantic_analyzer_phase1,
@@ -2252,37 +2276,115 @@ PROMPTS: list[PromptInfo] = [
 ]
 
 # ============================================================================
+# ACTIONS (технические действия оркестратора; НЕ LLM-промпты)
+# ============================================================================
+def action_omission_precheck(ch: Chapter) -> int:
+    """Детерминированная проверка пропусков перед A/B/C.
+
+    Техническое действие оркестратора: запускает
+    AINovelEdit/scripts/omission_precheck.py и показывает stdout/stderr и
+    код завершения. Не создаёт LLM-промпт, не является LLM-аудитом и не
+    меняет перевод. Evidence складывается в
+    output/_audit/sma/<chapter>/precheck/omission-precheck.json.
+    """
+    script = "scripts/omission_precheck.py"
+    file_name = ch.file_name
+    result_rel = sma_precheck_rel_path(ch)
+    command_display = f"python {script} --file {file_name} --json"
+    print()
+    separator("=")
+    print(f"  Глава: {ch.chapter_id_full}")
+    print()
+    print("  Действие:")
+    print("  Omission Pre-check")
+    print()
+    print("  Команда:")
+    print(f"  {command_display}")
+    print()
+    print("  Назначение:")
+    print("  детерминированная проверка пропусков.")
+    print("  Не является LLM-аудитом.")
+    print("  Не изменяет перевод.")
+    print()
+    print("  Результат:")
+    print(f"  {result_rel}")
+    separator("=")
+    print()
+
+    command = [sys.executable, script, "--file", file_name, "--json"]
+    try:
+        process = subprocess.run(
+            command,
+            cwd=AINOVELEDIT,
+            capture_output=True,
+            text=True,
+            encoding="utf-8",
+            errors="replace",
+        )
+    except OSError as exc:
+        print(f"  Не удалось запустить omission_precheck.py: {exc}")
+        return 1
+
+    print("  --- stdout ---")
+    print((process.stdout or "").rstrip())
+    if process.stderr:
+        print("  --- stderr ---")
+        print(process.stderr.rstrip())
+    print()
+    print(f"  Код завершения: {process.returncode}")
+    print()
+    return process.returncode
+
+ACTIONS: list[ActionInfo] = [
+    ActionInfo(
+        "Omission Pre-check",
+        "Детерминированная проверка пропусков перед A/B/C",
+        action_omission_precheck,
+    ),
+]
+
+# ============================================================================
 # МЕНЮ (числовой ввод)
 # ============================================================================
 def print_menu(ch: Chapter) -> None:
     """Вывести главное меню."""
     print()
-    print("AINovelEdit — генератор промптов")
+    print("AINovelEdit — оркестратор промптов и действий")
     separator()
     print(f"  Текущая глава: {ch.chapter_id_full}")
     separator()
+    print()
+    print("=== Prompts ===")
     print()
     for i, p in enumerate(PROMPTS, start=1):
         print(f"  {i:2d}. {p.title}")
         print(f"      {p.description}")
         print()  # <-- Возвращаем отступ между пунктами
+    print("=== Actions ===")
+    print()
+    for i, a in enumerate(ACTIONS, start=len(PROMPTS) + 1):
+        print(f"  {i:2d}. {a.name}")
+        print(f"      {a.description}")
+        print()
         
-    extra_start = len(PROMPTS) + 1
+    extra_start = len(PROMPTS) + len(ACTIONS) + 1
     print(f"  {extra_start}. Следующая глава")
     print(f"  {extra_start + 1}. Предыдущая глава")
     print(f"  {extra_start + 2}. Изменить том / главу")
     print(f"  {extra_start + 3}. Выход")
     print()
 
-def choose_prompt(ch: Chapter) -> int | str:
+def choose_prompt(ch: Chapter) -> tuple[str, int] | str:
     """
-    Запросить выбор режима числом.
+    Запросить выбор (prompt или action) числом.
+
     Возвращает:
-    int      — индекс в PROMPTS (от 0)
-    "next"   — следующая глава
-    "prev"   — предыдущая глава
-    "change" — сменить главу
-    "quit"   — выход
+    ("prompt", i) — индекс i в PROMPTS (от 0)
+    ("action", i) — индекс i в ACTIONS (от 0)
+    "next"        — следующая глава
+    "prev"        — предыдущая глава
+    "change"      — сменить главу
+    "quit"        — выход
     """
     while True:
         print_menu(ch)
@@ -2297,47 +2399,80 @@ def choose_prompt(ch: Chapter) -> int | str:
             input("  Нажмите Enter...")
             continue
 
-        if 1 <= number <= len(PROMPTS):
-            return number - 1
-        if number == len(PROMPTS) + 1:
+        n_prompts = len(PROMPTS)
+        n_actions = len(ACTIONS)
+        if 1 <= number <= n_prompts:
+            return ("prompt", number - 1)
+        if n_prompts < number <= n_prompts + n_actions:
+            return ("action", number - n_prompts - 1)
+        if number == n_prompts + n_actions + 1:
             return "next"
-        if number == len(PROMPTS) + 2:
+        if number == n_prompts + n_actions + 2:
             return "prev"
-        if number == len(PROMPTS) + 3:
+        if number == n_prompts + n_actions + 3:
             return "change"
-        if number == len(PROMPTS) + 4:
+        if number == n_prompts + n_actions + 4:
             return "quit"
 
-        print(f"  Введите число от 1 до {len(PROMPTS) + 4}.")
+        print(f"  Введите число от 1 до {n_prompts + n_actions + 4}.")
         print()
         input("  Нажмите Enter...")
 
 # ============================================================================
+# DISPATCH: PROMPT vs ACTION
+# ============================================================================
+def run_action(action: ActionInfo, ch: Chapter) -> int:
+    """Выполнить техническое действие оркестратора; вернуть код завершения."""
+    return action.execute(ch)
+
+def dispatch_selection(selection, ch: Chapter):
+    """Разделить выбор меню на prompt и action.
+
+    Возвращает:
+    ("prompt", PromptInfo) | ("action", ActionInfo) | None.
+
+    None — выбор не относится к PROMPTS/ACTIONS (навигация
+    обрабатывается вызывающим кодом до этого вызова).
+    """
+    if not (isinstance(selection, tuple) and len(selection) == 2):
+        return None
+    kind, index = selection
+    if kind == "prompt":
+        return ("prompt", PROMPTS[index])
+    if kind == "action":
+        return ("action", ACTIONS[index])
+    return None
+
+# ============================================================================
 # ПОДТВЕРЖДЕНИЕ
 # ============================================================================
-def ask_confirmation(prompt: PromptInfo, ch: Chapter) -> bool | str:
+def ask_confirmation(item: PromptInfo | ActionInfo, ch: Chapter) -> bool | str:
     """
-    Показать описание режима и спросить подтверждение.
+    Показать описание режима (PromptInfo) или действия (ActionInfo) и спросить
+    подтверждение — одинаковый диалог для обоих случаев.
     Возвращает True (да), False (нет), "next" (следующая), "prev" (предыдущая).
     """
+    is_action = isinstance(item, ActionInfo)
+    title = item.name if is_action else item.title
     print()
     print("Подтверждение запуска")
     separator()
     print()
-    print(f"  Режим: {prompt.title}")
+    print(f"  {'Действие' if is_action else 'Режим'}: {title}")
     print(f"  Глава: {ch.chapter_id_full}")
     print()
     print("  Кратко:")
-    print_wrapped(prompt.description, indent="    ")
-    print()
-    print("  Что делает этот режим:")
-    print_wrapped(prompt.guide, indent="    ")
+    print_wrapped(item.description, indent="    ")
+    if not is_action:
+        print()
+        print("  Что делает этот режим:")
+        print_wrapped(item.guide, indent="    ")
     print()
     separator()
     print()
     while True:
         raw = input(
-            f'Запустить "{prompt.title}" для {ch.chapter_id_full}? '
+            f'Запустить "{title}" для {ch.chapter_id_full}? '
             "(1 — да, 2 — нет, 3 — след. глава, 4 — пред. глава): "
         ).strip()
         if raw == "1":
@@ -2457,7 +2592,7 @@ def save_prompt_to_file(
         f"- Режим: {prompt.title}\n"
         f"- Глава: {ch.chapter_id_full}\n"
         f"- Сгенерировано: {datetime.now().strftime('%Y-%m-%d %H:%M')}\n"
-        "- Источник: tools/generate_agent_prompt.py\n"
+        "- Источник: tools/agent_workflow.py\n"
         "\n"
         "---\n"
         "\n"
@@ -2749,6 +2884,45 @@ def _sma_phase1_doc_sync(pan1: str) -> list[tuple[str, bool, str]]:
          ""),
     ]
 
+# Старое имя модуля собирается из частей, чтобы проверка «нет зависимостей
+# от старого имени» не находила саму себя в исходнике.
+_OLD_MODULE_NAME = "generate_" + "agent_prompt"
+
+def _dispatch_action_selftest() -> bool:
+    """Проверить dispatch action без запуска внешних скриптов (dry-run)."""
+    calls = {"n": 0}
+
+    def _stub(ch: Chapter) -> int:
+        calls["n"] += 1
+        return 42
+
+    probe = ActionInfo("probe", "selftest", _stub)
+    code = run_action(probe, Chapter(3, "3"))
+    if code != 42 or calls["n"] != 1:
+        return False
+    dispatched = dispatch_selection(("action", 0), Chapter(3, "3"))
+    return (dispatched is not None and dispatched[0] == "action"
+            and dispatched[1] is ACTIONS[0])
+
+def _no_old_module_deps() -> bool:
+    """Нет импортов старого модуля в .py-файлах проекта (исторические
+    отчёты/логи не являются кодом и здесь не проверяются)."""
+    skip_dirs = {".git", "__pycache__", "output", "translates", "origs"}
+    for root, dirs, files in os.walk(ROOT):
+        dirs[:] = [d for d in dirs if d not in skip_dirs]
+        for name in files:
+            if not name.endswith(".py"):
+                continue
+            try:
+                with open(os.path.join(root, name), encoding="utf-8") as fh:
+                    text = fh.read()
+            except OSError:
+                continue
+            if (f"import {_OLD_MODULE_NAME}" in text
+                    or f"from {_OLD_MODULE_NAME} import" in text):
+                return False
+    return True
+
 def self_test_semantic_prompts(
     ch: Chapter,
 ) -> tuple[list[tuple[str, bool, str]], dict[str, str]]:
@@ -2997,6 +3171,24 @@ def self_test_semantic_prompts(
          any(p.generator is prompt_semantic_analyzer_phase1 for p in PROMPTS)
          and any(p.generator is prompt_semantic_analyzer for p in PROMPTS),
          ""),
+        # ---- ORCHESTRATOR: PROMPTS vs ACTIONS ----
+        ("Orchestrator: PROMPTS непусты — YES",
+         len(PROMPTS) > 0, f"промптов: {len(PROMPTS)}"),
+        ("Orchestrator: ACTIONS непусты — YES",
+         len(ACTIONS) > 0, f"actions: {len(ACTIONS)}"),
+        ("Orchestrator: Omission Pre-check — это Action, а не Prompt — YES",
+         any(a.name == "Omission Pre-check" for a in ACTIONS)
+         and not any("Omission Pre-check" in p.title for p in PROMPTS),
+         f"actions: {[a.name for a in ACTIONS]}"),
+        ("Orchestrator: ActionInfo не наследуется от PromptInfo — YES",
+         not issubclass(ActionInfo, PromptInfo), ""),
+        ("Orchestrator: dispatch action (execute -> int) — YES",
+         _dispatch_action_selftest(), ""),
+        ("Orchestrator: новое имя файла agent_workflow.py — YES",
+         os.path.basename(os.path.abspath(__file__)) == "agent_workflow.py",
+         os.path.basename(os.path.abspath(__file__))),
+        ("Orchestrator: нет зависимостей от старого имени модуля — YES",
+         _no_old_module_deps(), f"старое имя: {_OLD_MODULE_NAME}"),
     ]
     prompts = {"A": pa1, "B": pb, "C": pc1,
                "Analyzer Phase 1": pan1, "Analyzer Phase 2": pan}
@@ -3029,7 +3221,7 @@ def run_sma_self_test(argv: list[str]) -> int:
         pass
     ch = _parse_selftest_chapter(argv)
     if ch is None:
-        print("Использование: python tools/generate_agent_prompt.py "
+        print("Использование: python tools/agent_workflow.py "
               "--self-test-sma <volume> <chapter>")
         print("  например: --self-test-sma 3 3   или   --self-test-sma v3-ch03")
         print("  опция --show-sma — дополнительно напечатать промпты A/B/C/Analyzer")
@@ -3101,7 +3293,31 @@ def main() -> None:
                     print("  Отменено.")
                 continue
 
-            prompt_index = result
+            # Различаем prompt и action: действие запускается только после
+            # подтверждения и не создаёт LLM-промпт.
+            dispatched = dispatch_selection(result, ch)
+            if dispatched is not None and dispatched[0] == "action":
+                action_obj = dispatched[1]
+                action_conf = ask_confirmation(action_obj, ch)
+                if action_conf == "next":
+                    new_ch = navigate_next(ch)
+                    if new_ch:
+                        ch = new_ch
+                        print(f"  Переключено на: {ch.chapter_id_full}")
+                    continue
+                if action_conf == "prev":
+                    new_ch = navigate_prev(ch)
+                    if new_ch:
+                        ch = new_ch
+                        print(f"  Переключено на: {ch.chapter_id_full}")
+                    continue
+                if not action_conf:
+                    continue
+                run_action(action_obj, ch)
+                input("  Нажмите Enter для возврата в меню...")
+                continue
+
+            prompt_index = result[1]
             prompt_obj = PROMPTS[prompt_index]
 
             # Подтверждение
