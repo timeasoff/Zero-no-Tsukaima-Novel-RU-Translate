@@ -55,7 +55,7 @@ AINovelEdit/
 ├── output/                      # РЕЗУЛЬТАТ работы агента
 │   ├── _log/                    # журнал решений (удаления, сомнения, термины)
 │   ├── _audit/                  # отчёты аудита глав; _prefilter/ — выгрузки предфильтров
-│   │                             #   _audit/sma/<chapter>/ — рабочий SMA (a/ b/ analysis/)
+│   │                             #   _audit/sma/<chapter>/ — рабочий SMA (a/ b/ c/ analysis/)
 │   └── ...
 ├── legacy/                      # ВЫНЕСЕННЫЙ legacy-код (НЕ в pipeline)
 │   └── semantic-audit-auto/     # автоматический semantic audit — НЕ реализован,
@@ -119,9 +119,26 @@ FINAL AUDIT
 
 ### Legacy: автоматический semantic audit
 
-Рабочая архитектура смыслового аудита — **Semantic Audit A → Semantic Audit B
-→ Semantic Analyzer A+B**, результаты в `output/_audit/sma/<chapter>/{a,b,analysis}/`
-(запуск промптов — `tools/generate_agent_prompt.py`).
+Рабочая архитектура смыслового аудита — **независимые Pragmatic/Semantic
+Audit A, B и C → Semantic Analyzer A+B+C**, результаты в
+`output/_audit/sma/<chapter>/{a,b,c,analysis}/` (запуск промптов —
+`tools/generate_agent_prompt.py`):
+
+```text
+Semantic Audit A ──┐
+                   ├→ Semantic Analyzer A+B+C
+Semantic Audit B ──┤
+                   │
+Pragmatic Audit C ─┘
+```
+
+A — микро-семантика, B — макро-семантика и логика, **C (`pragmatic-audit`) —
+прагматика**: коммуникативный акт, намёк, недосказанность, степень
+уверенности, сила и категоричность реплики, скрытое отношение, ирония,
+implied meaning (японские частицы и прагматические формы — в конкретном
+контексте). C не дублирует A и B. Analyzer работает в режимах `A+B` (C не
+запускался — старые главы) и `A+B+C`, без majority vote, с provenance
+`sources.a` / `sources.b` / `sources.c`.
 
 Автоматический (orchestrator) контур смыслового аудита вынесен в
 [`AINovelEdit/legacy/semantic-audit-auto/`](AINovelEdit/legacy/semantic-audit-auto/LEGACY.md)
