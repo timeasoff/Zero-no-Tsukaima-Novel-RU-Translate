@@ -328,6 +328,27 @@ SMA_OWN_FILE_NOTE = (
     "выводов из их наличия или отсутствия."
 )
 
+# Иерархия источников для промптов Analyzer ОБЕИХ фаз:
+# JA = источник истины, RU = проверяемый перевод, EN = только справочный
+# материал. Проверяется self-test по реальному сгенерированному prompt
+# (см. self_test_semantic_prompts), а не только по тексту skill-файла.
+SMA_SOURCE_HIERARCHY_NOTE = (
+    "ИЕРАРХИЯ ИСТОЧНИКОВ (SOURCE PRIORITY)\n"
+    "JA — authoritative source of truth (авторитетный источник истины).\n"
+    "RU — text under review (проверяемый перевод).\n"
+    "EN — reference only (только справочный материал), не источник смысла.\n"
+    "Основная проверка — JA → RU. Не EN → RU и не JA → EN → RU: EN не является\n"
+    "промежуточным эталоном перевода.\n"
+    "JA has priority over EN (JA > EN) при любом конфликте: конфликтующую с JA\n"
+    "интерпретацию EN игнорируй.\n"
+    "EN must not be treated as authority.\n"
+    "Совпадение RU с EN само по себе не является доказательством правильности\n"
+    "перевода.\n"
+    "Конфликтный случай JA = X, EN = Y, RU = Y: вывод «RU корректен, потому что\n"
+    "совпадает с EN» запрещён — оценивай соответствие RU японскому оригиналу\n"
+    "(JA → RU)."
+)
+
 def sma_chapter_id(ch: Chapter) -> str:
     """Идентификатор главы для каталогов SMA: как в именах файлов output/.
 
@@ -1471,11 +1492,13 @@ def _sma_analyzer_p1_head(ch: Chapter, phase1_id: str) -> str:
 чужого мнения.
 
 ВХОДНЫЕ ДАННЫЕ ЭТОЙ ФАЗЫ (и БОЛЬШЕ НИЧЕГО)
-JA (источник смысла): {ch.ja_path}
-Текущий RU (актуальный результат): {ch.output_path}
-EN (вспомогательная опора): {ch.en_path}
+JA — authoritative source of truth (источник смысла): {ch.ja_path}
+RU — text under review (текущий результат): {ch.output_path}
+EN — reference only (только справочный материал): {ch.en_path}
 Зеркало блоков (соседний контекст): {ch.merged_path}
 Куда записать свой вывод Фазы 1: {p1_out}
+
+{SMA_SOURCE_HIERARCHY_NOTE}
 
 {SMA_AUTONOMY_NOTE}
 
@@ -1605,9 +1628,9 @@ def _sma_analyzer_head(ch: Chapter, analysis_id: str,
 для Analyzer.
 
 ВХОДНЫЕ ДАННЫЕ ЭТОЙ ГЛАВЫ
-JA (источник смысла): {ch.ja_path}
-Текущий RU (актуальный результат): {ch.output_path}
-EN (вспомогательная опора): {ch.en_path}
+JA — authoritative source of truth (источник смысла): {ch.ja_path}
+RU — text under review (текущий результат): {ch.output_path}
+EN — reference only (только справочный материал): {ch.en_path}
 Зеркало блоков (JA/EN/RU, соседний контекст): {ch.merged_path}
 Слепой вывод Фазы 1 (твоё собственное ПЕРВОНАЧАЛЬНОЕ заключение, файл
 {an_dir}*.phase1.json — сделано БЕЗ evidence):
@@ -1617,6 +1640,8 @@ EN (вспомогательная опора): {ch.en_path}
 Evidence общего Omission Pre-check (детерминированный pre-check, НЕ аудитор):
   {pc_path}
 Каталог результатов Analyzer (куда писать): {an_dir}
+
+{SMA_SOURCE_HIERARCHY_NOTE}
 
 НАБОР EVIDENCE (inputs этой главы)
 a_runs: {a_list}
@@ -1688,7 +1713,11 @@ sources.c) и отмечен ли он pre-check'ом (precheck).
 - считать, что согласие всех аудиторов подтверждает ошибку, а находка только
   одного (в том числе только C) — автоматически ложный positive;
 - считать количество обнаружений доказательством: это только evidence;
-- принимать решение вместо проверки JA → RU.
+- принимать решение вместо проверки JA → RU;
+- считать EN источником истины или опираться на совпадение RU с EN:
+  если evidence аудитора или EN противоречит JA, ориентируйся на JA
+  (JA > EN); совпадение RU с EN само по себе не доказывает корректности
+  RU — решение принимается только по паре JA → RU.
 
 ПРОИСХОЖДЕНИЕ (sources) НЕ ГОЛОСУЕТ
 - sources.a / sources.b / sources.c — это отметка о том, кто заметил место,
@@ -2738,6 +2767,47 @@ def self_test_semantic_prompts(
          sma_precheck_rel_path(ch_nopc) in pan_nopc
          and "работай без него" in pan_nopc
          and '"precheck": null' in pan_nopc, ""),
+        # ---- ИЕРАРХИЯ ИСТОЧНИКОВ (JA > EN): проверяется СГЕНЕРИРОВАННЫЙ
+        # prompt обеих фаз, а не текст skill-файла ----
+        ("Фаза 1: JA — authoritative source of truth — YES",
+         "JA — authoritative source of truth" in pan1, ""),
+        ("Фаза 1: RU — text under review — YES",
+         "RU — text under review" in pan1, ""),
+        ("Фаза 1: EN — reference only — YES",
+         "EN — reference only" in pan1, ""),
+        ("Фаза 1: JA has priority over EN (JA > EN) — YES",
+         "JA has priority over EN" in pan1 and "JA > EN" in pan1, ""),
+        ("Фаза 1: EN must not be treated as authority — YES",
+         "EN must not be treated as authority" in pan1, ""),
+        ("Фаза 1: EN не объявлен источником смысла — YES",
+         not _sma_hits(pan1, ("EN — источник истины",
+                              "EN (источник смысла",
+                              "EN — основной смысловой")), ""),
+        ("Фаза 1: конфликт JA/EN (JA=X, EN=Y, RU=Y) оценивается по JA → RU — YES",
+         "JA = X, EN = Y, RU = Y" in pan1
+         and "совпадает с EN» запрещён" in pan1
+         and "Основная проверка — JA → RU" in pan1, ""),
+        ("Фаза 2: JA — authoritative source of truth — YES",
+         "JA — authoritative source of truth" in pan, ""),
+        ("Фаза 2: RU — text under review — YES",
+         "RU — text under review" in pan, ""),
+        ("Фаза 2: EN — reference only — YES",
+         "EN — reference only" in pan, ""),
+        ("Фаза 2: JA has priority over EN (JA > EN) — YES",
+         "JA has priority over EN" in pan and "JA > EN" in pan, ""),
+        ("Фаза 2: EN must not be treated as authority — YES",
+         "EN must not be treated as authority" in pan, ""),
+        ("Фаза 2: EN не объявлен источником смысла — YES",
+         not _sma_hits(pan, ("EN — источник истины",
+                             "EN (источник смысла",
+                             "EN — основной смысловой")), ""),
+        ("Фаза 2: конфликт JA/EN (JA=X, EN=Y, RU=Y) оценивается по JA → RU — YES",
+         "JA = X, EN = Y, RU = Y" in pan
+         and "совпадает с EN» запрещён" in pan
+         and "Основная проверка — JA → RU" in pan, ""),
+        ("Фаза 2: evidence/EN против JA → ориентир JA, совпадение с EN ≠ доказательство — YES",
+         "если evidence аудитора или EN противоречит JA, ориентируйся на JA" in pan
+         and "не доказывает корректности" in pan, ""),
         # ---- LEGACY: GAP-аудит не активен, функция сохранена ----
         ("prompt_gap_audit: больше не в активном меню PROMPTS — YES",
          not any(getattr(p, "generator", None) is prompt_gap_audit
