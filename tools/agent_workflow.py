@@ -1937,12 +1937,36 @@ sources.c) и отмечен ли он pre-check'ом (precheck).
 - Режим A+B (запусков C нет) и режим A+B+C обрабатываются одинаково:
   меняется только набор evidence, но не порядок работы и не статусы.
 
-СТАТУСЫ (каждому candidate обязателен один)
-- CONFIRMED_ERROR — ясная смысловая ошибка: JA однозначен, RU передаёт другой
-  смысл, исправление формулируется однозначно → МОЖНО исправлять.
-- DISPUTED — расхождение мнений аудиторов или неоднозначность JA → НЕ исправлять.
+ДВЕ ОСИ РЕШЕНИЯ (каждому candidate обязательны ОБЕ)
+Ось достоверности fidelity (что именно не так):
+- MEANING_SHIFT — смысл искажён: JA говорит X, RU говорит Y.
+- COMPONENT_LOSS — ядро смысла передано, но потерян компонент (оттенок,
+  модальность, эмоциональная составляющая, деталь, регистр).
+- ADDITION — в RU есть содержание, которого нет в JA.
+- MISSING — фрагмент JA отсутствует в RU (omission-candidate).
+- RUSSIAN_ERROR — смысл в порядке, ошибочен сам русский (грамматика,
+  орфография, коллокация).
+- FORMAT — формат/оформление: разметка, кавычки, курсив, абзацы.
+Ось действия action (что делать):
+- FIXED — правка внесена через fix_block.py (обязательны before/after).
+- REPORT_ONLY — в отчёт, перевод не менять (крупная или спорная правка).
+- PRESERVED — finding отклонён, текст сохранён.
+Исход status (каждому candidate обязателен один):
+- CONFIRMED_ERROR — подтверждённая по сверке JA → RU ошибка; правка разрешена.
+- DISPUTED — расхождение мнений аудиторов, неоднозначность JA или
+  неподтверждённое предложение → НЕ исправлять.
 - FALSE_POSITIVE — finding не подтверждается → НЕ исправлять.
-- OPTIONAL — допустимое улучшение, текущий перевод правилен → НЕ исправлять.
+- OPTIONAL упразднён: «допустимое улучшение» не является классом потери;
+  если потери нет — FALSE_POSITIVE + PRESERVED, если компонент потерян —
+  fidelity COMPONENT_LOSS и решение по политике ниже.
+ПОЛИТИКА ДЕЙСТВИЯ (по fidelity и размеру правки):
+- FIXED — всегда при MEANING_SHIFT / MISSING / ADDITION / RUSSIAN_ERROR / FORMAT.
+- при COMPONENT_LOSS: правка минимальна (одна лексема/форма либо ≤ 120
+  символов в пределах одного предложения) и обоснована JA → FIXED;
+  правка крупнее (переписывание предложения или абзаца) → REPORT_ONLY.
+- PRESERVED — только когда finding отклонён (FALSE_POSITIVE).
+- FIXED допустим ТОЛЬКО со status CONFIRMED_ERROR; для него обязательны
+  before и after (так же проверяет scripts/semantic_findings.py).
 
 ПРАВКА (только текущая глава)
 - WARNING / CANDIDATE сами по себе НЕ разрешают правку; исправляй ТОЛЬКО
@@ -2003,6 +2027,7 @@ def _sma_analyzer_format(ch: Chapter, analysis_id: str,
       "sources": {{ "a": ["<run_id>"], "b": ["<run_id>"], "c": ["<run_id>"], "precheck": false }},
       "source": "JA fragment",
       "current": "RU fragment",
+      "fidelity": "MEANING_SHIFT",
       "status": "CONFIRMED_ERROR",
       "reason": "Обоснование Analyzer",
       "suggestion": "Исправленный вариант",
@@ -2013,10 +2038,15 @@ def _sma_analyzer_format(ch: Chapter, analysis_id: str,
   ]
 }}
 
-Разрешённые status: CONFIRMED_ERROR / DISPUTED / FALSE_POSITIVE / OPTIONAL.
+fidelity обязателен для каждого result: MEANING_SHIFT / COMPONENT_LOSS /
+ADDITION / MISSING / RUSSIAN_ERROR / FORMAT (оси решения см. выше).
+Разрешённые status: CONFIRMED_ERROR / DISPUTED / FALSE_POSITIVE
+(OPTIONAL упразднён; в старых analysis-JSON остаётся как легаси).
 Разрешённые action: FIXED / REPORT_ONLY / PRESERVED.
-- FIXED — только для CONFIRMED_ERROR (правка внесена через fix_block.py).
-- REPORT_ONLY — DISPUTED / OPTIONAL (в отчёт, перевод не менять).
+- FIXED — только для CONFIRMED_ERROR и только когда политика размера
+  правки даёт «внести» (правка внесена через fix_block.py).
+- REPORT_ONLY — DISPUTED, а также COMPONENT_LOSS с крупной правкой
+  (в отчёт, перевод не менять).
 - PRESERVED — FALSE_POSITIVE (оставлено как есть).
 Для каждого FIXED обязательны before и after.
 - inputs.a_runs / inputs.b_runs / inputs.c_runs — все существующие запуски
@@ -2038,8 +2068,9 @@ JSON: {out_rel}
 MD:   {out_md_rel}
 (абсолютные пути: {out_abs} и {out_md_abs})
 JSON — машинный результат; MD — человекочитаемый отчёт с таблицей по каждому
-candidate (block, candidate_id, sources A/B/C, status, reason, action,
-before/after для FIXED; отдельно сводка по DISPUTED и OPTIONAL).
+candidate (block, candidate_id, sources A/B/C, fidelity, status, reason,
+action, before/after для FIXED; отдельно сводка по DISPUTED и по всем
+candidate с action REPORT_ONLY).
 Пиши только в каталог analysis/ этой главы; другие файлы не создавай и не
 изменяй."""
 
@@ -2395,8 +2426,11 @@ PROMPTS: list[PromptInfo] = [
         «только C нашёл → false positive» одинаково недопустимы.
 
         Два режима сохранены: A + B (C не запускался) и A + B + C;
-        отсутствие pre-check не мешает работе. Статусы CONFIRMED_ERROR /
-        DISPUTED / FALSE_POSITIVE / OPTIONAL; правка только через
+        отсутствие pre-check не мешает работе. Две оси решения: fidelity
+        (MEANING_SHIFT / COMPONENT_LOSS / ADDITION / MISSING / RUSSIAN_ERROR /
+        FORMAT) + action (FIXED / REPORT_ONLY / PRESERVED) при исходе status
+        CONFIRMED_ERROR / DISPUTED / FALSE_POSITIVE (OPTIONAL упразднён);
+        правка только через
         fix_block.py. Результат: output/_audit/sma/<chapter>/analysis/.
 
         Запускать ПОСЛЕ «Смысловой анализатор — Фаза 1».
@@ -3231,9 +3265,10 @@ def self_test_semantic_prompts(
         ("Analyzer: фиксирует before/after для FIXED — YES",
          '"before"' in pan and '"after"' in pan,
          ""),
-        ("Analyzer: статусы сохранены — YES",
+        ("Analyzer: две оси решения (fidelity + action) — YES",
          all(s in pan for s in ("CONFIRMED_ERROR", "DISPUTED",
-                                "FALSE_POSITIVE", "OPTIONAL")),
+                                "FALSE_POSITIVE", "fidelity",
+                                "MEANING_SHIFT", "COMPONENT_LOSS")),
          ""),
         ("Analyzer: действия сохранены — YES",
          all(a in pan for a in ("FIXED", "REPORT_ONLY", "PRESERVED")),

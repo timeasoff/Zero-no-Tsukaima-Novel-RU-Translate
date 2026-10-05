@@ -240,7 +240,9 @@ AINovelEdit/
   («красивее», «литературнее», «естественнее», «ближе к EN», «ближе к
   словарной форме», «без повтора», «привычнее», «более профессионально»).
   Leave-Unchanged Accuracy важнее количества правок; **ноль правок —
-  допустимый итог аудита**.
+  допустимый итог аудита, но не критерий его качества**: критерий
+  качества — полнота (recall) на размеченном корпусе ручных правок
+  (`_work/qa_corpus`), а не отсутствие жалоб на текст.
 - **Не выдумывай JA-доказательство.** Утверждение «в JA сказано X» требует
   реального X в доступном JA-контексте. Реконструировать отсутствующую
   японскую фразу, ссылаться на похожее место как на доказательство,
@@ -368,9 +370,13 @@ candidate pre-check), classification/disposition ещё не имеет — эт
 нескольких кандидатов в одно решение разрешено только с явным
 перечислением всех объединённых кандидатов.
 
-Для смыслового аудита (SMA) Decision stage выполняет Analyzer:
-classification/status — `CONFIRMED_ERROR` / `DISPUTED` / `FALSE_POSITIVE` /
-`OPTIONAL`, disposition/action — `FIXED` / `REPORT_ONLY` / `PRESERVED`
+Для смыслового аудита (SMA) Decision stage выполняет Analyzer по ДВУМ
+независимым осям (скилл `semantic-analyzer`, раздел «Две оси решения»):
+ось достоверности `fidelity` — `MEANING_SHIFT` / `COMPONENT_LOSS` /
+`ADDITION` / `MISSING` / `RUSSIAN_ERROR` / `FORMAT`; ось действия `action`
+— `FIXED` / `REPORT_ONLY` / `PRESERVED` при исходе `status`
+`CONFIRMED_ERROR` / `DISPUTED` / `FALSE_POSITIVE` (`OPTIONAL` упразднён:
+«допустимое улучшение» не является классом потери)
 (см. «Legacy: автоматический semantic audit», рабочая архитектура SMA).
 
 ## Неопределённость: non-blocking и blocking
