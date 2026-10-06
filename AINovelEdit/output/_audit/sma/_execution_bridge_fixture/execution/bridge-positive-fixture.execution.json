@@ -1,0 +1,63 @@
+{
+  "analysis_id": "bridge-positive-fixture",
+  "analysis": "D:/skills/NovelEdit/noverl/AINovelEdit/scripts/fixtures/semantic_findings/execution/bridge-positive.analysis.json",
+  "chapter": "_execution_bridge_fixture",
+  "output": "_execution_bridge_fixture.md",
+  "dry_run": false,
+  "semantic_actions": [
+    "FIXED",
+    "REPORT_ONLY",
+    "PRESERVED"
+  ],
+  "execution_states": [
+    "SUCCESS",
+    "FAILED",
+    "SKIPPED"
+  ],
+  "counts": {
+    "SUCCESS": 2,
+    "FAILED": 0,
+    "SKIPPED": 0,
+    "fixed": 2
+  },
+  "verification": {
+    "update_merged": "PASS",
+    "alignment": "PASS",
+    "alignment_strong": 0,
+    "drift": "NO_BASELINE"
+  },
+  "results": [
+    {
+      "finding_id": "BR-1",
+      "block": 1,
+      "provenance": {
+        "action": "FIXED",
+        "status": "CONFIRMED_ERROR"
+      },
+      "before": "Старая формулировка, которую Phase 2 признал ошибочной.",
+      "after": "Исправленная формулировка, записанная Execution Bridge.",
+      "execution": "SUCCESS",
+      "verification": {
+        "alignment": "PASS",
+        "drift": "NO_BASELINE"
+      }
+    },
+    {
+      "finding_id": "BR-2",
+      "block": 2,
+      "provenance": {
+        "action": "FIXED",
+        "status": "CONFIRMED_ERROR",
+        "routed_observation": true,
+        "owner_hint": "spelling"
+      },
+      "before": "загговорила",
+      "after": "заговорила",
+      "execution": "SUCCESS",
+      "verification": {
+        "alignment": "PASS",
+        "drift": "NO_BASELINE"
+      }
+    }
+  ]
+}

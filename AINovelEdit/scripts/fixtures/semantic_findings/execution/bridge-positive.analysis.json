@@ -1,0 +1,29 @@
+{
+  "analysis_id": "bridge-positive-fixture",
+  "chapter": "_execution_bridge_fixture",
+  "note": "ПОЛОЖИТЕЛЬНЫЙ smoke-test Execution Bridge (--apply-fixed). Синтетический fixture scripts/fixtures/semantic_findings/execution/, НЕ исторический audit-запуск: два action=FIXED (обычный + routed_observation со owner_hint). Источник истины не имитируется — тексты специально.fixture-ные.",
+  "results": [
+    {
+      "candidate_id": "BR-1",
+      "block": 1,
+      "status": "CONFIRMED_ERROR",
+      "issue_type": "OTHER",
+      "action": "FIXED",
+      "reason": "Fixture: машинная формулировка заменяется исправленной (пример обычного FIXED-кандидата).",
+      "before": "Старая формулировка, которую Phase 2 признал ошибочной.",
+      "after": "Исправленная формулировка, записанная Execution Bridge."
+    },
+    {
+      "candidate_id": "BR-2",
+      "block": 2,
+      "status": "CONFIRMED_ERROR",
+      "issue_type": "OTHER",
+      "action": "FIXED",
+      "routed_observation": true,
+      "owner_hint": "spelling",
+      "reason": "Fixture: routed-candidate (опечатка вне зоны смыслового аудита) передан владельцу spelling; Phase 2 принял решение FIXED — по схеме идёт ОБЫЧНЫМ execution path, owner_hint сохраняется только как provenance.",
+      "before": "загговорила",
+      "after": "заговорила"
+    }
+  ]
+}

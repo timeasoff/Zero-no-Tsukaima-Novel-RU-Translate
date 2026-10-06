@@ -1,0 +1,370 @@
+{
+  "analysis_id": "20261003-014019-0870",
+  "analysis": "D:/skills/NovelEdit/noverl/AINovelEdit/output/_audit/sma/v5-ch03/analysis/20261003-014019-0870.json",
+  "chapter": "v5-ch03",
+  "output": "v5-ch03.md",
+  "dry_run": false,
+  "semantic_actions": [
+    "FIXED",
+    "REPORT_ONLY",
+    "PRESERVED"
+  ],
+  "execution_states": [
+    "SUCCESS",
+    "FAILED",
+    "SKIPPED"
+  ],
+  "counts": {
+    "SUCCESS": 0,
+    "FAILED": 0,
+    "SKIPPED": 19,
+    "fixed": 0
+  },
+  "verification": null,
+  "results": [
+    {
+      "finding_id": "C-01-01",
+      "block": 1,
+      "provenance": {
+        "action": "REPORT_ONLY",
+        "status": "CONFIRMED_ERROR",
+        "sources": {
+          "a": [
+            "20261003-013010-6751"
+          ],
+          "b": [],
+          "c": [],
+          "precheck": false
+        }
+      },
+      "execution": "SKIPPED",
+      "reason": "action=REPORT_ONLY — автоматически не применяется"
+    },
+    {
+      "finding_id": "C-01-02",
+      "block": 1,
+      "provenance": {
+        "action": "REPORT_ONLY",
+        "status": "CONFIRMED_ERROR",
+        "sources": {
+          "a": [
+            "20261003-013010-6751"
+          ],
+          "b": [],
+          "c": [],
+          "precheck": false
+        }
+      },
+      "execution": "SKIPPED",
+      "reason": "action=REPORT_ONLY — автоматически не применяется"
+    },
+    {
+      "finding_id": "C-01-03",
+      "block": 1,
+      "provenance": {
+        "action": "REPORT_ONLY",
+        "status": "CONFIRMED_ERROR",
+        "sources": {
+          "a": [
+            "20261003-013010-6751"
+          ],
+          "b": [],
+          "c": [],
+          "precheck": false
+        }
+      },
+      "execution": "SKIPPED",
+      "reason": "action=REPORT_ONLY — автоматически не применяется"
+    },
+    {
+      "finding_id": "C-01-04",
+      "block": 1,
+      "provenance": {
+        "action": "REPORT_ONLY",
+        "status": "CONFIRMED_ERROR",
+        "sources": {
+          "a": [],
+          "b": [
+            "20261003-013153-f95e"
+          ],
+          "c": [],
+          "precheck": false
+        }
+      },
+      "execution": "SKIPPED",
+      "reason": "action=REPORT_ONLY — автоматически не применяется"
+    },
+    {
+      "finding_id": "C-02-01",
+      "block": 2,
+      "provenance": {
+        "action": "REPORT_ONLY",
+        "status": "CONFIRMED_ERROR",
+        "sources": {
+          "a": [],
+          "b": [
+            "20261003-013153-f95e"
+          ],
+          "c": [],
+          "precheck": false
+        }
+      },
+      "execution": "SKIPPED",
+      "reason": "action=REPORT_ONLY — автоматически не применяется"
+    },
+    {
+      "finding_id": "C-03-01",
+      "block": 3,
+      "provenance": {
+        "action": "REPORT_ONLY",
+        "status": "CONFIRMED_ERROR",
+        "sources": {
+          "a": [
+            "20261003-013010-6751"
+          ],
+          "b": [],
+          "c": [],
+          "precheck": false
+        }
+      },
+      "execution": "SKIPPED",
+      "reason": "action=REPORT_ONLY — автоматически не применяется"
+    },
+    {
+      "finding_id": "C-03-02",
+      "block": 3,
+      "provenance": {
+        "action": "REPORT_ONLY",
+        "status": "CONFIRMED_ERROR",
+        "sources": {
+          "a": [
+            "20261003-013010-6751"
+          ],
+          "b": [],
+          "c": [],
+          "precheck": false
+        }
+      },
+      "execution": "SKIPPED",
+      "reason": "action=REPORT_ONLY — автоматически не применяется"
+    },
+    {
+      "finding_id": "C-04-01",
+      "block": 4,
+      "provenance": {
+        "action": "REPORT_ONLY",
+        "status": "CONFIRMED_ERROR",
+        "sources": {
+          "a": [
+            "20261003-013010-6751"
+          ],
+          "b": [],
+          "c": [],
+          "precheck": false
+        }
+      },
+      "execution": "SKIPPED",
+      "reason": "action=REPORT_ONLY — автоматически не применяется"
+    },
+    {
+      "finding_id": "C-04-02",
+      "block": 4,
+      "provenance": {
+        "action": "REPORT_ONLY",
+        "status": "CONFIRMED_ERROR",
+        "sources": {
+          "a": [],
+          "b": [],
+          "c": [
+            "20261003-013212-8fb8"
+          ],
+          "precheck": false
+        }
+      },
+      "execution": "SKIPPED",
+      "reason": "action=REPORT_ONLY — автоматически не применяется"
+    },
+    {
+      "finding_id": "C-07-01",
+      "block": 7,
+      "provenance": {
+        "action": "REPORT_ONLY",
+        "status": "CONFIRMED_ERROR",
+        "sources": {
+          "a": [
+            "20261003-013010-6751"
+          ],
+          "b": [],
+          "c": [],
+          "precheck": false
+        }
+      },
+      "execution": "SKIPPED",
+      "reason": "action=REPORT_ONLY — автоматически не применяется"
+    },
+    {
+      "finding_id": "C-08-01",
+      "block": 8,
+      "provenance": {
+        "action": "REPORT_ONLY",
+        "status": "CONFIRMED_ERROR",
+        "sources": {
+          "a": [
+            "20261003-013010-6751"
+          ],
+          "b": [],
+          "c": [],
+          "precheck": false
+        }
+      },
+      "execution": "SKIPPED",
+      "reason": "action=REPORT_ONLY — автоматически не применяется"
+    },
+    {
+      "finding_id": "C-09-01",
+      "block": 9,
+      "provenance": {
+        "action": "REPORT_ONLY",
+        "status": "CONFIRMED_ERROR",
+        "sources": {
+          "a": [
+            "20261003-013010-6751"
+          ],
+          "b": [],
+          "c": [],
+          "precheck": false
+        }
+      },
+      "execution": "SKIPPED",
+      "reason": "action=REPORT_ONLY — автоматически не применяется"
+    },
+    {
+      "finding_id": "C-09-02",
+      "block": 9,
+      "provenance": {
+        "action": "REPORT_ONLY",
+        "status": "CONFIRMED_ERROR",
+        "sources": {
+          "a": [
+            "20261003-013010-6751"
+          ],
+          "b": [],
+          "c": [],
+          "precheck": false
+        }
+      },
+      "execution": "SKIPPED",
+      "reason": "action=REPORT_ONLY — автоматически не применяется"
+    },
+    {
+      "finding_id": "C-10-01",
+      "block": 10,
+      "provenance": {
+        "action": "REPORT_ONLY",
+        "status": "CONFIRMED_ERROR",
+        "sources": {
+          "a": [],
+          "b": [
+            "20261003-013153-f95e"
+          ],
+          "c": [],
+          "precheck": false
+        }
+      },
+      "execution": "SKIPPED",
+      "reason": "action=REPORT_ONLY — автоматически не применяется"
+    },
+    {
+      "finding_id": "C-10-02",
+      "block": 10,
+      "provenance": {
+        "action": "REPORT_ONLY",
+        "status": "CONFIRMED_ERROR",
+        "sources": {
+          "a": [],
+          "b": [
+            "20261003-013153-f95e"
+          ],
+          "c": [],
+          "precheck": false
+        }
+      },
+      "execution": "SKIPPED",
+      "reason": "action=REPORT_ONLY — автоматически не применяется"
+    },
+    {
+      "finding_id": "C-11-01",
+      "block": 11,
+      "provenance": {
+        "action": "REPORT_ONLY",
+        "status": "CONFIRMED_ERROR",
+        "sources": {
+          "a": [
+            "20261003-013010-6751"
+          ],
+          "b": [],
+          "c": [],
+          "precheck": false
+        }
+      },
+      "execution": "SKIPPED",
+      "reason": "action=REPORT_ONLY — автоматически не применяется"
+    },
+    {
+      "finding_id": "C-11-02",
+      "block": 11,
+      "provenance": {
+        "action": "REPORT_ONLY",
+        "status": "CONFIRMED_ERROR",
+        "sources": {
+          "a": [],
+          "b": [
+            "20261003-013153-f95e"
+          ],
+          "c": [],
+          "precheck": false
+        }
+      },
+      "execution": "SKIPPED",
+      "reason": "action=REPORT_ONLY — автоматически не применяется"
+    },
+    {
+      "finding_id": "C-13-01",
+      "block": 13,
+      "provenance": {
+        "action": "REPORT_ONLY",
+        "status": "CONFIRMED_ERROR",
+        "sources": {
+          "a": [
+            "20261003-013010-6751"
+          ],
+          "b": [],
+          "c": [],
+          "precheck": false
+        }
+      },
+      "execution": "SKIPPED",
+      "reason": "action=REPORT_ONLY — автоматически не применяется"
+    },
+    {
+      "finding_id": "C-14-01",
+      "block": 14,
+      "provenance": {
+        "action": "REPORT_ONLY",
+        "status": "CONFIRMED_ERROR",
+        "sources": {
+          "a": [
+            "20261003-013010-6751"
+          ],
+          "b": [],
+          "c": [
+            "20261003-013212-8fb8"
+          ],
+          "precheck": false
+        }
+      },
+      "execution": "SKIPPED",
+      "reason": "action=REPORT_ONLY — автоматически не применяется"
+    }
+  ]
+}
