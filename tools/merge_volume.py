@@ -362,7 +362,7 @@ def extract_volume_title(preface_path):
     text = preface_path.read_text(encoding="utf-8")
 
     match = re.search(
-        r"^\s*\*\*Название тома:\*\*\s*(.+?)\s*$",
+        r"^\s*>?\s*\*\*Название тома:\*\*\s*(.+?)\s*$",
         text,
         re.MULTILINE,
     )
