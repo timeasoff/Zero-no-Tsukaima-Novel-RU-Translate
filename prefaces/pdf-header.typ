@@ -72,6 +72,136 @@
 
 
 // ─────────────────────────────────────────────────────────────────────────────
+// ОТРЫВКИ, КОТОРЫЕ ПЕРСОНАЖИ ЧИТАЮТ (цитаты Markdown «>» → #quote).
+//
+// pandoc превращает абзацы «> …» в #quote(block: true)[…] — страницы
+// «Молитвенника Основателя», указы, записки. Чтобы читатель сразу видел:
+// это текст ВНУТРИ текста, — отрывок оформляется как «лист внутри книги»:
+//
+//   * тёплая бумага (quote-paper) и двойная тонкая рамка (quote-frame);
+//   * текст чуть мельче, выключен по ширине, чернила тёплые (quote-ink);
+//   * абзац целиком жирный (**Вступление**) — рубрика: по центру, с разрядкой
+//     и акцентным цветом; если рубрика — первая, над ней ставится орнамент
+//     separator.webp (та же картинка, что у разделителей «---»);
+//   * прочее жирное внутри отрывка (**Издатель:** …) — акцентным цветом.
+//
+// Настройка «по-красивому»: quote-paper/quote-frame/quote-accent — цвета;
+// inset внутреннего блока — воздух внутри листа; width орнамента — 1.4cm
+// (0 → убрать, 2cm → крупнее); tracking у рубрики — плотность разрядки.
+// ─────────────────────────────────────────────────────────────────────────────
+
+#let quote-paper = rgb("#f8f2e4")   // «бумага» отрывка (лист внутри книги)
+#let quote-frame = rgb("#c6b89f")   // цвет двойной рамки
+#let quote-ink = rgb("#33291f")     // «чернила» отрывка (тёплый чёрный)
+#let quote-accent = rgb("#8a6a3d")  // рубрики и жирного внутри отрывка
+
+// Абзац, целиком набранный жирным (**Вступление**) — рубрика отрывка.
+// Допускается только пробелы и завершающая пунктуация
+// (**Бримир Ру Румиру Юру Вири Ве Варутори**.).
+#let quote-rubric(group) = {
+  let strong-seen = false
+
+  for child in group {
+    let f = child.func()
+
+    if f == strong {
+      strong-seen = true
+    } else if repr(f) == "space" {
+      // пробелы между элементами строки
+    } else if f == text and child.text.match(regex("^[\\s\\p{P}]*$")) != none {
+      // только знаки препинания
+    } else {
+      return false
+    }
+  }
+
+  strong-seen
+}
+
+// Содержимое цитаты → список абзацев (группы элементов между parbreak).
+#let quote-paragraphs(body) = {
+  let kids = if body.has("children") { body.children } else { (body,) }
+  let groups = ()
+  let current = ()
+
+  for child in kids {
+    if child.func() == parbreak {
+      if current.len() > 0 {
+        groups.push(current)
+        current = ()
+      }
+    } else {
+      current.push(child)
+    }
+  }
+
+  if current.len() > 0 {
+    groups.push(current)
+  }
+
+  // пустые группы (лишние пробелы) не нужны
+  groups.filter(g => g.any(c => repr(c.func()) != "space"))
+}
+
+#show quote.where(block: true): it => {
+  set text(fill: quote-ink, size: 0.95em)
+  set par(justify: true, leading: 0.42em, spacing: 0.6em)
+  show strong: s => text(fill: quote-accent, weight: "bold", s.body)
+
+  let items = ()
+
+  for (index, group) in quote-paragraphs(it.body).enumerate() {
+
+    if quote-rubric(group) {
+
+      let label = align(center,
+        text(weight: "bold", tracking: 0.1em, fill: quote-accent, group.join()),
+      )
+
+      if index == 0 {
+        // рубрика-заголовок в начале отрывка — над ней орнамент
+        //items.push(block(width: 100%, above: 0em, below: 1.2em, {
+         // align(center, image("separator.webp", width: 1.4cm))
+         // v(0.8em)
+         // label
+        //}))
+
+        items.push(block(width: 100%, above: 1em, below: 1.2em, label))
+      } else {
+        // промежуточная рубрика («Издан в Тристейне.»)
+        items.push(block(width: 100%, above: 1.2em, below: 1.2em, label))
+      }
+
+    } else {
+      items.push(group.join())
+    }
+  }
+
+  if it.attribution != none {
+    items.push(align(right,
+      text(style: "italic", fill: quote-accent, it.attribution),
+    ))
+  }
+
+  // «лист внутри книги»: внешняя линия → зазор → внутренняя линия → текст
+  block(
+    width: 100%,
+    above: 1.7em,
+    below: 1.7em,
+    fill: quote-paper,
+    stroke: 0.9pt + quote-frame,
+    inset: 0.5em,
+    block(
+      width: 100%,
+      stroke: 0.5pt + quote-frame,
+      inset: (x: 1.6em, y: 1.4em),
+      items.join(parbreak()),
+    ),
+  )
+}
+
+
+// ─────────────────────────────────────────────────────────────────────────────
 // ИЛЛЮСТРАЦИИ.
 // pandoc вставляет image() без явной ширины — typst берёт «натуральный» размер
 // из DPI-метаданных файла (после пересохранения jpeg→jpg картинки становятся
