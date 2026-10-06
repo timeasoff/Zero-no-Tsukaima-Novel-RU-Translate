@@ -1,0 +1,421 @@
+{
+  "analysis_id": "20261006-002608-e27e",
+  "analysis": "D:/skills/NovelEdit/noverl/AINovelEdit/output/_audit/sma/v3-ch09/analysis/20261006-002608-e27e.json",
+  "chapter": "v3-ch09",
+  "output": "v3-ch09.md",
+  "dry_run": false,
+  "semantic_actions": [
+    "FIXED",
+    "REPORT_ONLY",
+    "PRESERVED"
+  ],
+  "execution_states": [
+    "SUCCESS",
+    "FAILED",
+    "SKIPPED"
+  ],
+  "counts": {
+    "SUCCESS": 11,
+    "FAILED": 0,
+    "SKIPPED": 7,
+    "fixed": 11
+  },
+  "verification": {
+    "update_merged": "PASS",
+    "alignment": "PASS",
+    "alignment_strong": 0,
+    "drift_candidates": 11,
+    "drift": "STRONG"
+  },
+  "results": [
+    {
+      "finding_id": "AN-03-01",
+      "block": 3,
+      "provenance": {
+        "action": "REPORT_ONLY",
+        "status": "DISPUTED",
+        "sources": {
+          "a": [],
+          "b": [
+            "20261006-002608-bd76"
+          ],
+          "c": [],
+          "precheck": false
+        }
+      },
+      "execution": "SKIPPED",
+      "reason": "action=REPORT_ONLY — автоматически не применяется"
+    },
+    {
+      "finding_id": "AN-05-01",
+      "block": 5,
+      "provenance": {
+        "action": "REPORT_ONLY",
+        "status": "CONFIRMED_ERROR",
+        "sources": {
+          "a": [
+            "20261006-002608-cf33"
+          ],
+          "b": [
+            "20261006-002608-bd76"
+          ],
+          "c": [
+            "20261006-002608-cde6"
+          ],
+          "precheck": false
+        }
+      },
+      "execution": "SKIPPED",
+      "reason": "action=REPORT_ONLY — автоматически не применяется"
+    },
+    {
+      "finding_id": "AN-05-02",
+      "block": 5,
+      "provenance": {
+        "action": "REPORT_ONLY",
+        "status": "CONFIRMED_ERROR",
+        "sources": {
+          "a": [
+            "20261006-002608-cf33"
+          ],
+          "b": [
+            "20261006-002608-bd76"
+          ],
+          "c": [
+            "20261006-002608-cde6"
+          ],
+          "precheck": false
+        }
+      },
+      "execution": "SKIPPED",
+      "reason": "action=REPORT_ONLY — автоматически не применяется"
+    },
+    {
+      "finding_id": "AN-05-03",
+      "block": 5,
+      "provenance": {
+        "action": "REPORT_ONLY",
+        "status": "CONFIRMED_ERROR",
+        "sources": {
+          "a": [
+            "20261006-002608-cf33"
+          ],
+          "b": [
+            "20261006-002608-bd76"
+          ],
+          "c": [
+            "20261006-002608-cde6"
+          ],
+          "precheck": false
+        }
+      },
+      "execution": "SKIPPED",
+      "reason": "action=REPORT_ONLY — автоматически не применяется"
+    },
+    {
+      "finding_id": "AN-06-01",
+      "block": 6,
+      "provenance": {
+        "action": "FIXED",
+        "status": "CONFIRMED_ERROR",
+        "sources": {
+          "a": [],
+          "b": [
+            "20261006-002608-bd76"
+          ],
+          "c": [],
+          "precheck": false
+        }
+      },
+      "before": "В нём содержалось осуждение немотивированного нападения на флот доброй воли, пренебрёгшего договором о ненападении, а заканчивался он так:",
+      "after": "В нём содержалось осуждение немотивированного нападения на флот доброй воли — нападения, пренебрёгшего договором о ненападении, — а заканчивался он так:",
+      "execution": "SUCCESS",
+      "verification": {
+        "alignment": "PASS",
+        "drift": "STRONG"
+      }
+    },
+    {
+      "finding_id": "AN-06-02",
+      "block": 6,
+      "provenance": {
+        "action": "FIXED",
+        "status": "CONFIRMED_ERROR",
+        "sources": {
+          "a": [],
+          "b": [],
+          "c": [
+            "20261006-002608-cde6"
+          ],
+          "precheck": false
+        }
+      },
+      "before": "и потребовать на основании союза присылки войск",
+      "after": "и просить на основании союза присылки войск",
+      "execution": "SUCCESS",
+      "verification": {
+        "alignment": "PASS",
+        "drift": "STRONG"
+      }
+    },
+    {
+      "finding_id": "AN-06-03",
+      "block": 6,
+      "provenance": {
+        "action": "PRESERVED",
+        "status": "FALSE_POSITIVE",
+        "sources": {
+          "a": [],
+          "b": [],
+          "c": [],
+          "precheck": true
+        }
+      },
+      "execution": "SKIPPED",
+      "reason": "action=PRESERVED — автоматически не применяется"
+    },
+    {
+      "finding_id": "AN-08-01",
+      "block": 8,
+      "provenance": {
+        "action": "FIXED",
+        "status": "CONFIRMED_ERROR",
+        "sources": {
+          "a": [],
+          "b": [],
+          "c": [],
+          "precheck": false
+        }
+      },
+      "before": "— Тогда что это за корабли такие сейчас попадали?",
+      "after": "— Тогда что это за корабли такие сейчас падали?",
+      "execution": "SUCCESS",
+      "verification": {
+        "alignment": "PASS",
+        "drift": "STRONG"
+      }
+    },
+    {
+      "finding_id": "AN-08-02",
+      "block": 8,
+      "provenance": {
+        "action": "REPORT_ONLY",
+        "status": "DISPUTED",
+        "sources": {
+          "a": [],
+          "b": [
+            "20261006-002608-bd76"
+          ],
+          "c": [
+            "20261006-002608-cde6"
+          ],
+          "precheck": false
+        }
+      },
+      "execution": "SKIPPED",
+      "reason": "action=REPORT_ONLY — автоматически не применяется"
+    },
+    {
+      "finding_id": "AN-10-01",
+      "block": 10,
+      "provenance": {
+        "action": "FIXED",
+        "status": "CONFIRMED_ERROR",
+        "sources": {
+          "a": [
+            "20261006-002608-cf33"
+          ],
+          "b": [],
+          "c": [
+            "20261006-002608-cde6"
+          ],
+          "precheck": false
+        }
+      },
+      "before": "_Значит, мне выпало храбро жить._",
+      "after": "_Значит, я постараюсь жить храбро._",
+      "execution": "SUCCESS",
+      "verification": {
+        "alignment": "PASS",
+        "drift": "STRONG"
+      }
+    },
+    {
+      "finding_id": "AN-10-02",
+      "block": 10,
+      "provenance": {
+        "action": "PRESERVED",
+        "status": "FALSE_POSITIVE",
+        "sources": {
+          "a": [],
+          "b": [],
+          "c": [],
+          "precheck": false
+        }
+      },
+      "execution": "SKIPPED",
+      "reason": "action=PRESERVED — автоматически не применяется"
+    },
+    {
+      "finding_id": "AN-10-03",
+      "block": 10,
+      "provenance": {
+        "action": "FIXED",
+        "status": "CONFIRMED_ERROR",
+        "sources": {
+          "a": [],
+          "b": [],
+          "c": [
+            "20261006-002608-cde6"
+          ],
+          "precheck": false
+        }
+      },
+      "before": "— Ваше высочество?",
+      "after": "— Ваше Высочество?",
+      "execution": "SUCCESS",
+      "verification": {
+        "alignment": "PASS",
+        "drift": "STRONG"
+      }
+    },
+    {
+      "finding_id": "AN-10-04",
+      "block": 10,
+      "provenance": {
+        "action": "FIXED",
+        "status": "CONFIRMED_ERROR",
+        "sources": {
+          "a": [],
+          "b": [],
+          "c": [
+            "20261006-002608-cde6"
+          ],
+          "precheck": false
+        }
+      },
+      "before": "— Однако… ваше высочество… это лишь стычка, порождённая недоразумением.",
+      "after": "— Однако… Ваше Высочество… это лишь стычка, порождённая недоразумением.",
+      "execution": "SUCCESS",
+      "verification": {
+        "alignment": "PASS",
+        "drift": "STRONG"
+      }
+    },
+    {
+      "finding_id": "AN-11-01",
+      "block": 11,
+      "provenance": {
+        "action": "FIXED",
+        "status": "CONFIRMED_ERROR",
+        "sources": {
+          "a": [],
+          "b": [],
+          "c": [
+            "20261006-002608-cde6"
+          ],
+          "precheck": false
+        }
+      },
+      "before": "— Ваше высочество, — укорил Мазарини.",
+      "after": "— Ваше Высочество, — укорил Мазарини.",
+      "execution": "SUCCESS",
+      "verification": {
+        "alignment": "PASS",
+        "drift": "STRONG"
+      }
+    },
+    {
+      "finding_id": "AN-11-02",
+      "block": 11,
+      "provenance": {
+        "action": "FIXED",
+        "status": "CONFIRMED_ERROR",
+        "sources": {
+          "a": [],
+          "b": [],
+          "c": [
+            "20261006-002608-cde6"
+          ],
+          "precheck": false
+        }
+      },
+      "before": "— Ваше высочество! Вам надлежит беречь себя перед отъездом к жениху!",
+      "after": "— Ваше Высочество! Вам надлежит беречь себя перед отъездом к жениху!",
+      "execution": "SUCCESS",
+      "verification": {
+        "alignment": "PASS",
+        "drift": "STRONG"
+      }
+    },
+    {
+      "finding_id": "AN-11-03",
+      "block": 11,
+      "provenance": {
+        "action": "FIXED",
+        "status": "CONFIRMED_ERROR",
+        "sources": {
+          "a": [],
+          "b": [
+            "20261006-002608-bd76"
+          ],
+          "c": [],
+          "precheck": false
+        }
+      },
+      "before": "— Замуж можете выйти и сами!",
+      "after": "— Жениться можете и сами!",
+      "execution": "SUCCESS",
+      "verification": {
+        "alignment": "PASS",
+        "drift": "STRONG"
+      }
+    },
+    {
+      "finding_id": "AN-11-04",
+      "block": 11,
+      "provenance": {
+        "action": "FIXED",
+        "status": "CONFIRMED_ERROR",
+        "sources": {
+          "a": [],
+          "b": [
+            "20261006-002608-bd76"
+          ],
+          "c": [],
+          "precheck": false
+        }
+      },
+      "before": "— Эх ты, да не бежится же в этом!",
+      "after": "— Эх ты, да в этом не побегаешь!",
+      "execution": "SUCCESS",
+      "verification": {
+        "alignment": "PASS",
+        "drift": "STRONG"
+      }
+    },
+    {
+      "finding_id": "AN-12-01",
+      "block": 12,
+      "provenance": {
+        "action": "FIXED",
+        "status": "CONFIRMED_ERROR",
+        "sources": {
+          "a": [],
+          "b": [],
+          "c": [
+            "20261006-002608-cde6"
+          ],
+          "precheck": false
+        }
+      },
+      "before": "Пусть жертвуя малым, но заведомо проигрышной войны он не хотел.",
+      "after": "Даже ценой малых жертв он не хотел заведомо проигрышной войны.",
+      "execution": "SUCCESS",
+      "verification": {
+        "alignment": "PASS",
+        "drift": "STRONG"
+      }
+    }
+  ]
+}
