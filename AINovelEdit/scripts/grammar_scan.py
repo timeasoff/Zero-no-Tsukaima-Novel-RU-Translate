@@ -24,7 +24,12 @@ update_merged.py после правок), поэтому проверка ид�
   passive-ru — в ED_RU «был/была/было/были + краткое причастие»: проверить,
                назван ли в EN деятель и не потерян ли он в русском (EN-пассив
                здесь только усилитель сигнала, условием не является).
-  agreement  — местоимение ед. ч. + глагол мн. ч. вплотную («он лишились»).
+  agreement  — согласование числа подлежащего и сказуемого: (а) местоимение
+               ед. ч. + глагол мн. ч. вплотную («он лишились»); (б) существительное
+               ед. ч. (им./вин. на -ние/-тие/-енье/-ство) + глагол прош. мн. ч.
+               в том же предложении («долгое сидение … запарили» — manual-fix
+               v3-ch03, c25, RUSSIAN_ERROR); запятая с одной стороной (граница
+               придаточного со своим подлежащим) гасит кандидат.
   numbers    — цифры 1–9 в ED_RU (правило russian-prose-rules: словами).
 
 Использование:
@@ -32,6 +37,7 @@ update_merged.py после правок), поэтому проверка ид�
     python scripts/grammar_scan.py --file v14-ch04.md --report
     python scripts/grammar_scan.py --file v14-ch04.md --only voice,possessive
     python scripts/grammar_scan.py --file v14-ch04.md --strict
+    python scripts/grammar_scan.py --selftest
 """
 import argparse
 import re
@@ -84,8 +90,29 @@ RU_PASSIVE_RE = re.compile(
     r"|(?:ан|ян|ен|ён|ат|ит|ут)))\b", re.I)
 RU_AGREEMENT_RE = re.compile(
     r"\b(он|она|оно|я|ты)\s+([а-яё]{3,}(?:ли|лись))\b", re.I)
-# не глаголы/не сказуемые: наречия и союзы на -ли
-AGREEMENT_STOP = {"вдали", "издали", "коли", "ежели", "дотоли"}
+# 4б. существительное ед. ч. как подлежащее + глагол прош. мн. ч. в том же
+#     предложении (кейс c25 «долгое сидение … окончательно запарили»):
+#     маркер ед. ч. — именительный/винительный на -ние/-тие/-енье/-ство
+#     (родительный «сидения» оканчивается на -ия и не матчится), затем без
+#     границы предложения (.:;!?…) глагол на -ли/-ши. Запятая с одной стороной
+#     в промежутке = граница придаточного со своим подлежащим — кандидат гасим.
+RU_AGREEMENT_NOUN_RE = re.compile(
+    r"\b([а-яё]{3,}(?:ние|тие|енье|ство))\b"
+    r"([^.!?…:;]{0,60}?)"
+    r"\b([а-яё]{2,}(?:ли|ши))\b", re.I)
+# подлежащее мн. ч./союз непосредственно перед «глаголом на -ли» — сам глагол
+# согласован верно, а матчится существительное раньше в предложении
+# (встречено на v3-ch10: «посторонние звуки более не долетали»)
+AGREEMENT_NOUN_GUARD_RE = re.compile(
+    r"(?:\b(?:все|они|мы|вы|гости|люди|ребята|девушки|мальчики|друзья"
+    r"|и|а|но|или)\s*[—-]?\s*|не\s*[—-]?\s*|[а-яё]{2,}[иы]\s*[—-]?\s*)$",
+    re.I)
+# не глаголы/не сказуемые: наречия, союзы и существительные на -ли/-ши
+# (встречены на v2-ch09/v3-ch10: «положение до боли», «расстояние … воли»,
+# «мгновение … свинцовые пули»)
+AGREEMENT_STOP = {"вдали", "издали", "коли", "ежели", "дотоли", "доли",
+                  "ноши", "уши", "боли", "воли", "пули", "земли", "крови",
+                  "голуби", "дубли", "рубли", "кули", "тесни"}
 # однозначное число цифрой; исключаются даты, дроби, проценты и разрядные
 # группы («9 000», «1941») — правило russian-prose-rules их разрешает
 RU_DIGIT_RE = re.compile(
@@ -107,7 +134,11 @@ KIND_HINT = {
     "passive-ru": "RGC-1: RU-пассив без деятеля («был схвачен») там, где в EN "
                   "деятель назван, — сигнал потери актанта. Проверь, не должен "
                   "ли русский быть активом или неопределённо-личным.",
-    "agreement": "RGC-3: сказуемое согласуется с подлежащим в числе.",
+    "agreement": "RGC-3: сказуемое согласуется с подлежащим в числе — и у "
+                 "местоимения («он лишились»), и у существительного "
+                 "подлежащего («сидение … запарили» → «… разморило», "
+                 "manual-fix v3-ch03 c25). Сверь, кто здесь подлежащее: "
+                 "если оно мн. ч. («гости ушли») — ложное срабатывание.",
     "numbers": "russian-prose-rules: однозначные числа и порядковые — словами.",
 }
 CHECKS = ("voice", "possessive", "passive-ru", "agreement", "numbers")
@@ -184,7 +215,11 @@ def scan_path(path, only):
                     "ru": next((s for s in ed_sents if RU_PASSIVE_RE.search(s)), ed),
                     "en": en_sent if en_pass else en})
 
-        # 4. согласование: местоимение ед. ч. + глагол мн. ч.
+        # 4. согласование числа: (а) местоимение ед. ч. + глагол мн. ч.;
+        #    (б) существительное ед. ч. + глагол прош. мн. ч. (кейс c25
+        #    «долгое сидение … запарили»): запятая с одной стороной — граница
+        #    придаточного со своим подлежащим, союз/местоимение мн. ч. перед
+        #    глаголом — подлежащее названо после, такой кандидат гасим
         if "agreement" in only:
             for s in ed_sents:
                 m = RU_AGREEMENT_RE.search(s)
@@ -192,6 +227,15 @@ def scan_path(path, only):
                     findings.append({"para": num, "kind": "agreement",
                                      "ru": s, "en": en_sent,
                                      "word": "%s %s" % (m.group(1), m.group(2))})
+                    break
+                m = RU_AGREEMENT_NOUN_RE.search(s)
+                if (m and m.group(3).lower() not in AGREEMENT_STOP
+                        and m.group(2).count(",") % 2 == 0
+                        and not AGREEMENT_NOUN_GUARD_RE.search(m.group(2))):
+                    findings.append({"para": num, "kind": "agreement",
+                                     "ru": s, "en": en_sent,
+                                     "word": "%s … %s" % (m.group(1),
+                                                          m.group(3))})
                     break
 
         # 5. однозначные числа цифрами
@@ -241,9 +285,78 @@ def render(name, findings):
     return "\n".join(lines) + "\n"
 
 
+# ---- selftest: регрессия классов кандидатов (каждый случай — merged-подобный
+# файл во временном каталоге; scan_path не зависит от каталога проекта) ----
+SELFTEST_CASES = [
+    # (имя случая, EN, ED_RU, ожидаемые kind-ы)
+    ("pronoun: местоимение ед. ч. + глагол мн. ч.",
+     "He lost the wand.",
+     "Он лишились жезла.",
+     {"agreement"}),
+    ("noun c25: «сидение … запарили» (manual-fix v3-ch03)",
+     "She stayed in the hot water for a long time.",
+     "и долгое сидение в горячей воде окончательно запарили Сайто",
+     {"agreement"}),
+    ("noun c25 neg: то же с глаголом ед. ч. — нет кандидата",
+     "She stayed in the hot water for a long time.",
+     "А долгое сидение в горячей воде окончательно разморило Сайто",
+     set()),
+    ("noun neg: подлежащее мн. ч. после запятой (граница придаточного)",
+     "The guests left at last.",
+     "Долгое ожидание кончилось, и все гости наконец ушли.",
+     set()),
+    ("noun neg: подлежащее мн. ч. вплотную — guard-слово перед глаголом",
+     "They all endured the silence.",
+     "Молчание наконец все перетерпели.",
+     set()),
+    ("voice: EN пассив с деятелем + RU -ся",
+     "The wand was stolen by the thief.",
+     "Жезл у вора пропался без вести.",
+     {"voice"}),
+    ("passive-ru: «был украден» — проверь агента",
+     "The thief stole the wand.",
+     "Жезл был украден у Маликорна.",
+     {"passive-ru"}),
+    ("numbers: цифра 7 в ED_RU",
+     "He counted seven coins.",
+     "Он насчитал 7 монет.",
+     {"numbers"}),
+    ("clean: согласованное предложение — нет находок",
+     "The guests left at last.",
+     "Долгое сидение окончательно разморило Сайто, и все ушли.",
+     set()),
+]
+
+
+def run_selftest() -> int:
+    """Проверка на синтетических merged-файлах (не трогает merged/ проекта)."""
+    import tempfile
+    failed = 0
+    with tempfile.TemporaryDirectory(prefix="grammar_scan_st_") as td:
+        path = Path(td) / "chapter.md"
+        for name, en, ed, want in SELFTEST_CASES:
+            path.write_text(
+                "## Блок 1\n\n**JA:**\n（テスト）\n\n**EN:**\n%s\n\n"
+                "**RU:**\n%s\n\n**ED_RU:**\n%s\n" % (en, ed, ed),
+                encoding="utf-8", newline="\n")
+            got = {f["kind"] for f in scan_path(path, set(CHECKS))}
+            ok = got == want
+            if not ok:
+                failed += 1
+            print("  %s %s -> %s (want %s)" % (
+                "OK  " if ok else "FAIL", name,
+                sorted(got) or "нет", sorted(want) or "нет"))
+    if failed:
+        print("\n[selftest] ПРОВАЛЕНО: %d из %d" % (failed, len(SELFTEST_CASES)))
+        return 1
+    print("\n[selftest] OK: все %d контрольных кейсов пройдены"
+          % len(SELFTEST_CASES))
+    return 0
+
+
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--file", required=True, help="напр. v14-ch04.md")
+    ap.add_argument("--file", help="напр. v14-ch04.md")
     ap.add_argument("--only", default=",".join(CHECKS),
                     help="проверки через запятую (по умолчанию все: %s)"
                          % ", ".join(CHECKS))
@@ -251,7 +364,15 @@ def main():
                     help="записать выгрузку предфильтра в output/_audit/_prefilter/<глава>-grammar.md")
     ap.add_argument("--strict", action="store_true",
                     help="вернуть код 1, если найдены кандидаты")
+    ap.add_argument("--selftest", action="store_true",
+                    help="прогнать регрессию на синтетических merged-кейсах")
     args = ap.parse_args()
+
+    if args.selftest:
+        sys.exit(run_selftest())
+    if not args.file:
+        print("ОШИБКА: нужен --file (или --selftest)", file=sys.stderr)
+        sys.exit(2)
 
     only = {x.strip() for x in args.only.split(",") if x.strip()}
     unknown = sorted(only - set(CHECKS))

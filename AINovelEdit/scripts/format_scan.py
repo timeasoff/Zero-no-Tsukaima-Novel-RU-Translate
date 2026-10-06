@@ -66,6 +66,17 @@ format_scan.py — механический предфильтр оформле�
                 manual-fix коммитом 6a63c99 и правками v3-ch04/v3-ch06).
                 Прямой словарный матчер (check_alignment) слаб в больших
                 главах — этот чек узкий и без ложных срабатываний.
+  typo          — недопустимое удвоение согласной в кириллическом слове
+                («загговорила» → «заговорила», «точчно» → «точно»;
+                manual-fix v3-ch03). Сокращение «гг.» (годы) и стилизация
+                речи не считаются опечаткой. Кандидат: правка слова
+                через fix_block.py, но сверь форму по контексту.
+  duppara       — абзац дословно повторяет СОСЕДНИЙ абзац (≥ DUP_PARA_MIN
+                символов): типичный задел поблочного сохранения (дубль
+                текста при save_block/fix_block). Сверь с JA: повтора нет в
+                оригинале — удали дубль; есть (рефрен) — PRESERVED —
+                FUNCTIONAL. Короткие одинаковые реплики диалога («— Да.»)
+                под порог не попадают.
 
 ВНЕ зоны проверок (специально): `<!-- img_ -->` — ставит только человек;
 `---`-разделитель сцены по смыслу (смена локации/времени) — решение агента,
@@ -103,6 +114,8 @@ KIND_TITLES = {
     "quotespeech": "Реплика оформлена кавычками вместо тире",
     "thoughtinline": "Мысль курсивом слита с нарративом в одном абзаце",
     "namespell": "Искажение имени из dictionary.md (явный словарь искажений)",
+    "typo": "Опечатка: недопустимое удвоение букв в слове",
+    "duppara": "Абзац дословно повторяет соседний абзац",
 }
 
 KIND_HINT = {
@@ -161,11 +174,28 @@ KIND_HINT = {
                  "всегда: имя персонажа/термин не подлежит интерпретации. "
                  "Сверь падежные формы: замена не должна ломать окружение "
                  "(«Дерфлингер» → «— Дерф? Что?»).",
+    "typo": "Недопустимое удвоение букв в слове («загговорила» → "
+            "«заговорила», «точчно» → «точно»). Опечатка исправляется "
+            "всегда через fix_block.py; сокращение «гг.» (годы) и "
+            "стилизация речи опечаткой не являются.",
+    "duppara": "Абзац дословно повторяет соседний абзац — типичный задел "
+               "поблочного сохранения. Сверь с JA: повтора в оригинале "
+               "нет — удали дубль (fix_block.py); повтор осмысленный "
+               "(рефрен) — PRESERVED — FUNCTIONAL.",
 }
 
 CHECKS = ("lowercase", "title", "thought", "attribution",
           "paragraph", "italic", "blockmark", "gender_vocative",
-          "blockgap", "quotespeech", "thoughtinline", "namespell")
+          "blockgap", "quotespeech", "thoughtinline", "namespell",
+          "typo", "duppara")
+
+# Недопустимые в русских словах удвоенные согласные (кандидат на опечатку).
+# «гг» ловится только внутри слова: отдельное «гг.» — сокращение «годы».
+TYPO_DOUBLES = ("гг", "чч", "шш", "щщ", "йй")
+# кириллическое «слово» для поиска удвоений
+RU_WORD_RE = re.compile(r"[А-Яа-яё]+")
+# порог duppara: идентичные абзацы короче этого (короткие реплики диалога)
+DUP_PARA_MIN = 40
 
 # Словарь частых искажений имён (ручные правки manual-fix коммитов).
 # Каждая запись: (regex-паттерн, искажённая форма, канон).
@@ -323,20 +353,40 @@ def scan_lines(lines, only=None):
     prev_text = None         # (номер строки, текст) предыдущей текстовой строки
     prev_blank = True
     block_marks = []         # (номер строки, номер блока)
+    # duppara: накопление текущего абзаца и предыдущего для сверки на дубль
+    para_buf = []            # [(номер строки, текст)] строк текущего абзаца
+    prev_para = None         # (первая строка, текст) предыдущего абзаца
 
     def add(lineno, kind, msg):
         if kind in only:
             findings.append((lineno, kind, msg))
 
+    def _flush_para():
+        """Закрыть текущий абзац: сверить с предыдущим на дословный дубль."""
+        nonlocal prev_para
+        if not para_buf:
+            return
+        text = "\n".join(t for _, t in para_buf)
+        first = para_buf[0][0]
+        if (prev_para is not None and text == prev_para[1]
+                and len(text) >= DUP_PARA_MIN):
+            add(first, "duppara",
+                "абзац дословно повторяет абзац из строки %d: «%s»"
+                % (prev_para[0], text[:70].replace("\n", " ")))
+        prev_para = (first, text)
+        del para_buf[:]
+
     for lineno, raw in enumerate(lines, 1):
         s = raw.strip()
 
         if not s:                       # граница абзацев
+            _flush_para()
             prev_blank = True
             prev_text = None
             continue
 
         if s == "---":                  # разделитель: пустая строка по краям
+            _flush_para()
             if not prev_blank and prev_text is not None:
                 add(lineno, "paragraph",
                     "`---` без пустой строки перед ним (слипание)")
@@ -349,6 +399,7 @@ def scan_lines(lines, only=None):
             continue
 
         if s.startswith("#") or s.startswith("<!--"):
+            _flush_para()
             # blockgap: служебный маркер обязан быть отделён пустой строкой
             # от текста с обеих сторон (формат проекта).
             if s.startswith("<!--"):
@@ -371,6 +422,7 @@ def scan_lines(lines, only=None):
             continue
 
         if s.startswith(STRUCT_PREFIXES):   # списки, таблицы, цитаты
+            _flush_para()
             prev_blank = False
             prev_text = None
             continue
@@ -383,6 +435,7 @@ def scan_lines(lines, only=None):
             continue
 
         # ================= текстовая строка =============================
+        para_buf.append((lineno, s))
 
         if LINE_LOWER_RE.match(s):
             add(lineno, "lowercase",
@@ -483,6 +536,26 @@ def scan_lines(lines, only=None):
                     % (wrong, canon, s[:70]))
                 break
 
+        # typo: недопустимое удвоение согласной внутри слова (кандидат на
+        # опечатку: «загговорила» → «заговорила», manual-fix v3-ch03)
+        for wm in RU_WORD_RE.finditer(s):
+            word = wm.group(0).lower()
+            if len(word) < 3:            # «гг» — сокращение «годы», не опечатка
+                continue
+            for dbl in TYPO_DOUBLES:
+                pos = word.find(dbl)
+                while pos != -1:
+                    interior = pos > 0 or pos + 2 < len(word)
+                    if interior:
+                        add(lineno, "typo",
+                            "недопустимое удвоение «%s» в слове «%s» — "
+                            "кандидат на опечатку" % (dbl, wm.group(0)))
+                        break
+                    pos = word.find(dbl, pos + 1)
+                else:
+                    continue
+                break
+
         # paragraph: две текстовые строки подряд (слипание)
         if prev_text is not None and not prev_blank:
             add(lineno, "paragraph",
@@ -513,6 +586,9 @@ def scan_lines(lines, only=None):
         prev_text = (lineno, s)
         prev_blank = False
         italic_open += s.count("_")
+
+    # duppara: закрыть последний абзац файла
+    _flush_para()
 
     # italic: незакрытый курсив по всему файлу
     if italic_open % 2 == 1:
@@ -614,6 +690,15 @@ POSITIVE_CASES = [
     (["— Позвольте доложить, ваше превосходительство."], {"title"}),
     # namespell: дрейф канона названия (manual-fix v3-ch01)
     (["Под тёплым солнцем они шагали к Академии Волшебства."], {"namespell"}),
+    # typo: удвоенная согласная — опечатка (manual-fix v3-ch03: c13)
+    (["Суетливо загговорила Сиеста. Рядом с ней лежал поднос."], {"typo"}),
+    (["Он сказал это очень точчно."], {"typo"}),
+    # duppara: соседние абзацы дословно одинаковы (задел поблочного
+    # сохранения — дубль текста при save_block/fix_block)
+    (["Сиеста тихо улыбнулась, глядя на поднос с остывшим чаем и вспоминая утро.",
+      "",
+      "Сиеста тихо улыбнулась, глядя на поднос с остывшим чаем и вспоминая утро."],
+     {"duppara"}),
 
 ]
 
@@ -670,8 +755,54 @@ NEGATIVE_CASES = [
     (["Гиш поговорил с Верданди."],),                                 # тв.
     (["Гиш думал о Верданди."],),                                     # предл.
 
+    # typo: валидное слово без удвоений / сокращение «гг.» (годы)
+    (["Сиеста заговорила вовремя."],),
+    (["События описаны в 1880-е гг."],),
+    # duppara: короткие одинаковые абзацы — норма диалога/ритма (порог
+    # DUP_PARA_MIN) и разные абзацы не являются дублем
+    (["Холодный ветер дул с реки.", "", "Холодный ветер дул с реки."],),
+    (["Холодный ветер дул с реки.", "", "Тёплый южный ветер нёс запах моря."],),
+
 ]
 
+
+
+def _replay_fixture_cases() -> tuple[int, int]:
+    """RC-1 fixture replay: сканер обязан ловить подтверждённые классы.
+
+    Читает scripts/fixtures/format_scan/*.json и сверяет число находок вида
+    ``kind`` на pre_lines / post_lines с ``expect_<kind>_pre/post``
+    (исторический corpus не изменяется — строки живут только в fixture).
+    Возвращает (число провалов, всего кейсов).
+    """
+    import json
+    fixture_dir = Path(__file__).resolve().parent / "fixtures" / "format_scan"
+    cases = sorted(fixture_dir.glob("*.json")) if fixture_dir.is_dir() else []
+    if not cases:
+        print("  FAIL FIXTURE: нет фикстур в %s" % fixture_dir)
+        return 1, 1
+    failed = 0
+    for path in cases:
+        data = json.loads(path.read_text(encoding="utf-8"))
+        kind = data["kind"]
+        want_pre = data.get("expect_%s_pre" % kind)
+        want_post = data.get("expect_%s_post" % kind)
+        pre_hits = [f for f in scan_lines(data.get("pre_lines", []))
+                    if f[1] == kind]
+        post_hits = [f for f in scan_lines(data.get("post_lines", []))
+                     if f[1] == kind]
+        ok = ((want_pre is None or len(pre_hits) == want_pre)
+              and (want_post is None or len(post_hits) == want_post))
+        if ok:
+            print("  OK   FIXTURE %s (%s): pre=%d post=%d" % (
+                path.name, kind, len(pre_hits), len(post_hits)))
+        else:
+            failed += 1
+            print("  FAIL FIXTURE %s (%s): pre=%d (ожидалось %s), "
+                  "post=%d (ожидалось %s)" % (
+                      path.name, kind, len(pre_hits), want_pre,
+                      len(post_hits), want_post))
+    return failed, len(cases)
 
 
 def run_selftest() -> int:
@@ -692,12 +823,13 @@ def run_selftest() -> int:
                 "; ".join(k for _, k, _ in found), " ".join(lines)))
         else:
             print("  OK   PASS: %s" % " ".join(lines))
-    if failed:
+    fx_failed, fx_total = _replay_fixture_cases()
+    total = len(POSITIVE_CASES) + len(NEGATIVE_CASES) + fx_total
+    if failed or fx_failed:
         print("\n[selftest] ПРОВАЛЕНО: %d из %d" % (
-            len(failed), len(POSITIVE_CASES) + len(NEGATIVE_CASES)))
+            len(failed) + fx_failed, total))
         return 1
-    print("\n[selftest] OK: все %d контрольных кейсов пройдены" % (
-        len(POSITIVE_CASES) + len(NEGATIVE_CASES)))
+    print("\n[selftest] OK: все %d контрольных кейсов пройдены" % total)
     return 0
 
 
