@@ -4,6 +4,8 @@ images/*
 !origs/.gitkeep
 __pycache__
 
+AINovelEdit/_work/*
+
 *.pdf
 .obsidian
 
