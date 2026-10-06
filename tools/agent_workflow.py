@@ -59,10 +59,13 @@ python tools/agent_workflow.py
 from __future__ import annotations
 
 import base64
+import contextlib
+import io
 import os
 import re
 import subprocess
 import sys
+import tempfile
 import textwrap
 import uuid
 from dataclasses import dataclass
@@ -1389,12 +1392,18 @@ AINovelEdit/.agents/skills/semantic-audit-a/SKILL.md
       "suggestion": "Предложенный вариант",
       "severity": "ERROR"
     }}
-  ]
+  ],
+  "coverage": "Просмотренные блоки и объём проверки (см. правила)"
 }}
 
 ПРАВИЛА:
 - severity: только ERROR / WARNING / CANDIDATE.
 - Если проблем нет — "findings": [] (пустой массив, объект всё равно обязателен).
+- "coverage" (attestation покрытия) обязателен ВСЕГДА: какие блоки
+  просмотрены и в каком объёме (напр. «блоки 1–29 целиком, соседние
+  контексты проверены»). При "findings": [] coverage обязателен тем более:
+  пустой массив без него — недоказанный «чистый» прогон, и валидатор
+  (semantic_findings --validate) отклонит результат.
 - source и current — точные цитаты, без пересказа.
 - Литературное предпочтение — не ошибка: вариант «красивее» находкой не является.
 - Не выдумывай: нет уверенности — не включай находку.
@@ -1488,12 +1497,18 @@ AINovelEdit/.agents/skills/semantic-audit-b/SKILL.md
       "suggestion": "Предложенный вариант",
       "severity": "WARNING"
     }}
-  ]
+  ],
+  "coverage": "Просмотренные блоки и объём проверки (см. правила)"
 }}
 
 ПРАВИЛА:
 - severity: только ERROR / WARNING / CANDIDATE.
 - Если проблем нет — "findings": [] (пустой массив, объект всё равно обязателен).
+- "coverage" (attestation покрытия) обязателен ВСЕГДА: какие блоки
+  просмотрены и в каком объёме (напр. «блоки 1–29 целиком, соседние
+  контексты проверены»). При "findings": [] coverage обязателен тем более:
+  пустой массив без него — недоказанный «чистый» прогон, и валидатор
+  (semantic_findings --validate) отклонит результат.
 - source и current — точные цитаты, без пересказа.
 - Литературное предпочтение — не ошибка: вариант «красивее» находкой не является.
 - Если JA допускает несколько прочтений — укажи это как неоднозначность,
@@ -1623,7 +1638,8 @@ AINovelEdit/.agents/skills/pragmatic-audit/SKILL.md
       "suggestion": "Предложенный вариант",
       "severity": "WARNING"
     }}
-  ]
+  ],
+  "coverage": "Просмотренные блоки и объём проверки (см. правила)"
 }}
 
 ПРАВИЛА:
@@ -1638,6 +1654,11 @@ AINovelEdit/.agents/skills/pragmatic-audit/SKILL.md
   именно прагматическая проблема (изменён коммуникативный смысл реплики),
   а не литературное предпочтение. Без pragmatic_reason находка недействительна.
 - Если проблем нет — "findings": [] (пустой массив, объект всё равно обязателен).
+- "coverage" (attestation покрытия) обязателен ВСЕГДА: какие блоки
+  просмотрены и в каком объёме (напр. «блоки 1–29 целиком, соседние
+  контексты проверены»). При "findings": [] coverage обязателен тем более:
+  пустой массив без него — недоказанный «чистый» прогон, и валидатор
+  (semantic_findings --validate) отклонит результат.
 - source и current — точные цитаты, без пересказа.
 - Литературное предпочтение — не ошибка: вариант «красивее» находкой не является.
 - Не выдумывай: нет уверенности — не включай находку.
@@ -2545,14 +2566,162 @@ def action_omission_precheck(ch: Chapter) -> int:
     print()
     return process.returncode
 
-# Действия показываются ТОЛЬКО в меню смыслового аудита (см. audit_pipeline):
-# в главное меню они не выводятся. Новое действие без пункта в audit_pipeline
-# окажется недоступным — добавлять его туда же.
+# ---------------------------------------------------------------------------
+# ДЕЙСТВИЯ ПОЛНОГО ПРОГОНА: ПРЕДФИЛЬТРЫ И ГЕЙТ ГЛАВЫ
+# ---------------------------------------------------------------------------
+PREFILTER_ACTION_NAME = "Предфильтры (прогнать сканеры)"
+GATE_ACTION_NAME = "Гейт готовности главы"
+# Отчёты обязательных предфильтров: <stem>-<kind>.md в _prefilter/.
+# check_records --report не умеет, drift_scan опционален — в набор не входят.
+PREFILTER_KINDS = ("grammar", "style", "format", "address", "alignment")
+
+def prefilter_report_paths(ch: Chapter) -> dict[str, str]:
+    """Пути отчётов предфильтров главы (ключ — kind, см. PREFILTER_KINDS)."""
+    stem = os.path.splitext(ch.file_name)[0]
+    folder = os.path.join(AINOVELEDIT, "output", "_audit", "_prefilter")
+    return {kind: os.path.join(folder, f"{stem}-{kind}.md")
+            for kind in PREFILTER_KINDS}
+
+def gate_report_path(ch: Chapter) -> str:
+    """Путь отчёта гейта главы: _prefilter/<stem>-gate.md."""
+    stem = os.path.splitext(ch.file_name)[0]
+    return os.path.join(AINOVELEDIT, "output", "_audit", "_prefilter",
+                        f"{stem}-gate.md")
+
+def _run_project_command(command: list[str]) -> int:
+    """Запустить одну команду в AINovelEdit, показать вывод и код."""
+    display = "python " + " ".join(command[1:])
+    print(f"  $ {display}")
+    try:
+        process = subprocess.run(
+            command,
+            cwd=AINOVELEDIT,
+            capture_output=True,
+            text=True,
+            encoding="utf-8",
+            errors="replace",
+        )
+    except OSError as exc:
+        print(f"  Не удалось запустить {command[1]}: {exc}")
+        return 1
+    stdout = (process.stdout or "").rstrip()
+    if stdout:
+        print("  --- stdout ---")
+        for line in stdout.splitlines():
+            print(f"  {line}")
+    stderr = (process.stderr or "").rstrip()
+    if stderr:
+        print("  --- stderr ---")
+        for line in stderr.splitlines():
+            print(f"  {line}")
+    print(f"  Код завершения: {process.returncode}")
+    print()
+    return process.returncode
+
+def action_prefilter_run(ch: Chapter) -> int:
+    """Прогнать механические предфильтры главы и сохранить отчёты.
+
+    Техническое действие оркестратора: обновляет merged-зеркало и
+    последовательно запускает сканеры с ``--report``. Отчёты кладутся в
+    ``output/_audit/_prefilter/<глава>-{grammar,style,format,address,
+    alignment}.md`` и служат эвиденсом фазы в меню полного прогона.
+    Не создаёт LLM-промпт и не меняет текст главы (кроме merged-зеркала).
+    """
+    file_name = ch.file_name
+    out_rel = f"output/{file_name}"
+    commands = [
+        [sys.executable, "scripts/update_merged.py", "--file", file_name],
+        [sys.executable, "scripts/grammar_scan.py",
+         "--file", file_name, "--report"],
+        [sys.executable, "scripts/style_scan.py",
+         "--file", out_rel, "--report"],
+        [sys.executable, "scripts/format_scan.py",
+         "--file", out_rel, "--report"],
+        [sys.executable, "scripts/address_scan.py",
+         "--file", file_name, "--report"],
+        [sys.executable, "scripts/check_alignment.py",
+         "--file", file_name, "--report"],
+        [sys.executable, "scripts/check_records.py", "--file", file_name],
+    ]
+    print()
+    separator("=")
+    print(f"  Глава: {ch.chapter_id_full}")
+    print()
+    print("  Действие:")
+    print(f"  {PREFILTER_ACTION_NAME}")
+    print()
+    print("  Команды (по порядку):")
+    for command in commands:
+        print(f"  $ python {' '.join(command[1:])}")
+    print()
+    print("  Назначение:")
+    print("  прогнать механические предфильтры и сохранить отчёты.")
+    print("  Не является LLM-аудитом; текст главы не меняется.")
+    print()
+    print("  Результат (файлы-эвиденсы):")
+    for path in prefilter_report_paths(ch).values():
+        print(f"  {os.path.relpath(path, ROOT)}")
+    separator("=")
+    print()
+
+    codes = [_run_project_command(command) for command in commands]
+    failed = sum(1 for code in codes if code != 0)
+    print(f"  Итог: команд {len(codes)}, с ненулевым кодом: {failed}.")
+    print()
+    return 0 if failed == 0 else 1
+
+def action_chapter_gate(ch: Chapter) -> int:
+    """Гейт готовности главы: сверить обязательные входы по файлам-эвиденсам.
+
+    Техническое действие оркестратора: запускает
+    AINovelEdit/scripts/chapter_gate.py (блоки RU/JA, свежие предфильтры,
+    смысловой аудит, отчёт аудита, открытые ``<!-- ??? -->``), печатает
+    чек-лист и пишет отчёт в ``_prefilter/<глава>-gate.md``. Код 0 — глава
+    готова; 1 — есть незакрытые пункты. LLM-промпт не создаётся.
+    """
+    script = "scripts/chapter_gate.py"
+    command = [sys.executable, script, "--file", ch.file_name, "--report"]
+    display = f"python {script} --file {ch.file_name} --report"
+    print()
+    separator("=")
+    print(f"  Глава: {ch.chapter_id_full}")
+    print()
+    print("  Действие:")
+    print(f"  {GATE_ACTION_NAME}")
+    print()
+    print("  Команда:")
+    print(f"  {display}")
+    print()
+    print("  Назначение:")
+    print("  сверить обязательные входы главы по файлам-эвиденсам.")
+    print("  Код 0 — глава готова, 1 — есть незакрытые пункты.")
+    print("  Не является LLM-аудитом; текст главы не меняется.")
+    print()
+    print("  Результат:")
+    print(f"  {os.path.relpath(gate_report_path(ch), ROOT)}")
+    separator("=")
+    print()
+    return _run_project_command(command)
+
+# Действия показываются ТОЛЬКО в меню полного прогона главы (см.
+# fullrun_pipeline); в главное меню и в меню смыслового аудита они не
+# выводятся. Новое действие без пункта в fullrun_pipeline окажется
+# недоступным — добавлять его туда же.
 ACTIONS: list[ActionInfo] = [
     ActionInfo(
         "Omission Pre-check",
         "Детерминированная проверка пропусков перед A/B/C",
         action_omission_precheck,
+    ),
+    ActionInfo(
+        PREFILTER_ACTION_NAME,
+        "Обновить merged и прогнать предфильтры с сохранением отчётов",
+        action_prefilter_run,
+    ),
+    ActionInfo(
+        GATE_ACTION_NAME,
+        "Чек-лист готовности главы по файлам-эвиденсам",
+        action_chapter_gate,
     ),
 ]
 
@@ -2602,6 +2771,11 @@ def print_menu(ch: Chapter) -> None:
     print("      Pre-check → A → B → C → Фаза 1 → Фаза 2 (фиксированный порядок)")
     print()
     number += 1
+    print(f"  {number:2d}. Полный прогон главы — меню фаз")
+    print("      Перевод → предфильтры → смысловой аудит → аудиты → "
+          "FINAL AUDIT → гейт")
+    print()
+    number += 1
     print("=== Навигация ===")
     print()
     print(f"  {number:2d}. Следующая глава")
@@ -2617,6 +2791,7 @@ def choose_prompt(ch: Chapter) -> tuple[str, int] | str:
     Возвращает:
     ("prompt", i) — индекс i в PROMPTS (от 0)
     "audit"       — открыть меню смыслового аудита
+    "fullrun"     — открыть меню полного прогона главы
     "next"        — следующая глава
     "prev"        — предыдущая глава
     "change"      — сменить главу
@@ -2641,7 +2816,9 @@ def choose_prompt(ch: Chapter) -> tuple[str, int] | str:
             return ("prompt", visible[number - 1])
         if number == n_visible + 1:
             return "audit"
-        base = n_visible + 1  # последний номер блока «Разделы»
+        if number == n_visible + 2:
+            return "fullrun"
+        base = n_visible + 2  # последний номер блока «Разделы»
         if number == base + 1:
             return "next"
         if number == base + 2:
@@ -2770,6 +2947,338 @@ def choose_audit_menu(ch: Chapter, stage: int) -> tuple[str, int] | str:
         if number == count + 1:
             if stage + 1 >= len(steps):
                 print("  Это последний этап пайплайна.")
+                print()
+                input("  Нажмите Enter...")
+                continue
+            return ("stage", stage + 1)
+        if number == count + 2:
+            return "next"
+        if number == count + 3:
+            return "prev"
+        if number == count + 4:
+            return "change"
+        if number == count + 5:
+            return "back"
+
+        print(f"  Введите число от 1 до {count + 5}.")
+        print()
+        input("  Нажмите Enter...")
+
+# ---------------------------------------------------------------------------
+# МЕНЮ ПОЛНОГО ПРОГОНА ГЛАВЫ (пофазовый порядок «от перевода до проверки»)
+# ---------------------------------------------------------------------------
+# Образец поведения — меню смыслового аудита (выше): фиксированный порядок
+# фаз, статусы по файлам-эвиденсам ([x]/[ ]), prereq-предупреждения при
+# переходе к фазе без обязательных входов.
+
+_AUDIT_SECTION_PATTERNS = {
+    # Заголовки секций в output/_audit/vXX-chYY.md встречаются в разных
+    # формулировках («## 5. Грамматический контроль», «## Грамматика»,
+    # «### Итог GRAMMAR: ЧИСТО») — матчер толерантный, но без re.I по
+    # латинице, чтобы «grammar_scan» в тексте заголовка не считался секцией.
+    prompt_grammar_audit: re.compile(
+        r"^#{2,4}[^\n]*(?:Грамматик|\bGRAMMAR\b)", re.MULTILINE),
+    prompt_style_audit: re.compile(
+        r"^#{2,4}[^\n]*(?:Стил|\bSTYLE\b)", re.MULTILINE),
+    prompt_humanizer: re.compile(
+        r"^#{2,4}[^\n]*(?:[Hh]umanizer|[Мм]ашинност)", re.MULTILINE),
+}
+
+def fullrun_pipeline() -> list[tuple[str, int]]:
+    """Фиксированный порядок полного прогона главы «от перевода до проверки».
+
+    Возвращает пары ("action" | "prompt", индекс в ACTIONS / PROMPTS):
+    Первый запуск → Продолжение (заполнение/перевод) → предфильтры →
+    смысловой аудит целиком (audit_pipeline: Pre-check → A → B → C →
+    Фаза 1 → Фаза 2) → грамматический → стилевой → humanizer →
+    FINAL AUDIT → гейт готовности главы.
+    """
+    steps: list[tuple[str, int]] = []
+
+    def add_prompt(generator) -> None:
+        for index, prompt in enumerate(PROMPTS):
+            if prompt.generator is generator:
+                steps.append(("prompt", index))
+                return
+        raise AssertionError(f"нет промпта-пункта для {generator!r}")
+
+    def add_action(name: str) -> None:
+        for index, action in enumerate(ACTIONS):
+            if action.name == name:
+                steps.append(("action", index))
+                return
+        raise AssertionError(f"нет действия {name!r}")
+
+    add_prompt(prompt_first_launch)
+    add_prompt(prompt_continue)
+    add_action(PREFILTER_ACTION_NAME)
+    steps.extend(audit_pipeline())
+    add_prompt(prompt_grammar_audit)
+    add_prompt(prompt_style_audit)
+    add_prompt(prompt_humanizer)
+    add_prompt(prompt_full_audit)
+    add_action(GATE_ACTION_NAME)
+    return steps
+
+def fullrun_stage_index(kind: str, index: int) -> int | None:
+    """Номер фазы в fullrun_pipeline() для пары (kind, index); None — вне."""
+    for stage, (step_kind, step_index) in enumerate(fullrun_pipeline()):
+        if step_kind == kind and step_index == index:
+            return stage
+    return None
+
+def fullrun_next_step(kind: str, index: int) -> tuple[str, int] | None:
+    """Следующая фаза полного прогона; None — текущая фаза последняя."""
+    steps = fullrun_pipeline()
+    stage = fullrun_stage_index(kind, index)
+    if stage is None or stage + 1 >= len(steps):
+        return None
+    return steps[stage + 1]
+
+# --- файлы-эвиденсы фаз ----------------------------------------------------
+def _mtime(path: str) -> float | None:
+    try:
+        return os.path.getmtime(path)
+    except OSError:
+        return None
+
+def _is_fresh(report: str, source: str) -> bool:
+    """Отчёт не старее источника (оба файла существуют, report >= source)."""
+    report_mtime = _mtime(report)
+    source_mtime = _mtime(source)
+    return (report_mtime is not None
+            and source_mtime is not None
+            and report_mtime >= source_mtime)
+
+def _stamp(path: str) -> str:
+    mtime = _mtime(path)
+    if mtime is None:
+        return "—"
+    return datetime.fromtimestamp(mtime).strftime("%d.%m %H:%M")
+
+def _fill_evidence(ch: Chapter) -> tuple[bool, str]:
+    """Заполнение/перевод: output-файл и покрытие JA-блоков RU-блоками."""
+    if not os.path.isfile(ch.output_path):
+        return False, "нет output-файла (глава не начата)"
+    ja_blocks, ru_blocks = sma_block_inventory(ch)
+    if not ja_blocks:
+        return True, "output-файл есть (нумерация блоков недоступна)"
+    done = set(ru_blocks) >= set(ja_blocks)
+    return done, f"блоков RU/JA: {len(ru_blocks)}/{len(ja_blocks)}"
+
+def _prefilter_evidence(ch: Chapter) -> tuple[bool, str]:
+    """Предфильтры: отчёты 5 сканеров существуют и не старее текста."""
+    paths = prefilter_report_paths(ch)
+    if not os.path.isfile(ch.output_path):
+        return False, "нет output-файла"
+    existing = [kind for kind, path in paths.items() if os.path.isfile(path)]
+    fresh = [kind for kind in existing
+             if _is_fresh(paths[kind], ch.output_path)]
+    done = len(existing) == len(paths) and len(fresh) == len(paths)
+    return done, (f"отчётов: {len(existing)}/{len(paths)}, "
+                  f"свежих: {len(fresh)}")
+
+def _audit_text(ch: Chapter) -> str | None:
+    try:
+        with open(ch.audit_path, encoding="utf-8") as fh:
+            return fh.read()
+    except OSError:
+        return None
+
+def _audit_section_evidence(ch: Chapter, generator) -> tuple[bool, str]:
+    """Секция фазы (грамматика/стиль/humanizer) в отчёте аудита, свежая."""
+    text = _audit_text(ch)
+    if text is None:
+        return False, "отчёта аудита нет"
+    if not _AUDIT_SECTION_PATTERNS[generator].search(text):
+        return False, "секции фазы нет в отчёте аудита"
+    if not _is_fresh(ch.audit_path, ch.output_path):
+        return False, (f"секция есть, отчёт УСТАРЕЛ "
+                       f"({_stamp(ch.audit_path)}) — текст правился позже")
+    return True, f"секция в отчёте есть (отчёт {_stamp(ch.audit_path)})"
+
+def _final_audit_evidence(ch: Chapter) -> tuple[bool, str]:
+    """FINAL AUDIT: отчёт аудита существует и не старее текста главы."""
+    if not os.path.isfile(ch.audit_path):
+        return False, "отчёта аудита нет"
+    if not _is_fresh(ch.audit_path, ch.output_path):
+        return False, (f"отчёт УСТАРЕЛ ({_stamp(ch.audit_path)}) — "
+                       "текст правился после аудита")
+    return True, f"отчёт свежий ({_stamp(ch.audit_path)})"
+
+def _gate_evidence(ch: Chapter) -> tuple[bool, str]:
+    """Гейт: отчёт гейта существует и не старее текста главы."""
+    report = gate_report_path(ch)
+    if not os.path.isfile(report):
+        return False, "гейт не запускался"
+    if not _is_fresh(report, ch.output_path):
+        return False, (f"гейт-отчёт УСТАРЕЛ ({_stamp(report)}) — "
+                       "текст правился после гейта")
+    return True, f"гейт-отчёт свежий ({_stamp(report)})"
+
+def fullrun_stage_evidence(kind: str, index: int, ch: Chapter) -> tuple[bool, str]:
+    """Факт выполнения фазы полного прогона: (выполнено, описание эвиденса).
+
+    Статусы считаются только по файлам-эвиденсам (отчёты предфильтров,
+    run-файлы SMA, отчёт аудита, гейт-отчёт), а не по пометкам пользователя.
+    """
+    if kind == "action":
+        name = ACTIONS[index].name
+        if name == "Omission Pre-check":
+            exists = sma_precheck_exists(ch)
+            return exists, "evidence pre-check: " + ("есть" if exists else "нет")
+        if name == PREFILTER_ACTION_NAME:
+            return _prefilter_evidence(ch)
+        if name == GATE_ACTION_NAME:
+            return _gate_evidence(ch)
+        return False, "эвиденс фазы не задан"
+
+    generator = PROMPTS[index].generator
+    if generator is prompt_first_launch:
+        exists = os.path.isfile(ch.output_path)
+        return exists, ("output-файл есть (глава начата)" if exists
+                        else "нет output-файла (глава не начата)")
+    if generator is prompt_continue:
+        return _fill_evidence(ch)
+    if generator is prompt_semantic_a:
+        count = len(sma_existing_runs(ch, "a"))
+        return count > 0, f"запусков A: {count}"
+    if generator is prompt_semantic_b:
+        count = len(sma_existing_runs(ch, "b"))
+        return count > 0, f"запусков B: {count}"
+    if generator is prompt_pragmatic_c:
+        count = len(sma_existing_runs(ch, "c"))
+        return count > 0, f"запусков C: {count}"
+    if generator is prompt_semantic_analyzer_phase1:
+        count = len(sma_existing_phase1_runs(ch))
+        return count > 0, f"файлов Фазы 1: {count}"
+    if generator is prompt_semantic_analyzer:
+        count = len(sma_existing_runs(ch, "analysis"))
+        return count > 0, f"результатов Фазы 2: {count}"
+    if generator in _AUDIT_SECTION_PATTERNS:
+        return _audit_section_evidence(ch, generator)
+    if generator is prompt_full_audit:
+        return _final_audit_evidence(ch)
+    return False, "эвиденс фазы не задан"
+
+def fullrun_stage_status(kind: str, index: int, ch: Chapter) -> str:
+    """Строка статуса фазы: галочка выполнения + описание эвиденса."""
+    done, detail = fullrun_stage_evidence(kind, index, ch)
+    return f"[{'x' if done else ' '}] {detail}"
+
+def fullrun_prereq_warnings(item: PromptInfo | ActionInfo,
+                            ch: Chapter) -> list[str]:
+    """Обязательные входы фаз полного прогона (для экрана подтверждения).
+
+    Дополняет audit_prereq_warning (он проверяет только Фазы 1/2): текст
+    главы для предфильтров, аудитов и гейта; свежие предфильтры и результаты
+    смыслового аудита — для FINAL AUDIT. Пустой список — входы в порядке.
+    """
+    warnings: list[str] = []
+    output_exists = os.path.isfile(ch.output_path)
+
+    if isinstance(item, ActionInfo):
+        if item.name in (PREFILTER_ACTION_NAME, GATE_ACTION_NAME) \
+                and not output_exists:
+            warnings.append(
+                "НЕТ OUTPUT-ФАЙЛА: нечего сканировать и проверять — сначала "
+                "переведи и сохрани хотя бы один блок (save_block.py).")
+        return warnings
+
+    audit_gens = (prompt_grammar_audit, prompt_style_audit,
+                  prompt_humanizer, prompt_full_audit)
+    if item.generator in audit_gens and not output_exists:
+        warnings.append(
+            "НЕТ OUTPUT-ФАЙЛА: аудит работает по сохранённому тексту — "
+            "сначала заполни главу (фазы «Первый запуск» / «Продолжение»).")
+    if item.generator is prompt_full_audit and output_exists:
+        stale = [kind for kind, path in prefilter_report_paths(ch).items()
+                 if not _is_fresh(path, ch.output_path)]
+        if stale:
+            warnings.append(
+                f"ПРЕДФИЛЬТРЫ НЕ СВЕЖИ ({len(stale)}/{len(PREFILTER_KINDS)}: "
+                + ", ".join(stale) + "): прогони фазу «"
+                + PREFILTER_ACTION_NAME + "» — иначе финальный аудит "
+                "опирается на устаревшие выгрузки.")
+        if not sma_existing_runs(ch, "analysis"):
+            warnings.append(
+                "СМЫСЛОВОЙ АУДИТ НЕ ЗАВЕРШЁН: в analysis/ нет ни одного "
+                "результата Фазы 2 — финальный аудит пойдёт без смыслового "
+                "слоя (сначала фазы меню смыслового аудита).")
+    return warnings
+
+def fullrun_evidence_note(item: PromptInfo | ActionInfo,
+                          ch: Chapter) -> str | None:
+    """Описание файлов-эвиденсов выбранной фазы — для подтверждения запуска."""
+    for kind, index in fullrun_pipeline():
+        if (kind == "action" and ACTIONS[index] is item) \
+                or (kind == "prompt" and PROMPTS[index] is item):
+            _done, detail = fullrun_stage_evidence(kind, index, ch)
+            return f"Эвиденс фазы: {detail}"
+    return None
+
+def print_fullrun_menu(ch: Chapter, stage: int) -> int:
+    """Вывести меню полного прогона главы; вернуть число пунктов-фаз."""
+    steps = fullrun_pipeline()
+    print()
+    print("AINovelEdit — полный прогон главы (от перевода до проверки)")
+    separator()
+    print(f"  Текущая глава: {ch.chapter_id_full}")
+    if 0 <= stage < len(steps):
+        kind, index = steps[stage]
+        title = ACTIONS[index].name if kind == "action" else PROMPTS[index].title
+        print(f"  Текущая фаза: {title}")
+    separator()
+    print()
+    for position, (kind, index) in enumerate(steps, start=1):
+        title = ACTIONS[index].name if kind == "action" else PROMPTS[index].title
+        marker = "->" if position - 1 == stage else "  "
+        print(f"  {marker} {position:2d}. {title}")
+        print(f"           {fullrun_stage_status(kind, index, ch)}")
+    count = len(steps)
+    print()
+    print(f"  {count + 1:2d}. Следующая фаза")
+    print(f"  {count + 2:2d}. Следующая глава")
+    print(f"  {count + 3:2d}. Предыдущая глава")
+    print(f"  {count + 4:2d}. Изменить том / главу")
+    print(f"  {count + 5:2d}. Назад в главное меню")
+    print()
+    return count
+
+def choose_fullrun_menu(ch: Chapter, stage: int) -> tuple[str, int] | str:
+    """
+    Меню полного прогона главы: фазы идут фиксированным пайплайном.
+
+    Возвращает:
+    ("prompt", i) / ("action", i) — выбранная напрямую фаза;
+    ("stage", n)                  — «Следующая фаза» (n — новый номер);
+    "next" / "prev" / "change"    — навигация по главам;
+    "back"                        — назад в главное меню.
+
+    Прямой выбор любой фазы разрешён: при отсутствии обязательных входов
+    (output-файл, свежие предфильтры, результаты Фазы 2) перед
+    подтверждением выводится предупреждение (fullrun_prereq_warnings), но
+    переход не блокируется.
+    """
+    steps = fullrun_pipeline()
+    while True:
+        count = print_fullrun_menu(ch, stage)
+        raw = input("Введите номер: ").strip().lower()
+        if raw in ("q", "quit", "exit", "выход"):
+            return "back"
+        try:
+            number = int(raw)
+        except ValueError:
+            print("  Введите число.")
+            print()
+            input("  Нажмите Enter...")
+            continue
+
+        if 1 <= number <= count:
+            return steps[number - 1]
+        if number == count + 1:
+            if stage + 1 >= len(steps):
+                print("  Это последняя фаза пайплайна.")
                 print()
                 input("  Нажмите Enter...")
                 continue
@@ -3519,6 +4028,177 @@ def _skills_regression_selftest() -> list[tuple[str, bool, str]]:
     ]
 
 
+def _fullrun_pipeline_selftest() -> tuple[bool, str]:
+    """Пайплайн полного прогона: структура, порядок и корректность индексов."""
+    steps = fullrun_pipeline()
+    audit_steps = audit_pipeline()
+    problems = []
+
+    def prompt_index(generator):
+        return next((i for i, p in enumerate(PROMPTS)
+                     if p.generator is generator), None)
+
+    def action_index(name):
+        return next((i for i, a in enumerate(ACTIONS) if a.name == name), None)
+
+    for kind, index in steps:
+        pool = PROMPTS if kind == "prompt" else ACTIONS if kind == "action" else []
+        if not pool or not (0 <= index < len(pool)):
+            problems.append(f"битый индекс {kind}:{index}")
+    if steps[:3] != [("prompt", prompt_index(prompt_first_launch)),
+                     ("prompt", prompt_index(prompt_continue)),
+                     ("action", action_index(PREFILTER_ACTION_NAME))]:
+        problems.append("нет фаз заполнения/предфильтров в начале")
+    audit_start = 3
+    if steps[audit_start:audit_start + len(audit_steps)] != audit_steps:
+        problems.append("смысловой аудит идёт не целиком после предфильтров")
+    tail = steps[audit_start + len(audit_steps):]
+    expected_tail = [("prompt", prompt_index(g)) for g in
+                     (prompt_grammar_audit, prompt_style_audit,
+                      prompt_humanizer, prompt_full_audit)]
+    expected_tail.append(("action", action_index(GATE_ACTION_NAME)))
+    if tail != expected_tail:
+        problems.append("нет финальных аудит-фаз или гейта в конце")
+    if fullrun_stage_index(*steps[0]) != 0:
+        problems.append("первая фаза не имеет номера 0")
+    if fullrun_next_step(*steps[-1]) is not None:
+        problems.append("последняя фаза возвращает следующую")
+    detail = "; ".join(problems) or f"фаз: {len(steps)}"
+    return not problems, detail
+
+def _fullrun_status_selftest() -> tuple[bool, str]:
+    """Статусы фаз на главе без файлов: везде [ ] и непустое описание."""
+    empty = Chapter(997, "97")
+    problems = []
+    for kind, index in fullrun_pipeline():
+        status = fullrun_stage_status(kind, index, empty)
+        if not status.startswith("[ ]"):
+            problems.append(f"ожидался [ ], получено {status!r}")
+        if len(status) < len("[ ] ") + 3:
+            problems.append(f"пустое описание эвиденса: {status!r}")
+    detail = "; ".join(problems) or "все фазы показывают [ ] без эвиденса"
+    return not problems, detail
+
+def _fullrun_menu_visible_selftest(ch: Chapter) -> tuple[bool, str]:
+    """Главное меню: пункт прогона идёт после «Смысловой аудит», нумерация верна."""
+    buffer = io.StringIO()
+    with contextlib.redirect_stdout(buffer):
+        print_menu(ch)
+    text = buffer.getvalue()
+    problems = []
+    match_audit = re.search(r"^\s*(\d+)\. Смысловой аудит — меню фаз$",
+                            text, re.MULTILINE)
+    match_run = re.search(r"^\s*(\d+)\. Полный прогон главы — меню фаз$",
+                          text, re.MULTILINE)
+    match_next = re.search(r"^\s*(\d+)\. Следующая глава$", text, re.MULTILINE)
+    if not (match_audit and match_run and match_next):
+        problems.append("пункты «Разделы»/«Навигация» не найдены в меню")
+    else:
+        audit_no = int(match_audit.group(1))
+        run_no = int(match_run.group(1))
+        next_no = int(match_next.group(1))
+        if run_no != audit_no + 1:
+            problems.append(f"прогон под номером {run_no}, ожидался "
+                            f"{audit_no + 1} (сразу после аудита)")
+        if next_no != run_no + 1:
+            problems.append(f"навигация под номером {next_no}, ожидался "
+                            f"{run_no + 1}")
+    detail = "; ".join(problems) or "нумерация меню корректна"
+    return not problems, detail
+
+def _fullrun_prereq_selftest() -> tuple[bool, str]:
+    """Prereq-предупреждения фаз полного прогона на главе без файлов."""
+    empty = Chapter(997, "97")
+    problems = []
+
+    def prompt_for(generator):
+        return next(p for p in PROMPTS if p.generator is generator)
+
+    def action_for(name):
+        return next(a for a in ACTIONS if a.name == name)
+
+    if fullrun_prereq_warnings(prompt_for(prompt_continue), empty):
+        problems.append("«Продолжение» предупреждает без причины")
+    for generator in (prompt_grammar_audit, prompt_full_audit):
+        warns = fullrun_prereq_warnings(prompt_for(generator), empty)
+        if not any("OUTPUT" in w for w in warns):
+            problems.append(f"{generator.__name__}: нет предупреждения о "
+                            "output-файле")
+    for name in (PREFILTER_ACTION_NAME, GATE_ACTION_NAME):
+        warns = fullrun_prereq_warnings(action_for(name), empty)
+        if not any("OUTPUT" in w for w in warns):
+            problems.append(f"{name}: нет предупреждения об output-файле")
+    if fullrun_prereq_warnings(action_for("Omission Pre-check"), empty):
+        problems.append("Omission Pre-check: лишнее предупреждение")
+    # На живой главе с output: финальный аудит требует свежих предфильтров
+    # и результатов смыслового аудита — проверяется только структура текста.
+    warns = fullrun_prereq_warnings(prompt_for(prompt_full_audit),
+                                    Chapter(3, "3"))
+    if any("ПРЕДФИЛЬТРЫ НЕ СВЕЖИ" in w and PREFILTER_ACTION_NAME not in w
+           for w in warns):
+        problems.append("предупреждение о предфильтрах не ссылается на фазу")
+    detail = "; ".join(problems) or "предупреждения корректны"
+    return not problems, detail
+
+def _freshness_selftest() -> tuple[bool, str]:
+    """_is_fresh: отчёт старее источника — устаревший; новее — свежий."""
+    problems = []
+    with tempfile.TemporaryDirectory() as tmp:
+        report = os.path.join(tmp, "report.md")
+        source = os.path.join(tmp, "source.md")
+        missing = os.path.join(tmp, "missing.md")
+        with open(report, "w", encoding="utf-8") as fh:
+            fh.write("r")
+        with open(source, "w", encoding="utf-8") as fh:
+            fh.write("s")
+        os.utime(report, (1000, 1000))
+        os.utime(source, (2000, 2000))
+        if _is_fresh(report, source):
+            problems.append("старый отчёт посчитан свежим")
+        os.utime(report, (3000, 3000))
+        if not _is_fresh(report, source):
+            problems.append("свежий отчёт посчитан устаревшим")
+        if _is_fresh(report, missing):
+            problems.append("отчёт без источника посчитан свежим")
+        if _is_fresh(missing, source):
+            problems.append("отсутствующий отчёт посчитан свежим")
+    detail = "; ".join(problems) or "свежесть считается корректно"
+    return not problems, detail
+
+def _audit_section_pattern_selftest() -> tuple[bool, str]:
+    """Толерантные матчеры секций отчёта аудита (грамматика/стиль/humanizer)."""
+    samples = {
+        prompt_grammar_audit: (
+            "## 5. Грамматический контроль (grammar_scan.py)",
+            "## Грамматика",
+            "### Итог GRAMMAR: ЧИСТО",
+        ),
+        prompt_style_audit: (
+            "## 6. Стилевой контроль (style_scan.py)",
+            "## Стиль",
+            "## 10. Стилевой контроль (STYLE AUDIT)",
+        ),
+        prompt_humanizer: (
+            "## 3. russian-humanizer (машинность)",
+            "## Машинность (`russian-humanizer`)",
+            "## 7. Машинность (russian-humanizer)",
+        ),
+    }
+    problems = []
+    for generator, headings in samples.items():
+        pattern = _AUDIT_SECTION_PATTERNS[generator]
+        for heading in headings:
+            if not pattern.search(heading):
+                problems.append(f"{generator.__name__}: не ловит {heading!r}")
+    if _AUDIT_SECTION_PATTERNS[prompt_grammar_audit].search(
+            "## Замечания по grammar_scan"):
+        problems.append("«grammar_scan» в заголовке считается секцией")
+    if _AUDIT_SECTION_PATTERNS[prompt_style_audit].search(
+            "## Замечания по style_scan"):
+        problems.append("«style_scan» в заголовке считается секцией")
+    detail = "; ".join(problems) or "матчеры секций работают"
+    return not problems, detail
+
 def _prompt_format_selftest(pa: str, pb: str, pc: str,
                             ph: str) -> list[tuple[str, bool, str]]:
     """Инварианты формата промптов A/B/C и разметки в промпте humanizer."""
@@ -3530,6 +4210,13 @@ def _prompt_format_selftest(pa: str, pb: str, pc: str,
          ""),
         ("Humanizer: канон курсива `_…_`, `*…*` не объявлен нормой — YES",
          "курсив `_…_`" in ph and "курсив `*…*`" not in ph, ""),
+        ("A/B/C: coverage-attestation в формате и правилах — YES",
+         all('"coverage": "Просмотренные блоки' in p for p in prompts)
+         and all("coverage обязателен тем более" in p for p in prompts),
+         ""),
+        ("A/B/C: при findings [] coverage обязателен, валидатор отклонит — YES",
+         all("semantic_findings --validate" in p for p in prompts),
+         ""),
     ]
 
 def self_test_semantic_prompts(
@@ -3890,6 +4577,19 @@ def self_test_semantic_prompts(
          any(p.generator is prompt_semantic_analyzer_phase1 for p in PROMPTS)
          and any(p.generator is prompt_semantic_analyzer for p in PROMPTS),
          ""),
+        # ---- МЕНЮ ПОЛНОГО ПРОГОНА ГЛАВЫ (пофазовый прогон, эвиденсы) ----
+        ("Полный прогон: пайплайн от перевода до гейта (аудит внутри) — YES",
+         _fullrun_pipeline_selftest(), ""),
+        ("Полный прогон: статусы фаз по файлам-эвиденсам ([x]/[ ]) — YES",
+         _fullrun_status_selftest(), ""),
+        ("Полный прогон: пункт в главном меню сразу после «Смысловой аудит» — YES",
+         _fullrun_menu_visible_selftest(ch), ""),
+        ("Полный прогон: prereq-предупреждения входов фаз — YES",
+         _fullrun_prereq_selftest(), ""),
+        ("Полный прогон: свежесть отчётов (report >= source) — YES",
+         _freshness_selftest(), ""),
+        ("Полный прогон: матчеры секций отчёта аудита толерантны — YES",
+         _audit_section_pattern_selftest(), ""),
         # ---- ORCHESTRATOR: PROMPTS vs ACTIONS ----
         ("Orchestrator: PROMPTS непусты — YES",
          len(PROMPTS) > 0, f"промптов: {len(PROMPTS)}"),
@@ -3982,13 +4682,19 @@ def main() -> None:
     action_obj: ActionInfo | None = None
     in_audit_menu = False   # мы внутри меню смыслового аудита
     audit_stage = 0         # позиция в audit_pipeline() (для метки ->)
+    in_fullrun_menu = False # мы внутри меню полного прогона главы
+    fullrun_stage = 0       # позиция в fullrun_pipeline() (для метки ->)
     needs_confirm = True    # подтвердить перед следующей генерацией
 
     while True:
-        # --- 1. Выбор пункта меню (главного или меню смыслового аудита) ---
+        # --- 1. Выбор пункта меню (главного, смыслового аудита, прогона) ---
         if prompt_index is None and action_obj is None:
-            result = choose_audit_menu(ch, audit_stage) if in_audit_menu \
-                else choose_prompt(ch)
+            if in_fullrun_menu:
+                result = choose_fullrun_menu(ch, fullrun_stage)
+            elif in_audit_menu:
+                result = choose_audit_menu(ch, audit_stage)
+            else:
+                result = choose_prompt(ch)
 
             if result == "quit":
                 print()
@@ -3997,6 +4703,7 @@ def main() -> None:
 
             if result == "back":
                 in_audit_menu = False
+                in_fullrun_menu = False
                 continue
 
             if result == "change":
@@ -4014,14 +4721,25 @@ def main() -> None:
 
             if result == "audit":
                 in_audit_menu = True
+                in_fullrun_menu = False
                 audit_stage = 0
                 continue
 
+            if result == "fullrun":
+                in_fullrun_menu = True
+                in_audit_menu = False
+                fullrun_stage = 0
+                continue
+
             if isinstance(result, tuple) and result[0] == "stage":
-                # «Следующий этап» из меню аудита: переходим и показываем
-                # подтверждение нового этапа.
-                audit_stage = result[1]
-                step_kind, step_index = audit_pipeline()[audit_stage]
+                # «Следующий этап/фаза» из меню аудита или прогона: переходим
+                # и показываем подтверждение нового этапа.
+                if in_fullrun_menu:
+                    fullrun_stage = result[1]
+                    step_kind, step_index = fullrun_pipeline()[fullrun_stage]
+                else:
+                    audit_stage = result[1]
+                    step_kind, step_index = audit_pipeline()[audit_stage]
                 result = (step_kind, step_index)
 
             dispatched = dispatch_selection(result, ch)
@@ -4039,14 +4757,23 @@ def main() -> None:
             stage = audit_stage_index("prompt", prompt_index)
             if stage is not None:
                 audit_stage = stage
+            stage = fullrun_stage_index("prompt", prompt_index)
+            if stage is not None:
+                fullrun_stage = stage
             if needs_confirm:
                 notes = []
                 warning = audit_prereq_warning(prompt_obj, ch)
                 if warning:
                     notes.append(warning)
+                if in_fullrun_menu:
+                    notes.extend(fullrun_prereq_warnings(prompt_obj, ch))
                 note = audit_existing_runs_note(prompt_obj, ch)
                 if note:
                     notes.append(note)
+                elif in_fullrun_menu:
+                    note = fullrun_evidence_note(prompt_obj, ch)
+                    if note:
+                        notes.append(note)
                 conf = ask_confirmation(prompt_obj, ch, notes)
                 if conf == "next":
                     new_ch = navigate_next(ch)
@@ -4069,7 +4796,13 @@ def main() -> None:
 
         elif action_obj is not None:
             if needs_confirm:
-                conf = ask_confirmation(action_obj, ch)
+                notes = []
+                if in_fullrun_menu:
+                    notes.extend(fullrun_prereq_warnings(action_obj, ch))
+                    note = fullrun_evidence_note(action_obj, ch)
+                    if note:
+                        notes.append(note)
+                conf = ask_confirmation(action_obj, ch, notes or None)
                 if conf in ("next", "prev"):
                     new_ch = navigate_next(ch) if conf == "next" else navigate_prev(ch)
                     if new_ch:
@@ -4138,11 +4871,24 @@ def main() -> None:
                 prompt_text = new_text
                 print_generation_summary(prompt_text, prompt_obj, ch)
             elif raw == "5":
-                nxt = next_prompt_index(prompt_index)
-                if nxt is None:
-                    print(f"  Это последний промпт раздела «{PROMPTS[prompt_index].group}».")
-                    print("  Вернитесь в меню (пункт 6).")
-                    continue
+                if in_fullrun_menu:
+                    step = fullrun_next_step("prompt", prompt_index)
+                    if step is None:
+                        print("  Это последняя фаза полного прогона главы.")
+                        print("  Вернитесь в меню (пункт 6).")
+                        continue
+                    if step[0] == "action":
+                        print("  Следующая фаза — техническое действие "
+                              f"«{ACTIONS[step[1]].name}».")
+                        print("  Вернитесь в меню (пункт 6) и выберите её.")
+                        continue
+                    nxt = step[1]
+                else:
+                    nxt = next_prompt_index(prompt_index)
+                    if nxt is None:
+                        print(f"  Это последний промпт раздела «{PROMPTS[prompt_index].group}».")
+                        print("  Вернитесь в меню (пункт 6).")
+                        continue
                 # Переход к следующей фазе/промпту: показываем подтверждение.
                 prompt_index = nxt
                 prompt_obj = PROMPTS[nxt]

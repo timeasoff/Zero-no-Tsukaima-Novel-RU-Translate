@@ -830,6 +830,21 @@ def run_selftest():
         check((not errs) == want_ok,
               "%s%s" % (name, "" if (not errs) == want_ok else " :: %s" % errs))
 
+    print("== coverage-attestation (top-level findings) ==")
+    errs = validate_coverage_attestation({"findings": []})
+    check(bool(errs) and "coverage" in errs[0],
+          "findings: [] без coverage -> ошибка%s"
+          % ("" if errs else " (нет ошибки!)"))
+    check(not validate_coverage_attestation(
+        {"findings": [], "coverage": "блоки 1–29 проверены целиком"}),
+        "findings: [] с coverage -> OK")
+    check(not validate_coverage_attestation(
+        {"findings": [VALID_CASES[0][1]]}),
+        "непустой findings без coverage -> OK (обратная совместимость)")
+    check(not validate_coverage_attestation(
+        {"findings": [{"bad": 1}], "coverage": " "}),
+        "непустой findings -> правило coverage не применяется")
+
     print("== execution bridge (apply_fixed_findings) ==")
     bridge_selftest(check)
 
@@ -868,6 +883,29 @@ def run_selftest():
 
 # --- CLI -------------------------------------------------------------------
 
+def validate_coverage_attestation(doc):
+    """Coverage-attestation: top-level «findings» требует объём проверки.
+
+    Пустой массив находок без ``coverage`` — недоказанный «чистый» прогон:
+    аудитор обязан перечислить просмотренные блоки и объём проверки, иначе
+    «findings: []» неотличим от непроверенной главы (дыра класса D:
+    обратная связь не замыкается). Правило применяется ТОЛЬКО к top-level
+    объекту с полем findings и только когда он пуст: непустой findings без
+    coverage валидатор не роняет (обратная совместимость со старыми
+    запусками), fixture-обёртки и analysis-результаты не затрагиваются.
+    Возвращает список ошибок ([] — ок).
+    """
+    findings = doc.get("findings")
+    if not isinstance(findings, list) or findings:
+        return []
+    coverage = doc.get("coverage")
+    if isinstance(coverage, str) and coverage.strip():
+        return []
+    return ['coverage: обязателен при "findings": [] — attestation покрытия '
+            "(какие блоки просмотрены и в каком объёме); без него пустой "
+            "массив не доказывает чистоту главы"]
+
+
 def cmd_validate(path):
     doc = json.loads(Path(path).read_text(encoding="utf-8"))
     errors = []
@@ -877,6 +915,7 @@ def cmd_validate(path):
     elif isinstance(doc, dict) and "findings" in doc:
         for i, f in enumerate(doc["findings"]):
             errors += ["findings[%d]: %s" % (i, e) for e in validate_finding(f)]
+        errors += validate_coverage_attestation(doc)
     elif isinstance(doc, dict) and "results" in doc:
         for i, r in enumerate(doc["results"]):
             errors += ["results[%d]: %s" % (i, e)
