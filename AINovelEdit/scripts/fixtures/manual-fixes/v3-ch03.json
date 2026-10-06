@@ -10,10 +10,10 @@
     "post_sha": "8fcd83a0100a55a98b0a6ebdedded586ed6406ed"
   },
   "revisions": {
-    "pre_text": "AINovelEdit/_work/qa_corpus/revisions/prefix.text",
-    "post_text": "AINovelEdit/_work/qa_corpus/revisions/postfix.text",
-    "pre_merged": "AINovelEdit/_work/qa_corpus/revisions/prefix.merged",
-    "post_merged": "AINovelEdit/_work/qa_corpus/revisions/postfix.merged"
+    "pre_text": "AINovelEdit/_work/qa_corpus/revisions/v3-ch03/prefix.text",
+    "post_text": "AINovelEdit/_work/qa_corpus/revisions/v3-ch03/postfix.text",
+    "pre_merged": "AINovelEdit/_work/qa_corpus/revisions/v3-ch03/prefix.merged",
+    "post_merged": "AINovelEdit/_work/qa_corpus/revisions/v3-ch03/postfix.merged"
   },
   "sources": {
     "ja": "AINovelEdit/translates/ja/v3-ch03.md",
