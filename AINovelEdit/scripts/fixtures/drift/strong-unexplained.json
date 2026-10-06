@@ -1,0 +1,9 @@
+{
+  "case": "strong-unexplained",
+  "synthetic": true,
+  "note": "Synthetic fixture обязательного регресс-гейта: STRONG (числа) без объясняющей пары ledger'а → --strict должен дать BLOCKING. Historical corpus не используется.",
+  "base": "<!-- block: 1 -->\nИх было тридцать человек.",
+  "current": "<!-- block: 1 -->\nИх было двадцать человек.",
+  "explain": null,
+  "expect_blocking": 1
+}

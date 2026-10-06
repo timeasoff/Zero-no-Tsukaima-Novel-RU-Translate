@@ -1,0 +1,12 @@
+{
+  "case": "rc1-typo-v3ch03",
+  "synthetic": true,
+  "note": "RC-1 detector replay (kind=typo). pre_lines — строка из manual-fix v3-ch03 (c13, PIPELINE_REGRESSION: «загговорила» → «заговорила»); post_lines — форма после ручного fix. Исторический corpus (manual-fixes, output/_audit, detection_matrix) НЕ изменяется: строки живут только в этой fixture.",
+  "kind": "typo",
+  "before": "загговорила",
+  "expected": "заговорила",
+  "pre_lines": ["Суетливо загговорила Сиеста. Рядом с ней лежал поднос."],
+  "post_lines": ["Суетливо заговорила Сиеста. Рядом с ней лежал поднос."],
+  "expect_typo_pre": 1,
+  "expect_typo_post": 0
+}

@@ -1,0 +1,21 @@
+{
+  "case": "routed-spelling-synthetic",
+  "synthetic": true,
+  "note": "Синтетический fixture runtime path «routed_observation → Phase 2» (класс «загговорила», owner_hint=spelling). A/B увидели опечатку вне своей зоны и передали observation владельцу; Phase 2 принимает обычное решение (REPORT_ONLY), observation сохраняется в evidence и НЕ превращается в FIXED. Исторический corpus (scripts/fixtures/manual-fixes, output/_audit/sma) не изменялся.",
+  "expect": "VALID",
+  "results": [
+    {
+      "block": 5,
+      "candidate_id": "C-05-ROUTED-01",
+      "sources": {"a": ["synthetic-run"], "b": ["synthetic-run"], "c": [], "precheck": false},
+      "source": "慌てた様子で、シエスタは言った",
+      "current": "Суетливо загговорила Сиеста.",
+      "fidelity": "RUSSIAN_ERROR",
+      "status": "DISPUTED",
+      "reason": "Синтетический routed-candidate: опечатка вне зоны смыслового аудита — observation передана владельцу (spelling). Решение о правке принимает владелец слоя; result сохраняет observation.",
+      "action": "REPORT_ONLY",
+      "routed_observation": true,
+      "owner_hint": "spelling"
+    }
+  ]
+}
