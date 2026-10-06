@@ -15,5 +15,8 @@ AINovelEdit/output/_audit/_fix/*.json
 AINovelEdit/output/_audit/_prefilter/*-alignment.md
 .vscode
 
-# промпт-инструкция для агента (регенерируется tools/agent_workflow.py)
-/agent_prompt.md
+# промпт-инструкции для агента (регенерируются tools/agent_workflow.py;
+# внутри: agent_prompt.<глава>.<слаг режима>.md — так параллельные запуски
+# в нескольких терминалах не затирают чужие задания, а корень проекта
+# не засоряется файлами)
+/agent_prompts/

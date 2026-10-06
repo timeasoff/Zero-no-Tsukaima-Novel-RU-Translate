@@ -4,12 +4,24 @@
 
 Внутри два независимых раздела:
 PROMPTS — LLM-промпты (PromptInfo): генерация готового задания агенту,
-  копирование в буфер и сохранение в agent_prompt.md;
+  копирование в буфер и сохранение в папку agent_prompts/;
 ACTIONS — технические действия оркестратора (ActionInfo): запускают
   детерминированные скрипты проекта и НЕ создают LLM-промптов.
 
 Основные возможности:
 - выбор режима через числовой ввод в консоли;
+- главное меню сгруппировано по темам («Работа с главой», «Аудиты текста»);
+- отдельное МЕНЮ СМЫСЛОВОГО АУДИТА с фиксированным порядком фаз:
+  Omission Pre-check → Auditor A → Auditor B → Pragmatic Auditor C →
+  Фаза 1 (blind) → Фаза 2 (evidence review); любой этап можно открыть
+  напрямую, но при отсутствии обязательных входов (файл Фазы 1, запуски
+  A/B/C) выводится предупреждение;
+- кнопка «Следующий промпт (фаза)» / «Следующий этап»: переход к следующей
+  фазе пайплайна с показом экрана подтверждения;
+- отслеживание идентификаторов фаз: audit_run_id печатается сразу при
+  генерации, в экране подтверждения перечисляются идентификаторы прошлых
+  запусков этапа, а в пунктах аудит-меню — сколько запусков каждой фазы
+  уже сделано;
 - выбор тома и главы (поддержка числовых и строковых идентификаторов);
 - быстрая навигация между главами (следующая / предыдущая);
 - автоматические идентификаторы vNN / chYY или кастомные названия;
@@ -30,9 +42,14 @@ ACTIONS — технические действия оркестратора (Ac
   слепой вывод Фазы 1 конкретным файлом (при нескольких прогонах — самый
   свежий) и фиксирует выбранный файл в inputs.phase1 результата;
 - автоматическое копирование готового промпта в буфер обмена;
-- сохранение готового промпта в markdown-файл `agent_prompt.md`
-  в корне проекта, на который можно сослаться в задаче агенту
-  (файл в .gitignore, перезаписывается при каждой генерации);
+- сохранение готового промпта в markdown-файл
+  `agent_prompts/agent_prompt.<chapter>.<slug>.md` (отдельная папка в корне
+  проекта, чтобы корень не засорялся), на который можно сослаться в задаче
+  агенту (папка в .gitignore, файлы перезаписываются при каждой генерации;
+  имя содержит главу и режим, поэтому параллельные запуски в нескольких
+  терминалах не затирают друг другу — общий agent_prompt.md отменён);
+  запись атомарная (tmp + os.replace), прерывание не оставляет
+  обрезанный файл;
 - ACTIONS оркестратора: Omission Pre-check — детерминированная проверка
   пропусков перед A/B/C (запускает AINovelEdit/scripts/omission_precheck.py;
   не является LLM-аудитом и не изменяет перевод).
@@ -58,10 +75,22 @@ from typing import Callable
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 AINOVELEDIT = os.path.join(ROOT, "AINovelEdit")
 TERMINAL_WIDTH = 78
-# Готовый промпт-инструкция сохраняется в корне проекта под этим именем
-# (md-файл добавлен в .gitignore, перезаписывается при каждой генерации).
-PROMPT_FILE_NAME = "agent_prompt.md"
-PROMPT_FILE = os.path.join(ROOT, PROMPT_FILE_NAME)
+# Готовые промпт-инструкции складываются в отдельную папку
+# <PROJECT_ROOT>/agent_prompts/, а не в корень проекта: файлов много
+# (глава × режим), корень ими быстро засоряется.
+# Внутри: agent_prompt.<chapter>.<slug>.md (паттерн в .gitignore:
+# /agent_prompts/). Имя содержит главу и режим, поэтому параллельные
+# запуски генератора в разных терминалах пишут в РАЗНЫЕ файлы и не
+# затирают друг друга. Запись атомарная: временный файл + os.replace
+# (прерывание не оставляет обрезанный промпт).
+PROMPT_FILE_PREFIX = "agent_prompt"
+PROMPT_DIR_NAME = "agent_prompts"
+
+# Разделы главного меню (порядок вывода).
+GROUP_CHAPTER = "Работа с главой"
+GROUP_AUDITS = "Аудиты текста"
+GROUP_SMA = "Смысловой аудит"
+GROUP_ORDER = (GROUP_CHAPTER, GROUP_AUDITS, GROUP_SMA)
 
 # ============================================================================
 # УТИЛИТЫ ВЫВОДА
@@ -617,6 +646,12 @@ class PromptInfo:
     description: str
     guide: str
     generator: Callable[[Chapter], str] | None = None
+    # Раздел главного меню (см. GROUP_*): порядок вывода и граница действия
+    # кнопки «Следующий промпт (фаза)».
+    group: str = ""
+    # Слаг режима для имени файла промпта:
+    # agent_prompts/agent_prompt.<chapter>.<slug>.md
+    slug: str = ""
 
 @dataclass
 class ActionInfo:
@@ -2096,6 +2131,8 @@ PROMPTS: list[PromptInfo] = [
 изменения структуры проекта.
 """.strip(),
         prompt_first_launch,
+        group=GROUP_CHAPTER,
+        slug="first-launch",
     ),
     PromptInfo(
         "Продолжение",
@@ -2109,6 +2146,8 @@ PROMPTS: list[PromptInfo] = [
 Использовать для обычного продолжения незавершённой работы.
 """.strip(),
         prompt_continue,
+        group=GROUP_CHAPTER,
+        slug="continue",
     ),
     PromptInfo(
         "Полный аудит",
@@ -2128,6 +2167,8 @@ PROMPTS: list[PromptInfo] = [
 версию главы перед завершением работы.
 """.strip(),
         prompt_full_audit,
+        group=GROUP_AUDITS,
+        slug="full-audit",
     ),
     PromptInfo(
         "Быстрый аудит",
@@ -2142,6 +2183,8 @@ PROMPTS: list[PromptInfo] = [
 понять, есть ли в текущем результате серьёзные проблемы.
 """.strip(),
         prompt_quick_audit,
+        group=GROUP_AUDITS,
+        slug="quick-audit",
     ),
     PromptInfo(
         "Грамматический аудит",
@@ -2159,6 +2202,8 @@ PROMPTS: list[PromptInfo] = [
 но требуется отдельная проверка русского языка.
 """.strip(),
         prompt_grammar_audit,
+        group=GROUP_AUDITS,
+        slug="grammar-audit",
     ),
     PromptInfo(
         "Стилевой аудит",
@@ -2175,6 +2220,8 @@ PROMPTS: list[PromptInfo] = [
 Использовать после смысловой и грамматической проверки.
 """.strip(),
         prompt_style_audit,
+        group=GROUP_AUDITS,
+        slug="style-audit",
     ),
     PromptInfo(
         "Humanizer / machine-like",
@@ -2192,6 +2239,8 @@ PROMPTS: list[PromptInfo] = [
 но отдельные фразы всё ещё звучат как перевод.
 """.strip(),
         prompt_humanizer,
+        group=GROUP_AUDITS,
+        slug="humanizer",
     ),
     PromptInfo(
         "JA / EN alignment",
@@ -2211,6 +2260,8 @@ PROMPTS: list[PromptInfo] = [
 или необходимо проверить уже готовый русский текст по источникам.
 """.strip(),
         prompt_alignment,
+        group=GROUP_AUDITS,
+        slug="alignment",
     ),
     PromptInfo(
         "Обработка одного блока",
@@ -2226,6 +2277,8 @@ PROMPTS: list[PromptInfo] = [
 или постепенной обработки большой главы по частям.
 """.strip(),
         None,
+        group=GROUP_CHAPTER,
+        slug="one-block",
     ),
     PromptInfo(
         "Проверка кодировки",
@@ -2240,6 +2293,8 @@ PROMPTS: list[PromptInfo] = [
 или работы с разными редакторами появились подозрительные символы.
 """.strip(),
         prompt_encoding,
+        group=GROUP_CHAPTER,
+        slug="encoding",
     ),
     PromptInfo(
         "Решения пользователя (OPEN / DEFERRED / PROVISIONAL)",
@@ -2260,38 +2315,19 @@ PROMPTS: list[PromptInfo] = [
 «Отложенные вопросы (OPEN / DEFERRED)» или по PROVISIONAL-терминам.
 """.strip(),
         prompt_resolve_decisions,
+        group=GROUP_CHAPTER,
+        slug="resolve-decisions",
     ),
     # GAP-аудит (prompt_gap_audit) УДАЛЁН из активного меню: это LEGACY.
     # Поиск пропусков выполняет общий Omission Pre-check
     # (AINovelEdit/scripts/omission_precheck.py) → evidence для Analyzer.
     # Функция prompt_gap_audit сохранена ниже как исторический задел и из
     # меню недоступна (аналогично prompt_dual_semantic_audit).
-    PromptInfo(
-        "Реконтроль готовой главы (новые правила)",
-        "Проверка уже переведённой и прошедшей аудит главы по новым правилам",
-        """
-        Проверяет главу, которая уже полностью переведена и прошла полный
-        аудит, но делала это ДО введения новых правил проекта: согласования
-        рода в обращениях («понял, Луиза?»), каталога машинных кальк
-        («полегчайте не смогу», «им не по дороге»), регистра титулов в прямой
-        речи («ваше высочество» → «Ваше Высочество»), отбивки разделителей
-        сцен `---` (сам разделитель необязателен — проверяется только его
-        оформление), курсива внутренней речи, отбивки маркеров блоков
-        (blockgap), реплик в кавычках вместо тире (quotespeech), мыслей,
-        слитых с нарративом (thoughtinline), искажений имён (namespell) и
-        падежа геоназваний («до самого Тристейна»).
-        Это НЕ повторный полный аудит: текст переписывается только там, где
-        новые проверки дают подтверждённого кандидата. Смысловая сверка с JA/EN
-        ведётся точечно — только для кандидатов, требующих решения по смыслу.
-        Сначала запускаются механические предфильтры (format_scan, style_scan),
-        затем ручной разбор их кандидатов и проход по контрастивной таблице
-        эталонных правок. Каждый кандидат получает disposition в отчёте;
-        ноль правок — допустимый итог.
-        Использовать для ранее завершённых глав, чтобы прогнать их через
-        правила, появившиеся после их закрытия.
-        """.strip(),
-        prompt_rules_recheck,
-    ),
+    # «Реконтроль готовой главы (новые правила)» УДАЛЁН из активного меню:
+    # главы-первоисточники закрыты, новые правила уже влиты в AGENTS.md и
+    # скиллы, отдельный режим больше не нужен. Функция prompt_rules_recheck
+    # сохранена ниже как исторический задел (аналогично prompt_gap_audit и
+    # prompt_dual_semantic_audit) — не удалять и не подключать без задачи.
     PromptInfo(
         "Смысловой аудит A",
         "Изолированный аудит A: лексика, оттенки, эмоции (независимый запуск)",
@@ -2314,6 +2350,8 @@ PROMPTS: list[PromptInfo] = [
         исправляет — только фиксирует находки.
         """.strip(),
         prompt_semantic_a,
+        group=GROUP_SMA,
+        slug="sma-a",
     ),
     PromptInfo(
         "Смысловой аудит B",
@@ -2337,6 +2375,8 @@ PROMPTS: list[PromptInfo] = [
         исправляет — только фиксирует находки.
         """.strip(),
         prompt_semantic_b,
+        group=GROUP_SMA,
+        slug="sma-b",
     ),
     PromptInfo(
         "Прагматический аудит C",
@@ -2375,6 +2415,8 @@ PROMPTS: list[PromptInfo] = [
         НЕ входят; текст аудитор не исправляет — только фиксирует находки.
         """.strip(),
         prompt_pragmatic_c,
+        group=GROUP_SMA,
+        slug="sma-c",
     ),
     PromptInfo(
         "Смысловой анализатор — Фаза 1 (blind)",
@@ -2402,6 +2444,8 @@ PROMPTS: list[PromptInfo] = [
         --self-test-sma).
         """,
         prompt_semantic_analyzer_phase1,
+        group=GROUP_SMA,
+        slug="analyzer-phase1",
     ),
     PromptInfo(
         "Смысловой анализатор — Фаза 2 (evidence review)",
@@ -2436,6 +2480,8 @@ PROMPTS: list[PromptInfo] = [
         Запускать ПОСЛЕ «Смысловой анализатор — Фаза 1».
         """,
         prompt_semantic_analyzer,
+        group=GROUP_SMA,
+        slug="analyzer-phase2",
     ),
 ]
 
@@ -2499,6 +2545,9 @@ def action_omission_precheck(ch: Chapter) -> int:
     print()
     return process.returncode
 
+# Действия показываются ТОЛЬКО в меню смыслового аудита (см. audit_pipeline):
+# в главное меню они не выводятся. Новое действие без пункта в audit_pipeline
+# окажется недоступным — добавлять его туда же.
 ACTIONS: list[ActionInfo] = [
     ActionInfo(
         "Omission Pre-check",
@@ -2510,41 +2559,64 @@ ACTIONS: list[ActionInfo] = [
 # ============================================================================
 # МЕНЮ (числовой ввод)
 # ============================================================================
+def visible_prompt_indices() -> list[int]:
+    """Индексы PROMPTS в порядке вывода в ГЛАВНОМ меню.
+
+    Разделы сортируются по GROUP_ORDER, внутри раздела сохраняется
+    исходный порядок списка. Раздел «Смысловой аудит» в главное меню не
+    выводится: его пункты живут в отдельном меню фаз (choose_audit_menu),
+    где идут фиксированным пайплайном вместе с Omission Pre-check.
+    """
+    ordered = sorted(
+        (i for i, p in enumerate(PROMPTS) if p.group in GROUP_ORDER),
+        key=lambda i: (GROUP_ORDER.index(PROMPTS[i].group), i),
+    )
+    return [i for i in ordered if PROMPTS[i].group != GROUP_SMA]
+
 def print_menu(ch: Chapter) -> None:
-    """Вывести главное меню."""
+    """Вывести главное меню: разделы тем, разделы, навигация."""
+    visible = visible_prompt_indices()
     print()
-    print("AINovelEdit — оркестратор промптов и действий")
+    print("AINovelEdit — оркестратор промптов")
     separator()
     print(f"  Текущая глава: {ch.chapter_id_full}")
     separator()
-    print()
-    print("=== Prompts ===")
-    print()
-    for i, p in enumerate(PROMPTS, start=1):
-        print(f"  {i:2d}. {p.title}")
-        print(f"      {p.description}")
-        print()  # <-- Возвращаем отступ между пунктами
-    print("=== Actions ===")
-    print()
-    for i, a in enumerate(ACTIONS, start=len(PROMPTS) + 1):
-        print(f"  {i:2d}. {a.name}")
-        print(f"      {a.description}")
+    number = 1
+    for group in GROUP_ORDER:
+        indices = [i for i in visible if PROMPTS[i].group == group]
+        if not indices:
+            continue
         print()
-        
-    extra_start = len(PROMPTS) + len(ACTIONS) + 1
-    print(f"  {extra_start}. Следующая глава")
-    print(f"  {extra_start + 1}. Предыдущая глава")
-    print(f"  {extra_start + 2}. Изменить том / главу")
-    print(f"  {extra_start + 3}. Выход")
+        print(f"=== {group} ===")
+        print()
+        for index in indices:
+            prompt = PROMPTS[index]
+            print(f"  {number:2d}. {prompt.title}")
+            print(f"      {prompt.description}")
+            print()
+            number += 1
+    print()
+    print("=== Разделы ===")
+    print()
+    print(f"  {number:2d}. Смысловой аудит — меню фаз")
+    print("      Pre-check → A → B → C → Фаза 1 → Фаза 2 (фиксированный порядок)")
+    print()
+    number += 1
+    print("=== Навигация ===")
+    print()
+    print(f"  {number:2d}. Следующая глава")
+    print(f"  {number + 1:2d}. Предыдущая глава")
+    print(f"  {number + 2:2d}. Изменить том / главу")
+    print(f"  {number + 3:2d}. Выход")
     print()
 
 def choose_prompt(ch: Chapter) -> tuple[str, int] | str:
     """
-    Запросить выбор (prompt или action) числом.
+    Запросить выбор пункта главного меню числом.
 
     Возвращает:
     ("prompt", i) — индекс i в PROMPTS (от 0)
-    ("action", i) — индекс i в ACTIONS (от 0)
+    "audit"       — открыть меню смыслового аудита
     "next"        — следующая глава
     "prev"        — предыдущая глава
     "change"      — сменить главу
@@ -2563,22 +2635,155 @@ def choose_prompt(ch: Chapter) -> tuple[str, int] | str:
             input("  Нажмите Enter...")
             continue
 
-        n_prompts = len(PROMPTS)
-        n_actions = len(ACTIONS)
-        if 1 <= number <= n_prompts:
-            return ("prompt", number - 1)
-        if n_prompts < number <= n_prompts + n_actions:
-            return ("action", number - n_prompts - 1)
-        if number == n_prompts + n_actions + 1:
+        visible = visible_prompt_indices()
+        n_visible = len(visible)
+        if 1 <= number <= n_visible:
+            return ("prompt", visible[number - 1])
+        if number == n_visible + 1:
+            return "audit"
+        base = n_visible + 1  # последний номер блока «Разделы»
+        if number == base + 1:
             return "next"
-        if number == n_prompts + n_actions + 2:
+        if number == base + 2:
             return "prev"
-        if number == n_prompts + n_actions + 3:
+        if number == base + 3:
             return "change"
-        if number == n_prompts + n_actions + 4:
+        if number == base + 4:
             return "quit"
 
-        print(f"  Введите число от 1 до {n_prompts + n_actions + 4}.")
+        print(f"  Введите число от 1 до {base + 4}.")
+        print()
+        input("  Нажмите Enter...")
+
+# ---------------------------------------------------------------------------
+# МЕНЮ СМЫСЛОВОГО АУДИТА (отдельный режим: фиксированный порядок фаз)
+# ---------------------------------------------------------------------------
+def audit_pipeline() -> list[tuple[str, int]]:
+    """Фиксированный порядок этапов смыслового аудита.
+
+    Возвращает пары ("action" | "prompt", индекс в ACTIONS / PROMPTS):
+    Omission Pre-check → Auditor A → Auditor B → Pragmatic Auditor C →
+    Фаза 1 (blind) → Фаза 2 (evidence review).
+    """
+    steps: list[tuple[str, int]] = []
+    for index, action in enumerate(ACTIONS):
+        if action.name == "Omission Pre-check":
+            steps.append(("action", index))
+    for generator in (prompt_semantic_a, prompt_semantic_b, prompt_pragmatic_c,
+                      prompt_semantic_analyzer_phase1, prompt_semantic_analyzer):
+        for index, prompt in enumerate(PROMPTS):
+            if prompt.generator is generator:
+                steps.append(("prompt", index))
+                break
+    return steps
+
+def audit_stage_index(kind: str, index: int) -> int | None:
+    """Номер этапа в audit_pipeline() для пары (kind, index); None — вне пайплайна."""
+    for stage, (step_kind, step_index) in enumerate(audit_pipeline()):
+        if step_kind == kind and step_index == index:
+            return stage
+    return None
+
+def next_prompt_index(current: int) -> int | None:
+    """Индекс следующего промпта в рамках того же раздела; None — конец раздела."""
+    group = PROMPTS[current].group
+    for index in range(current + 1, len(PROMPTS)):
+        if PROMPTS[index].group == group:
+            return index
+    return None
+
+def _audit_stage_status(kind: str, index: int, ch: Chapter) -> str:
+    """Статус этапа в меню: сколько запусков этой фазы уже сделано."""
+    if kind == "action":
+        return "evidence: есть" if sma_precheck_exists(ch) else "evidence: нет"
+    generator = PROMPTS[index].generator
+    if generator is prompt_semantic_a:
+        return f"запусков: {len(sma_existing_runs(ch, 'a'))}"
+    if generator is prompt_semantic_b:
+        return f"запусков: {len(sma_existing_runs(ch, 'b'))}"
+    if generator is prompt_pragmatic_c:
+        return f"запусков: {len(sma_existing_runs(ch, 'c'))}"
+    if generator is prompt_semantic_analyzer_phase1:
+        return f"файлов Фазы 1: {len(sma_existing_phase1_runs(ch))}"
+    if generator is prompt_semantic_analyzer:
+        return f"результатов Фазы 2: {len(sma_existing_runs(ch, 'analysis'))}"
+    return ""
+
+def print_audit_menu(ch: Chapter, stage: int) -> int:
+    """Вывести меню смыслового аудита; вернуть число пунктов-этапов."""
+    steps = audit_pipeline()
+    print()
+    print("AINovelEdit — смысловой аудит (фиксированный порядок фаз)")
+    separator()
+    print(f"  Текущая глава: {ch.chapter_id_full}")
+    if 0 <= stage < len(steps):
+        kind, index = steps[stage]
+        title = ACTIONS[index].name if kind == "action" else PROMPTS[index].title
+        print(f"  Текущий этап: {title}")
+    separator()
+    print()
+    for position, (kind, index) in enumerate(steps, start=1):
+        title = ACTIONS[index].name if kind == "action" else PROMPTS[index].title
+        marker = "->" if position - 1 == stage else "  "
+        print(f"  {marker} {position:2d}. {title}")
+        print(f"           {_audit_stage_status(kind, index, ch)}")
+    count = len(steps)
+    print()
+    print(f"  {count + 1:2d}. Следующий этап")
+    print(f"  {count + 2:2d}. Следующая глава")
+    print(f"  {count + 3:2d}. Предыдущая глава")
+    print(f"  {count + 4:2d}. Изменить том / главу")
+    print(f"  {count + 5:2d}. Назад в главное меню")
+    print()
+    return count
+
+def choose_audit_menu(ch: Chapter, stage: int) -> tuple[str, int] | str:
+    """
+    Меню смыслового аудита: этапы идут фиксированным пайплайном.
+
+    Возвращает:
+    ("prompt", i) / ("action", i) — выбранный напрямую этап;
+    ("stage", n)                  — «Следующий этап» (n — новый номер);
+    "next" / "prev" / "change"    — навигация по главам;
+    "back"                        — назад в главное меню.
+
+    Прямой выбор любого этапа разрешён: при отсутствии обязательных входов
+    (файл Фазы 1, запуски A/B/C) перед подтверждением выводится
+    предупреждение (audit_prereq_warning), но переход не блокируется.
+    """
+    steps = audit_pipeline()
+    while True:
+        count = print_audit_menu(ch, stage)
+        raw = input("Введите номер: ").strip().lower()
+        if raw in ("q", "quit", "exit", "выход"):
+            return "back"
+        try:
+            number = int(raw)
+        except ValueError:
+            print("  Введите число.")
+            print()
+            input("  Нажмите Enter...")
+            continue
+
+        if 1 <= number <= count:
+            return steps[number - 1]
+        if number == count + 1:
+            if stage + 1 >= len(steps):
+                print("  Это последний этап пайплайна.")
+                print()
+                input("  Нажмите Enter...")
+                continue
+            return ("stage", stage + 1)
+        if number == count + 2:
+            return "next"
+        if number == count + 3:
+            return "prev"
+        if number == count + 4:
+            return "change"
+        if number == count + 5:
+            return "back"
+
+        print(f"  Введите число от 1 до {count + 5}.")
         print()
         input("  Нажмите Enter...")
 
@@ -2610,10 +2815,78 @@ def dispatch_selection(selection, ch: Chapter):
 # ============================================================================
 # ПОДТВЕРЖДЕНИЕ
 # ============================================================================
-def ask_confirmation(item: PromptInfo | ActionInfo, ch: Chapter) -> bool | str:
+def audit_prereq_warning(item: PromptInfo | ActionInfo, ch: Chapter) -> str | None:
+    """Предупреждение при переходе напрямую к этапу без обязательных входов.
+
+    Возвращает текст предупреждения или None. Проверяются только реально
+    обязательные входы: Фазе 2 нужен файл слепой Фазы 1 и хоть один запуск
+    A/B/C; Фазе 1 ничего не нужно (blind), но наличие прошлых слепых выводов
+    стоит показать — при нескольких прогонах Фаза 2 возьмёт самый свежий.
+    """
+    if not isinstance(item, PromptInfo):
+        return None
+    if item.generator is prompt_semantic_analyzer:
+        phase1_files = sma_phase1_files(ch)
+        if not phase1_files:
+            return (
+                "ФАЗА 1 НЕ ВЫПОЛНЯЛАСЬ: в "
+                f"{SMA_REL_ROOT}/{sma_chapter_id(ch)}/analysis/ нет ни одного "
+                "<id>.phase1.json — задание Фазы 2 потребует STOP и работать "
+                "не будет. Сначала «Фаза 1 (blind)», после неё — заново "
+                "сгенерированная Фаза 2."
+            )
+        if not any(sma_existing_runs(ch, kind) for kind in ("a", "b", "c")):
+            return (
+                "НЕТ НИ ОДНОГО ЗАПУСКА A / B / C: задание Фазы 2 остановится "
+                "с сообщением «в a/, b/ и c/ нет ни одного <run_id>.json». "
+                "Сначала Omission Pre-check и аудиторы A / B (/ C)."
+            )
+    if item.generator is prompt_semantic_analyzer_phase1:
+        existing = sma_phase1_files(ch)
+        if existing:
+            return (
+                f"УЖЕ ЕСТЬ {len(existing)} слепых вывод(а) Фазы 1: этот запуск "
+                "добавит ещё один, и Фаза 2 по умолчанию возьмёт самый свежий "
+                "файл (см. inputs.phase1)."
+            )
+    return None
+
+def audit_existing_runs_note(item: PromptInfo | ActionInfo, ch: Chapter) -> str | None:
+    """Идентификаторы прошлых запусков этапа — для отслеживания фаз.
+
+    Показывается в экране подтверждения: какие run_id уже есть у этой фазы
+    и сколько их. None — если этап не относится к смысловому аудиту.
+    """
+    if not isinstance(item, PromptInfo):
+        return None
+    if item.generator is prompt_semantic_a:
+        ids, label = sma_existing_runs(ch, "a"), "Auditor A"
+    elif item.generator is prompt_semantic_b:
+        ids, label = sma_existing_runs(ch, "b"), "Auditor B"
+    elif item.generator is prompt_pragmatic_c:
+        ids, label = sma_existing_runs(ch, "c"), "Pragmatic Auditor C"
+    elif item.generator is prompt_semantic_analyzer_phase1:
+        ids, label = sma_existing_phase1_runs(ch), "Фаза 1 (blind)"
+    elif item.generator is prompt_semantic_analyzer:
+        ids, label = sma_existing_runs(ch, "analysis"), "Фаза 2 (analysis)"
+    else:
+        return None
+    if not ids:
+        return f"Прошлые запуски ({label}): нет"
+    shown = ", ".join(ids[-8:])
+    more = "" if len(ids) <= 8 else f" … (+{len(ids) - 8} ранее)"
+    return f"Прошлые запуски ({label}), всего {len(ids)}: {shown}{more}"
+
+def ask_confirmation(
+    item: PromptInfo | ActionInfo,
+    ch: Chapter,
+    notes: list[str] | None = None,
+) -> bool | str:
     """
     Показать описание режима (PromptInfo) или действия (ActionInfo) и спросить
     подтверждение — одинаковый диалог для обоих случаев.
+    ``notes`` — предупреждения (пропущенные входы фазы, идентификаторы
+    прошлых запусков); печатаются перед разделителем.
     Возвращает True (да), False (нет), "next" (следующая), "prev" (предыдущая).
     """
     is_action = isinstance(item, ActionInfo)
@@ -2631,6 +2904,12 @@ def ask_confirmation(item: PromptInfo | ActionInfo, ch: Chapter) -> bool | str:
         print()
         print("  Что делает этот режим:")
         print_wrapped(item.guide, indent="    ")
+    if notes:
+        print()
+        print("  Предупреждения:")
+        for note in notes:
+            print_wrapped(note, indent="    ")
+            print()
     print()
     separator()
     print()
@@ -2661,19 +2940,18 @@ def generate_prompt(
     if prompt.generator is not None:
         return prompt.generator(ch)
 
-    # Обработка одного блока (индекс 8).
-    if prompt_index == 8:
-        print()
-        print("Обработка одного блока")
-        separator()
-        print()
-        print(f"  Том:   {ch.volume_id}")
-        print(f"  Глава: {ch.chapter_id}")
-        print()
-        block_number = ask_block_number()
-        return prompt_one_block(ch, block_number)
-
-    return None
+    # Промпт без собственного генератора: «Обработка одного блока».
+    # Раньше здесь был хардкод prompt_index == 8 — он ломался при любом
+    # добавлении/удалении пунктов меню.
+    print()
+    print(prompt.title)
+    separator()
+    print()
+    print(f"  Том:   {ch.volume_id}")
+    print(f"  Глава: {ch.chapter_id}")
+    print()
+    block_number = ask_block_number()
+    return prompt_one_block(ch, block_number)
 
 # ============================================================================
 # ПОКАЗ ГОТОВОГО ПРОМПТА
@@ -2738,18 +3016,53 @@ def copy_to_clipboard(text: str) -> bool:
 # ============================================================================
 # СОХРАНЕНИЕ В ФАЙЛ
 # ============================================================================
+def prompt_file_name(ch: Chapter, prompt: PromptInfo) -> str:
+    """Путь к файлу промпта относительно корня проекта.
+
+    ``agent_prompts/agent_prompt.<глава>.<слаг режима>.md`` — отдельная
+    папка, чтобы корень проекта не засорялся файлами (глава × режим).
+    Общий agent_prompt.md затирался при параллельной работе нескольких
+    терминалов (в том числе на середине записи), поэтому у каждого режима
+    и главы своё имя. Слаг берётся из PromptInfo.slug.
+    """
+    return (f"{PROMPT_DIR_NAME}/{PROMPT_FILE_PREFIX}."
+            f"{sma_chapter_id(ch)}.{prompt.slug}.md")
+
+def prompt_file_path(ch: Chapter, prompt: PromptInfo) -> str:
+    """Абсолютный путь файла промпта (папка создаётся при записи)."""
+    return os.path.join(ROOT, *prompt_file_name(ch, prompt).split("/"))
+
+def prompt_run_id(prompt_text: str) -> str | None:
+    """Достать audit_run_id (или analysis_id) из сгенерированного промпта.
+
+    Возвращает run_id без суффикса .phase1, либо None, если промпт
+    смыслового аудита такого идентификатора не содержит. Суффикс
+    .phase1 отрезается: в самой фазе у Фазы 2 свой analysis_id, а
+    отслеживать нужно тот, что упомянут в задании.
+    """
+    match = re.search(r'"(?:audit_run_id|analysis_id)"\s*:\s*"([^"]+)"', prompt_text)
+    if not match:
+        return None
+    value = match.group(1)
+    return value[: -len(".phase1")] if value.endswith(".phase1") else value
+
 def save_prompt_to_file(
     prompt_text: str,
     prompt: PromptInfo,
     ch: Chapter,
 ) -> str | None:
     """
-    Сохранить готовый промпт в markdown-файл в корне проекта.
+    Сохранить готовый промпт в markdown-файл в папке agent_prompts/.
 
-    Файл перезаписывается при каждой генерации, чтобы на него можно
-    было сослаться в задаче агенту («см. agent_prompt.md»).
-    Возвращает путь к файлу либо None при ошибке записи.
+    Имя файла: agent_prompts/agent_prompt.<глава>.<слаг>.md (см.
+    prompt_file_name) — так параллельные терминалы и разные режимы не
+    затирают чужие задания, а корень проекта остаётся чистым.
+    Папка создаётся автоматически. Запись атомарная: сначала временный
+    файл рядом с целью, затем os.replace — читатель не увидит
+    полузаписанный файл, а Ctrl+C не оставит обрезанный промпт.
+    Возвращает путь к файлу (относительно корня) либо None при ошибке.
     """
+    path = prompt_file_path(ch, prompt)
     header = (
         "# Промпт-инструкция для агента\n"
         "\n"
@@ -2761,12 +3074,60 @@ def save_prompt_to_file(
         "---\n"
         "\n"
     )
+    tmp_name = f"{path}.{os.getpid()}.tmp"
     try:
-        with open(PROMPT_FILE, "w", encoding="utf-8", newline="\n") as fh:
+        os.makedirs(os.path.dirname(path), exist_ok=True)
+        with open(tmp_name, "w", encoding="utf-8", newline="\n") as fh:
             fh.write(header + prompt_text + "\n")
+            fh.flush()
+            os.fsync(fh.fileno())
+        os.replace(tmp_name, path)
     except OSError:
+        try:
+            if os.path.exists(tmp_name):
+                os.remove(tmp_name)
+        except OSError:
+            pass
         return None
-    return PROMPT_FILE
+    return prompt_file_name(ch, prompt)
+
+def print_generation_summary(
+    prompt_text: str,
+    prompt: PromptInfo,
+    ch: Chapter,
+) -> str | None:
+    """
+    Печать итогов генерации: режим, глава, буфер обмена, файл, audit_run_id.
+
+    audit_run_id печатается всегда, когда он есть в тексте — без этого
+    идентификатор запуска терялся (он был только внутри промпта), и фазы
+    аудита невозможно было отслеживать после генерации.
+    Возвращает имя файла (None — не сохранено).
+    """
+    print()
+    separator()
+    print()
+    print(f"  Режим: {prompt.title}")
+    print(f"  Глава: {ch.chapter_id_full}")
+    print()
+    if copy_to_clipboard(prompt_text):
+        print("  Промпт скопирован в буфер обмена.")
+        print("  Внимание: буфер обмена один на все терминалы — параллельные")
+        print("  копирования затирают друг друга.")
+    else:
+        print("  Не удалось скопировать промпт автоматически.")
+    file_name = save_prompt_to_file(prompt_text, prompt, ch)
+    if file_name:
+        print(f"  Промпт сохранён в файл: {file_name}")
+        print(f"  На него можно сослаться в задаче агенту: {file_name}")
+    else:
+        print(f"  Не удалось сохранить промпт в {prompt_file_name(ch, prompt)}.")
+    run_id = prompt_run_id(prompt_text)
+    if run_id:
+        print(f"  audit_run_id: {run_id}")
+    print()
+    separator()
+    return file_name
 
 # ============================================================================
 # SELF-TEST SMA (dry-run: ничего не пишет на диск, перевод не меняет)
@@ -3222,6 +3583,9 @@ def self_test_semantic_prompts(
     ch_nopc = Chapter(99, "99")
     pan_nopc = prompt_semantic_analyzer(ch_nopc, runs={
         "a": ["sim-x"], "b": ["sim-x"], "c": [], "phase1": ["sim-p1-1"]})
+    # глава, у которой точно нет audit-файлов, — для проверки
+    # audit_prereq_warning (Фаза 2 без входов должна предупреждать)
+    _empty_ch = Chapter(997, "97")
     chap = sma_chapter_id(ch)
     a_dir = f"{SMA_REL_ROOT}/{chap}/a/"
     b_dir = f"{SMA_REL_ROOT}/{chap}/b/"
@@ -3456,6 +3820,69 @@ def self_test_semantic_prompts(
          f"пунктов меню: {len(PROMPTS)}"),
         ("prompt_gap_audit: функция сохранена (legacy-задел) — YES",
          callable(prompt_gap_audit), ""),
+        # ---- МЕНЮ: группировка, слаги, отдельное меню смыслового аудита ----
+        ("Меню: «Реконтроль готовой главы» убран, функция сохранена — YES",
+         not any(getattr(p, "generator", None) is prompt_rules_recheck
+                 for p in PROMPTS)
+         and callable(prompt_rules_recheck),
+         f"пунктов меню: {len(PROMPTS)}"),
+        ("Меню: у каждого пункта задан group и slug — YES",
+         all(p.group in GROUP_ORDER and p.slug for p in PROMPTS),
+         "; ".join(f"{p.title}: group={p.group or '—'} slug={p.slug or '—'}"
+                   for p in PROMPTS
+                   if p.group not in GROUP_ORDER or not p.slug) or ""),
+        ("Меню: слаги уникальны — YES",
+         len({p.slug for p in PROMPTS}) == len(PROMPTS),
+         f"слаги: {[p.slug for p in PROMPTS]}"),
+        ("Меню: раздел «Смысловой аудит» скрыт из главного меню — YES",
+         bool(visible_prompt_indices())
+         and all(PROMPTS[i].group != GROUP_SMA for i in visible_prompt_indices()),
+         f"видно пунктов: {len(visible_prompt_indices())} из {len(PROMPTS)}"),
+        ("Меню: главные разделы идут в порядке GROUP_ORDER — YES",
+         [PROMPTS[i].group for i in visible_prompt_indices()]
+         == sorted((PROMPTS[i].group for i in visible_prompt_indices()),
+                   key=GROUP_ORDER.index),
+         f"порядок: {[PROMPTS[i].group for i in visible_prompt_indices()]}"),
+        ("Меню: пайплайн аудита фиксированный (Pre-check → A → B → C → Ф1 → Ф2) — YES",
+         [PROMPTS[i].generator if kind == "prompt" else "pre-check"
+          for kind, i in audit_pipeline()]
+         == ["pre-check", prompt_semantic_a, prompt_semantic_b,
+             prompt_pragmatic_c, prompt_semantic_analyzer_phase1,
+             prompt_semantic_analyzer]
+         and all(audit_stage_index(kind, i) == stage
+                 for stage, (kind, i) in enumerate(audit_pipeline())),
+         f"этапов: {len(audit_pipeline())}"),
+        ("Меню: «Следующий промпт» остаётся в пределах раздела — YES",
+         all(
+             (nxt := next_prompt_index(i)) is None
+             or PROMPTS[nxt].group == PROMPTS[i].group
+             for i in range(len(PROMPTS))
+         ) and next_prompt_index(
+             max(i for i in range(len(PROMPTS))
+                 if PROMPTS[i].group == GROUP_SMA)) is None,
+         ""),
+        ("Меню: промпт пишется в папку agent_prompts/ (имя содержит главу и слаг) — YES",
+         prompt_file_name(ch, PROMPTS[0])
+         == f"{PROMPT_DIR_NAME}/{PROMPT_FILE_PREFIX}."
+            f"{sma_chapter_id(ch)}.{PROMPTS[0].slug}.md",
+         prompt_file_name(ch, PROMPTS[0])),
+        ("Меню: prompt_run_id достаёт audit_run_id и режет .phase1 — YES",
+         prompt_run_id('{"audit_run_id": "abc-123.phase1"}') == "abc-123"
+         and prompt_run_id('{"analysis_id": "xyz"}') == "xyz"
+         and prompt_run_id("без идентификатора") is None,
+         ""),
+        ("Меню: предупреждения о пропущенных входах фазы — YES",
+         audit_prereq_warning(
+             next(p for p in PROMPTS
+                  if p.generator is prompt_semantic_analyzer), _empty_ch) is not None
+         and audit_prereq_warning(
+             next(p for p in PROMPTS
+                  if p.generator is prompt_semantic_analyzer_phase1),
+             _empty_ch) is None
+         and audit_prereq_warning(
+             next(p for p in PROMPTS if p.generator is prompt_semantic_a),
+             _empty_ch) is None,
+         "глава без audit-файлов: Фаза 2 предупреждает, Фаза 1 / A — нет"),
         ("Меню: пункт «Обработка одного блока» остался на индексе 8 — YES",
          len(PROMPTS) > 8 and PROMPTS[8].title == "Обработка одного блока",
          f"PROMPTS[8] = {PROMPTS[8].title if len(PROMPTS) > 8 else '(нет)'}"),
@@ -3548,27 +3975,36 @@ def main() -> None:
     print("AINovelEdit — генератор промптов")
     separator()
     ch = ask_chapter()
-    
-    prompt_index = None
-    prompt_obj = None
-    prompt_text = None
+
+    prompt_index: int | None = None
+    prompt_obj: PromptInfo | None = None
+    prompt_text: str | None = None
+    action_obj: ActionInfo | None = None
+    in_audit_menu = False   # мы внутри меню смыслового аудита
+    audit_stage = 0         # позиция в audit_pipeline() (для метки ->)
+    needs_confirm = True    # подтвердить перед следующей генерацией
 
     while True:
-        # Если промпт не выбран или сброшен — показываем главное меню
-        if prompt_index is None:
-            result = choose_prompt(ch)
+        # --- 1. Выбор пункта меню (главного или меню смыслового аудита) ---
+        if prompt_index is None and action_obj is None:
+            result = choose_audit_menu(ch, audit_stage) if in_audit_menu \
+                else choose_prompt(ch)
 
             if result == "quit":
                 print()
                 print("Выход.")
                 return
 
+            if result == "back":
+                in_audit_menu = False
+                continue
+
             if result == "change":
                 ch = ask_chapter()
                 continue
 
-            if result == "next":
-                new_ch = navigate_next(ch)
+            if result in ("next", "prev"):
+                new_ch = navigate_next(ch) if result == "next" else navigate_prev(ch)
                 if new_ch:
                     ch = new_ch
                     print(f"  Переключено на: {ch.chapter_id_full}")
@@ -3576,87 +4012,95 @@ def main() -> None:
                     print("  Отменено.")
                 continue
 
-            if result == "prev":
-                new_ch = navigate_prev(ch)
-                if new_ch:
-                    ch = new_ch
-                    print(f"  Переключено на: {ch.chapter_id_full}")
-                else:
-                    print("  Отменено.")
+            if result == "audit":
+                in_audit_menu = True
+                audit_stage = 0
                 continue
 
-            # Различаем prompt и action: действие запускается только после
-            # подтверждения и не создаёт LLM-промпт.
+            if isinstance(result, tuple) and result[0] == "stage":
+                # «Следующий этап» из меню аудита: переходим и показываем
+                # подтверждение нового этапа.
+                audit_stage = result[1]
+                step_kind, step_index = audit_pipeline()[audit_stage]
+                result = (step_kind, step_index)
+
             dispatched = dispatch_selection(result, ch)
-            if dispatched is not None and dispatched[0] == "action":
+            if dispatched is None:
+                continue
+            if dispatched[0] == "action":
                 action_obj = dispatched[1]
-                action_conf = ask_confirmation(action_obj, ch)
-                if action_conf == "next":
+            else:
+                prompt_index = result[1]
+                prompt_obj = PROMPTS[prompt_index]
+            needs_confirm = True
+
+        # --- 2. Подтверждение выбранного этапа/режима ---
+        if prompt_index is not None:
+            stage = audit_stage_index("prompt", prompt_index)
+            if stage is not None:
+                audit_stage = stage
+            if needs_confirm:
+                notes = []
+                warning = audit_prereq_warning(prompt_obj, ch)
+                if warning:
+                    notes.append(warning)
+                note = audit_existing_runs_note(prompt_obj, ch)
+                if note:
+                    notes.append(note)
+                conf = ask_confirmation(prompt_obj, ch, notes)
+                if conf == "next":
                     new_ch = navigate_next(ch)
                     if new_ch:
                         ch = new_ch
                         print(f"  Переключено на: {ch.chapter_id_full}")
+                    needs_confirm = False
                     continue
-                if action_conf == "prev":
+                if conf == "prev":
                     new_ch = navigate_prev(ch)
                     if new_ch:
                         ch = new_ch
                         print(f"  Переключено на: {ch.chapter_id_full}")
+                    needs_confirm = False
                     continue
-                if not action_conf:
+                if not conf:
+                    prompt_index = None  # Сбрасываем, чтобы вернуться в меню
                     continue
-                run_action(action_obj, ch)
-                input("  Нажмите Enter для возврата в меню...")
-                continue
+                needs_confirm = False
 
-            prompt_index = result[1]
-            prompt_obj = PROMPTS[prompt_index]
+        elif action_obj is not None:
+            if needs_confirm:
+                conf = ask_confirmation(action_obj, ch)
+                if conf in ("next", "prev"):
+                    new_ch = navigate_next(ch) if conf == "next" else navigate_prev(ch)
+                    if new_ch:
+                        ch = new_ch
+                        print(f"  Переключено на: {ch.chapter_id_full}")
+                    action_obj = None
+                    continue
+                if not conf:
+                    action_obj = None
+                    continue
+                needs_confirm = False
+            # Действие запускается только после подтверждения и не создаёт
+            # LLM-промпт; после запуска возвращаемся в текущее меню.
+            run_action(action_obj, ch)
+            action_obj = None
+            input("  Нажмите Enter для возврата в меню...")
+            continue
 
-            # Подтверждение
-            conf = ask_confirmation(prompt_obj, ch)
-            if conf == "next":
-                new_ch = navigate_next(ch)
-                if new_ch:
-                    ch = new_ch
-                    print(f"  Переключено на: {ch.chapter_id_full}")
-                continue
-            if conf == "prev":
-                new_ch = navigate_prev(ch)
-                if new_ch:
-                    ch = new_ch
-                    print(f"  Переключено на: {ch.chapter_id_full}")
-                continue
-            if not conf:
-                prompt_index = None  # Сбрасываем, чтобы вернуться в меню
-                continue
+        else:
+            # Навигация уже обработана выше.
+            continue
 
-        # Генерация промпта
+        # --- 3. Генерация промпта ---
         prompt_text = generate_prompt(prompt_index, ch)
         if not prompt_text:
             prompt_index = None
             continue
 
-        # Копирование в буфер
-        print()
-        separator()
-        print()
-        print(f"  Режим: {prompt_obj.title}")
-        print(f"  Глава: {ch.chapter_id_full}")
-        print()
-        
-        if copy_to_clipboard(prompt_text):
-            print("  Промпт скопирован в буфер обмена.")
-        else:
-            print("  Не удалось скопировать промпт автоматически.")
-        if save_prompt_to_file(prompt_text, prompt_obj, ch):
-            print(f"  Промпт сохранён в файл: {PROMPT_FILE}")
-            print(f"  На него можно сослаться: {PROMPT_FILE_NAME}")
-        else:
-            print(f"  Не удалось сохранить промпт в {PROMPT_FILE_NAME}.")
-        print()
-        separator()
+        print_generation_summary(prompt_text, prompt_obj, ch)
 
-        # Меню после генерации
+        # --- 4. Меню после генерации ---
         while True:
             print()
             print("  1. Показать полный промпт")
@@ -3667,9 +4111,11 @@ def main() -> None:
             print()
             print("  4. Сгенерировать для предыдущей главы")
             print()
-            print("  5. Вернуться в меню")
+            print("  5. Следующий промпт (фаза)")
             print()
-            raw = input("  Выберите (1-5): ").strip()
+            print("  6. Вернуться в меню")
+            print()
+            raw = input("  Выберите (1-6): ").strip()
 
             if raw == "1":
                 show_generated_prompt(prompt_text, prompt_obj, ch)
@@ -3678,41 +4124,36 @@ def main() -> None:
                     print("  Промпт повторно скопирован в буфер обмена.")
                 else:
                     print("  Не удалось скопировать промпт автоматически.")
-            elif raw == "3":
-                new_ch = navigate_next(ch)
-                if new_ch:
-                    ch = new_ch
-                    prompt_text = generate_prompt(prompt_index, ch)
-                    if prompt_text:
-                        copy_to_clipboard(prompt_text)
-                        save_prompt_to_file(prompt_text, prompt_obj, ch)
-                        print(f"\n  Сгенерировано для {ch.chapter_id_full}: промпт скопирован и сохранён в {PROMPT_FILE_NAME}")
-                    else:
-                        print("  Ошибка генерации.")
-                        prompt_index = None
-                        break
-                else:
+            elif raw in ("3", "4"):
+                new_ch = navigate_next(ch) if raw == "3" else navigate_prev(ch)
+                if not new_ch:
                     print("  Отменено.")
-            elif raw == "4":
-                new_ch = navigate_prev(ch)
-                if new_ch:
-                    ch = new_ch
-                    prompt_text = generate_prompt(prompt_index, ch)
-                    if prompt_text:
-                        copy_to_clipboard(prompt_text)
-                        save_prompt_to_file(prompt_text, prompt_obj, ch)
-                        print(f"\n  Сгенерировано для {ch.chapter_id_full}: промпт скопирован и сохранён в {PROMPT_FILE_NAME}")
-                    else:
-                        print("  Ошибка генерации.")
-                        prompt_index = None
-                        break
-                else:
-                    print("  Отменено.")
-            elif raw in ("5", "q", ""):
-                prompt_index = None  # Сбрасываем, чтобы вернуться в главное меню
+                    continue
+                ch = new_ch
+                new_text = generate_prompt(prompt_index, ch)
+                if not new_text:
+                    print("  Ошибка генерации.")
+                    prompt_index = None
+                    break
+                prompt_text = new_text
+                print_generation_summary(prompt_text, prompt_obj, ch)
+            elif raw == "5":
+                nxt = next_prompt_index(prompt_index)
+                if nxt is None:
+                    print(f"  Это последний промпт раздела «{PROMPTS[prompt_index].group}».")
+                    print("  Вернитесь в меню (пункт 6).")
+                    continue
+                # Переход к следующей фазе/промпту: показываем подтверждение.
+                prompt_index = nxt
+                prompt_obj = PROMPTS[nxt]
+                needs_confirm = True
+                break
+            elif raw in ("6", "q", ""):
+                prompt_index = None  # Сбрасываем, чтобы вернуться в меню
+                needs_confirm = True
                 break
             else:
-                print("  Введите число от 1 до 5.")
+                print("  Введите число от 1 до 6.")
 
 # ============================================================================
 # ENTRY POINT
