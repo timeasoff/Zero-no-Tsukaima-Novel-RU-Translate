@@ -2977,7 +2977,7 @@ _AUDIT_SECTION_PATTERNS = {
     # «### Итог GRAMMAR: ЧИСТО») — матчер толерантный, но без re.I по
     # латинице, чтобы «grammar_scan» в тексте заголовка не считался секцией.
     prompt_grammar_audit: re.compile(
-        r"^#{2,4}[^\n]*(?:Грамматик|\bGRAMMAR\b)", re.MULTILINE),
+        r"^#{2,4}[^\n]*(?:Граммати|ГРАММАТИ|\bGRAMMAR\b)", re.MULTILINE),
     prompt_style_audit: re.compile(
         r"^#{2,4}[^\n]*(?:Стил|\bSTYLE\b)", re.MULTILINE),
     prompt_humanizer: re.compile(
