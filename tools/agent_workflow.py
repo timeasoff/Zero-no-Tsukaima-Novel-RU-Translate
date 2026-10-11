@@ -891,8 +891,8 @@ def prompt_humanizer(ch: Chapter) -> str:
 РЕЖИМ: HUMANIZER / MACHINE-LIKE
 Проведи проверку русского текста на признаки машинного перевода
 и искусственной генерации.
-Используй russian-humanizer (каталоги references/patterns.md,
-translationese.md, kantselyarit-dict.md; защита от переисправления —
+Используй russian-humanizer (каталоги внутри самого  russian-humanizer: references/patterns.md,
+references/translationese.md, references/kantselyarit-dict.md; защита от переисправления —
 references/false-positives.md).
 Ищи:
 - кальки с английского (основной источник машинности в этом проекте);
