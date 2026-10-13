@@ -77,6 +77,13 @@ Markdown-маркеры:
 prefaces/v14.md) добавляется в начало тома как отдельный блок.
 Файл заполняется вручную и скриптом никогда не изменяется.
 
+Credits с донатами (ручной файл prefaces/credits.md) добавляется
+ВСЕГДА и В САМЫЙ КОНЕЦ тома — после всех глав, эпилога и послесловия.
+Файл тоже никогда не изменяется скриптом; если его нет — том
+собирается без credits (в консоли печатается уведомление).
+Необязательный QR-код оплаты (prefaces/qr-donate.png, см. load_credits)
+добавляется в конец credits, если файл лежит рядом.
+
 PDF собирается автоматически:
     * есть typst/xelatex/lualatex/pdflatex → pandoc --pdf-engine=<движок>;
     * иначе (без LaTeX) → pandoc → HTML → headless Chrome/Edge
@@ -137,8 +144,33 @@ IMAGES_ROOT = PROJECT_ROOT / "images"
 # как отдельный блок. Скрипт его никогда не изменяет.
 PREFACES_ROOT = PROJECT_ROOT / "prefaces"
 
+# Послесловие с донатами (credits) — вшивается в КОНЕЦ тома при каждой
+# склейке. Ручной файл, скрипт его никогда не изменяет.
+CREDITS_PATH = PREFACES_ROOT / "credits.md"
+
+# Необязательный QR-код оплаты: если один из этих файлов лежит в prefaces/,
+# он добавляется в конец credits как картинка.
+DONATE_QR_STEMS = (
+    "qr-donate",
+    "donate-qr",
+    "qr",
+)
+
+DONATE_QR_EXTENSIONS = (
+    ".png",
+    ".jpg",
+    ".jpeg",
+    ".svg",
+)
+
 # Цвет ссылок в PDF (работает и для typst, и для браузерной печати)
 PDF_LINK_COLOR = "#1f4e79"
+
+# Формат входа pandoc: расширение citations ОТКЛЮЧЕНО — иначе «@handle»
+# (телеграм-ник, например @timeasoff_support в credits) парсится как
+# библиографическая ссылка и typst падает с ошибкой
+# «the document does not contain a bibliography».
+PANDOC_INPUT_FORMAT = "markdown-citations"
 
 
 # ============================================================
@@ -440,6 +472,124 @@ def load_preface(
 
 
 # ============================================================
+# Послесловие с донатами (credits)
+# ============================================================
+
+def find_donate_qr():
+    """
+    Необязательный QR-код оплаты в папке prefaces/:
+
+        prefaces/qr-donate.png
+        prefaces/donate-qr.png
+        prefaces/qr.png
+
+    Возвращает путь к первому найденному файлу или None.
+    """
+
+    for stem in DONATE_QR_STEMS:
+
+        for extension in DONATE_QR_EXTENSIONS:
+
+            path = (
+                PREFACES_ROOT
+                / f"{stem}{extension}"
+            )
+
+            if path.is_file():
+                return path
+
+    return None
+
+
+def load_credits(markdown_output):
+    """
+    Читает prefaces/credits.md (послесловие с донатами) и обрабатывает его
+    как обычный Markdown (block-маркеры удаляются, img-маркеры заменяются
+    изображениями).
+
+    Если в prefaces/ лежит QR-код оплаты (см. find_donate_qr) и в тексте
+    credits нет явного изображения — QR добавляется в конец как картинка.
+
+    Возвращает (text, missing). text = None, если файла нет или он пустой.
+    """
+
+    if not CREDITS_PATH.is_file():
+
+        print()
+        print(
+            "Credits не найден "
+            f"({CREDITS_PATH}) — том собирается без донатного послесловия."
+        )
+
+        return (
+            None,
+            [],
+        )
+
+    print()
+    print(
+        "Credits (донаты):"
+    )
+    print(
+        f"  {CREDITS_PATH}"
+    )
+
+    text = CREDITS_PATH.read_text(
+        encoding="utf-8",
+    )
+
+    (text, _found, missing) = process_markdown(
+        text,
+        markdown_output,
+    )
+
+    text = text.strip()
+
+    if not text:
+
+        print()
+        print(
+            "Credits пустые, пропускаю."
+        )
+
+        return (
+            None,
+            missing,
+        )
+
+    # --------------------------------------------------------
+    # Необязательный QR-код оплаты — в конец credits
+    # --------------------------------------------------------
+
+    if not IMAGE_MARKER_RE.search(text):
+
+        qr_path = find_donate_qr()
+
+        if qr_path is not None:
+
+            relative_path = image_markdown_path(
+                qr_path,
+                markdown_output,
+            )
+
+            text = (
+                text.rstrip()
+                + "\n\n![]("
+                + relative_path
+                + ")\n"
+            )
+
+            print(
+                f"  QR-код доната добавлен: {qr_path.name}"
+            )
+
+    return (
+        text,
+        missing,
+    )
+
+
+# ============================================================
 # Поиск изображения
 # ============================================================
 
@@ -608,6 +758,7 @@ def merge_markdown_files(
     files,
     markdown_output,
     preface=None,
+    credits=None,
 ):
     chunks = []
 
@@ -658,6 +809,20 @@ def merge_markdown_files(
 
         missing.extend(
             not_found
+        )
+
+    # --------------------------------------------------------
+    # Credits (донаты) — отдельный блок в САМОМ КОНЦЕ тома
+    # --------------------------------------------------------
+
+    if credits:
+
+        chunks.append(
+            credits.strip()
+        )
+
+        print(
+            "  Credits добавлены в конец тома"
         )
 
     result = "\n\n\n".join(
@@ -713,9 +878,16 @@ code, pre { font-family: Consolas, "Courier New", monospace; }
 def pdf_css(link_color):
     """
     CSS для браузерной печати с заданным цветом ссылок.
+
+    Используется .replace, а не оператор %: в CSS есть литеральные «%»
+    (max-width: 100%), из-за которых %-форматирование падало с
+    ValueError: unsupported format character.
     """
 
-    return PDF_CSS_TEMPLATE % {"link": link_color}
+    return PDF_CSS_TEMPLATE.replace(
+        "%(link)s",
+        link_color,
+    )
 
 
 def find_pandoc_pdf_engine():
@@ -928,6 +1100,8 @@ def _create_pdf_pandoc(
     command = [
         "pandoc",
         str(markdown_file),
+        "-f",
+        PANDOC_INPUT_FORMAT,
         "-o",
         str(pdf_file),
         f"--pdf-engine={engine}",
@@ -1049,6 +1223,8 @@ def _create_pdf_browser(
     command = [
         "pandoc",
         str(markdown_file),
+        "-f",
+        PANDOC_INPUT_FORMAT,
         "-o",
         str(html_file),
         "--standalone",
@@ -1447,6 +1623,14 @@ def main():
         md_output,
     )
 
+    # --------------------------------------------------------
+    # Credits (донаты) — ручной файл, вшивается в конец тома
+    # --------------------------------------------------------
+
+    (credits, credits_missing) = load_credits(
+        md_output,
+    )
+
     (
         merged,
         inserted,
@@ -1455,6 +1639,7 @@ def main():
         files,
         md_output,
         preface,
+        credits,
     )
 
     md_output.write_text(
@@ -1464,6 +1649,9 @@ def main():
 
     # не найденные изображения из предисловия учитываются в общей статистике
     missing.extend(preface_missing)
+
+    # то же для credits
+    missing.extend(credits_missing)
 
     print()
     print(
