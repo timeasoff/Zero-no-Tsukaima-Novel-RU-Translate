@@ -3,6 +3,8 @@ images/*
 !images/.gitkeep
 !origs/.gitkeep
 __pycache__
+.tmp/
+.devcontainer
 
 AINovelEdit/_work/*
 
