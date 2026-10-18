@@ -1,0 +1,13 @@
+{
+  "analysis_id": "20261019-030000",
+  "chapter": "v5-ch07",
+  "inputs": {
+    "a_runs": [],
+    "b_runs": [],
+    "c_runs": [],
+    "precheck": "output/_audit/sma/v5-ch07/precheck/omission-precheck.json",
+    "phase1": "20261019-030000-phase07.json"
+  },
+  "results": [],
+  "summary": {"confirmed_errors": 0, "disputed": 0, "false_positives": 0, "preserved": 0}
+}
