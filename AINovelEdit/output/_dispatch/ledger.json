@@ -1,5 +1,1239 @@
 {
   "version": 1,
   "created": "2026-10-18 07:24:56",
-  "tasks": []
+  "tasks": [
+    {
+      "id": "T-0001",
+      "text": "Перепроверка том 5 (с ch03) и том 6: полный recheck через субагентов (SMA A/B/C + Analyzer фазы 1-2 + грамматический аудит), исправления по находкам",
+      "created": "2026-10-18 08:32:30",
+      "status": "open",
+      "note": "",
+      "subtasks": [
+        {
+          "id": "T-0001-S1",
+          "kind": "sma-a",
+          "volume": 5,
+          "chapter": "3",
+          "chapter_id": "v05-ch03",
+          "status": "done",
+          "prompt_file": "agent_prompts/agent_prompt.v05-ch03.sma-a.attempt10.md",
+          "expected": [
+            "output/_audit/sma/v5-ch03/a/20261018-083546-f67a.json"
+          ],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-10-18 08:35:46",
+              "prompt": "agent_prompts/agent_prompt.v05-ch03.sma-a.md",
+              "finished": "",
+              "result": "",
+              "note": ""
+            },
+            {
+              "n": 2,
+              "started": "2026-10-18 08:52:43",
+              "prompt": "agent_prompts/agent_prompt.v05-ch03.sma-a.attempt2.md",
+              "finished": "",
+              "result": "",
+              "note": ""
+            },
+            {
+              "n": 3,
+              "started": "2026-10-18 09:11:05",
+              "prompt": "agent_prompts/agent_prompt.v05-ch03.sma-a.attempt3.md",
+              "finished": "",
+              "result": "",
+              "note": ""
+            },
+            {
+              "n": 4,
+              "started": "2026-10-18 09:27:18",
+              "prompt": "agent_prompts/agent_prompt.v05-ch03.sma-a.attempt4.md",
+              "finished": "",
+              "result": "",
+              "note": ""
+            },
+            {
+              "n": 5,
+              "started": "2026-10-18 09:44:52",
+              "prompt": "agent_prompts/agent_prompt.v05-ch03.sma-a.attempt5.md",
+              "finished": "2026-10-18 10:05:49",
+              "result": "failed",
+              "note": "5 пустых возвратов субагента подряд — эскалирую, пробую ручной запуск аудита"
+            },
+            {
+              "n": 6,
+              "started": "2026-10-18 10:26:53",
+              "prompt": "agent_prompts/agent_prompt.v05-ch03.sma-a.attempt6.md",
+              "finished": "",
+              "result": "",
+              "note": ""
+            },
+            {
+              "n": 7,
+              "started": "2026-10-18 13:09:20",
+              "prompt": "agent_prompts/agent_prompt.v05-ch03.sma-a.attempt7.md",
+              "finished": "",
+              "result": "",
+              "note": ""
+            },
+            {
+              "n": 8,
+              "started": "2026-10-18 13:19:23",
+              "prompt": "agent_prompts/agent_prompt.v05-ch03.sma-a.attempt8.md",
+              "finished": "",
+              "result": "",
+              "note": ""
+            },
+            {
+              "n": 9,
+              "started": "2026-10-18 13:28:23",
+              "prompt": "agent_prompts/agent_prompt.v05-ch03.sma-a.attempt9.md",
+              "finished": "",
+              "result": "",
+              "note": ""
+            },
+            {
+              "n": 10,
+              "started": "2026-10-18 13:54:05",
+              "prompt": "agent_prompts/agent_prompt.v05-ch03.sma-a.attempt10.md",
+              "finished": "2026-10-18 14:40:56",
+              "result": "done",
+              "note": "findings: 10 (3 WARNING, 7 CANDIDATE), файл a/20261018-135405-7655.json, валидация OK"
+            }
+          ],
+          "note": "findings: 10 (3 WARNING, 7 CANDIDATE), файл a/20261018-135405-7655.json, валидация OK"
+        },
+        {
+          "id": "T-0001-S2",
+          "kind": "sma-b",
+          "volume": 5,
+          "chapter": "3",
+          "chapter_id": "v05-ch03",
+          "status": "done",
+          "prompt_file": "agent_prompts/agent_prompt.v05-ch03.sma-b.attempt3.md",
+          "expected": [
+            "output/_audit/sma/v5-ch03/b/20261018-083546-37d3.json"
+          ],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-10-18 08:35:46",
+              "prompt": "agent_prompts/agent_prompt.v05-ch03.sma-b.md",
+              "finished": "",
+              "result": "",
+              "note": ""
+            },
+            {
+              "n": 2,
+              "started": "2026-10-18 08:52:43",
+              "prompt": "agent_prompts/agent_prompt.v05-ch03.sma-b.attempt2.md",
+              "finished": "",
+              "result": "",
+              "note": ""
+            },
+            {
+              "n": 3,
+              "started": "2026-10-18 09:11:05",
+              "prompt": "agent_prompts/agent_prompt.v05-ch03.sma-b.attempt3.md",
+              "finished": "2026-10-18 09:27:17",
+              "result": "done",
+              "note": "findings: 1 CANDIDATE (блок 11, NUANCE_SHIFT), файл b/20261018-091105-8ae6.json"
+            }
+          ],
+          "note": "findings: 1 CANDIDATE (блок 11, NUANCE_SHIFT), файл b/20261018-091105-8ae6.json"
+        },
+        {
+          "id": "T-0001-S3",
+          "kind": "sma-c",
+          "volume": 5,
+          "chapter": "3",
+          "chapter_id": "v05-ch03",
+          "status": "done",
+          "prompt_file": "agent_prompts/agent_prompt.v05-ch03.sma-c.md",
+          "expected": [
+            "output/_audit/sma/v5-ch03/c/20261018-083546-223c.json"
+          ],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-10-18 08:35:46",
+              "prompt": "agent_prompts/agent_prompt.v05-ch03.sma-c.md",
+              "finished": "2026-10-18 08:52:44",
+              "result": "done",
+              "note": "findings: [] (0 прагматических расхождений), файл c/20261018-083546-223c.json"
+            }
+          ],
+          "note": "findings: [] (0 прагматических расхождений), файл c/20261018-083546-223c.json"
+        },
+        {
+          "id": "T-0001-S4",
+          "kind": "analyzer-phase1",
+          "volume": 5,
+          "chapter": "3",
+          "chapter_id": "v05-ch03",
+          "status": "done",
+          "prompt_file": "agent_prompts/agent_prompt.v05-ch03.analyzer-phase1.attempt2.md",
+          "expected": [],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-10-18 08:35:46",
+              "prompt": "agent_prompts/agent_prompt.v05-ch03.analyzer-phase1.md",
+              "finished": "",
+              "result": "",
+              "note": ""
+            },
+            {
+              "n": 2,
+              "started": "2026-10-18 08:52:43",
+              "prompt": "agent_prompts/agent_prompt.v05-ch03.analyzer-phase1.attempt2.md",
+              "finished": "2026-10-18 09:11:05",
+              "result": "done",
+              "note": "phase1: analysis/20261018-085243-26bd.phase1.json, 2 LOW-кандидата"
+            }
+          ],
+          "note": "phase1: analysis/20261018-085243-26bd.phase1.json, 2 LOW-кандидата"
+        },
+        {
+          "id": "T-0001-S5",
+          "kind": "analyzer-phase2",
+          "volume": 5,
+          "chapter": "3",
+          "chapter_id": "v05-ch03",
+          "status": "done",
+          "prompt_file": "agent_prompts/agent_prompt.v05-ch03.analyzer-phase2.md",
+          "expected": [
+            "output/_audit/sma/v5-ch03/precheck/omission-precheck.json",
+            "output/_audit/sma/v5-ch03/analysis/20261018-144106-bb35.json",
+            "output/_audit/sma/v5-ch03/analysis/20261018-144106-bb35.md"
+          ],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-10-18 14:41:06",
+              "prompt": "agent_prompts/agent_prompt.v05-ch03.analyzer-phase2.md",
+              "finished": "2026-10-18 15:31:24",
+              "result": "done",
+              "note": "27 кандидатов: 22 FIXED, 4 FALSE_POSITIVE, 1 DISPUTED/REPORT_ONLY; analysis/20261018-144106-bb35.json/.md"
+            }
+          ],
+          "note": "27 кандидатов: 22 FIXED, 4 FALSE_POSITIVE, 1 DISPUTED/REPORT_ONLY; analysis/20261018-144106-bb35.json/.md"
+        },
+        {
+          "id": "T-0001-S6",
+          "kind": "grammar-audit",
+          "volume": 5,
+          "chapter": "3",
+          "chapter_id": "v05-ch03",
+          "status": "done",
+          "prompt_file": "agent_prompts/agent_prompt.v05-ch03.grammar-audit.md",
+          "expected": [
+            "AINovelEdit/output/_audit/v05-ch03.md",
+            "AINovelEdit/output/v5-ch03.md",
+            "AINovelEdit/output/_log/v5-log.md"
+          ],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-10-18 15:31:38",
+              "prompt": "agent_prompts/agent_prompt.v05-ch03.grammar-audit.md",
+              "finished": "2026-10-18 16:16:53",
+              "result": "done",
+              "note": "8 кандидатов, 1 исправление (б11), отчёт _audit/v05-ch03.md + _log/v5-log.md обновлены, коммит c721c61"
+            }
+          ],
+          "note": "8 кандидатов, 1 исправление (б11), отчёт _audit/v05-ch03.md + _log/v5-log.md обновлены, коммит c721c61"
+        },
+        {
+          "id": "T-0001-S7",
+          "kind": "sma-a",
+          "volume": 5,
+          "chapter": "4",
+          "chapter_id": "v05-ch04",
+          "status": "planned",
+          "prompt_file": "",
+          "expected": [],
+          "attempts": [],
+          "note": ""
+        },
+        {
+          "id": "T-0001-S8",
+          "kind": "sma-b",
+          "volume": 5,
+          "chapter": "4",
+          "chapter_id": "v05-ch04",
+          "status": "planned",
+          "prompt_file": "",
+          "expected": [],
+          "attempts": [],
+          "note": ""
+        },
+        {
+          "id": "T-0001-S9",
+          "kind": "sma-c",
+          "volume": 5,
+          "chapter": "4",
+          "chapter_id": "v05-ch04",
+          "status": "planned",
+          "prompt_file": "",
+          "expected": [],
+          "attempts": [],
+          "note": ""
+        },
+        {
+          "id": "T-0001-S10",
+          "kind": "analyzer-phase1",
+          "volume": 5,
+          "chapter": "4",
+          "chapter_id": "v05-ch04",
+          "status": "planned",
+          "prompt_file": "",
+          "expected": [],
+          "attempts": [],
+          "note": ""
+        },
+        {
+          "id": "T-0001-S11",
+          "kind": "analyzer-phase2",
+          "volume": 5,
+          "chapter": "4",
+          "chapter_id": "v05-ch04",
+          "status": "planned",
+          "prompt_file": "",
+          "expected": [],
+          "attempts": [],
+          "note": ""
+        },
+        {
+          "id": "T-0001-S12",
+          "kind": "grammar-audit",
+          "volume": 5,
+          "chapter": "4",
+          "chapter_id": "v05-ch04",
+          "status": "planned",
+          "prompt_file": "",
+          "expected": [
+            "AINovelEdit/output/_audit/v05-ch04.md",
+            "AINovelEdit/output/v5-ch04.md",
+            "AINovelEdit/output/_log/v5-log.md"
+          ],
+          "attempts": [],
+          "note": ""
+        },
+        {
+          "id": "T-0001-S13",
+          "kind": "sma-a",
+          "volume": 5,
+          "chapter": "5",
+          "chapter_id": "v05-ch05",
+          "status": "planned",
+          "prompt_file": "",
+          "expected": [],
+          "attempts": [],
+          "note": ""
+        },
+        {
+          "id": "T-0001-S14",
+          "kind": "sma-b",
+          "volume": 5,
+          "chapter": "5",
+          "chapter_id": "v05-ch05",
+          "status": "planned",
+          "prompt_file": "",
+          "expected": [],
+          "attempts": [],
+          "note": ""
+        },
+        {
+          "id": "T-0001-S15",
+          "kind": "sma-c",
+          "volume": 5,
+          "chapter": "5",
+          "chapter_id": "v05-ch05",
+          "status": "planned",
+          "prompt_file": "",
+          "expected": [],
+          "attempts": [],
+          "note": ""
+        },
+        {
+          "id": "T-0001-S16",
+          "kind": "analyzer-phase1",
+          "volume": 5,
+          "chapter": "5",
+          "chapter_id": "v05-ch05",
+          "status": "planned",
+          "prompt_file": "",
+          "expected": [],
+          "attempts": [],
+          "note": ""
+        },
+        {
+          "id": "T-0001-S17",
+          "kind": "analyzer-phase2",
+          "volume": 5,
+          "chapter": "5",
+          "chapter_id": "v05-ch05",
+          "status": "planned",
+          "prompt_file": "",
+          "expected": [],
+          "attempts": [],
+          "note": ""
+        },
+        {
+          "id": "T-0001-S18",
+          "kind": "grammar-audit",
+          "volume": 5,
+          "chapter": "5",
+          "chapter_id": "v05-ch05",
+          "status": "planned",
+          "prompt_file": "",
+          "expected": [
+            "AINovelEdit/output/_audit/v05-ch05.md",
+            "AINovelEdit/output/v5-ch05.md",
+            "AINovelEdit/output/_log/v5-log.md"
+          ],
+          "attempts": [],
+          "note": ""
+        },
+        {
+          "id": "T-0001-S19",
+          "kind": "sma-a",
+          "volume": 5,
+          "chapter": "6",
+          "chapter_id": "v05-ch06",
+          "status": "planned",
+          "prompt_file": "",
+          "expected": [],
+          "attempts": [],
+          "note": ""
+        },
+        {
+          "id": "T-0001-S20",
+          "kind": "sma-b",
+          "volume": 5,
+          "chapter": "6",
+          "chapter_id": "v05-ch06",
+          "status": "planned",
+          "prompt_file": "",
+          "expected": [],
+          "attempts": [],
+          "note": ""
+        },
+        {
+          "id": "T-0001-S21",
+          "kind": "sma-c",
+          "volume": 5,
+          "chapter": "6",
+          "chapter_id": "v05-ch06",
+          "status": "planned",
+          "prompt_file": "",
+          "expected": [],
+          "attempts": [],
+          "note": ""
+        },
+        {
+          "id": "T-0001-S22",
+          "kind": "analyzer-phase1",
+          "volume": 5,
+          "chapter": "6",
+          "chapter_id": "v05-ch06",
+          "status": "planned",
+          "prompt_file": "",
+          "expected": [],
+          "attempts": [],
+          "note": ""
+        },
+        {
+          "id": "T-0001-S23",
+          "kind": "analyzer-phase2",
+          "volume": 5,
+          "chapter": "6",
+          "chapter_id": "v05-ch06",
+          "status": "planned",
+          "prompt_file": "",
+          "expected": [],
+          "attempts": [],
+          "note": ""
+        },
+        {
+          "id": "T-0001-S24",
+          "kind": "grammar-audit",
+          "volume": 5,
+          "chapter": "6",
+          "chapter_id": "v05-ch06",
+          "status": "planned",
+          "prompt_file": "",
+          "expected": [
+            "AINovelEdit/output/_audit/v05-ch06.md",
+            "AINovelEdit/output/v5-ch06.md",
+            "AINovelEdit/output/_log/v5-log.md"
+          ],
+          "attempts": [],
+          "note": ""
+        },
+        {
+          "id": "T-0001-S25",
+          "kind": "sma-a",
+          "volume": 5,
+          "chapter": "7",
+          "chapter_id": "v05-ch07",
+          "status": "planned",
+          "prompt_file": "",
+          "expected": [],
+          "attempts": [],
+          "note": ""
+        },
+        {
+          "id": "T-0001-S26",
+          "kind": "sma-b",
+          "volume": 5,
+          "chapter": "7",
+          "chapter_id": "v05-ch07",
+          "status": "planned",
+          "prompt_file": "",
+          "expected": [],
+          "attempts": [],
+          "note": ""
+        },
+        {
+          "id": "T-0001-S27",
+          "kind": "sma-c",
+          "volume": 5,
+          "chapter": "7",
+          "chapter_id": "v05-ch07",
+          "status": "planned",
+          "prompt_file": "",
+          "expected": [],
+          "attempts": [],
+          "note": ""
+        },
+        {
+          "id": "T-0001-S28",
+          "kind": "analyzer-phase1",
+          "volume": 5,
+          "chapter": "7",
+          "chapter_id": "v05-ch07",
+          "status": "planned",
+          "prompt_file": "",
+          "expected": [],
+          "attempts": [],
+          "note": ""
+        },
+        {
+          "id": "T-0001-S29",
+          "kind": "analyzer-phase2",
+          "volume": 5,
+          "chapter": "7",
+          "chapter_id": "v05-ch07",
+          "status": "planned",
+          "prompt_file": "",
+          "expected": [],
+          "attempts": [],
+          "note": ""
+        },
+        {
+          "id": "T-0001-S30",
+          "kind": "grammar-audit",
+          "volume": 5,
+          "chapter": "7",
+          "chapter_id": "v05-ch07",
+          "status": "planned",
+          "prompt_file": "",
+          "expected": [
+            "AINovelEdit/output/_audit/v05-ch07.md",
+            "AINovelEdit/output/v5-ch07.md",
+            "AINovelEdit/output/_log/v5-log.md"
+          ],
+          "attempts": [],
+          "note": ""
+        },
+        {
+          "id": "T-0001-S31",
+          "kind": "sma-a",
+          "volume": 5,
+          "chapter": "8",
+          "chapter_id": "v05-ch08",
+          "status": "planned",
+          "prompt_file": "",
+          "expected": [],
+          "attempts": [],
+          "note": ""
+        },
+        {
+          "id": "T-0001-S32",
+          "kind": "sma-b",
+          "volume": 5,
+          "chapter": "8",
+          "chapter_id": "v05-ch08",
+          "status": "planned",
+          "prompt_file": "",
+          "expected": [],
+          "attempts": [],
+          "note": ""
+        },
+        {
+          "id": "T-0001-S33",
+          "kind": "sma-c",
+          "volume": 5,
+          "chapter": "8",
+          "chapter_id": "v05-ch08",
+          "status": "planned",
+          "prompt_file": "",
+          "expected": [],
+          "attempts": [],
+          "note": ""
+        },
+        {
+          "id": "T-0001-S34",
+          "kind": "analyzer-phase1",
+          "volume": 5,
+          "chapter": "8",
+          "chapter_id": "v05-ch08",
+          "status": "planned",
+          "prompt_file": "",
+          "expected": [],
+          "attempts": [],
+          "note": ""
+        },
+        {
+          "id": "T-0001-S35",
+          "kind": "analyzer-phase2",
+          "volume": 5,
+          "chapter": "8",
+          "chapter_id": "v05-ch08",
+          "status": "planned",
+          "prompt_file": "",
+          "expected": [],
+          "attempts": [],
+          "note": ""
+        },
+        {
+          "id": "T-0001-S36",
+          "kind": "grammar-audit",
+          "volume": 5,
+          "chapter": "8",
+          "chapter_id": "v05-ch08",
+          "status": "planned",
+          "prompt_file": "",
+          "expected": [
+            "AINovelEdit/output/_audit/v05-ch08.md",
+            "AINovelEdit/output/v5-ch08.md",
+            "AINovelEdit/output/_log/v5-log.md"
+          ],
+          "attempts": [],
+          "note": ""
+        },
+        {
+          "id": "T-0001-S37",
+          "kind": "sma-a",
+          "volume": 5,
+          "chapter": "9",
+          "chapter_id": "v05-ch09",
+          "status": "planned",
+          "prompt_file": "",
+          "expected": [],
+          "attempts": [],
+          "note": ""
+        },
+        {
+          "id": "T-0001-S38",
+          "kind": "sma-b",
+          "volume": 5,
+          "chapter": "9",
+          "chapter_id": "v05-ch09",
+          "status": "planned",
+          "prompt_file": "",
+          "expected": [],
+          "attempts": [],
+          "note": ""
+        },
+        {
+          "id": "T-0001-S39",
+          "kind": "sma-c",
+          "volume": 5,
+          "chapter": "9",
+          "chapter_id": "v05-ch09",
+          "status": "planned",
+          "prompt_file": "",
+          "expected": [],
+          "attempts": [],
+          "note": ""
+        },
+        {
+          "id": "T-0001-S40",
+          "kind": "analyzer-phase1",
+          "volume": 5,
+          "chapter": "9",
+          "chapter_id": "v05-ch09",
+          "status": "planned",
+          "prompt_file": "",
+          "expected": [],
+          "attempts": [],
+          "note": ""
+        },
+        {
+          "id": "T-0001-S41",
+          "kind": "analyzer-phase2",
+          "volume": 5,
+          "chapter": "9",
+          "chapter_id": "v05-ch09",
+          "status": "planned",
+          "prompt_file": "",
+          "expected": [],
+          "attempts": [],
+          "note": ""
+        },
+        {
+          "id": "T-0001-S42",
+          "kind": "grammar-audit",
+          "volume": 5,
+          "chapter": "9",
+          "chapter_id": "v05-ch09",
+          "status": "planned",
+          "prompt_file": "",
+          "expected": [
+            "AINovelEdit/output/_audit/v05-ch09.md",
+            "AINovelEdit/output/v5-ch09.md",
+            "AINovelEdit/output/_log/v5-log.md"
+          ],
+          "attempts": [],
+          "note": ""
+        },
+        {
+          "id": "T-0001-S43",
+          "kind": "sma-a",
+          "volume": 5,
+          "chapter": "10",
+          "chapter_id": "v05-ch10",
+          "status": "planned",
+          "prompt_file": "",
+          "expected": [],
+          "attempts": [],
+          "note": ""
+        },
+        {
+          "id": "T-0001-S44",
+          "kind": "sma-b",
+          "volume": 5,
+          "chapter": "10",
+          "chapter_id": "v05-ch10",
+          "status": "planned",
+          "prompt_file": "",
+          "expected": [],
+          "attempts": [],
+          "note": ""
+        },
+        {
+          "id": "T-0001-S45",
+          "kind": "sma-c",
+          "volume": 5,
+          "chapter": "10",
+          "chapter_id": "v05-ch10",
+          "status": "planned",
+          "prompt_file": "",
+          "expected": [],
+          "attempts": [],
+          "note": ""
+        },
+        {
+          "id": "T-0001-S46",
+          "kind": "analyzer-phase1",
+          "volume": 5,
+          "chapter": "10",
+          "chapter_id": "v05-ch10",
+          "status": "planned",
+          "prompt_file": "",
+          "expected": [],
+          "attempts": [],
+          "note": ""
+        },
+        {
+          "id": "T-0001-S47",
+          "kind": "analyzer-phase2",
+          "volume": 5,
+          "chapter": "10",
+          "chapter_id": "v05-ch10",
+          "status": "planned",
+          "prompt_file": "",
+          "expected": [],
+          "attempts": [],
+          "note": ""
+        },
+        {
+          "id": "T-0001-S48",
+          "kind": "grammar-audit",
+          "volume": 5,
+          "chapter": "10",
+          "chapter_id": "v05-ch10",
+          "status": "planned",
+          "prompt_file": "",
+          "expected": [
+            "AINovelEdit/output/_audit/v05-ch10.md",
+            "AINovelEdit/output/v5-ch10.md",
+            "AINovelEdit/output/_log/v5-log.md"
+          ],
+          "attempts": [],
+          "note": ""
+        },
+        {
+          "id": "T-0001-S49",
+          "kind": "sma-a",
+          "volume": 5,
+          "chapter": "11",
+          "chapter_id": "v05-ch11",
+          "status": "planned",
+          "prompt_file": "",
+          "expected": [],
+          "attempts": [],
+          "note": ""
+        },
+        {
+          "id": "T-0001-S50",
+          "kind": "sma-b",
+          "volume": 5,
+          "chapter": "11",
+          "chapter_id": "v05-ch11",
+          "status": "planned",
+          "prompt_file": "",
+          "expected": [],
+          "attempts": [],
+          "note": ""
+        },
+        {
+          "id": "T-0001-S51",
+          "kind": "sma-c",
+          "volume": 5,
+          "chapter": "11",
+          "chapter_id": "v05-ch11",
+          "status": "planned",
+          "prompt_file": "",
+          "expected": [],
+          "attempts": [],
+          "note": ""
+        },
+        {
+          "id": "T-0001-S52",
+          "kind": "analyzer-phase1",
+          "volume": 5,
+          "chapter": "11",
+          "chapter_id": "v05-ch11",
+          "status": "planned",
+          "prompt_file": "",
+          "expected": [],
+          "attempts": [],
+          "note": ""
+        },
+        {
+          "id": "T-0001-S53",
+          "kind": "analyzer-phase2",
+          "volume": 5,
+          "chapter": "11",
+          "chapter_id": "v05-ch11",
+          "status": "planned",
+          "prompt_file": "",
+          "expected": [],
+          "attempts": [],
+          "note": ""
+        },
+        {
+          "id": "T-0001-S54",
+          "kind": "grammar-audit",
+          "volume": 5,
+          "chapter": "11",
+          "chapter_id": "v05-ch11",
+          "status": "planned",
+          "prompt_file": "",
+          "expected": [
+            "AINovelEdit/output/_audit/v05-ch11.md",
+            "AINovelEdit/output/v5-ch11.md",
+            "AINovelEdit/output/_log/v5-log.md"
+          ],
+          "attempts": [],
+          "note": ""
+        },
+        {
+          "id": "T-0001-S55",
+          "kind": "sma-a",
+          "volume": 5,
+          "chapter": "12",
+          "chapter_id": "v05-ch12",
+          "status": "planned",
+          "prompt_file": "",
+          "expected": [],
+          "attempts": [],
+          "note": ""
+        },
+        {
+          "id": "T-0001-S56",
+          "kind": "sma-b",
+          "volume": 5,
+          "chapter": "12",
+          "chapter_id": "v05-ch12",
+          "status": "planned",
+          "prompt_file": "",
+          "expected": [],
+          "attempts": [],
+          "note": ""
+        },
+        {
+          "id": "T-0001-S57",
+          "kind": "sma-c",
+          "volume": 5,
+          "chapter": "12",
+          "chapter_id": "v05-ch12",
+          "status": "planned",
+          "prompt_file": "",
+          "expected": [],
+          "attempts": [],
+          "note": ""
+        },
+        {
+          "id": "T-0001-S58",
+          "kind": "analyzer-phase1",
+          "volume": 5,
+          "chapter": "12",
+          "chapter_id": "v05-ch12",
+          "status": "planned",
+          "prompt_file": "",
+          "expected": [],
+          "attempts": [],
+          "note": ""
+        },
+        {
+          "id": "T-0001-S59",
+          "kind": "analyzer-phase2",
+          "volume": 5,
+          "chapter": "12",
+          "chapter_id": "v05-ch12",
+          "status": "planned",
+          "prompt_file": "",
+          "expected": [],
+          "attempts": [],
+          "note": ""
+        },
+        {
+          "id": "T-0001-S60",
+          "kind": "grammar-audit",
+          "volume": 5,
+          "chapter": "12",
+          "chapter_id": "v05-ch12",
+          "status": "planned",
+          "prompt_file": "",
+          "expected": [
+            "AINovelEdit/output/_audit/v05-ch12.md",
+            "AINovelEdit/output/v5-ch12.md",
+            "AINovelEdit/output/_log/v5-log.md"
+          ],
+          "attempts": [],
+          "note": ""
+        },
+        {
+          "id": "T-0001-S61",
+          "kind": "sma-a",
+          "volume": 6,
+          "chapter": "1",
+          "chapter_id": "v06-ch01",
+          "status": "planned",
+          "prompt_file": "",
+          "expected": [],
+          "attempts": [],
+          "note": ""
+        },
+        {
+          "id": "T-0001-S62",
+          "kind": "sma-b",
+          "volume": 6,
+          "chapter": "1",
+          "chapter_id": "v06-ch01",
+          "status": "planned",
+          "prompt_file": "",
+          "expected": [],
+          "attempts": [],
+          "note": ""
+        },
+        {
+          "id": "T-0001-S63",
+          "kind": "sma-c",
+          "volume": 6,
+          "chapter": "1",
+          "chapter_id": "v06-ch01",
+          "status": "planned",
+          "prompt_file": "",
+          "expected": [],
+          "attempts": [],
+          "note": ""
+        },
+        {
+          "id": "T-0001-S64",
+          "kind": "analyzer-phase1",
+          "volume": 6,
+          "chapter": "1",
+          "chapter_id": "v06-ch01",
+          "status": "planned",
+          "prompt_file": "",
+          "expected": [],
+          "attempts": [],
+          "note": ""
+        },
+        {
+          "id": "T-0001-S65",
+          "kind": "analyzer-phase2",
+          "volume": 6,
+          "chapter": "1",
+          "chapter_id": "v06-ch01",
+          "status": "planned",
+          "prompt_file": "",
+          "expected": [],
+          "attempts": [],
+          "note": ""
+        },
+        {
+          "id": "T-0001-S66",
+          "kind": "grammar-audit",
+          "volume": 6,
+          "chapter": "1",
+          "chapter_id": "v06-ch01",
+          "status": "planned",
+          "prompt_file": "",
+          "expected": [
+            "AINovelEdit/output/_audit/v06-ch01.md",
+            "AINovelEdit/output/v6-ch01.md",
+            "AINovelEdit/output/_log/v6-log.md"
+          ],
+          "attempts": [],
+          "note": ""
+        },
+        {
+          "id": "T-0001-S67",
+          "kind": "sma-a",
+          "volume": 6,
+          "chapter": "2",
+          "chapter_id": "v06-ch02",
+          "status": "planned",
+          "prompt_file": "",
+          "expected": [],
+          "attempts": [],
+          "note": ""
+        },
+        {
+          "id": "T-0001-S68",
+          "kind": "sma-b",
+          "volume": 6,
+          "chapter": "2",
+          "chapter_id": "v06-ch02",
+          "status": "planned",
+          "prompt_file": "",
+          "expected": [],
+          "attempts": [],
+          "note": ""
+        },
+        {
+          "id": "T-0001-S69",
+          "kind": "sma-c",
+          "volume": 6,
+          "chapter": "2",
+          "chapter_id": "v06-ch02",
+          "status": "planned",
+          "prompt_file": "",
+          "expected": [],
+          "attempts": [],
+          "note": ""
+        },
+        {
+          "id": "T-0001-S70",
+          "kind": "analyzer-phase1",
+          "volume": 6,
+          "chapter": "2",
+          "chapter_id": "v06-ch02",
+          "status": "planned",
+          "prompt_file": "",
+          "expected": [],
+          "attempts": [],
+          "note": ""
+        },
+        {
+          "id": "T-0001-S71",
+          "kind": "analyzer-phase2",
+          "volume": 6,
+          "chapter": "2",
+          "chapter_id": "v06-ch02",
+          "status": "planned",
+          "prompt_file": "",
+          "expected": [],
+          "attempts": [],
+          "note": ""
+        },
+        {
+          "id": "T-0001-S72",
+          "kind": "grammar-audit",
+          "volume": 6,
+          "chapter": "2",
+          "chapter_id": "v06-ch02",
+          "status": "planned",
+          "prompt_file": "",
+          "expected": [
+            "AINovelEdit/output/_audit/v06-ch02.md",
+            "AINovelEdit/output/v6-ch02.md",
+            "AINovelEdit/output/_log/v6-log.md"
+          ],
+          "attempts": [],
+          "note": ""
+        },
+        {
+          "id": "T-0001-S73",
+          "kind": "sma-a",
+          "volume": 6,
+          "chapter": "4",
+          "chapter_id": "v06-ch04",
+          "status": "planned",
+          "prompt_file": "",
+          "expected": [],
+          "attempts": [],
+          "note": ""
+        },
+        {
+          "id": "T-0001-S74",
+          "kind": "sma-b",
+          "volume": 6,
+          "chapter": "4",
+          "chapter_id": "v06-ch04",
+          "status": "planned",
+          "prompt_file": "",
+          "expected": [],
+          "attempts": [],
+          "note": ""
+        },
+        {
+          "id": "T-0001-S75",
+          "kind": "sma-c",
+          "volume": 6,
+          "chapter": "4",
+          "chapter_id": "v06-ch04",
+          "status": "planned",
+          "prompt_file": "",
+          "expected": [],
+          "attempts": [],
+          "note": ""
+        },
+        {
+          "id": "T-0001-S76",
+          "kind": "analyzer-phase1",
+          "volume": 6,
+          "chapter": "4",
+          "chapter_id": "v06-ch04",
+          "status": "planned",
+          "prompt_file": "",
+          "expected": [],
+          "attempts": [],
+          "note": ""
+        },
+        {
+          "id": "T-0001-S77",
+          "kind": "analyzer-phase2",
+          "volume": 6,
+          "chapter": "4",
+          "chapter_id": "v06-ch04",
+          "status": "planned",
+          "prompt_file": "",
+          "expected": [],
+          "attempts": [],
+          "note": ""
+        },
+        {
+          "id": "T-0001-S78",
+          "kind": "grammar-audit",
+          "volume": 6,
+          "chapter": "4",
+          "chapter_id": "v06-ch04",
+          "status": "planned",
+          "prompt_file": "",
+          "expected": [
+            "AINovelEdit/output/_audit/v6-ch04.md",
+            "AINovelEdit/output/v6-ch04.md",
+            "AINovelEdit/output/_log/v6-log.md"
+          ],
+          "attempts": [],
+          "note": ""
+        },
+        {
+          "id": "T-0001-S79",
+          "kind": "sma-a",
+          "volume": 6,
+          "chapter": "5",
+          "chapter_id": "v06-ch05",
+          "status": "planned",
+          "prompt_file": "",
+          "expected": [],
+          "attempts": [],
+          "note": ""
+        },
+        {
+          "id": "T-0001-S80",
+          "kind": "sma-b",
+          "volume": 6,
+          "chapter": "5",
+          "chapter_id": "v06-ch05",
+          "status": "planned",
+          "prompt_file": "",
+          "expected": [],
+          "attempts": [],
+          "note": ""
+        },
+        {
+          "id": "T-0001-S81",
+          "kind": "sma-c",
+          "volume": 6,
+          "chapter": "5",
+          "chapter_id": "v06-ch05",
+          "status": "planned",
+          "prompt_file": "",
+          "expected": [],
+          "attempts": [],
+          "note": ""
+        },
+        {
+          "id": "T-0001-S82",
+          "kind": "analyzer-phase1",
+          "volume": 6,
+          "chapter": "5",
+          "chapter_id": "v06-ch05",
+          "status": "planned",
+          "prompt_file": "",
+          "expected": [],
+          "attempts": [],
+          "note": ""
+        },
+        {
+          "id": "T-0001-S83",
+          "kind": "analyzer-phase2",
+          "volume": 6,
+          "chapter": "5",
+          "chapter_id": "v06-ch05",
+          "status": "planned",
+          "prompt_file": "",
+          "expected": [],
+          "attempts": [],
+          "note": ""
+        },
+        {
+          "id": "T-0001-S84",
+          "kind": "grammar-audit",
+          "volume": 6,
+          "chapter": "5",
+          "chapter_id": "v06-ch05",
+          "status": "planned",
+          "prompt_file": "",
+          "expected": [
+            "AINovelEdit/output/_audit/v06-ch05.md",
+            "AINovelEdit/output/v6-ch05.md",
+            "AINovelEdit/output/_log/v6-log.md"
+          ],
+          "attempts": [],
+          "note": ""
+        }
+      ]
+    }
+  ]
 }
