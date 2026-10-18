@@ -120,6 +120,34 @@ FINAL AUDIT
 Проверка результата по всем слоям
 ````
 
+### Диспетчер крупных задач (оркестрация субагентов)
+
+Задачи в свободной формулировке («проверь том 3 целиком», «проверь главы
+5–7», «продолжи перевод с последней завершённой главы», «что не переведено»)
+исполняются агентом-оркестратором через скилл
+`AINovelEdit/.agents/skills/dispatcher/SKILL.md` и скрипт
+`tools/dispatch.py`:
+
+```text
+python tools/dispatch.py recover              # 1-й шаг сессии: что оборвалось
+python tools/dispatch.py status [--volume N]  # что переведено / не переведено
+python tools/dispatch.py new "задача"         # TASK-ID
+python tools/dispatch.py plan T-0001 --kind sma-a,sma-b,sma-c,analyzer-phase1,analyzer-phase2 --volume 3 --all
+python tools/dispatch.py launch T-0001-S1 …   # готовый промпт → субагент
+python tools/dispatch.py verify               # DONE / PROGRESS / INTERRUPTED
+python tools/dispatch.py resume T-0001-S1     # продолжить прерванного субагента
+python tools/dispatch.py pending | list | show T-0001 | close T-0001
+```
+
+Реестр `AINovelEdit/output/_dispatch/ledger.json` (+ сводка `TASKS.md`)
+фиксирует каждую попытку запуска и переживает компактизацию контекста:
+агент не полагается на память о том, кто из субагентов завершил работу.
+Обрыв сессии субагента — норма: `recover` помечает прерванное по фактам на
+диске (свежие артефакты, изменённые файлы), а `resume` генерирует промпт
+«продолжи с места обрыва» вместо перезапуска с нуля. Промпты генерируются
+теми же функциями, что и `tools/agent_workflow.py`, поэтому содержат все
+правила проекта (AGENTS.md, словарь, изоляцию SMA).
+
 ### Legacy: автоматический semantic audit
 
 Рабочая архитектура смыслового аудита — **независимые Pragmatic/Semantic
