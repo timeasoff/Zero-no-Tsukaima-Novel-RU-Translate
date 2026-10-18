@@ -1,0 +1,19 @@
+{
+  "analysis_id": "20261019-020000",
+  "chapter": "v5-ch06",
+  "inputs": {
+    "a_runs": [],
+    "b_runs": ["20261011-063349-3182"],
+    "c_runs": ["20261011-063402-098b"],
+    "precheck": "output/_audit/sma/v5-ch06/precheck/omission-precheck.json",
+    "phase1": "20261019-020000-phase1.json"
+  },
+  "results": [],
+  "summary": {
+    "confirmed_errors": 0,
+    "disputed": 0,
+    "false_positives": 0,
+    "preserved": 0
+  },
+  "notes": "SMA-B нашёл несколько WARNING по качеству, но все они были отклонены как допустимые адаптации. SMA-C не нашёл прагматических расхождений."
+}

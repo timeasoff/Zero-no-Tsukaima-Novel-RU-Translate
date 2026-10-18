@@ -1,0 +1,17 @@
+{
+  "analysis_id": "20261019-020000-phase1",
+  "chapter": "v5-ch06",
+  "phase": 1,
+  "scope": "blind",
+  "results": [
+    {"block": 1, "finding": "NONE", "note": "Все реплики и действия переданы точно", "confidence": "HIGH"},
+    {"block": 2, "finding": "NONE", "note": "Разговор Луизы о деньгах — корректен", "confidence": "HIGH"},
+    {"block": 3, "finding": "NONE", "note": "Диалог с Монморанси — соответствует JA", "confidence": "HIGH"},
+    {"block": 4, "finding": "NONE", "note": "Анализ ситуации — всё передано", "confidence": "HIGH"},
+    {"block": 5, "finding": "NONE", "note": "Реплика Кирхе — корректна", "confidence": "HIGH"},
+    {"block": 6, "finding": "NONE", "note": "Финальная сцена — полное соответствие", "confidence": "HIGH"},
+    {"block": 7, "finding": "NONE", "note": "Реплика Луизы — точна", "confidence": "HIGH"},
+    {"block": 8, "finding": "NONE", "note": "Монолог — передан без потерь", "confidence": "HIGH"},
+    {"block": 9, "finding": "NONE", "note": "Диалог — всё соответствует JA", "confidence": "HIGH"}
+  ]
+}
