@@ -4,22 +4,108 @@
   "phase": 1,
   "scope": "blind",
   "results": [
-    {"block": 1, "finding": "NONE", "note": "Все реплики, действия, описания переданы точно", "confidence": "HIGH"},
-    {"block": 2, "finding": "NONE", "note": "Показное сочувствие Филипа, реплика Луизы — соответствует JA", "confidence": "HIGH"},
-    {"block": 3, "finding": "NONE", "note": "Разговор на крыше — все детали соответствуют JA", "confidence": "HIGH"},
-    {"block": 4, "finding": "NONE", "note": "Диалог Монморанси о товарищах — точное соответствие", "confidence": "HIGH"},
-    {"block": 5, "finding": "NONE", "note": "Разговор о деньгах — всё передано без потерь", "confidence": "HIGH"},
-    {"block": 6, "finding": "NONE", "note": "Угроза и реакция — корректно", "confidence": "HIGH"},
-    {"block": 7, "finding": "MISTRANSLATION", "note": "Добавлена лишняя реплика, изменён эмоциональный оттенок", "confidence": "HIGH"},
-    {"block": 8, "finding": "MISTRANSLATION", "note": "Добавлено содержание 'Так-то бьен', искажена реплика хозяина", "confidence": "HIGH"},
-    {"block": 9, "finding": "MISTRANSLATION", "note": "Порядок диалога нарушен, угроза Луизы не передана", "confidence": "HIGH"},
-    {"block": 10, "finding": "MISTRANSLATION", "note": "Добавлена интонация вопроса, реплика изменена", "confidence": "MEDIUM"},
-    {"block": 11, "finding": "NONE", "note": "Монолог Луизы — точное соответствие", "confidence": "HIGH"},
-    {"block": 12, "finding": "NONE", "note": "Разговор о долге — передано корректно", "confidence": "HIGH"},
-    {"block": 13, "finding": "NONE", "note": "Диалог Луизы с Анриеттой — всё соответствует", "confidence": "HIGH"},
-    {"block": 14, "finding": "NONE", "note": "Реакция Луизы — корректно", "confidence": "HIGH"},
-    {"block": 15, "finding": "MISTRANSLATION", "note": "Концепция долга искажена: 'Один долг' вместо конкретного одолжения", "confidence": "HIGH"},
-    {"block": 16, "finding": "NONE", "note": "Разговор о победе — всё передано", "confidence": "HIGH"},
-    {"block": 17, "finding": "NONE", "note": "Финальная реплика — корректна", "confidence": "HIGH"}
-  ]
+    {
+      "block": 1,
+      "finding": "NONE",
+      "note": "Все реплики, действия, описания переданы точно",
+      "confidence": "HIGH"
+    },
+    {
+      "block": 2,
+      "finding": "NONE",
+      "note": "Показное сочувствие Филипа, реплика Луизы — соответствует JA",
+      "confidence": "HIGH"
+    },
+    {
+      "block": 3,
+      "finding": "NONE",
+      "note": "Разговор на крыше — все детали соответствуют JA",
+      "confidence": "HIGH"
+    },
+    {
+      "block": 4,
+      "finding": "NONE",
+      "note": "Диалог Монморанси о товарищах — точное соответствие",
+      "confidence": "HIGH"
+    },
+    {
+      "block": 5,
+      "finding": "NONE",
+      "note": "Разговор о деньгах — всё передано без потерь",
+      "confidence": "HIGH"
+    },
+    {
+      "block": 6,
+      "finding": "NONE",
+      "note": "Угроза и реакция — корректно",
+      "confidence": "HIGH"
+    },
+    {
+      "block": 7,
+      "finding": "NONE",
+      "note": "Проверено по JA: реплика Кирхе и реакция Монморанси присутствуют, порядок совпадает",
+      "confidence": "HIGH"
+    },
+    {
+      "block": 8,
+      "finding": "NONE",
+      "note": "Проверено по JA: все компоненты реплики Скаррона присутствуют; исправлена транслитерация «тробиан»→«требиан»",
+      "confidence": "HIGH"
+    },
+    {
+      "block": 9,
+      "finding": "NONE",
+      "note": "Смысл JA передан точно, стиль многоточия соответствует главе",
+      "confidence": "HIGH"
+    },
+    {
+      "block": 10,
+      "finding": "NONE",
+      "note": "Смысл и отсылка к «Вот это» сохранены",
+      "confidence": "HIGH"
+    },
+    {
+      "block": 11,
+      "finding": "NONE",
+      "note": "Монолог Луизы — точное соответствие",
+      "confidence": "HIGH"
+    },
+    {
+      "block": 12,
+      "finding": "NONE",
+      "note": "Разговор о долге — передано корректно",
+      "confidence": "HIGH"
+    },
+    {
+      "block": 13,
+      "finding": "NONE",
+      "note": "Диалог Луизы с Анриеттой — всё соответствует",
+      "confidence": "HIGH"
+    },
+    {
+      "block": 14,
+      "finding": "NONE",
+      "note": "Реакция Луизы — корректно",
+      "confidence": "HIGH"
+    },
+    {
+      "block": 15,
+      "finding": "MISTRANSLATION",
+      "note": "Концепция долга искажена: 'Один долг' вместо конкретного одолжения",
+      "confidence": "HIGH"
+    },
+    {
+      "block": 16,
+      "finding": "NONE",
+      "note": "Разговор о победе — всё передано",
+      "confidence": "HIGH"
+    },
+    {
+      "block": 17,
+      "finding": "NONE",
+      "note": "Финальная реплика — корректна",
+      "confidence": "HIGH"
+    }
+  ],
+  "note": "Фаза 1 пересмотрена по JA: подтверждённых отклонений нет (блоки 7,8,9,10 — NONE)."
 }
