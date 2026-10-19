@@ -17,6 +17,10 @@ FINAL AUDIT) реально закрыты — только по файлам н
   5. Отчёт аудита output/_audit/vXX-chYY.md существует и не старее
      output-файла.
   6. В output нет неразобранных маркеров <!-- ??? -->.
+  7. В отчёте аудита есть раздел ## FINAL READ (итог RU-only перечита
+     главы, novel-editor п. 11 — даже при нуле находок).
+  8. В отчёте аудита есть итоговые строки GRAMMAR, STYLE и FORMAT
+     (FINAL AUDIT, novel-editor п. 10).
 
 Детекция ≠ решение: гейт не правит текст и не выносит суждений о качестве —
 он только констатирует, какие фазы не оставили файлов-эвиденсов.
@@ -33,6 +37,7 @@ from __future__ import annotations
 
 import argparse
 import os
+import re
 import sys
 import tempfile
 from datetime import datetime
@@ -223,6 +228,32 @@ def gate_checks(paths: dict) -> list[tuple[str, bool, str]]:
         checks.append(("Отчёт аудита свежий", True,
                        f"{_rel(audit)} ({_stamp(audit)})"))
 
+    # 5а. FINAL READ и итоговые строки — по фактическому тексту отчёта
+    # (тот же критерий, что «раздел смысловой сверки» в novel-editor п. 12).
+    if audit.is_file():
+        try:
+            audit_text = audit.read_text(encoding="utf-8")
+        except OSError:
+            audit_text = ""
+    else:
+        audit_text = ""
+    final_read = re.search(r"^#{2,4}[^\n]*\bFINAL READ\b", audit_text,
+                           re.MULTILINE) is not None
+    checks.append((
+        "Отчёт: раздел FINAL READ (RU-only перечит)",
+        final_read,
+        "раздел найден" if final_read
+        else "нет раздела ## FINAL READ в отчёте аудита",
+    ))
+    missing_lines = [name for name in ("GRAMMAR", "STYLE", "FORMAT")
+                     if not re.search(rf"\b{name}\b", audit_text)]
+    checks.append((
+        "Отчёт: итоговые строки GRAMMAR / STYLE / FORMAT",
+        not missing_lines,
+        "все 3 строки на месте" if not missing_lines
+        else "нет строк: " + ", ".join(missing_lines),
+    ))
+
     # 6. Открытые решения: <!-- ??? --> не должны дожить до сдачи главы.
     if not has_output:
         checks.append(("Решения закрыты (нет <!-- ??? -->)", False,
@@ -321,7 +352,9 @@ def run_selftest() -> int:
             analysis = paths["sma"]["analysis"]
             write(analysis / "20260101-0000-aaaa.phase1.json", "{}")
             write(analysis / "20260101-0000-bbbb.json", "{}")
-            write(paths["audit"], "## Итог\n")
+            write(paths["audit"],
+                  "## FINAL READ\nпроход выполнен, находок нет\n\n"
+                  "## Итог\nGRAMMAR: чисто\nSTYLE: чисто\nFORMAT: чисто\n")
             # Свежесть: текст главы старше отчётов и отчёта аудита.
             base = 2_000_000_000
             for path in [paths["output"], paths["ja"]]:
@@ -334,8 +367,8 @@ def run_selftest() -> int:
         results = {label: ok for label, ok, _ in checks}
         check(all(ok for _, ok, _ in checks),
               "полное дерево: все пункты закрыты")
-        check(len(checks) == 9,
-              f"чек-лист из 9 пунктов (получено {len(checks)})")
+        check(len(checks) == 11,
+              f"чек-лист из 11 пунктов (получено {len(checks)})")
 
         # 1) RU потерял блок → блочный пункт падает.
         write(paths["output"], "<!-- block: 1 -->\n\nТекст первого блока.\n")
@@ -379,8 +412,29 @@ def run_selftest() -> int:
         fill_all()
         # 6) отчёт гейта рендерится и содержит вердикт.
         report = render_report(paths, gate_checks(paths))
-        check("Итог: 9/9 пунктов закрыто — ГОТОВА" in report,
+        check("Итог: 11/11 пунктов закрыто — ГОТОВА" in report,
               "render_report: вердикт ГОТОВА на полном дереве")
+
+        fill_all()
+        # 7) в отчёте нет раздела FINAL READ → соответствующий пункт падает.
+        write(paths["audit"],
+              "## Итог\nGRAMMAR: чисто\nSTYLE: чисто\nFORMAT: чисто\n")
+        os.utime(paths["audit"], (2_000_000_100, 2_000_000_100))
+        results = {label: ok for label, ok, _ in gate_checks(paths)}
+        check(not results.get("Отчёт: раздел FINAL READ (RU-only перечит)",
+                              True),
+              "отсутствие раздела FINAL READ закрывает гейт")
+
+        fill_all()
+        # 8) в отчёте нет итоговой строки FORMAT → итоговые строки падают.
+        write(paths["audit"],
+              "## FINAL READ\nпроход выполнен, находок нет\n\n"
+              "## Итог\nGRAMMAR: чисто\nSTYLE: чисто\n")
+        os.utime(paths["audit"], (2_000_000_100, 2_000_000_100))
+        results = {label: ok for label, ok, _ in gate_checks(paths)}
+        check(not results.get(
+            "Отчёт: итоговые строки GRAMMAR / STYLE / FORMAT", True),
+            "отсутствие строки FORMAT закрывает гейт")
 
     print()
     if failed:
