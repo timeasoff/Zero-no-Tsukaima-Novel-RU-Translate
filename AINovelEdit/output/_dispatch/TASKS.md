@@ -1,6 +1,6 @@
 # Реестр задач диспетчера
 
-Обновлено: 2026-10-19 01:08:26
+Обновлено: 2026-10-22 04:28:02
 
 Генерируется автоматически командой `python tools/dispatch.py`. Не редактируй вручную.
 
@@ -25,48 +25,48 @@
 | T-0001-S13 | sma-a | v05-ch05 | done | 2 | `agent_prompts/agent_prompt.v05-ch05.sma-a.attempt2.md` |
 | T-0001-S14 | sma-b | v05-ch05 | done | 2 | `agent_prompts/agent_prompt.v05-ch05.sma-b.attempt2.md` |
 | T-0001-S15 | sma-c | v05-ch05 | done | 3 | `agent_prompts/agent_prompt.v05-ch05.sma-c.attempt3.md` |
-| T-0001-S16 | analyzer-phase1 | v05-ch05 | running | 3 | `agent_prompts/agent_prompt.v05-ch05.analyzer-phase1.attempt3.md` |
-| T-0001-S17 | analyzer-phase2 | v05-ch05 | running | 3 | `agent_prompts/agent_prompt.v05-ch05.analyzer-phase2.attempt3.md` |
+| T-0001-S16 | analyzer-phase1 | v05-ch05 | interrupted | 3 | `agent_prompts/agent_prompt.v05-ch05.analyzer-phase1.attempt3.md` |
+| T-0001-S17 | analyzer-phase2 | v05-ch05 | interrupted | 3 | `agent_prompts/agent_prompt.v05-ch05.analyzer-phase2.attempt3.md` |
 | T-0001-S18 | grammar-audit | v05-ch05 | planned | 0 | `—` |
-| T-0001-S19 | sma-a | v05-ch06 | running | 5 | `agent_prompts/agent_prompt.v05-ch06.sma-a.attempt5.md` |
-| T-0001-S20 | sma-b | v05-ch06 | running | 2 | `agent_prompts/agent_prompt.v05-ch06.sma-b.attempt2.md` |
-| T-0001-S21 | sma-c | v05-ch06 | running | 3 | `agent_prompts/agent_prompt.v05-ch06.sma-c.attempt3.md` |
+| T-0001-S19 | sma-a | v05-ch06 | interrupted | 5 | `agent_prompts/agent_prompt.v05-ch06.sma-a.attempt5.md` |
+| T-0001-S20 | sma-b | v05-ch06 | interrupted | 2 | `agent_prompts/agent_prompt.v05-ch06.sma-b.attempt2.md` |
+| T-0001-S21 | sma-c | v05-ch06 | interrupted | 3 | `agent_prompts/agent_prompt.v05-ch06.sma-c.attempt3.md` |
 | T-0001-S22 | analyzer-phase1 | v05-ch06 | planned | 0 | `—` |
 | T-0001-S23 | analyzer-phase2 | v05-ch06 | planned | 0 | `—` |
 | T-0001-S24 | grammar-audit | v05-ch06 | planned | 0 | `—` |
-| T-0001-S25 | sma-a | v05-ch07 | running | 2 | `agent_prompts/agent_prompt.v05-ch07.sma-a.attempt2.md` |
-| T-0001-S26 | sma-b | v05-ch07 | running | 2 | `agent_prompts/agent_prompt.v05-ch07.sma-b.attempt2.md` |
-| T-0001-S27 | sma-c | v05-ch07 | running | 2 | `agent_prompts/agent_prompt.v05-ch07.sma-c.attempt2.md` |
+| T-0001-S25 | sma-a | v05-ch07 | interrupted | 2 | `agent_prompts/agent_prompt.v05-ch07.sma-a.attempt2.md` |
+| T-0001-S26 | sma-b | v05-ch07 | interrupted | 2 | `agent_prompts/agent_prompt.v05-ch07.sma-b.attempt2.md` |
+| T-0001-S27 | sma-c | v05-ch07 | interrupted | 2 | `agent_prompts/agent_prompt.v05-ch07.sma-c.attempt2.md` |
 | T-0001-S28 | analyzer-phase1 | v05-ch07 | planned | 0 | `—` |
 | T-0001-S29 | analyzer-phase2 | v05-ch07 | planned | 0 | `—` |
 | T-0001-S30 | grammar-audit | v05-ch07 | planned | 0 | `—` |
-| T-0001-S31 | sma-a | v05-ch08 | running | 1 | `agent_prompts/agent_prompt.v05-ch08.sma-a.md` |
-| T-0001-S32 | sma-b | v05-ch08 | running | 1 | `agent_prompts/agent_prompt.v05-ch08.sma-b.md` |
-| T-0001-S33 | sma-c | v05-ch08 | running | 1 | `agent_prompts/agent_prompt.v05-ch08.sma-c.md` |
+| T-0001-S31 | sma-a | v05-ch08 | interrupted | 1 | `agent_prompts/agent_prompt.v05-ch08.sma-a.md` |
+| T-0001-S32 | sma-b | v05-ch08 | interrupted | 1 | `agent_prompts/agent_prompt.v05-ch08.sma-b.md` |
+| T-0001-S33 | sma-c | v05-ch08 | interrupted | 1 | `agent_prompts/agent_prompt.v05-ch08.sma-c.md` |
 | T-0001-S34 | analyzer-phase1 | v05-ch08 | planned | 0 | `—` |
 | T-0001-S35 | analyzer-phase2 | v05-ch08 | planned | 0 | `—` |
 | T-0001-S36 | grammar-audit | v05-ch08 | planned | 0 | `—` |
-| T-0001-S37 | sma-a | v05-ch09 | running | 1 | `agent_prompts/agent_prompt.v05-ch09.sma-a.md` |
-| T-0001-S38 | sma-b | v05-ch09 | running | 1 | `agent_prompts/agent_prompt.v05-ch09.sma-b.md` |
-| T-0001-S39 | sma-c | v05-ch09 | running | 1 | `agent_prompts/agent_prompt.v05-ch09.sma-c.md` |
-| T-0001-S40 | analyzer-phase1 | v05-ch09 | planned | 0 | `—` |
-| T-0001-S41 | analyzer-phase2 | v05-ch09 | planned | 0 | `—` |
-| T-0001-S42 | grammar-audit | v05-ch09 | planned | 0 | `—` |
-| T-0001-S43 | sma-a | v05-ch10 | running | 1 | `agent_prompts/agent_prompt.v05-ch10.sma-a.md` |
-| T-0001-S44 | sma-b | v05-ch10 | running | 1 | `agent_prompts/agent_prompt.v05-ch10.sma-b.md` |
-| T-0001-S45 | sma-c | v05-ch10 | running | 1 | `agent_prompts/agent_prompt.v05-ch10.sma-c.md` |
+| T-0001-S37 | sma-a | v05-ch09 | done | 2 | `agent_prompts/agent_prompt.v05-ch09.sma-a.attempt2.md` |
+| T-0001-S38 | sma-b | v05-ch09 | done | 3 | `agent_prompts/agent_prompt.v05-ch09.sma-b.attempt3.md` |
+| T-0001-S39 | sma-c | v05-ch09 | done | 3 | `agent_prompts/agent_prompt.v05-ch09.sma-c.attempt3.md` |
+| T-0001-S40 | analyzer-phase1 | v05-ch09 | done | 1 | `agent_prompts/agent_prompt.v05-ch09.analyzer-phase1.md` |
+| T-0001-S41 | analyzer-phase2 | v05-ch09 | done | 1 | `agent_prompts/agent_prompt.v05-ch09.analyzer-phase2.md` |
+| T-0001-S42 | grammar-audit | v05-ch09 | done | 1 | `agent_prompts/agent_prompt.v05-ch09.grammar-audit.md` |
+| T-0001-S43 | sma-a | v05-ch10 | interrupted | 2 | `agent_prompts/agent_prompt.v05-ch10.sma-a.attempt2.md` |
+| T-0001-S44 | sma-b | v05-ch10 | interrupted | 2 | `agent_prompts/agent_prompt.v05-ch10.sma-b.attempt2.md` |
+| T-0001-S45 | sma-c | v05-ch10 | interrupted | 3 | `agent_prompts/agent_prompt.v05-ch10.sma-c.attempt3.md` |
 | T-0001-S46 | analyzer-phase1 | v05-ch10 | planned | 0 | `—` |
 | T-0001-S47 | analyzer-phase2 | v05-ch10 | planned | 0 | `—` |
 | T-0001-S48 | grammar-audit | v05-ch10 | planned | 0 | `—` |
-| T-0001-S49 | sma-a | v05-ch11 | running | 1 | `agent_prompts/agent_prompt.v05-ch11.sma-a.md` |
-| T-0001-S50 | sma-b | v05-ch11 | running | 1 | `agent_prompts/agent_prompt.v05-ch11.sma-b.md` |
-| T-0001-S51 | sma-c | v05-ch11 | running | 1 | `agent_prompts/agent_prompt.v05-ch11.sma-c.md` |
+| T-0001-S49 | sma-a | v05-ch11 | interrupted | 1 | `agent_prompts/agent_prompt.v05-ch11.sma-a.md` |
+| T-0001-S50 | sma-b | v05-ch11 | interrupted | 1 | `agent_prompts/agent_prompt.v05-ch11.sma-b.md` |
+| T-0001-S51 | sma-c | v05-ch11 | interrupted | 1 | `agent_prompts/agent_prompt.v05-ch11.sma-c.md` |
 | T-0001-S52 | analyzer-phase1 | v05-ch11 | planned | 0 | `—` |
 | T-0001-S53 | analyzer-phase2 | v05-ch11 | planned | 0 | `—` |
 | T-0001-S54 | grammar-audit | v05-ch11 | planned | 0 | `—` |
-| T-0001-S55 | sma-a | v05-ch12 | running | 1 | `agent_prompts/agent_prompt.v05-ch12.sma-a.md` |
-| T-0001-S56 | sma-b | v05-ch12 | running | 1 | `agent_prompts/agent_prompt.v05-ch12.sma-b.md` |
-| T-0001-S57 | sma-c | v05-ch12 | running | 1 | `agent_prompts/agent_prompt.v05-ch12.sma-c.md` |
+| T-0001-S55 | sma-a | v05-ch12 | interrupted | 1 | `agent_prompts/agent_prompt.v05-ch12.sma-a.md` |
+| T-0001-S56 | sma-b | v05-ch12 | interrupted | 1 | `agent_prompts/agent_prompt.v05-ch12.sma-b.md` |
+| T-0001-S57 | sma-c | v05-ch12 | interrupted | 1 | `agent_prompts/agent_prompt.v05-ch12.sma-c.md` |
 | T-0001-S58 | analyzer-phase1 | v05-ch12 | planned | 0 | `—` |
 | T-0001-S59 | analyzer-phase2 | v05-ch12 | planned | 0 | `—` |
 | T-0001-S60 | grammar-audit | v05-ch12 | planned | 0 | `—` |
@@ -94,6 +94,11 @@
 | T-0001-S82 | analyzer-phase1 | v06-ch05 | planned | 0 | `—` |
 | T-0001-S83 | analyzer-phase2 | v06-ch05 | planned | 0 | `—` |
 | T-0001-S84 | grammar-audit | v06-ch05 | planned | 0 | `—` |
+| T-0001-S85 | analyzer-phase1 | v05-ch10 | running | 1 | `agent_prompts/agent_prompt.v05-ch10.analyzer-phase1.md` |
+| T-0001-S86 | analyzer-phase2 | v05-ch10 | planned | 0 | `—` |
+| T-0001-S87 | grammar-audit | v05-ch10 | running | 1 | `agent_prompts/agent_prompt.v05-ch10.grammar-audit.md` |
+| T-0001-S88 | style-audit | v05-ch10 | running | 1 | `agent_prompts/agent_prompt.v05-ch10.style-audit.md` |
+| T-0001-S89 | humanizer | v05-ch10 | running | 1 | `agent_prompts/agent_prompt.v05-ch10.humanizer.md` |
 
 Заметки:
 - T-0001-S1: findings: 10 (3 WARNING, 7 CANDIDATE), файл a/20261018-135405-7655.json, валидация OK
@@ -116,4 +121,25 @@
 - T-0001-S19: нет результата после запуска
 - T-0001-S20: нет результата после запуска
 - T-0001-S21: нет результата после запуска
+- T-0001-S25: нет результата после запуска
+- T-0001-S26: нет результата после запуска
+- T-0001-S27: нет результата после запуска
+- T-0001-S31: нет результата после запуска
+- T-0001-S32: нет результата после запуска
+- T-0001-S33: нет результата после запуска
+- T-0001-S37: sma-a: 13 находок, файл a/20261022-020909-9f86.json, валидатор OK
+- T-0001-S38: sma-b: b/20261022-022956-6a4a.json, 3 findings, валидатор OK
+- T-0001-S39: sma-c: c/20261022-022956-941d.json, 4 findings, валидатор OK
+- T-0001-S40: analyzer-phase1: analysis/20261022-020914-09bb.phase1.json, 11 findings
+- T-0001-S41: analyzer-phase2: analysis/20261022-032355-2502.json/.md, 22 candidates (14 FIXED, 2 REPORT_ONLY, 6 PRESERVED); 3 findings откачены как зона человека
+- T-0001-S42: grammar-audit выполнен оркестратором вручную (субагент вернул пустой результат): grammar_scan 6 (все FALSE POSITIVE) + сплошной разбор 13/13 блоков по предложениям (RGC-1/2/3/4/7) — 5 исправлений (разнеслась, скучающе, Луизе надоело, 'кто помог… проникнуть', 'сама Генриетта'); style 9 (все PRESERVED), format 1 (FP), check_records 2 (оба FP), address 0; FINAL READ выполнен; артефакты: output/_audit/v5-ch09.md + output/_log/v5-log.md
+- T-0001-S43: нет результата после запуска
+- T-0001-S44: нет результата после запуска
+- T-0001-S45: нет результата после запуска
+- T-0001-S49: нет результата после запуска
+- T-0001-S50: нет результата после запуска
+- T-0001-S51: нет результата после запуска
+- T-0001-S55: нет результата после запуска
+- T-0001-S56: нет результата после запуска
+- T-0001-S57: нет результата после запуска
 
