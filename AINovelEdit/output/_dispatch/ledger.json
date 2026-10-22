@@ -1319,10 +1319,10 @@
           "volume": 5,
           "chapter": "11",
           "chapter_id": "v05-ch11",
-          "status": "interrupted",
-          "prompt_file": "agent_prompts/agent_prompt.v05-ch11.sma-a.md",
+          "status": "done",
+          "prompt_file": "agent_prompts/agent_prompt.v05-ch11.sma-a.attempt2.md",
           "expected": [
-            "output/_audit/sma/v5-ch11/a/20261019-010801-286a.json"
+            "AINovelEdit/output/_audit/sma/v5-ch11/a/20261022-085909-ea17.json"
           ],
           "attempts": [
             {
@@ -1332,9 +1332,17 @@
               "finished": "",
               "result": "",
               "note": ""
+            },
+            {
+              "n": 2,
+              "started": "2026-10-22 08:59:09",
+              "prompt": "agent_prompts/agent_prompt.v05-ch11.sma-a.attempt2.md",
+              "finished": "2026-10-22 09:27:24",
+              "result": "done",
+              "note": "результат на диске"
             }
           ],
-          "note": "нет результата после запуска"
+          "note": "результат на диске"
         },
         {
           "id": "T-0001-S50",
@@ -1342,10 +1350,10 @@
           "volume": 5,
           "chapter": "11",
           "chapter_id": "v05-ch11",
-          "status": "interrupted",
-          "prompt_file": "agent_prompts/agent_prompt.v05-ch11.sma-b.md",
+          "status": "done",
+          "prompt_file": "agent_prompts/agent_prompt.v05-ch11.sma-b.attempt2.md",
           "expected": [
-            "output/_audit/sma/v5-ch11/b/20261019-010801-491b.json"
+            "AINovelEdit/output/_audit/sma/v5-ch11/b/20261022-085909-c2ac.json"
           ],
           "attempts": [
             {
@@ -1355,9 +1363,17 @@
               "finished": "",
               "result": "",
               "note": ""
+            },
+            {
+              "n": 2,
+              "started": "2026-10-22 08:59:09",
+              "prompt": "agent_prompts/agent_prompt.v05-ch11.sma-b.attempt2.md",
+              "finished": "2026-10-22 09:27:24",
+              "result": "done",
+              "note": "результат на диске"
             }
           ],
-          "note": "нет результата после запуска"
+          "note": "результат на диске"
         },
         {
           "id": "T-0001-S51",
@@ -1365,10 +1381,10 @@
           "volume": 5,
           "chapter": "11",
           "chapter_id": "v05-ch11",
-          "status": "interrupted",
-          "prompt_file": "agent_prompts/agent_prompt.v05-ch11.sma-c.md",
+          "status": "done",
+          "prompt_file": "agent_prompts/agent_prompt.v05-ch11.sma-c.attempt2.md",
           "expected": [
-            "output/_audit/sma/v5-ch11/c/20261019-010801-aac4.json"
+            "AINovelEdit/output/_audit/sma/v5-ch11/c/20261022-085909-c7b6.json"
           ],
           "attempts": [
             {
@@ -1378,9 +1394,17 @@
               "finished": "",
               "result": "",
               "note": ""
+            },
+            {
+              "n": 2,
+              "started": "2026-10-22 08:59:09",
+              "prompt": "agent_prompts/agent_prompt.v05-ch11.sma-c.attempt2.md",
+              "finished": "2026-10-22 09:27:24",
+              "result": "done",
+              "note": "результат на диске"
             }
           ],
-          "note": "нет результата после запуска"
+          "note": "результат на диске"
         },
         {
           "id": "T-0001-S52",
@@ -1388,11 +1412,22 @@
           "volume": 5,
           "chapter": "11",
           "chapter_id": "v05-ch11",
-          "status": "planned",
-          "prompt_file": "",
-          "expected": [],
-          "attempts": [],
-          "note": ""
+          "status": "done",
+          "prompt_file": "agent_prompts/agent_prompt.v05-ch11.analyzer-phase1.md",
+          "expected": [
+            "AINovelEdit/output/_audit/sma/v5-ch11/analysis/20261022-091212-250a.phase1.json"
+          ],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-10-22 09:12:12",
+              "prompt": "agent_prompts/agent_prompt.v05-ch11.analyzer-phase1.md",
+              "finished": "2026-10-22 09:27:25",
+              "result": "done",
+              "note": "результат на диске"
+            }
+          ],
+          "note": "результат на диске"
         },
         {
           "id": "T-0001-S53",
@@ -1400,11 +1435,24 @@
           "volume": 5,
           "chapter": "11",
           "chapter_id": "v05-ch11",
-          "status": "planned",
-          "prompt_file": "",
-          "expected": [],
-          "attempts": [],
-          "note": ""
+          "status": "done",
+          "prompt_file": "agent_prompts/agent_prompt.v05-ch11.analyzer-phase2.md",
+          "expected": [
+            "AINovelEdit/output/_audit/sma/v5-ch11/precheck/omission-precheck.json",
+            "AINovelEdit/output/_audit/sma/v5-ch11/analysis/20261022-092020-ba9d.json",
+            "AINovelEdit/output/_audit/sma/v5-ch11/analysis/20261022-092020-ba9d.md"
+          ],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-10-22 09:20:20",
+              "prompt": "agent_prompts/agent_prompt.v05-ch11.analyzer-phase2.md",
+              "finished": "2026-10-22 10:06:55",
+              "result": "done",
+              "note": "результат на диске: analysis/20261022-092020-ba9d.json"
+            }
+          ],
+          "note": "результат на диске: analysis/20261022-092020-ba9d.json"
         },
         {
           "id": "T-0001-S54",
@@ -1412,15 +1460,15 @@
           "volume": 5,
           "chapter": "11",
           "chapter_id": "v05-ch11",
-          "status": "planned",
+          "status": "done",
           "prompt_file": "",
           "expected": [
-            "AINovelEdit/output/_audit/v05-ch11.md",
+            "AINovelEdit/output/_audit/v5-ch11.md",
             "AINovelEdit/output/v5-ch11.md",
             "AINovelEdit/output/_log/v5-log.md"
           ],
           "attempts": [],
-          "note": ""
+          "note": "грамматический аудит выполнен в составе полного аудита главы (russian-grammar-control вручную по 17/17 блокам + grammar/style/format/check_records/address); отчёт: output/_audit/v5-ch11.md, правки через fix_block.py --replace-file, chapter_gate 12/12"
         },
         {
           "id": "T-0001-S55",
@@ -1429,7 +1477,7 @@
           "chapter": "12",
           "chapter_id": "v05-ch12",
           "status": "interrupted",
-          "prompt_file": "agent_prompts/agent_prompt.v05-ch12.sma-a.md",
+          "prompt_file": "agent_prompts/agent_prompt.v05-ch12.sma-a.attempt3.md",
           "expected": [
             "output/_audit/sma/v5-ch12/a/20261019-010801-65d6.json"
           ],
@@ -1438,6 +1486,22 @@
               "n": 1,
               "started": "2026-10-19 01:08:01",
               "prompt": "agent_prompts/agent_prompt.v05-ch12.sma-a.md",
+              "finished": "",
+              "result": "",
+              "note": ""
+            },
+            {
+              "n": 2,
+              "started": "2026-10-22 09:02:47",
+              "prompt": "agent_prompts/agent_prompt.v05-ch12.sma-a.attempt2.md",
+              "finished": "",
+              "result": "",
+              "note": ""
+            },
+            {
+              "n": 3,
+              "started": "2026-10-22 09:07:07",
+              "prompt": "agent_prompts/agent_prompt.v05-ch12.sma-a.attempt3.md",
               "finished": "",
               "result": "",
               "note": ""
@@ -1452,7 +1516,7 @@
           "chapter": "12",
           "chapter_id": "v05-ch12",
           "status": "interrupted",
-          "prompt_file": "agent_prompts/agent_prompt.v05-ch12.sma-b.md",
+          "prompt_file": "agent_prompts/agent_prompt.v05-ch12.sma-b.attempt2.md",
           "expected": [
             "output/_audit/sma/v5-ch12/b/20261019-010801-8d20.json"
           ],
@@ -1461,6 +1525,14 @@
               "n": 1,
               "started": "2026-10-19 01:08:01",
               "prompt": "agent_prompts/agent_prompt.v05-ch12.sma-b.md",
+              "finished": "",
+              "result": "",
+              "note": ""
+            },
+            {
+              "n": 2,
+              "started": "2026-10-22 09:02:47",
+              "prompt": "agent_prompts/agent_prompt.v05-ch12.sma-b.attempt2.md",
               "finished": "",
               "result": "",
               "note": ""
@@ -1475,7 +1547,7 @@
           "chapter": "12",
           "chapter_id": "v05-ch12",
           "status": "interrupted",
-          "prompt_file": "agent_prompts/agent_prompt.v05-ch12.sma-c.md",
+          "prompt_file": "agent_prompts/agent_prompt.v05-ch12.sma-c.attempt2.md",
           "expected": [
             "output/_audit/sma/v5-ch12/c/20261019-010801-d2ab.json"
           ],
@@ -1484,6 +1556,14 @@
               "n": 1,
               "started": "2026-10-19 01:08:01",
               "prompt": "agent_prompts/agent_prompt.v05-ch12.sma-c.md",
+              "finished": "",
+              "result": "",
+              "note": ""
+            },
+            {
+              "n": 2,
+              "started": "2026-10-22 09:02:47",
+              "prompt": "agent_prompts/agent_prompt.v05-ch12.sma-c.attempt2.md",
               "finished": "",
               "result": "",
               "note": ""
@@ -1841,7 +1921,7 @@
           "volume": 5,
           "chapter": "10",
           "chapter_id": "v05-ch10",
-          "status": "running",
+          "status": "interrupted",
           "prompt_file": "agent_prompts/agent_prompt.v05-ch10.analyzer-phase1.md",
           "expected": [],
           "attempts": [
@@ -1854,7 +1934,7 @@
               "note": ""
             }
           ],
-          "note": ""
+          "note": "нет результата после запуска"
         },
         {
           "id": "T-0001-S86",
@@ -1874,7 +1954,7 @@
           "volume": 5,
           "chapter": "10",
           "chapter_id": "v05-ch10",
-          "status": "running",
+          "status": "done",
           "prompt_file": "agent_prompts/agent_prompt.v05-ch10.grammar-audit.md",
           "expected": [
             "AINovelEdit/output/_audit/v5-ch10.md",
@@ -1886,9 +1966,9 @@
               "n": 1,
               "started": "2026-10-22 03:55:26",
               "prompt": "agent_prompts/agent_prompt.v05-ch10.grammar-audit.md",
-              "finished": "",
-              "result": "",
-              "note": ""
+              "finished": "2026-10-22 08:57:33",
+              "result": "done",
+              "note": "verify --mark"
             }
           ],
           "note": ""
@@ -1899,7 +1979,7 @@
           "volume": 5,
           "chapter": "10",
           "chapter_id": "v05-ch10",
-          "status": "running",
+          "status": "done",
           "prompt_file": "agent_prompts/agent_prompt.v05-ch10.style-audit.md",
           "expected": [
             "AINovelEdit/output/_audit/v5-ch10.md",
@@ -1911,9 +1991,9 @@
               "n": 1,
               "started": "2026-10-22 03:55:26",
               "prompt": "agent_prompts/agent_prompt.v05-ch10.style-audit.md",
-              "finished": "",
-              "result": "",
-              "note": ""
+              "finished": "2026-10-22 08:57:33",
+              "result": "done",
+              "note": "verify --mark"
             }
           ],
           "note": ""
@@ -1924,7 +2004,7 @@
           "volume": 5,
           "chapter": "10",
           "chapter_id": "v05-ch10",
-          "status": "running",
+          "status": "done",
           "prompt_file": "agent_prompts/agent_prompt.v05-ch10.humanizer.md",
           "expected": [
             "AINovelEdit/output/_audit/v5-ch10.md",
@@ -1936,6 +2016,1658 @@
               "n": 1,
               "started": "2026-10-22 03:55:26",
               "prompt": "agent_prompts/agent_prompt.v05-ch10.humanizer.md",
+              "finished": "2026-10-22 08:57:33",
+              "result": "done",
+              "note": "verify --mark"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "id": "T-0001-S90",
+          "kind": "grammar-audit",
+          "volume": 5,
+          "chapter": "12",
+          "chapter_id": "v05-ch12",
+          "status": "running",
+          "prompt_file": "agent_prompts/agent_prompt.v05-ch12.grammar-audit.md",
+          "expected": [
+            "AINovelEdit/output/_audit/v5-ch12.md",
+            "AINovelEdit/output/v5-ch12.md",
+            "AINovelEdit/output/_log/v5-log.md"
+          ],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-10-22 09:39:03",
+              "prompt": "agent_prompts/agent_prompt.v05-ch12.grammar-audit.md",
+              "finished": "",
+              "result": "",
+              "note": ""
+            }
+          ],
+          "note": ""
+        },
+        {
+          "id": "T-0001-S91",
+          "kind": "style-audit",
+          "volume": 5,
+          "chapter": "12",
+          "chapter_id": "v05-ch12",
+          "status": "running",
+          "prompt_file": "agent_prompts/agent_prompt.v05-ch12.style-audit.md",
+          "expected": [
+            "AINovelEdit/output/_audit/v5-ch12.md",
+            "AINovelEdit/output/v5-ch12.md",
+            "AINovelEdit/output/_log/v5-log.md"
+          ],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-10-22 09:39:03",
+              "prompt": "agent_prompts/agent_prompt.v05-ch12.style-audit.md",
+              "finished": "",
+              "result": "",
+              "note": ""
+            }
+          ],
+          "note": ""
+        },
+        {
+          "id": "T-0001-S92",
+          "kind": "humanizer",
+          "volume": 5,
+          "chapter": "12",
+          "chapter_id": "v05-ch12",
+          "status": "running",
+          "prompt_file": "agent_prompts/agent_prompt.v05-ch12.humanizer.md",
+          "expected": [
+            "AINovelEdit/output/_audit/v5-ch12.md",
+            "AINovelEdit/output/v5-ch12.md",
+            "AINovelEdit/output/_log/v5-log.md"
+          ],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-10-22 09:39:03",
+              "prompt": "agent_prompts/agent_prompt.v05-ch12.humanizer.md",
+              "finished": "",
+              "result": "",
+              "note": ""
+            }
+          ],
+          "note": ""
+        },
+        {
+          "id": "T-0001-S93",
+          "kind": "analyzer-phase1",
+          "volume": 5,
+          "chapter": "12",
+          "chapter_id": "v05-ch12",
+          "status": "running",
+          "prompt_file": "agent_prompts/agent_prompt.v05-ch12.analyzer-phase1.md",
+          "expected": [],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-10-22 09:39:03",
+              "prompt": "agent_prompts/agent_prompt.v05-ch12.analyzer-phase1.md",
+              "finished": "",
+              "result": "",
+              "note": ""
+            }
+          ],
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "T-0002",
+      "text": "Tom 6: verify ch01-ch08 full audit",
+      "created": "2026-10-22 18:31:13",
+      "status": "open",
+      "note": "",
+      "subtasks": [
+        {
+          "id": "T-0002-S1",
+          "kind": "sma-a",
+          "volume": 6,
+          "chapter": "afterword",
+          "chapter_id": "v06-afterword",
+          "status": "planned",
+          "prompt_file": "",
+          "expected": [],
+          "attempts": [],
+          "note": ""
+        },
+        {
+          "id": "T-0002-S2",
+          "kind": "sma-b",
+          "volume": 6,
+          "chapter": "afterword",
+          "chapter_id": "v06-afterword",
+          "status": "planned",
+          "prompt_file": "",
+          "expected": [],
+          "attempts": [],
+          "note": ""
+        },
+        {
+          "id": "T-0002-S3",
+          "kind": "sma-c",
+          "volume": 6,
+          "chapter": "afterword",
+          "chapter_id": "v06-afterword",
+          "status": "planned",
+          "prompt_file": "",
+          "expected": [],
+          "attempts": [],
+          "note": ""
+        },
+        {
+          "id": "T-0002-S4",
+          "kind": "analyzer-phase1",
+          "volume": 6,
+          "chapter": "afterword",
+          "chapter_id": "v06-afterword",
+          "status": "planned",
+          "prompt_file": "",
+          "expected": [],
+          "attempts": [],
+          "note": ""
+        },
+        {
+          "id": "T-0002-S5",
+          "kind": "analyzer-phase2",
+          "volume": 6,
+          "chapter": "afterword",
+          "chapter_id": "v06-afterword",
+          "status": "planned",
+          "prompt_file": "",
+          "expected": [],
+          "attempts": [],
+          "note": ""
+        },
+        {
+          "id": "T-0002-S6",
+          "kind": "grammar-audit",
+          "volume": 6,
+          "chapter": "afterword",
+          "chapter_id": "v06-afterword",
+          "status": "planned",
+          "prompt_file": "",
+          "expected": [
+            "AINovelEdit/output/_audit/v06-afterword.md",
+            "AINovelEdit/output/v6-afterword.md",
+            "AINovelEdit/output/_log/v6-log.md"
+          ],
+          "attempts": [],
+          "note": ""
+        },
+        {
+          "id": "T-0002-S7",
+          "kind": "style-audit",
+          "volume": 6,
+          "chapter": "afterword",
+          "chapter_id": "v06-afterword",
+          "status": "planned",
+          "prompt_file": "",
+          "expected": [
+            "AINovelEdit/output/_audit/v06-afterword.md",
+            "AINovelEdit/output/v6-afterword.md",
+            "AINovelEdit/output/_log/v6-log.md"
+          ],
+          "attempts": [],
+          "note": ""
+        },
+        {
+          "id": "T-0002-S8",
+          "kind": "humanizer",
+          "volume": 6,
+          "chapter": "afterword",
+          "chapter_id": "v06-afterword",
+          "status": "planned",
+          "prompt_file": "",
+          "expected": [
+            "AINovelEdit/output/_audit/v06-afterword.md",
+            "AINovelEdit/output/v6-afterword.md",
+            "AINovelEdit/output/_log/v6-log.md"
+          ],
+          "attempts": [],
+          "note": ""
+        },
+        {
+          "id": "T-0002-S9",
+          "kind": "sma-a",
+          "volume": 6,
+          "chapter": "01",
+          "chapter_id": "v06-ch01",
+          "status": "running",
+          "prompt_file": "agent_prompts/agent_prompt.v06-ch01.sma-a.md",
+          "expected": [
+            "output/_audit/sma/v6-ch01/a/20261022-183202-9ed1.json"
+          ],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-10-22 18:32:02",
+              "prompt": "agent_prompts/agent_prompt.v06-ch01.sma-a.md",
+              "finished": "",
+              "result": "",
+              "note": ""
+            }
+          ],
+          "note": ""
+        },
+        {
+          "id": "T-0002-S10",
+          "kind": "sma-b",
+          "volume": 6,
+          "chapter": "01",
+          "chapter_id": "v06-ch01",
+          "status": "running",
+          "prompt_file": "agent_prompts/agent_prompt.v06-ch01.sma-b.md",
+          "expected": [
+            "output/_audit/sma/v6-ch01/b/20261022-183202-0a9d.json"
+          ],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-10-22 18:32:02",
+              "prompt": "agent_prompts/agent_prompt.v06-ch01.sma-b.md",
+              "finished": "",
+              "result": "",
+              "note": ""
+            }
+          ],
+          "note": ""
+        },
+        {
+          "id": "T-0002-S11",
+          "kind": "sma-c",
+          "volume": 6,
+          "chapter": "01",
+          "chapter_id": "v06-ch01",
+          "status": "running",
+          "prompt_file": "agent_prompts/agent_prompt.v06-ch01.sma-c.md",
+          "expected": [
+            "output/_audit/sma/v6-ch01/c/20261022-183202-0714.json"
+          ],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-10-22 18:32:02",
+              "prompt": "agent_prompts/agent_prompt.v06-ch01.sma-c.md",
+              "finished": "",
+              "result": "",
+              "note": ""
+            }
+          ],
+          "note": ""
+        },
+        {
+          "id": "T-0002-S12",
+          "kind": "analyzer-phase1",
+          "volume": 6,
+          "chapter": "01",
+          "chapter_id": "v06-ch01",
+          "status": "running",
+          "prompt_file": "agent_prompts/agent_prompt.v06-ch01.analyzer-phase1.md",
+          "expected": [],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-10-22 18:32:02",
+              "prompt": "agent_prompts/agent_prompt.v06-ch01.analyzer-phase1.md",
+              "finished": "",
+              "result": "",
+              "note": ""
+            }
+          ],
+          "note": ""
+        },
+        {
+          "id": "T-0002-S13",
+          "kind": "analyzer-phase2",
+          "volume": 6,
+          "chapter": "01",
+          "chapter_id": "v06-ch01",
+          "status": "running",
+          "prompt_file": "agent_prompts/agent_prompt.v06-ch01.analyzer-phase2.md",
+          "expected": [
+            "output/_audit/sma/v6-ch01/precheck/omission-precheck.json",
+            "output/_audit/sma/v6-ch01/analysis/20261022-183202-2928.json",
+            "output/_audit/sma/v6-ch01/analysis/20261022-183202-2928.md"
+          ],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-10-22 18:32:02",
+              "prompt": "agent_prompts/agent_prompt.v06-ch01.analyzer-phase2.md",
+              "finished": "",
+              "result": "",
+              "note": ""
+            }
+          ],
+          "note": ""
+        },
+        {
+          "id": "T-0002-S14",
+          "kind": "grammar-audit",
+          "volume": 6,
+          "chapter": "01",
+          "chapter_id": "v06-ch01",
+          "status": "planned",
+          "prompt_file": "",
+          "expected": [
+            "AINovelEdit/output/_audit/v06-ch01.md",
+            "AINovelEdit/output/v6-ch01.md",
+            "AINovelEdit/output/_log/v6-log.md"
+          ],
+          "attempts": [],
+          "note": ""
+        },
+        {
+          "id": "T-0002-S15",
+          "kind": "style-audit",
+          "volume": 6,
+          "chapter": "01",
+          "chapter_id": "v06-ch01",
+          "status": "planned",
+          "prompt_file": "",
+          "expected": [
+            "AINovelEdit/output/_audit/v06-ch01.md",
+            "AINovelEdit/output/v6-ch01.md",
+            "AINovelEdit/output/_log/v6-log.md"
+          ],
+          "attempts": [],
+          "note": ""
+        },
+        {
+          "id": "T-0002-S16",
+          "kind": "humanizer",
+          "volume": 6,
+          "chapter": "01",
+          "chapter_id": "v06-ch01",
+          "status": "planned",
+          "prompt_file": "",
+          "expected": [
+            "AINovelEdit/output/_audit/v06-ch01.md",
+            "AINovelEdit/output/v6-ch01.md",
+            "AINovelEdit/output/_log/v6-log.md"
+          ],
+          "attempts": [],
+          "note": ""
+        },
+        {
+          "id": "T-0002-S17",
+          "kind": "sma-a",
+          "volume": 6,
+          "chapter": "02",
+          "chapter_id": "v06-ch02",
+          "status": "running",
+          "prompt_file": "agent_prompts/agent_prompt.v06-ch02.sma-a.md",
+          "expected": [
+            "output/_audit/sma/v6-ch02/a/20261022-183227-90f7.json"
+          ],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-10-22 18:32:27",
+              "prompt": "agent_prompts/agent_prompt.v06-ch02.sma-a.md",
+              "finished": "",
+              "result": "",
+              "note": ""
+            }
+          ],
+          "note": ""
+        },
+        {
+          "id": "T-0002-S18",
+          "kind": "sma-b",
+          "volume": 6,
+          "chapter": "02",
+          "chapter_id": "v06-ch02",
+          "status": "running",
+          "prompt_file": "agent_prompts/agent_prompt.v06-ch02.sma-b.md",
+          "expected": [
+            "output/_audit/sma/v6-ch02/b/20261022-183227-cadc.json"
+          ],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-10-22 18:32:27",
+              "prompt": "agent_prompts/agent_prompt.v06-ch02.sma-b.md",
+              "finished": "",
+              "result": "",
+              "note": ""
+            }
+          ],
+          "note": ""
+        },
+        {
+          "id": "T-0002-S19",
+          "kind": "sma-c",
+          "volume": 6,
+          "chapter": "02",
+          "chapter_id": "v06-ch02",
+          "status": "running",
+          "prompt_file": "agent_prompts/agent_prompt.v06-ch02.sma-c.md",
+          "expected": [
+            "output/_audit/sma/v6-ch02/c/20261022-183227-866d.json"
+          ],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-10-22 18:32:27",
+              "prompt": "agent_prompts/agent_prompt.v06-ch02.sma-c.md",
+              "finished": "",
+              "result": "",
+              "note": ""
+            }
+          ],
+          "note": ""
+        },
+        {
+          "id": "T-0002-S20",
+          "kind": "analyzer-phase1",
+          "volume": 6,
+          "chapter": "02",
+          "chapter_id": "v06-ch02",
+          "status": "running",
+          "prompt_file": "agent_prompts/agent_prompt.v06-ch02.analyzer-phase1.md",
+          "expected": [],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-10-22 18:32:27",
+              "prompt": "agent_prompts/agent_prompt.v06-ch02.analyzer-phase1.md",
+              "finished": "",
+              "result": "",
+              "note": ""
+            }
+          ],
+          "note": ""
+        },
+        {
+          "id": "T-0002-S21",
+          "kind": "analyzer-phase2",
+          "volume": 6,
+          "chapter": "02",
+          "chapter_id": "v06-ch02",
+          "status": "running",
+          "prompt_file": "agent_prompts/agent_prompt.v06-ch02.analyzer-phase2.md",
+          "expected": [
+            "output/_audit/sma/v6-ch02/precheck/omission-precheck.json",
+            "output/_audit/sma/v6-ch02/analysis/20261022-183227-548f.json",
+            "output/_audit/sma/v6-ch02/analysis/20261022-183227-548f.md"
+          ],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-10-22 18:32:27",
+              "prompt": "agent_prompts/agent_prompt.v06-ch02.analyzer-phase2.md",
+              "finished": "",
+              "result": "",
+              "note": ""
+            }
+          ],
+          "note": ""
+        },
+        {
+          "id": "T-0002-S22",
+          "kind": "grammar-audit",
+          "volume": 6,
+          "chapter": "02",
+          "chapter_id": "v06-ch02",
+          "status": "planned",
+          "prompt_file": "",
+          "expected": [
+            "AINovelEdit/output/_audit/v06-ch02.md",
+            "AINovelEdit/output/v6-ch02.md",
+            "AINovelEdit/output/_log/v6-log.md"
+          ],
+          "attempts": [],
+          "note": ""
+        },
+        {
+          "id": "T-0002-S23",
+          "kind": "style-audit",
+          "volume": 6,
+          "chapter": "02",
+          "chapter_id": "v06-ch02",
+          "status": "planned",
+          "prompt_file": "",
+          "expected": [
+            "AINovelEdit/output/_audit/v06-ch02.md",
+            "AINovelEdit/output/v6-ch02.md",
+            "AINovelEdit/output/_log/v6-log.md"
+          ],
+          "attempts": [],
+          "note": ""
+        },
+        {
+          "id": "T-0002-S24",
+          "kind": "humanizer",
+          "volume": 6,
+          "chapter": "02",
+          "chapter_id": "v06-ch02",
+          "status": "planned",
+          "prompt_file": "",
+          "expected": [
+            "AINovelEdit/output/_audit/v06-ch02.md",
+            "AINovelEdit/output/v6-ch02.md",
+            "AINovelEdit/output/_log/v6-log.md"
+          ],
+          "attempts": [],
+          "note": ""
+        },
+        {
+          "id": "T-0002-S25",
+          "kind": "sma-a",
+          "volume": 6,
+          "chapter": "03",
+          "chapter_id": "v06-ch03",
+          "status": "running",
+          "prompt_file": "agent_prompts/agent_prompt.v06-ch03.sma-a.md",
+          "expected": [
+            "output/_audit/sma/v6-ch03/a/20261022-183227-2070.json"
+          ],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-10-22 18:32:27",
+              "prompt": "agent_prompts/agent_prompt.v06-ch03.sma-a.md",
+              "finished": "",
+              "result": "",
+              "note": ""
+            }
+          ],
+          "note": ""
+        },
+        {
+          "id": "T-0002-S26",
+          "kind": "sma-b",
+          "volume": 6,
+          "chapter": "03",
+          "chapter_id": "v06-ch03",
+          "status": "running",
+          "prompt_file": "agent_prompts/agent_prompt.v06-ch03.sma-b.md",
+          "expected": [
+            "output/_audit/sma/v6-ch03/b/20261022-183227-c3ab.json"
+          ],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-10-22 18:32:27",
+              "prompt": "agent_prompts/agent_prompt.v06-ch03.sma-b.md",
+              "finished": "",
+              "result": "",
+              "note": ""
+            }
+          ],
+          "note": ""
+        },
+        {
+          "id": "T-0002-S27",
+          "kind": "sma-c",
+          "volume": 6,
+          "chapter": "03",
+          "chapter_id": "v06-ch03",
+          "status": "running",
+          "prompt_file": "agent_prompts/agent_prompt.v06-ch03.sma-c.md",
+          "expected": [
+            "output/_audit/sma/v6-ch03/c/20261022-183227-c225.json"
+          ],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-10-22 18:32:27",
+              "prompt": "agent_prompts/agent_prompt.v06-ch03.sma-c.md",
+              "finished": "",
+              "result": "",
+              "note": ""
+            }
+          ],
+          "note": ""
+        },
+        {
+          "id": "T-0002-S28",
+          "kind": "analyzer-phase1",
+          "volume": 6,
+          "chapter": "03",
+          "chapter_id": "v06-ch03",
+          "status": "running",
+          "prompt_file": "agent_prompts/agent_prompt.v06-ch03.analyzer-phase1.md",
+          "expected": [],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-10-22 18:32:27",
+              "prompt": "agent_prompts/agent_prompt.v06-ch03.analyzer-phase1.md",
+              "finished": "",
+              "result": "",
+              "note": ""
+            }
+          ],
+          "note": ""
+        },
+        {
+          "id": "T-0002-S29",
+          "kind": "analyzer-phase2",
+          "volume": 6,
+          "chapter": "03",
+          "chapter_id": "v06-ch03",
+          "status": "running",
+          "prompt_file": "agent_prompts/agent_prompt.v06-ch03.analyzer-phase2.md",
+          "expected": [
+            "output/_audit/sma/v6-ch03/precheck/omission-precheck.json",
+            "output/_audit/sma/v6-ch03/analysis/20261022-183227-9c74.json",
+            "output/_audit/sma/v6-ch03/analysis/20261022-183227-9c74.md"
+          ],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-10-22 18:32:27",
+              "prompt": "agent_prompts/agent_prompt.v06-ch03.analyzer-phase2.md",
+              "finished": "",
+              "result": "",
+              "note": ""
+            }
+          ],
+          "note": ""
+        },
+        {
+          "id": "T-0002-S30",
+          "kind": "grammar-audit",
+          "volume": 6,
+          "chapter": "03",
+          "chapter_id": "v06-ch03",
+          "status": "running",
+          "prompt_file": "agent_prompts/agent_prompt.v06-ch03.grammar-audit.md",
+          "expected": [
+            "AINovelEdit/output/_audit/v06-ch03.md",
+            "AINovelEdit/output/v6-ch03.md",
+            "AINovelEdit/output/_log/v6-log.md"
+          ],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-10-22 18:32:27",
+              "prompt": "agent_prompts/agent_prompt.v06-ch03.grammar-audit.md",
+              "finished": "",
+              "result": "",
+              "note": ""
+            }
+          ],
+          "note": ""
+        },
+        {
+          "id": "T-0002-S31",
+          "kind": "style-audit",
+          "volume": 6,
+          "chapter": "03",
+          "chapter_id": "v06-ch03",
+          "status": "planned",
+          "prompt_file": "",
+          "expected": [
+            "AINovelEdit/output/_audit/v06-ch03.md",
+            "AINovelEdit/output/v6-ch03.md",
+            "AINovelEdit/output/_log/v6-log.md"
+          ],
+          "attempts": [],
+          "note": ""
+        },
+        {
+          "id": "T-0002-S32",
+          "kind": "humanizer",
+          "volume": 6,
+          "chapter": "03",
+          "chapter_id": "v06-ch03",
+          "status": "planned",
+          "prompt_file": "",
+          "expected": [
+            "AINovelEdit/output/_audit/v06-ch03.md",
+            "AINovelEdit/output/v6-ch03.md",
+            "AINovelEdit/output/_log/v6-log.md"
+          ],
+          "attempts": [],
+          "note": ""
+        },
+        {
+          "id": "T-0002-S33",
+          "kind": "sma-a",
+          "volume": 6,
+          "chapter": "04",
+          "chapter_id": "v06-ch04",
+          "status": "running",
+          "prompt_file": "agent_prompts/agent_prompt.v06-ch04.sma-a.md",
+          "expected": [
+            "output/_audit/sma/v6-ch04/a/20261022-183938-490f.json"
+          ],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-10-22 18:39:38",
+              "prompt": "agent_prompts/agent_prompt.v06-ch04.sma-a.md",
+              "finished": "",
+              "result": "",
+              "note": ""
+            }
+          ],
+          "note": ""
+        },
+        {
+          "id": "T-0002-S34",
+          "kind": "sma-b",
+          "volume": 6,
+          "chapter": "04",
+          "chapter_id": "v06-ch04",
+          "status": "running",
+          "prompt_file": "agent_prompts/agent_prompt.v06-ch04.sma-b.md",
+          "expected": [
+            "output/_audit/sma/v6-ch04/b/20261022-183938-2c6e.json"
+          ],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-10-22 18:39:38",
+              "prompt": "agent_prompts/agent_prompt.v06-ch04.sma-b.md",
+              "finished": "",
+              "result": "",
+              "note": ""
+            }
+          ],
+          "note": ""
+        },
+        {
+          "id": "T-0002-S35",
+          "kind": "sma-c",
+          "volume": 6,
+          "chapter": "04",
+          "chapter_id": "v06-ch04",
+          "status": "running",
+          "prompt_file": "agent_prompts/agent_prompt.v06-ch04.sma-c.md",
+          "expected": [
+            "output/_audit/sma/v6-ch04/c/20261022-183938-230e.json"
+          ],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-10-22 18:39:38",
+              "prompt": "agent_prompts/agent_prompt.v06-ch04.sma-c.md",
+              "finished": "",
+              "result": "",
+              "note": ""
+            }
+          ],
+          "note": ""
+        },
+        {
+          "id": "T-0002-S36",
+          "kind": "analyzer-phase1",
+          "volume": 6,
+          "chapter": "04",
+          "chapter_id": "v06-ch04",
+          "status": "running",
+          "prompt_file": "agent_prompts/agent_prompt.v06-ch04.analyzer-phase1.md",
+          "expected": [],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-10-22 18:39:38",
+              "prompt": "agent_prompts/agent_prompt.v06-ch04.analyzer-phase1.md",
+              "finished": "",
+              "result": "",
+              "note": ""
+            }
+          ],
+          "note": ""
+        },
+        {
+          "id": "T-0002-S37",
+          "kind": "analyzer-phase2",
+          "volume": 6,
+          "chapter": "04",
+          "chapter_id": "v06-ch04",
+          "status": "running",
+          "prompt_file": "agent_prompts/agent_prompt.v06-ch04.analyzer-phase2.md",
+          "expected": [
+            "output/_audit/sma/v6-ch04/precheck/omission-precheck.json",
+            "output/_audit/sma/v6-ch04/analysis/20261022-183938-aaef.json",
+            "output/_audit/sma/v6-ch04/analysis/20261022-183938-aaef.md"
+          ],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-10-22 18:39:38",
+              "prompt": "agent_prompts/agent_prompt.v06-ch04.analyzer-phase2.md",
+              "finished": "",
+              "result": "",
+              "note": ""
+            }
+          ],
+          "note": ""
+        },
+        {
+          "id": "T-0002-S38",
+          "kind": "grammar-audit",
+          "volume": 6,
+          "chapter": "04",
+          "chapter_id": "v06-ch04",
+          "status": "running",
+          "prompt_file": "agent_prompts/agent_prompt.v06-ch04.grammar-audit.md",
+          "expected": [
+            "AINovelEdit/output/_audit/v6-ch04.md",
+            "AINovelEdit/output/v6-ch04.md",
+            "AINovelEdit/output/_log/v6-log.md"
+          ],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-10-22 18:39:38",
+              "prompt": "agent_prompts/agent_prompt.v06-ch04.grammar-audit.md",
+              "finished": "",
+              "result": "",
+              "note": ""
+            }
+          ],
+          "note": ""
+        },
+        {
+          "id": "T-0002-S39",
+          "kind": "style-audit",
+          "volume": 6,
+          "chapter": "04",
+          "chapter_id": "v06-ch04",
+          "status": "running",
+          "prompt_file": "agent_prompts/agent_prompt.v06-ch04.style-audit.md",
+          "expected": [
+            "AINovelEdit/output/_audit/v6-ch04.md",
+            "AINovelEdit/output/v6-ch04.md",
+            "AINovelEdit/output/_log/v6-log.md"
+          ],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-10-22 18:39:38",
+              "prompt": "agent_prompts/agent_prompt.v06-ch04.style-audit.md",
+              "finished": "",
+              "result": "",
+              "note": ""
+            }
+          ],
+          "note": ""
+        },
+        {
+          "id": "T-0002-S40",
+          "kind": "humanizer",
+          "volume": 6,
+          "chapter": "04",
+          "chapter_id": "v06-ch04",
+          "status": "planned",
+          "prompt_file": "",
+          "expected": [
+            "AINovelEdit/output/_audit/v6-ch04.md",
+            "AINovelEdit/output/v6-ch04.md",
+            "AINovelEdit/output/_log/v6-log.md"
+          ],
+          "attempts": [],
+          "note": ""
+        },
+        {
+          "id": "T-0002-S41",
+          "kind": "sma-a",
+          "volume": 6,
+          "chapter": "05",
+          "chapter_id": "v06-ch05",
+          "status": "running",
+          "prompt_file": "agent_prompts/agent_prompt.v06-ch05.sma-a.md",
+          "expected": [
+            "output/_audit/sma/v6-ch05/a/20261022-183938-9642.json"
+          ],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-10-22 18:39:38",
+              "prompt": "agent_prompts/agent_prompt.v06-ch05.sma-a.md",
+              "finished": "",
+              "result": "",
+              "note": ""
+            }
+          ],
+          "note": ""
+        },
+        {
+          "id": "T-0002-S42",
+          "kind": "sma-b",
+          "volume": 6,
+          "chapter": "05",
+          "chapter_id": "v06-ch05",
+          "status": "running",
+          "prompt_file": "agent_prompts/agent_prompt.v06-ch05.sma-b.md",
+          "expected": [
+            "output/_audit/sma/v6-ch05/b/20261022-183938-f5ab.json"
+          ],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-10-22 18:39:38",
+              "prompt": "agent_prompts/agent_prompt.v06-ch05.sma-b.md",
+              "finished": "",
+              "result": "",
+              "note": ""
+            }
+          ],
+          "note": ""
+        },
+        {
+          "id": "T-0002-S43",
+          "kind": "sma-c",
+          "volume": 6,
+          "chapter": "05",
+          "chapter_id": "v06-ch05",
+          "status": "running",
+          "prompt_file": "agent_prompts/agent_prompt.v06-ch05.sma-c.md",
+          "expected": [
+            "output/_audit/sma/v6-ch05/c/20261022-183938-6c17.json"
+          ],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-10-22 18:39:38",
+              "prompt": "agent_prompts/agent_prompt.v06-ch05.sma-c.md",
+              "finished": "",
+              "result": "",
+              "note": ""
+            }
+          ],
+          "note": ""
+        },
+        {
+          "id": "T-0002-S44",
+          "kind": "analyzer-phase1",
+          "volume": 6,
+          "chapter": "05",
+          "chapter_id": "v06-ch05",
+          "status": "running",
+          "prompt_file": "agent_prompts/agent_prompt.v06-ch05.analyzer-phase1.md",
+          "expected": [],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-10-22 18:39:38",
+              "prompt": "agent_prompts/agent_prompt.v06-ch05.analyzer-phase1.md",
+              "finished": "",
+              "result": "",
+              "note": ""
+            }
+          ],
+          "note": ""
+        },
+        {
+          "id": "T-0002-S45",
+          "kind": "analyzer-phase2",
+          "volume": 6,
+          "chapter": "05",
+          "chapter_id": "v06-ch05",
+          "status": "running",
+          "prompt_file": "agent_prompts/agent_prompt.v06-ch05.analyzer-phase2.md",
+          "expected": [
+            "output/_audit/sma/v6-ch05/precheck/omission-precheck.json",
+            "output/_audit/sma/v6-ch05/analysis/20261022-183938-0823.json",
+            "output/_audit/sma/v6-ch05/analysis/20261022-183938-0823.md"
+          ],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-10-22 18:39:38",
+              "prompt": "agent_prompts/agent_prompt.v06-ch05.analyzer-phase2.md",
+              "finished": "",
+              "result": "",
+              "note": ""
+            }
+          ],
+          "note": ""
+        },
+        {
+          "id": "T-0002-S46",
+          "kind": "grammar-audit",
+          "volume": 6,
+          "chapter": "05",
+          "chapter_id": "v06-ch05",
+          "status": "running",
+          "prompt_file": "agent_prompts/agent_prompt.v06-ch05.grammar-audit.md",
+          "expected": [
+            "AINovelEdit/output/_audit/v06-ch05.md",
+            "AINovelEdit/output/v6-ch05.md",
+            "AINovelEdit/output/_log/v6-log.md"
+          ],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-10-22 18:39:38",
+              "prompt": "agent_prompts/agent_prompt.v06-ch05.grammar-audit.md",
+              "finished": "",
+              "result": "",
+              "note": ""
+            }
+          ],
+          "note": ""
+        },
+        {
+          "id": "T-0002-S47",
+          "kind": "style-audit",
+          "volume": 6,
+          "chapter": "05",
+          "chapter_id": "v06-ch05",
+          "status": "running",
+          "prompt_file": "agent_prompts/agent_prompt.v06-ch05.style-audit.md",
+          "expected": [
+            "AINovelEdit/output/_audit/v06-ch05.md",
+            "AINovelEdit/output/v6-ch05.md",
+            "AINovelEdit/output/_log/v6-log.md"
+          ],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-10-22 18:39:38",
+              "prompt": "agent_prompts/agent_prompt.v06-ch05.style-audit.md",
+              "finished": "",
+              "result": "",
+              "note": ""
+            }
+          ],
+          "note": ""
+        },
+        {
+          "id": "T-0002-S48",
+          "kind": "humanizer",
+          "volume": 6,
+          "chapter": "05",
+          "chapter_id": "v06-ch05",
+          "status": "running",
+          "prompt_file": "agent_prompts/agent_prompt.v06-ch05.humanizer.md",
+          "expected": [
+            "AINovelEdit/output/_audit/v06-ch05.md",
+            "AINovelEdit/output/v6-ch05.md",
+            "AINovelEdit/output/_log/v6-log.md"
+          ],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-10-22 18:39:38",
+              "prompt": "agent_prompts/agent_prompt.v06-ch05.humanizer.md",
+              "finished": "",
+              "result": "",
+              "note": ""
+            }
+          ],
+          "note": ""
+        },
+        {
+          "id": "T-0002-S49",
+          "kind": "sma-a",
+          "volume": 6,
+          "chapter": "06",
+          "chapter_id": "v06-ch06",
+          "status": "running",
+          "prompt_file": "agent_prompts/agent_prompt.v06-ch06.sma-a.md",
+          "expected": [
+            "output/_audit/sma/v6-ch06/a/20261022-183938-8387.json"
+          ],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-10-22 18:39:38",
+              "prompt": "agent_prompts/agent_prompt.v06-ch06.sma-a.md",
+              "finished": "",
+              "result": "",
+              "note": ""
+            }
+          ],
+          "note": ""
+        },
+        {
+          "id": "T-0002-S50",
+          "kind": "sma-b",
+          "volume": 6,
+          "chapter": "06",
+          "chapter_id": "v06-ch06",
+          "status": "running",
+          "prompt_file": "agent_prompts/agent_prompt.v06-ch06.sma-b.md",
+          "expected": [
+            "output/_audit/sma/v6-ch06/b/20261022-183938-dc7b.json"
+          ],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-10-22 18:39:39",
+              "prompt": "agent_prompts/agent_prompt.v06-ch06.sma-b.md",
+              "finished": "",
+              "result": "",
+              "note": ""
+            }
+          ],
+          "note": ""
+        },
+        {
+          "id": "T-0002-S51",
+          "kind": "sma-c",
+          "volume": 6,
+          "chapter": "06",
+          "chapter_id": "v06-ch06",
+          "status": "running",
+          "prompt_file": "agent_prompts/agent_prompt.v06-ch06.sma-c.md",
+          "expected": [
+            "output/_audit/sma/v6-ch06/c/20261022-183939-3dcf.json"
+          ],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-10-22 18:39:39",
+              "prompt": "agent_prompts/agent_prompt.v06-ch06.sma-c.md",
+              "finished": "",
+              "result": "",
+              "note": ""
+            }
+          ],
+          "note": ""
+        },
+        {
+          "id": "T-0002-S52",
+          "kind": "analyzer-phase1",
+          "volume": 6,
+          "chapter": "06",
+          "chapter_id": "v06-ch06",
+          "status": "running",
+          "prompt_file": "agent_prompts/agent_prompt.v06-ch06.analyzer-phase1.md",
+          "expected": [],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-10-22 18:39:39",
+              "prompt": "agent_prompts/agent_prompt.v06-ch06.analyzer-phase1.md",
+              "finished": "",
+              "result": "",
+              "note": ""
+            }
+          ],
+          "note": ""
+        },
+        {
+          "id": "T-0002-S53",
+          "kind": "analyzer-phase2",
+          "volume": 6,
+          "chapter": "06",
+          "chapter_id": "v06-ch06",
+          "status": "running",
+          "prompt_file": "agent_prompts/agent_prompt.v06-ch06.analyzer-phase2.md",
+          "expected": [
+            "output/_audit/sma/v6-ch06/precheck/omission-precheck.json",
+            "output/_audit/sma/v6-ch06/analysis/20261022-183939-2422.json",
+            "output/_audit/sma/v6-ch06/analysis/20261022-183939-2422.md"
+          ],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-10-22 18:39:39",
+              "prompt": "agent_prompts/agent_prompt.v06-ch06.analyzer-phase2.md",
+              "finished": "",
+              "result": "",
+              "note": ""
+            }
+          ],
+          "note": ""
+        },
+        {
+          "id": "T-0002-S54",
+          "kind": "grammar-audit",
+          "volume": 6,
+          "chapter": "06",
+          "chapter_id": "v06-ch06",
+          "status": "running",
+          "prompt_file": "agent_prompts/agent_prompt.v06-ch06.grammar-audit.md",
+          "expected": [
+            "AINovelEdit/output/_audit/v06-ch06.md",
+            "AINovelEdit/output/v6-ch06.md",
+            "AINovelEdit/output/_log/v6-log.md"
+          ],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-10-22 18:39:39",
+              "prompt": "agent_prompts/agent_prompt.v06-ch06.grammar-audit.md",
+              "finished": "",
+              "result": "",
+              "note": ""
+            }
+          ],
+          "note": ""
+        },
+        {
+          "id": "T-0002-S55",
+          "kind": "style-audit",
+          "volume": 6,
+          "chapter": "06",
+          "chapter_id": "v06-ch06",
+          "status": "running",
+          "prompt_file": "agent_prompts/agent_prompt.v06-ch06.style-audit.md",
+          "expected": [
+            "AINovelEdit/output/_audit/v06-ch06.md",
+            "AINovelEdit/output/v6-ch06.md",
+            "AINovelEdit/output/_log/v6-log.md"
+          ],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-10-22 18:39:39",
+              "prompt": "agent_prompts/agent_prompt.v06-ch06.style-audit.md",
+              "finished": "",
+              "result": "",
+              "note": ""
+            }
+          ],
+          "note": ""
+        },
+        {
+          "id": "T-0002-S56",
+          "kind": "humanizer",
+          "volume": 6,
+          "chapter": "06",
+          "chapter_id": "v06-ch06",
+          "status": "running",
+          "prompt_file": "agent_prompts/agent_prompt.v06-ch06.humanizer.md",
+          "expected": [
+            "AINovelEdit/output/_audit/v06-ch06.md",
+            "AINovelEdit/output/v6-ch06.md",
+            "AINovelEdit/output/_log/v6-log.md"
+          ],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-10-22 18:39:39",
+              "prompt": "agent_prompts/agent_prompt.v06-ch06.humanizer.md",
+              "finished": "",
+              "result": "",
+              "note": ""
+            }
+          ],
+          "note": ""
+        },
+        {
+          "id": "T-0002-S57",
+          "kind": "sma-a",
+          "volume": 6,
+          "chapter": "07",
+          "chapter_id": "v06-ch07",
+          "status": "running",
+          "prompt_file": "agent_prompts/agent_prompt.v06-ch07.sma-a.md",
+          "expected": [
+            "output/_audit/sma/v6-ch07/a/20261022-183939-9291.json"
+          ],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-10-22 18:39:39",
+              "prompt": "agent_prompts/agent_prompt.v06-ch07.sma-a.md",
+              "finished": "",
+              "result": "",
+              "note": ""
+            }
+          ],
+          "note": ""
+        },
+        {
+          "id": "T-0002-S58",
+          "kind": "sma-b",
+          "volume": 6,
+          "chapter": "07",
+          "chapter_id": "v06-ch07",
+          "status": "running",
+          "prompt_file": "agent_prompts/agent_prompt.v06-ch07.sma-b.md",
+          "expected": [
+            "output/_audit/sma/v6-ch07/b/20261022-183939-81c5.json"
+          ],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-10-22 18:39:39",
+              "prompt": "agent_prompts/agent_prompt.v06-ch07.sma-b.md",
+              "finished": "",
+              "result": "",
+              "note": ""
+            }
+          ],
+          "note": ""
+        },
+        {
+          "id": "T-0002-S59",
+          "kind": "sma-c",
+          "volume": 6,
+          "chapter": "07",
+          "chapter_id": "v06-ch07",
+          "status": "running",
+          "prompt_file": "agent_prompts/agent_prompt.v06-ch07.sma-c.md",
+          "expected": [
+            "output/_audit/sma/v6-ch07/c/20261022-183939-d3dd.json"
+          ],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-10-22 18:39:39",
+              "prompt": "agent_prompts/agent_prompt.v06-ch07.sma-c.md",
+              "finished": "",
+              "result": "",
+              "note": ""
+            }
+          ],
+          "note": ""
+        },
+        {
+          "id": "T-0002-S60",
+          "kind": "analyzer-phase1",
+          "volume": 6,
+          "chapter": "07",
+          "chapter_id": "v06-ch07",
+          "status": "running",
+          "prompt_file": "agent_prompts/agent_prompt.v06-ch07.analyzer-phase1.md",
+          "expected": [],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-10-22 18:39:39",
+              "prompt": "agent_prompts/agent_prompt.v06-ch07.analyzer-phase1.md",
+              "finished": "",
+              "result": "",
+              "note": ""
+            }
+          ],
+          "note": ""
+        },
+        {
+          "id": "T-0002-S61",
+          "kind": "analyzer-phase2",
+          "volume": 6,
+          "chapter": "07",
+          "chapter_id": "v06-ch07",
+          "status": "running",
+          "prompt_file": "agent_prompts/agent_prompt.v06-ch07.analyzer-phase2.md",
+          "expected": [
+            "output/_audit/sma/v6-ch07/precheck/omission-precheck.json",
+            "output/_audit/sma/v6-ch07/analysis/20261022-183939-02fd.json",
+            "output/_audit/sma/v6-ch07/analysis/20261022-183939-02fd.md"
+          ],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-10-22 18:39:39",
+              "prompt": "agent_prompts/agent_prompt.v06-ch07.analyzer-phase2.md",
+              "finished": "",
+              "result": "",
+              "note": ""
+            }
+          ],
+          "note": ""
+        },
+        {
+          "id": "T-0002-S62",
+          "kind": "grammar-audit",
+          "volume": 6,
+          "chapter": "07",
+          "chapter_id": "v06-ch07",
+          "status": "running",
+          "prompt_file": "agent_prompts/agent_prompt.v06-ch07.grammar-audit.md",
+          "expected": [
+            "AINovelEdit/output/_audit/v06-ch07.md",
+            "AINovelEdit/output/v6-ch07.md",
+            "AINovelEdit/output/_log/v6-log.md"
+          ],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-10-22 18:39:39",
+              "prompt": "agent_prompts/agent_prompt.v06-ch07.grammar-audit.md",
+              "finished": "",
+              "result": "",
+              "note": ""
+            }
+          ],
+          "note": ""
+        },
+        {
+          "id": "T-0002-S63",
+          "kind": "style-audit",
+          "volume": 6,
+          "chapter": "07",
+          "chapter_id": "v06-ch07",
+          "status": "running",
+          "prompt_file": "agent_prompts/agent_prompt.v06-ch07.style-audit.md",
+          "expected": [
+            "AINovelEdit/output/_audit/v06-ch07.md",
+            "AINovelEdit/output/v6-ch07.md",
+            "AINovelEdit/output/_log/v6-log.md"
+          ],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-10-22 18:39:39",
+              "prompt": "agent_prompts/agent_prompt.v06-ch07.style-audit.md",
+              "finished": "",
+              "result": "",
+              "note": ""
+            }
+          ],
+          "note": ""
+        },
+        {
+          "id": "T-0002-S64",
+          "kind": "humanizer",
+          "volume": 6,
+          "chapter": "07",
+          "chapter_id": "v06-ch07",
+          "status": "running",
+          "prompt_file": "agent_prompts/agent_prompt.v06-ch07.humanizer.md",
+          "expected": [
+            "AINovelEdit/output/_audit/v06-ch07.md",
+            "AINovelEdit/output/v6-ch07.md",
+            "AINovelEdit/output/_log/v6-log.md"
+          ],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-10-22 18:39:39",
+              "prompt": "agent_prompts/agent_prompt.v06-ch07.humanizer.md",
+              "finished": "",
+              "result": "",
+              "note": ""
+            }
+          ],
+          "note": ""
+        },
+        {
+          "id": "T-0002-S65",
+          "kind": "sma-a",
+          "volume": 6,
+          "chapter": "08",
+          "chapter_id": "v06-ch08",
+          "status": "running",
+          "prompt_file": "agent_prompts/agent_prompt.v06-ch08.sma-a.md",
+          "expected": [
+            "output/_audit/sma/v6-ch08/a/20261022-183939-219a.json"
+          ],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-10-22 18:39:39",
+              "prompt": "agent_prompts/agent_prompt.v06-ch08.sma-a.md",
+              "finished": "",
+              "result": "",
+              "note": ""
+            }
+          ],
+          "note": ""
+        },
+        {
+          "id": "T-0002-S66",
+          "kind": "sma-b",
+          "volume": 6,
+          "chapter": "08",
+          "chapter_id": "v06-ch08",
+          "status": "running",
+          "prompt_file": "agent_prompts/agent_prompt.v06-ch08.sma-b.md",
+          "expected": [
+            "output/_audit/sma/v6-ch08/b/20261022-183939-06eb.json"
+          ],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-10-22 18:39:39",
+              "prompt": "agent_prompts/agent_prompt.v06-ch08.sma-b.md",
+              "finished": "",
+              "result": "",
+              "note": ""
+            }
+          ],
+          "note": ""
+        },
+        {
+          "id": "T-0002-S67",
+          "kind": "sma-c",
+          "volume": 6,
+          "chapter": "08",
+          "chapter_id": "v06-ch08",
+          "status": "running",
+          "prompt_file": "agent_prompts/agent_prompt.v06-ch08.sma-c.md",
+          "expected": [
+            "output/_audit/sma/v6-ch08/c/20261022-183939-f4ff.json"
+          ],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-10-22 18:39:39",
+              "prompt": "agent_prompts/agent_prompt.v06-ch08.sma-c.md",
+              "finished": "",
+              "result": "",
+              "note": ""
+            }
+          ],
+          "note": ""
+        },
+        {
+          "id": "T-0002-S68",
+          "kind": "analyzer-phase1",
+          "volume": 6,
+          "chapter": "08",
+          "chapter_id": "v06-ch08",
+          "status": "running",
+          "prompt_file": "agent_prompts/agent_prompt.v06-ch08.analyzer-phase1.md",
+          "expected": [],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-10-22 18:39:39",
+              "prompt": "agent_prompts/agent_prompt.v06-ch08.analyzer-phase1.md",
+              "finished": "",
+              "result": "",
+              "note": ""
+            }
+          ],
+          "note": ""
+        },
+        {
+          "id": "T-0002-S69",
+          "kind": "analyzer-phase2",
+          "volume": 6,
+          "chapter": "08",
+          "chapter_id": "v06-ch08",
+          "status": "running",
+          "prompt_file": "agent_prompts/agent_prompt.v06-ch08.analyzer-phase2.md",
+          "expected": [
+            "output/_audit/sma/v6-ch08/precheck/omission-precheck.json",
+            "output/_audit/sma/v6-ch08/analysis/20261022-183939-4bae.json",
+            "output/_audit/sma/v6-ch08/analysis/20261022-183939-4bae.md"
+          ],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-10-22 18:39:39",
+              "prompt": "agent_prompts/agent_prompt.v06-ch08.analyzer-phase2.md",
+              "finished": "",
+              "result": "",
+              "note": ""
+            }
+          ],
+          "note": ""
+        },
+        {
+          "id": "T-0002-S70",
+          "kind": "grammar-audit",
+          "volume": 6,
+          "chapter": "08",
+          "chapter_id": "v06-ch08",
+          "status": "running",
+          "prompt_file": "agent_prompts/agent_prompt.v06-ch08.grammar-audit.md",
+          "expected": [
+            "AINovelEdit/output/_audit/v06-ch08.md",
+            "AINovelEdit/output/v6-ch08.md",
+            "AINovelEdit/output/_log/v6-log.md"
+          ],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-10-22 18:39:39",
+              "prompt": "agent_prompts/agent_prompt.v06-ch08.grammar-audit.md",
+              "finished": "",
+              "result": "",
+              "note": ""
+            }
+          ],
+          "note": ""
+        },
+        {
+          "id": "T-0002-S71",
+          "kind": "style-audit",
+          "volume": 6,
+          "chapter": "08",
+          "chapter_id": "v06-ch08",
+          "status": "running",
+          "prompt_file": "agent_prompts/agent_prompt.v06-ch08.style-audit.md",
+          "expected": [
+            "AINovelEdit/output/_audit/v06-ch08.md",
+            "AINovelEdit/output/v6-ch08.md",
+            "AINovelEdit/output/_log/v6-log.md"
+          ],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-10-22 18:39:39",
+              "prompt": "agent_prompts/agent_prompt.v06-ch08.style-audit.md",
+              "finished": "",
+              "result": "",
+              "note": ""
+            }
+          ],
+          "note": ""
+        },
+        {
+          "id": "T-0002-S72",
+          "kind": "humanizer",
+          "volume": 6,
+          "chapter": "08",
+          "chapter_id": "v06-ch08",
+          "status": "running",
+          "prompt_file": "agent_prompts/agent_prompt.v06-ch08.humanizer.md",
+          "expected": [
+            "AINovelEdit/output/_audit/v06-ch08.md",
+            "AINovelEdit/output/v6-ch08.md",
+            "AINovelEdit/output/_log/v6-log.md"
+          ],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-10-22 18:39:39",
+              "prompt": "agent_prompts/agent_prompt.v06-ch08.humanizer.md",
               "finished": "",
               "result": "",
               "note": ""
