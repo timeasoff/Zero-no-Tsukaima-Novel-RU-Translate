@@ -2029,7 +2029,7 @@
           "volume": 5,
           "chapter": "12",
           "chapter_id": "v05-ch12",
-          "status": "running",
+          "status": "done",
           "prompt_file": "agent_prompts/agent_prompt.v05-ch12.grammar-audit.md",
           "expected": [
             "AINovelEdit/output/_audit/v5-ch12.md",
@@ -2041,9 +2041,9 @@
               "n": 1,
               "started": "2026-10-22 09:39:03",
               "prompt": "agent_prompts/agent_prompt.v05-ch12.grammar-audit.md",
-              "finished": "",
-              "result": "",
-              "note": ""
+              "finished": "2026-10-22 20:14:14",
+              "result": "done",
+              "note": "verify --mark"
             }
           ],
           "note": ""
@@ -2054,7 +2054,7 @@
           "volume": 5,
           "chapter": "12",
           "chapter_id": "v05-ch12",
-          "status": "running",
+          "status": "done",
           "prompt_file": "agent_prompts/agent_prompt.v05-ch12.style-audit.md",
           "expected": [
             "AINovelEdit/output/_audit/v5-ch12.md",
@@ -2066,9 +2066,9 @@
               "n": 1,
               "started": "2026-10-22 09:39:03",
               "prompt": "agent_prompts/agent_prompt.v05-ch12.style-audit.md",
-              "finished": "",
-              "result": "",
-              "note": ""
+              "finished": "2026-10-22 20:14:14",
+              "result": "done",
+              "note": "verify --mark"
             }
           ],
           "note": ""
@@ -2079,7 +2079,7 @@
           "volume": 5,
           "chapter": "12",
           "chapter_id": "v05-ch12",
-          "status": "running",
+          "status": "done",
           "prompt_file": "agent_prompts/agent_prompt.v05-ch12.humanizer.md",
           "expected": [
             "AINovelEdit/output/_audit/v5-ch12.md",
@@ -2091,9 +2091,9 @@
               "n": 1,
               "started": "2026-10-22 09:39:03",
               "prompt": "agent_prompts/agent_prompt.v05-ch12.humanizer.md",
-              "finished": "",
-              "result": "",
-              "note": ""
+              "finished": "2026-10-22 20:14:14",
+              "result": "done",
+              "note": "verify --mark"
             }
           ],
           "note": ""
@@ -2104,7 +2104,7 @@
           "volume": 5,
           "chapter": "12",
           "chapter_id": "v05-ch12",
-          "status": "running",
+          "status": "interrupted",
           "prompt_file": "agent_prompts/agent_prompt.v05-ch12.analyzer-phase1.md",
           "expected": [],
           "attempts": [
@@ -2117,7 +2117,7 @@
               "note": ""
             }
           ],
-          "note": ""
+          "note": "нет результата после запуска"
         }
       ]
     },
@@ -2242,7 +2242,7 @@
           "volume": 6,
           "chapter": "01",
           "chapter_id": "v06-ch01",
-          "status": "running",
+          "status": "interrupted",
           "prompt_file": "agent_prompts/agent_prompt.v06-ch01.sma-a.md",
           "expected": [
             "output/_audit/sma/v6-ch01/a/20261022-183202-9ed1.json"
@@ -2257,7 +2257,7 @@
               "note": ""
             }
           ],
-          "note": ""
+          "note": "нет результата после запуска"
         },
         {
           "id": "T-0002-S10",
@@ -2265,7 +2265,7 @@
           "volume": 6,
           "chapter": "01",
           "chapter_id": "v06-ch01",
-          "status": "running",
+          "status": "interrupted",
           "prompt_file": "agent_prompts/agent_prompt.v06-ch01.sma-b.md",
           "expected": [
             "output/_audit/sma/v6-ch01/b/20261022-183202-0a9d.json"
@@ -2280,7 +2280,7 @@
               "note": ""
             }
           ],
-          "note": ""
+          "note": "нет результата после запуска"
         },
         {
           "id": "T-0002-S11",
@@ -2288,7 +2288,7 @@
           "volume": 6,
           "chapter": "01",
           "chapter_id": "v06-ch01",
-          "status": "running",
+          "status": "interrupted",
           "prompt_file": "agent_prompts/agent_prompt.v06-ch01.sma-c.md",
           "expected": [
             "output/_audit/sma/v6-ch01/c/20261022-183202-0714.json"
@@ -2303,7 +2303,7 @@
               "note": ""
             }
           ],
-          "note": ""
+          "note": "нет результата после запуска"
         },
         {
           "id": "T-0002-S12",
@@ -2311,7 +2311,7 @@
           "volume": 6,
           "chapter": "01",
           "chapter_id": "v06-ch01",
-          "status": "running",
+          "status": "interrupted",
           "prompt_file": "agent_prompts/agent_prompt.v06-ch01.analyzer-phase1.md",
           "expected": [],
           "attempts": [
@@ -2324,7 +2324,7 @@
               "note": ""
             }
           ],
-          "note": ""
+          "note": "нет результата после запуска"
         },
         {
           "id": "T-0002-S13",
@@ -2332,7 +2332,7 @@
           "volume": 6,
           "chapter": "01",
           "chapter_id": "v06-ch01",
-          "status": "running",
+          "status": "interrupted",
           "prompt_file": "agent_prompts/agent_prompt.v06-ch01.analyzer-phase2.md",
           "expected": [
             "output/_audit/sma/v6-ch01/precheck/omission-precheck.json",
@@ -2349,7 +2349,7 @@
               "note": ""
             }
           ],
-          "note": ""
+          "note": "нет результата после запуска"
         },
         {
           "id": "T-0002-S14",
@@ -2405,7 +2405,7 @@
           "volume": 6,
           "chapter": "02",
           "chapter_id": "v06-ch02",
-          "status": "running",
+          "status": "interrupted",
           "prompt_file": "agent_prompts/agent_prompt.v06-ch02.sma-a.md",
           "expected": [
             "output/_audit/sma/v6-ch02/a/20261022-183227-90f7.json"
@@ -2420,7 +2420,7 @@
               "note": ""
             }
           ],
-          "note": ""
+          "note": "нет результата после запуска"
         },
         {
           "id": "T-0002-S18",
@@ -2428,7 +2428,7 @@
           "volume": 6,
           "chapter": "02",
           "chapter_id": "v06-ch02",
-          "status": "running",
+          "status": "interrupted",
           "prompt_file": "agent_prompts/agent_prompt.v06-ch02.sma-b.md",
           "expected": [
             "output/_audit/sma/v6-ch02/b/20261022-183227-cadc.json"
@@ -2443,7 +2443,7 @@
               "note": ""
             }
           ],
-          "note": ""
+          "note": "нет результата после запуска"
         },
         {
           "id": "T-0002-S19",
@@ -2451,7 +2451,7 @@
           "volume": 6,
           "chapter": "02",
           "chapter_id": "v06-ch02",
-          "status": "running",
+          "status": "interrupted",
           "prompt_file": "agent_prompts/agent_prompt.v06-ch02.sma-c.md",
           "expected": [
             "output/_audit/sma/v6-ch02/c/20261022-183227-866d.json"
@@ -2466,7 +2466,7 @@
               "note": ""
             }
           ],
-          "note": ""
+          "note": "нет результата после запуска"
         },
         {
           "id": "T-0002-S20",
@@ -2474,7 +2474,7 @@
           "volume": 6,
           "chapter": "02",
           "chapter_id": "v06-ch02",
-          "status": "running",
+          "status": "interrupted",
           "prompt_file": "agent_prompts/agent_prompt.v06-ch02.analyzer-phase1.md",
           "expected": [],
           "attempts": [
@@ -2487,7 +2487,7 @@
               "note": ""
             }
           ],
-          "note": ""
+          "note": "нет результата после запуска"
         },
         {
           "id": "T-0002-S21",
@@ -2495,7 +2495,7 @@
           "volume": 6,
           "chapter": "02",
           "chapter_id": "v06-ch02",
-          "status": "running",
+          "status": "interrupted",
           "prompt_file": "agent_prompts/agent_prompt.v06-ch02.analyzer-phase2.md",
           "expected": [
             "output/_audit/sma/v6-ch02/precheck/omission-precheck.json",
@@ -2512,7 +2512,7 @@
               "note": ""
             }
           ],
-          "note": ""
+          "note": "нет результата после запуска"
         },
         {
           "id": "T-0002-S22",
@@ -2568,7 +2568,7 @@
           "volume": 6,
           "chapter": "03",
           "chapter_id": "v06-ch03",
-          "status": "running",
+          "status": "interrupted",
           "prompt_file": "agent_prompts/agent_prompt.v06-ch03.sma-a.md",
           "expected": [
             "output/_audit/sma/v6-ch03/a/20261022-183227-2070.json"
@@ -2583,7 +2583,7 @@
               "note": ""
             }
           ],
-          "note": ""
+          "note": "нет результата после запуска"
         },
         {
           "id": "T-0002-S26",
@@ -2591,7 +2591,7 @@
           "volume": 6,
           "chapter": "03",
           "chapter_id": "v06-ch03",
-          "status": "running",
+          "status": "interrupted",
           "prompt_file": "agent_prompts/agent_prompt.v06-ch03.sma-b.md",
           "expected": [
             "output/_audit/sma/v6-ch03/b/20261022-183227-c3ab.json"
@@ -2606,7 +2606,7 @@
               "note": ""
             }
           ],
-          "note": ""
+          "note": "нет результата после запуска"
         },
         {
           "id": "T-0002-S27",
@@ -2614,7 +2614,7 @@
           "volume": 6,
           "chapter": "03",
           "chapter_id": "v06-ch03",
-          "status": "running",
+          "status": "interrupted",
           "prompt_file": "agent_prompts/agent_prompt.v06-ch03.sma-c.md",
           "expected": [
             "output/_audit/sma/v6-ch03/c/20261022-183227-c225.json"
@@ -2629,7 +2629,7 @@
               "note": ""
             }
           ],
-          "note": ""
+          "note": "нет результата после запуска"
         },
         {
           "id": "T-0002-S28",
@@ -2637,7 +2637,7 @@
           "volume": 6,
           "chapter": "03",
           "chapter_id": "v06-ch03",
-          "status": "running",
+          "status": "interrupted",
           "prompt_file": "agent_prompts/agent_prompt.v06-ch03.analyzer-phase1.md",
           "expected": [],
           "attempts": [
@@ -2650,7 +2650,7 @@
               "note": ""
             }
           ],
-          "note": ""
+          "note": "нет результата после запуска"
         },
         {
           "id": "T-0002-S29",
@@ -2658,7 +2658,7 @@
           "volume": 6,
           "chapter": "03",
           "chapter_id": "v06-ch03",
-          "status": "running",
+          "status": "interrupted",
           "prompt_file": "agent_prompts/agent_prompt.v06-ch03.analyzer-phase2.md",
           "expected": [
             "output/_audit/sma/v6-ch03/precheck/omission-precheck.json",
@@ -2675,7 +2675,7 @@
               "note": ""
             }
           ],
-          "note": ""
+          "note": "нет результата после запуска"
         },
         {
           "id": "T-0002-S30",
@@ -2740,7 +2740,7 @@
           "volume": 6,
           "chapter": "04",
           "chapter_id": "v06-ch04",
-          "status": "running",
+          "status": "interrupted",
           "prompt_file": "agent_prompts/agent_prompt.v06-ch04.sma-a.md",
           "expected": [
             "output/_audit/sma/v6-ch04/a/20261022-183938-490f.json"
@@ -2755,7 +2755,7 @@
               "note": ""
             }
           ],
-          "note": ""
+          "note": "нет результата после запуска"
         },
         {
           "id": "T-0002-S34",
@@ -2763,7 +2763,7 @@
           "volume": 6,
           "chapter": "04",
           "chapter_id": "v06-ch04",
-          "status": "running",
+          "status": "interrupted",
           "prompt_file": "agent_prompts/agent_prompt.v06-ch04.sma-b.md",
           "expected": [
             "output/_audit/sma/v6-ch04/b/20261022-183938-2c6e.json"
@@ -2778,7 +2778,7 @@
               "note": ""
             }
           ],
-          "note": ""
+          "note": "нет результата после запуска"
         },
         {
           "id": "T-0002-S35",
@@ -2786,7 +2786,7 @@
           "volume": 6,
           "chapter": "04",
           "chapter_id": "v06-ch04",
-          "status": "running",
+          "status": "interrupted",
           "prompt_file": "agent_prompts/agent_prompt.v06-ch04.sma-c.md",
           "expected": [
             "output/_audit/sma/v6-ch04/c/20261022-183938-230e.json"
@@ -2801,7 +2801,7 @@
               "note": ""
             }
           ],
-          "note": ""
+          "note": "нет результата после запуска"
         },
         {
           "id": "T-0002-S36",
@@ -2809,7 +2809,7 @@
           "volume": 6,
           "chapter": "04",
           "chapter_id": "v06-ch04",
-          "status": "running",
+          "status": "interrupted",
           "prompt_file": "agent_prompts/agent_prompt.v06-ch04.analyzer-phase1.md",
           "expected": [],
           "attempts": [
@@ -2822,7 +2822,7 @@
               "note": ""
             }
           ],
-          "note": ""
+          "note": "нет результата после запуска"
         },
         {
           "id": "T-0002-S37",
@@ -2830,7 +2830,7 @@
           "volume": 6,
           "chapter": "04",
           "chapter_id": "v06-ch04",
-          "status": "running",
+          "status": "interrupted",
           "prompt_file": "agent_prompts/agent_prompt.v06-ch04.analyzer-phase2.md",
           "expected": [
             "output/_audit/sma/v6-ch04/precheck/omission-precheck.json",
@@ -2847,7 +2847,7 @@
               "note": ""
             }
           ],
-          "note": ""
+          "note": "нет результата после запуска"
         },
         {
           "id": "T-0002-S38",
@@ -2921,7 +2921,7 @@
           "volume": 6,
           "chapter": "05",
           "chapter_id": "v06-ch05",
-          "status": "running",
+          "status": "interrupted",
           "prompt_file": "agent_prompts/agent_prompt.v06-ch05.sma-a.md",
           "expected": [
             "output/_audit/sma/v6-ch05/a/20261022-183938-9642.json"
@@ -2936,7 +2936,7 @@
               "note": ""
             }
           ],
-          "note": ""
+          "note": "нет результата после запуска"
         },
         {
           "id": "T-0002-S42",
@@ -2944,7 +2944,7 @@
           "volume": 6,
           "chapter": "05",
           "chapter_id": "v06-ch05",
-          "status": "running",
+          "status": "interrupted",
           "prompt_file": "agent_prompts/agent_prompt.v06-ch05.sma-b.md",
           "expected": [
             "output/_audit/sma/v6-ch05/b/20261022-183938-f5ab.json"
@@ -2959,7 +2959,7 @@
               "note": ""
             }
           ],
-          "note": ""
+          "note": "нет результата после запуска"
         },
         {
           "id": "T-0002-S43",
@@ -2967,7 +2967,7 @@
           "volume": 6,
           "chapter": "05",
           "chapter_id": "v06-ch05",
-          "status": "running",
+          "status": "interrupted",
           "prompt_file": "agent_prompts/agent_prompt.v06-ch05.sma-c.md",
           "expected": [
             "output/_audit/sma/v6-ch05/c/20261022-183938-6c17.json"
@@ -2982,7 +2982,7 @@
               "note": ""
             }
           ],
-          "note": ""
+          "note": "нет результата после запуска"
         },
         {
           "id": "T-0002-S44",
@@ -2990,7 +2990,7 @@
           "volume": 6,
           "chapter": "05",
           "chapter_id": "v06-ch05",
-          "status": "running",
+          "status": "interrupted",
           "prompt_file": "agent_prompts/agent_prompt.v06-ch05.analyzer-phase1.md",
           "expected": [],
           "attempts": [
@@ -3003,7 +3003,7 @@
               "note": ""
             }
           ],
-          "note": ""
+          "note": "нет результата после запуска"
         },
         {
           "id": "T-0002-S45",
@@ -3011,7 +3011,7 @@
           "volume": 6,
           "chapter": "05",
           "chapter_id": "v06-ch05",
-          "status": "running",
+          "status": "interrupted",
           "prompt_file": "agent_prompts/agent_prompt.v06-ch05.analyzer-phase2.md",
           "expected": [
             "output/_audit/sma/v6-ch05/precheck/omission-precheck.json",
@@ -3028,7 +3028,7 @@
               "note": ""
             }
           ],
-          "note": ""
+          "note": "нет результата после запуска"
         },
         {
           "id": "T-0002-S46",
@@ -3036,7 +3036,7 @@
           "volume": 6,
           "chapter": "05",
           "chapter_id": "v06-ch05",
-          "status": "running",
+          "status": "interrupted",
           "prompt_file": "agent_prompts/agent_prompt.v06-ch05.grammar-audit.md",
           "expected": [
             "AINovelEdit/output/_audit/v06-ch05.md",
@@ -3053,7 +3053,7 @@
               "note": ""
             }
           ],
-          "note": ""
+          "note": "изменений после запуска нет"
         },
         {
           "id": "T-0002-S47",
@@ -3061,7 +3061,7 @@
           "volume": 6,
           "chapter": "05",
           "chapter_id": "v06-ch05",
-          "status": "running",
+          "status": "interrupted",
           "prompt_file": "agent_prompts/agent_prompt.v06-ch05.style-audit.md",
           "expected": [
             "AINovelEdit/output/_audit/v06-ch05.md",
@@ -3078,7 +3078,7 @@
               "note": ""
             }
           ],
-          "note": ""
+          "note": "изменений после запуска нет"
         },
         {
           "id": "T-0002-S48",
@@ -3086,7 +3086,7 @@
           "volume": 6,
           "chapter": "05",
           "chapter_id": "v06-ch05",
-          "status": "running",
+          "status": "interrupted",
           "prompt_file": "agent_prompts/agent_prompt.v06-ch05.humanizer.md",
           "expected": [
             "AINovelEdit/output/_audit/v06-ch05.md",
@@ -3103,7 +3103,7 @@
               "note": ""
             }
           ],
-          "note": ""
+          "note": "изменений после запуска нет"
         },
         {
           "id": "T-0002-S49",
@@ -3111,7 +3111,7 @@
           "volume": 6,
           "chapter": "06",
           "chapter_id": "v06-ch06",
-          "status": "running",
+          "status": "interrupted",
           "prompt_file": "agent_prompts/agent_prompt.v06-ch06.sma-a.md",
           "expected": [
             "output/_audit/sma/v6-ch06/a/20261022-183938-8387.json"
@@ -3126,7 +3126,7 @@
               "note": ""
             }
           ],
-          "note": ""
+          "note": "нет результата после запуска"
         },
         {
           "id": "T-0002-S50",
@@ -3134,7 +3134,7 @@
           "volume": 6,
           "chapter": "06",
           "chapter_id": "v06-ch06",
-          "status": "running",
+          "status": "interrupted",
           "prompt_file": "agent_prompts/agent_prompt.v06-ch06.sma-b.md",
           "expected": [
             "output/_audit/sma/v6-ch06/b/20261022-183938-dc7b.json"
@@ -3149,7 +3149,7 @@
               "note": ""
             }
           ],
-          "note": ""
+          "note": "нет результата после запуска"
         },
         {
           "id": "T-0002-S51",
@@ -3157,7 +3157,7 @@
           "volume": 6,
           "chapter": "06",
           "chapter_id": "v06-ch06",
-          "status": "running",
+          "status": "interrupted",
           "prompt_file": "agent_prompts/agent_prompt.v06-ch06.sma-c.md",
           "expected": [
             "output/_audit/sma/v6-ch06/c/20261022-183939-3dcf.json"
@@ -3172,7 +3172,7 @@
               "note": ""
             }
           ],
-          "note": ""
+          "note": "нет результата после запуска"
         },
         {
           "id": "T-0002-S52",
@@ -3180,7 +3180,7 @@
           "volume": 6,
           "chapter": "06",
           "chapter_id": "v06-ch06",
-          "status": "running",
+          "status": "interrupted",
           "prompt_file": "agent_prompts/agent_prompt.v06-ch06.analyzer-phase1.md",
           "expected": [],
           "attempts": [
@@ -3193,7 +3193,7 @@
               "note": ""
             }
           ],
-          "note": ""
+          "note": "нет результата после запуска"
         },
         {
           "id": "T-0002-S53",
@@ -3201,7 +3201,7 @@
           "volume": 6,
           "chapter": "06",
           "chapter_id": "v06-ch06",
-          "status": "running",
+          "status": "interrupted",
           "prompt_file": "agent_prompts/agent_prompt.v06-ch06.analyzer-phase2.md",
           "expected": [
             "output/_audit/sma/v6-ch06/precheck/omission-precheck.json",
@@ -3218,7 +3218,7 @@
               "note": ""
             }
           ],
-          "note": ""
+          "note": "нет результата после запуска"
         },
         {
           "id": "T-0002-S54",
@@ -3301,7 +3301,7 @@
           "volume": 6,
           "chapter": "07",
           "chapter_id": "v06-ch07",
-          "status": "running",
+          "status": "interrupted",
           "prompt_file": "agent_prompts/agent_prompt.v06-ch07.sma-a.md",
           "expected": [
             "output/_audit/sma/v6-ch07/a/20261022-183939-9291.json"
@@ -3316,7 +3316,7 @@
               "note": ""
             }
           ],
-          "note": ""
+          "note": "нет результата после запуска"
         },
         {
           "id": "T-0002-S58",
@@ -3324,7 +3324,7 @@
           "volume": 6,
           "chapter": "07",
           "chapter_id": "v06-ch07",
-          "status": "running",
+          "status": "interrupted",
           "prompt_file": "agent_prompts/agent_prompt.v06-ch07.sma-b.md",
           "expected": [
             "output/_audit/sma/v6-ch07/b/20261022-183939-81c5.json"
@@ -3339,7 +3339,7 @@
               "note": ""
             }
           ],
-          "note": ""
+          "note": "нет результата после запуска"
         },
         {
           "id": "T-0002-S59",
@@ -3347,7 +3347,7 @@
           "volume": 6,
           "chapter": "07",
           "chapter_id": "v06-ch07",
-          "status": "running",
+          "status": "interrupted",
           "prompt_file": "agent_prompts/agent_prompt.v06-ch07.sma-c.md",
           "expected": [
             "output/_audit/sma/v6-ch07/c/20261022-183939-d3dd.json"
@@ -3362,7 +3362,7 @@
               "note": ""
             }
           ],
-          "note": ""
+          "note": "нет результата после запуска"
         },
         {
           "id": "T-0002-S60",
@@ -3370,7 +3370,7 @@
           "volume": 6,
           "chapter": "07",
           "chapter_id": "v06-ch07",
-          "status": "running",
+          "status": "interrupted",
           "prompt_file": "agent_prompts/agent_prompt.v06-ch07.analyzer-phase1.md",
           "expected": [],
           "attempts": [
@@ -3383,7 +3383,7 @@
               "note": ""
             }
           ],
-          "note": ""
+          "note": "нет результата после запуска"
         },
         {
           "id": "T-0002-S61",
@@ -3391,7 +3391,7 @@
           "volume": 6,
           "chapter": "07",
           "chapter_id": "v06-ch07",
-          "status": "running",
+          "status": "interrupted",
           "prompt_file": "agent_prompts/agent_prompt.v06-ch07.analyzer-phase2.md",
           "expected": [
             "output/_audit/sma/v6-ch07/precheck/omission-precheck.json",
@@ -3408,7 +3408,7 @@
               "note": ""
             }
           ],
-          "note": ""
+          "note": "нет результата после запуска"
         },
         {
           "id": "T-0002-S62",
@@ -3416,7 +3416,7 @@
           "volume": 6,
           "chapter": "07",
           "chapter_id": "v06-ch07",
-          "status": "running",
+          "status": "interrupted",
           "prompt_file": "agent_prompts/agent_prompt.v06-ch07.grammar-audit.md",
           "expected": [
             "AINovelEdit/output/_audit/v06-ch07.md",
@@ -3433,7 +3433,7 @@
               "note": ""
             }
           ],
-          "note": ""
+          "note": "изменений после запуска нет"
         },
         {
           "id": "T-0002-S63",
@@ -3441,7 +3441,7 @@
           "volume": 6,
           "chapter": "07",
           "chapter_id": "v06-ch07",
-          "status": "running",
+          "status": "interrupted",
           "prompt_file": "agent_prompts/agent_prompt.v06-ch07.style-audit.md",
           "expected": [
             "AINovelEdit/output/_audit/v06-ch07.md",
@@ -3458,7 +3458,7 @@
               "note": ""
             }
           ],
-          "note": ""
+          "note": "изменений после запуска нет"
         },
         {
           "id": "T-0002-S64",
@@ -3466,7 +3466,7 @@
           "volume": 6,
           "chapter": "07",
           "chapter_id": "v06-ch07",
-          "status": "running",
+          "status": "interrupted",
           "prompt_file": "agent_prompts/agent_prompt.v06-ch07.humanizer.md",
           "expected": [
             "AINovelEdit/output/_audit/v06-ch07.md",
@@ -3483,7 +3483,7 @@
               "note": ""
             }
           ],
-          "note": ""
+          "note": "изменений после запуска нет"
         },
         {
           "id": "T-0002-S65",
@@ -3491,7 +3491,7 @@
           "volume": 6,
           "chapter": "08",
           "chapter_id": "v06-ch08",
-          "status": "running",
+          "status": "interrupted",
           "prompt_file": "agent_prompts/agent_prompt.v06-ch08.sma-a.md",
           "expected": [
             "output/_audit/sma/v6-ch08/a/20261022-183939-219a.json"
@@ -3506,7 +3506,7 @@
               "note": ""
             }
           ],
-          "note": ""
+          "note": "нет результата после запуска"
         },
         {
           "id": "T-0002-S66",
@@ -3514,7 +3514,7 @@
           "volume": 6,
           "chapter": "08",
           "chapter_id": "v06-ch08",
-          "status": "running",
+          "status": "interrupted",
           "prompt_file": "agent_prompts/agent_prompt.v06-ch08.sma-b.md",
           "expected": [
             "output/_audit/sma/v6-ch08/b/20261022-183939-06eb.json"
@@ -3529,7 +3529,7 @@
               "note": ""
             }
           ],
-          "note": ""
+          "note": "нет результата после запуска"
         },
         {
           "id": "T-0002-S67",
@@ -3537,7 +3537,7 @@
           "volume": 6,
           "chapter": "08",
           "chapter_id": "v06-ch08",
-          "status": "running",
+          "status": "interrupted",
           "prompt_file": "agent_prompts/agent_prompt.v06-ch08.sma-c.md",
           "expected": [
             "output/_audit/sma/v6-ch08/c/20261022-183939-f4ff.json"
@@ -3552,7 +3552,7 @@
               "note": ""
             }
           ],
-          "note": ""
+          "note": "нет результата после запуска"
         },
         {
           "id": "T-0002-S68",
@@ -3560,7 +3560,7 @@
           "volume": 6,
           "chapter": "08",
           "chapter_id": "v06-ch08",
-          "status": "running",
+          "status": "interrupted",
           "prompt_file": "agent_prompts/agent_prompt.v06-ch08.analyzer-phase1.md",
           "expected": [],
           "attempts": [
@@ -3573,7 +3573,7 @@
               "note": ""
             }
           ],
-          "note": ""
+          "note": "нет результата после запуска"
         },
         {
           "id": "T-0002-S69",
@@ -3581,7 +3581,7 @@
           "volume": 6,
           "chapter": "08",
           "chapter_id": "v06-ch08",
-          "status": "running",
+          "status": "interrupted",
           "prompt_file": "agent_prompts/agent_prompt.v06-ch08.analyzer-phase2.md",
           "expected": [
             "output/_audit/sma/v6-ch08/precheck/omission-precheck.json",
@@ -3598,7 +3598,7 @@
               "note": ""
             }
           ],
-          "note": ""
+          "note": "нет результата после запуска"
         },
         {
           "id": "T-0002-S70",
@@ -3606,7 +3606,7 @@
           "volume": 6,
           "chapter": "08",
           "chapter_id": "v06-ch08",
-          "status": "running",
+          "status": "interrupted",
           "prompt_file": "agent_prompts/agent_prompt.v06-ch08.grammar-audit.md",
           "expected": [
             "AINovelEdit/output/_audit/v06-ch08.md",
@@ -3623,7 +3623,7 @@
               "note": ""
             }
           ],
-          "note": ""
+          "note": "изменений после запуска нет"
         },
         {
           "id": "T-0002-S71",
@@ -3631,7 +3631,7 @@
           "volume": 6,
           "chapter": "08",
           "chapter_id": "v06-ch08",
-          "status": "running",
+          "status": "interrupted",
           "prompt_file": "agent_prompts/agent_prompt.v06-ch08.style-audit.md",
           "expected": [
             "AINovelEdit/output/_audit/v06-ch08.md",
@@ -3648,7 +3648,7 @@
               "note": ""
             }
           ],
-          "note": ""
+          "note": "изменений после запуска нет"
         },
         {
           "id": "T-0002-S72",
@@ -3656,7 +3656,7 @@
           "volume": 6,
           "chapter": "08",
           "chapter_id": "v06-ch08",
-          "status": "running",
+          "status": "interrupted",
           "prompt_file": "agent_prompts/agent_prompt.v06-ch08.humanizer.md",
           "expected": [
             "AINovelEdit/output/_audit/v06-ch08.md",
@@ -3673,7 +3673,7 @@
               "note": ""
             }
           ],
-          "note": ""
+          "note": "изменений после запуска нет"
         }
       ]
     }
