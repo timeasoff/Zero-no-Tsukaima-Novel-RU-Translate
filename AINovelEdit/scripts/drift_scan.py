@@ -33,6 +33,11 @@ git и выдаёт каждое СМЫСЛОНОСЯЩЕЕ изменение �
            абзацев) и перемещения абзацев без изменения текста.
 Обнаружение ≠ вердикт: STRONG/WEAK — кандидаты; решение — по JA/EN.
 
+ПРЕФАЙЛ (--preflight): автоматический сверочно-подводящий прогон СРАЗУ
+после агентской правки главы — до ручных правок и до завершения аудита.
+Если сопоставимой ревизии в Git нет: явный вывод NO_BASELINE и «префайл
+пропущен» — не фиктивный успех; для новых глав префайл не обязателен.
+
 Использование:
     # правки этой сессии (worktree) против последнего коммита:
     python scripts/drift_scan.py --file v2-ch06.md
@@ -43,6 +48,7 @@ git и выдаёт каждое СМЫСЛОНОСЯЩЕЕ изменение �
     python scripts/drift_scan.py --file v2-ch06.md --against <SHA>
     python scripts/drift_scan.py --file v2-ch06.md --report
     python scripts/drift_scan.py --file v2-ch06.md --strict   # код 1 при STRONG
+    python scripts/drift_scan.py --file v2-ch06.md --against-file old.md --preflight
     python scripts/drift_scan.py --selftest
 """
 import argparse
@@ -342,6 +348,51 @@ NEGATIVE_CASES = [
 ]
 
 
+# Регрессионный эталон: v5-ch09 manual fix (коммит 1057b50) против
+# до-фиксовой ревизии 0b26565. РЕАЛЬНЫЕ пары из репозитория:
+# drift_scan детектирует ИЗМЕНЕНИЕ (кандидат), вердикт по JA даёт агент.
+# Прогон на живом файле:
+#   python scripts/drift_scan.py --file v5-ch09.md \
+#        --against-file <до-fix ревизия> --preflight
+V5CH09_CASES = [
+    # --- STRONG (смена лиц/имён/абзацев) ---
+    ("v5ch09_b2_lady",
+     "<!-- block: 2 -->\n— Разве нельзя сказать хоть что-нибудь вроде: «Леди, сюда, позвольте проводить»?",
+     "<!-- block: 2 -->\n— Разве нельзя сказать хоть что-нибудь вроде: «Мадемуазель, позвольте вас проводить»?",
+     "STRONG", "Леди -> Мадемуазель (б. 2)"),
+    ("v5ch09_b2_gospodi",
+     "<!-- block: 2 -->\n— Господи! И эскорт-то тебе не по силам! Сюда! Вон туда!",
+     "<!-- block: 2 -->\n— Ну что за наказание! Даже сопровождать девушку не умеешь! Сюда! Да сюда же!",
+     "STRONG", "Господи! -> Ну что за наказание! (б. 2)"),
+    # --- WEAK (переформулировки без смены маркеров) ---
+    ("v5ch09_b2_soprovozhdi",
+     "<!-- block: 2 -->\n— С-сопроводи?..",
+     "<!-- block: 2 -->\n— С-сопроводить?..",
+     "WEAK", "С-сопроводи?.. -> С-сопроводить?.. (б. 2)"),
+    ("v5ch09_b3_lubila",
+     "<!-- block: 3 -->\n— Не то чтобы любила. Просто хочется посмотреть.",
+     "<!-- block: 3 -->\n— Не то чтобы люблю. Просто хочу посмотреть.",
+     "WEAK", "любила -> люблю (б. 3)"),
+    ("v5ch09_b3_svidanie",
+     "<!-- block: 3 -->\n— Свидание?",
+     "<!-- block: 3 -->\n— Встретиться?",
+     "WEAK", "Свидание? -> Встретиться? (б. 3)"),
+    ("v5ch09_b3_moroka",
+     "<!-- block: 3 -->\n— Морока…",
+     "<!-- block: 3 -->\n— Вот же морока…",
+     "WEAK", "Морока… -> Вот же морока… (б. 3)"),
+    ("v5ch09_b3_nikogda",
+     "<!-- block: 3 -->\n— Никогда не смотрела?",
+     "<!-- block: 3 -->\n— А раньше не видела?",
+     "WEAK", "Никогда не смотрела? -> А раньше не видела? (б. 3)"),
+    # --- INFO (форматussen без смены смысла ---
+    ("v5ch09_b3_italic",
+     "<!-- block: 3 -->\nЕсли призадуматься, Луиза ведь провинциалка.",
+     "<!-- block: 3 -->\n_Если призадуматься, Луиза ведь провинциалка._",
+     "INFO", "курсив внутри абзаца (б. 3)"),
+]
+
+
 def run_selftest() -> int:
     failed = []
     pairs = load_dict_terms()
@@ -367,12 +418,24 @@ def run_selftest() -> int:
             print(f"  FAIL PASS ({cur[:50]}): ожидался только {want}, есть {sorted(kinds)}")
         else:
             print(f"  OK   PASS ({want}): {cur[:60]}")
+    # V5-ch09 manual fix (1057b50 vs до-fix) — реальный регрессионный эталон
+    for name, base, cur, want, label in V5CH09_CASES:
+        found = compare_texts(base, cur, pairs)
+        kinds = {k for _, k, _, _, _ in found}
+        if want not in kinds:
+            failed.append(("V5CH09", label))
+            print("  FAIL V5CH09 (%s): надо %s, есть %s"
+                  % (label, want, sorted(kinds)))
+        else:
+            print("  OK   V5CH09 (%s) %s" % (want, label))
+
     if failed:
         print(f"\n[selftest] ПРОВАЛЕНО: {len(failed)} из "
-              f"{len(POSITIVE_CASES) + len(NEGATIVE_CASES)}")
+              f"{len(POSITIVE_CASES) + len(NEGATIVE_CASES) + len(V5CH09_CASES)}")
         return 1
     print("\n[selftest] OK: все %d контрольных кейсов пройдены"
-          % (len(POSITIVE_CASES) + len(NEGATIVE_CASES)))
+          % (len(POSITIVE_CASES) + len(NEGATIVE_CASES)
+             + len(V5CH09_CASES)))
     return 0
 
 
@@ -396,6 +459,8 @@ def main():
                     help="код 1, если есть STRONG-кандидаты")
     ap.add_argument("--selftest", action="store_true",
                     help="контрольные тесты")
+    ap.add_argument("--preflight", action="store_true",
+                    help="префайл: сводка кандидатов дрейфа (STRONG/WEAK/INFO) сразу после агентской правки — до ручных правок; без сопоставимой ревизии — явный NO_BASELINE (не молчаливый успех); для новых глав не обязателен.")
     args = ap.parse_args()
 
     if args.selftest:
@@ -415,6 +480,46 @@ def main():
             print(f"[drift_scan] файл не найден: {args.file}", file=sys.stderr)
             sys.exit(2)
 
+    if args.preflight:
+        # Пре-файл по существующей главе: сводка кандидатов дрейфа СРАЗУ
+        # после агентской правки — до ручных правок и до завершения аудита.
+        # Без сопоставимой ревизии — явный NO_BASELINE, не молчаливый успех;
+        # для первичного создания главы префайл не обязателен.
+        if args.against_file:
+            bp = Path(args.against_file)
+            if not bp.exists():
+                print(f"[drift_scan] NO_BASELINE (файл-база): {bp} не найден.",
+                      file=sys.stderr)
+                return 2
+            base_text = bp.read_text(encoding="utf-8")
+            rev_label = args.against_file
+        else:
+            git_path = path.resolve().relative_to(ROOT).as_posix()
+            base_text = load_baseline(args.against, git_path)
+            rev_label = args.against
+            if base_text is None:
+                print(f"[drift_scan] NO_BASELINE (git): нет файла {git_path} "
+                      f"в ревизии {args.against} — сравнивать не с чем (новая глава?).")
+                print("[drift_scan] ПРЕФАЙЛ ПРОПУЩЕН: сопоставимой ревизии нет — "
+                      "это не фиктивный успех; префайл не обязателен для новых глав.")
+                return 0
+        pairs = load_dict_terms()
+        findings = compare_texts(base_text,
+                                 path.read_text(encoding="utf-8"), pairs)
+        kinds = {}
+        for num, kind, why, old, new in findings:
+            kinds[kind] = kinds.get(kind, 0) + 1
+        print("[drift_scan] ПРЕФАЙЛ: база %s → %d кандидатов дрейфа: %s" % (
+            rev_label, len(findings),
+            ", ".join("%s %d" % (k, kinds[k]) for k in sorted(kinds)) or "нет"))
+        for num, kind, why, old, new in findings:
+            print("  [%s] б. %d — %s" % (kind, num, why))
+        print("[drift_scan] Кандидаты — не вердикты. Разбор по JA:"
+              " STRONG — сверить обязательно (FIXED / FALSE POSITIVE /"
+              " PRESERVED); WEAK — сверить или PRESERVED — STYLE для"
+              " равноценного стиля; INFO — изменение формата, разбор не нужен.")
+        return 0
+
     if args.against_file:
         bp = Path(args.against_file)
         if not bp.exists():
@@ -427,8 +532,12 @@ def main():
         base_text = load_baseline(args.against, git_path)
         rev_label = args.against
         if base_text is None:
-            print(f"[drift_scan] нет файла {git_path} в ревизии {args.against} — "
-                  "сравнивать не с чем (новый файл?).")
+            print(f"[drift_scan] NO_BASELINE: нет файла {git_path} в ревизии "
+                  f"{args.against} — сравнивать не с чем (новая глава?).")
+            print("[drift_scan] Сканер ПРОПУЩЕН: у новой главы нет предыдущей "
+                  "проверенной версии в Git — сравнивать не с чем. Это не фиктивный "
+                  "успех: кандидат на регрессию в этом запуске не определяется, а в "
+                  "verification-audit (semantic_findings) записывается статус NO_BASELINE.")
             return 0
 
     pairs = load_dict_terms()
