@@ -1,0 +1,94 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  // Защита от потери данных (инциденты: git clean -fdx от 2026-10-13,
+  // git reset --hard + git add -A от 2026-10-25).
+  // Правила ниже применяются к КАЖДОМУ агенту в этом проекте.
+  // ВАЖНО: эффект "ask" здесь НЕ работает (клиент без интерактива одобряет
+  // сам), поэтому все разрушающие команды — строгий "deny".
+  // Отменить deny нельзя ни скиллом, ни инструкцией, ни одобрением:
+  // сохранённые одобрения не переопределяют настроенный deny.
+  // Временно разрешить ручную чистку можно только осознанной правкой
+  // этого файла самим пользователем.
+  //
+  // ПОРЯДОК ВАЖЕН: первое совпавшее правило определяет effect.
+  // Специфичные паттерны (с точностью до файла/флага) — ВЫШЕ общих.
+
+  "permissions": [
+    // ============ Разрушающие git-операции — НИКОГДА ============
+    { "action": "shell", "resource": "*git clean*", "effect": "deny" },
+    { "action": "shell", "resource": "*git reset --hard*", "effect": "deny" },
+    { "action": "shell", "resource": "*git reset -q --hard*", "effect": "deny" },
+    { "action": "shell", "resource": "*git reset --mixed --force*", "effect": "deny" },
+    { "action": "shell", "resource": "*git reset --soft --force*", "effect": "deny" },
+    { "action": "shell", "resource": "*git reset -f*", "effect": "deny" },
+    { "action": "shell", "resource": "*git checkout -- *", "effect": "deny" },
+    { "action": "shell", "resource": "*git checkout .", "effect": "deny" },
+    { "action": "shell", "resource": "*git checkout -f*", "effect": "deny" },
+    { "action": "shell", "resource": "*git switch -f*", "effect": "deny" },
+    { "action": "shell", "resource": "*git stash*", "effect": "deny" },
+    { "action": "shell", "resource": "*git branch -D *", "effect": "deny" },
+    { "action": "shell", "resource": "*git commit --amend*", "effect": "deny" },
+    { "action": "shell", "resource": "*git push --force*", "effect": "deny" },
+    { "action": "shell", "resource": "*git push -f*", "effect": "deny" },
+    { "action": "shell", "resource": "*git filter-branch*", "effect": "deny" },
+    { "action": "shell", "resource": "*git reflog delete*", "effect": "deny" },
+    { "action": "shell", "resource": "*git restore --worktree*", "effect": "deny" },
+
+    // ============ «Случайный захват чужих файлов» (инцидент 2026-10-25) ============
+    // git add -A / git add . / git add -u / git add --all стадит ВСЁ рабочее дерево.
+    // Специфичные — ДО общего паттерна "git add <file>".
+    { "action": "shell", "resource": "*git add -A*", "effect": "deny" },
+    { "action": "shell", "resource": "*git add -a*", "effect": "deny" },
+    { "action": "shell", "resource": "*git add --all*", "effect": "deny" },
+    { "action": "shell", "resource": "*git add -u*", "effect": "deny" },
+    { "action": "shell", "resource": "*git add . *", "effect": "deny" },
+    { "action": "shell", "resource": "git add .", "effect": "deny" },
+    { "action": "shell", "resource": "git add", "effect": "deny" },
+
+    // Точечный git add конкретного файла — разрешён (для агента).
+    { "action": "shell", "resource": "git add *", "effect": "allow" },
+    { "action": "shell", "resource": "*git add *", "effect": "allow" },
+
+    // ============ Мягкие/откатные git-операции — ask (нужно подтверждение) ============
+    { "action": "shell", "resource": "*git reset HEAD -- *", "effect": "ask" },
+    { "action": "shell", "resource": "*git reset HEAD*", "effect": "ask" },
+    { "action": "shell", "resource": "*git restore --staged *", "effect": "ask" },
+    { "action": "shell", "resource": "*git rebase --abort*", "effect": "ask" },
+    { "action": "shell", "resource": "*git rebase --continue*", "effect": "ask" },
+    { "action": "shell", "resource": "*git merge --abort*", "effect": "ask" },
+
+    // ============ Разрушающие удаления и чистка — НИКОГДА ============
+    { "action": "shell", "resource": "*Remove-Item*", "effect": "deny" },
+    { "action": "shell", "resource": "*rm -rf*", "effect": "deny" },
+    { "action": "shell", "resource": "*rm -fr*", "effect": "deny" },
+    { "action": "shell", "resource": "*rm -r *", "effect": "deny" },
+    { "action": "shell", "resource": "rm -rf*", "effect": "deny" },
+    { "action": "shell", "resource": "rm -r *", "effect": "deny" },
+    { "action": "shell", "resource": "*rmdir*", "effect": "deny" },
+    { "action": "shell", "resource": "rd /s*", "effect": "deny" },
+    { "action": "shell", "resource": "* rd /s*", "effect": "deny" },
+    { "action": "shell", "resource": "del *", "effect": "deny" },
+    { "action": "shell", "resource": "*del /s *", "effect": "deny" },
+    { "action": "shell", "resource": "*del /f *", "effect": "deny" },
+    { "action": "shell", "resource": "erase *", "effect": "deny" }
+  ],
+
+  // Жёсткий запрет (hard-deny): превращает любой allow/ask в deny.
+  // Даже если клиент когда-либо сохранил широкое одобрение — это нельзя отменить.
+  "experimental": {
+    "policies": [
+      { "action": "permission", "resource": "shell:*git clean*", "effect": "deny" },
+      { "action": "permission", "resource": "shell:*git reset --hard*", "effect": "deny" },
+      { "action": "permission", "resource": "shell:*git add -A*", "effect": "deny" },
+      { "action": "permission", "resource": "shell:*git add --all*", "effect": "deny" },
+      { "action": "permission", "resource": "shell:*git add -u*", "effect": "deny" },
+      { "action": "permission", "resource": "shell:git add .", "effect": "deny" },
+      { "action": "permission", "resource": "shell:*git stash*", "effect": "deny" },
+      { "action": "permission", "resource": "shell:*git commit --amend*", "effect": "deny" },
+      { "action": "permission", "resource": "shell:*git push --force*", "effect": "deny" },
+      { "action": "permission", "resource": "shell:*rm -rf*", "effect": "deny" },
+      { "action": "permission", "resource": "shell:*rm -fr*", "effect": "deny" },
+      { "action": "permission", "resource": "shell:*Remove-Item*", "effect": "deny" }
+    ]
+  }
+}
