@@ -64,6 +64,10 @@ AINovelEdit/
 │   └── semantic-audit-auto/     # автоматический semantic audit — НЕ реализован,
 │                                 #   НЕ поддерживается; см. LEGACY.md
 ├── completed.md                 # реестр завершённых томов (источник истины; read-only)
+├── AINovelEdit/
+│   └── «Vote on Agreement (arhive).md»  # исторический архив обсуждений
+│                                     #   терминов (baka-tsuki, 2012) — ссылка
+│                                     #   добавлена в dictionary.md; readonly
 └── dictionary.md                # канон терминов (каноническая идентичность;
                                   #   НЕ механическая строковая замена)
 
