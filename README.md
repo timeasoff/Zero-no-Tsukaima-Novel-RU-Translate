@@ -68,6 +68,8 @@ AINovelEdit/
 │   └── «Vote on Agreement (arhive).md»  # исторический архив обсуждений
 │                                     #   терминов (baka-tsuki, 2012) — ссылка
 │                                     #   добавлена в dictionary.md; readonly
+│                                     #   (chmod 444 + pre-commit hook +
+│                                     #   .gitattributes; запрет на коммит)
 └── dictionary.md                # канон терминов (каноническая идентичность;
                                   #   НЕ механическая строковая замена)
 
