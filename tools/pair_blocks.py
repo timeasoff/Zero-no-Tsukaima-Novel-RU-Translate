@@ -187,6 +187,8 @@ def render(slug, ru_path, ru_title, ja_path, ja_title, pairs, notes):
     lines = []
     lines.append("# %s — output ↔ японский оригинал" % slug)
     lines.append("")
+    lines.append("Нужно скорректировать русский перевод новеллы. японский - оригинал.")
+    lines.append("")
     lines.append("Файл собран `tools/pair_blocks.py` для передачи стороннему ИИ. "
                  "Единица — блок: сначала японский оригинал, затем то, что "
                  "получилось в output. Копировать можно один блок — от "
