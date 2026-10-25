@@ -27,7 +27,7 @@ russian-grammar-control, либо отклоняется с обосновани
 ## Абзац 108 — RU пассив «был + причастие»: проверь агента (RGC: обязана)
 
 - **EN:** While letting tears flow, she realized how dependent she was on the familiar of Louise. Even though he did not have many relations to that world, she still gave him such dangerous tasks with heavy burdens.
-- **ED_RU:** Плача, Генриетта поняла, насколько она была обязана юноше-фамильяру Луизы.
+- **ED_RU:** Плача, Анриетта поняла, насколько она была обязана юноше-фамильяру Луизы.
 - **Подсказка:** RGC-1: RU-пассив без деятеля («был схвачен») там, где в EN деятель назван, — сигнал потери актанта. Проверь, не должен ли русский быть активом или неопределённо-личным.
 
 ## Абзац 123 — Залог/актанты: EN пассив ↔ RU возвратный глагол (RGC: показалось)
@@ -69,6 +69,6 @@ russian-grammar-control, либо отклоняется с обосновани
 ## Абзац 324 — Актанты: EN «X's Y was …» (субъект RU — не X) (RGC: Henrietta's face was)
 
 - **EN:** Uncertain of what to do, Tiffania glanced at Henrietta for help. Although Henrietta's face was purely white..., she solemnly closed her eyelids, nodded lightly.
-- **ED_RU:** Не зная, что делать, Тиффания обернулась к Генриетте. Та была бледнее полотна… но в конце концов тихо сомкнула веки и слегка кивнула.
+- **ED_RU:** Не зная, что делать, Тиффания обернулась к Анриетте. Та была бледнее полотна… но в конце концов тихо сомкнула веки и слегка кивнула.
 - **Подсказка:** RGC-1: «X's Y was stolen» ≠ «X лишился Y». Правильно: «X лишили Y» / «у X отобрали Y» / «Y у X отобрали».
 

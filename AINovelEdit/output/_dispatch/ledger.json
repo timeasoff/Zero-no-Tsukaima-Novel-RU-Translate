@@ -1167,10 +1167,10 @@
               "prompt": "agent_prompts/agent_prompt.v05-ch09.grammar-audit.md",
               "finished": "2026-10-22 04:28:02",
               "result": "done",
-              "note": "grammar-audit выполнен оркестратором вручную (субагент вернул пустой результат): grammar_scan 6 (все FALSE POSITIVE) + сплошной разбор 13/13 блоков по предложениям (RGC-1/2/3/4/7) — 5 исправлений (разнеслась, скучающе, Луизе надоело, 'кто помог… проникнуть', 'сама Генриетта'); style 9 (все PRESERVED), format 1 (FP), check_records 2 (оба FP), address 0; FINAL READ выполнен; артефакты: output/_audit/v5-ch09.md + output/_log/v5-log.md"
+              "note": "grammar-audit выполнен оркестратором вручную (субагент вернул пустой результат): grammar_scan 6 (все FALSE POSITIVE) + сплошной разбор 13/13 блоков по предложениям (RGC-1/2/3/4/7) — 5 исправлений (разнеслась, скучающе, Луизе надоело, 'кто помог… проникнуть', 'сама Анриетта'); style 9 (все PRESERVED), format 1 (FP), check_records 2 (оба FP), address 0; FINAL READ выполнен; артефакты: output/_audit/v5-ch09.md + output/_log/v5-log.md"
             }
           ],
-          "note": "grammar-audit выполнен оркестратором вручную (субагент вернул пустой результат): grammar_scan 6 (все FALSE POSITIVE) + сплошной разбор 13/13 блоков по предложениям (RGC-1/2/3/4/7) — 5 исправлений (разнеслась, скучающе, Луизе надоело, 'кто помог… проникнуть', 'сама Генриетта'); style 9 (все PRESERVED), format 1 (FP), check_records 2 (оба FP), address 0; FINAL READ выполнен; артефакты: output/_audit/v5-ch09.md + output/_log/v5-log.md"
+          "note": "grammar-audit выполнен оркестратором вручную (субагент вернул пустой результат): grammar_scan 6 (все FALSE POSITIVE) + сплошной разбор 13/13 блоков по предложениям (RGC-1/2/3/4/7) — 5 исправлений (разнеслась, скучающе, Луизе надоело, 'кто помог… проникнуть', 'сама Анриетта'); style 9 (все PRESERVED), format 1 (FP), check_records 2 (оба FP), address 0; FINAL READ выполнен; артефакты: output/_audit/v5-ch09.md + output/_log/v5-log.md"
         },
         {
           "id": "T-0001-S43",
@@ -2855,7 +2855,7 @@
           "volume": 6,
           "chapter": "04",
           "chapter_id": "v06-ch04",
-          "status": "running",
+          "status": "done",
           "prompt_file": "agent_prompts/agent_prompt.v06-ch04.grammar-audit.md",
           "expected": [
             "AINovelEdit/output/_audit/v6-ch04.md",
@@ -2867,9 +2867,9 @@
               "n": 1,
               "started": "2026-10-22 18:39:38",
               "prompt": "agent_prompts/agent_prompt.v06-ch04.grammar-audit.md",
-              "finished": "",
-              "result": "",
-              "note": ""
+              "finished": "2026-10-25 03:23:08",
+              "result": "done",
+              "note": "verify --mark"
             }
           ],
           "note": ""
@@ -2880,7 +2880,7 @@
           "volume": 6,
           "chapter": "04",
           "chapter_id": "v06-ch04",
-          "status": "running",
+          "status": "done",
           "prompt_file": "agent_prompts/agent_prompt.v06-ch04.style-audit.md",
           "expected": [
             "AINovelEdit/output/_audit/v6-ch04.md",
@@ -2892,9 +2892,9 @@
               "n": 1,
               "started": "2026-10-22 18:39:38",
               "prompt": "agent_prompts/agent_prompt.v06-ch04.style-audit.md",
-              "finished": "",
-              "result": "",
-              "note": ""
+              "finished": "2026-10-25 03:23:08",
+              "result": "done",
+              "note": "verify --mark"
             }
           ],
           "note": ""

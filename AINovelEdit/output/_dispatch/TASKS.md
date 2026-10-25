@@ -1,6 +1,6 @@
 # Реестр задач диспетчера
 
-Обновлено: 2026-10-22 20:14:16
+Обновлено: 2026-10-25 03:23:19
 
 Генерируется автоматически командой `python tools/dispatch.py`. Не редактируй вручную.
 
@@ -136,7 +136,7 @@
 - T-0001-S39: sma-c: c/20261022-022956-941d.json, 4 findings, валидатор OK
 - T-0001-S40: analyzer-phase1: analysis/20261022-020914-09bb.phase1.json, 11 findings
 - T-0001-S41: analyzer-phase2: analysis/20261022-032355-2502.json/.md, 22 candidates (14 FIXED, 2 REPORT_ONLY, 6 PRESERVED); 3 findings откачены как зона человека
-- T-0001-S42: grammar-audit выполнен оркестратором вручную (субагент вернул пустой результат): grammar_scan 6 (все FALSE POSITIVE) + сплошной разбор 13/13 блоков по предложениям (RGC-1/2/3/4/7) — 5 исправлений (разнеслась, скучающе, Луизе надоело, 'кто помог… проникнуть', 'сама Генриетта'); style 9 (все PRESERVED), format 1 (FP), check_records 2 (оба FP), address 0; FINAL READ выполнен; артефакты: output/_audit/v5-ch09.md + output/_log/v5-log.md
+- T-0001-S42: grammar-audit выполнен оркестратором вручную (субагент вернул пустой результат): grammar_scan 6 (все FALSE POSITIVE) + сплошной разбор 13/13 блоков по предложениям (RGC-1/2/3/4/7) — 5 исправлений (разнеслась, скучающе, Луизе надоело, 'кто помог… проникнуть', 'сама Анриетта'); style 9 (все PRESERVED), format 1 (FP), check_records 2 (оба FP), address 0; FINAL READ выполнен; артефакты: output/_audit/v5-ch09.md + output/_log/v5-log.md
 - T-0001-S43: нет результата после запуска
 - T-0001-S44: нет результата после запуска
 - T-0001-S45: нет результата после запуска
@@ -195,8 +195,8 @@ Tom 6: verify ch01-ch08 full audit
 | T-0002-S35 | sma-c | v06-ch04 | interrupted | 1 | `agent_prompts/agent_prompt.v06-ch04.sma-c.md` |
 | T-0002-S36 | analyzer-phase1 | v06-ch04 | interrupted | 1 | `agent_prompts/agent_prompt.v06-ch04.analyzer-phase1.md` |
 | T-0002-S37 | analyzer-phase2 | v06-ch04 | interrupted | 1 | `agent_prompts/agent_prompt.v06-ch04.analyzer-phase2.md` |
-| T-0002-S38 | grammar-audit | v06-ch04 | running | 1 | `agent_prompts/agent_prompt.v06-ch04.grammar-audit.md` |
-| T-0002-S39 | style-audit | v06-ch04 | running | 1 | `agent_prompts/agent_prompt.v06-ch04.style-audit.md` |
+| T-0002-S38 | grammar-audit | v06-ch04 | done | 1 | `agent_prompts/agent_prompt.v06-ch04.grammar-audit.md` |
+| T-0002-S39 | style-audit | v06-ch04 | done | 1 | `agent_prompts/agent_prompt.v06-ch04.style-audit.md` |
 | T-0002-S40 | humanizer | v06-ch04 | planned | 0 | `—` |
 | T-0002-S41 | sma-a | v06-ch05 | interrupted | 1 | `agent_prompts/agent_prompt.v06-ch05.sma-a.md` |
 | T-0002-S42 | sma-b | v06-ch05 | interrupted | 1 | `agent_prompts/agent_prompt.v06-ch05.sma-b.md` |
