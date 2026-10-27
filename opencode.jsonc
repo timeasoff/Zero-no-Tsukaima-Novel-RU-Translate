@@ -70,7 +70,28 @@
     { "action": "shell", "resource": "del *", "effect": "deny" },
     { "action": "shell", "resource": "*del /s *", "effect": "deny" },
     { "action": "shell", "resource": "*del /f *", "effect": "deny" },
-    { "action": "shell", "resource": "erase *", "effect": "deny" }
+    { "action": "shell", "resource": "erase *", "effect": "deny" },
+
+    // Не убивать процессы хоста (увел. как Stop-Process VS Code на портах 4096/4097).
+    { "action": "shell", "resource": "*Stop-Process*",    "effect": "deny" },
+    { "action": "shell", "resource": "*stop-process*",    "effect": "deny" },
+    { "action": "shell", "resource": "*taskkill*",        "effect": "deny" },
+    { "action": "shell", "resource": "*kill -9*",         "effect": "deny" },
+    { "action": "shell", "resource": "*kill -KILL*",      "effect": "deny" },
+    { "action": "shell", "resource": "*kill -TERM*",      "effect": "deny" },
+    { "action": "shell", "resource": "*pkill*",           "effect": "deny" },
+    { "action": "shell", "resource": "*killall*",         "effect": "deny" },
+    // Не удалять/останавливать Docker-контейнеры и тома.
+    { "action": "shell", "resource": "*docker rm*",       "effect": "deny" },
+    { "action": "shell", "resource": "*docker stop*",     "effect": "deny" },
+    { "action": "shell", "resource": "*docker kill*",     "effect": "deny" },
+    { "action": "shell", "resource": "*docker rmi*",      "effect": "deny" },
+    { "action": "shell", "resource": "*docker volume rm*","effect": "deny" },
+    { "action": "shell", "resource": "*docker network rm*","effect": "deny" },
+    { "action": "shell", "resource": "*docker *prune*",   "effect": "deny" },
+    { "action": "shell", "resource": "*docker compose down*", "effect": "deny" },
+    { "action": "shell", "resource": "*wsl --shutdown*",  "effect": "deny" }
+
   ],
 
   // Жёсткий запрет (hard-deny): превращает любой allow/ask в deny.
@@ -88,7 +109,19 @@
       { "action": "permission", "resource": "shell:*git push --force*", "effect": "deny" },
       { "action": "permission", "resource": "shell:*rm -rf*", "effect": "deny" },
       { "action": "permission", "resource": "shell:*rm -fr*", "effect": "deny" },
-      { "action": "permission", "resource": "shell:*Remove-Item*", "effect": "deny" }
+      { "action": "permission", "resource": "shell:*Remove-Item*", "effect": "deny" },
+
+      { "action": "tool.use", "resource": "shell:*Stop-Process*",  "effect": "deny" },
+      { "action": "tool.use", "resource": "shell:*stop-process*",  "effect": "deny" },
+      { "action": "tool.use", "resource": "shell:*taskkill*",      "effect": "deny" },
+      { "action": "tool.use", "resource": "shell:*kill -9*",       "effect": "deny" },
+      { "action": "tool.use", "resource": "shell:*pkill*",         "effect": "deny" },
+      { "action": "tool.use", "resource": "shell:*killall*",       "effect": "deny" },
+      { "action": "tool.use", "resource": "shell:*docker rm*",     "effect": "deny" },
+      { "action": "tool.use", "resource": "shell:*docker stop*",   "effect": "deny" },
+      { "action": "tool.use", "resource": "shell:*docker kill*",   "effect": "deny" },
+      { "action": "tool.use", "resource": "shell:*docker *prune*", "effect": "deny" },
+      { "action": "tool.use", "resource": "shell:*wsl --shutdown*","effect": "deny" }
     ]
   }
 }
