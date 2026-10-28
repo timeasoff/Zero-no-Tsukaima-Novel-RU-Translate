@@ -1627,7 +1627,7 @@ ormat_scan 3 (титулы стр.287,
 - grammar_scan 2: блок 13 possessive (EN «Being called a country person, Saito snapped» ↔ «Джессика улыбнулась…») → FALSE POSITIVE: EN-предложение = JA-13.13, RU-абзац = JA-13.2 — смещение внутри блока (EN-блок 13 = JA-13.13+), актант не потерян; блок 10 possessive — ранее задиспозицирован FP.
 - check_records: абз. 90, 105, 146 → FP «атрибуция после реплики»; абз. 200 («? — » после риторического вопроса в нарративе) → исправлено fix_block --block 13 («…, что ли……») — после правки — 3 кандидата, все задиспозицированы.
 - style_scan: новых кандидатов от блока 13 нет (18 — блоки 1–12).
-- check_alignment names (weak): «„Явление Основателя Бримира“» → FALSE POSITIVE: grep — отсутствует.
+- check_alignment names (weak): «„Пришествие Основателя Бримира“» → FALSE POSITIVE: grep — отсутствует.
 - check_alignment names (info): «Сиеста» (JA-13.6, «у Сиесты»), «Тристейн» (JA-13.13) — воспроизведены по канону, присутствуют в тексте; EN-имена — в соседних EN-блоках 12–13 (смещение маркеров); «разумный меч», «распределённость», «Сильфида» → FALSE POSITIVE: grep — отсутствуют.
 - check_alignment pronouns (weak): EN 1-е л. мн. («we can put stuff about papa aside») → FALSE POSITIVE by shift: это JA-14.1 (EN-блок 13 включает начало JA-14); в JA-блое 13 местоимений 1-го л. мн. нет (grep «мы/нам/нас» — отсутствуют).
 - Строгих 0; no-translation по блоку 14 — ожидаемо.
