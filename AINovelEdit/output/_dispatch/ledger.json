@@ -3111,8 +3111,8 @@
           "volume": 6,
           "chapter": "06",
           "chapter_id": "v06-ch06",
-          "status": "interrupted",
-          "prompt_file": "agent_prompts/agent_prompt.v06-ch06.sma-a.md",
+          "status": "running",
+          "prompt_file": "agent_prompts/agent_prompt.v06-ch06.sma-a.attempt2.md",
           "expected": [
             "output/_audit/sma/v6-ch06/a/20261022-183938-8387.json"
           ],
@@ -3121,6 +3121,14 @@
               "n": 1,
               "started": "2026-10-22 18:39:38",
               "prompt": "agent_prompts/agent_prompt.v06-ch06.sma-a.md",
+              "finished": "",
+              "result": "",
+              "note": ""
+            },
+            {
+              "n": 2,
+              "started": "2026-10-28 22:05:34",
+              "prompt": "agent_prompts/agent_prompt.v06-ch06.sma-a.attempt2.md",
               "finished": "",
               "result": "",
               "note": ""

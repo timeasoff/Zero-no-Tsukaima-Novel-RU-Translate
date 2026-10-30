@@ -1,6 +1,6 @@
 # Реестр задач диспетчера
 
-Обновлено: 2026-10-25 03:23:19
+Обновлено: 2026-10-28 22:05:34
 
 Генерируется автоматически командой `python tools/dispatch.py`. Не редактируй вручную.
 
@@ -206,7 +206,7 @@ Tom 6: verify ch01-ch08 full audit
 | T-0002-S46 | grammar-audit | v06-ch05 | interrupted | 1 | `agent_prompts/agent_prompt.v06-ch05.grammar-audit.md` |
 | T-0002-S47 | style-audit | v06-ch05 | interrupted | 1 | `agent_prompts/agent_prompt.v06-ch05.style-audit.md` |
 | T-0002-S48 | humanizer | v06-ch05 | interrupted | 1 | `agent_prompts/agent_prompt.v06-ch05.humanizer.md` |
-| T-0002-S49 | sma-a | v06-ch06 | interrupted | 1 | `agent_prompts/agent_prompt.v06-ch06.sma-a.md` |
+| T-0002-S49 | sma-a | v06-ch06 | running | 2 | `agent_prompts/agent_prompt.v06-ch06.sma-a.attempt2.md` |
 | T-0002-S50 | sma-b | v06-ch06 | interrupted | 1 | `agent_prompts/agent_prompt.v06-ch06.sma-b.md` |
 | T-0002-S51 | sma-c | v06-ch06 | interrupted | 1 | `agent_prompts/agent_prompt.v06-ch06.sma-c.md` |
 | T-0002-S52 | analyzer-phase1 | v06-ch06 | interrupted | 1 | `agent_prompts/agent_prompt.v06-ch06.analyzer-phase1.md` |
