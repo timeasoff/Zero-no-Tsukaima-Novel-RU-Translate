@@ -94,9 +94,9 @@ format_scan.py — механический предфильтр оформле�
 слитные записи прямой речи — check_records.py.
 
 Использование:
-    python scripts/format_scan.py --file output/v14-ch04.md
-    python scripts/format_scan.py --file output/v14-ch04.md --report
-    python scripts/format_scan.py --file output/v14-ch04.md --only title,thought
+    python scripts/format_scan.py --file output/chapters/v14-ch04.md
+    python scripts/format_scan.py --file output/chapters/v14-ch04.md --report
+    python scripts/format_scan.py --file output/chapters/v14-ch04.md --only title,thought
     python scripts/format_scan.py --selftest
 """
 import argparse
@@ -108,8 +108,8 @@ if sys.stdout.encoding and sys.stdout.encoding.lower() != "utf-8":
     sys.stdout.reconfigure(encoding="utf-8")
     sys.stderr.reconfigure(encoding="utf-8")
 
-OUT = Path(__file__).resolve().parent.parent / "output"
-AUDIT = OUT / "_audit" / "_prefilter"
+OUT = Path(__file__).resolve().parent.parent / "output" / "chapters"
+AUDIT = OUT.parent / "_audit" / "_prefilter"
 
 KIND_TITLES = {
     "lowercase": "Регистр: предложение/абзац со строчной буквы",
@@ -951,7 +951,7 @@ def main():
         description="Механический предфильтр оформления output-файла "
                     "(russian-prose-rules)")
     ap.add_argument("--file", help="путь к output-файлу главы "
-                                   "(напр. output/v14-ch04.md)")
+                                   "(напр. output/chapters/v14-ch04.md)")
     ap.add_argument("--only", default=",".join(CHECKS),
                     help="проверки через запятую (по умолчанию все: %s)"
                          % ", ".join(CHECKS))

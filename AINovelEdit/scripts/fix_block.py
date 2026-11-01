@@ -60,7 +60,7 @@ if not sys.stdin.isatty():
     except (AttributeError, ValueError):
         pass
 
-OUT_DIR = Path(__file__).resolve().parent.parent / "output"
+OUT_DIR = Path(__file__).resolve().parent.parent / "output" / "chapters"
 REGISTRY = Path(__file__).resolve().parent.parent / "completed.md"
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))

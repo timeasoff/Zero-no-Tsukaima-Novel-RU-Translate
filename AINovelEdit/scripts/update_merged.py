@@ -31,7 +31,7 @@ if sys.stdout.encoding and sys.stdout.encoding.lower() != "utf-8":
 
 BASE = Path(__file__).resolve().parent.parent
 TR = BASE / "translates"
-OUT = BASE / "output"
+OUT = BASE / "output" / "chapters"
 MERGED = TR / "_report" / "merged"
 REGISTRY = BASE / "completed.md"
 

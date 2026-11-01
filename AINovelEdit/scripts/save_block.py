@@ -36,7 +36,7 @@ if not sys.stdin.isatty():
     except (AttributeError, ValueError):
         pass
 
-OUT_DIR = Path(__file__).resolve().parent.parent / "output"
+OUT_DIR = Path(__file__).resolve().parent.parent / "output" / "chapters"
 EN_DIR = Path(__file__).resolve().parent.parent / "translates" / "en"
 REGISTRY = Path(__file__).resolve().parent.parent / "completed.md"
 

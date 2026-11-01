@@ -307,7 +307,7 @@ def volume_chapters(volume: int) -> list[str]:
     """
     found: dict[str, None] = {}
     for folder in (os.path.join(AINOVELEDIT, "translates", "ja"),
-                   os.path.join(AINOVELEDIT, "output")):
+                   os.path.join(AINOVELEDIT, "output", "chapters")):
         if not os.path.isdir(folder):
             continue
         for name in sorted(os.listdir(folder)):
@@ -324,7 +324,7 @@ def volume_chapters(volume: int) -> list[str]:
 def known_volumes() -> list[int]:
     volumes: set[int] = set()
     for folder in (os.path.join(AINOVELEDIT, "translates", "ja"),
-                   os.path.join(AINOVELEDIT, "output")):
+                   os.path.join(AINOVELEDIT, "output", "chapters")):
         if not os.path.isdir(folder):
             continue
         for name in os.listdir(folder):

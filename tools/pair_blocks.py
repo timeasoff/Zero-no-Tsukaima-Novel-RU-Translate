@@ -8,7 +8,7 @@ pair_blocks.py — один файл «output ↔ японский оригин�
 Инструмент складывает в ОДИН отдельный файл (в отдельную папку) две составляющие
 одной главы:
 
-  * то, что получилось в `AINovelEdit/output/<слаг>.md` (RU, результат работы),
+  * то, что получилось в `AINovelEdit/output/chapters/<слаг>.md` (RU, результат работы),
   * японский оригинал из `AINovelEdit/translates/ja/<слаг>.md` (JA).
 
 Файл собран блоками (`<!-- block: N -->`): внутри блока сначала JA-оригинал,
@@ -234,7 +234,7 @@ def norm_slug(raw: str) -> str:
 
 
 def available_slugs(project: Path):
-    out = {p.stem for p in (project / "output").glob("*.md")}
+    out = {p.stem for p in (project / "output" / "chapters").glob("*.md")}
     ja = {p.stem for p in (project / "translates" / "ja").glob("*.md")}
     return sorted(out | ja), sorted(out & ja)
 
@@ -245,7 +245,7 @@ def available_slugs(project: Path):
 
 def pair_chapter(slug, project: Path):
     """Собрать пары главы. -> (файл-текст, список заметок) или ValueError."""
-    ru_path = project / "output" / (slug + ".md")
+    ru_path = project / "output" / "chapters" / (slug + ".md")
     ja_path = project / "translates" / "ja" / (slug + ".md")
     if not ru_path.exists():
         raise ValueError("нет файла output: %s" % ru_path)
@@ -325,8 +325,9 @@ def cmd_self_test(_args) -> int:
     with tempfile.TemporaryDirectory() as tmp:
         root = Path(tmp)
         project = root / "proj"
-        (project / "output").mkdir(parents=True)
+        (project / "output" / "chapters").mkdir(parents=True)
         (project / "translates" / "ja").mkdir(parents=True)
+        out_ch = project / "output" / "chapters"
 
         ru = ("# Глава 1: тест\n\n"
               "<!-- block: 1 -->\n\nРеплика номер один.\n\nВторой абзац.\n\n"
@@ -334,7 +335,7 @@ def cmd_self_test(_args) -> int:
         ja = ("# 第一章 テスト\n\n"
               "<!-- block: 1 -->\n\n一番目の発言。\n\n二番目の段落。\n\n"
               "<!-- block: 2 -->\n\n二番目のブロック。\n")
-        (project / "output" / "v9-ch01.md").write_text(ru, encoding="utf-8")
+        (out_ch / "v9-ch01.md").write_text(ru, encoding="utf-8")
         (project / "translates" / "ja" / "v9-ch01.md").write_text(ja,
                                                                    encoding="utf-8")
 
@@ -361,7 +362,7 @@ def cmd_self_test(_args) -> int:
                                                                    encoding="utf-8")
         ru2 = ("# Глава 2\n\n<!-- block: 1 -->\n\n%s\n\n"
                "<!-- block: 2 -->\n\n%s\n" % ("A" * 100, "B" * 100))
-        (project / "output" / "v9-ch02.md").write_text(ru2, encoding="utf-8")
+        (out_ch / "v9-ch02.md").write_text(ru2, encoding="utf-8")
         text2, notes2, n2 = pair_chapter("v9-ch02", project)
         check("JA без маркеров: те же 2 блока", n2 == 2)
         check("JA без маркеров: заметка выдана", any("ПРИБЛИЗИТЕЛЬНО" in x
@@ -375,7 +376,7 @@ def cmd_self_test(_args) -> int:
         ru3 = ("# Глава 3\n\n<!-- block: 1 -->\n\nТолько RU.\n\n"
                "<!-- block: 2 -->\n\nЕщё RU.\n")
         ja3 = "# 第三章\n\n<!-- block: 1 -->\n\nJAだけ。\n"
-        (project / "output" / "v9-ch03.md").write_text(ru3, encoding="utf-8")
+        (out_ch / "v9-ch03.md").write_text(ru3, encoding="utf-8")
         (project / "translates" / "ja" / "v9-ch03.md").write_text(ja3,
                                                                    encoding="utf-8")
         text3, notes3, n3 = pair_chapter("v9-ch03", project)
@@ -385,7 +386,7 @@ def cmd_self_test(_args) -> int:
         check("заметка о блоке без JA", any("только в output" in x for x in notes3))
 
         # отсутствующий JA -> ValueError
-        (project / "output" / "v9-ch04.md").write_text(
+        (out_ch / "v9-ch04.md").write_text(
             "# X\n\n<!-- block: 1 -->\n\nТекст.\n", encoding="utf-8")
         try:
             pair_chapter("v9-ch04", project)
@@ -394,7 +395,7 @@ def cmd_self_test(_args) -> int:
             check("нет JA -> ошибка", True)
 
         # output без маркеров блоков + JA только с заголовком
-        (project / "output" / "v9-ch05.md").write_text(
+        (out_ch / "v9-ch05.md").write_text(
             "# Послесловие\n\nАбзац один.\n\nАбзац два.\n", encoding="utf-8")
         (project / "translates" / "ja" / "v9-ch05.md").write_text(
             "# あとがき\n", encoding="utf-8")

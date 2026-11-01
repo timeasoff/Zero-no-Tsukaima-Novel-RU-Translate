@@ -188,7 +188,7 @@ class Chapter:
 
     @property
     def output_path(self) -> str:
-        return os.path.join(AINOVELEDIT, "output", self.file_name)
+        return os.path.join(AINOVELEDIT, "output", "chapters", self.file_name)
 
     @property
     def log_path(self) -> str:
@@ -439,7 +439,7 @@ def sma_chapter_id(ch: Chapter) -> str:
     """Идентификатор главы для каталогов SMA: как в именах файлов output/.
 
     ``v3`` + ``ch03`` → ``v3-ch03`` (ведущий ноль тома не используется:
-    так же назван файл output/v3-ch03.md).
+    так же назван файл output/chapters/v3-ch03.md).
     """
     return f"{ch.volume_file_id}-{ch.chapter_id}"
 
@@ -779,7 +779,7 @@ def prompt_full_audit(ch: Chapter) -> str:
 9. drift_scan.py — ОПЦИОНАЛЬНЫЙ инструмент: используется только при необходимости
 сравнить две ветки или ревизии (например, `python scripts/drift_scan.py --file vXX-chYY.md
 --against <SHA/branch>`). Для первичного пайплайна главы НЕ обязателен.
-10. FINAL READ — обязательный перечит сохранённого `output/vXX-chYY.md`
+10. FINAL READ — обязательный перечит сохранённого `output/chapters/vXX-chYY.md`
 сверху донизу, включая RU-only проход: прочти главу по-русски как
 самостоятельное произведение и отметь только то, что дефектно по-русски
 (кальки-безделки, несогласованные конструкции, машинно звучащие
@@ -1076,7 +1076,7 @@ PROVISIONAL → REJECTED → REPLACE ALL AFFECTED OCCURRENCES).
 2. СОСТАВИТЬ ПОЛНЫЙ СПИСОК ЗАТРОНУТЫХ МЕСТ
 Решение по правилу или термину почти всегда шире одной главы.
 Проверь весь том, а не только текущий файл:
-- output/*.md — все главы тома;
+- output/chapters/*.md — все главы тома;
 - dictionary.md, addresses.md;
 - output/_audit/*.md и output/_log/vNN-log.md — реестры и записи;
 - translates/ru и translates/_report/merged — для обновления зеркала.
@@ -2663,7 +2663,7 @@ def action_prefilter_run(ch: Chapter) -> int:
     Не создаёт LLM-промпт и не меняет текст главы (кроме merged-зеркала).
     """
     file_name = ch.file_name
-    out_rel = f"output/{file_name}"
+    out_rel = f"output/chapters/{file_name}"
     commands = [
         [sys.executable, "scripts/update_merged.py", "--file", file_name],
         [sys.executable, "scripts/grammar_scan.py",

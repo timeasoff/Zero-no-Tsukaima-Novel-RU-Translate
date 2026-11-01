@@ -34,8 +34,8 @@
 Отсутствие кандидатов НЕ означает отсутствие стилистических проблем.
 
 Использование:
-    python scripts/style_scan.py --file output/v14-ch01.md
-    python scripts/style_scan.py --file output/v14-ch01.md --report
+    python scripts/style_scan.py --file output/chapters/v14-ch01.md
+    python scripts/style_scan.py --file output/chapters/v14-ch01.md --report
 """
 
 import argparse
@@ -554,7 +554,10 @@ def main():
         print(f"[{cat}] абзац {idx}: {msg}")
 
     if args.report:
-        out_dir = path.parent / "_audit" / "_prefilter"
+        # Отчёты предфильтров лежат в output/_audit/_prefilter/ независимо
+        # от места главы (output/chapters/).
+        base = Path(__file__).resolve().parent.parent
+        out_dir = base / "output" / "_audit" / "_prefilter"
         out_dir.mkdir(parents=True, exist_ok=True)
         out = out_dir / (path.stem + "-style.md")
         with out.open("w", encoding="utf-8") as f:

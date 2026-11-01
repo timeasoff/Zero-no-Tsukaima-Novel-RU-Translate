@@ -35,7 +35,7 @@ if sys.stdout.encoding and sys.stdout.encoding.lower() != "utf-8":
     sys.stdout.reconfigure(encoding="utf-8")
     sys.stderr.reconfigure(encoding="utf-8")
 
-OUT = Path(__file__).resolve().parent.parent / "output"
+OUT = Path(__file__).resolve().parent.parent / "output" / "chapters"
 
 # «. — Слово» / «? — Слово» / «… — Слово» / «» — Слово» внутри строки
 PAT = re.compile(r"([.!?…»])([ \t]+)—([ \t]+)([А-ЯЁA-Z][а-яёa-z\-]+)")

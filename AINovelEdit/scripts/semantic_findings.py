@@ -79,6 +79,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import completed  # noqa: E402  — реестр завершённых томов (канон completed.md)
 
 OUTPUT = BASE / "output"
+CHAPTERS = OUTPUT / "chapters"
 SCRIPTS = Path(__file__).resolve().parent
 FIX_BLOCK = SCRIPTS / "fix_block.py"
 BLOCK_MARK_RE = re.compile(r"<!--\s*block:\s*(\d+)\s*-->")
@@ -418,13 +419,13 @@ def apply_fixed_findings(analysis_json_path, output_md_path, *,
     if not isinstance(results, list):
         raise ValueError("analysis JSON: нет списка results")
 
-    # путь к output-файлу: абсолютный | output/<имя> | <имя>
+    # путь к output-файлу: абсолютный | output/chapters/<имя> | <имя>
     cand = Path(output_md_path)
-    out_path = next((p for p in (cand, OUTPUT / cand.name, BASE / cand)
-                     if p.exists()), OUTPUT / cand.name)
-    if out_path.resolve().parent != OUTPUT:
+    out_path = next((p for p in (cand, CHAPTERS / cand.name, BASE / cand)
+                     if p.exists()), CHAPTERS / cand.name)
+    if out_path.resolve().parent != CHAPTERS:
         raise ValueError("fix_block.py работает только с файлами внутри "
-                         "output/: %s" % out_path)
+                         "output/chapters/: %s" % out_path)
     out_name = out_path.name
     stem = out_path.stem
     analysis_id = str(analysis.get("analysis_id")
@@ -675,7 +676,7 @@ def bridge_selftest(check):
     """
     import shutil
     out_name = "_selftest_bridge.md"
-    out_path = OUTPUT / out_name
+    out_path = CHAPTERS / out_name
     base_content = (
         "<!-- block: 1 -->\n\nТекст для правки в первом блоке.\n\n"
         "<!-- block: 2 -->\n\nВторой блок: повтор и снова повтор.\n")

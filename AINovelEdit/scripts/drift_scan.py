@@ -471,7 +471,7 @@ def main():
 
     path = Path(args.file)
     if not path.exists():
-        candidates = [BASE / "output" / path.name, BASE / "output" / args.file]
+        candidates = [BASE / "output" / "chapters" / path.name, BASE / "output" / "chapters" / args.file]
         for c in candidates:
             if c.exists():
                 path = c

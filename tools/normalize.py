@@ -989,7 +989,7 @@ def main():
                          titles["ru"], ru_p, blocks, "ru")
         write_merged(out_base / "_report" / "merged" / (slug + ".md"),
                      titles["en"], ja_p, en_p, ru_p, blocks,
-                     read_ed_ru(project / "output" / (slug + ".md")))
+                     read_ed_ru(project / "output" / "chapters" / (slug + ".md")))
         write_blocks_json(out_base / "_report" / "blocks" / (slug + ".json"),
                           slug, ja_p, en_p, ru_p, glossary, blocks)
 

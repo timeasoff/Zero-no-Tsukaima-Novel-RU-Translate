@@ -47,8 +47,8 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import merged_io  # noqa: E402
 
 BASE = Path(__file__).resolve().parent.parent
-OUT = BASE / "output"
-AUDIT = OUT / "_audit"
+OUT = BASE / "output" / "chapters"
+AUDIT = BASE / "output" / "_audit"
 PREFILTER = AUDIT / "_prefilter"
 JA_DIR = BASE / "translates" / "ja"
 SMA = AUDIT / "sma"
@@ -346,7 +346,7 @@ def run_selftest() -> int:
         paths = {
             "file_name": file_name,
             "stem": stem,
-            "output": root / "output" / file_name,
+            "output": root / "output" / "chapters" / file_name,
             "ja": root / "translates" / "ja" / file_name,
             "audit": root / "output" / "_audit" / "v09-ch9.md",
             "prefilter": {kind: root / "output" / "_audit" / "_prefilter"

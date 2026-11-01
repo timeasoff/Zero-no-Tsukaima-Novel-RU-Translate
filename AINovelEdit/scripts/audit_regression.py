@@ -226,13 +226,13 @@ def g2_scanners(c):
                 % text[:40])
 
     # 2.2b Текущий output главы класс обязан молчать (правка 20.10.2026).
-    out_path = ROOT / "output" / "v5-ch03.md"
+    out_path = ROOT / "output" / "chapters" / "v5-ch03.md"
     if out_path.exists():
         out_hits = ru_only_hits(read_text(out_path))
         c.check(out_hits == 0,
                 "в текущем output v5-ch03 RU_ONLY: %s (ожидается 0)" % out_hits)
     else:
-        c.fail("output/v5-ch03.md отсутствует")
+        c.fail("output/chapters/v5-ch03.md отсутствует")
 
     # 2.3 Каждый кейс, чей ожидаемый владелец — style_scan:RU_ONLY,
     #     обязан ловиться по своему before (класс механизован).

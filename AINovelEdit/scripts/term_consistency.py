@@ -42,6 +42,7 @@ if sys.stdout.encoding and sys.stdout.encoding.lower() != "utf-8":
 BASE = Path(__file__).resolve().parent.parent       # AINovelEdit/
 ROOT = BASE.parent                                   # корень репозитория
 DICT = BASE / "dictionary.md"
+OUT = Path(__file__).resolve().parent.parent / "output" / "chapters"
 AUDIT = BASE / "output" / "_audit" / "_prefilter"
 
 BLOCK_MARK_RE = re.compile(r"<!--\s*block:\s*(\d+)\s*-->")
@@ -303,7 +304,7 @@ def main():
 
     path = Path(args.file)
     if not path.exists():
-        candidates = [BASE / "output" / path.name, BASE / "output" / args.file]
+        candidates = [BASE / "output" / "chapters" / path.name, BASE / "output" / "chapters" / args.file]
         for c in candidates:
             if c.exists():
                 path = c

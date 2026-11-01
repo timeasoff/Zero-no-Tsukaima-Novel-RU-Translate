@@ -134,6 +134,9 @@ PROJECT_ROOT = Path(__file__).resolve().parent.parent
 # AINovelEdit/output/
 MARKDOWN_DIR = PROJECT_ROOT / "AINovelEdit" / "output"
 
+# AINovelEdit/output/chapters/ — файлы глав (vNN-*.md)
+CHAPTERS_DIR = MARKDOWN_DIR / "chapters"
+
 MERGE_DIR = MARKDOWN_DIR / "merge"
 
 # images/
@@ -326,7 +329,7 @@ def collect_markdown_files(volume):
         re.IGNORECASE,
     )
 
-    for path in MARKDOWN_DIR.glob("*.md"):
+    for path in CHAPTERS_DIR.glob("*.md"):
 
         name = path.name.lower()
 
