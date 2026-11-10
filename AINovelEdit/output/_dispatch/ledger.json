@@ -3111,7 +3111,7 @@
           "volume": 6,
           "chapter": "06",
           "chapter_id": "v06-ch06",
-          "status": "running",
+          "status": "interrupted",
           "prompt_file": "agent_prompts/agent_prompt.v06-ch06.sma-a.attempt2.md",
           "expected": [
             "output/_audit/sma/v6-ch06/a/20261022-183938-8387.json"
@@ -3682,6 +3682,106 @@
             }
           ],
           "note": "изменений после запуска нет"
+        },
+        {
+          "id": "T-0002-S73",
+          "kind": "full-audit",
+          "volume": 6,
+          "chapter": "5",
+          "chapter_id": "v06-ch05",
+          "status": "done",
+          "prompt_file": "agent_prompts/agent_prompt.v06-ch05.full-audit.md",
+          "expected": [
+            "AINovelEdit/output/_audit/v06-ch05.md",
+            "AINovelEdit/output/chapters/v6-ch05.md",
+            "AINovelEdit/output/_log/v6-log.md"
+          ],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-11-10 04:58:58",
+              "prompt": "agent_prompts/agent_prompt.v06-ch05.full-audit.md",
+              "finished": "2026-11-10 06:19:07",
+              "result": "done",
+              "note": "FINAL AUDIT v6-ch05 выполнен оркестратором: отчёт output/_audit/v6-ch05.md, правка 'Мисс Матильда'->'Матильда' через fix_block.py блок 8, merged обновлён, лог дополнен"
+            }
+          ],
+          "note": "FINAL AUDIT v6-ch05 выполнен оркестратором: отчёт output/_audit/v6-ch05.md, правка 'Мисс Матильда'->'Матильда' через fix_block.py блок 8, merged обновлён, лог дополнен"
+        },
+        {
+          "id": "T-0002-S74",
+          "kind": "full-audit",
+          "volume": 6,
+          "chapter": "6",
+          "chapter_id": "v06-ch06",
+          "status": "running",
+          "prompt_file": "agent_prompts/agent_prompt.v06-ch06.full-audit.md",
+          "expected": [
+            "AINovelEdit/output/_audit/v06-ch06.md",
+            "AINovelEdit/output/chapters/v6-ch06.md",
+            "AINovelEdit/output/_log/v6-log.md"
+          ],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-11-10 04:58:58",
+              "prompt": "agent_prompts/agent_prompt.v06-ch06.full-audit.md",
+              "finished": "",
+              "result": "",
+              "note": ""
+            }
+          ],
+          "note": ""
+        },
+        {
+          "id": "T-0002-S75",
+          "kind": "full-audit",
+          "volume": 6,
+          "chapter": "7",
+          "chapter_id": "v06-ch07",
+          "status": "running",
+          "prompt_file": "agent_prompts/agent_prompt.v06-ch07.full-audit.md",
+          "expected": [
+            "AINovelEdit/output/_audit/v06-ch07.md",
+            "AINovelEdit/output/chapters/v6-ch07.md",
+            "AINovelEdit/output/_log/v6-log.md"
+          ],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-11-10 04:58:58",
+              "prompt": "agent_prompts/agent_prompt.v06-ch07.full-audit.md",
+              "finished": "",
+              "result": "",
+              "note": ""
+            }
+          ],
+          "note": ""
+        },
+        {
+          "id": "T-0002-S76",
+          "kind": "full-audit",
+          "volume": 6,
+          "chapter": "8",
+          "chapter_id": "v06-ch08",
+          "status": "running",
+          "prompt_file": "agent_prompts/agent_prompt.v06-ch08.full-audit.md",
+          "expected": [
+            "AINovelEdit/output/_audit/v06-ch08.md",
+            "AINovelEdit/output/chapters/v6-ch08.md",
+            "AINovelEdit/output/_log/v6-log.md"
+          ],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-11-10 04:58:58",
+              "prompt": "agent_prompts/agent_prompt.v06-ch08.full-audit.md",
+              "finished": "",
+              "result": "",
+              "note": ""
+            }
+          ],
+          "note": ""
         }
       ]
     }
