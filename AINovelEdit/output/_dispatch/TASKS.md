@@ -1,6 +1,6 @@
 # Реестр задач диспетчера
 
-Обновлено: 2026-11-10 06:19:07
+Обновлено: 2026-11-10 06:44:48
 
 Генерируется автоматически командой `python tools/dispatch.py`. Не редактируй вручную.
 
@@ -231,7 +231,7 @@ Tom 6: verify ch01-ch08 full audit
 | T-0002-S71 | style-audit | v06-ch08 | interrupted | 1 | `agent_prompts/agent_prompt.v06-ch08.style-audit.md` |
 | T-0002-S72 | humanizer | v06-ch08 | interrupted | 1 | `agent_prompts/agent_prompt.v06-ch08.humanizer.md` |
 | T-0002-S73 | full-audit | v06-ch05 | done | 1 | `agent_prompts/agent_prompt.v06-ch05.full-audit.md` |
-| T-0002-S74 | full-audit | v06-ch06 | running | 1 | `agent_prompts/agent_prompt.v06-ch06.full-audit.md` |
+| T-0002-S74 | full-audit | v06-ch06 | done | 1 | `agent_prompts/agent_prompt.v06-ch06.full-audit.md` |
 | T-0002-S75 | full-audit | v06-ch07 | running | 1 | `agent_prompts/agent_prompt.v06-ch07.full-audit.md` |
 | T-0002-S76 | full-audit | v06-ch08 | running | 1 | `agent_prompts/agent_prompt.v06-ch08.full-audit.md` |
 
@@ -286,4 +286,5 @@ Tom 6: verify ch01-ch08 full audit
 - T-0002-S71: изменений после запуска нет
 - T-0002-S72: изменений после запуска нет
 - T-0002-S73: FINAL AUDIT v6-ch05 выполнен оркестратором: отчёт output/_audit/v6-ch05.md, правка 'Мисс Матильда'->'Матильда' через fix_block.py блок 8, merged обновлён, лог дополнен
+- T-0002-S74: Полная обработка v6-ch06 субагентом ses_e3c886b49ffelPPylzoYQkDUnD: 26/26 блоков по JA, ED_RU 26/26, отчёт output/_audit/v06-ch06.md, верифицировано оркестратором (маркеры 1-26, кавычки, сканеры сходятся с отчётом)
 

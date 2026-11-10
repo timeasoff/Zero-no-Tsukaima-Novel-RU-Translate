@@ -3714,7 +3714,7 @@
           "volume": 6,
           "chapter": "6",
           "chapter_id": "v06-ch06",
-          "status": "running",
+          "status": "done",
           "prompt_file": "agent_prompts/agent_prompt.v06-ch06.full-audit.md",
           "expected": [
             "AINovelEdit/output/_audit/v06-ch06.md",
@@ -3726,12 +3726,12 @@
               "n": 1,
               "started": "2026-11-10 04:58:58",
               "prompt": "agent_prompts/agent_prompt.v06-ch06.full-audit.md",
-              "finished": "",
-              "result": "",
-              "note": ""
+              "finished": "2026-11-10 06:44:48",
+              "result": "done",
+              "note": "Полная обработка v6-ch06 субагентом ses_e3c886b49ffelPPylzoYQkDUnD: 26/26 блоков по JA, ED_RU 26/26, отчёт output/_audit/v06-ch06.md, верифицировано оркестратором (маркеры 1-26, кавычки, сканеры сходятся с отчётом)"
             }
           ],
-          "note": ""
+          "note": "Полная обработка v6-ch06 субагентом ses_e3c886b49ffelPPylzoYQkDUnD: 26/26 блоков по JA, ED_RU 26/26, отчёт output/_audit/v06-ch06.md, верифицировано оркестратором (маркеры 1-26, кавычки, сканеры сходятся с отчётом)"
         },
         {
           "id": "T-0002-S75",
