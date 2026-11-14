@@ -3740,7 +3740,7 @@
           "chapter": "7",
           "chapter_id": "v06-ch07",
           "status": "running",
-          "prompt_file": "agent_prompts/agent_prompt.v06-ch07.full-audit.md",
+          "prompt_file": "agent_prompts/agent_prompt.v06-ch07.full-audit.attempt2.md",
           "expected": [
             "AINovelEdit/output/_audit/v06-ch07.md",
             "AINovelEdit/output/chapters/v6-ch07.md",
@@ -3751,6 +3751,14 @@
               "n": 1,
               "started": "2026-11-10 04:58:58",
               "prompt": "agent_prompts/agent_prompt.v06-ch07.full-audit.md",
+              "finished": "",
+              "result": "",
+              "note": ""
+            },
+            {
+              "n": 2,
+              "started": "2026-11-11 02:15:56",
+              "prompt": "agent_prompts/agent_prompt.v06-ch07.full-audit.attempt2.md",
               "finished": "",
               "result": "",
               "note": ""
@@ -3781,6 +3789,22 @@
               "note": ""
             }
           ],
+          "note": ""
+        },
+        {
+          "id": "T-0002-S77",
+          "kind": "full-audit",
+          "volume": 6,
+          "chapter": "7",
+          "chapter_id": "v06-ch07",
+          "status": "planned",
+          "prompt_file": "",
+          "expected": [
+            "AINovelEdit/output/_audit/v06-ch07.md",
+            "AINovelEdit/output/chapters/v6-ch07.md",
+            "AINovelEdit/output/_log/v6-log.md"
+          ],
+          "attempts": [],
           "note": ""
         }
       ]
