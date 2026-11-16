@@ -5055,6 +5055,121 @@
             }
           ],
           "note": "Phase 2: 11 FP/PRESERVED, typo Р»Р¶С‘С€СЊ fixed"
+        },
+        {
+          "id": "T-0003-S36",
+          "kind": "sma-a",
+          "volume": 7,
+          "chapter": "8",
+          "chapter_id": "v07-ch08",
+          "status": "done",
+          "prompt_file": "agent_prompts/agent_prompt.v07-ch08.sma-a.md",
+          "expected": [
+            "output/_audit/sma/v7-ch08/a/20261116-231520-5f88.json"
+          ],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-11-16 23:15:20",
+              "prompt": "agent_prompts/agent_prompt.v07-ch08.sma-a.md",
+              "finished": "2026-11-16 23:19:25",
+              "result": "done",
+              "note": "SMA-A: 3 находки, приняты"
+            }
+          ],
+          "note": "SMA-A: 3 находки, приняты"
+        },
+        {
+          "id": "T-0003-S37",
+          "kind": "sma-b",
+          "volume": 7,
+          "chapter": "8",
+          "chapter_id": "v07-ch08",
+          "status": "done",
+          "prompt_file": "agent_prompts/agent_prompt.v07-ch08.sma-b.md",
+          "expected": [
+            "output/_audit/sma/v7-ch08/b/20261116-231520-8066.json"
+          ],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-11-16 23:15:20",
+              "prompt": "agent_prompts/agent_prompt.v07-ch08.sma-b.md",
+              "finished": "2026-11-16 23:19:25",
+              "result": "done",
+              "note": "SMA-B: 9 находок, приняты"
+            }
+          ],
+          "note": "SMA-B: 9 находок, приняты"
+        },
+        {
+          "id": "T-0003-S38",
+          "kind": "sma-c",
+          "volume": 7,
+          "chapter": "8",
+          "chapter_id": "v07-ch08",
+          "status": "done",
+          "prompt_file": "agent_prompts/agent_prompt.v07-ch08.sma-c.md",
+          "expected": [
+            "output/_audit/sma/v7-ch08/c/20261116-231520-b234.json"
+          ],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-11-16 23:15:20",
+              "prompt": "agent_prompts/agent_prompt.v07-ch08.sma-c.md",
+              "finished": "2026-11-16 23:19:25",
+              "result": "done",
+              "note": "SMA-C: 2 находки, приняты"
+            }
+          ],
+          "note": "SMA-C: 2 находки, приняты"
+        },
+        {
+          "id": "T-0003-S39",
+          "kind": "analyzer-phase1",
+          "volume": 7,
+          "chapter": "8",
+          "chapter_id": "v07-ch08",
+          "status": "done",
+          "prompt_file": "agent_prompts/agent_prompt.v07-ch08.analyzer-phase1.md",
+          "expected": [],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-11-16 23:15:20",
+              "prompt": "agent_prompts/agent_prompt.v07-ch08.analyzer-phase1.md",
+              "finished": "2026-11-16 23:19:25",
+              "result": "done",
+              "note": "Фаза 1: 4 находки, приняты"
+            }
+          ],
+          "note": "Фаза 1: 4 находки, приняты"
+        },
+        {
+          "id": "T-0003-S40",
+          "kind": "analyzer-phase2",
+          "volume": 7,
+          "chapter": "8",
+          "chapter_id": "v07-ch08",
+          "status": "done",
+          "prompt_file": "agent_prompts/agent_prompt.v07-ch08.analyzer-phase2.md",
+          "expected": [
+            "output/_audit/sma/v7-ch08/precheck/omission-precheck.json",
+            "output/_audit/sma/v7-ch08/analysis/20261116-231925-d3f1.json",
+            "output/_audit/sma/v7-ch08/analysis/20261116-231925-d3f1.md"
+          ],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-11-16 23:19:25",
+              "prompt": "agent_prompts/agent_prompt.v07-ch08.analyzer-phase2.md",
+              "finished": "2026-11-16 23:26:10",
+              "result": "done",
+              "note": "Phase 2: C-17 recovered йЂ†и»ўгЃ™г‚‹гЃ®гЃ , C-14 DISPUTED"
+            }
+          ],
+          "note": "Phase 2: C-17 recovered йЂ†и»ўгЃ™г‚‹гЃ®гЃ , C-14 DISPUTED"
         }
       ]
     }
