@@ -1,6 +1,6 @@
 # Реестр задач диспетчера
 
-Обновлено: 2026-11-16 23:43:28
+Обновлено: 2026-11-16 23:52:33
 
 Генерируется автоматически командой `python tools/dispatch.py`. Не редактируй вручную.
 
@@ -368,6 +368,11 @@ Tom 6: verify ch01-ch08 full audit
 | T-0003-S43 | sma-c | v07-ch09 | done | 1 | `agent_prompts/agent_prompt.v07-ch09.sma-c.md` |
 | T-0003-S44 | analyzer-phase1 | v07-ch09 | done | 2 | `agent_prompts/agent_prompt.v07-ch09.analyzer-phase1.attempt2.md` |
 | T-0003-S45 | analyzer-phase2 | v07-ch09 | done | 1 | `agent_prompts/agent_prompt.v07-ch09.analyzer-phase2.md` |
+| T-0003-S46 | sma-a | v07-ch10 | done | 1 | `agent_prompts/agent_prompt.v07-ch10.sma-a.md` |
+| T-0003-S47 | sma-b | v07-ch10 | done | 1 | `agent_prompts/agent_prompt.v07-ch10.sma-b.md` |
+| T-0003-S48 | sma-c | v07-ch10 | done | 1 | `agent_prompts/agent_prompt.v07-ch10.sma-c.md` |
+| T-0003-S49 | analyzer-phase1 | v07-ch10 | done | 1 | `agent_prompts/agent_prompt.v07-ch10.analyzer-phase1.md` |
+| T-0003-S50 | analyzer-phase2 | v07-ch10 | running | 1 | `agent_prompts/agent_prompt.v07-ch10.analyzer-phase2.md` |
 
 Заметки:
 - T-0003-S1: SMA-A: 8 находок, все приняты
@@ -413,4 +418,8 @@ Tom 6: verify ch01-ch08 full audit
 - T-0003-S43: SMA-C: 1 находка, принята
 - T-0003-S44: Фаза 1 retry: иероглиф 巸 удалён
 - T-0003-S45: Phase 2: 5 FP/PRESERVED, 1 DISPUTED (Р±Р»РѕРє 11)
+- T-0003-S46: SMA-A: 8 находок, приняты
+- T-0003-S47: SMA-B: 4 находки, приняты
+- T-0003-S48: SMA-C: 1 находка, принята
+- T-0003-S49: Фаза 1: 9 находок, приняты
 
