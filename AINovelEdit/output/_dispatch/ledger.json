@@ -4702,6 +4702,121 @@
             }
           ],
           "note": "Phase 2: 16 FIXED, 1 applied via Execution Bridge"
+        },
+        {
+          "id": "T-0003-S21",
+          "kind": "sma-a",
+          "volume": 7,
+          "chapter": "5",
+          "chapter_id": "v07-ch05",
+          "status": "done",
+          "prompt_file": "agent_prompts/agent_prompt.v07-ch05.sma-a.md",
+          "expected": [
+            "output/_audit/sma/v7-ch05/a/20261116-222251-37fe.json"
+          ],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-11-16 22:22:51",
+              "prompt": "agent_prompts/agent_prompt.v07-ch05.sma-a.md",
+              "finished": "2026-11-16 22:27:28",
+              "result": "done",
+              "note": "SMA-A: см.Filename"
+            }
+          ],
+          "note": "SMA-A: см.Filename"
+        },
+        {
+          "id": "T-0003-S22",
+          "kind": "sma-b",
+          "volume": 7,
+          "chapter": "5",
+          "chapter_id": "v07-ch05",
+          "status": "done",
+          "prompt_file": "agent_prompts/agent_prompt.v07-ch05.sma-b.md",
+          "expected": [
+            "output/_audit/sma/v7-ch05/b/20261116-222251-574e.json"
+          ],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-11-16 22:22:51",
+              "prompt": "agent_prompts/agent_prompt.v07-ch05.sma-b.md",
+              "finished": "2026-11-16 22:27:28",
+              "result": "done",
+              "note": "SMA-B: 2 находки (блоки 4,13), приняты"
+            }
+          ],
+          "note": "SMA-B: 2 находки (блоки 4,13), приняты"
+        },
+        {
+          "id": "T-0003-S23",
+          "kind": "sma-c",
+          "volume": 7,
+          "chapter": "5",
+          "chapter_id": "v07-ch05",
+          "status": "done",
+          "prompt_file": "agent_prompts/agent_prompt.v07-ch05.sma-c.md",
+          "expected": [
+            "output/_audit/sma/v7-ch05/c/20261116-222251-3411.json"
+          ],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-11-16 22:22:51",
+              "prompt": "agent_prompts/agent_prompt.v07-ch05.sma-c.md",
+              "finished": "2026-11-16 22:27:28",
+              "result": "done",
+              "note": "SMA-C: 1 ERROR (атрибуция блока 11), принята"
+            }
+          ],
+          "note": "SMA-C: 1 ERROR (атрибуция блока 11), принята"
+        },
+        {
+          "id": "T-0003-S24",
+          "kind": "analyzer-phase1",
+          "volume": 7,
+          "chapter": "5",
+          "chapter_id": "v07-ch05",
+          "status": "done",
+          "prompt_file": "agent_prompts/agent_prompt.v07-ch05.analyzer-phase1.md",
+          "expected": [],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-11-16 22:22:51",
+              "prompt": "agent_prompts/agent_prompt.v07-ch05.analyzer-phase1.md",
+              "finished": "2026-11-16 22:27:28",
+              "result": "done",
+              "note": "Фаза 1: 4 находки, приняты"
+            }
+          ],
+          "note": "Фаза 1: 4 находки, приняты"
+        },
+        {
+          "id": "T-0003-S25",
+          "kind": "analyzer-phase2",
+          "volume": 7,
+          "chapter": "5",
+          "chapter_id": "v07-ch05",
+          "status": "done",
+          "prompt_file": "agent_prompts/agent_prompt.v07-ch05.analyzer-phase2.md",
+          "expected": [
+            "output/_audit/sma/v7-ch05/precheck/omission-precheck.json",
+            "output/_audit/sma/v7-ch05/analysis/20261116-222905-1afd.json",
+            "output/_audit/sma/v7-ch05/analysis/20261116-222905-1afd.md"
+          ],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-11-16 22:29:05",
+              "prompt": "agent_prompts/agent_prompt.v07-ch05.analyzer-phase2.md",
+              "finished": "2026-11-16 22:32:29",
+              "result": "done",
+              "note": "Phase 2: 13 FP/PRESERVED, all fixes already applied"
+            }
+          ],
+          "note": "Phase 2: 13 FP/PRESERVED, all fixes already applied"
         }
       ]
     }
