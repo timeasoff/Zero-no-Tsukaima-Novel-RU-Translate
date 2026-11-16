@@ -1,6 +1,6 @@
 # Реестр задач диспетчера
 
-Обновлено: 2026-11-17 00:25:20
+Обновлено: 2026-11-17 01:27:42
 
 Генерируется автоматически командой `python tools/dispatch.py`. Не редактируй вручную.
 
@@ -232,8 +232,8 @@ Tom 6: verify ch01-ch08 full audit
 | T-0002-S72 | humanizer | v06-ch08 | done | 1 | `agent_prompts/agent_prompt.v06-ch08.humanizer.md` |
 | T-0002-S73 | full-audit | v06-ch05 | done | 1 | `agent_prompts/agent_prompt.v06-ch05.full-audit.md` |
 | T-0002-S74 | full-audit | v06-ch06 | done | 1 | `agent_prompts/agent_prompt.v06-ch06.full-audit.md` |
-| T-0002-S75 | full-audit | v06-ch07 | running | 2 | `agent_prompts/agent_prompt.v06-ch07.full-audit.attempt2.md` |
-| T-0002-S76 | full-audit | v06-ch08 | running | 1 | `agent_prompts/agent_prompt.v06-ch08.full-audit.md` |
+| T-0002-S75 | full-audit | v06-ch07 | done | 2 | `agent_prompts/agent_prompt.v06-ch07.full-audit.attempt2.md` |
+| T-0002-S76 | full-audit | v06-ch08 | done | 1 | `agent_prompts/agent_prompt.v06-ch08.full-audit.md` |
 | T-0002-S77 | full-audit | v06-ch07 | planned | 0 | `—` |
 | T-0002-S78 | sma-a | v06-ch07 | done | 2 | `agent_prompts/agent_prompt.v06-ch07.sma-a.attempt2.md` |
 | T-0002-S79 | sma-b | v06-ch07 | done | 2 | `agent_prompts/agent_prompt.v06-ch07.sma-b.attempt2.md` |
@@ -445,4 +445,28 @@ Tom 6: verify ch01-ch08 full audit
 - T-0003-S58: SMA-C: 0 find
 - T-0003-S59: Phase1: 3 find, applied
 - T-0003-S60: Phase 2: 9 FP, 2 DISPUTED applied
+
+## T-0004 — OPEN
+
+Полный перевод тома 8
+
+| ID | Режим | Глава | Статус | Попыток | Промпт |
+| --- | --- | --- | --- | --- | --- |
+| T-0004-S1 | sma-a | v08-ch01 | done | 1 | `agent_prompts/agent_prompt.v08-ch01.sma-a.md` |
+| T-0004-S2 | sma-b | v08-ch01 | done | 1 | `agent_prompts/agent_prompt.v08-ch01.sma-b.md` |
+| T-0004-S3 | sma-c | v08-ch01 | done | 1 | `agent_prompts/agent_prompt.v08-ch01.sma-c.md` |
+| T-0004-S4 | analyzer-phase1 | v08-ch01 | done | 1 | `agent_prompts/agent_prompt.v08-ch01.analyzer-phase1.md` |
+| T-0004-S5 | analyzer-phase2 | v08-ch01 | done | 1 | `agent_prompts/agent_prompt.v08-ch01.analyzer-phase2.md` |
+| T-0004-S6 | sma-a | v08-ch02 | running | 1 | `agent_prompts/agent_prompt.v08-ch02.sma-a.md` |
+| T-0004-S7 | sma-b | v08-ch02 | running | 1 | `agent_prompts/agent_prompt.v08-ch02.sma-b.md` |
+| T-0004-S8 | sma-c | v08-ch02 | running | 2 | `agent_prompts/agent_prompt.v08-ch02.sma-c.attempt2.md` |
+| T-0004-S9 | analyzer-phase1 | v08-ch02 | running | 1 | `agent_prompts/agent_prompt.v08-ch02.analyzer-phase1.md` |
+| T-0004-S10 | analyzer-phase2 | v08-ch02 | planned | 0 | `—` |
+
+Заметки:
+- T-0004-S1: SMA-A: 5 find, applied
+- T-0004-S2: SMA-B: 6 find, applied
+- T-0004-S3: SMA-C: 2 find, applied
+- T-0004-S4: Phase1: 6 find, applied
+- T-0004-S5: Phase 2: 13 FIXED, 2 REPORT_ONLY fixed, 1 FP
 
