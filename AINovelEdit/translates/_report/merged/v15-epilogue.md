@@ -1,0 +1,323 @@
+# Epilogue
+
+## Блок 1
+
+**JA:**
+「皆さん。これをご覧ください。まごうことなき、ジョゼフ王の冠です。先ほどの巨大な火の玉は、小さなフリゲート艦でやってきた彼の仕業なのです。彼はエルフと手を組み、あの凶悪な炎の玉を作り出し……、両用艦隊を壊滅させたのです。それのみならず、皆さんごとこのわたくしを葬り去ろうとしたのです」
+ガリア軍に対する、教皇ヴィットーリオの演説は続いていた。先ほど、ジョゼフが放り出した冠を持つヴィットーリオの演説は、徐々にガリア軍の混乱を収めていく。
+なんといっても、ジョゼフの冠は動かぬ証拠であった。
+初めは信じられなかったガリア軍の将兵たちも、エルフと手を組んでいるというジョゼフの噂を思い出し、さもありなんと思うようになっていった。
+「だが、その狂王は、先ほど天に召されました。皮肉にも、己が作り出した炎の玉の暴発によって……。これを天罰といわずして、なんというのでしょうか？」
+突然ジョゼフ王の死を持ち出され、さすがにガリア軍はヴィットーリオの演説に疑いを抱いた。だが、それがほんとうだと知るに、さほどの時間はかからなかった。首都リュティスに問い合わせると、ジョゼフが単身フリゲート艦に乗って出撃したとの返事がかえってきたのである。
+ことここに至っては、もう、戦にならない。抱くべき王が死んでしまったのである。それも、自分たちごと、ロマリア軍を葬り去ろうとして……。
+すでにジョゼフに忠誠を誓う将兵は一人もいなかった。
+とうとうガリア軍はその矛を収め、次々とロマリア軍の下へと下ってきた。ヴィットーリオの演説は続く。
+「ご安心を。わたくしは皆さんの罪を問うつもりはありません。また、ロマリア軍の捕虜として扱うつもりもありません。皆さんはこれまでどおり、栄誉あるガリア王軍の一員です。我々の聖なる友人です。〝聖敵〟とは、先ほど巨大な火の玉にのみこまれたジョゼフ王のみに向けられる言葉なのです。決して皆さん相手に用いる言葉ではないのです……」
+そんなヴィットーリオの言葉を、苦々しげに才人たちは聞いていた。
+ヴィットーリオの演説は続いていた。
+「我らの真の敵は誰か？ エルフです！ 彼らこそが、無能王をそそのかし、世界を恐怖に陥れたのです！」
+不安げに、ティファニアがフードを深く被る。才人はそんなティファニアに頷いた。あれだけの傷でありながら、立てるぐらいに回復していた。王族の治癒魔法に、才人は感嘆した。
+「大丈夫。あいつらの思い通りになんかさせるもんか」
+「でも結局、ロマリアの思い通りになっちゃったわね」
+
+**EN:**
+"See for yourselves, everyone. This is the absolute real crown of Joseph. The gigantic explosion just now, was none other than the good deeds of Joseph. He had allied with the elves and created this kind of hellish fire.... he completely annhiliated the dual use fleet. Not only so, he also wanted you to go down with it" Facing the Gallian army, Vittorio continued his speech. Taking out Joseph's crown just now, Vittorio began to persuade the Gallian armies.
+After all, isn't Joseph's crown the best proof.
+Slowly, even the most stubborn Gallian soldiers, began to recall rumours of Joseph allying with elves, starting to be pursuaded bit by bit.
+"But, this mad king, has already been called back by the Gods. More ironically, using the fireball explosion he created....if this is not the punishment from God, what else could it be?"
+Suddenly hearing news of Joseph's death, the Gallian army expressed their disbelief towards Vittorio's speech. To confirm the genuinity of Vittorio's news would certainly require quite a bit of time. Not long afterwards, contact from Lutece was established, knowledge of Joseph boarding the speedboat alone obtained.
+With things already at this stage, there is now little reason to fight. Their king was already dead. And he even tried to perish every single one of them along with the Romalian army.....
+Not a single soldier was left loyal to Joseph.
+The Gallian army finally held back their spears and surrendered to the Romalian army. Vittorio's speech continued. "Please relax. I have no desire to condemn you all, nore to treat you as fugitives. Since every one of you is part of the glorious member of the Gallian Empire, we are all friends in front of God. The 'crusade' was only used to describe the Joseph swallowed by that humongous fireball, not on any one of you...."
+Saito found Vittorio's words irritating.
+"Who is our real enemy? It's the elven heretics! They were the ones supporting the incompetent king, terrorizing the whole world!"
+Tiffania nervously pulled her hat lower. Saito nodded towards Tiffania. Although still wounded, it has already recovered to a degree where Saito is capable of moving around. Towards the healing magic of the royal personel, Saito could not help but express his awe.
+"It's alright. We won't let that guy get away with it"
+
+**RU:**
+– Все, смотрите сами. Это - абсолютная реальная корона Джозефа. Гигантский взрыв сейчас, был ничем другим, как благодеянием Джозефа. Он объединился с эльфами и создал этот адский огонь.... он полностью уничтожил многофункциональный. Мало того, он также хотел, чтобы вы спали с ним. – встретившись с армией Галлии Витторио продолжал свою речь. Взяв корону Джозефа, Витторио начал убеждать армию Галии.
+В конце концов, не корона Джозефа лучшее доказательство.
+Медленно, даже самые упрямые солдаты Галлии, начали вспоминать слухи о Джозефе, что он объединился с эльфами, постепенно, становясь переубеждёнными.
+Но, этот безумный король, был призван Богами обратно. Более иронического используя огненного шара нельзя придумать...., если это не наказание Божье, чем ещё это может быть?
+Внезапно услышав новости о смерти Джозефа, армия Галлии возмутилась речью Витторио. Чтобы подтвердить грандиозную новостей Витторио, конечно, потребовалось некоторое время. В скорее с Люте́ции пришли вести о том что Джозеф покинул столицу на одном лишь быстроходном катере.
+В данной ситуации оставалось мало причин продолжать сражаться. Их король уже был мёртв. Он даже пытался и их, наряду с армией противника...
+Не осталось ни одного солдата лояльного к Джозефу.
+Армия Галлии наконец бросила оружие, и сдалась Солдатам Ромалии. Речь виктории продолжалась. – Пожалуйста успокойтесь. У меня нет намеренья осудить вас всех, более рассматривать вас как дезертиров. Потому что каждый из вас является частью славной империи Галлии, мы все друзья перед Богом. Крестовый поход был объявлен против Джозефы, которого проглотил огненный шар, а не против кого-то их вас
+Сайто, слава Витторио казались казались раздражительными.
+– Кто наш настоящий враг? Это -те еретики, эльфы! Они были теми, кто поддерживал некомпетентного короля, терроризируя весь мир!
+Тифания нервно натянула головной убор ниже. Сайто кивнул ей. Хотя ещё раны не зажили, он оклемался до статочно чтобы двигаться. Сайто был поражён магией лечения королевской особы.
+– Всё в порядке. Мы не позволим тому парню выйти сухим из воды
+
+**ED_RU:**
+—
+
+## Блок 2
+
+**JA:**
+ルイズが、冷たい目で呟く。
+「まあね。あいつら、魔法一つでジョゼフの変心を引き出した。ほんと油断がならねえ」
+才人も言った。
+「それほんと？」
+「ああ。俺は見てたんだ。〝エクスプロージョン〟を唱えて、ジョゼフがそいつをあの〝火石〟とやらにかけようとした瞬間……、いきなり棒立ちになったんだ。あんとき、なんかの呪文をかけられたに違いないよ」
+「まあ、そのおかげでわたしたちは救われたんだけどね」
+「そうだけど。全部あいつらの手のひらの上ってのは、どうにも気に入らないな」
+「参ったな。役者が上すぎる。今度の教皇は、もしかしたら〝聖戦〟を成功させるかもしれないなあ」
+ギーシュがそんな惚けたことを呟く。
+「おい、ギシュ！」
+才人が睨むと、ギーシュは首を振った。
+「冗談だよ。あの巨大な火の玉……。エルフの先住魔法なんだろ？ あれこそ冗談じゃない！ よくもまあ、ぼくたちのご先祖は、あんな恐ろしいものを作り出せる連中と戦をする気になったもんだ！」
+「教皇の計算違いがあるとしたら、そこね」
+キュルケが言った。
+「どういう意味だい？」
+「ロマリア、ガリア両軍十五万の将兵は、そんな恐ろしいエルフの力を間近で見てるのよ。いくら説教上手な教皇にたきつけられたって、その気になるかしら？」
+
+**EN:**
+"But in the end, it all went according to Romalia's plans" Louise mentioned coldly.
+"Huh, that guy was about to change Joseph's mind with only one spell. We must be really cautious from now on" Saito said
+"Is that true?"
+"Mhm, I saw it with my own eyes. Joseph was in the middle of chanting 'explosion', just as he was about to cast it upon the 'fire jewel'..... there he stood, not moving a muscle. I'm sure it was that moment when he casted some sort of spell"
+"Welll, thanks to him, we're all saved now"
+"Although that's true, but everything went accordingly to how that guy planned, it kind of pisses me off."
+"How troublesome. He really knows how to put up an act. This pope, perhaps he may really make this 'crusade' a success" Guiche muttered dreamily.
+"Hey, Guiche!" Given a stern stare from Saito, Guiche turned around.
+"Oh I was just joking. That giant fireball.... elven magic? What a joke! How can our founders possibly fight with people who can make things as terrifying as that!"
+"If anything goes wrong in the Pope's plan, it should be exactly this" Kirche voiced her thoughts.
+"What do you mean?"
+"Both Romallia and Gallia, a hundred and fifty thousand men, witnessed the power of the elves at such a close distance. No matter how charismatic the Pope is, how do you suppose he convince all of these people to dig their own graves?"
+
+**RU:**
+Но в конечном счёте, все пошло согласно планам Ромалии. – холодно констатировала Луиза.
+– Хах, тот парень передумал лишь из-за одного заклинания. С этого времени мы должны быть действительно осторожны. – сказал Сайто.
+– Это правда?
+– Угу, я видел его своими глазами. Джозеф был на середине произношения заклинания "взрыв", так же, он собирался направить его на "камень огня"... тогда он стол абсолютно неподвижным. Я уверен, что это было в тот момент когда его атаковали каким-то заклинанием.
+– Ну, благодаря ему, мы все спасены.
+Хотя это правда, но все пошло так, как запланировал тот парень и это бесит меня.
+– Как не приятно. Он действительно знает, как действовать. Этот Папа, возможно, сможет действительно сделать этот "крестовый поход", успешным. –мечтательно бормотал Гиш.
+– Ей, Гиш Учитывая строгий пристальный взгляд Сайто, Гиш, всё перекрутил.
+– О, я просто шутил. Тот гигантский огненный шар... эльфийское волшебство? Какая-то шутка! Как наши основатели могли бороться с людьми, которые могут делать такие ужасные вещи, как это?!
+Если что-нибудь идёт не по плане Папы, то это должно быть точно этим. – высказала свои мысли Кирхе. – Что вы имеете виду?
+– Сто пятьдесят тысяч мужчин из Галлии и Ромалии, засвидетельствовали силу эльфов на таком близком расстоянии. Независимо от того, насколько харизматичный Папа, как по авшему, он убеждит всех этих людей рыть их собственные могилы?
+
+**ED_RU:**
+—
+
+## Блок 3
+
+**JA:**
+「それにもう一つ」
+ルイズも言った。
+「虚無のほんとうの力の復活のためには、四の四が必要なはずよ。でも、ガリアの担い手は、使い魔ごと死んじゃった。三の三じゃあ、さすがにエルフに勝てないでしょ」
+そうだ！ 間抜けな話ね！ と女の子たちは笑いあう。
+だが……、才人はそんな気になれなかった。ジョゼフの死は、ヴィットーリオも計算に入れていたはずだ。ジュリオは言っていたじゃないか。
+〝あの王は、決して味方にはならない〟と。
+それでも聖戦を遂行できる目算があるんだ。
+間違いない。
+「ま、そんなわけで！ ぼくたちの聖戦は終わったわけで！ あとは勝手にロマリアやってろって感じで！ なんか言われたら、ごめんなさい、遠征するお金ないですぅ！ で！ 恐ろしいガリアの王さまもいなくなったわけで！ 国に帰ったらぱぁっとやろうじゃあないかね！ サイトの稼いだ金で！ ぱぁっと！」
+水精霊騎士隊の少年たちは、ギーシュの言葉に陽気に笑いあう。才人も肩をたたかれて、笑みを浮かべた。確かにヴィットーリオの陰謀は、まだその全貌が見えていない。あいつらは油断がならない連中だ。
+そして、自分はまだまだである。さっきだって、せっかくカステルモールが『気をつけろ』と書いて寄越したのに……。状況に飲まれてジョゼフの呪文を存在を忘れてしまっていた。
+教皇の〝虚無〟がなければ、自分をも含めた十五万の人間が灰になっていたかもしれない。
+おまけにまだまだ強いやつはたくさんいて……。
+でも、と才人は思い直す。
+俺には仲間がいる。
+そして……、ルイズもいる。
+
+**EN:**
+"There's another factor as well" Louise suggested "To revive the true power of the void, we need all four void users. But since the Gallia's void user and familiar died together, there's only the three of us left. This was we can't win against the elves"
+That's right! How could they have forgotten about this! The girls burst out in laughter after realisation.
+.....Saito thought otherwise. Joseph's death should also be in Vittorio's calculations, wasn't that how Julio said? "That king will never join us"
+If so, there must also be a plan to continue the Crusade without his help.
+It must be like that.
+"Well, so that's that! Our crusade is over! Leave the rest for Romalia! If asked, just say, sorry, we don't have any more funds for an expedition~~! Besides the terror of the Gallian king has already ended! Let's return home~~ return home! Enjoy ourselves with Saito's hard earned money, all of us!"
+Hearing Guiche's suggestions, all the Water Spirit Ondine Knights laughed brightly. Saito was also clapped on the back, shaking his head in chuckles. Vittorio's plans is still yet to end, is still yet to be uncovered, they must not let down their guard.
+Plus, Saito's power was hardly useful. Castlemont already especially warned him "be careful" previously.... but he got carried away and completely forgot about the existance of Joseph's spell.
+If it weren't for the Pope's "void", perhaps he would have perished along with the a hundred and fifty thousand men, turned to nothing but ashes.
+There's a lot more even powerful people ahead....
+But then Saito rememberedI have my friends
+and.... Louise.
+
+**RU:**
+– Есть также другой фактор, – предположила Луиза – Чтобы восстановить истинную силу пустоты, нам нужны все четыре мага пустоты. Но так как повелитель пустоты Галлии и его фамильяр умерли вместе, осталось только трое из нас. Так что сомнительно что мы можем победить эльфов.
+Это верно. Как же они забыли об этом! Засмеялись девочки.
+... Сайто думал иначе. Смерть Джозефа Витторио также рассчитал, разве не обетом говорил Джулио? «Тот король никогда не присоединится к нам»
+Если так, должен также быть план продолжить Крестовый поход без его участия. Выходит так и есть.
+– Ну, так вот оно что! Наш крестовый поход закончен! Оставьте остальное для Ромалии! Если вы спросите, просто сказать: "Извините, у нас нет больше денег для экспедиции! Насчёт угрозы Галии, король уже мёртв! Давайте возвращаться домой возвращаемся ~~ домой! Наслаждайтесь тяжестью заработанных деньг, Сайто, вместе с нами!
+Слыша предложения Гиша, все Ундинцы весело за смеялись. Сайто также хлопнул его по спине, качая головой и хихикая. Планы Витторио всё ещё далеки от завершения, их всё ещё следует раскрыть, они не должны подводить снижать бдительность.
+Плюс, сила Саёто была едва полезна. Кастельмор уже предупредил его «быть особенно осторожным» ранее...., но он увлёкся и полностью забыл о существовании заклинания Джозефа.
+Если бы не «пустота» Папы возможно он погиб бы наряду с этими ста пятьюдесятью тысячами мужчин, превратившись в пепел.
+
+**ED_RU:**
+—
+
+## Блок 4
+
+**JA:**
+サイトはルイズの肩に手を回した。
+「心配すんな。これ以上、あいつらの好きにさせるもんか」
+「そうね」
+「任せろ。絶対に止める。次は油断しねえ。そして、屋敷を買おうぜ。こぢんまりしたやつ」
+マリコルヌが茶々を入れた。
+「レモン畑も忘れるなよ」
+ルイズは顔を真っ赤にさせた。
+「おいおい、レモンはねえよ。やっぱり」
+才人が言ったら、ルイズに思いっきり尻を蹴り上げられた。
+「いてえ！ 怪我人だぞ！」
+「あんたが言えって言ったんじゃないのよ！」
+「やっぱそこは抵抗しろよ！」
+言い合いを始めた二人に、マリコルヌがさらに言葉を投げた。
+「やめてよォ、そういう予定調和は！」
+「予定調和ってなによ！ 本気なんだから！」
+ルイズが怒鳴ると、マリコルヌは鋭く指摘した。
+
+**EN:**
+Saito put his hands on Louise's shoulders. "Now we never have to worry about that guy's intentions anymore"
+"so true" "Leave it to me. If he dare come near us again, I will definitely stop him. Next time I won't be so careless. oh and also, we should go buy a house, the comfortable kind"
+Malicorne poured them tea "Don't about lemon gardens"
+Louise blushed red immediately.
+"Hey hey, lemon gardens, no thanks" Just as Saito was finished with his sentence, Louise kicked relentlessly towards his butt.
+"Ow! I am a patient, you know!"
+"Who told you to make decisions on your own!"
+"Are you going to keep arguing that with me"
+Towards the already heated couple, Malicorne fuelled them even more. "Stop! we must all be at peace~~!"
+"Go peace yourself! I'm serious about it!" Bellowed Louise furiously. Malicorne pointed out attentively "Eh? Why didn't you kick him in between the legs, but on his butt? A word of the wise from the wisps of the wind, if it's between the legs, there won't be anymore lemon-chan, no?"
+Taking a deep breath, Louise swung her leg between Saito's. Hit right in the spot, Saito rolled on the floor "You... stop kicking other people"
+"I've already spared you from even worse!" After bellowing again, Louise's face turned redder. So that's why, although she did kick him, it didn't actually hurt much.
+Their mates couldn't breathe from the continuous laughter.
+Lying on the floor, Saito thought, with the help of these mates..... even if it's another one of Romalia's plans, they may be able to stop it. Definitely.
+"Great! Anyway, let's drink for a continuous 3 nights!" Saito raised his arm. Cheers flew everywhere.
+
+**RU:**
+В дальнейшем нужно всегда помнить, есть люди гораздо сильнее... Но тогда Сайто вспомнил, что у меня есть мои друзья и.... Луиза!
+Сайто положил руки на плечи Луизы. Теперь мы больше не должны волноваться о намерениях того парня.
+– Верно.
+– Оставь это мне. Если он посмеет приблизится к нам снова, то я определённо остановлю его. В следующий раз я не буду так небрежен. о, а также, мы должны приобрести уютный дом.
+Маликорн разлил их, чай, – А как насчёт лимонного сада? – Луиза немедленно покраснела.
+– Эй, эй, лимонный сад, нет, спасибо – как только Сайто закончил фразу, Луиза пнула по заднице.
+– Аув! Я больной, знаешь ли!
+– Кто сказал тебе, что ты можешь принимать решения самостоятельно! –Ты собираешься относится ко мне по прежнему.
+К уже разогретой паре Маликорн подбросил огня. – Остановитесь! мы должны жить в мире!
+– Иди по миру сам! Я серьёзно отношусь к этому! Неистово крикнула Луиза. Маликорн осторожно сказал: – А? Почему ты пнула его по заднице, а не в промежность. Слово мудрого фея ветра, если то между ног не больше лимончика, не так ли?
+Глубоко вздохнув Луиза пнула Сайто в пах. Попадание прямо по тому месту, Сайто катился на полу, – Ты... прекращай пинать других людей.
+Я уже спасла тебя от худшего! После очередного крика, лицо Луизы стало ещё краснее. Так вот почему, хотя она пинала его, это фактически не причинило боли.
+Их окружение не могло дышать от не прерывного смеха.
+Лёжа на полу, Сайто думал, при поддержке этих помощников... даже если будут другие планы Ромалии, они могут остановить их. Определённо.
+– Отлично! Во всяком случае, давайте пить в течение трёх ночей подряд! Сайто поднял руку. Отовсюду донеслись овации.
+
+**ED_RU:**
+—
+
+## Блок 5
+
+**JA:**
+「おや？ だったらどうして股間を蹴らないの？ なんで尻なの？ わかってる。風の妖精さんはわかってるよ。股間蹴ったら、レモンちゃんできなくなるからでしょ？」
+ルイズはかは、と息を吸い込むと、才人の股間を蹴り上げた。悶絶して、才人は地面に転がった。
+「お前……、意地で蹴るなよ」
+「手加減したわ！」
+そう怒鳴ったあと、ルイズはさらに顔を真っ赤にさせた。なるほど。思わず悶絶したものの、痛くなかった。
+仲間たちはゲラゲラと笑い転げている。
+地面に転がりながらも、才人は思った。この仲間たちと力を合わせれば……、ロマリアの陰謀だって止められる。絶対に。
+「よし！ とりあえず、三日三晩は飲み明かそうぜ！」
+才人が腕を振り上げると、おおおおおっと、歓声が沸いた。
+でも、そんな空気をキュルケの一言が粉砕した。
+「でも、タバサはどうする気かしら？ ほんとにガリアの王さまになっちゃうの？ なんかさっきの見てると、もう後にはひけない気がするんだけど……」
+一同は顔を見合わせた。
+そうだ。
+もう一つ疑問があった。
+どうしてタバサは、いきなり戴冠を引き受ける気になったんだろう？
+「まさかほんとに、ロマリアの傀儡になる気じゃあるまいね？」
+
+**EN:**
+But soon, this atmosphere was soon shattered by Kirche's words "But, what about Tabitha? Is she really going to become Gallia's Queen? From the looks of her just now, it doesn't seems like she have much choice anymore....."
+In an instant, everyone exchanged looks.
+Oh right.
+And then there's that question.
+Why did Tabitha suddenly decide to accept the coronation?
+"Don't tell me she really wanted to become a puppet of Romalia?" Reinard muttered. Everyone began to worry.
+
+**RU:**
+Но вскоре, эта атмосфера была быстро разрушена словами Кирхе, – Но, что насчёт Табиты? Она действительно собирается стать Королевой Галлии? Как я вижу это сейчас, кажется, что у неё есть ещё много вариантов...
+Все мгновенно обменялись взглядами. О, право.
+И тут этот вопрос.
+
+**ED_RU:**
+—
+
+## Блок 6
+
+**JA:**
+レイナールが呟く。一同は本気で心配になった。
+このヴィットーリオの演説が終わり次第、先ほど中断したタバサの戴冠式が再開される手はずになっていた。ジョゼフが先ほどまで被っていた王冠が、そのまま使用されるのだ。
+壇の後ろに作られたテントの中で、タバサはじっと手を握り、先ほどの才人の言葉を思い出していた。
+『決めるんだ。タバサ。俺はどっちでも、お前の考えを尊重する』
+そんなセリフをあの場所で口にできる少年が、タバサに戴冠を勧めるだろうか？
+〝ありえない〟
+タバサの中の冷静な部分が、そう教えてくれる。
+つまり……、二晩にわたってやってきた才人は……、本物ではない。おそらく、タバサに戴冠を認めさせるための、ロマリアの陰謀に違いない。
+なんらかの魔法……、いや、聡明なタバサにはもうその見当がついていた。
+〝スキルニル〟
+己も使ったことがある、古代の魔法人形。血を使い、対象者にそっくりの姿を作り出す魔道具。
+タバサの心の中を、怒りが満たしていく。二つ名の〝雪風〟のような……、冷たい、触れたものを凍てつかせるような怒りだった。
+〝あいつらは、わたしの初めての……を利用した〟
+ジュリオがテントの中に入ってきた。
+「準備ができましたよ。シャルロット姫殿下。さて、〝殿下〟とお呼びするのも、これが最後ですね」
+タバサは頷くと、立ち上がった。
+
+**EN:**
+After Pope Vittorio's speech, Tabitha's interrupted coronation was continued. The crown of Joseph displayed just now, was immediately used in the coronation.
+In the tents behind the stage, Tabitha held her hands tightly. She was thinking the words Saito said just now
+"Make your decision, Tabitha. Whichever it is, I will always respect your choice"
+Would a teen who is able to say things like this, encourage Tabitha to wear the crown?
+"Impossible" The calm part of Tabitha's mind told her so.
+Which means, the Saito who has been running around these two days..... was not the real Saito. It was only part of Romalia's conspiracy just to make Tabitha wear the crown.
+It's some sort of magic..... no, the intelligent Tabitha already knew Using it herself before, it's an ancient puppet spell. Through blood, it creates a dummy the same as the real person.
+Tabitha was enraged. Like her nickname "Snowstorm", anyone in close vicinity could completely feel the icy anger in with.
+"Those guys, made use of my.....first"
+Julio marched into the tent. "The preperation is ready, Princess Charlotte. This is the last time I'll be able to call you a 'Princess'"
+Nodding, Tabitha stood up "I'll perform for you now"
+Just like what you wished for......
+
+**RU:**
+Почему Табита внезапно решала принять коронацию?
+– Не говорите мне, что она действительно хотела стать марионеткой Ромалии? Бормотал Рейналд. Все Разволновались.
+После речи Папы Витторио была продолжена прерванная коронация Табиты. Корона Джозефа, показанного сейчас, немедленно использовалась в коронации.
+В шатре позади сцены Табита крепко сжимала руки. Она обдумывала слова, которые только что сказал Сайто.
+–Табита, прими своё решение. Какой бы оно ни было, я буду всегда уважать твой выбор." Мог бы подросток, который в состоянии сказать такие слова, подстрекать Табиту носить корону? – Невозможно – подсказывала ей ей спокойная часть
+Что означает, что Сайто который был около неё на протяжении этих двух ночей... не был настоящим Сайто. Это была лишь часть заговора Ромалии только, чтобы заставить Табиту принять корону.
+Это - своего рода волшебство... эмоциональная Табита уже знала "Личина"
+То что она сама ранее использовала сама, древнее заклинание марионетка. С помощью крови оно создаёт куклу словно живой человек.
+Табита была разгневана. Так как её прозвище «Вьюга», любой кто находился рядом с ней мог полноценно ощутитьей ледяную ярость.
+– Эти ублюдки, они использовали меня ... первые.
+В шатёр вошёл Джулио. – Приготовления завершены, принцесса Шарлотта. Это последний раз, когда я буду иметь возможность назвать вас "Принцессой".
+
+**ED_RU:**
+—
+
+## Блок 7
+
+**JA:**
+〝今は踊ってあげる〟
+あなたたちの望むように。そして……。
+タバサは、自分のかつての名前を反芻した。
+北花壇騎士。
+〝誰に陰謀をしかけたのか、教えてあげる〟
+タバサはゆっくりと、光と歓声の溢れる場所へと歩き出した。
+
+**EN:**
+Tabitha savoured the title she had once.
+Knight of the North Parterre.
+"I'll tell you who you are conspirating against next"
+Slowly, Tabitha walked towards the sunlight and cheers of joy.
+Disclaimer
+Under no circumstances would you be allowed to take this work for commercial activities or for personal gain. Baka-Tsuki does not and will not condone any activities of such, including but not limited to rent, sell, print, auction.
+Credits
+Story : Noboru Yamaguchi Illustrator : Nana Mochizuki
+
+**RU:**
+Кивнув, Табита встала, – Сейчас я буду делать то, что я хочу для...
+Табите пришлось по вкусу то как её однажды назвали. Рыцарь северных цветов.
+– Насчёт зачинщиков заговора, разберёмся позже
+Медленно, Табита приближалась к солнечному свету и радостным овациям.
+Сноски
+
+**ED_RU:**
+—
+

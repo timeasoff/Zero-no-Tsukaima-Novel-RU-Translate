@@ -1,0 +1,119 @@
+# Prologue
+
+## Блок 1
+
+**JA:**
+六千年前。ハルケギニアがまだ〝未知の土地〟と呼ばれ、貴族も平民も、ガリアやロマリア、トリステインのような諸国家も存在しなかった時代……。
+大平原の丘の上にある、ニダベリールという小さな村のはずれで、ローブを纏った青年が、一人の娘に別れを告げていた。
+裾あまりの長いローブを引きずった小柄な青年は、温厚そうだが、なんだか冴えない容姿をしている。一方、草色の服を身に纏った、黄金色の髪の娘のほうは、神々しいまでの美しさであった。
+それもそのはず……、娘は生粋のエルフだった。
+「サーシャ、道中はくれぐれも気をつけてくれよ。きみの容姿は目立つから」
+「あのね、わたしを誰だと思ってるの？」
+サーシャと呼ばれたエルフの娘は、呆れたように言うと、左手に光るルーンを見せた。
+「わたしは、あなたの〝ガンダールヴ〟なのよ」
+「ああ、そうだね」
+青年は苦笑した。たしかに、取り越し苦労かもしれない。彼女に宿る〝ガンダールヴ〟の力があれば、あの恐るべき〝ヴァリヤーグ〟どもに襲われたとしても、一人で切り抜けることができるだろう。
+「頭の固い長老たちを説得して、すぐに戻ってくるわ」
+「頼む。我が氏族の未来は、きみにかかっているんだ」
+青年は真剣な表情で言った。いま起こりつつあることは、あの〝ヴァリヤーグ〟の脅威をも上回る、この世界そのものを滅亡させかねない〝大災厄〟なのだ。それを回避するためには、どうあっても、エルフたちと手を取り合わなくてはならない。
+「ぼくのほうも、主戦派の連中を抑えておく。最悪の事態だけは避けなければ」
+「ええ、頼んだわよ」
+サーシャは頷き、それから、そわそわと視線を泳がせた。
+
+**EN:**
+6000 years ago, in that era Halkeginia was known as the “unknown land”. There were no aristocrats or commoners, nor the Kingdoms of Gallia, Romalia, Tristain or similar countries.
+Not far from a small village called Nidabelio, located in the hills of the great plains, a young man in a robe said farewell to a girl.
+Dragging the robe that was too long, the small statured youth’s appearance seemed gentle but not too eyecatching.
+It’s no wonder… since the girl is a real elf.
+“You must be careful on the road Sasha. After all, your face is very conspicuous.”
+“Please, who do you think I am?”
+The elf girl named Sasha answered noncommittally, and showed off the runes glowing on her left hand
+“I’m your ‘Gandálfr’.”
+“Yes, you’re right.”
+The youth smiled. He could really be a worrywart, since the power of the “Gandálfr” resided in her body, even if she were attacked by the fearsome “Varyag”, she could overcome it by herself.
+“I’ll go and convince those stubborn-headed elders, then come back right away.”
+“Please, the future of our clan depends on you.”
+The emotional young man replied. After all, things are getting worse, day by day. However, it goes far beyond the threat of the “Varyag”, and may even lead to a world ending “cataclysm”. In order to avoid destruction, they had to cooperate with the elves, at the very least.
+“I’ll also go and try to stop the war faction. We must avoid the worst case from happening.
+“Yes, please.”
+Sasha nodded, then her vision blurred.
+“What’s wrong?”
+“I hate you, you big idiot.”
+Seeing the youth’s unthinking question, Sasha puffed out her cheeks in dissatisfaction. Then slender arms quickly went around the youth’s neck, and she kissed him.
+They kissed for a while… Finally the two slowly separated from each other.
+“I love you, Brimir.”
+“I love you too, Sasha.”
+Brimir Ru Rumiru Yuru Viri Vee Varutori.
+Later known as the “Founder”, the youth the received the worship of all the people of Halkeginia, firmly hugged Sasha.
+Feeling the warmth of his sweetheart, Brimir thought at the same time.
+“God, what am I doing….”
+The runes currently engraved on her body weren’t “Gandálfr”, but new runes.
+“Lífþrasir.”
+
+**RU:**
+Шесть тысяч лет назад. Халкегинию называют неизвестная земля, эпоха когда дворян и простолюдин не существует, как и стран Галлии, Ромалии и Тристейна.
+На вершине холма, посреди великой равнины, на окраине небольшого посёлка Нидабелио, молодой человек, в халате, прощался с девушкой.
+Вокруг молодух людей в длинных халатах, витала подавленная атмосфера. С другой стороны она была одета в одеяния цвета зелёной травы, девушка с золотистыми волосами была божественно красива.
+Похоже... Что девушка была настоящим эльфом.
+–Саша, будь осторожна по пути. Поскольку, твоя внешность выделяется.
+–Как ты думаешь, кто я такая?
+Удивлённо спросила эльфийка Саша, показывая светящуюся руну на левой руке. –Не я ли ваш Гандальв.
+–О, да, да.
+Криво улыбнулся юноша. Конечно, это может быть преувеличением. Пока с ней сила Гандальва, даже если нападут эти страшные Варяги, она сможет справится с ними в одиночку.
+–Я уговорю упрямых стариков и сразу же вернусь.
+–Прошу. Будущее наших племён лежит на ваших плечах.
+Сказал юноша с серьёзным лицом. Этот мир сейчас под большой угрозой, эти Варяги большое бедствие, происходящие сейчас, могло привести к уничтожению этого мира. Для того, чтобы избежать этого, он был готов связаться даже с эльфами.
+–Было бы хорошо, заручится поддержкой основных партий. Только с этим можно избежать худшей ситуации.
+–Да, я спрошу.
+Кивнула Саша и затем долго уставилась взглядом.
+– Что случилось?
+– Это уже фанатизм.
+Отвечая на любопытство юноши, Саша, недовольно надула губы. Затем быстро охватила тонкими руками его шею, чтобы поцеловать.
+Через некоторое время... Двое людей рассоединили губы.
+–Я люблю тебя, Бримир.
+–Я также, Саша.
+Бримир Ле Лумиру Юл Вили Вии Варитори.
+Тот кого, в следующее тысячелетие, будут называть Основателем, юноша которому будет повиноваться Халкегиния, крепко обнял Сашу.
+Ощущая тепло тела любимой, Бримир думал.
+«О, я надеюсь, тот факт что....»
+Теперь на её теле были запечатлены другие руны, помимо Гандальва.
+«Ливтрасир»
+
+**ED_RU:**
+—
+
+## Блок 2
+
+**JA:**
+「どうしたんだ？」
+「もう、この唐変木」
+不思議そうに尋ねる青年に、サーシャは不満そうに頰を膨らませた。それから、細い腕を素早く首の後ろに回し、口づけする。
+しばらくして……、二人はゆっくりと、唇を離した。
+「愛してるわ、ブリミル」
+「ぼくもだ、サーシャ」
+ブリミル・ル・ルミル・ユル・ヴィリ・ヴェー・ヴァルトリ。
+後の時代に〝始祖〟と呼ばれ、ハルケギニア全土の民に崇拝されることになる青年は、サーシャの身体を強く抱きしめた。
+愛する恋人のあたたかな体温を感じながら、ブリミルは思う。
+〝ああ、ぼくは、なんということをしてしまったんだろう……〟
+いま、彼女の身体には、〝ガンダールヴ〟ではない、新たなルーンが刻まれていた。
+〝リーヴスラシル〟
+愛ゆえに召喚され、最も残酷な運命を担う、虚無の使い魔。
+もし、エルフとの交渉が決裂した、そのときは……、神より賜りし、この恐るべき力を行使することになるのだろうか……。
+いや、そんなことには決してなるまい……、交渉はきっと成功するはずだ。
+サーシャを抱きしめながら、ブリミルはそう、自分に言い聞かせた。
+
+**EN:**
+Summoned out of love, the Void familiar that bears the cruelest fate.
+If negotiations with the elves break down, at that time… do you intend to use this terrible power granted by god….
+No, that kind of thing can’t possibly happen… negotiations will definitely succeed.
+While tightly holding Sasha, Brimir told himself this.
+
+**RU:**
+Фамильяр пустоты, призван любовью, с жестокой судьбой.
+Если переговоры с эльфами проваляться, тогда...видит Бог, ему придётся воспользоваться этой страшной силой...
+Нет, этому никогда не бывать..., переговоры должны пройти успешно.
+Говорил себе Бримир, обнимая Сашу.
+
+**ED_RU:**
+—
+

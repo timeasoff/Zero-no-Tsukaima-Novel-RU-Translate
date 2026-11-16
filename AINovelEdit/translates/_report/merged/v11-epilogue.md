@@ -1,0 +1,295 @@
+# Epilogue
+
+## Блок 1
+
+**JA:**
+ロサイスからトリステインに戻るフネの中、才人は船室のベッドの上でうなされていた。ヨルムンガントとの戦いより、ルイズに食らったダメージの方が大きかったのである。
+うーんうーん、とうなされながらも、才人はどこかすっきりした気分だった。なんだかやるべきことがまっすぐ見えてきた気分だった。
+そんなこんなで、才人が天井を眺めていると……。
+とんとん、とノックの音が響いた。
+「誰？」
+「わたし」ルイズの声だった。
+「……開いてるよ」と不機嫌な声で言ったら、バツの悪そうな顔をしたルイズが入ってきた。
+「あのね。一応、聞いてあげる。大丈夫？」
+「お前……、殴りすぎ。やりすぎ。はしゃぎすぎ」
+ルイズは唇を尖らせて、すねるような口調で言った。
+「あ、あんたが悪いのよ。あんたが、使い魔としての好きとか言うから。う、嘘に決まってるわよね。そうよね。あんた、わたしのこと大好きだもんね」
+才人は、ルイズをじろっと睨んで言った。
+「こんなことされて、そう言えるやつがいたら連れて来い。貴族にしてやるから」
+「へ、へんだ。大好きなくせに」
+「いやもう全然」
+「好きなくせに」
+
+**EN:**
+On board of the ship traveling from Rosais to Tristain, Saito was having a nightmare while lying in the cabin's bed.
+He had received more damage from the fight with Jörmungand than Louise.
+"Ugh, ugh" - although he was having a nightmare, somehow Saito was feeling refreshed. He had now somewhat straightened up his feelings on the things he had to do.
+Thinking about this and that, Saito was gazing at the ceiling…
+*Knock knock*
+Someone knocked against the door.
+"Who is it?"
+"It's me." Answered Louise's voice.
+"…it's open." He said in an ill-tempered voice, and with an awkward expression on her face, Louise stepped in.
+"Excuse me. Just in case, I came to check. Are you alright?"
+"You… hit me more than enough already."
+Louise pouted and said in a sulky tone.
+"Y-you were the one who was wrong. You said you love me only as a familiar. I-it was a lie wasn't it? Truly. You love me, right?"
+She sounded almost desperate.
+Saito glared at Louise and said.
+"Such a thing can be said to anyone. As a noble."
+"S-still, you love me?"
+"I don't dislike you."
+"So you like me?"
+"Isn't that the opposite? Aren't you the one who likes me?"
+"N-n-n-n-n-n-no way!"
+Blushing Louise, whirled her hands fast.
+"So, were you not this jealous because you love me? And you even amassed your willpower so quickly because you were angry I was kissed. It's so obvious."
+"Uuuuuh" Louise let out a half-sobbing groan and nodded.
+"…Really. It might be so."
+"…Huh?" Surprised, Saito stared at Louise. Seeing him like this, Louise once again gave a triumphant 'nya' smile.
+"No way. The dog is drooling again."
+"Y-you cheated!"
+"And you got all 'dokidoki' from that. Idiot."
+Saito turned to the other side to hide his embarrassment and said.
+"Really… I'll just gradually find a way to return home. And then I will definitely drink miso soup."
+"What is miso soup?"
+"My country's soup."
+Then Louise gently said.
+"I too would like to drink soup from Saito's country."
+Saito's cheek turned redder than from a kiss.
+
+**RU:**
+На обратном пути из Розайша в Тристейн Сайто беспокойно ворочался на кровати в своей каюте.
+В схватке с Ёрмунгандом ему досталось больше, чем Луизе.
+Он убеждённо покивал.
+Но, несмотря на тревогу, Сайто всё же чувствовал, что ему стало легче. Ему вроде бы удалось решить для себя, что он должен делать.
+Размышляя о разных вещах, Сайто разглядывал потолок.
+Тут кто-то постучал в дверь.
+- Кто это?
+- Я, - ответил голос Луизы.
+- Открыто, - угрюмо бросил он, и Луиза вошла с виноватым видом.
+- Знаешь, э-э. В общем, слушай. С тобой всё в порядке?
+- Ты... уже достаточно меня побила. Вполне достаточно. Разве что самую малость увлеклась.
+Луиза надулась и сумрачно проворчала:
+- С-сам виноват. Ты сказал, что любишь меня, только потому, что ты фамильяр. Но, может, ты просто решил соврать? Так? Ты меня на самом деле любишь, правда?
+Сайто сердито глянул на Луизу и сказал:
+- И она притащилась, чтобы спросить подобную ерунду. Веди себя, как положено дворянке.
+- Т-так ты меня любишь?
+- Не скажу, что ты мне противна.
+- Значит, я тебе нравлюсь?
+- А ты не перепутала? Это же я тебе нравлюсь?
+- Н-н-н-н-ничего подобного!
+Краснеющая Луиза быстро замахала руками.
+- То есть ты ревновала не из-за того, что любишь меня? А ведь ты так быстро накопила магическую силу, потому что разозлилась, когда меня поцеловали. Всё так очевидно.
+- У-у-у, - чуть не плача, простонала Луиза, потом кивнула. - ...Ну, да. Вообще-то, может быть, так и есть.
+- ...Э? - Сайто изумлённо уставился на Луизу. Увидев, какое у него стало лицо, Луиза снова улыбнулась с видом триумфа и удовлетворения.
+- Ну вот. Пёс опять пускает слюни.
+- Т-ты меня надула!
+- А ты прямо сразу весь разволновался. Дурак.
+Сайто повернулся на другой бок, чтобы скрыть смущение и сказал:
+- Нет, правда... Со временем я найду способ вернуться домой. И тогда уж точно выпью мисо-супа.
+- Что такое мисо-суп?
+- Суп из моей страны.
+Луиза мягко сказала:
+- Я бы тоже хотела выпить супа из страны Сайто.
+Щека Сайто стала краснее, чем от поцелуя.
+
+**ED_RU:**
+—
+
+## Блок 2
+
+**JA:**
+「あのな、逆だろ？ お前が俺のこと、好きなんじゃねえか」
+「ま、まま、ままま、まさか！」
+ルイズは顔を真っ赤にすると、両手をぶんぶんと振った。
+「大好きだから、あんなにやきもちやくんだろ？ さっきのキスで怒って精神力が溜まったのだって、つまりはそういうことなんだろ。見え見えなんだよ」
+するとルイズは、う、と半泣きで唸りだし、それから頷いた。
+「……そうね。そうかもしれないわ」
+「……え？」驚いて、才人はルイズを見つめた。そんな様子に、ルイズは再びにや、っと勝ち誇った笑みを浮かべた。
+「いやだ。犬が涎をたらしてるわ」
+「だ、騙したな！」
+「なにドキドキしてんのよ。ばかね」
+照れを隠すように、才人は横を向いて言った。
+「まったく……、あのな、そろそろ、きちんと帰る方法探すからな。やっぱり、味噌汁が飲みたいしな」
+「味噌汁ってなによ」
+「俺たちの国のスープ」
+するとルイズは、ぽろっと言った。
+「わたしも、飲んでみたいな。サイトの国のスープ」
+
+**EN:**
+Louise became embarrassed as well and turned the other way.
+"It may be very difficult, however… for the moment, the way things are, I would like for you to continue helping us."
+Though she said it calmly, Louise was burning with emotion on the inside.
+Surely after all this, Saito will deny such a pledge with curses.
+Why should I do such a thing?
+Why doesn't Saito say such words.
+That time… he saved her from Fouquet's golem.
+And that day, he came to Louise's rescue again…
+
+**RU:**
+Луиза тоже почему-то не могла побороть смущения.
+- Хотя это может быть сложно организовать... Поэтому пока я бы хотела, чтобы ты ещё немного поработал и помог нам.
+Хотя она сказала это спокойным тоном, в её душе пылали эмоции.
+«Конечно, после всего, что произошло, Сайто обругает меня и не станет ничего обещать».
+«"Оно мне не надо, почему я должен это делать?" - так он, конечно, и скажет, как же иначе?»
+В тот раз... он спас её от голема Фуке.
+И сегодня снова пришёл на помощь Луизе.
+
+**ED_RU:**
+—
+
+## Блок 3
+
+**JA:**
+すると才人の頬が、キスのとき以上に赤らむ。
+ルイズもなぜか照れて、しかたがなくなった。
+「面倒くさいし、大変だけど……。でもまあ……、ちょっとぐらいだったらお前の仕事も手伝ってやってもいいけどな」
+そんな風に冷たく言われながらも、ルイズは、心の中にぽっと火が灯るように感じた。きっとサイトはこれからも、こうやって悪態をつきながら自分を助けてくれるような気がした。
+『なんでそんなこと、俺がやらなきゃならねえんだよ』
+そう言いながら才人は、なんでもやってしまうんじゃないだろうか。
+あのとき……、フーケのゴーレムから自分を助けてくれたように。
+そして今日、ルイズを助けに来てくれたように……。
+ぶっきらぼうな言葉の裏に、ルイズはなぜか、確かな才人の愛情を感じる。ティファニアの呪文をくぐり抜けた今……。それは使い魔として与えられたものじゃない、本物の愛情だ。
+でもなぜ、自分は疑ってしまうのだろうか？ 使い魔として与えられたものじゃないのだろうか？ という不安が拭えないのだろうか？
+……自分に自信がないからだ。
+自信がないから、自分の気持ちを認めようとしないし、才人の言葉をすぐに疑ってしまう。だから、こんな言い方しかできないのかしら、と思いながら、ルイズは恥ずかしそうに、ぽつりと呟いた。
+「あ、操られているのはわたしだもん」
+「え？」
+「使い魔に情を抱くように、わたしってば条件づけられているんだもん。だからやきもちをやいたりしちゃうし、したくもないのに、こんなことしちゃうのね。きっと」
+ルイズは、才人の頬を両手で掴むと、不意に唇を近づけてきた。
+
+**EN:**
+That's why behind his snappish words, Louise felt Saito's love. And then, when he went through Tiffania's spell… It wasn't a familiar's affection, but genuine love.
+However, why do I still doubt? That it isn't given by a familiar magic? Why can't I get rid of this fear?
+…because I am still not confident in myself.
+Because I am not confident, I refuse to accept my feelings and doubt Saito's words. Therefore, all I can say are such things – while thinking so, Louise shyly said.
+"I-I am being manipulated too."
+"Eh?"
+"I hold affection for my familiar as well. That's why I felt such burning jealousy, even though I did not want to. Really."
+Louise placed her palms on both of Saito's cheeks and suddenly brought her lips close to his.
+"Eh? Eeh? Nmh…"
+Two pair of lips slowly melted with each other.
+Gently tracing Saito's lips with her own, Louise thought absent mindedly while kissing.
+When I used Void, why was I so angry?
+Was it because… Saito did that with another girl? Apparently, it recharged real fast. What an annoying willpower – Louise thought.
+Besides I got angry from the bottom of my heart.
+It was hateful, it was painful… however, there was nothing I could do…
+Louise's lips kissed the corner of his mouth before pressing themselves hard against his lips again.
+After continuing kissing him wildly for a while… Louise suddenly pulled her lips away from his, catching her breath.
+
+**RU:**
+Вот почему за его грубыми словами Луиза чувствовала любовь Сайто. А потом, после заклинания Тифании... Это была не преданность фамильяра, а настоящая любовь.
+«Но почему же я до сих пор сомневаюсь? Что его чувства не наведены волшебством фамильяра? Почему я не могу избавиться от этого страха?»
+«...Потому что я всё ещё не уверена в себе».
+«Из-за своей неуверенности я отказываюсь признать свои собственные чувства и сомневаюсь в словах Сайто. Вот почему я могу говорить только такие вещи».
+Думая так, Луиза робко произнесла:
+- М-мной тоже как будто управляют.
+- Э?
+- Мне тоже нравится мой фамильяр. Вот почему я почувствовала такую жгучую ревность, хотя и не хотела этого. Правда.
+Луиза положила обе свои ладони на щёки Сайто и вдруг приблизилась губами к его губам.
+- Э? Э-э? Нм-м...
+Их губы медленно слились воедино.
+Нежно отыскивая губы Сайто своими, Луиза, продолжая его целовать, рассеяно думала:
+«Когда я применила Пустоту, почему я так разозлилась?»
+«Неужели потому, что... Сайто сделал это с другой девушкой? Очевидно, что зарядилась я очень быстро. Ну что за неудобная у меня магическая сила», - думала Луиза, дрожа.
+«И ведь разозлилась я от всего сердца».
+«Так ненавистно, так больно... Но я ничего не могла поделать...»
+Губы Луизы поцеловали уголок его рта, прежде чем снова плотно прильнуть к его губам.
+После продолжительных, горячих поцелуев... Луиза вдруг оторвала свои губы от его губ, переводя дыхание.
+
+**ED_RU:**
+—
+
+## Блок 4
+
+**JA:**
+「え？ ええ？ んむ……」
+二人の唇が、ゆっくりと重ねあわされる。
+才人の唇をなぞるようにキスをしながら、ルイズはぼんやりと思う。
+〝これから虚無を撃つときには、わたし、怒らなきゃいけないのかしら？〟
+そのためには……、才人が、他の女の子と？ どうやらそれが手っ取り早いようだ。なんて不便な精神力かしら、とルイズは震える。
+じゃあ、他に心の底から怒るようなこと、あるかしら？ と思う。
+憎らしくて、せつなくて……、けどどうしようもなくって……、ルイズは重ねる唇を、さらに強く押しつけた。
+しばらくそうやって、唇を重ねたあと……、ルイズはすっと唇を離す。
+「虚無に操られて使い魔に情を抱くなんて、わたしってば可哀想だわ。とっても可哀想な女の子だわ」
+そんな言葉を呟きながら、ルイズは再び唇を重ねた。
+唇を重ねながら……、才人はルイズのそんな言葉が嘘だとわかる。
+痛いほどにわかる。ルイズのキスは、妙に熱い。
+その熱さが何より、ルイズの才人に対する想いを雄弁に語っていた。
+いつかも見た、遠ざかるアルビオン大陸の下半分を覆う、白い雲を見ながら、才人は思った。
+俺……、本当にティファニアの魔法は効いたんだろうか。
+もともと〝偽りの動機〟なんてものはこれっぽちもなくって、カトレアの言うように、『心が鍵をかけていた』だけなのかもしれない。
+
+**EN:**
+"Poor me - I have been manipulated by the Void to feel an attraction towards my familiar. I am such a poor girl."
+After saying those words, Louise leaned in and passionately recaptured his lips again.
+While kissing her lips repeatedly… Saito understood that Louise's words were a lie.
+It was painfully obvious.
+Louise's kisses were increasingly feverish and hot.
+Hot because her feelings for Saito were spoken out loud.
+The moment he saw the lower half of the Albion continent covered by a white cloud from their ship, Saito mused.
+Was… Tiffania's magic really effective against me?
+Originally this 'Fake motive' might have been nothing more than, in Cattleya's words, 'the locked mind'.
+Well, when he thought about it, it may have been just showing off Saito's natural optimism.
+Something that even your own heart is not aware off.
+However, he knew one thing for sure.
+Looking at Louise always made his heart beat fast. Even Tiffania's magic could not change that – it still remained the same.
+Saito recalled a dream he saw in Tiffania's house.
+That time, Saito's mother had asked him.
+"Haven't you forgotten something?"
+After all, the meaning of a man's existence, was to protect the girl that made his heart beat hard.
+Even at the cost of his life.
+That was all that there was to it.
+
+**RU:**
+- Увы мне - Пустота заставила меня почувствовать влечение к моему фамильяру. Бедная я, несчастная девушка.
+После этих слов Луиза наклонилась и снова страстно завладела его губами.
+Продолжая целовать её губы... Сайто понял, что слова Луизы были ложью.
+Всё было мучительно ясно.
+Поцелуи Луизы становились всё более лихорадочными и жаркими.
+Они были такими жаркими, потому что, вопреки себе, выразила свои чувства к Сайто вслух.
+Когда он увидел с их корабля нижнюю половину континента Альбион, утопающую в белых облаках, он задумался.
+«А правда ли... магия Тифании подействовала на меня?»
+С самого начала этот "ложный мотив", говоря словами Каттлеи, мог быть не более чем "чувствами, скрытыми в сердце".
+«Ну и ладно, незачем слишком ломать над этом голову», - решил Сайто со своим обычным оптимизмом.
+Даже ему самому было сложно разобраться, что творится в его сердце.
+Однако одно он знал совершенно точно.
+Когда он смотрел на Луизу, его сердце билось быстрее. Даже магия Тифании не смогла этого изменить - в этом отношении всё осталось как прежде.
+Сайто вспомнил сон, который видел в доме Тифании.
+В тот раз мать Сайто спросила его: "Ты ничего не забыл?"
+Всё-таки смысл существования мужчины в том и заключается, чтобы защищать девушку, которая заставляет его сердце биться чаще.
+Даже ценой собственной жизни.
+«Хм, всё так просто, оказывается».
+
+**ED_RU:**
+—
+
+## Блок 5
+
+**JA:**
+まあ、そんなこといくら考えたってしかたないよな、と才人は持ち前の楽天さを発揮して、そう思った。
+自分の心のことなんか、自分自身でわかるわけがない。
+ただ、はっきりしていることがたった一つだけある。
+ルイズを見ると、どうにもこうにもドキドキしてしまうこと。悔しいことに、そればっかりは、ティファニアの魔法の前でもあとでも変わらない。
+ティファニアの家で見た夢を、才人は思い出す。
+あのとき、母は才人にこう言っていた。
+『やらなくちゃならないことがあるんじゃないのかい？』
+所詮、男が生きている意味なんて、見てるとドキドキする女の子を守る。
+運が悪けりゃ死ぬ。
+へ、そんだけだもんな。
+アルビオンから遠ざかるフネの中、ルイズと熱いキスを重ねながら、才人はそう思った。
+
+**EN:**
+That was what Saito thought, inside the ship drifting further away from Albion, and continuing to exchange passionate kisses with Louise.
+Disclaimer
+Under no circumstances would you be allowed to take this work for commercial activities or for personal gain. Baka-Tsuki does not and will not condone any activities of such, including but not limited to rent, sell, print, auction.
+Credits
+Story : Noboru Yamaguchi Illustrator : Nana Mochizuki
+
+**RU:**
+Так думал Сайто, продолжая обмениваться страстными поцелуями с Луизой на борту корабля, всё дальше уплывавшего от Альбиона.
+
+**ED_RU:**
+—
+
