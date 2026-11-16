@@ -1,0 +1,350 @@
+{
+  "analysis_id": "20261116-220953-bf13",
+  "analysis": "output\\_audit\\sma\\v7-ch04\\analysis\\20261116-220953-bf13.json",
+  "chapter": "v7-ch04",
+  "output": "v7-ch04.md",
+  "dry_run": false,
+  "semantic_actions": [
+    "FIXED",
+    "REPORT_ONLY",
+    "PRESERVED"
+  ],
+  "execution_states": [
+    "SUCCESS",
+    "FAILED",
+    "SKIPPED"
+  ],
+  "counts": {
+    "SUCCESS": 1,
+    "FAILED": 15,
+    "SKIPPED": 0,
+    "fixed": 16
+  },
+  "verification": {
+    "update_merged": "PASS",
+    "alignment": "PASS",
+    "alignment_strong": 0,
+    "drift": "NO_BASELINE"
+  },
+  "results": [
+    {
+      "finding_id": "C-01-01",
+      "block": 1,
+      "provenance": {
+        "action": "FIXED",
+        "status": "CONFIRMED_ERROR",
+        "sources": {
+          "a": [],
+          "b": [
+            "20261116-220504-b9db"
+          ],
+          "c": [],
+          "precheck": false
+        }
+      },
+      "before": "В Уайтхолле, столице Альбиона, шёл жаркий спор о том, чтобы нанести удар по врагу.",
+      "after": "В Уайтхолле альбионской столицы Лондиниума шёл жаркий спор о том, чтобы нанести удар по врагу.",
+      "execution": "FAILED",
+      "reason": "after уже присутствует в блоке 1 (правка уже применена) — текст не изменён"
+    },
+    {
+      "finding_id": "C-01-02",
+      "block": 1,
+      "provenance": {
+        "action": "FIXED",
+        "status": "CONFIRMED_ERROR",
+        "sources": {
+          "a": [],
+          "b": [],
+          "c": [],
+          "precheck": false
+        }
+      },
+      "before": "учениц Академии",
+      "after": "учеников Академии",
+      "execution": "FAILED",
+      "reason": "after уже присутствует в блоке 1 (правка уже применена) — текст не изменён"
+    },
+    {
+      "finding_id": "C-01-03",
+      "block": 1,
+      "provenance": {
+        "action": "FIXED",
+        "status": "CONFIRMED_ERROR",
+        "sources": {
+          "a": [
+            "20261116-220504-00d5"
+          ],
+          "b": [],
+          "c": [],
+          "precheck": false
+        }
+      },
+      "before": "сказал молодой генерал, сидевший с северной стороны за круглым столом, где разместилось человек пятнадцать",
+      "after": "сказал молодой генерал с измождённым лицом, сидевший с северной стороны за круглым столом, где разместилось человек пятнадцать",
+      "execution": "SUCCESS",
+      "verification": {
+        "alignment": "PASS",
+        "drift": "NO_BASELINE"
+      }
+    },
+    {
+      "finding_id": "C-01-04",
+      "block": 1,
+      "provenance": {
+        "action": "FIXED",
+        "status": "CONFIRMED_ERROR",
+        "sources": {
+          "a": [
+            "20261116-220504-00d5"
+          ],
+          "b": [],
+          "c": [],
+          "precheck": false
+        }
+      },
+      "before": "— Плохо же у нас дела, — сказал Кромвель с улыбкой.",
+      "after": "— Наша армия в лохмотьях, — сказал Кромвель с улыбкой.",
+      "execution": "FAILED",
+      "reason": "after уже присутствует в блоке 1 (правка уже применена) — текст не изменён"
+    },
+    {
+      "finding_id": "C-02-01",
+      "block": 2,
+      "provenance": {
+        "action": "FIXED",
+        "status": "CONFIRMED_ERROR",
+        "sources": {
+          "a": [
+            "20261116-220504-00d5"
+          ],
+          "b": [
+            "20261116-220504-b9db"
+          ],
+          "c": [],
+          "precheck": false
+        }
+      },
+      "before": "Несмотря на наше численное превосходство, мы всё равно потерпели поражение.",
+      "after": "Несмотря на численное превосходство врага, мы всё равно потерпели поражение.",
+      "execution": "FAILED",
+      "reason": "after уже присутствует в блоке 2 (правка уже применена) — текст не изменён"
+    },
+    {
+      "finding_id": "C-02-02",
+      "block": 2,
+      "provenance": {
+        "action": "FIXED",
+        "status": "CONFIRMED_ERROR",
+        "sources": {
+          "a": [],
+          "b": [],
+          "c": [
+            "20261116-220504-3634"
+          ],
+          "precheck": false
+        }
+      },
+      "before": "— Значит, надо победить на суше, — подхватил Кромвель.",
+      "after": "— Да нет, достаточно победить на суше, — подхватил Кромвель.",
+      "execution": "FAILED",
+      "reason": "after уже присутствует в блоке 2 (правка уже применена) — текст не изменён"
+    },
+    {
+      "finding_id": "C-03-01",
+      "block": 3,
+      "provenance": {
+        "action": "FIXED",
+        "status": "CONFIRMED_ERROR",
+        "sources": {
+          "a": [],
+          "b": [],
+          "c": [],
+          "precheck": false
+        }
+      },
+      "before": "драгун",
+      "after": "дракон-рыцарь",
+      "execution": "FAILED",
+      "reason": "after уже присутствует в блоке 3 (правка уже применена) — текст не изменён"
+    },
+    {
+      "finding_id": "C-04-01",
+      "block": 4,
+      "provenance": {
+        "action": "FIXED",
+        "status": "CONFIRMED_ERROR",
+        "sources": {
+          "a": [
+            "20261116-220504-00d5"
+          ],
+          "b": [],
+          "c": [],
+          "precheck": false
+        }
+      },
+      "before": "Кромвель сладко улыбнулся.",
+      "after": "Кромвель широко улыбнулся.",
+      "execution": "FAILED",
+      "reason": "after уже присутствует в блоке 4 (правка уже применена) — текст не изменён"
+    },
+    {
+      "finding_id": "C-07-01",
+      "block": 7,
+      "provenance": {
+        "action": "FIXED",
+        "status": "CONFIRMED_ERROR",
+        "sources": {
+          "a": [],
+          "b": [],
+          "c": [],
+          "precheck": false
+        }
+      },
+      "before": "Я недаром слышал слова генерала — я! Я боюсь!",
+      "after": "Я не то чтобы слышал слова генерала… но я! Я боюсь!",
+      "execution": "FAILED",
+      "reason": "after уже присутствует в блоке 7 (правка уже применена) — текст не изменён"
+    },
+    {
+      "finding_id": "C-07-02",
+      "block": 7,
+      "provenance": {
+        "action": "FIXED",
+        "status": "CONFIRMED_ERROR",
+        "sources": {
+          "a": [],
+          "b": [],
+          "c": [
+            "20261116-220504-3634"
+          ],
+          "precheck": false
+        }
+      },
+      "before": "Я, простый епископ, слишком много возмечтал…",
+      "after": "Неужто я, простой епископ, слишком много возмечтал…",
+      "execution": "FAILED",
+      "reason": "after уже присутствует в блоке 7 (правка уже применена) — текст не изменён"
+    },
+    {
+      "finding_id": "C-07-03",
+      "block": 7,
+      "provenance": {
+        "action": "FIXED",
+        "status": "CONFIRMED_ERROR",
+        "sources": {
+          "a": [
+            "20261116-220504-00d5"
+          ],
+          "b": [],
+          "c": [],
+          "precheck": false
+        }
+      },
+      "before": "Она взяла его за подбородок — и тихо сказала:",
+      "after": "Она приподняла ему подбородок — и тихо прошептала:",
+      "execution": "FAILED",
+      "reason": "after уже присутствует в блоке 7 (правка уже применена) — текст не изменён"
+    },
+    {
+      "finding_id": "C-08-01",
+      "block": 8,
+      "provenance": {
+        "action": "FIXED",
+        "status": "CONFIRMED_ERROR",
+        "sources": {
+          "a": [
+            "20261116-220504-00d5"
+          ],
+          "b": [],
+          "c": [],
+          "precheck": false
+        }
+      },
+      "before": "глаза под ними загорелись диким светом",
+      "after": "глаза под ними загорелись жутковатым, завораживающим светом",
+      "execution": "FAILED",
+      "reason": "after уже присутствует в блоке 8 (правка уже применена) — текст не изменён"
+    },
+    {
+      "finding_id": "C-08-02",
+      "block": 8,
+      "provenance": {
+        "action": "FIXED",
+        "status": "CONFIRMED_ERROR",
+        "sources": {
+          "a": [
+            "20261116-220504-00d5"
+          ],
+          "b": [],
+          "c": [],
+          "precheck": false
+        }
+      },
+      "before": "Ты вкусил такой сладкий сон",
+      "after": "Ты вкусил сладкий, как патока, сон",
+      "execution": "FAILED",
+      "reason": "after уже присутствует в блоке 8 (правка уже применена) — текст не изменён"
+    },
+    {
+      "finding_id": "C-10-01",
+      "block": 10,
+      "provenance": {
+        "action": "FIXED",
+        "status": "CONFIRMED_ERROR",
+        "sources": {
+          "a": [],
+          "b": [
+            "20261116-220504-b9db"
+          ],
+          "c": [],
+          "precheck": false
+        }
+      },
+      "before": "стоит ему прикоснуться к кольцу Андвари — и лоб Шеффилд начинает светить.",
+      "after": "стоит Шеффилд прикоснуться к кольцу Андвари — и её лоб начинает светить.",
+      "execution": "FAILED",
+      "reason": "after уже присутствует в блоке 10 (правка уже применена) — текст не изменён"
+    },
+    {
+      "finding_id": "C-10-02",
+      "block": 10,
+      "provenance": {
+        "action": "FIXED",
+        "status": "CONFIRMED_ERROR",
+        "sources": {
+          "a": [
+            "20261116-220504-00d5"
+          ],
+          "b": [],
+          "c": [],
+          "precheck": false
+        }
+      },
+      "before": "Шеффилд провела камнем по щеке Кромвеля.",
+      "after": "Шеффилд легко провела камнем вверх по щеке Кромвеля.",
+      "execution": "FAILED",
+      "reason": "after уже присутствует в блоке 10 (правка уже применена) — текст не изменён"
+    },
+    {
+      "finding_id": "C-10-03",
+      "block": 10,
+      "provenance": {
+        "action": "FIXED",
+        "status": "CONFIRMED_ERROR",
+        "sources": {
+          "a": [
+            "20261116-220504-00d5"
+          ],
+          "b": [],
+          "c": [],
+          "precheck": false
+        }
+      },
+      "before": "здесь сгущена необычайная магическая сила",
+      "after": "здесь сгущена сокрытая магическая сила",
+      "execution": "FAILED",
+      "reason": "after уже присутствует в блоке 10 (правка уже применена) — текст не изменён"
+    }
+  ]
+}

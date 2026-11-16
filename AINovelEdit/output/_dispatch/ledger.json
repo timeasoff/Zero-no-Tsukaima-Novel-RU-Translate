@@ -4587,6 +4587,121 @@
             }
           ],
           "note": ""
+        },
+        {
+          "id": "T-0003-S16",
+          "kind": "sma-a",
+          "volume": 7,
+          "chapter": "4",
+          "chapter_id": "v07-ch04",
+          "status": "done",
+          "prompt_file": "agent_prompts/agent_prompt.v07-ch04.sma-a.md",
+          "expected": [
+            "output/_audit/sma/v7-ch04/a/20261116-220504-00d5.json"
+          ],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-11-16 22:05:04",
+              "prompt": "agent_prompts/agent_prompt.v07-ch04.sma-a.md",
+              "finished": "2026-11-16 22:09:52",
+              "result": "done",
+              "note": "SMA-A: 9 находок, все приняты"
+            }
+          ],
+          "note": "SMA-A: 9 находок, все приняты"
+        },
+        {
+          "id": "T-0003-S17",
+          "kind": "sma-b",
+          "volume": 7,
+          "chapter": "4",
+          "chapter_id": "v07-ch04",
+          "status": "done",
+          "prompt_file": "agent_prompts/agent_prompt.v07-ch04.sma-b.md",
+          "expected": [
+            "output/_audit/sma/v7-ch04/b/20261116-220504-b9db.json"
+          ],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-11-16 22:05:04",
+              "prompt": "agent_prompts/agent_prompt.v07-ch04.sma-b.md",
+              "finished": "2026-11-16 22:09:52",
+              "result": "done",
+              "note": "SMA-B: 3 находки (инверсия 衆寡敵せず, столица, субъект кольца), приняты"
+            }
+          ],
+          "note": "SMA-B: 3 находки (инверсия 衆寡敵せず, столица, субъект кольца), приняты"
+        },
+        {
+          "id": "T-0003-S18",
+          "kind": "sma-c",
+          "volume": 7,
+          "chapter": "4",
+          "chapter_id": "v07-ch04",
+          "status": "done",
+          "prompt_file": "agent_prompts/agent_prompt.v07-ch04.sma-c.md",
+          "expected": [
+            "output/_audit/sma/v7-ch04/c/20261116-220504-3634.json"
+          ],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-11-16 22:05:04",
+              "prompt": "agent_prompts/agent_prompt.v07-ch04.sma-c.md",
+              "finished": "2026-11-16 22:09:53",
+              "result": "done",
+              "note": "SMA-C: 2 находки (модальность), приняты"
+            }
+          ],
+          "note": "SMA-C: 2 находки (модальность), приняты"
+        },
+        {
+          "id": "T-0003-S19",
+          "kind": "analyzer-phase1",
+          "volume": 7,
+          "chapter": "4",
+          "chapter_id": "v07-ch04",
+          "status": "done",
+          "prompt_file": "agent_prompts/agent_prompt.v07-ch04.analyzer-phase1.md",
+          "expected": [],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-11-16 22:05:04",
+              "prompt": "agent_prompts/agent_prompt.v07-ch04.analyzer-phase1.md",
+              "finished": "2026-11-16 22:09:53",
+              "result": "done",
+              "note": "Фаза 1: 5 находок (инверсия 衆寡敵せず и др.), приняты"
+            }
+          ],
+          "note": "Фаза 1: 5 находок (инверсия 衆寡敵せず и др.), приняты"
+        },
+        {
+          "id": "T-0003-S20",
+          "kind": "analyzer-phase2",
+          "volume": 7,
+          "chapter": "4",
+          "chapter_id": "v07-ch04",
+          "status": "done",
+          "prompt_file": "agent_prompts/agent_prompt.v07-ch04.analyzer-phase2.md",
+          "expected": [
+            "output/_audit/sma/v7-ch04/precheck/omission-precheck.json",
+            "output/_audit/sma/v7-ch04/analysis/20261116-220953-bf13.json",
+            "output/_audit/sma/v7-ch04/analysis/20261116-220953-bf13.md"
+          ],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-11-16 22:09:53",
+              "prompt": "agent_prompts/agent_prompt.v07-ch04.analyzer-phase2.md",
+              "finished": "2026-11-16 22:15:40",
+              "result": "done",
+              "note": "Phase 2: 16 FIXED, 1 applied via Execution Bridge"
+            }
+          ],
+          "note": "Phase 2: 16 FIXED, 1 applied via Execution Bridge"
         }
       ]
     }
