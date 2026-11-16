@@ -1,6 +1,6 @@
 # Реестр задач диспетчера
 
-Обновлено: 2026-11-16 23:52:33
+Обновлено: 2026-11-17 00:09:08
 
 Генерируется автоматически командой `python tools/dispatch.py`. Не редактируй вручную.
 
@@ -372,7 +372,12 @@ Tom 6: verify ch01-ch08 full audit
 | T-0003-S47 | sma-b | v07-ch10 | done | 1 | `agent_prompts/agent_prompt.v07-ch10.sma-b.md` |
 | T-0003-S48 | sma-c | v07-ch10 | done | 1 | `agent_prompts/agent_prompt.v07-ch10.sma-c.md` |
 | T-0003-S49 | analyzer-phase1 | v07-ch10 | done | 1 | `agent_prompts/agent_prompt.v07-ch10.analyzer-phase1.md` |
-| T-0003-S50 | analyzer-phase2 | v07-ch10 | running | 1 | `agent_prompts/agent_prompt.v07-ch10.analyzer-phase2.md` |
+| T-0003-S50 | analyzer-phase2 | v07-ch10 | done | 1 | `agent_prompts/agent_prompt.v07-ch10.analyzer-phase2.md` |
+| T-0003-S51 | sma-a | v07-epilogue | done | 1 | `agent_prompts/agent_prompt.v07-epilogue.sma-a.md` |
+| T-0003-S52 | sma-b | v07-epilogue | done | 1 | `agent_prompts/agent_prompt.v07-epilogue.sma-b.md` |
+| T-0003-S53 | sma-c | v07-epilogue | done | 1 | `agent_prompts/agent_prompt.v07-epilogue.sma-c.md` |
+| T-0003-S54 | analyzer-phase1 | v07-epilogue | done | 1 | `agent_prompts/agent_prompt.v07-epilogue.analyzer-phase1.md` |
+| T-0003-S55 | analyzer-phase2 | v07-epilogue | done | 1 | `agent_prompts/agent_prompt.v07-epilogue.analyzer-phase2.md` |
 
 Заметки:
 - T-0003-S1: SMA-A: 8 находок, все приняты
@@ -422,4 +427,10 @@ Tom 6: verify ch01-ch08 full audit
 - T-0003-S47: SMA-B: 4 находки, приняты
 - T-0003-S48: SMA-C: 1 находка, принята
 - T-0003-S49: Фаза 1: 9 находок, приняты
+- T-0003-S50: Phase 2: 16 FIXED, 1 DISPUTED reported only
+- T-0003-S51: SMA-A: 5 find, applied
+- T-0003-S52: SMA-B: 4 find, applied
+- T-0003-S53: SMA-C: 2 find, applied
+- T-0003-S54: Phase1: 10 find, applied
+- T-0003-S55: Phase 2: 14 FIXED, 1 REPORT_ONLY gender reverted
 

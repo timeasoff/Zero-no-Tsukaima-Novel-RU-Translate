@@ -5398,7 +5398,7 @@
           "volume": 7,
           "chapter": "10",
           "chapter_id": "v07-ch10",
-          "status": "running",
+          "status": "done",
           "prompt_file": "agent_prompts/agent_prompt.v07-ch10.analyzer-phase2.md",
           "expected": [
             "output/_audit/sma/v7-ch10/precheck/omission-precheck.json",
@@ -5410,12 +5410,127 @@
               "n": 1,
               "started": "2026-11-16 23:52:33",
               "prompt": "agent_prompts/agent_prompt.v07-ch10.analyzer-phase2.md",
-              "finished": "",
-              "result": "",
-              "note": ""
+              "finished": "2026-11-16 23:57:59",
+              "result": "done",
+              "note": "Phase 2: 16 FIXED, 1 DISPUTED reported only"
             }
           ],
-          "note": ""
+          "note": "Phase 2: 16 FIXED, 1 DISPUTED reported only"
+        },
+        {
+          "id": "T-0003-S51",
+          "kind": "sma-a",
+          "volume": 7,
+          "chapter": "epilogue",
+          "chapter_id": "v07-epilogue",
+          "status": "done",
+          "prompt_file": "agent_prompts/agent_prompt.v07-epilogue.sma-a.md",
+          "expected": [
+            "output/_audit/sma/v7-epilogue/a/20261116-235924-1694.json"
+          ],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-11-16 23:59:24",
+              "prompt": "agent_prompts/agent_prompt.v07-epilogue.sma-a.md",
+              "finished": "2026-11-17 00:03:40",
+              "result": "done",
+              "note": "SMA-A: 5 find, applied"
+            }
+          ],
+          "note": "SMA-A: 5 find, applied"
+        },
+        {
+          "id": "T-0003-S52",
+          "kind": "sma-b",
+          "volume": 7,
+          "chapter": "epilogue",
+          "chapter_id": "v07-epilogue",
+          "status": "done",
+          "prompt_file": "agent_prompts/agent_prompt.v07-epilogue.sma-b.md",
+          "expected": [
+            "output/_audit/sma/v7-epilogue/b/20261116-235924-77bb.json"
+          ],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-11-16 23:59:24",
+              "prompt": "agent_prompts/agent_prompt.v07-epilogue.sma-b.md",
+              "finished": "2026-11-17 00:03:40",
+              "result": "done",
+              "note": "SMA-B: 4 find, applied"
+            }
+          ],
+          "note": "SMA-B: 4 find, applied"
+        },
+        {
+          "id": "T-0003-S53",
+          "kind": "sma-c",
+          "volume": 7,
+          "chapter": "epilogue",
+          "chapter_id": "v07-epilogue",
+          "status": "done",
+          "prompt_file": "agent_prompts/agent_prompt.v07-epilogue.sma-c.md",
+          "expected": [
+            "output/_audit/sma/v7-epilogue/c/20261116-235924-2f02.json"
+          ],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-11-16 23:59:24",
+              "prompt": "agent_prompts/agent_prompt.v07-epilogue.sma-c.md",
+              "finished": "2026-11-17 00:03:40",
+              "result": "done",
+              "note": "SMA-C: 2 find, applied"
+            }
+          ],
+          "note": "SMA-C: 2 find, applied"
+        },
+        {
+          "id": "T-0003-S54",
+          "kind": "analyzer-phase1",
+          "volume": 7,
+          "chapter": "epilogue",
+          "chapter_id": "v07-epilogue",
+          "status": "done",
+          "prompt_file": "agent_prompts/agent_prompt.v07-epilogue.analyzer-phase1.md",
+          "expected": [],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-11-16 23:59:24",
+              "prompt": "agent_prompts/agent_prompt.v07-epilogue.analyzer-phase1.md",
+              "finished": "2026-11-17 00:03:40",
+              "result": "done",
+              "note": "Phase1: 10 find, applied"
+            }
+          ],
+          "note": "Phase1: 10 find, applied"
+        },
+        {
+          "id": "T-0003-S55",
+          "kind": "analyzer-phase2",
+          "volume": 7,
+          "chapter": "epilogue",
+          "chapter_id": "v07-epilogue",
+          "status": "done",
+          "prompt_file": "agent_prompts/agent_prompt.v07-epilogue.analyzer-phase2.md",
+          "expected": [
+            "output/_audit/sma/v7-epilogue/precheck/omission-precheck.json",
+            "output/_audit/sma/v7-epilogue/analysis/20261117-000340-22ca.json",
+            "output/_audit/sma/v7-epilogue/analysis/20261117-000340-22ca.md"
+          ],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-11-17 00:03:40",
+              "prompt": "agent_prompts/agent_prompt.v07-epilogue.analyzer-phase2.md",
+              "finished": "2026-11-17 00:09:08",
+              "result": "done",
+              "note": "Phase 2: 14 FIXED, 1 REPORT_ONLY gender reverted"
+            }
+          ],
+          "note": "Phase 2: 14 FIXED, 1 REPORT_ONLY gender reverted"
         }
       ]
     }
