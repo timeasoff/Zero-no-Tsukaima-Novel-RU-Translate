@@ -4940,6 +4940,121 @@
             }
           ],
           "note": "Phase 2: 25 CONFIRMED_ERROR, 5 REPORT_ONLY applied"
+        },
+        {
+          "id": "T-0003-S31",
+          "kind": "sma-a",
+          "volume": 7,
+          "chapter": "7",
+          "chapter_id": "v07-ch07",
+          "status": "done",
+          "prompt_file": "agent_prompts/agent_prompt.v07-ch07.sma-a.md",
+          "expected": [
+            "output/_audit/sma/v7-ch07/a/20261116-230011-4896.json"
+          ],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-11-16 23:00:11",
+              "prompt": "agent_prompts/agent_prompt.v07-ch07.sma-a.md",
+              "finished": "2026-11-16 23:06:44",
+              "result": "done",
+              "note": "SMA-A: 7 находок, приняты"
+            }
+          ],
+          "note": "SMA-A: 7 находок, приняты"
+        },
+        {
+          "id": "T-0003-S32",
+          "kind": "sma-b",
+          "volume": 7,
+          "chapter": "7",
+          "chapter_id": "v07-ch07",
+          "status": "done",
+          "prompt_file": "agent_prompts/agent_prompt.v07-ch07.sma-b.md",
+          "expected": [
+            "output/_audit/sma/v7-ch07/b/20261116-230011-9a32.json"
+          ],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-11-16 23:00:11",
+              "prompt": "agent_prompts/agent_prompt.v07-ch07.sma-b.md",
+              "finished": "2026-11-16 23:06:44",
+              "result": "done",
+              "note": "SMA-B: 3 находки, приняты"
+            }
+          ],
+          "note": "SMA-B: 3 находки, приняты"
+        },
+        {
+          "id": "T-0003-S33",
+          "kind": "sma-c",
+          "volume": 7,
+          "chapter": "7",
+          "chapter_id": "v07-ch07",
+          "status": "done",
+          "prompt_file": "agent_prompts/agent_prompt.v07-ch07.sma-c.md",
+          "expected": [
+            "output/_audit/sma/v7-ch07/c/20261116-230011-c1fc.json"
+          ],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-11-16 23:00:11",
+              "prompt": "agent_prompts/agent_prompt.v07-ch07.sma-c.md",
+              "finished": "2026-11-16 23:06:44",
+              "result": "done",
+              "note": "SMA-C: 0 находок"
+            }
+          ],
+          "note": "SMA-C: 0 находок"
+        },
+        {
+          "id": "T-0003-S34",
+          "kind": "analyzer-phase1",
+          "volume": 7,
+          "chapter": "7",
+          "chapter_id": "v07-ch07",
+          "status": "done",
+          "prompt_file": "agent_prompts/agent_prompt.v07-ch07.analyzer-phase1.md",
+          "expected": [],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-11-16 23:00:11",
+              "prompt": "agent_prompts/agent_prompt.v07-ch07.analyzer-phase1.md",
+              "finished": "2026-11-16 23:06:44",
+              "result": "done",
+              "note": "Фаза 1: 5 находок, приняты"
+            }
+          ],
+          "note": "Фаза 1: 5 находок, приняты"
+        },
+        {
+          "id": "T-0003-S35",
+          "kind": "analyzer-phase2",
+          "volume": 7,
+          "chapter": "7",
+          "chapter_id": "v07-ch07",
+          "status": "done",
+          "prompt_file": "agent_prompts/agent_prompt.v07-ch07.analyzer-phase2.md",
+          "expected": [
+            "output/_audit/sma/v7-ch07/precheck/omission-precheck.json",
+            "output/_audit/sma/v7-ch07/analysis/20261116-230644-2271.json",
+            "output/_audit/sma/v7-ch07/analysis/20261116-230644-2271.md"
+          ],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-11-16 23:06:44",
+              "prompt": "agent_prompts/agent_prompt.v07-ch07.analyzer-phase2.md",
+              "finished": "2026-11-16 23:12:25",
+              "result": "done",
+              "note": "Phase 2: 11 FP/PRESERVED, typo Р»Р¶С‘С€СЊ fixed"
+            }
+          ],
+          "note": "Phase 2: 11 FP/PRESERVED, typo Р»Р¶С‘С€СЊ fixed"
         }
       ]
     }
