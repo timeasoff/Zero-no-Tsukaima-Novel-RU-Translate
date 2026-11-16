@@ -5170,6 +5170,137 @@
             }
           ],
           "note": "Phase 2: C-17 recovered йЂ†и»ўгЃ™г‚‹гЃ®гЃ , C-14 DISPUTED"
+        },
+        {
+          "id": "T-0003-S41",
+          "kind": "sma-a",
+          "volume": 7,
+          "chapter": "9",
+          "chapter_id": "v07-ch09",
+          "status": "done",
+          "prompt_file": "agent_prompts/agent_prompt.v07-ch09.sma-a.md",
+          "expected": [
+            "output/_audit/sma/v7-ch09/a/20261116-233108-eee3.json"
+          ],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-11-16 23:31:08",
+              "prompt": "agent_prompts/agent_prompt.v07-ch09.sma-a.md",
+              "finished": "2026-11-16 23:39:14",
+              "result": "done",
+              "note": "SMA-A: 2 находки (ERROR 四万), приняты"
+            }
+          ],
+          "note": "SMA-A: 2 находки (ERROR 四万), приняты"
+        },
+        {
+          "id": "T-0003-S42",
+          "kind": "sma-b",
+          "volume": 7,
+          "chapter": "9",
+          "chapter_id": "v07-ch09",
+          "status": "done",
+          "prompt_file": "agent_prompts/agent_prompt.v07-ch09.sma-b.attempt2.md",
+          "expected": [
+            "output/_audit/sma/v7-ch09/b/20261116-233108-3645.json"
+          ],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-11-16 23:31:08",
+              "prompt": "agent_prompts/agent_prompt.v07-ch09.sma-b.md",
+              "finished": "",
+              "result": "",
+              "note": ""
+            },
+            {
+              "n": 2,
+              "started": "2026-11-16 23:34:31",
+              "prompt": "agent_prompts/agent_prompt.v07-ch09.sma-b.attempt2.md",
+              "finished": "2026-11-16 23:39:14",
+              "result": "done",
+              "note": "SMA-B retry: 3 находки, приняты"
+            }
+          ],
+          "note": "SMA-B retry: 3 находки, приняты"
+        },
+        {
+          "id": "T-0003-S43",
+          "kind": "sma-c",
+          "volume": 7,
+          "chapter": "9",
+          "chapter_id": "v07-ch09",
+          "status": "done",
+          "prompt_file": "agent_prompts/agent_prompt.v07-ch09.sma-c.md",
+          "expected": [
+            "output/_audit/sma/v7-ch09/c/20261116-233108-d187.json"
+          ],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-11-16 23:31:08",
+              "prompt": "agent_prompts/agent_prompt.v07-ch09.sma-c.md",
+              "finished": "2026-11-16 23:39:15",
+              "result": "done",
+              "note": "SMA-C: 1 находка, принята"
+            }
+          ],
+          "note": "SMA-C: 1 находка, принята"
+        },
+        {
+          "id": "T-0003-S44",
+          "kind": "analyzer-phase1",
+          "volume": 7,
+          "chapter": "9",
+          "chapter_id": "v07-ch09",
+          "status": "done",
+          "prompt_file": "agent_prompts/agent_prompt.v07-ch09.analyzer-phase1.attempt2.md",
+          "expected": [],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-11-16 23:31:08",
+              "prompt": "agent_prompts/agent_prompt.v07-ch09.analyzer-phase1.md",
+              "finished": "",
+              "result": "",
+              "note": ""
+            },
+            {
+              "n": 2,
+              "started": "2026-11-16 23:32:55",
+              "prompt": "agent_prompts/agent_prompt.v07-ch09.analyzer-phase1.attempt2.md",
+              "finished": "2026-11-16 23:39:15",
+              "result": "done",
+              "note": "Фаза 1 retry: иероглиф 巸 удалён"
+            }
+          ],
+          "note": "Фаза 1 retry: иероглиф 巸 удалён"
+        },
+        {
+          "id": "T-0003-S45",
+          "kind": "analyzer-phase2",
+          "volume": 7,
+          "chapter": "9",
+          "chapter_id": "v07-ch09",
+          "status": "done",
+          "prompt_file": "agent_prompts/agent_prompt.v07-ch09.analyzer-phase2.md",
+          "expected": [
+            "output/_audit/sma/v7-ch09/precheck/omission-precheck.json",
+            "output/_audit/sma/v7-ch09/analysis/20261116-233915-c37c.json",
+            "output/_audit/sma/v7-ch09/analysis/20261116-233915-c37c.md"
+          ],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-11-16 23:39:15",
+              "prompt": "agent_prompts/agent_prompt.v07-ch09.analyzer-phase2.md",
+              "finished": "2026-11-16 23:43:28",
+              "result": "done",
+              "note": "Phase 2: 5 FP/PRESERVED, 1 DISPUTED (Р±Р»РѕРє 11)"
+            }
+          ],
+          "note": "Phase 2: 5 FP/PRESERVED, 1 DISPUTED (Р±Р»РѕРє 11)"
         }
       ]
     }
