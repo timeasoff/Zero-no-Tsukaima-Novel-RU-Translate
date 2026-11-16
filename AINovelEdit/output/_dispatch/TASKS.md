@@ -1,6 +1,6 @@
 # Реестр задач диспетчера
 
-Обновлено: 2026-11-17 00:09:08
+Обновлено: 2026-11-17 00:24:27
 
 Генерируется автоматически командой `python tools/dispatch.py`. Не редактируй вручную.
 
@@ -378,6 +378,11 @@ Tom 6: verify ch01-ch08 full audit
 | T-0003-S53 | sma-c | v07-epilogue | done | 1 | `agent_prompts/agent_prompt.v07-epilogue.sma-c.md` |
 | T-0003-S54 | analyzer-phase1 | v07-epilogue | done | 1 | `agent_prompts/agent_prompt.v07-epilogue.analyzer-phase1.md` |
 | T-0003-S55 | analyzer-phase2 | v07-epilogue | done | 1 | `agent_prompts/agent_prompt.v07-epilogue.analyzer-phase2.md` |
+| T-0003-S56 | sma-a | v07-afterword | done | 1 | `agent_prompts/agent_prompt.v07-afterword.sma-a.md` |
+| T-0003-S57 | sma-b | v07-afterword | done | 1 | `agent_prompts/agent_prompt.v07-afterword.sma-b.md` |
+| T-0003-S58 | sma-c | v07-afterword | done | 1 | `agent_prompts/agent_prompt.v07-afterword.sma-c.md` |
+| T-0003-S59 | analyzer-phase1 | v07-afterword | done | 1 | `agent_prompts/agent_prompt.v07-afterword.analyzer-phase1.md` |
+| T-0003-S60 | analyzer-phase2 | v07-afterword | done | 1 | `agent_prompts/agent_prompt.v07-afterword.analyzer-phase2.md` |
 
 Заметки:
 - T-0003-S1: SMA-A: 8 находок, все приняты
@@ -433,4 +438,9 @@ Tom 6: verify ch01-ch08 full audit
 - T-0003-S53: SMA-C: 2 find, applied
 - T-0003-S54: Phase1: 10 find, applied
 - T-0003-S55: Phase 2: 14 FIXED, 1 REPORT_ONLY gender reverted
+- T-0003-S56: SMA-A: 7 find, applied
+- T-0003-S57: SMA-B: 5 find, applied
+- T-0003-S58: SMA-C: 0 find
+- T-0003-S59: Phase1: 3 find, applied
+- T-0003-S60: Phase 2: 9 FP, 2 DISPUTED applied
 

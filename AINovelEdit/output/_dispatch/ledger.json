@@ -5531,6 +5531,121 @@
             }
           ],
           "note": "Phase 2: 14 FIXED, 1 REPORT_ONLY gender reverted"
+        },
+        {
+          "id": "T-0003-S56",
+          "kind": "sma-a",
+          "volume": 7,
+          "chapter": "afterword",
+          "chapter_id": "v07-afterword",
+          "status": "done",
+          "prompt_file": "agent_prompts/agent_prompt.v07-afterword.sma-a.md",
+          "expected": [
+            "output/_audit/sma/v7-afterword/a/20261117-001257-43b5.json"
+          ],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-11-17 00:12:57",
+              "prompt": "agent_prompts/agent_prompt.v07-afterword.sma-a.md",
+              "finished": "2026-11-17 00:17:01",
+              "result": "done",
+              "note": "SMA-A: 7 find, applied"
+            }
+          ],
+          "note": "SMA-A: 7 find, applied"
+        },
+        {
+          "id": "T-0003-S57",
+          "kind": "sma-b",
+          "volume": 7,
+          "chapter": "afterword",
+          "chapter_id": "v07-afterword",
+          "status": "done",
+          "prompt_file": "agent_prompts/agent_prompt.v07-afterword.sma-b.md",
+          "expected": [
+            "output/_audit/sma/v7-afterword/b/20261117-001257-cf9b.json"
+          ],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-11-17 00:12:57",
+              "prompt": "agent_prompts/agent_prompt.v07-afterword.sma-b.md",
+              "finished": "2026-11-17 00:17:01",
+              "result": "done",
+              "note": "SMA-B: 5 find, applied"
+            }
+          ],
+          "note": "SMA-B: 5 find, applied"
+        },
+        {
+          "id": "T-0003-S58",
+          "kind": "sma-c",
+          "volume": 7,
+          "chapter": "afterword",
+          "chapter_id": "v07-afterword",
+          "status": "done",
+          "prompt_file": "agent_prompts/agent_prompt.v07-afterword.sma-c.md",
+          "expected": [
+            "output/_audit/sma/v7-afterword/c/20261117-001257-b275.json"
+          ],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-11-17 00:12:57",
+              "prompt": "agent_prompts/agent_prompt.v07-afterword.sma-c.md",
+              "finished": "2026-11-17 00:17:02",
+              "result": "done",
+              "note": "SMA-C: 0 find"
+            }
+          ],
+          "note": "SMA-C: 0 find"
+        },
+        {
+          "id": "T-0003-S59",
+          "kind": "analyzer-phase1",
+          "volume": 7,
+          "chapter": "afterword",
+          "chapter_id": "v07-afterword",
+          "status": "done",
+          "prompt_file": "agent_prompts/agent_prompt.v07-afterword.analyzer-phase1.md",
+          "expected": [],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-11-17 00:12:57",
+              "prompt": "agent_prompts/agent_prompt.v07-afterword.analyzer-phase1.md",
+              "finished": "2026-11-17 00:17:02",
+              "result": "done",
+              "note": "Phase1: 3 find, applied"
+            }
+          ],
+          "note": "Phase1: 3 find, applied"
+        },
+        {
+          "id": "T-0003-S60",
+          "kind": "analyzer-phase2",
+          "volume": 7,
+          "chapter": "afterword",
+          "chapter_id": "v07-afterword",
+          "status": "done",
+          "prompt_file": "agent_prompts/agent_prompt.v07-afterword.analyzer-phase2.md",
+          "expected": [
+            "output/_audit/sma/v7-afterword/precheck/omission-precheck.json",
+            "output/_audit/sma/v7-afterword/analysis/20261117-001702-576e.json",
+            "output/_audit/sma/v7-afterword/analysis/20261117-001702-576e.md"
+          ],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-11-17 00:17:02",
+              "prompt": "agent_prompts/agent_prompt.v07-afterword.analyzer-phase2.md",
+              "finished": "2026-11-17 00:24:27",
+              "result": "done",
+              "note": "Phase 2: 9 FP, 2 DISPUTED applied"
+            }
+          ],
+          "note": "Phase 2: 9 FP, 2 DISPUTED applied"
         }
       ]
     }
