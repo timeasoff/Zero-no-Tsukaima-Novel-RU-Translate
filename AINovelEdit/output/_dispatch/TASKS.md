@@ -1,6 +1,6 @@
 # Реестр задач диспетчера
 
-Обновлено: 2026-11-11 02:15:56
+Обновлено: 2026-11-16 17:24:57
 
 Генерируется автоматически командой `python tools/dispatch.py`. Не редактируй вручную.
 
@@ -211,9 +211,9 @@ Tom 6: verify ch01-ch08 full audit
 | T-0002-S51 | sma-c | v06-ch06 | interrupted | 1 | `agent_prompts/agent_prompt.v06-ch06.sma-c.md` |
 | T-0002-S52 | analyzer-phase1 | v06-ch06 | interrupted | 1 | `agent_prompts/agent_prompt.v06-ch06.analyzer-phase1.md` |
 | T-0002-S53 | analyzer-phase2 | v06-ch06 | interrupted | 1 | `agent_prompts/agent_prompt.v06-ch06.analyzer-phase2.md` |
-| T-0002-S54 | grammar-audit | v06-ch06 | running | 1 | `agent_prompts/agent_prompt.v06-ch06.grammar-audit.md` |
-| T-0002-S55 | style-audit | v06-ch06 | running | 1 | `agent_prompts/agent_prompt.v06-ch06.style-audit.md` |
-| T-0002-S56 | humanizer | v06-ch06 | running | 1 | `agent_prompts/agent_prompt.v06-ch06.humanizer.md` |
+| T-0002-S54 | grammar-audit | v06-ch06 | done | 1 | `agent_prompts/agent_prompt.v06-ch06.grammar-audit.md` |
+| T-0002-S55 | style-audit | v06-ch06 | done | 1 | `agent_prompts/agent_prompt.v06-ch06.style-audit.md` |
+| T-0002-S56 | humanizer | v06-ch06 | done | 1 | `agent_prompts/agent_prompt.v06-ch06.humanizer.md` |
 | T-0002-S57 | sma-a | v06-ch07 | interrupted | 1 | `agent_prompts/agent_prompt.v06-ch07.sma-a.md` |
 | T-0002-S58 | sma-b | v06-ch07 | interrupted | 1 | `agent_prompts/agent_prompt.v06-ch07.sma-b.md` |
 | T-0002-S59 | sma-c | v06-ch07 | interrupted | 1 | `agent_prompts/agent_prompt.v06-ch07.sma-c.md` |
@@ -235,6 +235,21 @@ Tom 6: verify ch01-ch08 full audit
 | T-0002-S75 | full-audit | v06-ch07 | running | 2 | `agent_prompts/agent_prompt.v06-ch07.full-audit.attempt2.md` |
 | T-0002-S76 | full-audit | v06-ch08 | running | 1 | `agent_prompts/agent_prompt.v06-ch08.full-audit.md` |
 | T-0002-S77 | full-audit | v06-ch07 | planned | 0 | `—` |
+| T-0002-S78 | sma-a | v06-ch07 | done | 2 | `agent_prompts/agent_prompt.v06-ch07.sma-a.attempt2.md` |
+| T-0002-S79 | sma-b | v06-ch07 | done | 2 | `agent_prompts/agent_prompt.v06-ch07.sma-b.attempt2.md` |
+| T-0002-S80 | sma-c | v06-ch07 | done | 2 | `agent_prompts/agent_prompt.v06-ch07.sma-c.attempt2.md` |
+| T-0002-S81 | analyzer-phase1 | v06-ch07 | running | 1 | `agent_prompts/agent_prompt.v06-ch07.analyzer-phase1.md` |
+| T-0002-S82 | analyzer-phase2 | v06-ch07 | running | 1 | `agent_prompts/agent_prompt.v06-ch07.analyzer-phase2.md` |
+| T-0002-S83 | sma-a | v06-ch08 | done | 2 | `agent_prompts/agent_prompt.v06-ch08.sma-a.attempt2.md` |
+| T-0002-S84 | sma-b | v06-ch08 | done | 2 | `agent_prompts/agent_prompt.v06-ch08.sma-b.attempt2.md` |
+| T-0002-S85 | sma-c | v06-ch08 | done | 2 | `agent_prompts/agent_prompt.v06-ch08.sma-c.attempt2.md` |
+| T-0002-S86 | analyzer-phase1 | v06-ch08 | planned | 0 | `—` |
+| T-0002-S87 | analyzer-phase2 | v06-ch08 | planned | 0 | `—` |
+| T-0002-S88 | sma-a | v06-ch08 | running | 1 | `agent_prompts/agent_prompt.v06-ch08.sma-a.md` |
+| T-0002-S89 | sma-b | v06-ch08 | running | 1 | `agent_prompts/agent_prompt.v06-ch08.sma-b.md` |
+| T-0002-S90 | sma-c | v06-ch08 | running | 1 | `agent_prompts/agent_prompt.v06-ch08.sma-c.md` |
+| T-0002-S91 | analyzer-phase1 | v06-ch08 | running | 1 | `agent_prompts/agent_prompt.v06-ch08.analyzer-phase1.md` |
+| T-0002-S92 | analyzer-phase2 | v06-ch08 | running | 1 | `agent_prompts/agent_prompt.v06-ch08.analyzer-phase2.md` |
 
 Заметки:
 - T-0002-S9: нет результата после запуска
@@ -288,4 +303,10 @@ Tom 6: verify ch01-ch08 full audit
 - T-0002-S72: изменений после запуска нет
 - T-0002-S73: FINAL AUDIT v6-ch05 выполнен оркестратором: отчёт output/_audit/v6-ch05.md, правка 'Мисс Матильда'->'Матильда' через fix_block.py блок 8, merged обновлён, лог дополнен
 - T-0002-S74: Полная обработка v6-ch06 субагентом ses_e3c886b49ffelPPylzoYQkDUnD: 26/26 блоков по JA, ED_RU 26/26, отчёт output/_audit/v06-ch06.md, верифицировано оркестратором (маркеры 1-26, кавычки, сканеры сходятся с отчётом)
+- T-0002-S78: SMA-A по ch07: 4 находки, 3 приняты (исправлены), 1 оспорена
+- T-0002-S79: SMA-B по ch07: 0 находок
+- T-0002-S80: SMA-C по ch07: 3 находки, 2 приняты (исправлены), 1 спорна
+- T-0002-S83: SMA-A по сырому RU (до переработки): 17 находок, все отнесены к переработке
+- T-0002-S84: SMA-B по сырому RU (до переработки): 9 находок, учтены при переработке
+- T-0002-S85: SMA-C по сырому RU (до переработки): 6 находок, учтены при переработке
 
