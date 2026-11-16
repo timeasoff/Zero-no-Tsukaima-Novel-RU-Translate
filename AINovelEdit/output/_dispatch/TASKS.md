@@ -1,6 +1,6 @@
 # Реестр задач диспетчера
 
-Обновлено: 2026-11-16 19:30:23
+Обновлено: 2026-11-16 20:08:51
 
 Генерируется автоматически командой `python tools/dispatch.py`. Не редактируй вручную.
 
@@ -206,30 +206,30 @@ Tom 6: verify ch01-ch08 full audit
 | T-0002-S46 | grammar-audit | v06-ch05 | interrupted | 1 | `agent_prompts/agent_prompt.v06-ch05.grammar-audit.md` |
 | T-0002-S47 | style-audit | v06-ch05 | interrupted | 1 | `agent_prompts/agent_prompt.v06-ch05.style-audit.md` |
 | T-0002-S48 | humanizer | v06-ch05 | interrupted | 1 | `agent_prompts/agent_prompt.v06-ch05.humanizer.md` |
-| T-0002-S49 | sma-a | v06-ch06 | interrupted | 2 | `agent_prompts/agent_prompt.v06-ch06.sma-a.attempt2.md` |
-| T-0002-S50 | sma-b | v06-ch06 | interrupted | 1 | `agent_prompts/agent_prompt.v06-ch06.sma-b.md` |
-| T-0002-S51 | sma-c | v06-ch06 | interrupted | 1 | `agent_prompts/agent_prompt.v06-ch06.sma-c.md` |
-| T-0002-S52 | analyzer-phase1 | v06-ch06 | interrupted | 1 | `agent_prompts/agent_prompt.v06-ch06.analyzer-phase1.md` |
-| T-0002-S53 | analyzer-phase2 | v06-ch06 | interrupted | 1 | `agent_prompts/agent_prompt.v06-ch06.analyzer-phase2.md` |
+| T-0002-S49 | sma-a | v06-ch06 | done | 2 | `agent_prompts/agent_prompt.v06-ch06.sma-a.attempt2.md` |
+| T-0002-S50 | sma-b | v06-ch06 | done | 1 | `agent_prompts/agent_prompt.v06-ch06.sma-b.md` |
+| T-0002-S51 | sma-c | v06-ch06 | done | 1 | `agent_prompts/agent_prompt.v06-ch06.sma-c.md` |
+| T-0002-S52 | analyzer-phase1 | v06-ch06 | done | 2 | `agent_prompts/agent_prompt.v06-ch06.analyzer-phase1.attempt2.md` |
+| T-0002-S53 | analyzer-phase2 | v06-ch06 | done | 4 | `agent_prompts/agent_prompt.v06-ch06.analyzer-phase2.attempt4.md` |
 | T-0002-S54 | grammar-audit | v06-ch06 | done | 1 | `agent_prompts/agent_prompt.v06-ch06.grammar-audit.md` |
 | T-0002-S55 | style-audit | v06-ch06 | done | 1 | `agent_prompts/agent_prompt.v06-ch06.style-audit.md` |
 | T-0002-S56 | humanizer | v06-ch06 | done | 1 | `agent_prompts/agent_prompt.v06-ch06.humanizer.md` |
-| T-0002-S57 | sma-a | v06-ch07 | interrupted | 1 | `agent_prompts/agent_prompt.v06-ch07.sma-a.md` |
-| T-0002-S58 | sma-b | v06-ch07 | interrupted | 1 | `agent_prompts/agent_prompt.v06-ch07.sma-b.md` |
-| T-0002-S59 | sma-c | v06-ch07 | interrupted | 1 | `agent_prompts/agent_prompt.v06-ch07.sma-c.md` |
-| T-0002-S60 | analyzer-phase1 | v06-ch07 | interrupted | 1 | `agent_prompts/agent_prompt.v06-ch07.analyzer-phase1.md` |
-| T-0002-S61 | analyzer-phase2 | v06-ch07 | interrupted | 1 | `agent_prompts/agent_prompt.v06-ch07.analyzer-phase2.md` |
-| T-0002-S62 | grammar-audit | v06-ch07 | interrupted | 1 | `agent_prompts/agent_prompt.v06-ch07.grammar-audit.md` |
-| T-0002-S63 | style-audit | v06-ch07 | interrupted | 1 | `agent_prompts/agent_prompt.v06-ch07.style-audit.md` |
-| T-0002-S64 | humanizer | v06-ch07 | interrupted | 1 | `agent_prompts/agent_prompt.v06-ch07.humanizer.md` |
-| T-0002-S65 | sma-a | v06-ch08 | interrupted | 1 | `agent_prompts/agent_prompt.v06-ch08.sma-a.md` |
-| T-0002-S66 | sma-b | v06-ch08 | interrupted | 1 | `agent_prompts/agent_prompt.v06-ch08.sma-b.md` |
-| T-0002-S67 | sma-c | v06-ch08 | interrupted | 1 | `agent_prompts/agent_prompt.v06-ch08.sma-c.md` |
-| T-0002-S68 | analyzer-phase1 | v06-ch08 | interrupted | 1 | `agent_prompts/agent_prompt.v06-ch08.analyzer-phase1.md` |
-| T-0002-S69 | analyzer-phase2 | v06-ch08 | interrupted | 1 | `agent_prompts/agent_prompt.v06-ch08.analyzer-phase2.md` |
-| T-0002-S70 | grammar-audit | v06-ch08 | interrupted | 1 | `agent_prompts/agent_prompt.v06-ch08.grammar-audit.md` |
-| T-0002-S71 | style-audit | v06-ch08 | interrupted | 1 | `agent_prompts/agent_prompt.v06-ch08.style-audit.md` |
-| T-0002-S72 | humanizer | v06-ch08 | interrupted | 1 | `agent_prompts/agent_prompt.v06-ch08.humanizer.md` |
+| T-0002-S57 | sma-a | v06-ch07 | done | 1 | `agent_prompts/agent_prompt.v06-ch07.sma-a.md` |
+| T-0002-S58 | sma-b | v06-ch07 | done | 1 | `agent_prompts/agent_prompt.v06-ch07.sma-b.md` |
+| T-0002-S59 | sma-c | v06-ch07 | done | 1 | `agent_prompts/agent_prompt.v06-ch07.sma-c.md` |
+| T-0002-S60 | analyzer-phase1 | v06-ch07 | done | 1 | `agent_prompts/agent_prompt.v06-ch07.analyzer-phase1.md` |
+| T-0002-S61 | analyzer-phase2 | v06-ch07 | done | 1 | `agent_prompts/agent_prompt.v06-ch07.analyzer-phase2.md` |
+| T-0002-S62 | grammar-audit | v06-ch07 | done | 1 | `agent_prompts/agent_prompt.v06-ch07.grammar-audit.md` |
+| T-0002-S63 | style-audit | v06-ch07 | done | 1 | `agent_prompts/agent_prompt.v06-ch07.style-audit.md` |
+| T-0002-S64 | humanizer | v06-ch07 | done | 1 | `agent_prompts/agent_prompt.v06-ch07.humanizer.md` |
+| T-0002-S65 | sma-a | v06-ch08 | done | 1 | `agent_prompts/agent_prompt.v06-ch08.sma-a.md` |
+| T-0002-S66 | sma-b | v06-ch08 | done | 1 | `agent_prompts/agent_prompt.v06-ch08.sma-b.md` |
+| T-0002-S67 | sma-c | v06-ch08 | done | 1 | `agent_prompts/agent_prompt.v06-ch08.sma-c.md` |
+| T-0002-S68 | analyzer-phase1 | v06-ch08 | done | 1 | `agent_prompts/agent_prompt.v06-ch08.analyzer-phase1.md` |
+| T-0002-S69 | analyzer-phase2 | v06-ch08 | done | 1 | `agent_prompts/agent_prompt.v06-ch08.analyzer-phase2.md` |
+| T-0002-S70 | grammar-audit | v06-ch08 | done | 1 | `agent_prompts/agent_prompt.v06-ch08.grammar-audit.md` |
+| T-0002-S71 | style-audit | v06-ch08 | done | 1 | `agent_prompts/agent_prompt.v06-ch08.style-audit.md` |
+| T-0002-S72 | humanizer | v06-ch08 | done | 1 | `agent_prompts/agent_prompt.v06-ch08.humanizer.md` |
 | T-0002-S73 | full-audit | v06-ch05 | done | 1 | `agent_prompts/agent_prompt.v06-ch05.full-audit.md` |
 | T-0002-S74 | full-audit | v06-ch06 | done | 1 | `agent_prompts/agent_prompt.v06-ch06.full-audit.md` |
 | T-0002-S75 | full-audit | v06-ch07 | running | 2 | `agent_prompts/agent_prompt.v06-ch07.full-audit.attempt2.md` |
@@ -280,27 +280,27 @@ Tom 6: verify ch01-ch08 full audit
 - T-0002-S46: изменений после запуска нет
 - T-0002-S47: изменений после запуска нет
 - T-0002-S48: изменений после запуска нет
-- T-0002-S49: нет результата после запуска
-- T-0002-S50: нет результата после запуска
-- T-0002-S51: нет результата после запуска
-- T-0002-S52: нет результата после запуска
-- T-0002-S53: нет результата после запуска
-- T-0002-S57: нет результата после запуска
-- T-0002-S58: нет результата после запуска
-- T-0002-S59: нет результата после запуска
-- T-0002-S60: нет результата после запуска
-- T-0002-S61: нет результата после запуска
-- T-0002-S62: изменений после запуска нет
-- T-0002-S63: изменений после запуска нет
-- T-0002-S64: изменений после запуска нет
-- T-0002-S65: нет результата после запуска
-- T-0002-S66: нет результата после запуска
-- T-0002-S67: нет результата после запуска
-- T-0002-S68: нет результата после запуска
-- T-0002-S69: нет результата после запуска
-- T-0002-S70: изменений после запуска нет
-- T-0002-S71: изменений после запуска нет
-- T-0002-S72: изменений после запуска нет
+- T-0002-S49: артефакт sma-a ch06 от 22.10 на месте, работа закрыта
+- T-0002-S50: артефакт sma-b ch06 от 22.10 на месте, работа закрыта
+- T-0002-S51: артефакт sma-c ch06 от 22.10 на месте, работа закрыта
+- T-0002-S52: Фаза 1 (blind) ch06: 5 кандидатов, пропусков нет
+- T-0002-S53: Фаза 2 (evidence review) ch06: 5 кандидатов, 0 CONFIRMED_ERROR, правок нет
+- T-0002-S57: закрыто запуском T-0002-S78 (sma-a ch07)
+- T-0002-S58: закрыто запуском T-0002-S79 (sma-b ch07)
+- T-0002-S59: закрыто запуском T-0002-S80 (sma-c ch07)
+- T-0002-S60: закрыто запуском T-0002-S81 (analyzer ph1 ch07)
+- T-0002-S61: закрыто запуском T-0002-S82 (analyzer ph2 ch07)
+- T-0002-S62: verify: свежий отчёт grammar ch07 на месте
+- T-0002-S63: verify: свежий отчёт style ch07 на месте
+- T-0002-S64: verify: свежий отчёт humanizer ch07 на месте
+- T-0002-S65: закрыто запуском T-0002-S88 (sma-a ch08)
+- T-0002-S66: закрыто запуском T-0002-S89 (sma-b ch08)
+- T-0002-S67: закрыто запуском T-0002-S90 (sma-c ch08)
+- T-0002-S68: закрыто запуском T-0002-S91 (analyzer ph1 ch08)
+- T-0002-S69: закрыто запуском T-0002-S92 (analyzer ph2 ch08)
+- T-0002-S70: verify: свежий отчёт grammar ch08 на месте
+- T-0002-S71: verify: свежий отчёт style ch08 на месте
+- T-0002-S72: verify: свежий отчёт humanizer ch08 на месте
 - T-0002-S73: FINAL AUDIT v6-ch05 выполнен оркестратором: отчёт output/_audit/v6-ch05.md, правка 'Мисс Матильда'->'Матильда' через fix_block.py блок 8, merged обновлён, лог дополнен
 - T-0002-S74: Полная обработка v6-ch06 субагентом ses_e3c886b49ffelPPylzoYQkDUnD: 26/26 блоков по JA, ED_RU 26/26, отчёт output/_audit/v06-ch06.md, верифицировано оркестратором (маркеры 1-26, кавычки, сканеры сходятся с отчётом)
 - T-0002-S78: SMA-A по ch07: 4 находки, 3 приняты (исправлены), 1 оспорена
