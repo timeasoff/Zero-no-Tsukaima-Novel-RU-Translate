@@ -4216,7 +4216,7 @@
       "id": "T-0003",
       "text": "Проверка тома 7: полный pipeline по главам",
       "created": "2026-11-16 20:39:50",
-      "status": "open",
+      "status": "done",
       "note": "",
       "subtasks": [
         {
@@ -4454,7 +4454,7 @@
           "volume": 7,
           "chapter": "2",
           "chapter_id": "v07-ch02",
-          "status": "running",
+          "status": "done",
           "prompt_file": "agent_prompts/agent_prompt.v07-ch02.analyzer-phase2.md",
           "expected": [
             "output/_audit/sma/v7-ch02/precheck/omission-precheck.json",
@@ -4466,12 +4466,12 @@
               "n": 1,
               "started": "2026-11-16 21:15:55",
               "prompt": "agent_prompts/agent_prompt.v07-ch02.analyzer-phase2.md",
-              "finished": "",
-              "result": "",
-              "note": ""
+              "finished": "2026-11-17 00:25:20",
+              "result": "done",
+              "note": "Phase 2 ch02: all FP/PRESERVED, fixes already applied"
             }
           ],
-          "note": ""
+          "note": "Phase 2 ch02: all FP/PRESERVED, fixes already applied"
         },
         {
           "id": "T-0003-S11",
@@ -4569,7 +4569,7 @@
           "volume": 7,
           "chapter": "3",
           "chapter_id": "v07-ch03",
-          "status": "running",
+          "status": "done",
           "prompt_file": "agent_prompts/agent_prompt.v07-ch03.analyzer-phase2.md",
           "expected": [
             "output/_audit/sma/v7-ch03/precheck/omission-precheck.json",
@@ -4581,12 +4581,12 @@
               "n": 1,
               "started": "2026-11-16 21:46:15",
               "prompt": "agent_prompts/agent_prompt.v07-ch03.analyzer-phase2.md",
-              "finished": "",
-              "result": "",
-              "note": ""
+              "finished": "2026-11-17 00:25:20",
+              "result": "done",
+              "note": "Phase 2 ch03: all CONFIRMED_ERROR applied via Execution Bridge"
             }
           ],
-          "note": ""
+          "note": "Phase 2 ch03: all CONFIRMED_ERROR applied via Execution Bridge"
         },
         {
           "id": "T-0003-S16",

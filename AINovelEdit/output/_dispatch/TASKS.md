@@ -1,6 +1,6 @@
 # Реестр задач диспетчера
 
-Обновлено: 2026-11-17 00:24:27
+Обновлено: 2026-11-17 00:25:20
 
 Генерируется автоматически командой `python tools/dispatch.py`. Не редактируй вручную.
 
@@ -317,7 +317,7 @@ Tom 6: verify ch01-ch08 full audit
 - T-0002-S91: Фаза 1 (blind) ch08: 25 кандидатов
 - T-0002-S92: Фаза 2 (evidence review) ch08: 56 кандидатов, 7 FIXED применены в текст
 
-## T-0003 — OPEN
+## T-0003 — DONE
 
 Проверка тома 7: полный pipeline по главам
 
@@ -332,12 +332,12 @@ Tom 6: verify ch01-ch08 full audit
 | T-0003-S7 | sma-b | v07-ch02 | done | 1 | `agent_prompts/agent_prompt.v07-ch02.sma-b.md` |
 | T-0003-S8 | sma-c | v07-ch02 | done | 1 | `agent_prompts/agent_prompt.v07-ch02.sma-c.md` |
 | T-0003-S9 | analyzer-phase1 | v07-ch02 | done | 1 | `agent_prompts/agent_prompt.v07-ch02.analyzer-phase1.md` |
-| T-0003-S10 | analyzer-phase2 | v07-ch02 | running | 1 | `agent_prompts/agent_prompt.v07-ch02.analyzer-phase2.md` |
+| T-0003-S10 | analyzer-phase2 | v07-ch02 | done | 1 | `agent_prompts/agent_prompt.v07-ch02.analyzer-phase2.md` |
 | T-0003-S11 | sma-a | v07-ch03 | done | 1 | `agent_prompts/agent_prompt.v07-ch03.sma-a.md` |
 | T-0003-S12 | sma-b | v07-ch03 | done | 1 | `agent_prompts/agent_prompt.v07-ch03.sma-b.md` |
 | T-0003-S13 | sma-c | v07-ch03 | done | 1 | `agent_prompts/agent_prompt.v07-ch03.sma-c.md` |
 | T-0003-S14 | analyzer-phase1 | v07-ch03 | done | 1 | `agent_prompts/agent_prompt.v07-ch03.analyzer-phase1.md` |
-| T-0003-S15 | analyzer-phase2 | v07-ch03 | running | 1 | `agent_prompts/agent_prompt.v07-ch03.analyzer-phase2.md` |
+| T-0003-S15 | analyzer-phase2 | v07-ch03 | done | 1 | `agent_prompts/agent_prompt.v07-ch03.analyzer-phase2.md` |
 | T-0003-S16 | sma-a | v07-ch04 | done | 1 | `agent_prompts/agent_prompt.v07-ch04.sma-a.md` |
 | T-0003-S17 | sma-b | v07-ch04 | done | 1 | `agent_prompts/agent_prompt.v07-ch04.sma-b.md` |
 | T-0003-S18 | sma-c | v07-ch04 | done | 1 | `agent_prompts/agent_prompt.v07-ch04.sma-c.md` |
@@ -394,10 +394,12 @@ Tom 6: verify ch01-ch08 full audit
 - T-0003-S7: SMA-B: 8 находок, все приняты
 - T-0003-S8: SMA-C: 1 находка ERROR, принята
 - T-0003-S9: Фаза 1: 9 находок, 4 CJK-артефакта исправлены
+- T-0003-S10: Phase 2 ch02: all FP/PRESERVED, fixes already applied
 - T-0003-S11: SMA-A: 12 находок, все приняты
 - T-0003-S12: SMA-B: 10 находок, все приняты
 - T-0003-S13: SMA-C: 2 находки, приняты
 - T-0003-S14: Фаза 1: 9 находок (2 пропуска, 4 CJK, инверсии)
+- T-0003-S15: Phase 2 ch03: all CONFIRMED_ERROR applied via Execution Bridge
 - T-0003-S16: SMA-A: 9 находок, все приняты
 - T-0003-S17: SMA-B: 3 находки (инверсия 衆寡敵せず, столица, субъект кольца), приняты
 - T-0003-S18: SMA-C: 2 находки (модальность), приняты
