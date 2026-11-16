@@ -1,6 +1,6 @@
 # Реестр задач диспетчера
 
-Обновлено: 2026-11-17 01:27:42
+Обновлено: 2026-11-17 01:40:19
 
 Генерируется автоматически командой `python tools/dispatch.py`. Не редактируй вручную.
 
@@ -457,11 +457,16 @@ Tom 6: verify ch01-ch08 full audit
 | T-0004-S3 | sma-c | v08-ch01 | done | 1 | `agent_prompts/agent_prompt.v08-ch01.sma-c.md` |
 | T-0004-S4 | analyzer-phase1 | v08-ch01 | done | 1 | `agent_prompts/agent_prompt.v08-ch01.analyzer-phase1.md` |
 | T-0004-S5 | analyzer-phase2 | v08-ch01 | done | 1 | `agent_prompts/agent_prompt.v08-ch01.analyzer-phase2.md` |
-| T-0004-S6 | sma-a | v08-ch02 | running | 1 | `agent_prompts/agent_prompt.v08-ch02.sma-a.md` |
-| T-0004-S7 | sma-b | v08-ch02 | running | 1 | `agent_prompts/agent_prompt.v08-ch02.sma-b.md` |
-| T-0004-S8 | sma-c | v08-ch02 | running | 2 | `agent_prompts/agent_prompt.v08-ch02.sma-c.attempt2.md` |
-| T-0004-S9 | analyzer-phase1 | v08-ch02 | running | 1 | `agent_prompts/agent_prompt.v08-ch02.analyzer-phase1.md` |
-| T-0004-S10 | analyzer-phase2 | v08-ch02 | planned | 0 | `—` |
+| T-0004-S6 | sma-a | v08-ch02 | done | 1 | `agent_prompts/agent_prompt.v08-ch02.sma-a.md` |
+| T-0004-S7 | sma-b | v08-ch02 | done | 1 | `agent_prompts/agent_prompt.v08-ch02.sma-b.md` |
+| T-0004-S8 | sma-c | v08-ch02 | done | 2 | `agent_prompts/agent_prompt.v08-ch02.sma-c.attempt2.md` |
+| T-0004-S9 | analyzer-phase1 | v08-ch02 | done | 2 | `agent_prompts/agent_prompt.v08-ch02.analyzer-phase1.attempt2.md` |
+| T-0004-S10 | analyzer-phase2 | v08-ch02 | done | 1 | `agent_prompts/agent_prompt.v08-ch02.analyzer-phase2.md` |
+| T-0004-S11 | sma-a | v08-ch03 | running | 1 | `agent_prompts/agent_prompt.v08-ch03.sma-a.md` |
+| T-0004-S12 | sma-b | v08-ch03 | running | 1 | `agent_prompts/agent_prompt.v08-ch03.sma-b.md` |
+| T-0004-S13 | sma-c | v08-ch03 | running | 1 | `agent_prompts/agent_prompt.v08-ch03.sma-c.md` |
+| T-0004-S14 | analyzer-phase1 | v08-ch03 | running | 1 | `agent_prompts/agent_prompt.v08-ch03.analyzer-phase1.md` |
+| T-0004-S15 | analyzer-phase2 | v08-ch03 | planned | 0 | `—` |
 
 Заметки:
 - T-0004-S1: SMA-A: 5 find, applied
@@ -469,4 +474,9 @@ Tom 6: verify ch01-ch08 full audit
 - T-0004-S3: SMA-C: 2 find, applied
 - T-0004-S4: Phase1: 6 find, applied
 - T-0004-S5: Phase 2: 13 FIXED, 2 REPORT_ONLY fixed, 1 FP
+- T-0004-S6: applied
+- T-0004-S7: applied
+- T-0004-S8: applied
+- T-0004-S9: applied
+- T-0004-S10: Phase 2: 4 FIXED, 1 DISPUTED amplified, 15 FP
 

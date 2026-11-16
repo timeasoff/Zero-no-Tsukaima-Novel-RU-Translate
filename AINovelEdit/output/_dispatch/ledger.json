@@ -5777,7 +5777,7 @@
           "volume": 8,
           "chapter": "2",
           "chapter_id": "v08-ch02",
-          "status": "running",
+          "status": "done",
           "prompt_file": "agent_prompts/agent_prompt.v08-ch02.sma-a.md",
           "expected": [
             "output/_audit/sma/v8-ch02/a/20261117-012623-ef8c.json"
@@ -5787,12 +5787,12 @@
               "n": 1,
               "started": "2026-11-17 01:26:23",
               "prompt": "agent_prompts/agent_prompt.v08-ch02.sma-a.md",
-              "finished": "",
-              "result": "",
-              "note": ""
+              "finished": "2026-11-17 01:33:23",
+              "result": "done",
+              "note": "applied"
             }
           ],
-          "note": ""
+          "note": "applied"
         },
         {
           "id": "T-0004-S7",
@@ -5800,7 +5800,7 @@
           "volume": 8,
           "chapter": "2",
           "chapter_id": "v08-ch02",
-          "status": "running",
+          "status": "done",
           "prompt_file": "agent_prompts/agent_prompt.v08-ch02.sma-b.md",
           "expected": [
             "output/_audit/sma/v8-ch02/b/20261117-012623-2298.json"
@@ -5810,12 +5810,12 @@
               "n": 1,
               "started": "2026-11-17 01:26:23",
               "prompt": "agent_prompts/agent_prompt.v08-ch02.sma-b.md",
-              "finished": "",
-              "result": "",
-              "note": ""
+              "finished": "2026-11-17 01:33:23",
+              "result": "done",
+              "note": "applied"
             }
           ],
-          "note": ""
+          "note": "applied"
         },
         {
           "id": "T-0004-S8",
@@ -5823,7 +5823,7 @@
           "volume": 8,
           "chapter": "2",
           "chapter_id": "v08-ch02",
-          "status": "running",
+          "status": "done",
           "prompt_file": "agent_prompts/agent_prompt.v08-ch02.sma-c.attempt2.md",
           "expected": [
             "output/_audit/sma/v8-ch02/c/20261117-012623-369f.json"
@@ -5841,12 +5841,12 @@
               "n": 2,
               "started": "2026-11-17 01:27:42",
               "prompt": "agent_prompts/agent_prompt.v08-ch02.sma-c.attempt2.md",
-              "finished": "",
-              "result": "",
-              "note": ""
+              "finished": "2026-11-17 01:33:23",
+              "result": "done",
+              "note": "applied"
             }
           ],
-          "note": ""
+          "note": "applied"
         },
         {
           "id": "T-0004-S9",
@@ -5854,8 +5854,8 @@
           "volume": 8,
           "chapter": "2",
           "chapter_id": "v08-ch02",
-          "status": "running",
-          "prompt_file": "agent_prompts/agent_prompt.v08-ch02.analyzer-phase1.md",
+          "status": "done",
+          "prompt_file": "agent_prompts/agent_prompt.v08-ch02.analyzer-phase1.attempt2.md",
           "expected": [],
           "attempts": [
             {
@@ -5865,9 +5865,17 @@
               "finished": "",
               "result": "",
               "note": ""
+            },
+            {
+              "n": 2,
+              "started": "2026-11-17 01:29:42",
+              "prompt": "agent_prompts/agent_prompt.v08-ch02.analyzer-phase1.attempt2.md",
+              "finished": "2026-11-17 01:33:23",
+              "result": "done",
+              "note": "applied"
             }
           ],
-          "note": ""
+          "note": "applied"
         },
         {
           "id": "T-0004-S10",
@@ -5875,6 +5883,121 @@
           "volume": 8,
           "chapter": "2",
           "chapter_id": "v08-ch02",
+          "status": "done",
+          "prompt_file": "agent_prompts/agent_prompt.v08-ch02.analyzer-phase2.md",
+          "expected": [
+            "output/_audit/sma/v8-ch02/precheck/omission-precheck.json",
+            "output/_audit/sma/v8-ch02/analysis/20261117-013323-f9e3.json",
+            "output/_audit/sma/v8-ch02/analysis/20261117-013323-f9e3.md"
+          ],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-11-17 01:33:23",
+              "prompt": "agent_prompts/agent_prompt.v08-ch02.analyzer-phase2.md",
+              "finished": "2026-11-17 01:40:19",
+              "result": "done",
+              "note": "Phase 2: 4 FIXED, 1 DISPUTED amplified, 15 FP"
+            }
+          ],
+          "note": "Phase 2: 4 FIXED, 1 DISPUTED amplified, 15 FP"
+        },
+        {
+          "id": "T-0004-S11",
+          "kind": "sma-a",
+          "volume": 8,
+          "chapter": "3",
+          "chapter_id": "v08-ch03",
+          "status": "running",
+          "prompt_file": "agent_prompts/agent_prompt.v08-ch03.sma-a.md",
+          "expected": [
+            "output/_audit/sma/v8-ch03/a/20261117-013848-28f1.json"
+          ],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-11-17 01:38:48",
+              "prompt": "agent_prompts/agent_prompt.v08-ch03.sma-a.md",
+              "finished": "",
+              "result": "",
+              "note": ""
+            }
+          ],
+          "note": ""
+        },
+        {
+          "id": "T-0004-S12",
+          "kind": "sma-b",
+          "volume": 8,
+          "chapter": "3",
+          "chapter_id": "v08-ch03",
+          "status": "running",
+          "prompt_file": "agent_prompts/agent_prompt.v08-ch03.sma-b.md",
+          "expected": [
+            "output/_audit/sma/v8-ch03/b/20261117-013848-2426.json"
+          ],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-11-17 01:38:48",
+              "prompt": "agent_prompts/agent_prompt.v08-ch03.sma-b.md",
+              "finished": "",
+              "result": "",
+              "note": ""
+            }
+          ],
+          "note": ""
+        },
+        {
+          "id": "T-0004-S13",
+          "kind": "sma-c",
+          "volume": 8,
+          "chapter": "3",
+          "chapter_id": "v08-ch03",
+          "status": "running",
+          "prompt_file": "agent_prompts/agent_prompt.v08-ch03.sma-c.md",
+          "expected": [
+            "output/_audit/sma/v8-ch03/c/20261117-013848-65dd.json"
+          ],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-11-17 01:38:48",
+              "prompt": "agent_prompts/agent_prompt.v08-ch03.sma-c.md",
+              "finished": "",
+              "result": "",
+              "note": ""
+            }
+          ],
+          "note": ""
+        },
+        {
+          "id": "T-0004-S14",
+          "kind": "analyzer-phase1",
+          "volume": 8,
+          "chapter": "3",
+          "chapter_id": "v08-ch03",
+          "status": "running",
+          "prompt_file": "agent_prompts/agent_prompt.v08-ch03.analyzer-phase1.md",
+          "expected": [],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-11-17 01:38:48",
+              "prompt": "agent_prompts/agent_prompt.v08-ch03.analyzer-phase1.md",
+              "finished": "",
+              "result": "",
+              "note": ""
+            }
+          ],
+          "note": ""
+        },
+        {
+          "id": "T-0004-S15",
+          "kind": "analyzer-phase2",
+          "volume": 8,
+          "chapter": "3",
+          "chapter_id": "v08-ch03",
           "status": "planned",
           "prompt_file": "",
           "expected": [],
