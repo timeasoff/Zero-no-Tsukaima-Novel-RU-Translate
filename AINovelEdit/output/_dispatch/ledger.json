@@ -4472,6 +4472,121 @@
             }
           ],
           "note": ""
+        },
+        {
+          "id": "T-0003-S11",
+          "kind": "sma-a",
+          "volume": 7,
+          "chapter": "3",
+          "chapter_id": "v07-ch03",
+          "status": "done",
+          "prompt_file": "agent_prompts/agent_prompt.v07-ch03.sma-a.md",
+          "expected": [
+            "output/_audit/sma/v7-ch03/a/20261116-213628-f1ec.json"
+          ],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-11-16 21:36:28",
+              "prompt": "agent_prompts/agent_prompt.v07-ch03.sma-a.md",
+              "finished": "2026-11-16 21:46:14",
+              "result": "done",
+              "note": "SMA-A: 12 находок, все приняты"
+            }
+          ],
+          "note": "SMA-A: 12 находок, все приняты"
+        },
+        {
+          "id": "T-0003-S12",
+          "kind": "sma-b",
+          "volume": 7,
+          "chapter": "3",
+          "chapter_id": "v07-ch03",
+          "status": "done",
+          "prompt_file": "agent_prompts/agent_prompt.v07-ch03.sma-b.md",
+          "expected": [
+            "output/_audit/sma/v7-ch03/b/20261116-213628-cfa3.json"
+          ],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-11-16 21:36:28",
+              "prompt": "agent_prompts/agent_prompt.v07-ch03.sma-b.md",
+              "finished": "2026-11-16 21:46:14",
+              "result": "done",
+              "note": "SMA-B: 10 находок, все приняты"
+            }
+          ],
+          "note": "SMA-B: 10 находок, все приняты"
+        },
+        {
+          "id": "T-0003-S13",
+          "kind": "sma-c",
+          "volume": 7,
+          "chapter": "3",
+          "chapter_id": "v07-ch03",
+          "status": "done",
+          "prompt_file": "agent_prompts/agent_prompt.v07-ch03.sma-c.md",
+          "expected": [
+            "output/_audit/sma/v7-ch03/c/20261116-213628-ee30.json"
+          ],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-11-16 21:36:28",
+              "prompt": "agent_prompts/agent_prompt.v07-ch03.sma-c.md",
+              "finished": "2026-11-16 21:46:14",
+              "result": "done",
+              "note": "SMA-C: 2 находки, приняты"
+            }
+          ],
+          "note": "SMA-C: 2 находки, приняты"
+        },
+        {
+          "id": "T-0003-S14",
+          "kind": "analyzer-phase1",
+          "volume": 7,
+          "chapter": "3",
+          "chapter_id": "v07-ch03",
+          "status": "done",
+          "prompt_file": "agent_prompts/agent_prompt.v07-ch03.analyzer-phase1.md",
+          "expected": [],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-11-16 21:36:28",
+              "prompt": "agent_prompts/agent_prompt.v07-ch03.analyzer-phase1.md",
+              "finished": "2026-11-16 21:46:15",
+              "result": "done",
+              "note": "Фаза 1: 9 находок (2 пропуска, 4 CJK, инверсии)"
+            }
+          ],
+          "note": "Фаза 1: 9 находок (2 пропуска, 4 CJK, инверсии)"
+        },
+        {
+          "id": "T-0003-S15",
+          "kind": "analyzer-phase2",
+          "volume": 7,
+          "chapter": "3",
+          "chapter_id": "v07-ch03",
+          "status": "running",
+          "prompt_file": "agent_prompts/agent_prompt.v07-ch03.analyzer-phase2.md",
+          "expected": [
+            "output/_audit/sma/v7-ch03/precheck/omission-precheck.json",
+            "output/_audit/sma/v7-ch03/analysis/20261116-214615-40ae.json",
+            "output/_audit/sma/v7-ch03/analysis/20261116-214615-40ae.md"
+          ],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-11-16 21:46:15",
+              "prompt": "agent_prompts/agent_prompt.v07-ch03.analyzer-phase2.md",
+              "finished": "",
+              "result": "",
+              "note": ""
+            }
+          ],
+          "note": ""
         }
       ]
     }

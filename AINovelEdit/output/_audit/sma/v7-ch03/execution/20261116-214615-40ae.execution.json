@@ -1,0 +1,548 @@
+{
+  "analysis_id": "20261116-214615-40ae",
+  "analysis": "output\\_audit\\sma\\v7-ch03\\analysis\\20261116-214615-40ae.json",
+  "chapter": "v7-ch03",
+  "output": "v7-ch03.md",
+  "dry_run": false,
+  "semantic_actions": [
+    "FIXED",
+    "REPORT_ONLY",
+    "PRESERVED"
+  ],
+  "execution_states": [
+    "SUCCESS",
+    "FAILED",
+    "SKIPPED"
+  ],
+  "counts": {
+    "SUCCESS": 11,
+    "FAILED": 13,
+    "SKIPPED": 0,
+    "fixed": 24
+  },
+  "verification": {
+    "update_merged": "PASS",
+    "alignment": "PASS",
+    "alignment_strong": 0,
+    "drift": "NO_BASELINE"
+  },
+  "results": [
+    {
+      "finding_id": "C-02-01",
+      "block": 2,
+      "provenance": {
+        "action": "FIXED",
+        "status": "CONFIRMED_ERROR",
+        "sources": {
+          "a": [
+            "20261116-213628-f1ec"
+          ],
+          "b": [],
+          "c": [],
+          "precheck": false
+        }
+      },
+      "before": "— Хвастаться надо меньше; «Огонь», который мигом выгорает, всё-таки лучше, — парировал Вимпфен.",
+      "after": "— «Ветер» в несколько раз лучше «Огня», который только хвастается и мигом выгорает, — парировал Вимпфен.",
+      "execution": "SUCCESS",
+      "verification": {
+        "alignment": "PASS",
+        "drift": "NO_BASELINE"
+      }
+    },
+    {
+      "finding_id": "C-02-02",
+      "block": 2,
+      "provenance": {
+        "action": "FIXED",
+        "status": "CONFIRMED_ERROR",
+        "sources": {
+          "a": [],
+          "b": [
+            "20261116-213628-cfa3"
+          ],
+          "c": [],
+          "precheck": false
+        }
+      },
+      "before": "男 лет сорока, с холодной выправкой.",
+      "after": "Мужчина лет сорока, с холодной выправкой.",
+      "execution": "FAILED",
+      "reason": "after уже присутствует в блоке 2 (правка уже применена) — текст не изменён"
+    },
+    {
+      "finding_id": "C-03-01",
+      "block": 3,
+      "provenance": {
+        "action": "FIXED",
+        "status": "CONFIRMED_ERROR",
+        "sources": {
+          "a": [],
+          "b": [],
+          "c": [],
+          "precheck": false
+        }
+      },
+      "before": "обратить вспять — и идти на Лондиниум",
+      "after": "используя инерцию победы, — и идти на Лондиниум",
+      "execution": "FAILED",
+      "reason": "after уже присутствует в блоке 3 (правка уже применена) — текст не изменён"
+    },
+    {
+      "finding_id": "C-03-02",
+      "block": 3,
+      "provenance": {
+        "action": "FIXED",
+        "status": "CONFIRMED_ERROR",
+        "sources": {
+          "a": [
+            "20261116-213628-f1ec"
+          ],
+          "b": [],
+          "c": [],
+          "precheck": false
+        }
+      },
+      "before": "_Как же просто было бы всё решить одним сражением_, — подумал де Пуатье с нехорошим чувством к альбионцам.",
+      "after": "_Как же просто было бы всё решить одним сражением_, — подумал де Пуатье, затаив злость на альбионцев.",
+      "execution": "SUCCESS",
+      "verification": {
+        "alignment": "PASS",
+        "drift": "NO_BASELINE"
+      }
+    },
+    {
+      "finding_id": "C-05-01",
+      "block": 5,
+      "provenance": {
+        "action": "FIXED",
+        "status": "CONFIRMED_ERROR",
+        "sources": {
+          "a": [
+            "20261116-213628-f1ec"
+          ],
+          "b": [],
+          "c": [],
+          "precheck": false
+        }
+      },
+      "before": "— Да, странно, — рассеянно поддакнули генералы. Видно было: «И из-за этого ты прервала совет?»",
+      "after": "— Да, странно, — недовольно поддакнули генералы. Видно было: «И из-за этого ты прервала совет?»",
+      "execution": "SUCCESS",
+      "verification": {
+        "alignment": "PASS",
+        "drift": "NO_BASELINE"
+      }
+    },
+    {
+      "finding_id": "C-07-01",
+      "block": 7,
+      "provenance": {
+        "action": "FIXED",
+        "status": "CONFIRMED_ERROR",
+        "sources": {
+          "a": [
+            "20261116-213628-f1ec"
+          ],
+          "b": [
+            "20261116-213628-cfa3"
+          ],
+          "c": [],
+          "precheck": false
+        }
+      },
+      "before": "— Не очень-то понимаю, но очень даже могущественный отдел, должно быть!\n\nОпьянев и поверив в себя, они наверняка будут болтать об этом где только можно.",
+      "after": "— Не очень-то понимаю, но очень даже могущественный отдел, должно быть!\n\n— Слушайте! Это секретный отдел, понятно? Никому ни слова! Магическое оружие, которое там разрабатывают, не сравнится с тем, что делают в Академии! Проговоритесь — смертная казнь!\n\n— П-поняли!\n\n— Клянёмся Основателем — никому не скажем!",
+      "execution": "FAILED",
+      "reason": "after уже присутствует в блоке 7 (правка уже применена) — текст не изменён"
+    },
+    {
+      "finding_id": "C-07-02",
+      "block": 7,
+      "provenance": {
+        "action": "FIXED",
+        "status": "CONFIRMED_ERROR",
+        "sources": {
+          "a": [],
+          "b": [],
+          "c": [],
+          "precheck": false
+        }
+      },
+      "before": "— Клянёмся Основателем — никому не скажем!",
+      "after": "— Клянёмся Основателем — никому не скажем!\n\nОпьянев и поверив в себя, они наверняка будут болтать об этом где только можно.",
+      "execution": "SUCCESS",
+      "verification": {
+        "alignment": "PASS",
+        "drift": "NO_BASELINE"
+      }
+    },
+    {
+      "finding_id": "C-09-01",
+      "block": 9,
+      "provenance": {
+        "action": "FIXED",
+        "status": "CONFIRMED_ERROR",
+        "sources": {
+          "a": [
+            "20261116-213628-f1ec"
+          ],
+          "b": [],
+          "c": [],
+          "precheck": false
+        }
+      },
+      "before": "Почему её поставили отдельно от других, было понятно, как только огляделись.",
+      "after": "Почему её поставили так одиноко, в стороне от остальных, было понятно, как только огляделись.",
+      "execution": "SUCCESS",
+      "verification": {
+        "alignment": "PASS",
+        "drift": "NO_BASELINE"
+      }
+    },
+    {
+      "finding_id": "C-10-01",
+      "block": 10,
+      "provenance": {
+        "action": "FIXED",
+        "status": "CONFIRMED_ERROR",
+        "sources": {
+          "a": [
+            "20261116-213628-f1ec"
+          ],
+          "b": [
+            "20261116-213628-cfa3"
+          ],
+          "c": [],
+          "precheck": false
+        }
+      },
+      "before": "— И что это за повадки у него! — с горечью прошептал Сайто.",
+      "after": "— И что это за повадки у него! Не спектакль ли это? — с горечью прошептал Сайто.",
+      "execution": "FAILED",
+      "reason": "after уже присутствует в блоке 10 (правка уже применена) — текст не изменён"
+    },
+    {
+      "finding_id": "C-10-02",
+      "block": 10,
+      "provenance": {
+        "action": "FIXED",
+        "status": "CONFIRMED_ERROR",
+        "sources": {
+          "a": [],
+          "b": [],
+          "c": [],
+          "precheck": false
+        }
+      },
+      "before": "Не спектакль ли это?",
+      "after": "Да не играет он!",
+      "execution": "SUCCESS",
+      "verification": {
+        "alignment": "PASS",
+        "drift": "NO_BASELINE"
+      }
+    },
+    {
+      "finding_id": "C-11-01",
+      "block": 11,
+      "provenance": {
+        "action": "FIXED",
+        "status": "CONFIRMED_ERROR",
+        "sources": {
+          "a": [],
+          "b": [
+            "20261116-213628-cfa3"
+          ],
+          "c": [],
+          "precheck": false
+        }
+      },
+      "before": "— Нелепый — это единственное, что не имеет отношения к полёту, — заметил Сайто.",
+      "after": "— Что ж, помимо того что ты нелепый, прочее к полёту отношения не имеет, — заметил Сайто.",
+      "execution": "FAILED",
+      "reason": "after уже присутствует в блоке 11 (правка уже применена) — текст не изменён"
+    },
+    {
+      "finding_id": "C-12-01",
+      "block": 12,
+      "provenance": {
+        "action": "FIXED",
+        "status": "CONFIRMED_ERROR",
+        "sources": {
+          "a": [
+            "20261116-213628-f1ec"
+          ],
+          "b": [],
+          "c": [],
+          "precheck": false
+        }
+      },
+      "before": "— Почему она до сих пор злится! Почему была так зла!",
+      "after": "— Что с ней?! Почему она говорит такие гадкие вещи!",
+      "execution": "SUCCESS",
+      "verification": {
+        "alignment": "PASS",
+        "drift": "NO_BASELINE"
+      }
+    },
+    {
+      "finding_id": "C-14-01",
+      "block": 14,
+      "provenance": {
+        "action": "FIXED",
+        "status": "CONFIRMED_ERROR",
+        "sources": {
+          "a": [
+            "20261116-213628-f1ec"
+          ],
+          "b": [
+            "20261116-213628-cfa3"
+          ],
+          "c": [],
+          "precheck": false
+        }
+      },
+      "before": "Джулио, не оборачиваясь, приближал лицо к Луизе.",
+      "after": "Джулио, всё ещё повернувшись к ней, приближал лицо к Луизе.",
+      "execution": "FAILED",
+      "reason": "after уже присутствует в блоке 14 (правка уже применена) — текст не изменён"
+    },
+    {
+      "finding_id": "C-14-02",
+      "block": 14,
+      "provenance": {
+        "action": "FIXED",
+        "status": "CONFIRMED_ERROR",
+        "sources": {
+          "a": [
+            "20261116-213628-f1ec"
+          ],
+          "b": [],
+          "c": [],
+          "precheck": false
+        }
+      },
+      "before": "Джулио, всё ещё повернувшись к ней, приближал лицо к Луизе.",
+      "after": "Джулио, всё ещё повернувшись к ней, настойчиво приближал лицо к Луизе.",
+      "execution": "SUCCESS",
+      "verification": {
+        "alignment": "PASS",
+        "drift": "NO_BASELINE"
+      }
+    },
+    {
+      "finding_id": "C-15-01",
+      "block": 15,
+      "provenance": {
+        "action": "FIXED",
+        "status": "CONFIRMED_ERROR",
+        "sources": {
+          "a": [
+            "20261116-213628-f1ec"
+          ],
+          "b": [],
+          "c": [
+            "20261116-213628-ee30"
+          ],
+          "precheck": false
+        }
+      },
+      "before": "— Не смейся надо мной!",
+      "after": "— Не говори глупостей!",
+      "execution": "FAILED",
+      "reason": "after уже присутствует в блоке 15 (правка уже применена) — текст не изменён"
+    },
+    {
+      "finding_id": "C-15-02",
+      "block": 15,
+      "provenance": {
+        "action": "FIXED",
+        "status": "CONFIRMED_ERROR",
+        "sources": {
+          "a": [],
+          "b": [
+            "20261116-213628-cfa3"
+          ],
+          "c": [],
+          "precheck": false
+        }
+      },
+      "before": "Заклинание幻影 «Иллюзия» воспроизводило по памяти в точности то, что видел читающий его.",
+      "after": "Заклинание «Иллюзия» воспроизводило по памяти в точности то, что видел читающий его.",
+      "execution": "FAILED",
+      "reason": "after уже присутствует в блоке 15 (правка уже применена) — текст не изменён"
+    },
+    {
+      "finding_id": "C-16-01",
+      "block": 16,
+      "provenance": {
+        "action": "FIXED",
+        "status": "CONFIRMED_ERROR",
+        "sources": {
+          "a": [],
+          "b": [
+            "20261116-213628-cfa3"
+          ],
+          "c": [],
+          "precheck": false
+        }
+      },
+      "before": "По городу с хозяевами散步овали крупные полулюди — орки-демоны и тролли-великаны с копьями и дубинками.",
+      "after": "По городу разгуливали крупные полулюди — орки-демоны и тролли-великаны с копьями и дубинками.",
+      "execution": "FAILED",
+      "reason": "after уже присутствует в блоке 16 (правка уже применена) — текст не изменён"
+    },
+    {
+      "finding_id": "C-16-02",
+      "block": 16,
+      "provenance": {
+        "action": "FIXED",
+        "status": "CONFIRMED_ERROR",
+        "sources": {
+          "a": [],
+          "b": [
+            "20261116-213628-cfa3"
+          ],
+          "c": [],
+          "precheck": false
+        }
+      },
+      "before": "По городу разгуливали крупные полулюди — орки-демоны и тролли-великаны с копьями и дубинками.",
+      "after": "По городу, как хозяева, разгуливали крупные полулюди — орки-демоны и тролли-великаны с копьями и дубинками.",
+      "execution": "SUCCESS",
+      "verification": {
+        "alignment": "PASS",
+        "drift": "NO_BASELINE"
+      }
+    },
+    {
+      "finding_id": "C-16-03",
+      "block": 16,
+      "provenance": {
+        "action": "FIXED",
+        "status": "CONFIRMED_ERROR",
+        "sources": {
+          "a": [],
+          "b": [],
+          "c": [
+            "20261116-213628-ee30"
+          ],
+          "precheck": false
+        }
+      },
+      "before": "— Пора бы уже и понять, что опасно. Эта маскировка не может длиться вечно",
+      "after": "— Скоро может стать опасно. Эта маскировка не может длиться вечно",
+      "execution": "FAILED",
+      "reason": "after уже присутствует в блоке 16 (правка уже применена) — текст не изменён"
+    },
+    {
+      "finding_id": "C-18-01",
+      "block": 18,
+      "provenance": {
+        "action": "FIXED",
+        "status": "CONFIRMED_ERROR",
+        "sources": {
+          "a": [],
+          "b": [
+            "20261116-213628-cfa3"
+          ],
+          "c": [],
+          "precheck": false
+        }
+      },
+      "before": "— Эй! А! Я наслала заклинание! А-а-а-а-а!",
+      "after": "— Эй! А! Они же напали магией! А-а-а-а-а!",
+      "execution": "FAILED",
+      "reason": "after уже присутствует в блоке 18 (правка уже применена) — текст не изменён"
+    },
+    {
+      "finding_id": "C-19-01",
+      "block": 19,
+      "provenance": {
+        "action": "FIXED",
+        "status": "CONFIRMED_ERROR",
+        "sources": {
+          "a": [
+            "20261116-213628-f1ec"
+          ],
+          "b": [
+            "20261116-213628-cfa3"
+          ],
+          "c": [],
+          "precheck": false
+        }
+      },
+      "before": "— Брешь! Адзурро!",
+      "after": "— Пламя! Адзурро!",
+      "execution": "FAILED",
+      "reason": "after уже присутствует в блоке 19 (правка уже применена) — текст не изменён"
+    },
+    {
+      "finding_id": "C-19-02",
+      "block": 19,
+      "provenance": {
+        "action": "FIXED",
+        "status": "CONFIRMED_ERROR",
+        "sources": {
+          "a": [],
+          "b": [
+            "20261116-213628-cfa3"
+          ],
+          "c": [],
+          "precheck": false
+        }
+      },
+      "before": "Но Джулио, сохраняя свою лёгкую улыбку,继续 гнался за приманкой.",
+      "after": "Но Джулио, сохраняя свою лёгкую улыбку, продолжал гнаться за приманкой.",
+      "execution": "FAILED",
+      "reason": "after уже присутствует в блоке 19 (правка уже применена) — текст не изменён"
+    },
+    {
+      "finding_id": "C-19-03",
+      "block": 19,
+      "provenance": {
+        "action": "FIXED",
+        "status": "CONFIRMED_ERROR",
+        "sources": {
+          "a": [
+            "20261116-213628-f1ec"
+          ],
+          "b": [],
+          "c": [],
+          "precheck": false
+        }
+      },
+      "before": "Но Джулио, сохраняя свою лёгкую улыбку, продолжал гнаться за приманкой.",
+      "after": "Но Джулио, сохраняя свою усмешку, продолжал гнаться за приманкой.",
+      "execution": "SUCCESS",
+      "verification": {
+        "alignment": "PASS",
+        "drift": "NO_BASELINE"
+      }
+    },
+    {
+      "finding_id": "C-20-01",
+      "block": 20,
+      "provenance": {
+        "action": "FIXED",
+        "status": "CONFIRMED_ERROR",
+        "sources": {
+          "a": [
+            "20261116-213628-f1ec"
+          ],
+          "b": [],
+          "c": [],
+          "precheck": false
+        }
+      },
+      "before": "Луиза безмолвно следила за происходящим.",
+      "after": "Луиза в изумлении следила за происходящим.",
+      "execution": "SUCCESS",
+      "verification": {
+        "alignment": "PASS",
+        "drift": "NO_BASELINE"
+      }
+    }
+  ]
+}
