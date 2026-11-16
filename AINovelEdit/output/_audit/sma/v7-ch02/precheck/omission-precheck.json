@@ -1,0 +1,24 @@
+{
+  "check_type": "omission-precheck",
+  "chapter": "v7-ch02.md",
+  "findings": [
+    {
+      "block": 2,
+      "issue_type": "MISSING_TRANSLATION",
+      "omission_scope": "DIALOGUE_FRAGMENT",
+      "omission_kind": "PARTIAL",
+      "severity": "CANDIDATE",
+      "confidence": "MEDIUM",
+      "precheck_signal": "S1-tail-truncation",
+      "source": "その正体に気づいたルイズは慌てて立ち上がる。\n\n「ちょっとぉ！ それわたしの下着じゃないのよ！ なに考えてるのよ！」",
+      "current": "— Эй! Это же моё бельё! Что вы себе думаете!",
+      "ja_span": "その正体に気づいたルイズは慌てて立ち上がる。\n\n「ちょっとぉ！ それわたしの下着じゃないのよ！ なに考えてるのよ！」",
+      "ru_before": "— Эй! Это же моё бельё! Что вы себе думаете!",
+      "ru_after": "— Да оно тут валялось, — ответил Эш, протянувший его Сайто.",
+      "missing_content": "Непокрытые JA-звенья (15…16 из 16):\nその正体に気づいたルイズは慌てて立ち上がる。\n\n「ちょっとぉ！ それわたしの下着じゃないのよ！ なに考えてるのよ！」",
+      "not_compression_reason": "Это обрыв, а не компрессия: в RU 15 абзацев против 16 в JA и 5 реплик-маркеров против 6 в JA — реплики и абзацы JA начиная с позиции 15…16 из 16 не покрыты вовсе. Допустимое сжатие и слияние (один RU-абзац вместо нескольких JA) сохраняют число реплик и все звенья; здесь же хвост JA отсутствует. Сравнение длины текста JA/RU в проверке НЕ использовалось. Решение принимает Analyzer.",
+      "evidence": "signal=S1-tail-truncation; unit_deficit=1; turn_deficit=1; uncovered=2; n_ja=16; n_ru=15; ja_turns=6; ru_turns=5; missing_numbers=-; positions=15…16 из 16",
+      "reason": "JA содержит 2 содержательных звеньев (позиции 15…16 из 16) без соответствия в RU, хвост RU обрывается раньше конца JA. Это кандидат уровня CANDIDATE, а не подтверждённая ошибка."
+    }
+  ]
+}

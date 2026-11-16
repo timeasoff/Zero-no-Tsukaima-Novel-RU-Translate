@@ -1,6 +1,6 @@
 # Реестр задач диспетчера
 
-Обновлено: 2026-11-16 20:53:21
+Обновлено: 2026-11-16 21:15:55
 
 Генерируется автоматически командой `python tools/dispatch.py`. Не редактируй вручную.
 
@@ -328,6 +328,11 @@ Tom 6: verify ch01-ch08 full audit
 | T-0003-S3 | sma-c | v07-ch01 | done | 3 | `agent_prompts/agent_prompt.v07-ch01.sma-c.attempt3.md` |
 | T-0003-S4 | analyzer-phase1 | v07-ch01 | done | 1 | `agent_prompts/agent_prompt.v07-ch01.analyzer-phase1.md` |
 | T-0003-S5 | analyzer-phase2 | v07-ch01 | done | 2 | `agent_prompts/agent_prompt.v07-ch01.analyzer-phase2.attempt2.md` |
+| T-0003-S6 | sma-a | v07-ch02 | done | 1 | `agent_prompts/agent_prompt.v07-ch02.sma-a.md` |
+| T-0003-S7 | sma-b | v07-ch02 | done | 1 | `agent_prompts/agent_prompt.v07-ch02.sma-b.md` |
+| T-0003-S8 | sma-c | v07-ch02 | done | 1 | `agent_prompts/agent_prompt.v07-ch02.sma-c.md` |
+| T-0003-S9 | analyzer-phase1 | v07-ch02 | done | 1 | `agent_prompts/agent_prompt.v07-ch02.analyzer-phase1.md` |
+| T-0003-S10 | analyzer-phase2 | v07-ch02 | running | 1 | `agent_prompts/agent_prompt.v07-ch02.analyzer-phase2.md` |
 
 Заметки:
 - T-0003-S1: SMA-A: 8 находок, все приняты
@@ -335,4 +340,8 @@ Tom 6: verify ch01-ch08 full audit
 - T-0003-S3: SMA-C: 5 находок, все приняты (2-я попытка после блокировки провайдера)
 - T-0003-S4: Фаза 1 (blind): 16 находок, пропусков нет
 - T-0003-S5: Фаза 2: 25 кандидатов (20 FIXED уже внесены, 2 новых приняты, 3 DISPUTED REPORT_ONLY)
+- T-0003-S6: SMA-A: 15 находок, все приняты
+- T-0003-S7: SMA-B: 8 находок, все приняты
+- T-0003-S8: SMA-C: 1 находка ERROR, принята
+- T-0003-S9: Фаза 1: 9 находок, 4 CJK-артефакта исправлены
 

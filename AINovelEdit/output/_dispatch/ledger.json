@@ -4357,6 +4357,121 @@
             }
           ],
           "note": "Фаза 2: 25 кандидатов (20 FIXED уже внесены, 2 новых приняты, 3 DISPUTED REPORT_ONLY)"
+        },
+        {
+          "id": "T-0003-S6",
+          "kind": "sma-a",
+          "volume": 7,
+          "chapter": "2",
+          "chapter_id": "v07-ch02",
+          "status": "done",
+          "prompt_file": "agent_prompts/agent_prompt.v07-ch02.sma-a.md",
+          "expected": [
+            "output/_audit/sma/v7-ch02/a/20261116-210912-7ec9.json"
+          ],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-11-16 21:09:12",
+              "prompt": "agent_prompts/agent_prompt.v07-ch02.sma-a.md",
+              "finished": "2026-11-16 21:15:55",
+              "result": "done",
+              "note": "SMA-A: 15 находок, все приняты"
+            }
+          ],
+          "note": "SMA-A: 15 находок, все приняты"
+        },
+        {
+          "id": "T-0003-S7",
+          "kind": "sma-b",
+          "volume": 7,
+          "chapter": "2",
+          "chapter_id": "v07-ch02",
+          "status": "done",
+          "prompt_file": "agent_prompts/agent_prompt.v07-ch02.sma-b.md",
+          "expected": [
+            "output/_audit/sma/v7-ch02/b/20261116-210912-87d7.json"
+          ],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-11-16 21:09:12",
+              "prompt": "agent_prompts/agent_prompt.v07-ch02.sma-b.md",
+              "finished": "2026-11-16 21:15:55",
+              "result": "done",
+              "note": "SMA-B: 8 находок, все приняты"
+            }
+          ],
+          "note": "SMA-B: 8 находок, все приняты"
+        },
+        {
+          "id": "T-0003-S8",
+          "kind": "sma-c",
+          "volume": 7,
+          "chapter": "2",
+          "chapter_id": "v07-ch02",
+          "status": "done",
+          "prompt_file": "agent_prompts/agent_prompt.v07-ch02.sma-c.md",
+          "expected": [
+            "output/_audit/sma/v7-ch02/c/20261116-210912-e2df.json"
+          ],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-11-16 21:09:12",
+              "prompt": "agent_prompts/agent_prompt.v07-ch02.sma-c.md",
+              "finished": "2026-11-16 21:15:55",
+              "result": "done",
+              "note": "SMA-C: 1 находка ERROR, принята"
+            }
+          ],
+          "note": "SMA-C: 1 находка ERROR, принята"
+        },
+        {
+          "id": "T-0003-S9",
+          "kind": "analyzer-phase1",
+          "volume": 7,
+          "chapter": "2",
+          "chapter_id": "v07-ch02",
+          "status": "done",
+          "prompt_file": "agent_prompts/agent_prompt.v07-ch02.analyzer-phase1.md",
+          "expected": [],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-11-16 21:09:12",
+              "prompt": "agent_prompts/agent_prompt.v07-ch02.analyzer-phase1.md",
+              "finished": "2026-11-16 21:15:55",
+              "result": "done",
+              "note": "Фаза 1: 9 находок, 4 CJK-артефакта исправлены"
+            }
+          ],
+          "note": "Фаза 1: 9 находок, 4 CJK-артефакта исправлены"
+        },
+        {
+          "id": "T-0003-S10",
+          "kind": "analyzer-phase2",
+          "volume": 7,
+          "chapter": "2",
+          "chapter_id": "v07-ch02",
+          "status": "running",
+          "prompt_file": "agent_prompts/agent_prompt.v07-ch02.analyzer-phase2.md",
+          "expected": [
+            "output/_audit/sma/v7-ch02/precheck/omission-precheck.json",
+            "output/_audit/sma/v7-ch02/analysis/20261116-211555-3cc4.json",
+            "output/_audit/sma/v7-ch02/analysis/20261116-211555-3cc4.md"
+          ],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-11-16 21:15:55",
+              "prompt": "agent_prompts/agent_prompt.v07-ch02.analyzer-phase2.md",
+              "finished": "",
+              "result": "",
+              "note": ""
+            }
+          ],
+          "note": ""
         }
       ]
     }
