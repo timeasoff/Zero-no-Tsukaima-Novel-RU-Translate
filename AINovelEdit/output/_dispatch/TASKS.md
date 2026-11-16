@@ -1,6 +1,6 @@
 # Реестр задач диспетчера
 
-Обновлено: 2026-11-16 20:08:51
+Обновлено: 2026-11-16 20:53:21
 
 Генерируется автоматически командой `python tools/dispatch.py`. Не редактируй вручную.
 
@@ -316,4 +316,23 @@ Tom 6: verify ch01-ch08 full audit
 - T-0002-S90: SMA-C ch08 по переработанному тексту: 4 находки
 - T-0002-S91: Фаза 1 (blind) ch08: 25 кандидатов
 - T-0002-S92: Фаза 2 (evidence review) ch08: 56 кандидатов, 7 FIXED применены в текст
+
+## T-0003 — OPEN
+
+Проверка тома 7: полный pipeline по главам
+
+| ID | Режим | Глава | Статус | Попыток | Промпт |
+| --- | --- | --- | --- | --- | --- |
+| T-0003-S1 | sma-a | v07-ch01 | done | 1 | `agent_prompts/agent_prompt.v07-ch01.sma-a.md` |
+| T-0003-S2 | sma-b | v07-ch01 | done | 1 | `agent_prompts/agent_prompt.v07-ch01.sma-b.md` |
+| T-0003-S3 | sma-c | v07-ch01 | done | 3 | `agent_prompts/agent_prompt.v07-ch01.sma-c.attempt3.md` |
+| T-0003-S4 | analyzer-phase1 | v07-ch01 | done | 1 | `agent_prompts/agent_prompt.v07-ch01.analyzer-phase1.md` |
+| T-0003-S5 | analyzer-phase2 | v07-ch01 | done | 2 | `agent_prompts/agent_prompt.v07-ch01.analyzer-phase2.attempt2.md` |
+
+Заметки:
+- T-0003-S1: SMA-A: 8 находок, все приняты
+- T-0003-S2: SMA-B: 7 находок, приняты 5 (2 уже закрыты)
+- T-0003-S3: SMA-C: 5 находок, все приняты (2-я попытка после блокировки провайдера)
+- T-0003-S4: Фаза 1 (blind): 16 находок, пропусков нет
+- T-0003-S5: Фаза 2: 25 кандидатов (20 FIXED уже внесены, 2 новых приняты, 3 DISPUTED REPORT_ONLY)
 

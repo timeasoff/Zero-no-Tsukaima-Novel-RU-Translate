@@ -4211,6 +4211,154 @@
           "note": "Фаза 2 (evidence review) ch08: 56 кандидатов, 7 FIXED применены в текст"
         }
       ]
+    },
+    {
+      "id": "T-0003",
+      "text": "Проверка тома 7: полный pipeline по главам",
+      "created": "2026-11-16 20:39:50",
+      "status": "open",
+      "note": "",
+      "subtasks": [
+        {
+          "id": "T-0003-S1",
+          "kind": "sma-a",
+          "volume": 7,
+          "chapter": "1",
+          "chapter_id": "v07-ch01",
+          "status": "done",
+          "prompt_file": "agent_prompts/agent_prompt.v07-ch01.sma-a.md",
+          "expected": [
+            "output/_audit/sma/v7-ch01/a/20261116-204005-d6cd.json"
+          ],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-11-16 20:40:05",
+              "prompt": "agent_prompts/agent_prompt.v07-ch01.sma-a.md",
+              "finished": "2026-11-16 20:46:18",
+              "result": "done",
+              "note": "SMA-A: 8 находок, все приняты"
+            }
+          ],
+          "note": "SMA-A: 8 находок, все приняты"
+        },
+        {
+          "id": "T-0003-S2",
+          "kind": "sma-b",
+          "volume": 7,
+          "chapter": "1",
+          "chapter_id": "v07-ch01",
+          "status": "done",
+          "prompt_file": "agent_prompts/agent_prompt.v07-ch01.sma-b.md",
+          "expected": [
+            "output/_audit/sma/v7-ch01/b/20261116-204005-00ec.json"
+          ],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-11-16 20:40:05",
+              "prompt": "agent_prompts/agent_prompt.v07-ch01.sma-b.md",
+              "finished": "2026-11-16 20:46:18",
+              "result": "done",
+              "note": "SMA-B: 7 находок, приняты 5 (2 уже закрыты)"
+            }
+          ],
+          "note": "SMA-B: 7 находок, приняты 5 (2 уже закрыты)"
+        },
+        {
+          "id": "T-0003-S3",
+          "kind": "sma-c",
+          "volume": 7,
+          "chapter": "1",
+          "chapter_id": "v07-ch01",
+          "status": "done",
+          "prompt_file": "agent_prompts/agent_prompt.v07-ch01.sma-c.attempt3.md",
+          "expected": [
+            "output/_audit/sma/v7-ch01/c/20261116-204005-ab97.json"
+          ],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-11-16 20:40:05",
+              "prompt": "agent_prompts/agent_prompt.v07-ch01.sma-c.md",
+              "finished": "",
+              "result": "",
+              "note": ""
+            },
+            {
+              "n": 2,
+              "started": "2026-11-16 20:41:50",
+              "prompt": "agent_prompts/agent_prompt.v07-ch01.sma-c.attempt2.md",
+              "finished": "",
+              "result": "",
+              "note": ""
+            },
+            {
+              "n": 3,
+              "started": "2026-11-16 20:42:27",
+              "prompt": "agent_prompts/agent_prompt.v07-ch01.sma-c.attempt3.md",
+              "finished": "2026-11-16 20:46:19",
+              "result": "done",
+              "note": "SMA-C: 5 находок, все приняты (2-я попытка после блокировки провайдера)"
+            }
+          ],
+          "note": "SMA-C: 5 находок, все приняты (2-я попытка после блокировки провайдера)"
+        },
+        {
+          "id": "T-0003-S4",
+          "kind": "analyzer-phase1",
+          "volume": 7,
+          "chapter": "1",
+          "chapter_id": "v07-ch01",
+          "status": "done",
+          "prompt_file": "agent_prompts/agent_prompt.v07-ch01.analyzer-phase1.md",
+          "expected": [],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-11-16 20:40:05",
+              "prompt": "agent_prompts/agent_prompt.v07-ch01.analyzer-phase1.md",
+              "finished": "2026-11-16 20:46:19",
+              "result": "done",
+              "note": "Фаза 1 (blind): 16 находок, пропусков нет"
+            }
+          ],
+          "note": "Фаза 1 (blind): 16 находок, пропусков нет"
+        },
+        {
+          "id": "T-0003-S5",
+          "kind": "analyzer-phase2",
+          "volume": 7,
+          "chapter": "1",
+          "chapter_id": "v07-ch01",
+          "status": "done",
+          "prompt_file": "agent_prompts/agent_prompt.v07-ch01.analyzer-phase2.attempt2.md",
+          "expected": [
+            "output/_audit/sma/v7-ch01/precheck/omission-precheck.json",
+            "output/_audit/sma/v7-ch01/analysis/20261116-204619-bc58.json",
+            "output/_audit/sma/v7-ch01/analysis/20261116-204619-bc58.md"
+          ],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-11-16 20:46:19",
+              "prompt": "agent_prompts/agent_prompt.v07-ch01.analyzer-phase2.md",
+              "finished": "",
+              "result": "",
+              "note": ""
+            },
+            {
+              "n": 2,
+              "started": "2026-11-16 20:47:25",
+              "prompt": "agent_prompts/agent_prompt.v07-ch01.analyzer-phase2.attempt2.md",
+              "finished": "2026-11-16 20:53:21",
+              "result": "done",
+              "note": "Фаза 2: 25 кандидатов (20 FIXED уже внесены, 2 новых приняты, 3 DISPUTED REPORT_ONLY)"
+            }
+          ],
+          "note": "Фаза 2: 25 кандидатов (20 FIXED уже внесены, 2 новых приняты, 3 DISPUTED REPORT_ONLY)"
+        }
+      ]
     }
   ]
 }
