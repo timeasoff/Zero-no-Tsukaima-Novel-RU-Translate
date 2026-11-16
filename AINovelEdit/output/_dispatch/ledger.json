@@ -3906,7 +3906,7 @@
           "volume": 6,
           "chapter": "7",
           "chapter_id": "v06-ch07",
-          "status": "running",
+          "status": "done",
           "prompt_file": "agent_prompts/agent_prompt.v06-ch07.analyzer-phase1.md",
           "expected": [],
           "attempts": [
@@ -3914,12 +3914,12 @@
               "n": 1,
               "started": "2026-11-16 16:41:15",
               "prompt": "agent_prompts/agent_prompt.v06-ch07.analyzer-phase1.md",
-              "finished": "",
-              "result": "",
-              "note": ""
+              "finished": "2026-11-16 19:30:23",
+              "result": "done",
+              "note": "Фаза 1 (blind) ch07: 1 кандидат (блок 13), записано в analysis/"
             }
           ],
-          "note": ""
+          "note": "Фаза 1 (blind) ch07: 1 кандидат (блок 13), записано в analysis/"
         },
         {
           "id": "T-0002-S82",
@@ -3927,7 +3927,7 @@
           "volume": 6,
           "chapter": "7",
           "chapter_id": "v06-ch07",
-          "status": "running",
+          "status": "done",
           "prompt_file": "agent_prompts/agent_prompt.v06-ch07.analyzer-phase2.md",
           "expected": [
             "output/_audit/sma/v6-ch07/precheck/omission-precheck.json",
@@ -3939,12 +3939,12 @@
               "n": 1,
               "started": "2026-11-16 16:44:25",
               "prompt": "agent_prompts/agent_prompt.v06-ch07.analyzer-phase2.md",
-              "finished": "",
-              "result": "",
-              "note": ""
+              "finished": "2026-11-16 19:30:23",
+              "result": "done",
+              "note": "Фаза 2 (evidence review) ch07: 7 кандидатов, 6 FP/PRESERVED + 1 CONFIRMED_ERROR (оспорено по JA)"
             }
           ],
-          "note": ""
+          "note": "Фаза 2 (evidence review) ch07: 7 кандидатов, 6 FP/PRESERVED + 1 CONFIRMED_ERROR (оспорено по JA)"
         },
         {
           "id": "T-0002-S83",
@@ -4069,7 +4069,7 @@
           "volume": 6,
           "chapter": "8",
           "chapter_id": "v06-ch08",
-          "status": "running",
+          "status": "done",
           "prompt_file": "agent_prompts/agent_prompt.v06-ch08.sma-a.md",
           "expected": [
             "output/_audit/sma/v6-ch08/a/20261116-170237-07ae.json"
@@ -4079,12 +4079,12 @@
               "n": 1,
               "started": "2026-11-16 17:02:37",
               "prompt": "agent_prompts/agent_prompt.v06-ch08.sma-a.md",
-              "finished": "",
-              "result": "",
-              "note": ""
+              "finished": "2026-11-16 19:30:23",
+              "result": "done",
+              "note": "SMA-A ch08 по переработанному тексту: 16 находок"
             }
           ],
-          "note": ""
+          "note": "SMA-A ch08 по переработанному тексту: 16 находок"
         },
         {
           "id": "T-0002-S89",
@@ -4092,7 +4092,7 @@
           "volume": 6,
           "chapter": "8",
           "chapter_id": "v06-ch08",
-          "status": "running",
+          "status": "done",
           "prompt_file": "agent_prompts/agent_prompt.v06-ch08.sma-b.md",
           "expected": [
             "output/_audit/sma/v6-ch08/b/20261116-170237-f864.json"
@@ -4102,12 +4102,12 @@
               "n": 1,
               "started": "2026-11-16 17:02:37",
               "prompt": "agent_prompts/agent_prompt.v06-ch08.sma-b.md",
-              "finished": "",
-              "result": "",
-              "note": ""
+              "finished": "2026-11-16 19:30:23",
+              "result": "done",
+              "note": "SMA-B ch08 по переработанному тексту: 7 находок"
             }
           ],
-          "note": ""
+          "note": "SMA-B ch08 по переработанному тексту: 7 находок"
         },
         {
           "id": "T-0002-S90",
@@ -4115,7 +4115,7 @@
           "volume": 6,
           "chapter": "8",
           "chapter_id": "v06-ch08",
-          "status": "running",
+          "status": "done",
           "prompt_file": "agent_prompts/agent_prompt.v06-ch08.sma-c.md",
           "expected": [
             "output/_audit/sma/v6-ch08/c/20261116-170237-9c63.json"
@@ -4125,12 +4125,12 @@
               "n": 1,
               "started": "2026-11-16 17:02:37",
               "prompt": "agent_prompts/agent_prompt.v06-ch08.sma-c.md",
-              "finished": "",
-              "result": "",
-              "note": ""
+              "finished": "2026-11-16 19:30:23",
+              "result": "done",
+              "note": "SMA-C ch08 по переработанному тексту: 4 находки"
             }
           ],
-          "note": ""
+          "note": "SMA-C ch08 по переработанному тексту: 4 находки"
         },
         {
           "id": "T-0002-S91",
@@ -4138,7 +4138,7 @@
           "volume": 6,
           "chapter": "8",
           "chapter_id": "v06-ch08",
-          "status": "running",
+          "status": "done",
           "prompt_file": "agent_prompts/agent_prompt.v06-ch08.analyzer-phase1.md",
           "expected": [],
           "attempts": [
@@ -4146,12 +4146,12 @@
               "n": 1,
               "started": "2026-11-16 17:02:37",
               "prompt": "agent_prompts/agent_prompt.v06-ch08.analyzer-phase1.md",
-              "finished": "",
-              "result": "",
-              "note": ""
+              "finished": "2026-11-16 19:30:23",
+              "result": "done",
+              "note": "Фаза 1 (blind) ch08: 25 кандидатов"
             }
           ],
-          "note": ""
+          "note": "Фаза 1 (blind) ch08: 25 кандидатов"
         },
         {
           "id": "T-0002-S92",
@@ -4159,7 +4159,7 @@
           "volume": 6,
           "chapter": "8",
           "chapter_id": "v06-ch08",
-          "status": "running",
+          "status": "done",
           "prompt_file": "agent_prompts/agent_prompt.v06-ch08.analyzer-phase2.md",
           "expected": [
             "output/_audit/sma/v6-ch08/precheck/omission-precheck.json",
@@ -4171,12 +4171,12 @@
               "n": 1,
               "started": "2026-11-16 17:24:57",
               "prompt": "agent_prompts/agent_prompt.v06-ch08.analyzer-phase2.md",
-              "finished": "",
-              "result": "",
-              "note": ""
+              "finished": "2026-11-16 19:30:23",
+              "result": "done",
+              "note": "Фаза 2 (evidence review) ch08: 56 кандидатов, 7 FIXED применены в текст"
             }
           ],
-          "note": ""
+          "note": "Фаза 2 (evidence review) ch08: 56 кандидатов, 7 FIXED применены в текст"
         }
       ]
     }

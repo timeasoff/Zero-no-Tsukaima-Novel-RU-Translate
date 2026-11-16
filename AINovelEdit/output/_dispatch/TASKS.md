@@ -1,6 +1,6 @@
 # Реестр задач диспетчера
 
-Обновлено: 2026-11-16 17:24:57
+Обновлено: 2026-11-16 19:30:23
 
 Генерируется автоматически командой `python tools/dispatch.py`. Не редактируй вручную.
 
@@ -238,18 +238,18 @@ Tom 6: verify ch01-ch08 full audit
 | T-0002-S78 | sma-a | v06-ch07 | done | 2 | `agent_prompts/agent_prompt.v06-ch07.sma-a.attempt2.md` |
 | T-0002-S79 | sma-b | v06-ch07 | done | 2 | `agent_prompts/agent_prompt.v06-ch07.sma-b.attempt2.md` |
 | T-0002-S80 | sma-c | v06-ch07 | done | 2 | `agent_prompts/agent_prompt.v06-ch07.sma-c.attempt2.md` |
-| T-0002-S81 | analyzer-phase1 | v06-ch07 | running | 1 | `agent_prompts/agent_prompt.v06-ch07.analyzer-phase1.md` |
-| T-0002-S82 | analyzer-phase2 | v06-ch07 | running | 1 | `agent_prompts/agent_prompt.v06-ch07.analyzer-phase2.md` |
+| T-0002-S81 | analyzer-phase1 | v06-ch07 | done | 1 | `agent_prompts/agent_prompt.v06-ch07.analyzer-phase1.md` |
+| T-0002-S82 | analyzer-phase2 | v06-ch07 | done | 1 | `agent_prompts/agent_prompt.v06-ch07.analyzer-phase2.md` |
 | T-0002-S83 | sma-a | v06-ch08 | done | 2 | `agent_prompts/agent_prompt.v06-ch08.sma-a.attempt2.md` |
 | T-0002-S84 | sma-b | v06-ch08 | done | 2 | `agent_prompts/agent_prompt.v06-ch08.sma-b.attempt2.md` |
 | T-0002-S85 | sma-c | v06-ch08 | done | 2 | `agent_prompts/agent_prompt.v06-ch08.sma-c.attempt2.md` |
 | T-0002-S86 | analyzer-phase1 | v06-ch08 | planned | 0 | `—` |
 | T-0002-S87 | analyzer-phase2 | v06-ch08 | planned | 0 | `—` |
-| T-0002-S88 | sma-a | v06-ch08 | running | 1 | `agent_prompts/agent_prompt.v06-ch08.sma-a.md` |
-| T-0002-S89 | sma-b | v06-ch08 | running | 1 | `agent_prompts/agent_prompt.v06-ch08.sma-b.md` |
-| T-0002-S90 | sma-c | v06-ch08 | running | 1 | `agent_prompts/agent_prompt.v06-ch08.sma-c.md` |
-| T-0002-S91 | analyzer-phase1 | v06-ch08 | running | 1 | `agent_prompts/agent_prompt.v06-ch08.analyzer-phase1.md` |
-| T-0002-S92 | analyzer-phase2 | v06-ch08 | running | 1 | `agent_prompts/agent_prompt.v06-ch08.analyzer-phase2.md` |
+| T-0002-S88 | sma-a | v06-ch08 | done | 1 | `agent_prompts/agent_prompt.v06-ch08.sma-a.md` |
+| T-0002-S89 | sma-b | v06-ch08 | done | 1 | `agent_prompts/agent_prompt.v06-ch08.sma-b.md` |
+| T-0002-S90 | sma-c | v06-ch08 | done | 1 | `agent_prompts/agent_prompt.v06-ch08.sma-c.md` |
+| T-0002-S91 | analyzer-phase1 | v06-ch08 | done | 1 | `agent_prompts/agent_prompt.v06-ch08.analyzer-phase1.md` |
+| T-0002-S92 | analyzer-phase2 | v06-ch08 | done | 1 | `agent_prompts/agent_prompt.v06-ch08.analyzer-phase2.md` |
 
 Заметки:
 - T-0002-S9: нет результата после запуска
@@ -306,7 +306,14 @@ Tom 6: verify ch01-ch08 full audit
 - T-0002-S78: SMA-A по ch07: 4 находки, 3 приняты (исправлены), 1 оспорена
 - T-0002-S79: SMA-B по ch07: 0 находок
 - T-0002-S80: SMA-C по ch07: 3 находки, 2 приняты (исправлены), 1 спорна
+- T-0002-S81: Фаза 1 (blind) ch07: 1 кандидат (блок 13), записано в analysis/
+- T-0002-S82: Фаза 2 (evidence review) ch07: 7 кандидатов, 6 FP/PRESERVED + 1 CONFIRMED_ERROR (оспорено по JA)
 - T-0002-S83: SMA-A по сырому RU (до переработки): 17 находок, все отнесены к переработке
 - T-0002-S84: SMA-B по сырому RU (до переработки): 9 находок, учтены при переработке
 - T-0002-S85: SMA-C по сырому RU (до переработки): 6 находок, учтены при переработке
+- T-0002-S88: SMA-A ch08 по переработанному тексту: 16 находок
+- T-0002-S89: SMA-B ch08 по переработанному тексту: 7 находок
+- T-0002-S90: SMA-C ch08 по переработанному тексту: 4 находки
+- T-0002-S91: Фаза 1 (blind) ch08: 25 кандидатов
+- T-0002-S92: Фаза 2 (evidence review) ch08: 56 кандидатов, 7 FIXED применены в текст
 
