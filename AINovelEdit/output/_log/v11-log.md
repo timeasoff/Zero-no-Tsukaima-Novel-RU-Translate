@@ -71,3 +71,18 @@
   10 FIXED (COMPONENT_LOSS 5, MEANING_SHIFT 3, ADDITION 1, MISSING 1),
   FALSE_POSITIVE/DISPUTED/REPORT_ONLY — 0.
 - ОТЧЁТ: `output/_audit/v11-ch05.md`. gate 12/12.
+
+## v11-ch06 «Глава шестая. Частный урок» — полная обработка (17.11.2026)
+
+- 21/21 блоков по JA. Канон: «Гандальв», «Взрыв», «метр» (решение
+  пользователя 07.10.2026), «мисс Вальер», «Халкегиния», «Дерфлингер»,
+  «Табита», «Луиза», «Сайто», «Сиеста», «мадам Баттерфляй», «бэби-долл»,
+  «Пустота», «Отряд водных духов».
+- Формат: blockgap FIXED, 15 FP (мысли в кавычках — канон тома v10).
+  Предфильтры: грамматика 5, стиль 24 — FP/PRESERVED—JA; address 5 —
+  1 FIXED («мисс слишком» → «какой-то там человек»), 4 FP; omission 0;
+  alignment строгих 0. U+FFFD = 0.
+- SMA: A — 10 (0 ERROR), B — 2 (1 ERROR), C — 2, Фаза 1 — 21 NONE/HIGH.
+  Фаза 2 (`20261117-130029-7182.json`): 4 FIXED, 8 FALSE_POSITIVE/PRESERVED,
+  DISPUTED/REPORT_ONLY — 0.
+- ОТЧЁТ: `output/_audit/v11-ch06.md`. gate 12/12.
