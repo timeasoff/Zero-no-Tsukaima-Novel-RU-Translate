@@ -27,3 +27,19 @@
   FP/PRESERVED—JA; address 3 — PRESERVED—JA; omission 2 — FP;
   alignment строгих 0.
 - ОТЧЁТ: `output/_audit/v09-ch03.md`. Ждём SMA A/B/C + Фазу 1.
+
+## v9-ch04 «Глава четвертая. Титул шевалье» — перевод завершён (17.11.2026)
+
+- 18/18 блоков по JA. Канон: «Генриетта», «Луиза», «Сайто», «Аньес»,
+  «Сиеста», «Дерфлингер», «шевалье», «Кольбер», «Осман», «Маликорн»,
+  «Монморанси», «Гиш», «Вьюзенталь», «Зеро», «Австри», «Ла-Рошель»,
+  «Розайш», «Мазарини», «Пустота», «Основатель Бримир»,
+  «пятиконечная звезда», «королевская гвардия».
+- Устранены вкрапления: 书架, dragon-клетку, Вdeath, Must, possessing,
+  Allowed, 杯, appointment, ensured, VIP, Кfirstname, Authority, Noble,
+  开口, Eggs, easily, maximum, Неunderstanding, 则认为, expectation,
+  Broad, terus и др.
+- Формат: blockgap FIXED, 10 FP. Предфильтры: грамматика 3, стиль 25 —
+  FP/PRESERVED—JA; address 1 — PRESERVED—JA; omission 3 — FP;
+  alignment строгих 0.
+- ОТЧЁТ: `output/_audit/v09-ch04.md`. Ждём SMA A/B/C + Фазу 1.
