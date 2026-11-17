@@ -1,6 +1,6 @@
 # Реестр задач диспетчера
 
-Обновлено: 2026-11-17 15:53:13
+Обновлено: 2026-11-17 16:19:06
 
 Генерируется автоматически командой `python tools/dispatch.py`. Не редактируй вручную.
 
@@ -1165,4 +1165,23 @@ Polnyi perevod i audit v11-afterword: 2 bloka po JA, ED_RU v merged vruchnuyu (n
 - T-0030-S3: SMA + Analyzer applied, gate 12/12
 - T-0030-S4: SMA + Analyzer applied, gate 12/12
 - T-0030-S5: SMA + Analyzer applied, gate 12/12
+
+## T-0031 — DONE
+
+Polnyi perevod i audit v12-prologue: 16 blokov po JA, prefilytry, SMA A/B/C + Analyzer 1/2, otchet, gate 12/12, commit
+
+| ID | Режим | Глава | Статус | Попыток | Промпт |
+| --- | --- | --- | --- | --- | --- |
+| T-0031-S1 | sma-a | v12-prologue | done | 1 | `agent_prompts/agent_prompt.v12-prologue.sma-a.md` |
+| T-0031-S2 | sma-b | v12-prologue | done | 1 | `agent_prompts/agent_prompt.v12-prologue.sma-b.md` |
+| T-0031-S3 | sma-c | v12-prologue | done | 1 | `agent_prompts/agent_prompt.v12-prologue.sma-c.md` |
+| T-0031-S4 | analyzer-phase1 | v12-prologue | done | 1 | `agent_prompts/agent_prompt.v12-prologue.analyzer-phase1.md` |
+| T-0031-S5 | analyzer-phase2 | v12-prologue | done | 2 | `agent_prompts/agent_prompt.v12-prologue.analyzer-phase2.attempt2.md` |
+
+Заметки:
+- T-0031-S1: SMA + Analyzer applied, gate 12/12
+- T-0031-S2: SMA + Analyzer applied, gate 12/12
+- T-0031-S3: SMA + Analyzer applied, gate 12/12
+- T-0031-S4: SMA + Analyzer applied, gate 12/12
+- T-0031-S5: SMA + Analyzer applied, gate 12/12
 
