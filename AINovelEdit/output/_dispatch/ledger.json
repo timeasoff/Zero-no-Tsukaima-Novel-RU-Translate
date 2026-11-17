@@ -11354,6 +11354,130 @@
           "note": "SMA + Analyzer applied, gate 12/12"
         }
       ]
+    },
+    {
+      "id": "T-0029",
+      "text": "Polnyi perevod i audit v11-epilogue: 5 blokov po JA, prefilytry, SMA A/B/C + Analyzer 1/2, otchet, gate 12/12, commit",
+      "created": "2026-11-17 15:16:21",
+      "status": "done",
+      "note": "v11-epilogue: gate 12/12",
+      "subtasks": [
+        {
+          "id": "T-0029-S1",
+          "kind": "sma-a",
+          "volume": 11,
+          "chapter": "epilogue",
+          "chapter_id": "v11-epilogue",
+          "status": "done",
+          "prompt_file": "agent_prompts/agent_prompt.v11-epilogue.sma-a.md",
+          "expected": [
+            "output/_audit/sma/v11-epilogue/a/20261117-151814-c624.json"
+          ],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-11-17 15:18:14",
+              "prompt": "agent_prompts/agent_prompt.v11-epilogue.sma-a.md",
+              "finished": "2026-11-17 15:35:50",
+              "result": "done",
+              "note": "SMA + Analyzer applied, gate 12/12"
+            }
+          ],
+          "note": "SMA + Analyzer applied, gate 12/12"
+        },
+        {
+          "id": "T-0029-S2",
+          "kind": "sma-b",
+          "volume": 11,
+          "chapter": "epilogue",
+          "chapter_id": "v11-epilogue",
+          "status": "done",
+          "prompt_file": "agent_prompts/agent_prompt.v11-epilogue.sma-b.md",
+          "expected": [
+            "output/_audit/sma/v11-epilogue/b/20261117-151814-f35b.json"
+          ],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-11-17 15:18:14",
+              "prompt": "agent_prompts/agent_prompt.v11-epilogue.sma-b.md",
+              "finished": "2026-11-17 15:35:50",
+              "result": "done",
+              "note": "SMA + Analyzer applied, gate 12/12"
+            }
+          ],
+          "note": "SMA + Analyzer applied, gate 12/12"
+        },
+        {
+          "id": "T-0029-S3",
+          "kind": "sma-c",
+          "volume": 11,
+          "chapter": "epilogue",
+          "chapter_id": "v11-epilogue",
+          "status": "done",
+          "prompt_file": "agent_prompts/agent_prompt.v11-epilogue.sma-c.md",
+          "expected": [
+            "output/_audit/sma/v11-epilogue/c/20261117-151814-c58c.json"
+          ],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-11-17 15:18:14",
+              "prompt": "agent_prompts/agent_prompt.v11-epilogue.sma-c.md",
+              "finished": "2026-11-17 15:35:50",
+              "result": "done",
+              "note": "SMA + Analyzer applied, gate 12/12"
+            }
+          ],
+          "note": "SMA + Analyzer applied, gate 12/12"
+        },
+        {
+          "id": "T-0029-S4",
+          "kind": "analyzer-phase1",
+          "volume": 11,
+          "chapter": "epilogue",
+          "chapter_id": "v11-epilogue",
+          "status": "done",
+          "prompt_file": "agent_prompts/agent_prompt.v11-epilogue.analyzer-phase1.md",
+          "expected": [],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-11-17 15:18:14",
+              "prompt": "agent_prompts/agent_prompt.v11-epilogue.analyzer-phase1.md",
+              "finished": "2026-11-17 15:35:50",
+              "result": "done",
+              "note": "SMA + Analyzer applied, gate 12/12"
+            }
+          ],
+          "note": "SMA + Analyzer applied, gate 12/12"
+        },
+        {
+          "id": "T-0029-S5",
+          "kind": "analyzer-phase2",
+          "volume": 11,
+          "chapter": "epilogue",
+          "chapter_id": "v11-epilogue",
+          "status": "done",
+          "prompt_file": "agent_prompts/agent_prompt.v11-epilogue.analyzer-phase2.md",
+          "expected": [
+            "output/_audit/sma/v11-epilogue/precheck/omission-precheck.json",
+            "output/_audit/sma/v11-epilogue/analysis/20261117-152931-499e.json",
+            "output/_audit/sma/v11-epilogue/analysis/20261117-152931-499e.md"
+          ],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-11-17 15:29:31",
+              "prompt": "agent_prompts/agent_prompt.v11-epilogue.analyzer-phase2.md",
+              "finished": "2026-11-17 15:35:50",
+              "result": "done",
+              "note": "SMA + Analyzer applied, gate 12/12"
+            }
+          ],
+          "note": "SMA + Analyzer applied, gate 12/12"
+        }
+      ]
     }
   ]
 }

@@ -146,3 +146,15 @@
   Фаза 2 (`20261117-150731-4022.json`): 10 FIXED (в т.ч. восстановлено
   звено бл.8), 13 FALSE_POSITIVE/PRESERVED, 1 DISPUTED/REPORT_ONLY.
 - ОТЧЁТ: `output/_audit/v11-ch10.md`. gate 12/12.
+
+## v11-epilogue «Эпилог» — полная обработка (17.11.2026)
+
+- 5/5 блоков по JA. Канон: «Розайш», «Ёрмунганд», «Пустота», «голем
+  Фуке», «фамильяр», «Тиффания», «Катлея», «мисо-суп».
+- Формат: blockgap FIXED, 4 FP. Предфильтры: грамматика 2, стиль 7 —
+  FP/PRESERVED—JA; address 0, omission 1 — FP; alignment строгих 0.
+  U+FFFD = 0.
+- SMA: A — 8 (2 ERROR, пропуск бл.4 восстановлен), B — 2, C — 1,
+  Фаза 1 — 5 NONE/HIGH (JA > EN). Фаза 2 (`20261117-152931-499e.json`):
+  5 FIXED, 7 FALSE_POSITIVE/PRESERVED, DISPUTED/REPORT_ONLY — 0.
+- ОТЧЁТ: `output/_audit/v11-epilogue.md`. gate 12/12.
