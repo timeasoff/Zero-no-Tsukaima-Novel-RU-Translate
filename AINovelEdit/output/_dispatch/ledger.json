@@ -10858,6 +10858,130 @@
           "note": "SMA + Analyzer applied, gate 12/12"
         }
       ]
+    },
+    {
+      "id": "T-0025",
+      "text": "Polnyi perevod i audit v11-ch07: 9 blokov po JA, prefilytry, SMA A/B/C + Analyzer 1/2, otchet, gate 12/12, commit",
+      "created": "2026-11-17 13:07:47",
+      "status": "done",
+      "note": "v11-ch07: gate 12/12",
+      "subtasks": [
+        {
+          "id": "T-0025-S1",
+          "kind": "sma-a",
+          "volume": 11,
+          "chapter": "7",
+          "chapter_id": "v11-ch07",
+          "status": "done",
+          "prompt_file": "agent_prompts/agent_prompt.v11-ch07.sma-a.md",
+          "expected": [
+            "output/_audit/sma/v11-ch07/a/20261117-131101-0d68.json"
+          ],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-11-17 13:11:01",
+              "prompt": "agent_prompts/agent_prompt.v11-ch07.sma-a.md",
+              "finished": "2026-11-17 13:33:45",
+              "result": "done",
+              "note": "SMA + Analyzer applied, gate 12/12"
+            }
+          ],
+          "note": "SMA + Analyzer applied, gate 12/12"
+        },
+        {
+          "id": "T-0025-S2",
+          "kind": "sma-b",
+          "volume": 11,
+          "chapter": "7",
+          "chapter_id": "v11-ch07",
+          "status": "done",
+          "prompt_file": "agent_prompts/agent_prompt.v11-ch07.sma-b.md",
+          "expected": [
+            "output/_audit/sma/v11-ch07/b/20261117-131101-0776.json"
+          ],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-11-17 13:11:01",
+              "prompt": "agent_prompts/agent_prompt.v11-ch07.sma-b.md",
+              "finished": "2026-11-17 13:33:45",
+              "result": "done",
+              "note": "SMA + Analyzer applied, gate 12/12"
+            }
+          ],
+          "note": "SMA + Analyzer applied, gate 12/12"
+        },
+        {
+          "id": "T-0025-S3",
+          "kind": "sma-c",
+          "volume": 11,
+          "chapter": "7",
+          "chapter_id": "v11-ch07",
+          "status": "done",
+          "prompt_file": "agent_prompts/agent_prompt.v11-ch07.sma-c.md",
+          "expected": [
+            "output/_audit/sma/v11-ch07/c/20261117-131101-66d1.json"
+          ],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-11-17 13:11:01",
+              "prompt": "agent_prompts/agent_prompt.v11-ch07.sma-c.md",
+              "finished": "2026-11-17 13:33:45",
+              "result": "done",
+              "note": "SMA + Analyzer applied, gate 12/12"
+            }
+          ],
+          "note": "SMA + Analyzer applied, gate 12/12"
+        },
+        {
+          "id": "T-0025-S4",
+          "kind": "analyzer-phase1",
+          "volume": 11,
+          "chapter": "7",
+          "chapter_id": "v11-ch07",
+          "status": "done",
+          "prompt_file": "agent_prompts/agent_prompt.v11-ch07.analyzer-phase1.md",
+          "expected": [],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-11-17 13:11:01",
+              "prompt": "agent_prompts/agent_prompt.v11-ch07.analyzer-phase1.md",
+              "finished": "2026-11-17 13:33:45",
+              "result": "done",
+              "note": "SMA + Analyzer applied, gate 12/12"
+            }
+          ],
+          "note": "SMA + Analyzer applied, gate 12/12"
+        },
+        {
+          "id": "T-0025-S5",
+          "kind": "analyzer-phase2",
+          "volume": 11,
+          "chapter": "7",
+          "chapter_id": "v11-ch07",
+          "status": "done",
+          "prompt_file": "agent_prompts/agent_prompt.v11-ch07.analyzer-phase2.md",
+          "expected": [
+            "output/_audit/sma/v11-ch07/precheck/omission-precheck.json",
+            "output/_audit/sma/v11-ch07/analysis/20261117-132505-192b.json",
+            "output/_audit/sma/v11-ch07/analysis/20261117-132505-192b.md"
+          ],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-11-17 13:25:05",
+              "prompt": "agent_prompts/agent_prompt.v11-ch07.analyzer-phase2.md",
+              "finished": "2026-11-17 13:33:45",
+              "result": "done",
+              "note": "SMA + Analyzer applied, gate 12/12"
+            }
+          ],
+          "note": "SMA + Analyzer applied, gate 12/12"
+        }
+      ]
     }
   ]
 }
