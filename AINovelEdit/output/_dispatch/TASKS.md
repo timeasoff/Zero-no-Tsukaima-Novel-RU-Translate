@@ -1,6 +1,6 @@
 # Реестр задач диспетчера
 
-Обновлено: 2026-11-17 04:50:06
+Обновлено: 2026-11-17 05:04:55
 
 Генерируется автоматически командой `python tools/dispatch.py`. Не редактируй вручную.
 
@@ -467,50 +467,50 @@ Tom 6: verify ch01-ch08 full audit
 | T-0004-S13 | sma-c | v08-ch03 | done | 2 | `agent_prompts/agent_prompt.v08-ch03.sma-c.attempt2.md` |
 | T-0004-S14 | analyzer-phase1 | v08-ch03 | done | 2 | `agent_prompts/agent_prompt.v08-ch03.analyzer-phase1.attempt2.md` |
 | T-0004-S15 | analyzer-phase2 | v08-ch03 | done | 1 | `agent_prompts/agent_prompt.v08-ch03.analyzer-phase2.md` |
-| T-0004-S16 | sma-a | v08-ch04 | running | 1 | `agent_prompts/agent_prompt.v08-ch04.sma-a.md` |
-| T-0004-S17 | sma-b | v08-ch04 | running | 1 | `agent_prompts/agent_prompt.v08-ch04.sma-b.md` |
-| T-0004-S18 | sma-c | v08-ch04 | running | 1 | `agent_prompts/agent_prompt.v08-ch04.sma-c.md` |
-| T-0004-S19 | analyzer-phase1 | v08-ch04 | running | 1 | `agent_prompts/agent_prompt.v08-ch04.analyzer-phase1.md` |
+| T-0004-S16 | sma-a | v08-ch04 | interrupted | 1 | `agent_prompts/agent_prompt.v08-ch04.sma-a.md` |
+| T-0004-S17 | sma-b | v08-ch04 | interrupted | 1 | `agent_prompts/agent_prompt.v08-ch04.sma-b.md` |
+| T-0004-S18 | sma-c | v08-ch04 | interrupted | 1 | `agent_prompts/agent_prompt.v08-ch04.sma-c.md` |
+| T-0004-S19 | analyzer-phase1 | v08-ch04 | interrupted | 1 | `agent_prompts/agent_prompt.v08-ch04.analyzer-phase1.md` |
 | T-0004-S20 | analyzer-phase2 | v08-ch04 | done | 1 | `agent_prompts/agent_prompt.v08-ch04.analyzer-phase2.md` |
-| T-0004-S21 | sma-a | v08-ch05 | running | 1 | `agent_prompts/agent_prompt.v08-ch05.sma-a.md` |
-| T-0004-S22 | sma-b | v08-ch05 | running | 1 | `agent_prompts/agent_prompt.v08-ch05.sma-b.md` |
-| T-0004-S23 | sma-c | v08-ch05 | running | 1 | `agent_prompts/agent_prompt.v08-ch05.sma-c.md` |
-| T-0004-S24 | analyzer-phase1 | v08-ch05 | running | 1 | `agent_prompts/agent_prompt.v08-ch05.analyzer-phase1.md` |
-| T-0004-S25 | analyzer-phase2 | v08-ch05 | running | 1 | `agent_prompts/agent_prompt.v08-ch05.analyzer-phase2.md` |
-| T-0004-S26 | sma-a | v08-ch06 | running | 1 | `agent_prompts/agent_prompt.v08-ch06.sma-a.md` |
-| T-0004-S27 | sma-b | v08-ch06 | running | 1 | `agent_prompts/agent_prompt.v08-ch06.sma-b.md` |
-| T-0004-S28 | sma-c | v08-ch06 | running | 1 | `agent_prompts/agent_prompt.v08-ch06.sma-c.md` |
-| T-0004-S29 | analyzer-phase1 | v08-ch06 | running | 1 | `agent_prompts/agent_prompt.v08-ch06.analyzer-phase1.md` |
+| T-0004-S21 | sma-a | v08-ch05 | interrupted | 1 | `agent_prompts/agent_prompt.v08-ch05.sma-a.md` |
+| T-0004-S22 | sma-b | v08-ch05 | interrupted | 1 | `agent_prompts/agent_prompt.v08-ch05.sma-b.md` |
+| T-0004-S23 | sma-c | v08-ch05 | interrupted | 1 | `agent_prompts/agent_prompt.v08-ch05.sma-c.md` |
+| T-0004-S24 | analyzer-phase1 | v08-ch05 | interrupted | 1 | `agent_prompts/agent_prompt.v08-ch05.analyzer-phase1.md` |
+| T-0004-S25 | analyzer-phase2 | v08-ch05 | interrupted | 1 | `agent_prompts/agent_prompt.v08-ch05.analyzer-phase2.md` |
+| T-0004-S26 | sma-a | v08-ch06 | interrupted | 1 | `agent_prompts/agent_prompt.v08-ch06.sma-a.md` |
+| T-0004-S27 | sma-b | v08-ch06 | interrupted | 1 | `agent_prompts/agent_prompt.v08-ch06.sma-b.md` |
+| T-0004-S28 | sma-c | v08-ch06 | interrupted | 1 | `agent_prompts/agent_prompt.v08-ch06.sma-c.md` |
+| T-0004-S29 | analyzer-phase1 | v08-ch06 | interrupted | 1 | `agent_prompts/agent_prompt.v08-ch06.analyzer-phase1.md` |
 | T-0004-S30 | analyzer-phase2 | v08-ch06 | done | 1 | `agent_prompts/agent_prompt.v08-ch06.analyzer-phase2.md` |
 | T-0004-S31 | sma-a | v08-ch07 | done | 4 | `agent_prompts/agent_prompt.v08-ch07.sma-a.attempt4.md` |
-| T-0004-S32 | sma-b | v08-ch07 | running | 3 | `agent_prompts/agent_prompt.v08-ch07.sma-b.attempt3.md` |
-| T-0004-S33 | sma-c | v08-ch07 | running | 2 | `agent_prompts/agent_prompt.v08-ch07.sma-c.attempt2.md` |
-| T-0004-S34 | analyzer-phase1 | v08-ch07 | running | 1 | `agent_prompts/agent_prompt.v08-ch07.analyzer-phase1.md` |
+| T-0004-S32 | sma-b | v08-ch07 | interrupted | 3 | `agent_prompts/agent_prompt.v08-ch07.sma-b.attempt3.md` |
+| T-0004-S33 | sma-c | v08-ch07 | interrupted | 2 | `agent_prompts/agent_prompt.v08-ch07.sma-c.attempt2.md` |
+| T-0004-S34 | analyzer-phase1 | v08-ch07 | interrupted | 1 | `agent_prompts/agent_prompt.v08-ch07.analyzer-phase1.md` |
 | T-0004-S35 | analyzer-phase2 | v08-ch07 | done | 1 | `agent_prompts/agent_prompt.v08-ch07.analyzer-phase2.md` |
-| T-0004-S36 | sma-a | v08-ch08 | running | 2 | `agent_prompts/agent_prompt.v08-ch08.sma-a.attempt2.md` |
-| T-0004-S37 | sma-b | v08-ch08 | running | 2 | `agent_prompts/agent_prompt.v08-ch08.sma-b.attempt2.md` |
-| T-0004-S38 | sma-c | v08-ch08 | running | 2 | `agent_prompts/agent_prompt.v08-ch08.sma-c.attempt2.md` |
-| T-0004-S39 | analyzer-phase1 | v08-ch08 | running | 2 | `agent_prompts/agent_prompt.v08-ch08.analyzer-phase1.attempt2.md` |
+| T-0004-S36 | sma-a | v08-ch08 | interrupted | 2 | `agent_prompts/agent_prompt.v08-ch08.sma-a.attempt2.md` |
+| T-0004-S37 | sma-b | v08-ch08 | interrupted | 2 | `agent_prompts/agent_prompt.v08-ch08.sma-b.attempt2.md` |
+| T-0004-S38 | sma-c | v08-ch08 | interrupted | 2 | `agent_prompts/agent_prompt.v08-ch08.sma-c.attempt2.md` |
+| T-0004-S39 | analyzer-phase1 | v08-ch08 | interrupted | 2 | `agent_prompts/agent_prompt.v08-ch08.analyzer-phase1.attempt2.md` |
 | T-0004-S40 | analyzer-phase2 | v08-ch08 | done | 1 | `agent_prompts/agent_prompt.v08-ch08.analyzer-phase2.md` |
-| T-0004-S41 | sma-a | v08-ch09 | running | 1 | `agent_prompts/agent_prompt.v08-ch09.sma-a.md` |
-| T-0004-S42 | sma-b | v08-ch09 | running | 1 | `agent_prompts/agent_prompt.v08-ch09.sma-b.md` |
-| T-0004-S43 | sma-c | v08-ch09 | running | 1 | `agent_prompts/agent_prompt.v08-ch09.sma-c.md` |
-| T-0004-S44 | analyzer-phase1 | v08-ch09 | running | 1 | `agent_prompts/agent_prompt.v08-ch09.analyzer-phase1.md` |
+| T-0004-S41 | sma-a | v08-ch09 | interrupted | 1 | `agent_prompts/agent_prompt.v08-ch09.sma-a.md` |
+| T-0004-S42 | sma-b | v08-ch09 | interrupted | 1 | `agent_prompts/agent_prompt.v08-ch09.sma-b.md` |
+| T-0004-S43 | sma-c | v08-ch09 | interrupted | 1 | `agent_prompts/agent_prompt.v08-ch09.sma-c.md` |
+| T-0004-S44 | analyzer-phase1 | v08-ch09 | interrupted | 1 | `agent_prompts/agent_prompt.v08-ch09.analyzer-phase1.md` |
 | T-0004-S45 | analyzer-phase2 | v08-ch09 | done | 1 | `agent_prompts/agent_prompt.v08-ch09.analyzer-phase2.md` |
-| T-0004-S46 | sma-a | v08-ch10 | running | 1 | `agent_prompts/agent_prompt.v08-ch10.sma-a.md` |
-| T-0004-S47 | sma-b | v08-ch10 | running | 1 | `agent_prompts/agent_prompt.v08-ch10.sma-b.md` |
-| T-0004-S48 | sma-c | v08-ch10 | running | 1 | `agent_prompts/agent_prompt.v08-ch10.sma-c.md` |
-| T-0004-S49 | analyzer-phase1 | v08-ch10 | running | 1 | `agent_prompts/agent_prompt.v08-ch10.analyzer-phase1.md` |
+| T-0004-S46 | sma-a | v08-ch10 | interrupted | 1 | `agent_prompts/agent_prompt.v08-ch10.sma-a.md` |
+| T-0004-S47 | sma-b | v08-ch10 | interrupted | 1 | `agent_prompts/agent_prompt.v08-ch10.sma-b.md` |
+| T-0004-S48 | sma-c | v08-ch10 | interrupted | 1 | `agent_prompts/agent_prompt.v08-ch10.sma-c.md` |
+| T-0004-S49 | analyzer-phase1 | v08-ch10 | interrupted | 1 | `agent_prompts/agent_prompt.v08-ch10.analyzer-phase1.md` |
 | T-0004-S50 | analyzer-phase2 | v08-ch10 | done | 1 | `agent_prompts/agent_prompt.v08-ch10.analyzer-phase2.md` |
-| T-0004-S51 | sma-a | v08-epilogue | running | 1 | `agent_prompts/agent_prompt.v08-epilogue.sma-a.md` |
-| T-0004-S52 | sma-b | v08-epilogue | running | 2 | `agent_prompts/agent_prompt.v08-epilogue.sma-b.attempt2.md` |
-| T-0004-S53 | sma-c | v08-epilogue | running | 1 | `agent_prompts/agent_prompt.v08-epilogue.sma-c.md` |
-| T-0004-S54 | analyzer-phase1 | v08-epilogue | running | 2 | `agent_prompts/agent_prompt.v08-epilogue.analyzer-phase1.attempt2.md` |
+| T-0004-S51 | sma-a | v08-epilogue | interrupted | 1 | `agent_prompts/agent_prompt.v08-epilogue.sma-a.md` |
+| T-0004-S52 | sma-b | v08-epilogue | interrupted | 2 | `agent_prompts/agent_prompt.v08-epilogue.sma-b.attempt2.md` |
+| T-0004-S53 | sma-c | v08-epilogue | interrupted | 1 | `agent_prompts/agent_prompt.v08-epilogue.sma-c.md` |
+| T-0004-S54 | analyzer-phase1 | v08-epilogue | interrupted | 2 | `agent_prompts/agent_prompt.v08-epilogue.analyzer-phase1.attempt2.md` |
 | T-0004-S55 | analyzer-phase2 | v08-epilogue | done | 1 | `agent_prompts/agent_prompt.v08-epilogue.analyzer-phase2.md` |
 | T-0004-S56 | sma-a | v08-afterword | planned | 0 | `—` |
 | T-0004-S57 | sma-b | v08-afterword | planned | 0 | `—` |
 | T-0004-S58 | sma-c | v08-afterword | planned | 0 | `—` |
-| T-0004-S59 | analyzer-phase1 | v08-afterword | running | 1 | `agent_prompts/agent_prompt.v08-afterword.analyzer-phase1.md` |
+| T-0004-S59 | analyzer-phase1 | v08-afterword | interrupted | 1 | `agent_prompts/agent_prompt.v08-afterword.analyzer-phase1.md` |
 | T-0004-S60 | analyzer-phase2 | v08-afterword | done | 1 | `agent_prompts/agent_prompt.v08-afterword.analyzer-phase2.md` |
 
 Заметки:
@@ -529,14 +529,47 @@ Tom 6: verify ch01-ch08 full audit
 - T-0004-S13: applied
 - T-0004-S14: applied
 - T-0004-S15: Phase2 applied, gate 12/12
+- T-0004-S16: нет результата после запуска
+- T-0004-S17: нет результата после запуска
+- T-0004-S18: нет результата после запуска
+- T-0004-S19: нет результата после запуска
 - T-0004-S20: Phase2 applied, gate 12/12
+- T-0004-S21: нет результата после запуска
+- T-0004-S22: нет результата после запуска
+- T-0004-S23: нет результата после запуска
+- T-0004-S24: нет результата после запуска
+- T-0004-S25: нет результата после запуска
+- T-0004-S26: нет результата после запуска
+- T-0004-S27: нет результата после запуска
+- T-0004-S28: нет результата после запуска
+- T-0004-S29: нет результата после запуска
 - T-0004-S30: Phase2 applied, gate 12/12
 - T-0004-S31: SMA-a attempt4, gate 12/12
+- T-0004-S32: нет результата после запуска
+- T-0004-S33: нет результата после запуска
+- T-0004-S34: нет результата после запуска
 - T-0004-S35: Phase2 applied, gate 12/12
+- T-0004-S36: нет результата после запуска
+- T-0004-S37: нет результата после запуска
+- T-0004-S38: нет результата после запуска
+- T-0004-S39: нет результата после запуска
 - T-0004-S40: Phase2 applied, gate 12/12
+- T-0004-S41: нет результата после запуска
+- T-0004-S42: нет результата после запуска
+- T-0004-S43: нет результата после запуска
+- T-0004-S44: нет результата после запуска
 - T-0004-S45: Phase2 applied, gate 12/12
+- T-0004-S46: нет результата после запуска
+- T-0004-S47: нет результата после запуска
+- T-0004-S48: нет результата после запуска
+- T-0004-S49: нет результата после запуска
 - T-0004-S50: Phase2 applied, gate 12/12
+- T-0004-S51: нет результата после запуска
+- T-0004-S52: нет результата после запуска
+- T-0004-S53: нет результата после запуска
+- T-0004-S54: нет результата после запуска
 - T-0004-S55: Phase2 applied, gate 12/12
+- T-0004-S59: нет результата после запуска
 - T-0004-S60: Phase2 applied, gate 12/12
 
 ## T-0005 — DONE
@@ -545,72 +578,135 @@ Tom 6: verify ch01-ch08 full audit
 
 | ID | Режим | Глава | Статус | Попыток | Промпт |
 | --- | --- | --- | --- | --- | --- |
-| T-0005-S1 | sma-a | v09-ch01 | running | 2 | `agent_prompts/agent_prompt.v09-ch01.sma-a.attempt2.md` |
-| T-0005-S2 | sma-b | v09-ch01 | running | 1 | `agent_prompts/agent_prompt.v09-ch01.sma-b.md` |
-| T-0005-S3 | sma-c | v09-ch01 | running | 1 | `agent_prompts/agent_prompt.v09-ch01.sma-c.md` |
-| T-0005-S4 | analyzer-phase1 | v09-ch01 | running | 1 | `agent_prompts/agent_prompt.v09-ch01.analyzer-phase1.md` |
+| T-0005-S1 | sma-a | v09-ch01 | interrupted | 2 | `agent_prompts/agent_prompt.v09-ch01.sma-a.attempt2.md` |
+| T-0005-S2 | sma-b | v09-ch01 | interrupted | 1 | `agent_prompts/agent_prompt.v09-ch01.sma-b.md` |
+| T-0005-S3 | sma-c | v09-ch01 | interrupted | 1 | `agent_prompts/agent_prompt.v09-ch01.sma-c.md` |
+| T-0005-S4 | analyzer-phase1 | v09-ch01 | interrupted | 1 | `agent_prompts/agent_prompt.v09-ch01.analyzer-phase1.md` |
 | T-0005-S5 | analyzer-phase2 | v09-ch01 | done | 1 | `agent_prompts/agent_prompt.v09-ch01.analyzer-phase2.md` |
-| T-0005-S6 | sma-a | v09-ch02 | running | 1 | `agent_prompts/agent_prompt.v09-ch02.sma-a.md` |
-| T-0005-S7 | sma-b | v09-ch02 | running | 1 | `agent_prompts/agent_prompt.v09-ch02.sma-b.md` |
-| T-0005-S8 | sma-c | v09-ch02 | running | 1 | `agent_prompts/agent_prompt.v09-ch02.sma-c.md` |
-| T-0005-S9 | analyzer-phase1 | v09-ch02 | running | 1 | `agent_prompts/agent_prompt.v09-ch02.analyzer-phase1.md` |
+| T-0005-S6 | sma-a | v09-ch02 | interrupted | 1 | `agent_prompts/agent_prompt.v09-ch02.sma-a.md` |
+| T-0005-S7 | sma-b | v09-ch02 | interrupted | 1 | `agent_prompts/agent_prompt.v09-ch02.sma-b.md` |
+| T-0005-S8 | sma-c | v09-ch02 | interrupted | 1 | `agent_prompts/agent_prompt.v09-ch02.sma-c.md` |
+| T-0005-S9 | analyzer-phase1 | v09-ch02 | interrupted | 1 | `agent_prompts/agent_prompt.v09-ch02.analyzer-phase1.md` |
 | T-0005-S10 | analyzer-phase2 | v09-ch02 | done | 1 | `agent_prompts/agent_prompt.v09-ch02.analyzer-phase2.md` |
-| T-0005-S11 | sma-a | v09-ch03 | running | 1 | `agent_prompts/agent_prompt.v09-ch03.sma-a.md` |
-| T-0005-S12 | sma-b | v09-ch03 | running | 1 | `agent_prompts/agent_prompt.v09-ch03.sma-b.md` |
-| T-0005-S13 | sma-c | v09-ch03 | running | 1 | `agent_prompts/agent_prompt.v09-ch03.sma-c.md` |
-| T-0005-S14 | analyzer-phase1 | v09-ch03 | running | 1 | `agent_prompts/agent_prompt.v09-ch03.analyzer-phase1.md` |
+| T-0005-S11 | sma-a | v09-ch03 | interrupted | 1 | `agent_prompts/agent_prompt.v09-ch03.sma-a.md` |
+| T-0005-S12 | sma-b | v09-ch03 | interrupted | 1 | `agent_prompts/agent_prompt.v09-ch03.sma-b.md` |
+| T-0005-S13 | sma-c | v09-ch03 | interrupted | 1 | `agent_prompts/agent_prompt.v09-ch03.sma-c.md` |
+| T-0005-S14 | analyzer-phase1 | v09-ch03 | interrupted | 1 | `agent_prompts/agent_prompt.v09-ch03.analyzer-phase1.md` |
 | T-0005-S15 | analyzer-phase2 | v09-ch03 | done | 1 | `agent_prompts/agent_prompt.v09-ch03.analyzer-phase2.md` |
-| T-0005-S16 | sma-a | v09-ch04 | running | 1 | `agent_prompts/agent_prompt.v09-ch04.sma-a.md` |
-| T-0005-S17 | sma-b | v09-ch04 | running | 1 | `agent_prompts/agent_prompt.v09-ch04.sma-b.md` |
-| T-0005-S18 | sma-c | v09-ch04 | running | 1 | `agent_prompts/agent_prompt.v09-ch04.sma-c.md` |
-| T-0005-S19 | analyzer-phase1 | v09-ch04 | running | 1 | `agent_prompts/agent_prompt.v09-ch04.analyzer-phase1.md` |
+| T-0005-S16 | sma-a | v09-ch04 | interrupted | 1 | `agent_prompts/agent_prompt.v09-ch04.sma-a.md` |
+| T-0005-S17 | sma-b | v09-ch04 | interrupted | 1 | `agent_prompts/agent_prompt.v09-ch04.sma-b.md` |
+| T-0005-S18 | sma-c | v09-ch04 | interrupted | 1 | `agent_prompts/agent_prompt.v09-ch04.sma-c.md` |
+| T-0005-S19 | analyzer-phase1 | v09-ch04 | interrupted | 1 | `agent_prompts/agent_prompt.v09-ch04.analyzer-phase1.md` |
 | T-0005-S20 | analyzer-phase2 | v09-ch04 | done | 1 | `agent_prompts/agent_prompt.v09-ch04.analyzer-phase2.md` |
-| T-0005-S21 | sma-a | v09-ch05 | running | 1 | `agent_prompts/agent_prompt.v09-ch05.sma-a.md` |
-| T-0005-S22 | sma-b | v09-ch05 | running | 1 | `agent_prompts/agent_prompt.v09-ch05.sma-b.md` |
-| T-0005-S23 | sma-c | v09-ch05 | running | 1 | `agent_prompts/agent_prompt.v09-ch05.sma-c.md` |
-| T-0005-S24 | analyzer-phase1 | v09-ch05 | running | 1 | `agent_prompts/agent_prompt.v09-ch05.analyzer-phase1.md` |
+| T-0005-S21 | sma-a | v09-ch05 | interrupted | 1 | `agent_prompts/agent_prompt.v09-ch05.sma-a.md` |
+| T-0005-S22 | sma-b | v09-ch05 | interrupted | 1 | `agent_prompts/agent_prompt.v09-ch05.sma-b.md` |
+| T-0005-S23 | sma-c | v09-ch05 | interrupted | 1 | `agent_prompts/agent_prompt.v09-ch05.sma-c.md` |
+| T-0005-S24 | analyzer-phase1 | v09-ch05 | interrupted | 1 | `agent_prompts/agent_prompt.v09-ch05.analyzer-phase1.md` |
 | T-0005-S25 | analyzer-phase2 | v09-ch05 | done | 1 | `agent_prompts/agent_prompt.v09-ch05.analyzer-phase2.md` |
-| T-0005-S26 | sma-a | v09-ch06 | running | 1 | `agent_prompts/agent_prompt.v09-ch06.sma-a.md` |
-| T-0005-S27 | sma-b | v09-ch06 | running | 1 | `agent_prompts/agent_prompt.v09-ch06.sma-b.md` |
-| T-0005-S28 | sma-c | v09-ch06 | running | 1 | `agent_prompts/agent_prompt.v09-ch06.sma-c.md` |
-| T-0005-S29 | analyzer-phase1 | v09-ch06 | running | 1 | `agent_prompts/agent_prompt.v09-ch06.analyzer-phase1.md` |
+| T-0005-S26 | sma-a | v09-ch06 | interrupted | 1 | `agent_prompts/agent_prompt.v09-ch06.sma-a.md` |
+| T-0005-S27 | sma-b | v09-ch06 | interrupted | 1 | `agent_prompts/agent_prompt.v09-ch06.sma-b.md` |
+| T-0005-S28 | sma-c | v09-ch06 | interrupted | 1 | `agent_prompts/agent_prompt.v09-ch06.sma-c.md` |
+| T-0005-S29 | analyzer-phase1 | v09-ch06 | interrupted | 1 | `agent_prompts/agent_prompt.v09-ch06.analyzer-phase1.md` |
 | T-0005-S30 | analyzer-phase2 | v09-ch06 | done | 1 | `agent_prompts/agent_prompt.v09-ch06.analyzer-phase2.md` |
-| T-0005-S31 | sma-a | v09-ch07 | running | 1 | `agent_prompts/agent_prompt.v09-ch07.sma-a.md` |
-| T-0005-S32 | sma-b | v09-ch07 | running | 1 | `agent_prompts/agent_prompt.v09-ch07.sma-b.md` |
-| T-0005-S33 | sma-c | v09-ch07 | running | 1 | `agent_prompts/agent_prompt.v09-ch07.sma-c.md` |
-| T-0005-S34 | analyzer-phase1 | v09-ch07 | running | 1 | `agent_prompts/agent_prompt.v09-ch07.analyzer-phase1.md` |
+| T-0005-S31 | sma-a | v09-ch07 | interrupted | 1 | `agent_prompts/agent_prompt.v09-ch07.sma-a.md` |
+| T-0005-S32 | sma-b | v09-ch07 | interrupted | 1 | `agent_prompts/agent_prompt.v09-ch07.sma-b.md` |
+| T-0005-S33 | sma-c | v09-ch07 | interrupted | 1 | `agent_prompts/agent_prompt.v09-ch07.sma-c.md` |
+| T-0005-S34 | analyzer-phase1 | v09-ch07 | interrupted | 1 | `agent_prompts/agent_prompt.v09-ch07.analyzer-phase1.md` |
 | T-0005-S35 | analyzer-phase2 | v09-ch07 | done | 1 | `agent_prompts/agent_prompt.v09-ch07.analyzer-phase2.md` |
-| T-0005-S36 | sma-a | v09-ch08 | running | 1 | `agent_prompts/agent_prompt.v09-ch08.sma-a.md` |
-| T-0005-S37 | sma-b | v09-ch08 | running | 1 | `agent_prompts/agent_prompt.v09-ch08.sma-b.md` |
-| T-0005-S38 | sma-c | v09-ch08 | running | 1 | `agent_prompts/agent_prompt.v09-ch08.sma-c.md` |
-| T-0005-S39 | analyzer-phase1 | v09-ch08 | running | 1 | `agent_prompts/agent_prompt.v09-ch08.analyzer-phase1.md` |
+| T-0005-S36 | sma-a | v09-ch08 | interrupted | 1 | `agent_prompts/agent_prompt.v09-ch08.sma-a.md` |
+| T-0005-S37 | sma-b | v09-ch08 | interrupted | 1 | `agent_prompts/agent_prompt.v09-ch08.sma-b.md` |
+| T-0005-S38 | sma-c | v09-ch08 | interrupted | 1 | `agent_prompts/agent_prompt.v09-ch08.sma-c.md` |
+| T-0005-S39 | analyzer-phase1 | v09-ch08 | interrupted | 1 | `agent_prompts/agent_prompt.v09-ch08.analyzer-phase1.md` |
 | T-0005-S40 | analyzer-phase2 | v09-ch08 | done | 5 | `agent_prompts/agent_prompt.v09-ch08.analyzer-phase2.attempt5.md` |
-| T-0005-S41 | sma-a | v09-ch09 | running | 1 | `agent_prompts/agent_prompt.v09-ch09.sma-a.md` |
-| T-0005-S42 | sma-b | v09-ch09 | running | 1 | `agent_prompts/agent_prompt.v09-ch09.sma-b.md` |
-| T-0005-S43 | sma-c | v09-ch09 | running | 1 | `agent_prompts/agent_prompt.v09-ch09.sma-c.md` |
-| T-0005-S44 | analyzer-phase1 | v09-ch09 | running | 1 | `agent_prompts/agent_prompt.v09-ch09.analyzer-phase1.md` |
+| T-0005-S41 | sma-a | v09-ch09 | interrupted | 1 | `agent_prompts/agent_prompt.v09-ch09.sma-a.md` |
+| T-0005-S42 | sma-b | v09-ch09 | interrupted | 1 | `agent_prompts/agent_prompt.v09-ch09.sma-b.md` |
+| T-0005-S43 | sma-c | v09-ch09 | interrupted | 1 | `agent_prompts/agent_prompt.v09-ch09.sma-c.md` |
+| T-0005-S44 | analyzer-phase1 | v09-ch09 | interrupted | 1 | `agent_prompts/agent_prompt.v09-ch09.analyzer-phase1.md` |
 | T-0005-S45 | analyzer-phase2 | v09-ch09 | done | 1 | `agent_prompts/agent_prompt.v09-ch09.analyzer-phase2.md` |
-| T-0005-S46 | sma-a | v09-epilogue | running | 1 | `agent_prompts/agent_prompt.v09-epilogue.sma-a.md` |
-| T-0005-S47 | sma-b | v09-epilogue | running | 1 | `agent_prompts/agent_prompt.v09-epilogue.sma-b.md` |
-| T-0005-S48 | sma-c | v09-epilogue | running | 1 | `agent_prompts/agent_prompt.v09-epilogue.sma-c.md` |
-| T-0005-S49 | analyzer-phase1 | v09-epilogue | running | 1 | `agent_prompts/agent_prompt.v09-epilogue.analyzer-phase1.md` |
+| T-0005-S46 | sma-a | v09-epilogue | interrupted | 1 | `agent_prompts/agent_prompt.v09-epilogue.sma-a.md` |
+| T-0005-S47 | sma-b | v09-epilogue | interrupted | 1 | `agent_prompts/agent_prompt.v09-epilogue.sma-b.md` |
+| T-0005-S48 | sma-c | v09-epilogue | interrupted | 1 | `agent_prompts/agent_prompt.v09-epilogue.sma-c.md` |
+| T-0005-S49 | analyzer-phase1 | v09-epilogue | interrupted | 1 | `agent_prompts/agent_prompt.v09-epilogue.analyzer-phase1.md` |
 | T-0005-S50 | analyzer-phase2 | v09-epilogue | done | 3 | `agent_prompts/agent_prompt.v09-epilogue.analyzer-phase2.attempt3.md` |
-| T-0005-S51 | sma-a | v09-afterword | running | 1 | `agent_prompts/agent_prompt.v09-afterword.sma-a.md` |
-| T-0005-S52 | sma-b | v09-afterword | running | 1 | `agent_prompts/agent_prompt.v09-afterword.sma-b.md` |
-| T-0005-S53 | sma-c | v09-afterword | running | 1 | `agent_prompts/agent_prompt.v09-afterword.sma-c.md` |
-| T-0005-S54 | analyzer-phase1 | v09-afterword | running | 1 | `agent_prompts/agent_prompt.v09-afterword.analyzer-phase1.md` |
+| T-0005-S51 | sma-a | v09-afterword | interrupted | 1 | `agent_prompts/agent_prompt.v09-afterword.sma-a.md` |
+| T-0005-S52 | sma-b | v09-afterword | interrupted | 1 | `agent_prompts/agent_prompt.v09-afterword.sma-b.md` |
+| T-0005-S53 | sma-c | v09-afterword | interrupted | 1 | `agent_prompts/agent_prompt.v09-afterword.sma-c.md` |
+| T-0005-S54 | analyzer-phase1 | v09-afterword | interrupted | 1 | `agent_prompts/agent_prompt.v09-afterword.analyzer-phase1.md` |
 | T-0005-S55 | analyzer-phase2 | v09-afterword | done | 1 | `agent_prompts/agent_prompt.v09-afterword.analyzer-phase2.md` |
 
 Заметки:
+- T-0005-S1: нет результата после запуска
+- T-0005-S2: нет результата после запуска
+- T-0005-S3: нет результата после запуска
+- T-0005-S4: нет результата после запуска
 - T-0005-S5: Phase2 applied, gate 12/12
+- T-0005-S6: нет результата после запуска
+- T-0005-S7: нет результата после запуска
+- T-0005-S8: нет результата после запуска
+- T-0005-S9: нет результата после запуска
 - T-0005-S10: Phase2 applied, gate 12/12
+- T-0005-S11: нет результата после запуска
+- T-0005-S12: нет результата после запуска
+- T-0005-S13: нет результата после запуска
+- T-0005-S14: нет результата после запуска
 - T-0005-S15: Phase2 applied, gate 12/12
+- T-0005-S16: нет результата после запуска
+- T-0005-S17: нет результата после запуска
+- T-0005-S18: нет результата после запуска
+- T-0005-S19: нет результата после запуска
 - T-0005-S20: Phase2 applied, gate 12/12
+- T-0005-S21: нет результата после запуска
+- T-0005-S22: нет результата после запуска
+- T-0005-S23: нет результата после запуска
+- T-0005-S24: нет результата после запуска
 - T-0005-S25: Phase2 applied, gate 12/12
+- T-0005-S26: нет результата после запуска
+- T-0005-S27: нет результата после запуска
+- T-0005-S28: нет результата после запуска
+- T-0005-S29: нет результата после запуска
 - T-0005-S30: Phase2 applied, gate 12/12
+- T-0005-S31: нет результата после запуска
+- T-0005-S32: нет результата после запуска
+- T-0005-S33: нет результата после запуска
+- T-0005-S34: нет результата после запуска
 - T-0005-S35: Phase2 applied, gate 12/12
+- T-0005-S36: нет результата после запуска
+- T-0005-S37: нет результата после запуска
+- T-0005-S38: нет результата после запуска
+- T-0005-S39: нет результата после запуска
 - T-0005-S40: Phase2 applied, gate 12/12
+- T-0005-S41: нет результата после запуска
+- T-0005-S42: нет результата после запуска
+- T-0005-S43: нет результата после запуска
+- T-0005-S44: нет результата после запуска
 - T-0005-S45: Phase2 applied, gate 12/12
+- T-0005-S46: нет результата после запуска
+- T-0005-S47: нет результата после запуска
+- T-0005-S48: нет результата после запуска
+- T-0005-S49: нет результата после запуска
 - T-0005-S50: Phase2 applied, gate 12/12
+- T-0005-S51: нет результата после запуска
+- T-0005-S52: нет результата после запуска
+- T-0005-S53: нет результата после запуска
+- T-0005-S54: нет результата после запуска
 - T-0005-S55: Phase2 applied, gate 12/12
+
+## T-0006 — DONE
+
+Polnyi perevod v6-afterword: 3 bloka po JA, prefilytry, SMA A/B/C + Analyzer, otchet, gate 12/12, commit
+
+| ID | Режим | Глава | Статус | Попыток | Промпт |
+| --- | --- | --- | --- | --- | --- |
+| T-0006-S1 | sma-a | v06-afterword | done | 1 | `agent_prompts/agent_prompt.v06-afterword.sma-a.md` |
+| T-0006-S2 | sma-b | v06-afterword | done | 1 | `agent_prompts/agent_prompt.v06-afterword.sma-b.md` |
+| T-0006-S3 | sma-c | v06-afterword | done | 1 | `agent_prompts/agent_prompt.v06-afterword.sma-c.md` |
+| T-0006-S4 | analyzer-phase1 | v06-afterword | done | 1 | `agent_prompts/agent_prompt.v06-afterword.analyzer-phase1.md` |
+| T-0006-S5 | analyzer-phase2 | v06-afterword | done | 1 | `agent_prompts/agent_prompt.v06-afterword.analyzer-phase2.md` |
+
+Заметки:
+- T-0006-S1: SMA + Analyzer applied, gate 12/12
+- T-0006-S2: SMA + Analyzer applied, gate 12/12
+- T-0006-S3: SMA + Analyzer applied, gate 12/12
+- T-0006-S4: SMA + Analyzer applied, gate 12/12
+- T-0006-S5: SMA + Analyzer applied, gate 12/12
 

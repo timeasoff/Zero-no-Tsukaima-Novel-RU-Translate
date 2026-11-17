@@ -6039,7 +6039,7 @@
           "volume": 8,
           "chapter": "4",
           "chapter_id": "v08-ch04",
-          "status": "running",
+          "status": "interrupted",
           "prompt_file": "agent_prompts/agent_prompt.v08-ch04.sma-a.md",
           "expected": [
             "output/_audit/sma/v8-ch04/a/20261117-015304-f4fe.json"
@@ -6054,7 +6054,7 @@
               "note": ""
             }
           ],
-          "note": ""
+          "note": "нет результата после запуска"
         },
         {
           "id": "T-0004-S17",
@@ -6062,7 +6062,7 @@
           "volume": 8,
           "chapter": "4",
           "chapter_id": "v08-ch04",
-          "status": "running",
+          "status": "interrupted",
           "prompt_file": "agent_prompts/agent_prompt.v08-ch04.sma-b.md",
           "expected": [
             "output/_audit/sma/v8-ch04/b/20261117-015304-30b9.json"
@@ -6077,7 +6077,7 @@
               "note": ""
             }
           ],
-          "note": ""
+          "note": "нет результата после запуска"
         },
         {
           "id": "T-0004-S18",
@@ -6085,7 +6085,7 @@
           "volume": 8,
           "chapter": "4",
           "chapter_id": "v08-ch04",
-          "status": "running",
+          "status": "interrupted",
           "prompt_file": "agent_prompts/agent_prompt.v08-ch04.sma-c.md",
           "expected": [
             "output/_audit/sma/v8-ch04/c/20261117-015304-7daf.json"
@@ -6100,7 +6100,7 @@
               "note": ""
             }
           ],
-          "note": ""
+          "note": "нет результата после запуска"
         },
         {
           "id": "T-0004-S19",
@@ -6108,7 +6108,7 @@
           "volume": 8,
           "chapter": "4",
           "chapter_id": "v08-ch04",
-          "status": "running",
+          "status": "interrupted",
           "prompt_file": "agent_prompts/agent_prompt.v08-ch04.analyzer-phase1.md",
           "expected": [],
           "attempts": [
@@ -6121,7 +6121,7 @@
               "note": ""
             }
           ],
-          "note": ""
+          "note": "нет результата после запуска"
         },
         {
           "id": "T-0004-S20",
@@ -6154,7 +6154,7 @@
           "volume": 8,
           "chapter": "5",
           "chapter_id": "v08-ch05",
-          "status": "running",
+          "status": "interrupted",
           "prompt_file": "agent_prompts/agent_prompt.v08-ch05.sma-a.md",
           "expected": [
             "output/_audit/sma/v8-ch05/a/20261117-021231-76de.json"
@@ -6169,7 +6169,7 @@
               "note": ""
             }
           ],
-          "note": ""
+          "note": "нет результата после запуска"
         },
         {
           "id": "T-0004-S22",
@@ -6177,7 +6177,7 @@
           "volume": 8,
           "chapter": "5",
           "chapter_id": "v08-ch05",
-          "status": "running",
+          "status": "interrupted",
           "prompt_file": "agent_prompts/agent_prompt.v08-ch05.sma-b.md",
           "expected": [
             "output/_audit/sma/v8-ch05/b/20261117-021231-025d.json"
@@ -6192,7 +6192,7 @@
               "note": ""
             }
           ],
-          "note": ""
+          "note": "нет результата после запуска"
         },
         {
           "id": "T-0004-S23",
@@ -6200,7 +6200,7 @@
           "volume": 8,
           "chapter": "5",
           "chapter_id": "v08-ch05",
-          "status": "running",
+          "status": "interrupted",
           "prompt_file": "agent_prompts/agent_prompt.v08-ch05.sma-c.md",
           "expected": [
             "output/_audit/sma/v8-ch05/c/20261117-021231-3f8f.json"
@@ -6215,7 +6215,7 @@
               "note": ""
             }
           ],
-          "note": ""
+          "note": "нет результата после запуска"
         },
         {
           "id": "T-0004-S24",
@@ -6223,7 +6223,7 @@
           "volume": 8,
           "chapter": "5",
           "chapter_id": "v08-ch05",
-          "status": "running",
+          "status": "interrupted",
           "prompt_file": "agent_prompts/agent_prompt.v08-ch05.analyzer-phase1.md",
           "expected": [],
           "attempts": [
@@ -6236,7 +6236,7 @@
               "note": ""
             }
           ],
-          "note": ""
+          "note": "нет результата после запуска"
         },
         {
           "id": "T-0004-S25",
@@ -6244,7 +6244,7 @@
           "volume": 8,
           "chapter": "5",
           "chapter_id": "v08-ch05",
-          "status": "running",
+          "status": "interrupted",
           "prompt_file": "agent_prompts/agent_prompt.v08-ch05.analyzer-phase2.md",
           "expected": [
             "output/_audit/sma/v8-ch05/precheck/omission-precheck.json",
@@ -6261,7 +6261,7 @@
               "note": ""
             }
           ],
-          "note": ""
+          "note": "нет результата после запуска"
         },
         {
           "id": "T-0004-S26",
@@ -6269,7 +6269,7 @@
           "volume": 8,
           "chapter": "6",
           "chapter_id": "v08-ch06",
-          "status": "running",
+          "status": "interrupted",
           "prompt_file": "agent_prompts/agent_prompt.v08-ch06.sma-a.md",
           "expected": [
             "output/_audit/sma/v8-ch06/a/20261117-021957-81fd.json"
@@ -6284,7 +6284,7 @@
               "note": ""
             }
           ],
-          "note": ""
+          "note": "нет результата после запуска"
         },
         {
           "id": "T-0004-S27",
@@ -6292,7 +6292,7 @@
           "volume": 8,
           "chapter": "6",
           "chapter_id": "v08-ch06",
-          "status": "running",
+          "status": "interrupted",
           "prompt_file": "agent_prompts/agent_prompt.v08-ch06.sma-b.md",
           "expected": [
             "output/_audit/sma/v8-ch06/b/20261117-021957-c040.json"
@@ -6307,7 +6307,7 @@
               "note": ""
             }
           ],
-          "note": ""
+          "note": "нет результата после запуска"
         },
         {
           "id": "T-0004-S28",
@@ -6315,7 +6315,7 @@
           "volume": 8,
           "chapter": "6",
           "chapter_id": "v08-ch06",
-          "status": "running",
+          "status": "interrupted",
           "prompt_file": "agent_prompts/agent_prompt.v08-ch06.sma-c.md",
           "expected": [
             "output/_audit/sma/v8-ch06/c/20261117-021957-8469.json"
@@ -6330,7 +6330,7 @@
               "note": ""
             }
           ],
-          "note": ""
+          "note": "нет результата после запуска"
         },
         {
           "id": "T-0004-S29",
@@ -6338,7 +6338,7 @@
           "volume": 8,
           "chapter": "6",
           "chapter_id": "v08-ch06",
-          "status": "running",
+          "status": "interrupted",
           "prompt_file": "agent_prompts/agent_prompt.v08-ch06.analyzer-phase1.md",
           "expected": [],
           "attempts": [
@@ -6351,7 +6351,7 @@
               "note": ""
             }
           ],
-          "note": ""
+          "note": "нет результата после запуска"
         },
         {
           "id": "T-0004-S30",
@@ -6431,7 +6431,7 @@
           "volume": 8,
           "chapter": "7",
           "chapter_id": "v08-ch07",
-          "status": "running",
+          "status": "interrupted",
           "prompt_file": "agent_prompts/agent_prompt.v08-ch07.sma-b.attempt3.md",
           "expected": [
             "output/_audit/sma/v8-ch07/b/20261117-022510-7c0f.json"
@@ -6462,7 +6462,7 @@
               "note": ""
             }
           ],
-          "note": ""
+          "note": "нет результата после запуска"
         },
         {
           "id": "T-0004-S33",
@@ -6470,7 +6470,7 @@
           "volume": 8,
           "chapter": "7",
           "chapter_id": "v08-ch07",
-          "status": "running",
+          "status": "interrupted",
           "prompt_file": "agent_prompts/agent_prompt.v08-ch07.sma-c.attempt2.md",
           "expected": [
             "output/_audit/sma/v8-ch07/c/20261117-022510-4098.json"
@@ -6493,7 +6493,7 @@
               "note": ""
             }
           ],
-          "note": ""
+          "note": "нет результата после запуска"
         },
         {
           "id": "T-0004-S34",
@@ -6501,7 +6501,7 @@
           "volume": 8,
           "chapter": "7",
           "chapter_id": "v08-ch07",
-          "status": "running",
+          "status": "interrupted",
           "prompt_file": "agent_prompts/agent_prompt.v08-ch07.analyzer-phase1.md",
           "expected": [],
           "attempts": [
@@ -6514,7 +6514,7 @@
               "note": ""
             }
           ],
-          "note": ""
+          "note": "нет результата после запуска"
         },
         {
           "id": "T-0004-S35",
@@ -6547,7 +6547,7 @@
           "volume": 8,
           "chapter": "8",
           "chapter_id": "v08-ch08",
-          "status": "running",
+          "status": "interrupted",
           "prompt_file": "agent_prompts/agent_prompt.v08-ch08.sma-a.attempt2.md",
           "expected": [
             "output/_audit/sma/v8-ch08/a/20261117-023201-37d8.json"
@@ -6570,7 +6570,7 @@
               "note": ""
             }
           ],
-          "note": ""
+          "note": "нет результата после запуска"
         },
         {
           "id": "T-0004-S37",
@@ -6578,7 +6578,7 @@
           "volume": 8,
           "chapter": "8",
           "chapter_id": "v08-ch08",
-          "status": "running",
+          "status": "interrupted",
           "prompt_file": "agent_prompts/agent_prompt.v08-ch08.sma-b.attempt2.md",
           "expected": [
             "output/_audit/sma/v8-ch08/b/20261117-023201-a425.json"
@@ -6601,7 +6601,7 @@
               "note": ""
             }
           ],
-          "note": ""
+          "note": "нет результата после запуска"
         },
         {
           "id": "T-0004-S38",
@@ -6609,7 +6609,7 @@
           "volume": 8,
           "chapter": "8",
           "chapter_id": "v08-ch08",
-          "status": "running",
+          "status": "interrupted",
           "prompt_file": "agent_prompts/agent_prompt.v08-ch08.sma-c.attempt2.md",
           "expected": [
             "output/_audit/sma/v8-ch08/c/20261117-023201-1265.json"
@@ -6632,7 +6632,7 @@
               "note": ""
             }
           ],
-          "note": ""
+          "note": "нет результата после запуска"
         },
         {
           "id": "T-0004-S39",
@@ -6640,7 +6640,7 @@
           "volume": 8,
           "chapter": "8",
           "chapter_id": "v08-ch08",
-          "status": "running",
+          "status": "interrupted",
           "prompt_file": "agent_prompts/agent_prompt.v08-ch08.analyzer-phase1.attempt2.md",
           "expected": [],
           "attempts": [
@@ -6661,7 +6661,7 @@
               "note": ""
             }
           ],
-          "note": ""
+          "note": "нет результата после запуска"
         },
         {
           "id": "T-0004-S40",
@@ -6694,7 +6694,7 @@
           "volume": 8,
           "chapter": "9",
           "chapter_id": "v08-ch09",
-          "status": "running",
+          "status": "interrupted",
           "prompt_file": "agent_prompts/agent_prompt.v08-ch09.sma-a.md",
           "expected": [
             "output/_audit/sma/v8-ch09/a/20261117-023701-9043.json"
@@ -6709,7 +6709,7 @@
               "note": ""
             }
           ],
-          "note": ""
+          "note": "нет результата после запуска"
         },
         {
           "id": "T-0004-S42",
@@ -6717,7 +6717,7 @@
           "volume": 8,
           "chapter": "9",
           "chapter_id": "v08-ch09",
-          "status": "running",
+          "status": "interrupted",
           "prompt_file": "agent_prompts/agent_prompt.v08-ch09.sma-b.md",
           "expected": [
             "output/_audit/sma/v8-ch09/b/20261117-023701-cb52.json"
@@ -6732,7 +6732,7 @@
               "note": ""
             }
           ],
-          "note": ""
+          "note": "нет результата после запуска"
         },
         {
           "id": "T-0004-S43",
@@ -6740,7 +6740,7 @@
           "volume": 8,
           "chapter": "9",
           "chapter_id": "v08-ch09",
-          "status": "running",
+          "status": "interrupted",
           "prompt_file": "agent_prompts/agent_prompt.v08-ch09.sma-c.md",
           "expected": [
             "output/_audit/sma/v8-ch09/c/20261117-023701-3511.json"
@@ -6755,7 +6755,7 @@
               "note": ""
             }
           ],
-          "note": ""
+          "note": "нет результата после запуска"
         },
         {
           "id": "T-0004-S44",
@@ -6763,7 +6763,7 @@
           "volume": 8,
           "chapter": "9",
           "chapter_id": "v08-ch09",
-          "status": "running",
+          "status": "interrupted",
           "prompt_file": "agent_prompts/agent_prompt.v08-ch09.analyzer-phase1.md",
           "expected": [],
           "attempts": [
@@ -6776,7 +6776,7 @@
               "note": ""
             }
           ],
-          "note": ""
+          "note": "нет результата после запуска"
         },
         {
           "id": "T-0004-S45",
@@ -6809,7 +6809,7 @@
           "volume": 8,
           "chapter": "10",
           "chapter_id": "v08-ch10",
-          "status": "running",
+          "status": "interrupted",
           "prompt_file": "agent_prompts/agent_prompt.v08-ch10.sma-a.md",
           "expected": [
             "output/_audit/sma/v8-ch10/a/20261117-025026-7ed5.json"
@@ -6824,7 +6824,7 @@
               "note": ""
             }
           ],
-          "note": ""
+          "note": "нет результата после запуска"
         },
         {
           "id": "T-0004-S47",
@@ -6832,7 +6832,7 @@
           "volume": 8,
           "chapter": "10",
           "chapter_id": "v08-ch10",
-          "status": "running",
+          "status": "interrupted",
           "prompt_file": "agent_prompts/agent_prompt.v08-ch10.sma-b.md",
           "expected": [
             "output/_audit/sma/v8-ch10/b/20261117-025026-a8eb.json"
@@ -6847,7 +6847,7 @@
               "note": ""
             }
           ],
-          "note": ""
+          "note": "нет результата после запуска"
         },
         {
           "id": "T-0004-S48",
@@ -6855,7 +6855,7 @@
           "volume": 8,
           "chapter": "10",
           "chapter_id": "v08-ch10",
-          "status": "running",
+          "status": "interrupted",
           "prompt_file": "agent_prompts/agent_prompt.v08-ch10.sma-c.md",
           "expected": [
             "output/_audit/sma/v8-ch10/c/20261117-025026-4bc1.json"
@@ -6870,7 +6870,7 @@
               "note": ""
             }
           ],
-          "note": ""
+          "note": "нет результата после запуска"
         },
         {
           "id": "T-0004-S49",
@@ -6878,7 +6878,7 @@
           "volume": 8,
           "chapter": "10",
           "chapter_id": "v08-ch10",
-          "status": "running",
+          "status": "interrupted",
           "prompt_file": "agent_prompts/agent_prompt.v08-ch10.analyzer-phase1.md",
           "expected": [],
           "attempts": [
@@ -6891,7 +6891,7 @@
               "note": ""
             }
           ],
-          "note": ""
+          "note": "нет результата после запуска"
         },
         {
           "id": "T-0004-S50",
@@ -6924,7 +6924,7 @@
           "volume": 8,
           "chapter": "epilogue",
           "chapter_id": "v08-epilogue",
-          "status": "running",
+          "status": "interrupted",
           "prompt_file": "agent_prompts/agent_prompt.v08-epilogue.sma-a.md",
           "expected": [
             "output/_audit/sma/v8-epilogue/a/20261117-025133-d852.json"
@@ -6939,7 +6939,7 @@
               "note": ""
             }
           ],
-          "note": ""
+          "note": "нет результата после запуска"
         },
         {
           "id": "T-0004-S52",
@@ -6947,7 +6947,7 @@
           "volume": 8,
           "chapter": "epilogue",
           "chapter_id": "v08-epilogue",
-          "status": "running",
+          "status": "interrupted",
           "prompt_file": "agent_prompts/agent_prompt.v08-epilogue.sma-b.attempt2.md",
           "expected": [
             "output/_audit/sma/v8-epilogue/b/20261117-025133-6b7d.json"
@@ -6970,7 +6970,7 @@
               "note": ""
             }
           ],
-          "note": ""
+          "note": "нет результата после запуска"
         },
         {
           "id": "T-0004-S53",
@@ -6978,7 +6978,7 @@
           "volume": 8,
           "chapter": "epilogue",
           "chapter_id": "v08-epilogue",
-          "status": "running",
+          "status": "interrupted",
           "prompt_file": "agent_prompts/agent_prompt.v08-epilogue.sma-c.md",
           "expected": [
             "output/_audit/sma/v8-epilogue/c/20261117-025133-b630.json"
@@ -6993,7 +6993,7 @@
               "note": ""
             }
           ],
-          "note": ""
+          "note": "нет результата после запуска"
         },
         {
           "id": "T-0004-S54",
@@ -7001,7 +7001,7 @@
           "volume": 8,
           "chapter": "epilogue",
           "chapter_id": "v08-epilogue",
-          "status": "running",
+          "status": "interrupted",
           "prompt_file": "agent_prompts/agent_prompt.v08-epilogue.analyzer-phase1.attempt2.md",
           "expected": [],
           "attempts": [
@@ -7022,7 +7022,7 @@
               "note": ""
             }
           ],
-          "note": ""
+          "note": "нет результата после запуска"
         },
         {
           "id": "T-0004-S55",
@@ -7091,7 +7091,7 @@
           "volume": 8,
           "chapter": "afterword",
           "chapter_id": "v08-afterword",
-          "status": "running",
+          "status": "interrupted",
           "prompt_file": "agent_prompts/agent_prompt.v08-afterword.analyzer-phase1.md",
           "expected": [],
           "attempts": [
@@ -7104,7 +7104,7 @@
               "note": ""
             }
           ],
-          "note": ""
+          "note": "нет результата после запуска"
         },
         {
           "id": "T-0004-S60",
@@ -7146,7 +7146,7 @@
           "volume": 9,
           "chapter": "1",
           "chapter_id": "v09-ch01",
-          "status": "running",
+          "status": "interrupted",
           "prompt_file": "agent_prompts/agent_prompt.v09-ch01.sma-a.attempt2.md",
           "expected": [
             "output/_audit/sma/v9-ch01/a/20261117-031604-f3a9.json"
@@ -7169,7 +7169,7 @@
               "note": ""
             }
           ],
-          "note": ""
+          "note": "нет результата после запуска"
         },
         {
           "id": "T-0005-S2",
@@ -7177,7 +7177,7 @@
           "volume": 9,
           "chapter": "1",
           "chapter_id": "v09-ch01",
-          "status": "running",
+          "status": "interrupted",
           "prompt_file": "agent_prompts/agent_prompt.v09-ch01.sma-b.md",
           "expected": [
             "output/_audit/sma/v9-ch01/b/20261117-031604-8692.json"
@@ -7192,7 +7192,7 @@
               "note": ""
             }
           ],
-          "note": ""
+          "note": "нет результата после запуска"
         },
         {
           "id": "T-0005-S3",
@@ -7200,7 +7200,7 @@
           "volume": 9,
           "chapter": "1",
           "chapter_id": "v09-ch01",
-          "status": "running",
+          "status": "interrupted",
           "prompt_file": "agent_prompts/agent_prompt.v09-ch01.sma-c.md",
           "expected": [
             "output/_audit/sma/v9-ch01/c/20261117-031604-fa54.json"
@@ -7215,7 +7215,7 @@
               "note": ""
             }
           ],
-          "note": ""
+          "note": "нет результата после запуска"
         },
         {
           "id": "T-0005-S4",
@@ -7223,7 +7223,7 @@
           "volume": 9,
           "chapter": "1",
           "chapter_id": "v09-ch01",
-          "status": "running",
+          "status": "interrupted",
           "prompt_file": "agent_prompts/agent_prompt.v09-ch01.analyzer-phase1.md",
           "expected": [],
           "attempts": [
@@ -7236,7 +7236,7 @@
               "note": ""
             }
           ],
-          "note": ""
+          "note": "нет результата после запуска"
         },
         {
           "id": "T-0005-S5",
@@ -7269,7 +7269,7 @@
           "volume": 9,
           "chapter": "2",
           "chapter_id": "v09-ch02",
-          "status": "running",
+          "status": "interrupted",
           "prompt_file": "agent_prompts/agent_prompt.v09-ch02.sma-a.md",
           "expected": [
             "output/_audit/sma/v9-ch02/a/20261117-032340-4a6d.json"
@@ -7284,7 +7284,7 @@
               "note": ""
             }
           ],
-          "note": ""
+          "note": "нет результата после запуска"
         },
         {
           "id": "T-0005-S7",
@@ -7292,7 +7292,7 @@
           "volume": 9,
           "chapter": "2",
           "chapter_id": "v09-ch02",
-          "status": "running",
+          "status": "interrupted",
           "prompt_file": "agent_prompts/agent_prompt.v09-ch02.sma-b.md",
           "expected": [
             "output/_audit/sma/v9-ch02/b/20261117-032340-b267.json"
@@ -7307,7 +7307,7 @@
               "note": ""
             }
           ],
-          "note": ""
+          "note": "нет результата после запуска"
         },
         {
           "id": "T-0005-S8",
@@ -7315,7 +7315,7 @@
           "volume": 9,
           "chapter": "2",
           "chapter_id": "v09-ch02",
-          "status": "running",
+          "status": "interrupted",
           "prompt_file": "agent_prompts/agent_prompt.v09-ch02.sma-c.md",
           "expected": [
             "output/_audit/sma/v9-ch02/c/20261117-032340-45fc.json"
@@ -7330,7 +7330,7 @@
               "note": ""
             }
           ],
-          "note": ""
+          "note": "нет результата после запуска"
         },
         {
           "id": "T-0005-S9",
@@ -7338,7 +7338,7 @@
           "volume": 9,
           "chapter": "2",
           "chapter_id": "v09-ch02",
-          "status": "running",
+          "status": "interrupted",
           "prompt_file": "agent_prompts/agent_prompt.v09-ch02.analyzer-phase1.md",
           "expected": [],
           "attempts": [
@@ -7351,7 +7351,7 @@
               "note": ""
             }
           ],
-          "note": ""
+          "note": "нет результата после запуска"
         },
         {
           "id": "T-0005-S10",
@@ -7384,7 +7384,7 @@
           "volume": 9,
           "chapter": "3",
           "chapter_id": "v09-ch03",
-          "status": "running",
+          "status": "interrupted",
           "prompt_file": "agent_prompts/agent_prompt.v09-ch03.sma-a.md",
           "expected": [
             "output/_audit/sma/v9-ch03/a/20261117-033218-2ba9.json"
@@ -7399,7 +7399,7 @@
               "note": ""
             }
           ],
-          "note": ""
+          "note": "нет результата после запуска"
         },
         {
           "id": "T-0005-S12",
@@ -7407,7 +7407,7 @@
           "volume": 9,
           "chapter": "3",
           "chapter_id": "v09-ch03",
-          "status": "running",
+          "status": "interrupted",
           "prompt_file": "agent_prompts/agent_prompt.v09-ch03.sma-b.md",
           "expected": [
             "output/_audit/sma/v9-ch03/b/20261117-033218-59ca.json"
@@ -7422,7 +7422,7 @@
               "note": ""
             }
           ],
-          "note": ""
+          "note": "нет результата после запуска"
         },
         {
           "id": "T-0005-S13",
@@ -7430,7 +7430,7 @@
           "volume": 9,
           "chapter": "3",
           "chapter_id": "v09-ch03",
-          "status": "running",
+          "status": "interrupted",
           "prompt_file": "agent_prompts/agent_prompt.v09-ch03.sma-c.md",
           "expected": [
             "output/_audit/sma/v9-ch03/c/20261117-033218-446d.json"
@@ -7445,7 +7445,7 @@
               "note": ""
             }
           ],
-          "note": ""
+          "note": "нет результата после запуска"
         },
         {
           "id": "T-0005-S14",
@@ -7453,7 +7453,7 @@
           "volume": 9,
           "chapter": "3",
           "chapter_id": "v09-ch03",
-          "status": "running",
+          "status": "interrupted",
           "prompt_file": "agent_prompts/agent_prompt.v09-ch03.analyzer-phase1.md",
           "expected": [],
           "attempts": [
@@ -7466,7 +7466,7 @@
               "note": ""
             }
           ],
-          "note": ""
+          "note": "нет результата после запуска"
         },
         {
           "id": "T-0005-S15",
@@ -7499,7 +7499,7 @@
           "volume": 9,
           "chapter": "4",
           "chapter_id": "v09-ch04",
-          "status": "running",
+          "status": "interrupted",
           "prompt_file": "agent_prompts/agent_prompt.v09-ch04.sma-a.md",
           "expected": [
             "output/_audit/sma/v9-ch04/a/20261117-034143-b3f0.json"
@@ -7514,7 +7514,7 @@
               "note": ""
             }
           ],
-          "note": ""
+          "note": "нет результата после запуска"
         },
         {
           "id": "T-0005-S17",
@@ -7522,7 +7522,7 @@
           "volume": 9,
           "chapter": "4",
           "chapter_id": "v09-ch04",
-          "status": "running",
+          "status": "interrupted",
           "prompt_file": "agent_prompts/agent_prompt.v09-ch04.sma-b.md",
           "expected": [
             "output/_audit/sma/v9-ch04/b/20261117-034143-f8b3.json"
@@ -7537,7 +7537,7 @@
               "note": ""
             }
           ],
-          "note": ""
+          "note": "нет результата после запуска"
         },
         {
           "id": "T-0005-S18",
@@ -7545,7 +7545,7 @@
           "volume": 9,
           "chapter": "4",
           "chapter_id": "v09-ch04",
-          "status": "running",
+          "status": "interrupted",
           "prompt_file": "agent_prompts/agent_prompt.v09-ch04.sma-c.md",
           "expected": [
             "output/_audit/sma/v9-ch04/c/20261117-034143-18c4.json"
@@ -7560,7 +7560,7 @@
               "note": ""
             }
           ],
-          "note": ""
+          "note": "нет результата после запуска"
         },
         {
           "id": "T-0005-S19",
@@ -7568,7 +7568,7 @@
           "volume": 9,
           "chapter": "4",
           "chapter_id": "v09-ch04",
-          "status": "running",
+          "status": "interrupted",
           "prompt_file": "agent_prompts/agent_prompt.v09-ch04.analyzer-phase1.md",
           "expected": [],
           "attempts": [
@@ -7581,7 +7581,7 @@
               "note": ""
             }
           ],
-          "note": ""
+          "note": "нет результата после запуска"
         },
         {
           "id": "T-0005-S20",
@@ -7614,7 +7614,7 @@
           "volume": 9,
           "chapter": "5",
           "chapter_id": "v09-ch05",
-          "status": "running",
+          "status": "interrupted",
           "prompt_file": "agent_prompts/agent_prompt.v09-ch05.sma-a.md",
           "expected": [
             "output/_audit/sma/v9-ch05/a/20261117-035228-a8fc.json"
@@ -7629,7 +7629,7 @@
               "note": ""
             }
           ],
-          "note": ""
+          "note": "нет результата после запуска"
         },
         {
           "id": "T-0005-S22",
@@ -7637,7 +7637,7 @@
           "volume": 9,
           "chapter": "5",
           "chapter_id": "v09-ch05",
-          "status": "running",
+          "status": "interrupted",
           "prompt_file": "agent_prompts/agent_prompt.v09-ch05.sma-b.md",
           "expected": [
             "output/_audit/sma/v9-ch05/b/20261117-035228-4327.json"
@@ -7652,7 +7652,7 @@
               "note": ""
             }
           ],
-          "note": ""
+          "note": "нет результата после запуска"
         },
         {
           "id": "T-0005-S23",
@@ -7660,7 +7660,7 @@
           "volume": 9,
           "chapter": "5",
           "chapter_id": "v09-ch05",
-          "status": "running",
+          "status": "interrupted",
           "prompt_file": "agent_prompts/agent_prompt.v09-ch05.sma-c.md",
           "expected": [
             "output/_audit/sma/v9-ch05/c/20261117-035228-d591.json"
@@ -7675,7 +7675,7 @@
               "note": ""
             }
           ],
-          "note": ""
+          "note": "нет результата после запуска"
         },
         {
           "id": "T-0005-S24",
@@ -7683,7 +7683,7 @@
           "volume": 9,
           "chapter": "5",
           "chapter_id": "v09-ch05",
-          "status": "running",
+          "status": "interrupted",
           "prompt_file": "agent_prompts/agent_prompt.v09-ch05.analyzer-phase1.md",
           "expected": [],
           "attempts": [
@@ -7696,7 +7696,7 @@
               "note": ""
             }
           ],
-          "note": ""
+          "note": "нет результата после запуска"
         },
         {
           "id": "T-0005-S25",
@@ -7729,7 +7729,7 @@
           "volume": 9,
           "chapter": "6",
           "chapter_id": "v09-ch06",
-          "status": "running",
+          "status": "interrupted",
           "prompt_file": "agent_prompts/agent_prompt.v09-ch06.sma-a.md",
           "expected": [
             "output/_audit/sma/v9-ch06/a/20261117-040031-1cbf.json"
@@ -7744,7 +7744,7 @@
               "note": ""
             }
           ],
-          "note": ""
+          "note": "нет результата после запуска"
         },
         {
           "id": "T-0005-S27",
@@ -7752,7 +7752,7 @@
           "volume": 9,
           "chapter": "6",
           "chapter_id": "v09-ch06",
-          "status": "running",
+          "status": "interrupted",
           "prompt_file": "agent_prompts/agent_prompt.v09-ch06.sma-b.md",
           "expected": [
             "output/_audit/sma/v9-ch06/b/20261117-040031-21e8.json"
@@ -7767,7 +7767,7 @@
               "note": ""
             }
           ],
-          "note": ""
+          "note": "нет результата после запуска"
         },
         {
           "id": "T-0005-S28",
@@ -7775,7 +7775,7 @@
           "volume": 9,
           "chapter": "6",
           "chapter_id": "v09-ch06",
-          "status": "running",
+          "status": "interrupted",
           "prompt_file": "agent_prompts/agent_prompt.v09-ch06.sma-c.md",
           "expected": [
             "output/_audit/sma/v9-ch06/c/20261117-040031-7cce.json"
@@ -7790,7 +7790,7 @@
               "note": ""
             }
           ],
-          "note": ""
+          "note": "нет результата после запуска"
         },
         {
           "id": "T-0005-S29",
@@ -7798,7 +7798,7 @@
           "volume": 9,
           "chapter": "6",
           "chapter_id": "v09-ch06",
-          "status": "running",
+          "status": "interrupted",
           "prompt_file": "agent_prompts/agent_prompt.v09-ch06.analyzer-phase1.md",
           "expected": [],
           "attempts": [
@@ -7811,7 +7811,7 @@
               "note": ""
             }
           ],
-          "note": ""
+          "note": "нет результата после запуска"
         },
         {
           "id": "T-0005-S30",
@@ -7844,7 +7844,7 @@
           "volume": 9,
           "chapter": "7",
           "chapter_id": "v09-ch07",
-          "status": "running",
+          "status": "interrupted",
           "prompt_file": "agent_prompts/agent_prompt.v09-ch07.sma-a.md",
           "expected": [
             "output/_audit/sma/v9-ch07/a/20261117-040827-44f8.json"
@@ -7859,7 +7859,7 @@
               "note": ""
             }
           ],
-          "note": ""
+          "note": "нет результата после запуска"
         },
         {
           "id": "T-0005-S32",
@@ -7867,7 +7867,7 @@
           "volume": 9,
           "chapter": "7",
           "chapter_id": "v09-ch07",
-          "status": "running",
+          "status": "interrupted",
           "prompt_file": "agent_prompts/agent_prompt.v09-ch07.sma-b.md",
           "expected": [
             "output/_audit/sma/v9-ch07/b/20261117-040827-f968.json"
@@ -7882,7 +7882,7 @@
               "note": ""
             }
           ],
-          "note": ""
+          "note": "нет результата после запуска"
         },
         {
           "id": "T-0005-S33",
@@ -7890,7 +7890,7 @@
           "volume": 9,
           "chapter": "7",
           "chapter_id": "v09-ch07",
-          "status": "running",
+          "status": "interrupted",
           "prompt_file": "agent_prompts/agent_prompt.v09-ch07.sma-c.md",
           "expected": [
             "output/_audit/sma/v9-ch07/c/20261117-040827-8a0f.json"
@@ -7905,7 +7905,7 @@
               "note": ""
             }
           ],
-          "note": ""
+          "note": "нет результата после запуска"
         },
         {
           "id": "T-0005-S34",
@@ -7913,7 +7913,7 @@
           "volume": 9,
           "chapter": "7",
           "chapter_id": "v09-ch07",
-          "status": "running",
+          "status": "interrupted",
           "prompt_file": "agent_prompts/agent_prompt.v09-ch07.analyzer-phase1.md",
           "expected": [],
           "attempts": [
@@ -7926,7 +7926,7 @@
               "note": ""
             }
           ],
-          "note": ""
+          "note": "нет результата после запуска"
         },
         {
           "id": "T-0005-S35",
@@ -7959,7 +7959,7 @@
           "volume": 9,
           "chapter": "8",
           "chapter_id": "v09-ch08",
-          "status": "running",
+          "status": "interrupted",
           "prompt_file": "agent_prompts/agent_prompt.v09-ch08.sma-a.md",
           "expected": [
             "output/_audit/sma/v9-ch08/a/20261117-041722-3ddc.json"
@@ -7974,7 +7974,7 @@
               "note": ""
             }
           ],
-          "note": ""
+          "note": "нет результата после запуска"
         },
         {
           "id": "T-0005-S37",
@@ -7982,7 +7982,7 @@
           "volume": 9,
           "chapter": "8",
           "chapter_id": "v09-ch08",
-          "status": "running",
+          "status": "interrupted",
           "prompt_file": "agent_prompts/agent_prompt.v09-ch08.sma-b.md",
           "expected": [
             "output/_audit/sma/v9-ch08/b/20261117-041722-278f.json"
@@ -7997,7 +7997,7 @@
               "note": ""
             }
           ],
-          "note": ""
+          "note": "нет результата после запуска"
         },
         {
           "id": "T-0005-S38",
@@ -8005,7 +8005,7 @@
           "volume": 9,
           "chapter": "8",
           "chapter_id": "v09-ch08",
-          "status": "running",
+          "status": "interrupted",
           "prompt_file": "agent_prompts/agent_prompt.v09-ch08.sma-c.md",
           "expected": [
             "output/_audit/sma/v9-ch08/c/20261117-041722-4557.json"
@@ -8020,7 +8020,7 @@
               "note": ""
             }
           ],
-          "note": ""
+          "note": "нет результата после запуска"
         },
         {
           "id": "T-0005-S39",
@@ -8028,7 +8028,7 @@
           "volume": 9,
           "chapter": "8",
           "chapter_id": "v09-ch08",
-          "status": "running",
+          "status": "interrupted",
           "prompt_file": "agent_prompts/agent_prompt.v09-ch08.analyzer-phase1.md",
           "expected": [],
           "attempts": [
@@ -8041,7 +8041,7 @@
               "note": ""
             }
           ],
-          "note": ""
+          "note": "нет результата после запуска"
         },
         {
           "id": "T-0005-S40",
@@ -8106,7 +8106,7 @@
           "volume": 9,
           "chapter": "9",
           "chapter_id": "v09-ch09",
-          "status": "running",
+          "status": "interrupted",
           "prompt_file": "agent_prompts/agent_prompt.v09-ch09.sma-a.md",
           "expected": [
             "output/_audit/sma/v9-ch09/a/20261117-042835-bfe6.json"
@@ -8121,7 +8121,7 @@
               "note": ""
             }
           ],
-          "note": ""
+          "note": "нет результата после запуска"
         },
         {
           "id": "T-0005-S42",
@@ -8129,7 +8129,7 @@
           "volume": 9,
           "chapter": "9",
           "chapter_id": "v09-ch09",
-          "status": "running",
+          "status": "interrupted",
           "prompt_file": "agent_prompts/agent_prompt.v09-ch09.sma-b.md",
           "expected": [
             "output/_audit/sma/v9-ch09/b/20261117-042835-0afd.json"
@@ -8144,7 +8144,7 @@
               "note": ""
             }
           ],
-          "note": ""
+          "note": "нет результата после запуска"
         },
         {
           "id": "T-0005-S43",
@@ -8152,7 +8152,7 @@
           "volume": 9,
           "chapter": "9",
           "chapter_id": "v09-ch09",
-          "status": "running",
+          "status": "interrupted",
           "prompt_file": "agent_prompts/agent_prompt.v09-ch09.sma-c.md",
           "expected": [
             "output/_audit/sma/v9-ch09/c/20261117-042835-5f33.json"
@@ -8167,7 +8167,7 @@
               "note": ""
             }
           ],
-          "note": ""
+          "note": "нет результата после запуска"
         },
         {
           "id": "T-0005-S44",
@@ -8175,7 +8175,7 @@
           "volume": 9,
           "chapter": "9",
           "chapter_id": "v09-ch09",
-          "status": "running",
+          "status": "interrupted",
           "prompt_file": "agent_prompts/agent_prompt.v09-ch09.analyzer-phase1.md",
           "expected": [],
           "attempts": [
@@ -8188,7 +8188,7 @@
               "note": ""
             }
           ],
-          "note": ""
+          "note": "нет результата после запуска"
         },
         {
           "id": "T-0005-S45",
@@ -8221,7 +8221,7 @@
           "volume": 9,
           "chapter": "epilogue",
           "chapter_id": "v09-epilogue",
-          "status": "running",
+          "status": "interrupted",
           "prompt_file": "agent_prompts/agent_prompt.v09-epilogue.sma-a.md",
           "expected": [
             "output/_audit/sma/v9-epilogue/a/20261117-043501-6da4.json"
@@ -8236,7 +8236,7 @@
               "note": ""
             }
           ],
-          "note": ""
+          "note": "нет результата после запуска"
         },
         {
           "id": "T-0005-S47",
@@ -8244,7 +8244,7 @@
           "volume": 9,
           "chapter": "epilogue",
           "chapter_id": "v09-epilogue",
-          "status": "running",
+          "status": "interrupted",
           "prompt_file": "agent_prompts/agent_prompt.v09-epilogue.sma-b.md",
           "expected": [
             "output/_audit/sma/v9-epilogue/b/20261117-043501-242d.json"
@@ -8259,7 +8259,7 @@
               "note": ""
             }
           ],
-          "note": ""
+          "note": "нет результата после запуска"
         },
         {
           "id": "T-0005-S48",
@@ -8267,7 +8267,7 @@
           "volume": 9,
           "chapter": "epilogue",
           "chapter_id": "v09-epilogue",
-          "status": "running",
+          "status": "interrupted",
           "prompt_file": "agent_prompts/agent_prompt.v09-epilogue.sma-c.md",
           "expected": [
             "output/_audit/sma/v9-epilogue/c/20261117-043501-d3c2.json"
@@ -8282,7 +8282,7 @@
               "note": ""
             }
           ],
-          "note": ""
+          "note": "нет результата после запуска"
         },
         {
           "id": "T-0005-S49",
@@ -8290,7 +8290,7 @@
           "volume": 9,
           "chapter": "epilogue",
           "chapter_id": "v09-epilogue",
-          "status": "running",
+          "status": "interrupted",
           "prompt_file": "agent_prompts/agent_prompt.v09-epilogue.analyzer-phase1.md",
           "expected": [],
           "attempts": [
@@ -8303,7 +8303,7 @@
               "note": ""
             }
           ],
-          "note": ""
+          "note": "нет результата после запуска"
         },
         {
           "id": "T-0005-S50",
@@ -8352,7 +8352,7 @@
           "volume": 9,
           "chapter": "afterword",
           "chapter_id": "v09-afterword",
-          "status": "running",
+          "status": "interrupted",
           "prompt_file": "agent_prompts/agent_prompt.v09-afterword.sma-a.md",
           "expected": [
             "output/_audit/sma/v9-afterword/a/20261117-044038-a915.json"
@@ -8367,7 +8367,7 @@
               "note": ""
             }
           ],
-          "note": ""
+          "note": "нет результата после запуска"
         },
         {
           "id": "T-0005-S52",
@@ -8375,7 +8375,7 @@
           "volume": 9,
           "chapter": "afterword",
           "chapter_id": "v09-afterword",
-          "status": "running",
+          "status": "interrupted",
           "prompt_file": "agent_prompts/agent_prompt.v09-afterword.sma-b.md",
           "expected": [
             "output/_audit/sma/v9-afterword/b/20261117-044038-d15b.json"
@@ -8390,7 +8390,7 @@
               "note": ""
             }
           ],
-          "note": ""
+          "note": "нет результата после запуска"
         },
         {
           "id": "T-0005-S53",
@@ -8398,7 +8398,7 @@
           "volume": 9,
           "chapter": "afterword",
           "chapter_id": "v09-afterword",
-          "status": "running",
+          "status": "interrupted",
           "prompt_file": "agent_prompts/agent_prompt.v09-afterword.sma-c.md",
           "expected": [
             "output/_audit/sma/v9-afterword/c/20261117-044038-99de.json"
@@ -8413,7 +8413,7 @@
               "note": ""
             }
           ],
-          "note": ""
+          "note": "нет результата после запуска"
         },
         {
           "id": "T-0005-S54",
@@ -8421,7 +8421,7 @@
           "volume": 9,
           "chapter": "afterword",
           "chapter_id": "v09-afterword",
-          "status": "running",
+          "status": "interrupted",
           "prompt_file": "agent_prompts/agent_prompt.v09-afterword.analyzer-phase1.md",
           "expected": [],
           "attempts": [
@@ -8434,7 +8434,7 @@
               "note": ""
             }
           ],
-          "note": ""
+          "note": "нет результата после запуска"
         },
         {
           "id": "T-0005-S55",
@@ -8460,6 +8460,130 @@
             }
           ],
           "note": "Phase2 applied, gate 12/12"
+        }
+      ]
+    },
+    {
+      "id": "T-0006",
+      "text": "Polnyi perevod v6-afterword: 3 bloka po JA, prefilytry, SMA A/B/C + Analyzer, otchet, gate 12/12, commit",
+      "created": "2026-11-17 04:51:49",
+      "status": "done",
+      "note": "v6-afterword: gate 12/12",
+      "subtasks": [
+        {
+          "id": "T-0006-S1",
+          "kind": "sma-a",
+          "volume": 6,
+          "chapter": "afterword",
+          "chapter_id": "v06-afterword",
+          "status": "done",
+          "prompt_file": "agent_prompts/agent_prompt.v06-afterword.sma-a.md",
+          "expected": [
+            "output/_audit/sma/v6-afterword/a/20261117-045311-999c.json"
+          ],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-11-17 04:53:11",
+              "prompt": "agent_prompts/agent_prompt.v06-afterword.sma-a.md",
+              "finished": "2026-11-17 05:04:42",
+              "result": "done",
+              "note": "SMA + Analyzer applied, gate 12/12"
+            }
+          ],
+          "note": "SMA + Analyzer applied, gate 12/12"
+        },
+        {
+          "id": "T-0006-S2",
+          "kind": "sma-b",
+          "volume": 6,
+          "chapter": "afterword",
+          "chapter_id": "v06-afterword",
+          "status": "done",
+          "prompt_file": "agent_prompts/agent_prompt.v06-afterword.sma-b.md",
+          "expected": [
+            "output/_audit/sma/v6-afterword/b/20261117-045311-ae0a.json"
+          ],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-11-17 04:53:11",
+              "prompt": "agent_prompts/agent_prompt.v06-afterword.sma-b.md",
+              "finished": "2026-11-17 05:04:42",
+              "result": "done",
+              "note": "SMA + Analyzer applied, gate 12/12"
+            }
+          ],
+          "note": "SMA + Analyzer applied, gate 12/12"
+        },
+        {
+          "id": "T-0006-S3",
+          "kind": "sma-c",
+          "volume": 6,
+          "chapter": "afterword",
+          "chapter_id": "v06-afterword",
+          "status": "done",
+          "prompt_file": "agent_prompts/agent_prompt.v06-afterword.sma-c.md",
+          "expected": [
+            "output/_audit/sma/v6-afterword/c/20261117-045311-3fcd.json"
+          ],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-11-17 04:53:11",
+              "prompt": "agent_prompts/agent_prompt.v06-afterword.sma-c.md",
+              "finished": "2026-11-17 05:04:42",
+              "result": "done",
+              "note": "SMA + Analyzer applied, gate 12/12"
+            }
+          ],
+          "note": "SMA + Analyzer applied, gate 12/12"
+        },
+        {
+          "id": "T-0006-S4",
+          "kind": "analyzer-phase1",
+          "volume": 6,
+          "chapter": "afterword",
+          "chapter_id": "v06-afterword",
+          "status": "done",
+          "prompt_file": "agent_prompts/agent_prompt.v06-afterword.analyzer-phase1.md",
+          "expected": [],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-11-17 04:53:11",
+              "prompt": "agent_prompts/agent_prompt.v06-afterword.analyzer-phase1.md",
+              "finished": "2026-11-17 05:04:43",
+              "result": "done",
+              "note": "SMA + Analyzer applied, gate 12/12"
+            }
+          ],
+          "note": "SMA + Analyzer applied, gate 12/12"
+        },
+        {
+          "id": "T-0006-S5",
+          "kind": "analyzer-phase2",
+          "volume": 6,
+          "chapter": "afterword",
+          "chapter_id": "v06-afterword",
+          "status": "done",
+          "prompt_file": "agent_prompts/agent_prompt.v06-afterword.analyzer-phase2.md",
+          "expected": [
+            "output/_audit/sma/v6-afterword/precheck/omission-precheck.json",
+            "output/_audit/sma/v6-afterword/analysis/20261117-050106-1088.json",
+            "output/_audit/sma/v6-afterword/analysis/20261117-050106-1088.md"
+          ],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-11-17 05:01:06",
+              "prompt": "agent_prompts/agent_prompt.v06-afterword.analyzer-phase2.md",
+              "finished": "2026-11-17 05:04:43",
+              "result": "done",
+              "note": "SMA + Analyzer applied, gate 12/12"
+            }
+          ],
+          "note": "SMA + Analyzer applied, gate 12/12"
         }
       ]
     }
