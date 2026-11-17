@@ -158,3 +158,15 @@
   Фаза 1 — 5 NONE/HIGH (JA > EN). Фаза 2 (`20261117-152931-499e.json`):
   5 FIXED, 7 FALSE_POSITIVE/PRESERVED, DISPUTED/REPORT_ONLY — 0.
 - ОТЧЁТ: `output/_audit/v11-epilogue.md`. gate 12/12.
+
+## v11-afterword «Послесловие» — полная обработка (17.11.2026)
+
+- 2/2 блоков по JA. Канон: «Зеро», «Нобору Ямагути», «Эйдзи Усацука»,
+  «договор безопасности с США», «незавершённая личность». EN-зеркала
+  нет — ED_RU в merged заполнено вручную из output (как в v8/v9/v10).
+- Формат: blockgap FIXED, 4 FP. Предфильтры: грамматика 0, стиль 17 —
+  FP/PRESERVED—JA; address 0, omission 0; alignment строгих 0. U+FFFD = 0.
+- SMA: A — 2 (CANDIDATE), B — 2 (1 ERROR: залог «Японию лишат»), C — 1
+  (хедж), Фаза 1 — 2 NONE/HIGH. Фаза 2 (`20261117-154856-ec56.json`):
+  5 FALSE_POSITIVE/PRESERVED (правки внесены до анализа), FIXED/DISPUTED — 0.
+- ОТЧЁТ: `output/_audit/v11-afterword.md`. gate 12/12.

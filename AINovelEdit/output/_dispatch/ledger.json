@@ -11478,6 +11478,130 @@
           "note": "SMA + Analyzer applied, gate 12/12"
         }
       ]
+    },
+    {
+      "id": "T-0030",
+      "text": "Polnyi perevod i audit v11-afterword: 2 bloka po JA, ED_RU v merged vruchnuyu (net EN), prefilytry, SMA A/B/C + Analyzer 1/2, otchet, gate 12/12, commit",
+      "created": "2026-11-17 15:36:06",
+      "status": "done",
+      "note": "v11-afterword: gate 12/12",
+      "subtasks": [
+        {
+          "id": "T-0030-S1",
+          "kind": "sma-a",
+          "volume": 11,
+          "chapter": "afterword",
+          "chapter_id": "v11-afterword",
+          "status": "done",
+          "prompt_file": "agent_prompts/agent_prompt.v11-afterword.sma-a.md",
+          "expected": [
+            "output/_audit/sma/v11-afterword/a/20261117-153905-fc36.json"
+          ],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-11-17 15:39:05",
+              "prompt": "agent_prompts/agent_prompt.v11-afterword.sma-a.md",
+              "finished": "2026-11-17 15:53:13",
+              "result": "done",
+              "note": "SMA + Analyzer applied, gate 12/12"
+            }
+          ],
+          "note": "SMA + Analyzer applied, gate 12/12"
+        },
+        {
+          "id": "T-0030-S2",
+          "kind": "sma-b",
+          "volume": 11,
+          "chapter": "afterword",
+          "chapter_id": "v11-afterword",
+          "status": "done",
+          "prompt_file": "agent_prompts/agent_prompt.v11-afterword.sma-b.md",
+          "expected": [
+            "output/_audit/sma/v11-afterword/b/20261117-153905-9082.json"
+          ],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-11-17 15:39:05",
+              "prompt": "agent_prompts/agent_prompt.v11-afterword.sma-b.md",
+              "finished": "2026-11-17 15:53:13",
+              "result": "done",
+              "note": "SMA + Analyzer applied, gate 12/12"
+            }
+          ],
+          "note": "SMA + Analyzer applied, gate 12/12"
+        },
+        {
+          "id": "T-0030-S3",
+          "kind": "sma-c",
+          "volume": 11,
+          "chapter": "afterword",
+          "chapter_id": "v11-afterword",
+          "status": "done",
+          "prompt_file": "agent_prompts/agent_prompt.v11-afterword.sma-c.md",
+          "expected": [
+            "output/_audit/sma/v11-afterword/c/20261117-153905-8454.json"
+          ],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-11-17 15:39:05",
+              "prompt": "agent_prompts/agent_prompt.v11-afterword.sma-c.md",
+              "finished": "2026-11-17 15:53:13",
+              "result": "done",
+              "note": "SMA + Analyzer applied, gate 12/12"
+            }
+          ],
+          "note": "SMA + Analyzer applied, gate 12/12"
+        },
+        {
+          "id": "T-0030-S4",
+          "kind": "analyzer-phase1",
+          "volume": 11,
+          "chapter": "afterword",
+          "chapter_id": "v11-afterword",
+          "status": "done",
+          "prompt_file": "agent_prompts/agent_prompt.v11-afterword.analyzer-phase1.md",
+          "expected": [],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-11-17 15:39:05",
+              "prompt": "agent_prompts/agent_prompt.v11-afterword.analyzer-phase1.md",
+              "finished": "2026-11-17 15:53:13",
+              "result": "done",
+              "note": "SMA + Analyzer applied, gate 12/12"
+            }
+          ],
+          "note": "SMA + Analyzer applied, gate 12/12"
+        },
+        {
+          "id": "T-0030-S5",
+          "kind": "analyzer-phase2",
+          "volume": 11,
+          "chapter": "afterword",
+          "chapter_id": "v11-afterword",
+          "status": "done",
+          "prompt_file": "agent_prompts/agent_prompt.v11-afterword.analyzer-phase2.md",
+          "expected": [
+            "output/_audit/sma/v11-afterword/precheck/omission-precheck.json",
+            "output/_audit/sma/v11-afterword/analysis/20261117-154856-ec56.json",
+            "output/_audit/sma/v11-afterword/analysis/20261117-154856-ec56.md"
+          ],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-11-17 15:48:56",
+              "prompt": "agent_prompts/agent_prompt.v11-afterword.analyzer-phase2.md",
+              "finished": "2026-11-17 15:53:13",
+              "result": "done",
+              "note": "SMA + Analyzer applied, gate 12/12"
+            }
+          ],
+          "note": "SMA + Analyzer applied, gate 12/12"
+        }
+      ]
     }
   ]
 }
