@@ -151,3 +151,17 @@
   (`20261118-010811-7041.json`): 6 FALSE_POSITIVE/PRESERVED (правки
   внесены до анализа), FIXED/DISPUTED/REPORT_ONLY — 0.
 - ОТЧЁТ: `output/_audit/v13-epilogue.md`. gate 12/12.
+
+## v13-afterword «Послесловие» — полная обработка (18.11.2026)
+
+- 2/2 блоков по JA. Канон: «Ямагути Нобору», «Усацука Эйдзи», «Зеро»,
+  тринадцатый том, «любовь», названия издательств по канону. ED_RU в merged
+  заполнено вручную (2/2); после живого FIXED Фазы 2 пересинхронизировано
+  вручную (update_merged пропускает главу без маркеров в EN).
+- Формат: 2 FP. Предфильтры: грамматика 0, стиль 19 — FP/PRESERVED—JA;
+  address 0, omission 1 — FP; alignment строгих 0. U+FFFD = 0.
+- SMA: A — 5 (1 ERROR: ハダカ → «голый»), B — 1 (CANDIDATE, лицо — по
+  прецеденту v12), C — 0, Фаза 1 — 3 (серия, род, лицо). Фаза 2
+  (`20261118-012133-166f.json`): 8 FIXED (1 живой: пробел «другие. Также»),
+  1 DISPUTED/REPORT_ONLY, 1 FALSE_POSITIVE/PRESERVED.
+- ОТЧЁТ: `output/_audit/v13-afterword.md`. gate 12/12.

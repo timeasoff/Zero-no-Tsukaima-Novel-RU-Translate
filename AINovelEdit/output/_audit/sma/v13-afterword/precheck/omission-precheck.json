@@ -1,0 +1,24 @@
+{
+  "check_type": "omission-precheck",
+  "chapter": "v13-afterword.md",
+  "findings": [
+    {
+      "block": 2,
+      "issue_type": "MISSING_TRANSLATION",
+      "omission_scope": "DIALOGUE_FRAGMENT",
+      "omission_kind": "PARTIAL",
+      "severity": "CANDIDATE",
+      "confidence": "MEDIUM",
+      "precheck_signal": "S1-tail-truncation",
+      "source": "などです。\n\n初のイラスト集「兎塚エイジ Ｚｒｏ ゼロの使い魔イラストコレクション」（メディアファクトリー）\n\nも好評発売中。",
+      "current": "Первый сборник иллюстраций «Эйдзи Усацука — Zro: коллекция иллюстраций „Зеро“» (Media Factory) тоже вышел в продажу и вызвал хорошие отзывы.",
+      "ja_span": "などです。\n\n初のイラスト集「兎塚エイジ Ｚｒｏ ゼロの使い魔イラストコレクション」（メディアファクトリー）\n\nも好評発売中。",
+      "ru_before": "Первый сборник иллюстраций «Эйдзи Усацука — Zro: коллекция иллюстраций „Зеро“» (Media Factory) тоже вышел в продажу и вызвал хорошие отзывы.",
+      "ru_after": "",
+      "missing_content": "Непокрытые JA-звенья (8…10 из 10):\nなどです。\n\n初のイラスト集「兎塚エイジ Ｚｒｏ ゼロの使い魔イラストコレクション」（メディアファクトリー）\n\nも好評発売中。",
+      "not_compression_reason": "Это обрыв, а не компрессия: в RU 9 абзацев против 10 в JA и 5 реплик-маркеров против 6 в JA — реплики и абзацы JA начиная с позиции 8…10 из 10 не покрыты вовсе. Допустимое сжатие и слияние (один RU-абзац вместо нескольких JA) сохраняют число реплик и все звенья; здесь же хвост JA отсутствует. Сравнение длины текста JA/RU в проверке НЕ использовалось. Решение принимает Analyzer.",
+      "evidence": "signal=S1-tail-truncation; unit_deficit=1; turn_deficit=1; uncovered=3; n_ja=10; n_ru=9; ja_turns=6; ru_turns=5; missing_numbers=-; positions=8…10 из 10",
+      "reason": "JA содержит 3 содержательных звеньев (позиции 8…10 из 10) без соответствия в RU, хвост RU обрывается раньше конца JA. Это кандидат уровня CANDIDATE, а не подтверждённая ошибка."
+    }
+  ]
+}

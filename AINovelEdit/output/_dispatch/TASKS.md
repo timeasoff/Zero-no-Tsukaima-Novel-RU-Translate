@@ -1,6 +1,6 @@
 # Реестр задач диспетчера
 
-Обновлено: 2026-11-18 01:12:52
+Обновлено: 2026-11-18 01:29:17
 
 Генерируется автоматически командой `python tools/dispatch.py`. Не редактируй вручную.
 
@@ -1488,4 +1488,23 @@ Polnyi perevod i audit v13-epilogue: 8 blokov po JA, prefilytry, SMA A/B/C + Ana
 - T-0047-S3: SMA + Analyzer applied, gate 12/12
 - T-0047-S4: SMA + Analyzer applied, gate 12/12
 - T-0047-S5: SMA + Analyzer applied, gate 12/12
+
+## T-0048 — DONE
+
+Polnyi perevod i audit v13-afterword: 2 bloka po JA, ED_RU v merged vruchnuyu, prefilytry, SMA A/B/C + Analyzer 1/2, otchet, gate 12/12, commit
+
+| ID | Режим | Глава | Статус | Попыток | Промпт |
+| --- | --- | --- | --- | --- | --- |
+| T-0048-S1 | sma-a | v13-afterword | done | 1 | `agent_prompts/agent_prompt.v13-afterword.sma-a.md` |
+| T-0048-S2 | sma-b | v13-afterword | done | 1 | `agent_prompts/agent_prompt.v13-afterword.sma-b.md` |
+| T-0048-S3 | sma-c | v13-afterword | done | 1 | `agent_prompts/agent_prompt.v13-afterword.sma-c.md` |
+| T-0048-S4 | analyzer-phase1 | v13-afterword | done | 1 | `agent_prompts/agent_prompt.v13-afterword.analyzer-phase1.md` |
+| T-0048-S5 | analyzer-phase2 | v13-afterword | done | 1 | `agent_prompts/agent_prompt.v13-afterword.analyzer-phase2.md` |
+
+Заметки:
+- T-0048-S1: SMA + Analyzer applied, gate 12/12
+- T-0048-S2: SMA + Analyzer applied, gate 12/12
+- T-0048-S3: SMA + Analyzer applied, gate 12/12
+- T-0048-S4: SMA + Analyzer applied, gate 12/12
+- T-0048-S5: SMA + Analyzer applied, gate 12/12
 
