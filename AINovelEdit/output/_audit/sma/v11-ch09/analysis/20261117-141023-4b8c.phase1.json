@@ -1,0 +1,140 @@
+{
+  "analysis_id": "20261117-141023-4b8c.phase1",
+  "chapter": "v11-ch09",
+  "phase": 1,
+  "scope": "blind",
+  "results": [
+    {
+      "block": 1,
+      "finding": "NUANCE_SHIFT",
+      "note": "Kirche: JA 「そんなよからぬ会話をしてたってわけね」 (an improper/naughty conversation) → RU «а вы всё о том же» (you are all about the same thing). The 'improper/naughty' judgement is lost and replaced by 'same topic'.",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 2,
+      "finding": "NONE",
+      "note": "JA block 2 checked against RU block 2; no substantive semantic error.",
+      "confidence": "HIGH"
+    },
+    {
+      "block": 3,
+      "finding": "NONE",
+      "note": "JA block 3 checked against RU block 3; no substantive semantic error.",
+      "confidence": "HIGH"
+    },
+    {
+      "block": 4,
+      "finding": "OTHER",
+      "note": "«Всплыло лицо Уэльса, которого он провожала в последний путь...» — gender disagreement: Saito is masculine, so the verb must be «провожал», not «провожала». Clear grammatical defect in the RU under review.",
+      "confidence": "HIGH"
+    },
+    {
+      "block": 5,
+      "finding": "NONE",
+      "note": "JA block 5 checked against RU block 5; no substantive semantic error.",
+      "confidence": "HIGH"
+    },
+    {
+      "block": 6,
+      "finding": "PRAGMATIC_SHIFT",
+      "note": "JA 「しかたないね」 is Fouquet's resigned remark ('can't be helped'); in RU «— Что ж...» stands immediately before «Сайто, лицо которого исказилось от гнева, уже хотел было снова ринуться вперёд», so the line reads as Saito's. Speaker attribution is shifted/ambiguous.",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 7,
+      "finding": "NONE",
+      "note": "JA block 7 checked against RU block 7; no substantive semantic error.",
+      "confidence": "HIGH"
+    },
+    {
+      "block": 8,
+      "finding": "LEXICAL_MISMATCH",
+      "note": "JA 「こいつらとはその、お宝を取り合った仲なのさ」 = 'with these guys I was on terms of competing/fighting over treasure' → RU «делили добычу» = 'shared/divided the loot'. Competitive rivalry is turned into cooperative sharing, which also weakens the 'that's why you don't get along' logic that follows.",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 9,
+      "finding": "NUANCE_SHIFT",
+      "note": "JA 「何度このフーケに、痛い目にあわされたであろうか」 ('how many times she caused me pain') → RU «Сколько раз она меня подставляла» ('how many times she set me up/betrayed me'); hurt/suffering shifted to betrayal.",
+      "confidence": "LOW"
+    },
+    {
+      "block": 10,
+      "finding": "NONE",
+      "note": "JA block 10 checked against RU block 10; no substantive semantic error.",
+      "confidence": "HIGH"
+    },
+    {
+      "block": 11,
+      "finding": "ADDED_CONTENT",
+      "note": "JA block 12 (located inside RU block 11): 「変な虫がつかないように、よく見張るんだよ」 → «чтобы к ней не прилипли странные люди, как я». The closing «как я» ('like me') has no JA counterpart — added self-characterisation.",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 11,
+      "finding": "NUANCE_SHIFT",
+      "note": "JA block 11 「面倒な子だね」 ('what a troublesome kid') → RU «Упорная ты» ('you are stubborn/persistent'); the evaluative nuance changes.",
+      "confidence": "LOW"
+    },
+    {
+      "block": 12,
+      "finding": "MISTRANSLATION",
+      "note": "JA block 13 (RU block 12): 「ずっと黙っていたのに……、いったいどうしたんだろう」 refers to LOUISE's long silence and Saito's wondering; RU «Он всё молчал» makes SAITO the one who stayed silent and drops «いったいどうしたんだろう» entirely. Subject/reference shift plus loss of the wondering.",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 13,
+      "finding": "NONE",
+      "note": "Corresponds to JA block 14; checked, no substantive semantic error.",
+      "confidence": "HIGH"
+    },
+    {
+      "block": 14,
+      "finding": "NONE",
+      "note": "Corresponds to JA block 15; checked, no substantive semantic error.",
+      "confidence": "HIGH"
+    },
+    {
+      "block": 15,
+      "finding": "NONE",
+      "note": "Corresponds to JA block 16; checked, no substantive semantic error.",
+      "confidence": "HIGH"
+    },
+    {
+      "block": 16,
+      "finding": "NONE",
+      "note": "Corresponds to JA block 17; checked, no substantive semantic error.",
+      "confidence": "HIGH"
+    },
+    {
+      "block": 17,
+      "finding": "NONE",
+      "note": "Corresponds to JA block 18; checked, no substantive semantic error.",
+      "confidence": "HIGH"
+    },
+    {
+      "block": 18,
+      "finding": "NONE",
+      "note": "Corresponds to JA block 19; checked, no substantive semantic error.",
+      "confidence": "HIGH"
+    },
+    {
+      "block": 19,
+      "finding": "NONE",
+      "note": "First part of JA block 20; checked, no substantive semantic error.",
+      "confidence": "HIGH"
+    },
+    {
+      "block": 20,
+      "finding": "NUANCE_SHIFT",
+      "note": "JA 「二人は珍しく真剣な顔で、頷きあう」 ('unusually, with serious faces') → RU «Оба кивнули — впервые с серьёзными лицами» ('for the first time with serious faces'); 珍しく ('rarely/unusually') rendered as впервые ('first time').",
+      "confidence": "LOW"
+    },
+    {
+      "block": 21,
+      "finding": "NONE",
+      "note": "JA block 21 checked against RU block 21 (spell and collapse); no substantive semantic error.",
+      "confidence": "HIGH"
+    }
+  ]
+}
