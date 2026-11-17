@@ -1,0 +1,42 @@
+{
+  "check_type": "omission-precheck",
+  "chapter": "v13-ch07.md",
+  "findings": [
+    {
+      "block": 13,
+      "issue_type": "MISSING_TRANSLATION",
+      "omission_scope": "DIALOGUE_FRAGMENT",
+      "omission_kind": "PARTIAL",
+      "severity": "CANDIDATE",
+      "confidence": "MEDIUM",
+      "precheck_signal": "S1-tail-truncation",
+      "source": "才人は言った。こっちは異世界だ。繋がるわけがない。\n\n「まあ、ものは試しだ。やってみせてくれんかね？」",
+      "current": "— Что ж, ради пробы... покажи мне, ладно?",
+      "ja_span": "才人は言った。こっちは異世界だ。繋がるわけがない。\n\n「まあ、ものは試しだ。やってみせてくれんかね？」",
+      "ru_before": "— Что ж, ради пробы... покажи мне, ладно?",
+      "ru_after": "Понял — кивнул Сайто и открыл приложение для подключения.",
+      "missing_content": "Непокрытые JA-звенья (15…16 из 16):\n才人は言った。こっちは異世界だ。繋がるわけがない。\n\n「まあ、ものは試しだ。やってみせてくれんかね？」",
+      "not_compression_reason": "Это обрыв, а не компрессия: в RU 13 абзацев против 16 в JA и 11 реплик-маркеров против 12 в JA — реплики и абзацы JA начиная с позиции 15…16 из 16 не покрыты вовсе. Допустимое сжатие и слияние (один RU-абзац вместо нескольких JA) сохраняют число реплик и все звенья; здесь же хвост JA отсутствует. Сравнение длины текста JA/RU в проверке НЕ использовалось. Решение принимает Analyzer.",
+      "evidence": "signal=S1-tail-truncation; unit_deficit=3; turn_deficit=1; uncovered=2; n_ja=16; n_ru=13; ja_turns=12; ru_turns=11; missing_numbers=-; positions=15…16 из 16",
+      "reason": "JA содержит 2 содержательных звеньев (позиции 15…16 из 16) без соответствия в RU, хвост RU обрывается раньше конца JA. Это кандидат уровня CANDIDATE, а не подтверждённая ошибка."
+    },
+    {
+      "block": 16,
+      "issue_type": "MISSING_TRANSLATION",
+      "omission_scope": "DIALOGUE_FRAGMENT",
+      "omission_kind": "PARTIAL",
+      "severity": "CANDIDATE",
+      "confidence": "MEDIUM",
+      "precheck_signal": "S1-tail-truncation",
+      "source": "「でも！ でも！」\n\nルイズはヴィットーリオに詰め寄った。",
+      "current": "Луиза прижалась к Витторио.",
+      "ja_span": "「でも！ でも！」\n\nルイズはヴィットーリオに詰め寄った。",
+      "ru_before": "Луиза прижалась к Витторио.",
+      "ru_after": "Джулио развёл руками:",
+      "missing_content": "Непокрытые JA-звенья (15…16 из 16):\n「でも！ でも！」\n\nルイズはヴィットーリオに詰め寄った。",
+      "not_compression_reason": "Это обрыв, а не компрессия: в RU 12 абзацев против 16 в JA и 9 реплик-маркеров против 10 в JA — реплики и абзацы JA начиная с позиции 15…16 из 16 не покрыты вовсе. Допустимое сжатие и слияние (один RU-абзац вместо нескольких JA) сохраняют число реплик и все звенья; здесь же хвост JA отсутствует. Сравнение длины текста JA/RU в проверке НЕ использовалось. Решение принимает Analyzer.",
+      "evidence": "signal=S1-tail-truncation; unit_deficit=4; turn_deficit=1; uncovered=2; n_ja=16; n_ru=12; ja_turns=10; ru_turns=9; missing_numbers=-; positions=15…16 из 16",
+      "reason": "JA содержит 2 содержательных звеньев (позиции 15…16 из 16) без соответствия в RU, хвост RU обрывается раньше конца JA. Это кандидат уровня CANDIDATE, а не подтверждённая ошибка."
+    }
+  ]
+}
