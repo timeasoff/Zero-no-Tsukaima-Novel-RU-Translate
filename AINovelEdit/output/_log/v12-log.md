@@ -104,3 +104,16 @@
   Фаза 1 — 6. Фаза 2 (`20261117-194231-cc84.json`, attempt2): 17 FIXED,
   6 FALSE_POSITIVE/PRESERVED, 1 DISPUTED/REPORT_ONLY.
 - ОТЧЁТ: `output/_audit/v12-ch08.md`. gate 12/12.
+
+## v12-afterword «Послесловие» — полная обработка (17.11.2026)
+
+- 3/3 блоков по JA. Канон: «Нобору Ямагути», «Эйдзи Усацука»,
+  «мистер Романтик», «жуки-носороги», «Профессор Кабуто», «гора Фудзин»,
+  «Судзуки», том двенадцатый «Праздник фей». ED_RU в merged заполнено
+  вручную (3/3).
+- Формат: 9 FP. Предфильтры: грамматика 0, стиль 18 — FP/PRESERVED—JA;
+  address 3 FP, omission 0; alignment строгих 0. U+FFFD = 0.
+- SMA: A — 4 (1 ERROR), B — 3, C — 1, Фаза 1 — 5. Фаза 2
+  (`20261117-201207-72ee.json`): 8 FIXED (внесены до анализа),
+  4 DISPUTED/REPORT_ONLY, FALSE_POSITIVE — 0.
+- ОТЧЁТ: `output/_audit/v12-afterword.md`. gate 12/12.
