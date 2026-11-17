@@ -1,6 +1,6 @@
 # Реестр задач диспетчера
 
-Обновлено: 2026-11-17 20:56:08
+Обновлено: 2026-11-17 21:47:54
 
 Генерируется автоматически командой `python tools/dispatch.py`. Не редактируй вручную.
 
@@ -1336,4 +1336,23 @@ Polnyi perevod i audit v13-ch01: 15 blokov po JA, prefilytry, SMA A/B/C + Analyz
 - T-0039-S3: SMA + Analyzer applied, gate 12/12
 - T-0039-S4: SMA + Analyzer applied, gate 12/12
 - T-0039-S5: SMA + Analyzer applied, gate 12/12
+
+## T-0040 — DONE
+
+Polnyi perevod i audit v13-ch02: 38 blokov po JA, prefilytry, SMA A/B/C + Analyzer 1/2, otchet, gate 12/12, commit
+
+| ID | Режим | Глава | Статус | Попыток | Промпт |
+| --- | --- | --- | --- | --- | --- |
+| T-0040-S1 | sma-a | v13-ch02 | done | 1 | `agent_prompts/agent_prompt.v13-ch02.sma-a.md` |
+| T-0040-S2 | sma-b | v13-ch02 | done | 1 | `agent_prompts/agent_prompt.v13-ch02.sma-b.md` |
+| T-0040-S3 | sma-c | v13-ch02 | done | 1 | `agent_prompts/agent_prompt.v13-ch02.sma-c.md` |
+| T-0040-S4 | analyzer-phase1 | v13-ch02 | done | 1 | `agent_prompts/agent_prompt.v13-ch02.analyzer-phase1.md` |
+| T-0040-S5 | analyzer-phase2 | v13-ch02 | done | 1 | `agent_prompts/agent_prompt.v13-ch02.analyzer-phase2.md` |
+
+Заметки:
+- T-0040-S1: SMA + Analyzer applied, gate 12/12
+- T-0040-S2: SMA + Analyzer applied, gate 12/12
+- T-0040-S3: SMA + Analyzer applied, gate 12/12
+- T-0040-S4: SMA + Analyzer applied, gate 12/12
+- T-0040-S5: SMA + Analyzer applied, gate 12/12
 
