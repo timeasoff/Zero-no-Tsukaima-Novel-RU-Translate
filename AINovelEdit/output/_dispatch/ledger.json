@@ -18030,6 +18030,130 @@
           "note": "completed"
         }
       ]
+    },
+    {
+      "id": "T-0082",
+      "text": "Polnyi perevod i audit v17-ch11: bloki po JA, prefilytry, SMA A/B/C + Analyzer 1/2, otchet, gate 12/12, commit",
+      "created": "2026-11-18 19:02:56",
+      "status": "done",
+      "note": "v17-ch11 polnyi audit, gate 12/12",
+      "subtasks": [
+        {
+          "id": "T-0082-S1",
+          "kind": "sma-a",
+          "volume": 17,
+          "chapter": "11",
+          "chapter_id": "v17-ch11",
+          "status": "done",
+          "prompt_file": "agent_prompts/agent_prompt.v17-ch11.sma-a.md",
+          "expected": [
+            "output/_audit/sma/v17-ch11/a/20261118-191724-dffe.json"
+          ],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-11-18 19:17:24",
+              "prompt": "agent_prompts/agent_prompt.v17-ch11.sma-a.md",
+              "finished": "2026-11-18 19:39:53",
+              "result": "done",
+              "note": "completed"
+            }
+          ],
+          "note": "completed"
+        },
+        {
+          "id": "T-0082-S2",
+          "kind": "sma-b",
+          "volume": 17,
+          "chapter": "11",
+          "chapter_id": "v17-ch11",
+          "status": "done",
+          "prompt_file": "agent_prompts/agent_prompt.v17-ch11.sma-b.md",
+          "expected": [
+            "output/_audit/sma/v17-ch11/b/20261118-191724-783a.json"
+          ],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-11-18 19:17:24",
+              "prompt": "agent_prompts/agent_prompt.v17-ch11.sma-b.md",
+              "finished": "2026-11-18 19:39:53",
+              "result": "done",
+              "note": "completed"
+            }
+          ],
+          "note": "completed"
+        },
+        {
+          "id": "T-0082-S3",
+          "kind": "sma-c",
+          "volume": 17,
+          "chapter": "11",
+          "chapter_id": "v17-ch11",
+          "status": "done",
+          "prompt_file": "agent_prompts/agent_prompt.v17-ch11.sma-c.md",
+          "expected": [
+            "output/_audit/sma/v17-ch11/c/20261118-191724-f5e6.json"
+          ],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-11-18 19:17:24",
+              "prompt": "agent_prompts/agent_prompt.v17-ch11.sma-c.md",
+              "finished": "2026-11-18 19:39:53",
+              "result": "done",
+              "note": "completed"
+            }
+          ],
+          "note": "completed"
+        },
+        {
+          "id": "T-0082-S4",
+          "kind": "analyzer-phase1",
+          "volume": 17,
+          "chapter": "11",
+          "chapter_id": "v17-ch11",
+          "status": "done",
+          "prompt_file": "agent_prompts/agent_prompt.v17-ch11.analyzer-phase1.md",
+          "expected": [],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-11-18 19:17:24",
+              "prompt": "agent_prompts/agent_prompt.v17-ch11.analyzer-phase1.md",
+              "finished": "2026-11-18 19:39:53",
+              "result": "done",
+              "note": "completed"
+            }
+          ],
+          "note": "completed"
+        },
+        {
+          "id": "T-0082-S5",
+          "kind": "analyzer-phase2",
+          "volume": 17,
+          "chapter": "11",
+          "chapter_id": "v17-ch11",
+          "status": "done",
+          "prompt_file": "agent_prompts/agent_prompt.v17-ch11.analyzer-phase2.md",
+          "expected": [
+            "output/_audit/sma/v17-ch11/precheck/omission-precheck.json",
+            "output/_audit/sma/v17-ch11/analysis/20261118-191724-97d4.json",
+            "output/_audit/sma/v17-ch11/analysis/20261118-191724-97d4.md"
+          ],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-11-18 19:17:24",
+              "prompt": "agent_prompts/agent_prompt.v17-ch11.analyzer-phase2.md",
+              "finished": "2026-11-18 19:39:53",
+              "result": "done",
+              "note": "completed"
+            }
+          ],
+          "note": "completed"
+        }
+      ]
     }
   ]
 }
