@@ -15542,6 +15542,14 @@
           "note": "SMA + Analyzer applied, gate 12/12"
         }
       ]
+    },
+    {
+      "id": "T-0062",
+      "text": "Polnyi perevod i audit v16-ch03: 16 blokov po JA, prefilytry, SMA A/B/C + Analyzer 1/2, otchet, gate 12/12, commit",
+      "created": "2026-11-18 07:32:32",
+      "status": "open",
+      "note": "",
+      "subtasks": []
     }
   ]
 }

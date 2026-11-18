@@ -1,6 +1,6 @@
 # Реестр задач диспетчера
 
-Обновлено: 2026-11-18 07:32:20
+Обновлено: 2026-11-18 07:32:32
 
 Генерируется автоматически командой `python tools/dispatch.py`. Не редактируй вручную.
 
@@ -1754,4 +1754,10 @@ Polnyi perevod i audit v16-ch02: 16 blokov po JA, prefilytry, SMA A/B/C + Analyz
 - T-0061-S3: SMA + Analyzer applied, gate 12/12
 - T-0061-S4: SMA + Analyzer applied, gate 12/12
 - T-0061-S5: SMA + Analyzer applied, gate 12/12
+
+## T-0062 — OPEN
+
+Polnyi perevod i audit v16-ch03: 16 blokov po JA, prefilytry, SMA A/B/C + Analyzer 1/2, otchet, gate 12/12, commit
+
+_Субзадач нет._
 
