@@ -1,6 +1,6 @@
 # Реестр задач диспетчера
 
-Обновлено: 2026-11-18 05:54:02
+Обновлено: 2026-11-18 06:13:57
 
 Генерируется автоматически командой `python tools/dispatch.py`. Не редактируй вручную.
 
@@ -1678,4 +1678,23 @@ Polnyi perevod i audit v15-ch09: 23 bloka po JA, prefilytry, SMA A/B/C + Analyze
 - T-0057-S3: SMA + Analyzer applied, gate 12/12
 - T-0057-S4: SMA + Analyzer applied, gate 12/12
 - T-0057-S5: SMA + Analyzer applied, gate 12/12
+
+## T-0058 — DONE
+
+Polnyi perevod i audit v15-epilogue: 7 blokov po JA, prefilytry, SMA A/B/C + Analyzer 1/2, otchet, gate 12/12, commit
+
+| ID | Режим | Глава | Статус | Попыток | Промпт |
+| --- | --- | --- | --- | --- | --- |
+| T-0058-S1 | sma-a | v15-epilogue | done | 1 | `agent_prompts/agent_prompt.v15-epilogue.sma-a.md` |
+| T-0058-S2 | sma-b | v15-epilogue | done | 1 | `agent_prompts/agent_prompt.v15-epilogue.sma-b.md` |
+| T-0058-S3 | sma-c | v15-epilogue | done | 1 | `agent_prompts/agent_prompt.v15-epilogue.sma-c.md` |
+| T-0058-S4 | analyzer-phase1 | v15-epilogue | done | 1 | `agent_prompts/agent_prompt.v15-epilogue.analyzer-phase1.md` |
+| T-0058-S5 | analyzer-phase2 | v15-epilogue | done | 1 | `agent_prompts/agent_prompt.v15-epilogue.analyzer-phase2.md` |
+
+Заметки:
+- T-0058-S1: SMA + Analyzer applied, gate 12/12
+- T-0058-S2: SMA + Analyzer applied, gate 12/12
+- T-0058-S3: SMA + Analyzer applied, gate 12/12
+- T-0058-S4: SMA + Analyzer applied, gate 12/12
+- T-0058-S5: SMA + Analyzer applied, gate 12/12
 
