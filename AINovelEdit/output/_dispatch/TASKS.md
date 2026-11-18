@@ -1,6 +1,6 @@
 # Реестр задач диспетчера
 
-Обновлено: 2026-11-18 06:13:57
+Обновлено: 2026-11-18 06:29:44
 
 Генерируется автоматически командой `python tools/dispatch.py`. Не редактируй вручную.
 
@@ -1697,4 +1697,23 @@ Polnyi perevod i audit v15-epilogue: 7 blokov po JA, prefilytry, SMA A/B/C + Ana
 - T-0058-S3: SMA + Analyzer applied, gate 12/12
 - T-0058-S4: SMA + Analyzer applied, gate 12/12
 - T-0058-S5: SMA + Analyzer applied, gate 12/12
+
+## T-0059 — DONE
+
+Polnyi perevod i audit v15-afterword: 3 bloka po JA, ED_RU v merged vruchnuyu, prefilytry, SMA A/B/C + Analyzer 1/2, otchet, gate 12/12, commit
+
+| ID | Режим | Глава | Статус | Попыток | Промпт |
+| --- | --- | --- | --- | --- | --- |
+| T-0059-S1 | sma-a | v15-afterword | done | 1 | `agent_prompts/agent_prompt.v15-afterword.sma-a.md` |
+| T-0059-S2 | sma-b | v15-afterword | done | 1 | `agent_prompts/agent_prompt.v15-afterword.sma-b.md` |
+| T-0059-S3 | sma-c | v15-afterword | done | 1 | `agent_prompts/agent_prompt.v15-afterword.sma-c.md` |
+| T-0059-S4 | analyzer-phase1 | v15-afterword | done | 1 | `agent_prompts/agent_prompt.v15-afterword.analyzer-phase1.md` |
+| T-0059-S5 | analyzer-phase2 | v15-afterword | done | 1 | `agent_prompts/agent_prompt.v15-afterword.analyzer-phase2.md` |
+
+Заметки:
+- T-0059-S1: SMA + Analyzer applied, gate 12/12
+- T-0059-S2: SMA + Analyzer applied, gate 12/12
+- T-0059-S3: SMA + Analyzer applied, gate 12/12
+- T-0059-S4: SMA + Analyzer applied, gate 12/12
+- T-0059-S5: SMA + Analyzer applied, gate 12/12
 
