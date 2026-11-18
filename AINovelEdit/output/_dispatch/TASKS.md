@@ -1,6 +1,6 @@
 # Реестр задач диспетчера
 
-Обновлено: 2026-11-18 19:39:53
+Обновлено: 2026-11-18 20:29:08
 
 Генерируется автоматически командой `python tools/dispatch.py`. Не редактируй вручную.
 
@@ -2153,4 +2153,23 @@ Polnyi perevod i audit v17-ch11: bloki po JA, prefilytry, SMA A/B/C + Analyzer 1
 - T-0082-S3: completed
 - T-0082-S4: completed
 - T-0082-S5: completed
+
+## T-0083 — DONE
+
+Polnyi perevod i audit v17-epilogue: bloki po JA, prefilytry, SMA A/B/C + Analyzer 1/2, otchet, gate 12/12, commit
+
+| ID | Режим | Глава | Статус | Попыток | Промпт |
+| --- | --- | --- | --- | --- | --- |
+| T-0083-S1 | sma-a | v17-epilogue | done | 1 | `agent_prompts/agent_prompt.v17-epilogue.sma-a.md` |
+| T-0083-S2 | sma-b | v17-epilogue | done | 1 | `agent_prompts/agent_prompt.v17-epilogue.sma-b.md` |
+| T-0083-S3 | sma-c | v17-epilogue | done | 1 | `agent_prompts/agent_prompt.v17-epilogue.sma-c.md` |
+| T-0083-S4 | analyzer-phase1 | v17-epilogue | done | 1 | `agent_prompts/agent_prompt.v17-epilogue.analyzer-phase1.md` |
+| T-0083-S5 | analyzer-phase2 | v17-epilogue | done | 1 | `agent_prompts/agent_prompt.v17-epilogue.analyzer-phase2.md` |
+
+Заметки:
+- T-0083-S1: completed
+- T-0083-S2: completed
+- T-0083-S3: completed
+- T-0083-S4: completed
+- T-0083-S5: completed
 
