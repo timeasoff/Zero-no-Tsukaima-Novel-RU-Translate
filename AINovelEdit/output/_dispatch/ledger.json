@@ -16790,6 +16790,130 @@
           "note": "Phase2: 3 FIXED, 9 REPORT_ONLY"
         }
       ]
+    },
+    {
+      "id": "T-0072",
+      "text": "Polnyi perevod i audit v17-ch01: bloki po JA, prefilytry, SMA A/B/C + Analyzer 1/2, otchet, gate 12/12, commit",
+      "created": "2026-11-18 13:13:15",
+      "status": "done",
+      "note": "",
+      "subtasks": [
+        {
+          "id": "T-0072-S1",
+          "kind": "sma-a",
+          "volume": 17,
+          "chapter": "01",
+          "chapter_id": "v17-ch01",
+          "status": "done",
+          "prompt_file": "agent_prompts/agent_prompt.v17-ch01.sma-a.md",
+          "expected": [
+            "output/_audit/sma/v17-ch01/a/20261118-131607-5a9c.json"
+          ],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-11-18 13:16:07",
+              "prompt": "agent_prompts/agent_prompt.v17-ch01.sma-a.md",
+              "finished": "2026-11-18 13:31:51",
+              "result": "done",
+              "note": "SMA/Phase1 completed"
+            }
+          ],
+          "note": "SMA/Phase1 completed"
+        },
+        {
+          "id": "T-0072-S2",
+          "kind": "sma-b",
+          "volume": 17,
+          "chapter": "01",
+          "chapter_id": "v17-ch01",
+          "status": "done",
+          "prompt_file": "agent_prompts/agent_prompt.v17-ch01.sma-b.md",
+          "expected": [
+            "output/_audit/sma/v17-ch01/b/20261118-131607-079c.json"
+          ],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-11-18 13:16:07",
+              "prompt": "agent_prompts/agent_prompt.v17-ch01.sma-b.md",
+              "finished": "2026-11-18 13:31:51",
+              "result": "done",
+              "note": "SMA/Phase1 completed"
+            }
+          ],
+          "note": "SMA/Phase1 completed"
+        },
+        {
+          "id": "T-0072-S3",
+          "kind": "sma-c",
+          "volume": 17,
+          "chapter": "01",
+          "chapter_id": "v17-ch01",
+          "status": "done",
+          "prompt_file": "agent_prompts/agent_prompt.v17-ch01.sma-c.md",
+          "expected": [
+            "output/_audit/sma/v17-ch01/c/20261118-131607-e4a3.json"
+          ],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-11-18 13:16:07",
+              "prompt": "agent_prompts/agent_prompt.v17-ch01.sma-c.md",
+              "finished": "2026-11-18 13:31:51",
+              "result": "done",
+              "note": "SMA/Phase1 completed"
+            }
+          ],
+          "note": "SMA/Phase1 completed"
+        },
+        {
+          "id": "T-0072-S4",
+          "kind": "analyzer-phase1",
+          "volume": 17,
+          "chapter": "01",
+          "chapter_id": "v17-ch01",
+          "status": "done",
+          "prompt_file": "agent_prompts/agent_prompt.v17-ch01.analyzer-phase1.md",
+          "expected": [],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-11-18 13:16:07",
+              "prompt": "agent_prompts/agent_prompt.v17-ch01.analyzer-phase1.md",
+              "finished": "2026-11-18 13:31:51",
+              "result": "done",
+              "note": "SMA/Phase1 completed"
+            }
+          ],
+          "note": "SMA/Phase1 completed"
+        },
+        {
+          "id": "T-0072-S5",
+          "kind": "analyzer-phase2",
+          "volume": 17,
+          "chapter": "01",
+          "chapter_id": "v17-ch01",
+          "status": "done",
+          "prompt_file": "agent_prompts/agent_prompt.v17-ch01.analyzer-phase2.md",
+          "expected": [
+            "output/_audit/sma/v17-ch01/precheck/omission-precheck.json",
+            "output/_audit/sma/v17-ch01/analysis/20261118-133151-6f66.json",
+            "output/_audit/sma/v17-ch01/analysis/20261118-133151-6f66.md"
+          ],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-11-18 13:31:51",
+              "prompt": "agent_prompts/agent_prompt.v17-ch01.analyzer-phase2.md",
+              "finished": "2026-11-18 13:37:59",
+              "result": "done",
+              "note": "Phase2: 7 FIXED, 2 REPORT_ONLY, 2 DISPUTED, 1 PRESERVED"
+            }
+          ],
+          "note": "Phase2: 7 FIXED, 2 REPORT_ONLY, 2 DISPUTED, 1 PRESERVED"
+        }
+      ]
     }
   ]
 }
