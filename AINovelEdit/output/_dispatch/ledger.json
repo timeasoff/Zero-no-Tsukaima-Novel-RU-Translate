@@ -15547,9 +15547,125 @@
       "id": "T-0062",
       "text": "Polnyi perevod i audit v16-ch03: 16 blokov po JA, prefilytry, SMA A/B/C + Analyzer 1/2, otchet, gate 12/12, commit",
       "created": "2026-11-18 07:32:32",
-      "status": "open",
+      "status": "done",
       "note": "",
-      "subtasks": []
+      "subtasks": [
+        {
+          "id": "T-0062-S1",
+          "kind": "sma-a",
+          "volume": 16,
+          "chapter": "03",
+          "chapter_id": "v16-ch03",
+          "status": "done",
+          "prompt_file": "agent_prompts/agent_prompt.v16-ch03.sma-a.md",
+          "expected": [
+            "output/_audit/sma/v16-ch03/a/20261118-075826-40be.json"
+          ],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-11-18 07:58:26",
+              "prompt": "agent_prompts/agent_prompt.v16-ch03.sma-a.md",
+              "finished": "2026-11-18 08:15:42",
+              "result": "done",
+              "note": "SMA A: 6 findings"
+            }
+          ],
+          "note": "SMA A: 6 findings"
+        },
+        {
+          "id": "T-0062-S2",
+          "kind": "sma-b",
+          "volume": 16,
+          "chapter": "03",
+          "chapter_id": "v16-ch03",
+          "status": "done",
+          "prompt_file": "agent_prompts/agent_prompt.v16-ch03.sma-b.md",
+          "expected": [
+            "output/_audit/sma/v16-ch03/b/20261118-075826-a917.json"
+          ],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-11-18 07:58:26",
+              "prompt": "agent_prompts/agent_prompt.v16-ch03.sma-b.md",
+              "finished": "2026-11-18 08:15:43",
+              "result": "done",
+              "note": "SMA B: 1 finding"
+            }
+          ],
+          "note": "SMA B: 1 finding"
+        },
+        {
+          "id": "T-0062-S3",
+          "kind": "sma-c",
+          "volume": 16,
+          "chapter": "03",
+          "chapter_id": "v16-ch03",
+          "status": "done",
+          "prompt_file": "agent_prompts/agent_prompt.v16-ch03.sma-c.md",
+          "expected": [
+            "output/_audit/sma/v16-ch03/c/20261118-075826-2ce5.json"
+          ],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-11-18 07:58:26",
+              "prompt": "agent_prompts/agent_prompt.v16-ch03.sma-c.md",
+              "finished": "2026-11-18 08:15:43",
+              "result": "done",
+              "note": "SMA C: 0 findings"
+            }
+          ],
+          "note": "SMA C: 0 findings"
+        },
+        {
+          "id": "T-0062-S4",
+          "kind": "analyzer-phase1",
+          "volume": 16,
+          "chapter": "03",
+          "chapter_id": "v16-ch03",
+          "status": "done",
+          "prompt_file": "agent_prompts/agent_prompt.v16-ch03.analyzer-phase1.md",
+          "expected": [],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-11-18 07:58:26",
+              "prompt": "agent_prompts/agent_prompt.v16-ch03.analyzer-phase1.md",
+              "finished": "2026-11-18 08:15:43",
+              "result": "done",
+              "note": "Phase1 blind: 2 preliminary findings"
+            }
+          ],
+          "note": "Phase1 blind: 2 preliminary findings"
+        },
+        {
+          "id": "T-0062-S5",
+          "kind": "analyzer-phase2",
+          "volume": 16,
+          "chapter": "03",
+          "chapter_id": "v16-ch03",
+          "status": "done",
+          "prompt_file": "agent_prompts/agent_prompt.v16-ch03.analyzer-phase2.md",
+          "expected": [
+            "output/_audit/sma/v16-ch03/precheck/omission-precheck.json",
+            "output/_audit/sma/v16-ch03/analysis/20261118-081234-e8fd.json",
+            "output/_audit/sma/v16-ch03/analysis/20261118-081234-e8fd.md"
+          ],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-11-18 08:12:34",
+              "prompt": "agent_prompts/agent_prompt.v16-ch03.analyzer-phase2.md",
+              "finished": "2026-11-18 08:15:43",
+              "result": "done",
+              "note": "Phase2: 7 FIXED, final text covered"
+            }
+          ],
+          "note": "Phase2: 7 FIXED, final text covered"
+        }
+      ]
     }
   ]
 }
