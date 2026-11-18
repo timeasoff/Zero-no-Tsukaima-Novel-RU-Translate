@@ -1,6 +1,6 @@
 # Реестр задач диспетчера
 
-Обновлено: 2026-11-18 10:51:23
+Обновлено: 2026-11-18 11:20:13
 
 Генерируется автоматически командой `python tools/dispatch.py`. Не редактируй вручную.
 
@@ -1849,4 +1849,23 @@ Polnyi perevod i audit v16-ch07: bloki po JA, prefilytry, SMA A/B/C + Analyzer 1
 - T-0066-S3: SMA/Phase1 completed
 - T-0066-S4: SMA/Phase1 completed
 - T-0066-S5: Phase2 retry: 12 FIXED
+
+## T-0067 — DONE
+
+Polnyi perevod i audit v16-ch08: bloki po JA, prefilytry, SMA A/B/C + Analyzer 1/2, otchet, gate 12/12, commit
+
+| ID | Режим | Глава | Статус | Попыток | Промпт |
+| --- | --- | --- | --- | --- | --- |
+| T-0067-S1 | sma-a | v16-ch08 | done | 1 | `agent_prompts/agent_prompt.v16-ch08.sma-a.md` |
+| T-0067-S2 | sma-b | v16-ch08 | done | 1 | `agent_prompts/agent_prompt.v16-ch08.sma-b.md` |
+| T-0067-S3 | sma-c | v16-ch08 | done | 1 | `agent_prompts/agent_prompt.v16-ch08.sma-c.md` |
+| T-0067-S4 | analyzer-phase1 | v16-ch08 | done | 1 | `agent_prompts/agent_prompt.v16-ch08.analyzer-phase1.md` |
+| T-0067-S5 | analyzer-phase2 | v16-ch08 | done | 1 | `agent_prompts/agent_prompt.v16-ch08.analyzer-phase2.md` |
+
+Заметки:
+- T-0067-S1: SMA/Phase1 completed
+- T-0067-S2: SMA/Phase1 completed
+- T-0067-S3: SMA/Phase1 completed
+- T-0067-S4: SMA/Phase1 completed
+- T-0067-S5: Phase2: 15 FIXED, 3 REPORT_ONLY, 1 PRESERVED
 
