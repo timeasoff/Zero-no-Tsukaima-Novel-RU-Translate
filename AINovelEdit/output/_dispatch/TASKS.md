@@ -1,6 +1,6 @@
 # Реестр задач диспетчера
 
-Обновлено: 2026-11-18 12:21:52
+Обновлено: 2026-11-18 12:46:44
 
 Генерируется автоматически командой `python tools/dispatch.py`. Не редактируй вручную.
 
@@ -1906,4 +1906,23 @@ Polnyi perevod i audit v16-ch10: bloki po JA, prefilytry, SMA A/B/C + Analyzer 1
 - T-0069-S3: SMA/Phase1 completed
 - T-0069-S4: SMA/Phase1 completed
 - T-0069-S5: Phase2: 7 FIXED, 7 REPORT_ONLY, 3 PRESERVED
+
+## T-0070 — DONE
+
+Polnyi perevod i audit v16-epilogue: bloki po JA, prefilytry, SMA A/B/C + Analyzer 1/2, otchet, gate 12/12, commit
+
+| ID | Режим | Глава | Статус | Попыток | Промпт |
+| --- | --- | --- | --- | --- | --- |
+| T-0070-S1 | sma-a | v16-epilogue | done | 1 | `agent_prompts/agent_prompt.v16-epilogue.sma-a.md` |
+| T-0070-S2 | sma-b | v16-epilogue | done | 1 | `agent_prompts/agent_prompt.v16-epilogue.sma-b.md` |
+| T-0070-S3 | sma-c | v16-epilogue | done | 1 | `agent_prompts/agent_prompt.v16-epilogue.sma-c.md` |
+| T-0070-S4 | analyzer-phase1 | v16-epilogue | done | 1 | `agent_prompts/agent_prompt.v16-epilogue.analyzer-phase1.md` |
+| T-0070-S5 | analyzer-phase2 | v16-epilogue | done | 1 | `agent_prompts/agent_prompt.v16-epilogue.analyzer-phase2.md` |
+
+Заметки:
+- T-0070-S1: SMA/Phase1 completed
+- T-0070-S2: SMA/Phase1 completed
+- T-0070-S3: SMA/Phase1 completed
+- T-0070-S4: SMA/Phase1 completed
+- T-0070-S5: Phase2: 2 FIXED, 8 REPORT_ONLY, 1 PRESERVED
 
