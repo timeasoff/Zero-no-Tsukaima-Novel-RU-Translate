@@ -1,0 +1,89 @@
+{
+ "analysis_id": "20261118-211009-b1bb",
+ "chapter": "v18-ch01",
+ "inputs": {
+  "phase1": "analysis/20261118-211009-a3ad.phase1.json",
+  "a_runs": [
+   "a/20261118-211009-a761.json"
+  ],
+  "b_runs": [
+   "b/20261118-211009-611e.json"
+  ],
+  "c_runs": [
+   "c/20261118-211009-22d8.json"
+  ],
+  "precheck": "precheck/omission-precheck.json"
+ },
+ "results": [
+  {
+   "block": 3,
+   "status": "CONFIRMED_ERROR",
+   "fidelity": "MEANING_SHIFT",
+   "action": "REPORT_ONLY",
+   "note": "恋人でもない男に義務感だけで守られちゃたまんない — инверсия смысла (Сайто защитит vs Луиза не выносит защиты по долгу). Исправлено оркестратором."
+  },
+  {
+   "block": 12,
+   "status": "CONFIRMED_ERROR",
+   "fidelity": "MEANING_SHIFT",
+   "action": "REPORT_ONLY",
+   "note": "他の男 → другой мужчина (было 'другая женщина'). Исправлено."
+  },
+  {
+   "block": 13,
+   "status": "CONFIRMED_ERROR",
+   "fidelity": "MEANING_SHIFT",
+   "action": "REPORT_ONLY",
+   "note": "自分は散々しておいて — упрёк Сайто (было 'сама'). Исправлено."
+  },
+  {
+   "block": 3,
+   "status": "CONFIRMED_ERROR",
+   "fidelity": "MEANING_SHIFT",
+   "action": "REPORT_ONLY",
+   "note": "頭にきても — 'злюсь я' (было 'злила тебя'). Исправлено."
+  },
+  {
+   "block": 3,
+   "status": "CONFIRMED_ERROR",
+   "fidelity": "COMPONENT_LOSS",
+   "action": "REPORT_ONLY",
+   "note": "逃げ出さなかった — 'не убежала' (было 'не побоявшаяся'). Исправлено."
+  },
+  {
+   "block": 5,
+   "status": "CONFIRMED_ERROR",
+   "fidelity": "MEANING_SHIFT",
+   "action": "REPORT_ONLY",
+   "note": "殴る→ударю, 死にそうにもなった→чуть не умирал, すっごい→невероятное, 蹴り→пинок. Исправлено."
+  },
+  {
+   "block": 2,
+   "status": "CONFIRMED_ERROR",
+   "fidelity": "COMPONENT_LOSS",
+   "action": "REPORT_ONLY",
+   "note": "ぺこり→чуть поклонился. Исправлено."
+  },
+  {
+   "block": 11,
+   "status": "CONFIRMED_ERROR",
+   "fidelity": "MEANING_SHIFT",
+   "action": "REPORT_ONLY",
+   "note": "同じ気持ち→те же чувства; 真顔→стал серьёзным. Исправлено."
+  },
+  {
+   "block": 14,
+   "status": "CONFIRMED_ERROR",
+   "fidelity": "MEANING_SHIFT",
+   "action": "REPORT_ONLY",
+   "note": "焦った→растерянное, 妙に→странно. Исправлено."
+  },
+  {
+   "block": 10,
+   "status": "FALSE_POSITIVE",
+   "fidelity": "MISSING",
+   "action": "PRESERVED",
+   "note": "Pre-check S1 — артефакт границы; строка '………' присутствует в блоке 10."
+  }
+ ]
+}

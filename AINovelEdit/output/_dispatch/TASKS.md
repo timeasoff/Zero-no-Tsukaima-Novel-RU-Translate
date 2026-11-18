@@ -1,6 +1,6 @@
 # Реестр задач диспетчера
 
-Обновлено: 2026-11-18 20:50:14
+Обновлено: 2026-11-18 21:25:07
 
 Генерируется автоматически командой `python tools/dispatch.py`. Не редактируй вручную.
 
@@ -2191,4 +2191,23 @@ Polnyi perevod i audit v17-afterword: bloki po JA, prefilytry, SMA A/B/C + Analy
 - T-0084-S3: completed
 - T-0084-S4: completed
 - T-0084-S5: completed
+
+## T-0085 — DONE
+
+Polnyi perevod i audit v18-ch01: bloki po JA, prefilytry, SMA A/B/C + Analyzer 1/2, otchet, gate 12/12, commit
+
+| ID | Режим | Глава | Статус | Попыток | Промпт |
+| --- | --- | --- | --- | --- | --- |
+| T-0085-S1 | sma-a | v18-ch01 | done | 1 | `agent_prompts/agent_prompt.v18-ch01.sma-a.md` |
+| T-0085-S2 | sma-b | v18-ch01 | done | 1 | `agent_prompts/agent_prompt.v18-ch01.sma-b.md` |
+| T-0085-S3 | sma-c | v18-ch01 | done | 1 | `agent_prompts/agent_prompt.v18-ch01.sma-c.md` |
+| T-0085-S4 | analyzer-phase1 | v18-ch01 | done | 1 | `agent_prompts/agent_prompt.v18-ch01.analyzer-phase1.md` |
+| T-0085-S5 | analyzer-phase2 | v18-ch01 | done | 1 | `agent_prompts/agent_prompt.v18-ch01.analyzer-phase2.md` |
+
+Заметки:
+- T-0085-S1: completed
+- T-0085-S2: completed
+- T-0085-S3: completed
+- T-0085-S4: completed
+- T-0085-S5: completed
 
