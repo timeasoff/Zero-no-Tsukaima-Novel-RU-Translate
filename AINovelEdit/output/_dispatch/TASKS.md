@@ -1,6 +1,6 @@
 # Реестр задач диспетчера
 
-Обновлено: 2026-11-18 12:46:44
+Обновлено: 2026-11-18 13:10:29
 
 Генерируется автоматически командой `python tools/dispatch.py`. Не редактируй вручную.
 
@@ -1925,4 +1925,23 @@ Polnyi perevod i audit v16-epilogue: bloki po JA, prefilytry, SMA A/B/C + Analyz
 - T-0070-S3: SMA/Phase1 completed
 - T-0070-S4: SMA/Phase1 completed
 - T-0070-S5: Phase2: 2 FIXED, 8 REPORT_ONLY, 1 PRESERVED
+
+## T-0071 — DONE
+
+Polnyi perevod i audit v16-afterword: bloki po JA, prefilytry, SMA A/B/C + Analyzer 1/2, otchet, gate 12/12, commit
+
+| ID | Режим | Глава | Статус | Попыток | Промпт |
+| --- | --- | --- | --- | --- | --- |
+| T-0071-S1 | sma-a | v16-afterword | done | 1 | `agent_prompts/agent_prompt.v16-afterword.sma-a.md` |
+| T-0071-S2 | sma-b | v16-afterword | done | 1 | `agent_prompts/agent_prompt.v16-afterword.sma-b.md` |
+| T-0071-S3 | sma-c | v16-afterword | done | 1 | `agent_prompts/agent_prompt.v16-afterword.sma-c.md` |
+| T-0071-S4 | analyzer-phase1 | v16-afterword | done | 1 | `agent_prompts/agent_prompt.v16-afterword.analyzer-phase1.md` |
+| T-0071-S5 | analyzer-phase2 | v16-afterword | done | 1 | `agent_prompts/agent_prompt.v16-afterword.analyzer-phase2.md` |
+
+Заметки:
+- T-0071-S1: SMA/Phase1 completed
+- T-0071-S2: SMA/Phase1 completed
+- T-0071-S3: SMA/Phase1 completed
+- T-0071-S4: SMA/Phase1 completed
+- T-0071-S5: Phase2: 3 FIXED, 9 REPORT_ONLY
 
