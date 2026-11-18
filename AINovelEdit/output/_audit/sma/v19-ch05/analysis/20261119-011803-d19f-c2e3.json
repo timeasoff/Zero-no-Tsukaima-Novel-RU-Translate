@@ -1,0 +1,66 @@
+{
+ "analysis_id": "20261119-011803-d19f-c2e3",
+ "chapter": "v19-ch05",
+ "inputs": {
+  "phase1": "analysis/20261119-011803-d19f.phase1.json",
+  "a_runs": [
+   "a/20261119-011149-0db9.json"
+  ],
+  "b_runs": [
+   "b/20261119-011149-fae2.json"
+  ],
+  "c_runs": [],
+  "precheck": "precheck/omission-precheck.json"
+ },
+ "results": [
+  {
+   "block": 9,
+   "status": "CONFIRMED_ERROR",
+   "fidelity": "MEANING_SHIFT",
+   "action": "REPORT_ONLY",
+   "note": "инверсия говорящего: Али спрашивает, Лукшана кивает (JA アリィーにそう言われ、ルクシャナは頷いた) — исправлено."
+  },
+  {
+   "block": 3,
+   "status": "CONFIRMED_ERROR",
+   "fidelity": "RUSSIAN_ERROR",
+   "action": "REPORT_ONLY",
+   "note": "поблагодарил (род: Сайто) — исправлено."
+  },
+  {
+   "block": 8,
+   "status": "CONFIRMED_ERROR",
+   "fidelity": "COMPONENT_LOSS",
+   "action": "REPORT_ONLY",
+   "note": "怪我させやがった→«ранил», 乱暴→«буянить» — исправлено."
+  },
+  {
+   "block": 1,
+   "status": "CONFIRMED_ERROR",
+   "fidelity": "MEANING_SHIFT",
+   "action": "REPORT_ONLY",
+   "note": "絶対→«Точно», 悲しむ→«опечалится», 目配せ→«подмигнул» — исправлено."
+  },
+  {
+   "block": 4,
+   "status": "CONFIRMED_ERROR",
+   "fidelity": "MEANING_SHIFT",
+   "action": "REPORT_ONLY",
+   "note": "望みは叶えられる→«твоё желание будет исполнено» — исправлено."
+  },
+  {
+   "block": 10,
+   "status": "CONFIRMED_ERROR",
+   "fidelity": "MEANING_SHIFT",
+   "action": "REPORT_ONLY",
+   "note": "蛮人かぶれ→«увлечение дикарями» — исправлено."
+  },
+  {
+   "block": 1,
+   "status": "FALSE_POSITIVE",
+   "fidelity": "NUANCE_SHIFT",
+   "action": "PRESERVED",
+   "note": "томный «уун» — добавлено как стилистический нюанс, не ошибка."
+  }
+ ]
+}

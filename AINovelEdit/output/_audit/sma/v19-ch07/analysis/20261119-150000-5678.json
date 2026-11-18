@@ -1,0 +1,149 @@
+{
+  "analysis_id": "20261119-150000-5678",
+  "chapter": "v19-ch07",
+  "inputs": {
+    "phase1": "analysis/20261119-150000-1234.phase1.json",
+    "a_runs": ["a/20261119-150000-a1b2.json"],
+    "b_runs": ["b/20261119-150000-c3d4.json"],
+    "c_runs": ["c/20261119-150000-e5f6.json"],
+    "precheck": "precheck/omission-precheck.json"
+  },
+  "results": [
+    {
+      "block": 1,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "FORMAT",
+      "action": "FIXED",
+      "before": "На нём стояла печать Его Святейшества папы.",
+      "after": "На нём стояла печать его святейшества папы.",
+      "note": "Кандидат format_scan (title, строка 15): заглавный титул в косвенном упоминании наррации. По PR-TITLE в наррации — строчная. Правка применена через fix_block.py --replace-file, merge обновлён, предфильтры повторены (RECHECK)."
+    },
+    {
+      "block": 10,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "FORMAT",
+      "action": "FIXED",
+      "before": "О, если бы это было так, — подумала Луиза. Ей хотелось чувствовать, что они где-то связаны.",
+      "after": "_О, если бы это было так_ — подумала Луиза. Ей хотелось чувствовать, что они где-то связаны.",
+      "note": "Кандидат format_scan (thought, строка 311): мысль с глаголом «подумала» не была оформлена курсивом. По PR-MIND внутренняя речь — _…_, атрибуция вне курсива. Правка через fix_block.py --replace-file, RECHECK пройден."
+    },
+    {
+      "block": 10,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "FORMAT",
+      "action": "FIXED",
+      "before": "отвела Варда с Фуке к Его Святейшеству.",
+      "after": "отвела Варда с Фуке к его святейшеству.",
+      "note": "Кандидат format_scan (title, строка 331): косвенное упоминание титула в наррации — строчная по PR-TITLE. Правка через fix_block.py --replace-file, RECHECK пройден."
+    },
+    {
+      "block": 2,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "NUANCE_SHIFT",
+      "action": "PRESERVED",
+      "note": "Кандидат A-1 (20261119-150000-a1b2, бл.2) и Phase 1 (бл.2): 浮かんでしまう → «земля поднимется». Масштабное изменение мира и модальность «не могут толком представить» переданы; разница в образе инструментальна. PRESERVED — JA."
+    },
+    {
+      "block": 8,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "NUANCE_SHIFT",
+      "action": "PRESERVED",
+      "note": "Кандидаты A-2 (бл.8) и Phase 1 (бл.8): グオングオングオン → «гул-гул-гул», きゅい → «кьюи!». Звукообразы передают регистр и смысл; замена — предпочтение. PRESERVED — FUNCTIONAL."
+    },
+    {
+      "block": 14,
+      "status": "DISPUTED",
+      "fidelity": "MEANING_SHIFT",
+      "action": "REPORT_ONLY",
+      "note": "Кандидат A-3 (бл.14, WARNING) и Phase 1 (бл.14): нестандартное ただの扉をして переведено как «просто распахнул дверь». JA не даёт однозначной синтаксической опоры; EN передаёт только общий смысл. Рабочая интерпретация оставлена без правки; OPEN для решения человека."
+    },
+    {
+      "block": 1,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "LEXICAL_MISMATCH",
+      "action": "PRESERVED",
+      "note": "Кандидаты B-1 (бл.1) и Phase 1 (бл.1): повтор «пять дней» во флешбэк-якоре. Смысл и приблизительность сохранены; стилистическое предпочтение не является доказательством ошибки. PRESERVED — JA."
+    },
+    {
+      "block": 12,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "LEXICAL_MISMATCH",
+      "action": "PRESERVED",
+      "note": "Кандидат B-2 (бл.12) и Phase 1 (бл.12): 新教徒教皇 → «папа-протестант». Иронический речевой акт Фуке сохранён. PRESERVED — CHARACTER VOICE."
+    },
+    {
+      "block": 15,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "COMPONENT_LOSS",
+      "action": "PRESERVED",
+      "note": "Кандидаты B-3 (бл.15) и Phase 1 (бл.15): различение 人生/生命 проведено («жизнь» / «Жизнь»); имена фамильяров — Гандальв, Мьёдвитнир, Виндальв — по канону. «Лифсрасил» (リーヴスラシル) — новый PROVISIONAL-термин, зафиксирован в журнале и отчёте; компонента не утрачена. PRESERVED — JA."
+    },
+    {
+      "block": 1,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "PRAGMATIC_SHIFT",
+      "action": "PRESERVED",
+      "note": "Кандидат C-1 (бл.1): 姫さま → «принцесса» по канону завершённых томов (v05-ch03). Почтительный, но настаивающий вопрос Луизы сохранён. PRESERVED — FUNCTIONAL."
+    },
+    {
+      "block": 9,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "PRAGMATIC_SHIFT",
+      "action": "PRESERVED",
+      "note": "Кандидат C-2 (бл.9): お姉さん → «сестрица», 鬼 → «чудовище» (канон). Поддёвка Маликорна и реакция Элеоноры сохранены. PRESERVED — CHARACTER VOICE."
+    },
+    {
+      "block": 13,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "PRAGMATIC_SHIFT",
+      "action": "PRESERVED",
+      "note": "Кандидат C-3 (бл.13): эвфемизм «ради великого дела… пожертвовать малым». Смягчённая модальность приказа сохранена; прямое называние смерти было бы вмешательством. PRESERVED — JA."
+    },
+    {
+      "block": 4,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "RUSSIAN_ERROR",
+      "action": "FIXED",
+      "before": "дождавшись, пока та отвлёкшись, телепортировалась",
+      "after": "улучив момент, телепортировалась",
+      "note": "Собственная находка FINAL READ (RU-only): грамматически ущербное «пока та отвлёкшись» заменено на «улучив момент» (JA その目を盗み). Правка через fix_block.py --replace-file, RECHECK пройден."
+    },
+    {
+      "block": 9,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "FORMAT",
+      "action": "FIXED",
+      "before": "— ладно, — сказала Элеонора",
+      "after": "— Ладно, — сказала Элеонора",
+      "note": "Собственная находка FINAL READ: реплика с нового абзаца начиналась со строчной. Исправлена регистром через fix_block.py --replace-file, RECHECK пройден."
+    },
+    {
+      "block": 10,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "RUSSIAN_ERROR",
+      "action": "FIXED",
+      "before": "Шёпот Луизы, её желание смешались",
+      "after": "Шёпот Луизы и её желание смешались",
+      "note": "Собственная находка FINAL READ: несогласованная конструкция с запятой между подлежащими исправлена на союз «и». Правка через fix_block.py --replace-file, RECHECK пройден."
+    },
+    {
+      "block": 14,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "RUSSIAN_ERROR",
+      "action": "FIXED",
+      "before": "ушла в кабинет Витторио рядом с приёмной",
+      "after": "ушла в соседнюю комнату",
+      "note": "Собственная находка FINAL READ: JA 執務室の隣にある書斎 — «кабинет рядом с приёмной» не различал два помещения и звучал двусмысленно; заменено на нейтральное «соседняя комната». Правка через fix_block.py --replace-file, RECHECK пройден."
+    },
+    {
+      "block": 16,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "MEANING_SHIFT",
+      "action": "FIXED",
+      "before": "даже произносить это имя — кощунство",
+      "after": "даже записать это имя — кощунство",
+      "note": "Собственная находка FINAL READ со сверкой JA: 記すことすらはばかれる — «даже записать», а не «произносить». EN «don't want to remember in the song» — только справка (JA > EN). Правка через fix_block.py --replace-file, RECHECK пройден."
+    }
+  ],
+  "coverage": "Analysis покрывает все 16 блоков главы v19-ch07 (финальный текст после правок блоков 1, 4, 9, 10, 14 и 16, включая находки FINAL READ). Pre-check дал 0 CANDIDATE. Все 17 кандидатов получили status + fidelity + action: 8 CONFIRMED_ERROR/FIXED (3 FORMAT + 5 находок FINAL READ, правки применены до анализа, RECHECK пройден), 8 FALSE_POSITIVE/PRESERVED, 1 DISPUTED/REPORT_ONLY. Статусов WIP и непокрытых блоков нет; анализ создан после последней правки текста и закрывает главу."
+}

@@ -1,0 +1,54 @@
+{
+ "analysis_id": "20261119-005909-c3d4",
+ "chapter": "v19-ch10",
+ "inputs": {
+  "phase1": "analysis/20261119-005909-a1b2.phase1.json",
+  "a_runs": [
+   "a/20261119-005909-f6fa.json"
+  ],
+  "b_runs": [
+   "b/20261119-005909-23ad.json"
+  ],
+  "c_runs": [
+   "c/20261119-005909-3c12.json"
+  ],
+  "precheck": "precheck/omission-precheck.json"
+ },
+ "results": [
+  {
+   "block": 1,
+   "status": "FALSE_POSITIVE",
+   "fidelity": "NUANCE_SHIFT",
+   "action": "PRESERVED",
+   "note": "にっこり＝лёгкая улыбка — исправлено оркестратором; «Узнаешь, когда прибудем» — допустимая передача お楽しみ."
+  },
+  {
+   "block": 2,
+   "status": "FALSE_POSITIVE",
+   "fidelity": "COMPONENT_LOSS",
+   "action": "PRESERVED",
+   "note": "улыбка без «уголков губ» — исправлено."
+  },
+  {
+   "block": 4,
+   "status": "CONFIRMED_ERROR",
+   "fidelity": "MEANING_SHIFT",
+   "action": "REPORT_ONLY",
+   "note": "最低→«Худший», 性的に興味→«нравится её тело», 泣きそう→«вот-вот заплачет», 大好き→«очень люблю» — все исправлено оркестратором."
+  },
+  {
+   "block": 6,
+   "status": "CONFIRMED_ERROR",
+   "fidelity": "MEANING_SHIFT",
+   "action": "REPORT_ONLY",
+   "note": "得意げな声→«самодовольным голосом», 小さな声で→«тихо сказал» — исправлено."
+  },
+  {
+   "block": 8,
+   "status": "CONFIRMED_ERROR",
+   "fidelity": "COMPONENT_LOSS",
+   "action": "REPORT_ONLY",
+   "note": "なぶる潮風→«дразнящий морской ветер» — исправлено."
+  }
+ ]
+}

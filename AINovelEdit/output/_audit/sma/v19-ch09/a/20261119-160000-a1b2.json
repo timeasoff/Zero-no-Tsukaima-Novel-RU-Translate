@@ -1,0 +1,38 @@
+{
+  "audit_id": "sma-a",
+  "audit_type": "semantic-audit-a",
+  "audit_run_id": "20261119-160000-a1b2",
+  "chapter": "v19-ch09",
+  "findings": [
+    {
+      "block": 1,
+      "source": "つん、ときつい柑橘系の香りがするカップ",
+      "current": "чашка с резким цитрусовым ароматом",
+      "problem": "Не передан отдельный оттенок つん (резкий, «в нос» бьющий запах)",
+      "reason": "JA describes a pungent citrus smell; «резкий» preserves the intensity, the tactile nuance つん is instrumental. Meaning intact.",
+      "suggestion": "Оставить: замена на «резко-терпкий» была бы предпочтением.",
+      "issue_type": "NUANCE_SHIFT",
+      "severity": "CANDIDATE"
+    },
+    {
+      "block": 2,
+      "source": "ぐッ！ ぐおッ！ と二人のエルフの呻き",
+      "current": "короткие стоны — «гх! гхо!»",
+      "problem": "Звукоподражание передано русскими фонемами, не сохраняя японской огласовки",
+      "reason": "Стоны двух эльфов, внезапность и падение переданы; звукопись — инструментальный слой.",
+      "suggestion": "Оставить.",
+      "issue_type": "NUANCE_SHIFT",
+      "severity": "CANDIDATE"
+    },
+    {
+      "block": 16,
+      "source": "嬢ちゃん串刺しにされちまうぜ",
+      "current": "проткнёт тебя насквозь, малышка",
+      "problem": "Грубовато-ласковое 嬢ちゃん передано как «малышка»",
+      "reason": "Речь Дерфлингера — насмешливо-свойская; «малышка» сохраняет регистр и частицу ぜ (усиление).",
+      "suggestion": "Оставить.",
+      "issue_type": "NUANCE_SHIFT",
+      "severity": "CANDIDATE"
+    }
+  ]
+}

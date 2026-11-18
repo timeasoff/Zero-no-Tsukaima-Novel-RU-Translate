@@ -19027,6 +19027,725 @@
      "note": ""
     }
    ]
+  },
+  {
+   "id": "T-0096",
+   "text": "Polnyi perevod i audit v19-ch01 (first-launch po agent_workflow): bloki, prefilytry, SMA, otchet, gate 12/12, commit",
+   "created": "2026-11-18 23:45:08",
+   "status": "done",
+   "note": "polnyi audit, gate 12/12",
+   "subtasks": [
+    {
+     "id": "T-0096-S1",
+     "kind": "first-launch",
+     "volume": 19,
+     "chapter": "01",
+     "chapter_id": "v19-ch01",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v19-ch01.first-launch.md",
+     "expected": [
+      "AINovelEdit/output/chapters/v19-ch01.md",
+      "AINovelEdit/output/_log/v19-log.md",
+      "AINovelEdit/translates/_report/merged/v19-ch01.md"
+     ],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-18 23:46:13",
+       "prompt": "agent_prompts/agent_prompt.v19-ch01.first-launch.md",
+       "finished": "",
+       "result": "",
+       "note": ""
+      }
+     ],
+     "note": ""
+    },
+    {
+     "id": "T-0096-S2",
+     "kind": "sma-a",
+     "volume": 19,
+     "chapter": "01",
+     "chapter_id": "v19-ch01",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v19-ch01.sma-a.md",
+     "expected": [
+      "output/_audit/sma/v19-ch01/a/20261119-012730-14a1.json"
+     ],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-19 01:27:30",
+       "prompt": "agent_prompts/agent_prompt.v19-ch01.sma-a.md",
+       "finished": "",
+       "result": "",
+       "note": ""
+      }
+     ],
+     "note": ""
+    },
+    {
+     "id": "T-0096-S3",
+     "kind": "sma-b",
+     "volume": 19,
+     "chapter": "01",
+     "chapter_id": "v19-ch01",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v19-ch01.sma-b.md",
+     "expected": [
+      "output/_audit/sma/v19-ch01/b/20261119-012730-737c.json"
+     ],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-19 01:27:30",
+       "prompt": "agent_prompts/agent_prompt.v19-ch01.sma-b.md",
+       "finished": "",
+       "result": "",
+       "note": ""
+      }
+     ],
+     "note": ""
+    },
+    {
+     "id": "T-0096-S4",
+     "kind": "sma-c",
+     "volume": 19,
+     "chapter": "01",
+     "chapter_id": "v19-ch01",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v19-ch01.sma-c.md",
+     "expected": [
+      "output/_audit/sma/v19-ch01/c/20261119-012730-6f9a.json"
+     ],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-19 01:27:30",
+       "prompt": "agent_prompts/agent_prompt.v19-ch01.sma-c.md",
+       "finished": "",
+       "result": "",
+       "note": ""
+      }
+     ],
+     "note": ""
+    },
+    {
+     "id": "T-0096-S5",
+     "kind": "analyzer-phase1",
+     "volume": 19,
+     "chapter": "01",
+     "chapter_id": "v19-ch01",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v19-ch01.analyzer-phase1.md",
+     "expected": [],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-19 01:32:12",
+       "prompt": "agent_prompts/agent_prompt.v19-ch01.analyzer-phase1.md",
+       "finished": "",
+       "result": "",
+       "note": ""
+      }
+     ],
+     "note": ""
+    },
+    {
+     "id": "T-0096-S6",
+     "kind": "analyzer-phase2",
+     "volume": 19,
+     "chapter": "01",
+     "chapter_id": "v19-ch01",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v19-ch01.analyzer-phase2.md",
+     "expected": [
+      "output/_audit/sma/v19-ch01/precheck/omission-precheck.json",
+      "output/_audit/sma/v19-ch01/analysis/20261119-013212-0aeb.json",
+      "output/_audit/sma/v19-ch01/analysis/20261119-013212-0aeb.md"
+     ],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-19 01:32:12",
+       "prompt": "agent_prompts/agent_prompt.v19-ch01.analyzer-phase2.md",
+       "finished": "",
+       "result": "",
+       "note": ""
+      }
+     ],
+     "note": ""
+    }
+   ]
+  },
+  {
+   "id": "T-0097",
+   "text": "Polnyi perevod i audit v19-ch02 (first-launch po agent_workflow): bloki, prefilytry, SMA, otchet, gate 12/12, commit",
+   "created": "2026-11-18 23:45:08",
+   "status": "done",
+   "note": "polnyi audit, gate 12/12",
+   "subtasks": [
+    {
+     "id": "T-0097-S1",
+     "kind": "first-launch",
+     "volume": 19,
+     "chapter": "02",
+     "chapter_id": "v19-ch02",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v19-ch02.first-launch.md",
+     "expected": [
+      "AINovelEdit/output/chapters/v19-ch02.md",
+      "AINovelEdit/output/_log/v19-log.md",
+      "AINovelEdit/translates/_report/merged/v19-ch02.md"
+     ],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-18 23:46:13",
+       "prompt": "agent_prompts/agent_prompt.v19-ch02.first-launch.md",
+       "finished": "",
+       "result": "",
+       "note": ""
+      }
+     ],
+     "note": ""
+    }
+   ]
+  },
+  {
+   "id": "T-0098",
+   "text": "Polnyi perevod i audit v19-ch03 (first-launch po agent_workflow): bloki, prefilytry, SMA, otchet, gate 12/12, commit",
+   "created": "2026-11-18 23:45:08",
+   "status": "done",
+   "note": "polnyi audit, gate 12/12",
+   "subtasks": [
+    {
+     "id": "T-0098-S1",
+     "kind": "first-launch",
+     "volume": 19,
+     "chapter": "03",
+     "chapter_id": "v19-ch03",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v19-ch03.first-launch.md",
+     "expected": [
+      "AINovelEdit/output/chapters/v19-ch03.md",
+      "AINovelEdit/output/_log/v19-log.md",
+      "AINovelEdit/translates/_report/merged/v19-ch03.md"
+     ],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-18 23:46:13",
+       "prompt": "agent_prompts/agent_prompt.v19-ch03.first-launch.md",
+       "finished": "",
+       "result": "",
+       "note": ""
+      }
+     ],
+     "note": ""
+    }
+   ]
+  },
+  {
+   "id": "T-0099",
+   "text": "Polnyi perevod i audit v19-ch04 (first-launch po agent_workflow): bloki, prefilytry, SMA, otchet, gate 12/12, commit",
+   "created": "2026-11-18 23:45:08",
+   "status": "done",
+   "note": "polnyi audit, gate 12/12",
+   "subtasks": [
+    {
+     "id": "T-0099-S1",
+     "kind": "first-launch",
+     "volume": 19,
+     "chapter": "04",
+     "chapter_id": "v19-ch04",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v19-ch04.first-launch.md",
+     "expected": [
+      "AINovelEdit/output/chapters/v19-ch04.md",
+      "AINovelEdit/output/_log/v19-log.md",
+      "AINovelEdit/translates/_report/merged/v19-ch04.md"
+     ],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-18 23:46:13",
+       "prompt": "agent_prompts/agent_prompt.v19-ch04.first-launch.md",
+       "finished": "",
+       "result": "",
+       "note": ""
+      }
+     ],
+     "note": ""
+    }
+   ]
+  },
+  {
+   "id": "T-0100",
+   "text": "Polnyi perevod i audit v19-ch05 (first-launch po agent_workflow): bloki, prefilytry, SMA, otchet, gate 12/12, commit",
+   "created": "2026-11-18 23:45:08",
+   "status": "done",
+   "note": "polnyi audit, gate 12/12",
+   "subtasks": [
+    {
+     "id": "T-0100-S1",
+     "kind": "first-launch",
+     "volume": 19,
+     "chapter": "05",
+     "chapter_id": "v19-ch05",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v19-ch05.first-launch.md",
+     "expected": [
+      "AINovelEdit/output/chapters/v19-ch05.md",
+      "AINovelEdit/output/_log/v19-log.md",
+      "AINovelEdit/translates/_report/merged/v19-ch05.md"
+     ],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-18 23:45:22",
+       "prompt": "agent_prompts/agent_prompt.v19-ch05.first-launch.md",
+       "finished": "",
+       "result": "",
+       "note": ""
+      }
+     ],
+     "note": ""
+    },
+    {
+     "id": "T-0100-S2",
+     "kind": "sma-a",
+     "volume": 19,
+     "chapter": "05",
+     "chapter_id": "v19-ch05",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v19-ch05.sma-a.md",
+     "expected": [
+      "output/_audit/sma/v19-ch05/a/20261119-011149-0db9.json"
+     ],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-19 01:11:49",
+       "prompt": "agent_prompts/agent_prompt.v19-ch05.sma-a.md",
+       "finished": "",
+       "result": "",
+       "note": ""
+      }
+     ],
+     "note": ""
+    },
+    {
+     "id": "T-0100-S3",
+     "kind": "sma-b",
+     "volume": 19,
+     "chapter": "05",
+     "chapter_id": "v19-ch05",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v19-ch05.sma-b.md",
+     "expected": [
+      "output/_audit/sma/v19-ch05/b/20261119-011149-fae2.json"
+     ],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-19 01:11:49",
+       "prompt": "agent_prompts/agent_prompt.v19-ch05.sma-b.md",
+       "finished": "",
+       "result": "",
+       "note": ""
+      }
+     ],
+     "note": ""
+    },
+    {
+     "id": "T-0100-S4",
+     "kind": "sma-c",
+     "volume": 19,
+     "chapter": "05",
+     "chapter_id": "v19-ch05",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v19-ch05.sma-c.md",
+     "expected": [
+      "output/_audit/sma/v19-ch05/c/20261119-011149-041f.json"
+     ],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-19 01:11:49",
+       "prompt": "agent_prompts/agent_prompt.v19-ch05.sma-c.md",
+       "finished": "",
+       "result": "",
+       "note": ""
+      }
+     ],
+     "note": ""
+    },
+    {
+     "id": "T-0100-S5",
+     "kind": "analyzer-phase1",
+     "volume": 19,
+     "chapter": "05",
+     "chapter_id": "v19-ch05",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v19-ch05.analyzer-phase1.md",
+     "expected": [],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-19 01:18:03",
+       "prompt": "agent_prompts/agent_prompt.v19-ch05.analyzer-phase1.md",
+       "finished": "",
+       "result": "",
+       "note": ""
+      }
+     ],
+     "note": ""
+    },
+    {
+     "id": "T-0100-S6",
+     "kind": "analyzer-phase2",
+     "volume": 19,
+     "chapter": "05",
+     "chapter_id": "v19-ch05",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v19-ch05.analyzer-phase2.md",
+     "expected": [
+      "output/_audit/sma/v19-ch05/precheck/omission-precheck.json",
+      "output/_audit/sma/v19-ch05/analysis/20261119-011803-651b.json",
+      "output/_audit/sma/v19-ch05/analysis/20261119-011803-651b.md"
+     ],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-19 01:18:03",
+       "prompt": "agent_prompts/agent_prompt.v19-ch05.analyzer-phase2.md",
+       "finished": "",
+       "result": "",
+       "note": ""
+      }
+     ],
+     "note": ""
+    }
+   ]
+  },
+  {
+   "id": "T-0101",
+   "text": "Polnyi perevod i audit v19-ch06 (first-launch po agent_workflow): bloki, prefilytry, SMA, otchet, gate 12/12, commit",
+   "created": "2026-11-18 23:45:09",
+   "status": "done",
+   "note": "polnyi audit, gate 12/12",
+   "subtasks": [
+    {
+     "id": "T-0101-S1",
+     "kind": "first-launch",
+     "volume": 19,
+     "chapter": "06",
+     "chapter_id": "v19-ch06",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v19-ch06.first-launch.md",
+     "expected": [
+      "AINovelEdit/output/chapters/v19-ch06.md",
+      "AINovelEdit/output/_log/v19-log.md",
+      "AINovelEdit/translates/_report/merged/v19-ch06.md"
+     ],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-18 23:45:22",
+       "prompt": "agent_prompts/agent_prompt.v19-ch06.first-launch.md",
+       "finished": "",
+       "result": "",
+       "note": ""
+      }
+     ],
+     "note": ""
+    }
+   ]
+  },
+  {
+   "id": "T-0102",
+   "text": "Polnyi perevod i audit v19-ch07 (first-launch po agent_workflow): bloki, prefilytry, SMA, otchet, gate 12/12, commit",
+   "created": "2026-11-18 23:45:09",
+   "status": "done",
+   "note": "polnyi audit, gate 12/12",
+   "subtasks": [
+    {
+     "id": "T-0102-S1",
+     "kind": "first-launch",
+     "volume": 19,
+     "chapter": "07",
+     "chapter_id": "v19-ch07",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v19-ch07.first-launch.md",
+     "expected": [
+      "AINovelEdit/output/chapters/v19-ch07.md",
+      "AINovelEdit/output/_log/v19-log.md",
+      "AINovelEdit/translates/_report/merged/v19-ch07.md"
+     ],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-18 23:45:22",
+       "prompt": "agent_prompts/agent_prompt.v19-ch07.first-launch.md",
+       "finished": "",
+       "result": "",
+       "note": ""
+      }
+     ],
+     "note": ""
+    }
+   ]
+  },
+  {
+   "id": "T-0103",
+   "text": "Polnyi perevod i audit v19-ch08 (first-launch po agent_workflow): bloki, prefilytry, SMA, otchet, gate 12/12, commit",
+   "created": "2026-11-18 23:45:09",
+   "status": "done",
+   "note": "polnyi audit, gate 12/12",
+   "subtasks": [
+    {
+     "id": "T-0103-S1",
+     "kind": "first-launch",
+     "volume": 19,
+     "chapter": "08",
+     "chapter_id": "v19-ch08",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v19-ch08.first-launch.md",
+     "expected": [
+      "AINovelEdit/output/chapters/v19-ch08.md",
+      "AINovelEdit/output/_log/v19-log.md",
+      "AINovelEdit/translates/_report/merged/v19-ch08.md"
+     ],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-18 23:45:22",
+       "prompt": "agent_prompts/agent_prompt.v19-ch08.first-launch.md",
+       "finished": "",
+       "result": "",
+       "note": ""
+      }
+     ],
+     "note": ""
+    }
+   ]
+  },
+  {
+   "id": "T-0104",
+   "text": "Polnyi perevod i audit v19-ch09 (first-launch po agent_workflow): bloki, prefilytry, SMA, otchet, gate 12/12, commit",
+   "created": "2026-11-18 23:45:09",
+   "status": "done",
+   "note": "polnyi audit, gate 12/12",
+   "subtasks": [
+    {
+     "id": "T-0104-S1",
+     "kind": "first-launch",
+     "volume": 19,
+     "chapter": "09",
+     "chapter_id": "v19-ch09",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v19-ch09.first-launch.md",
+     "expected": [
+      "AINovelEdit/output/chapters/v19-ch09.md",
+      "AINovelEdit/output/_log/v19-log.md",
+      "AINovelEdit/translates/_report/merged/v19-ch09.md"
+     ],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-18 23:45:22",
+       "prompt": "agent_prompts/agent_prompt.v19-ch09.first-launch.md",
+       "finished": "",
+       "result": "",
+       "note": ""
+      }
+     ],
+     "note": ""
+    }
+   ]
+  },
+  {
+   "id": "T-0105",
+   "text": "Polnyi perevod i audit v19-ch10 (first-launch po agent_workflow): bloki, prefilytry, SMA, otchet, gate 12/12, commit",
+   "created": "2026-11-18 23:45:09",
+   "status": "done",
+   "note": "polnyi audit, gate 12/12",
+   "subtasks": [
+    {
+     "id": "T-0105-S1",
+     "kind": "first-launch",
+     "volume": 19,
+     "chapter": "10",
+     "chapter_id": "v19-ch10",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v19-ch10.first-launch.md",
+     "expected": [
+      "AINovelEdit/output/chapters/v19-ch10.md",
+      "AINovelEdit/output/_log/v19-log.md",
+      "AINovelEdit/translates/_report/merged/v19-ch10.md"
+     ],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-18 23:45:23",
+       "prompt": "agent_prompts/agent_prompt.v19-ch10.first-launch.md",
+       "finished": "",
+       "result": "",
+       "note": ""
+      }
+     ],
+     "note": ""
+    },
+    {
+     "id": "T-0105-S2",
+     "kind": "sma-a",
+     "volume": 19,
+     "chapter": "10",
+     "chapter_id": "v19-ch10",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v19-ch10.sma-a.md",
+     "expected": [
+      "output/_audit/sma/v19-ch10/a/20261119-005909-f6fa.json"
+     ],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-19 00:59:09",
+       "prompt": "agent_prompts/agent_prompt.v19-ch10.sma-a.md",
+       "finished": "",
+       "result": "",
+       "note": ""
+      }
+     ],
+     "note": ""
+    },
+    {
+     "id": "T-0105-S3",
+     "kind": "sma-b",
+     "volume": 19,
+     "chapter": "10",
+     "chapter_id": "v19-ch10",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v19-ch10.sma-b.md",
+     "expected": [
+      "output/_audit/sma/v19-ch10/b/20261119-005909-23ad.json"
+     ],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-19 00:59:09",
+       "prompt": "agent_prompts/agent_prompt.v19-ch10.sma-b.md",
+       "finished": "",
+       "result": "",
+       "note": ""
+      }
+     ],
+     "note": ""
+    },
+    {
+     "id": "T-0105-S4",
+     "kind": "sma-c",
+     "volume": 19,
+     "chapter": "10",
+     "chapter_id": "v19-ch10",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v19-ch10.sma-c.md",
+     "expected": [
+      "output/_audit/sma/v19-ch10/c/20261119-005909-3c12.json"
+     ],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-19 00:59:09",
+       "prompt": "agent_prompts/agent_prompt.v19-ch10.sma-c.md",
+       "finished": "",
+       "result": "",
+       "note": ""
+      }
+     ],
+     "note": ""
+    },
+    {
+     "id": "T-0105-S5",
+     "kind": "analyzer-phase1",
+     "volume": 19,
+     "chapter": "10",
+     "chapter_id": "v19-ch10",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v19-ch10.analyzer-phase1.md",
+     "expected": [],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-19 01:05:23",
+       "prompt": "agent_prompts/agent_prompt.v19-ch10.analyzer-phase1.md",
+       "finished": "",
+       "result": "",
+       "note": ""
+      }
+     ],
+     "note": ""
+    },
+    {
+     "id": "T-0105-S6",
+     "kind": "analyzer-phase2",
+     "volume": 19,
+     "chapter": "10",
+     "chapter_id": "v19-ch10",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v19-ch10.analyzer-phase2.md",
+     "expected": [
+      "output/_audit/sma/v19-ch10/precheck/omission-precheck.json",
+      "output/_audit/sma/v19-ch10/analysis/20261119-010523-7741.json",
+      "output/_audit/sma/v19-ch10/analysis/20261119-010523-7741.md"
+     ],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-19 01:05:23",
+       "prompt": "agent_prompts/agent_prompt.v19-ch10.analyzer-phase2.md",
+       "finished": "",
+       "result": "",
+       "note": ""
+      }
+     ],
+     "note": ""
+    }
+   ]
+  },
+  {
+   "id": "T-0106",
+   "text": "Polnyi perevod i audit v19-afterword (first-launch po agent_workflow): bloki, prefilytry, SMA, otchet, gate 12/12, commit",
+   "created": "2026-11-18 23:45:09",
+   "status": "done",
+   "note": "polnyi audit, gate 12/12",
+   "subtasks": [
+    {
+     "id": "T-0106-S1",
+     "kind": "first-launch",
+     "volume": 19,
+     "chapter": "afterword",
+     "chapter_id": "v19-afterword",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v19-afterword.first-launch.md",
+     "expected": [
+      "AINovelEdit/output/chapters/v19-afterword.md",
+      "AINovelEdit/output/_log/v19-log.md",
+      "AINovelEdit/translates/_report/merged/v19-afterword.md"
+     ],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-18 23:45:23",
+       "prompt": "agent_prompts/agent_prompt.v19-afterword.first-launch.md",
+       "finished": "",
+       "result": "",
+       "note": ""
+      }
+     ],
+     "note": ""
+    }
+   ]
   }
  ]
 }
