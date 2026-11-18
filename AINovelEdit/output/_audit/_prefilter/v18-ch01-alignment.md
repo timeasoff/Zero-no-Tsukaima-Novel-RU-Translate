@@ -1,0 +1,226 @@
+# Выгрузка предфильтра (сверка смысловых блоков): v18-ch01.md
+
+Блоков 14, переведено 14. Сигналов: строгих 0, прочих 26, инфо 10.
+
+По типам: marks 5, names 23, negation 1, numbers 1, pronouns 3, speech 3
+
+Единица — смысловой блок: блоки JA/EN/RU/ED_RU выровнены при нормализации, «съезда» нет. Сигнал — обнаружение, не вердикт: разбор по скиллу translation-audit.
+
+## Сигналы
+
+### Блок 1 — marks (weak)
+
+- вопросительный знак: EN и ED_RU расходятся
+- **EN:** Location: Capital of Gallia, Lutetia. In the courtyard of the palace of Versailles located in the suburbs of the capital, in a camp where a huge amount of tents…
+- **ED_RU:** Во дворе дворца Версальтейль, что в пригороде Лютеции, столицы Галлии, было натянуто множество палаток. В одной из них — небольшой, с тёмно-синим брезентом на т…
+
+### Блок 1 — names (weak)
+
+- имена словаря: есть в EN, нет в ED_RU: «Блудливая Луиза», «Глава третья. Матросский мундир и ревность Луизы», Генриетта, Глава четвёртая. Водная столица, Пентагон, владыка пяти сил, госпожа Святая
+- **EN:** Location: Capital of Gallia, Lutetia. In the courtyard of the palace of Versailles located in the suburbs of the capital, in a camp where a huge amount of tents…
+- **ED_RU:** Во дворе дворца Версальтейль, что в пригороде Лютеции, столицы Галлии, было натянуто множество палаток. В одной из них — небольшой, с тёмно-синим брезентом на т…
+
+### Блок 1 — names (info)
+
+- имена словаря: есть в ED_RU, нет в EN (проверить): «Анри III», «неделя Хеймдалля», «„Пришествие Основателя Бримира“», Карин Дезире, Карин Могучий Ветер, младший лейтенант Вилер, стихия «Вода»
+- **EN:** Location: Capital of Gallia, Lutetia. In the courtyard of the palace of Versailles located in the suburbs of the capital, in a camp where a huge amount of tents…
+- **ED_RU:** Во дворе дворца Версальтейль, что в пригороде Лютеции, столицы Галлии, было натянуто множество палаток. В одной из них — небольшой, с тёмно-синим брезентом на т…
+
+### Блок 2 — marks (weak)
+
+- вопросительный знак: EN и ED_RU расходятся
+- **EN:** —
+- **ED_RU:** Сейчас в Ансууле стояла жара. Даже ночью в воздухе ещё висел зной. Здесь костров больше не разводили, и только лунный свет освещал путь. / Впереди послышался сл…
+
+### Блок 2 — names (info)
+
+- имена словаря: есть в ED_RU, нет в EN (проверить): «Воздушный молот», «приворотное зелье», Воздушный щит, Луиза, Луиза-Нулиза, Развеивание магии, Сайто Хирага, Сайто Шевалье де Хирага
+- **EN:** —
+- **ED_RU:** Сейчас в Ансууле стояла жара. Даже ночью в воздухе ещё висел зной. Здесь костров больше не разводили, и только лунный свет освещал путь. / Впереди послышался сл…
+
+### Блок 2 — negation (weak)
+
+- отрицание: EN и ED_RU расходятся
+- **EN:** —
+- **ED_RU:** Сейчас в Ансууле стояла жара. Даже ночью в воздухе ещё висел зной. Здесь костров больше не разводили, и только лунный свет освещал путь. / Впереди послышался сл…
+
+### Блок 2 — speech (weak)
+
+- наличие реплик: EN — нет, ED_RU — есть
+- **EN:** —
+- **ED_RU:** Сейчас в Ансууле стояла жара. Даже ночью в воздухе ещё висел зной. Здесь костров больше не разводили, и только лунный свет освещал путь. / Впереди послышался сл…
+
+### Блок 3 — names (weak)
+
+- имена словаря: есть в EN, нет в ED_RU: «Блудливая Луиза», «Воздушный молот», «Глава пятая. Сила приворотного зелья», «тайное место», Великая Цель, Весенний призыв фамильяров, Высший суд, Галлия, Галльский добровольческий флот, госпожа Святая, дворец Версальтейль, площадь Вестри
+- **EN:** The courtyard of the palace of Versailles that Louise and Saito left was dimly lit because of the various campfires burning in that place. The courtyard was flo…
+- **ED_RU:** — Да. Я тоже думала много раз: почему этот человек всё время делает мне больно? И каждый раз злилась — била его, убегала. Но я уже устала от всего этого. Так чт…
+
+### Блок 3 — names (info)
+
+- имена словаря: есть в ED_RU, нет в EN (проверить): «Единство»
+- **EN:** The courtyard of the palace of Versailles that Louise and Saito left was dimly lit because of the various campfires burning in that place. The courtyard was flo…
+- **ED_RU:** — Да. Я тоже думала много раз: почему этот человек всё время делает мне больно? И каждый раз злилась — била его, убегала. Но я уже устала от всего этого. Так чт…
+
+### Блок 3 — numbers (weak)
+
+- числа EN не подтверждены в ED_RU: 10
+- **EN:** The courtyard of the palace of Versailles that Louise and Saito left was dimly lit because of the various campfires burning in that place. The courtyard was flo…
+- **ED_RU:** — Да. Я тоже думала много раз: почему этот человек всё время делает мне больно? И каждый раз злилась — била его, убегала. Но я уже устала от всего этого. Так чт…
+
+### Блок 4 — names (weak)
+
+- имена словаря: есть в EN, нет в ED_RU: «Блудливая Луиза», госпожа Святая
+- **EN:** After hearing this, Louise could no longer just listen without saying anything. "Hey you! Listen, you could stop and stick with that. If I were to take a lover,…
+- **ED_RU:** От этого мольбы в голосе Луизы Сайто замер, не в силах двигнуться. Он никак не мог поверить, что она столько думала о нём, и остолбенел. / — Может, дело не в то…
+
+### Блок 4 — names (info)
+
+- имена словаря: есть в ED_RU, нет в EN (проверить): «разумный меч», Развеивание магии, Сайто Хирага, Сайто Шевалье де Хирага, собор Святой Лутии
+- **EN:** After hearing this, Louise could no longer just listen without saying anything. "Hey you! Listen, you could stop and stick with that. If I were to take a lover,…
+- **ED_RU:** От этого мольбы в голосе Луизы Сайто замер, не в силах двигнуться. Он никак не мог поверить, что она столько думала о нём, и остолбенел. / — Может, дело не в то…
+
+### Блок 5 — names (weak)
+
+- имена словаря: есть в EN, нет в ED_RU: «Блудливая Луиза», госпожа Святая
+- **EN:** "I do not know if I’ll be able to say this again, but literally, you have always been there to save me no matter how selfish or rude I have been to you. You eve…
+- **ED_RU:** — Я… скажу честно. / — «Скажу честно» — это ещё что такое? Противно. / — Не говори «противно». Разве я не противный тебе всё равно? / — В том-то и дело. Но прот…
+
+### Блок 5 — names (info)
+
+- имена словаря: есть в ED_RU, нет в EN (проверить): «приворотное зелье», Призыв подручного, Развеивание магии, собор Святой Лутии
+- **EN:** "I do not know if I’ll be able to say this again, but literally, you have always been there to save me no matter how selfish or rude I have been to you. You eve…
+- **ED_RU:** — Я… скажу честно. / — «Скажу честно» — это ещё что такое? Противно. / — Не говори «противно». Разве я не противный тебе всё равно? / — В том-то и дело. Но прот…
+
+### Блок 5 — pronouns (weak)
+
+- местоименное лицо: EN — 1-е л. мн. (we/us), в ED_RU — 2-е л. (ты/вы) без мы/нам/нас (подмена «нас/вас»)
+- **EN:** "I do not know if I’ll be able to say this again, but literally, you have always been there to save me no matter how selfish or rude I have been to you. You eve…
+- **ED_RU:** — Я… скажу честно. / — «Скажу честно» — это ещё что такое? Противно. / — Не говори «противно». Разве я не противный тебе всё равно? / — В том-то и дело. Но прот…
+
+### Блок 6 — names (weak)
+
+- имена словаря: есть в EN, нет в ED_RU: «Блудливая Луиза», Врата мира, госпожа Святая
+- **EN:** Louise's words sum up in simple but serious words: No matter what happens, my feelings for you will never change. Overwhelmed by his own weakness, Saito thought…
+- **ED_RU:** Луиза посмотрела на поднятую ногу, вздохнула: ну вот, покачала головой и опустила её обратно. / — Не ударишь? / — Не ударю. Так говори честно — когда целовал пр…
+
+### Блок 7 — names (weak)
+
+- имена словаря: есть в EN, нет в ED_RU: «Блудливая Луиза», госпожа Святая, младший лейтенант Вилер
+- **EN:** "But honestly, the majority of what I felt were funny moments. Yes, those moments that made my heart tremble! And believe me I would never lie about this: the o…
+- **ED_RU:** — Само собой, — вырвалось у Сайто, и он уже хотел поцеловать её, но Луиза ловко увернулась от его губ. Он с тревогой спросил: «Луиза?» — и она совершенно неожид…
+
+### Блок 7 — names (info)
+
+- имена словаря: есть в ED_RU, нет в EN (проверить): «Указ о сострадании ко всему живому», «разумный меч», «совет аристократов», собор Святой Лутии, указ о запрете дуэлей
+- **EN:** "But honestly, the majority of what I felt were funny moments. Yes, those moments that made my heart tremble! And believe me I would never lie about this: the o…
+- **ED_RU:** — Само собой, — вырвалось у Сайто, и он уже хотел поцеловать её, но Луиза ловко увернулась от его губ. Он с тревогой спросил: «Луиза?» — и она совершенно неожид…
+
+### Блок 8 — names (weak)
+
+- имена словаря: есть в EN, нет в ED_RU: «Блудливая Луиза», Луны-Близнецы, госпожа Святая
+- **EN:** "Ahhh, I decided I won’t be bothered by that. All those little things will just stack up one after another. Being angry about that is just a waste of energy." A…
+- **ED_RU:** — Д-дура! И потом, здесь же улица! / — Ну и что. Совсем темно, никто не ходит. Разве что луна смотрит. / Только тут Сайто понял, почему Луиза притащила его сюда…
+
+### Блок 8 — names (info)
+
+- имена словаря: есть в ED_RU, нет в EN (проверить): Кольбер Огненный Змей, Кольцо Андвари, Обнаружение магии, Развеивание магии, улица Бурдоне
+- **EN:** "Ahhh, I decided I won’t be bothered by that. All those little things will just stack up one after another. Being angry about that is just a waste of energy." A…
+- **ED_RU:** — Д-дура! И потом, здесь же улица! / — Ну и что. Совсем темно, никто не ходит. Разве что луна смотрит. / Только тут Сайто понял, почему Луиза притащила его сюда…
+
+### Блок 8 — pronouns (weak)
+
+- местоименное лицо: EN — 1-е л. мн. (we/us), в ED_RU — 2-е л. (ты/вы) без мы/нам/нас (подмена «нас/вас»)
+- **EN:** "Ahhh, I decided I won’t be bothered by that. All those little things will just stack up one after another. Being angry about that is just a waste of energy." A…
+- **ED_RU:** — Д-дура! И потом, здесь же улица! / — Ну и что. Совсем темно, никто не ходит. Разве что луна смотрит. / Только тут Сайто понял, почему Луиза притащила его сюда…
+
+### Блок 9 — names (weak)
+
+- имена словаря: есть в EN, нет в ED_RU: «Блудливая Луиза», Менвил Белое Пламя, Орден Белой Лилии, госпожа Святая
+- **EN:** As she walked, she seemed impatient for something as she looked everywhere... So that's what she was looking for... It was a fountain! Still lost in his ramblin…
+- **ED_RU:** Сайто обернулся. Луиза сидела в фонтане, спиной к нему. Её белая спина, освещённая луной, вырисовывалась прекрасной линией в летней ночи. / Тонкая, но удивитель…
+
+### Блок 10 — marks (weak)
+
+- вопросительный знак: EN и ED_RU расходятся
+- **EN:** Her long pink hair was separated in two at her neck, and then dropped on her shoulders. They were tinged with a lovely hue. Oh, no matter how many times I've hu…
+- **ED_RU:** — Я красивая? / Голос был тихим, готовым исчезнуть, — но он отчётливо услышал его. / — У-угу, — вырвалось у него, и Луиза медленно встала. / — Эй! Ты что! Подож…
+
+### Блок 10 — names (weak)
+
+- имена словаря: есть в EN, нет в ED_RU: «Блудливая Луиза», госпожа Святая
+- **EN:** Her long pink hair was separated in two at her neck, and then dropped on her shoulders. They were tinged with a lovely hue. Oh, no matter how many times I've hu…
+- **ED_RU:** — Я красивая? / Голос был тихим, готовым исчезнуть, — но он отчётливо услышал его. / — У-угу, — вырвалось у него, и Луиза медленно встала. / — Эй! Ты что! Подож…
+
+### Блок 10 — names (info)
+
+- имена словаря: есть в ED_RU, нет в EN (проверить): Сиеста
+- **EN:** Her long pink hair was separated in two at her neck, and then dropped on her shoulders. They were tinged with a lovely hue. Oh, no matter how many times I've hu…
+- **ED_RU:** — Я красивая? / Голос был тихим, готовым исчезнуть, — но он отчётливо услышал его. / — У-угу, — вырвалось у него, и Луиза медленно встала. / — Эй! Ты что! Подож…
+
+### Блок 10 — speech (weak)
+
+- наличие реплик: EN — нет, ED_RU — есть
+- **EN:** Her long pink hair was separated in two at her neck, and then dropped on her shoulders. They were tinged with a lovely hue. Oh, no matter how many times I've hu…
+- **ED_RU:** — Я красивая? / Голос был тихим, готовым исчезнуть, — но он отчётливо услышал его. / — У-угу, — вырвалось у него, и Луиза медленно встала. / — Эй! Ты что! Подож…
+
+### Блок 11 — marks (weak)
+
+- вопросительный знак: EN и ED_RU расходятся
+- **EN:** The feeling of touching her skin with his hand made his entire body tremble. It was smooth and warm. The experience of playing with this delicate naked body cau…
+- **ED_RU:** Лунный свет мягко, но достаточно ярко окрашивал прекрасное тело Луизы. И чуть вздувшиеся кончики груди, и лёгкая тень ниже пупа — всё было открыто его взгляду б…
+
+### Блок 11 — names (weak)
+
+- имена словаря: есть в EN, нет в ED_RU: «Блудливая Луиза», госпожа Святая
+- **EN:** The feeling of touching her skin with his hand made his entire body tremble. It was smooth and warm. The experience of playing with this delicate naked body cau…
+- **ED_RU:** Лунный свет мягко, но достаточно ярко окрашивал прекрасное тело Луизы. И чуть вздувшиеся кончики груди, и лёгкая тень ниже пупа — всё было открыто его взгляду б…
+
+### Блок 11 — speech (weak)
+
+- наличие реплик: EN — нет, ED_RU — есть
+- **EN:** The feeling of touching her skin with his hand made his entire body tremble. It was smooth and warm. The experience of playing with this delicate naked body cau…
+- **ED_RU:** Лунный свет мягко, но достаточно ярко окрашивал прекрасное тело Луизы. И чуть вздувшиеся кончики груди, и лёгкая тень ниже пупа — всё было открыто его взгляду б…
+
+### Блок 12 — names (weak)
+
+- имена словаря: есть в EN, нет в ED_RU: «Блудливая Луиза», «Глиняный Ком», Великая Цель, Врата мира, Сиеста, Фуке Глиняный Ком, госпожа Святая
+- **EN:** Saito felt as if his throat was completely dry. From this point, if he only stretched out his hand, if he only stretched a little more... that soft part of the …
+- **ED_RU:** — Можешь смотреть на других девушек. Можешь даже изменить — мне всё равно. Но… / — Но? / — Не умирай раньше меня. Только это пообещай. Я... я наверное не пережи…
+
+### Блок 13 — marks (weak)
+
+- вопросительный знак: EN и ED_RU расходятся
+- **EN:** "That's just what I would say." Saito also said: "Never mind you kissing other men, no matter what you do to them, but please, never dare to die before me." "We…
+- **ED_RU:** Луиза застенчиво опустила голову. И тихо, с улыбкой, проговорила: / — Спасибо. / Они вышли из фонтана и оделись. Сухой летний воздух Халкегинии быстро высушил и…
+
+### Блок 13 — names (weak)
+
+- имена словаря: есть в EN, нет в ED_RU: «Блудливая Луиза», госпожа Святая
+- **EN:** "That's just what I would say." Saito also said: "Never mind you kissing other men, no matter what you do to them, but please, never dare to die before me." "We…
+- **ED_RU:** Луиза застенчиво опустила голову. И тихо, с улыбкой, проговорила: / — Спасибо. / Они вышли из фонтана и оделись. Сухой летний воздух Халкегинии быстро высушил и…
+
+### Блок 13 — names (info)
+
+- имена словаря: есть в ED_RU, нет в EN (проверить): «Воздушный молот», Воздушный щит, собор Святой Лутии
+- **EN:** "That's just what I would say." Saito also said: "Never mind you kissing other men, no matter what you do to them, but please, never dare to die before me." "We…
+- **ED_RU:** Луиза застенчиво опустила голову. И тихо, с улыбкой, проговорила: / — Спасибо. / Они вышли из фонтана и оделись. Сухой летний воздух Халкегинии быстро высушил и…
+
+### Блок 13 — pronouns (weak)
+
+- местоименное лицо: EN — 1-е л. мн. (we/us), в ED_RU — 2-е л. (ты/вы) без мы/нам/нас (подмена «нас/вас»)
+- **EN:** "That's just what I would say." Saito also said: "Never mind you kissing other men, no matter what you do to them, but please, never dare to die before me." "We…
+- **ED_RU:** Луиза застенчиво опустила голову. И тихо, с улыбкой, проговорила: / — Спасибо. / Они вышли из фонтана и оделись. Сухой летний воздух Халкегинии быстро высушил и…
+
+### Блок 14 — names (weak)
+
+- имена словаря: есть в EN, нет в ED_RU: «Блудливая Луиза», Врата мира, госпожа Святая
+- **EN:** Now I have everything I want in the world. This is a feeling I never had before in my life. What is this? Louise noticed the strange expression of Saito. "...Is…
+- **ED_RU:** Такой удовлетворённый, он коснулся чувства, о котором раньше и не подозревал. / Что это? / Заметив странно растерянное лицо Сайто, Луиза спросила: / — …Что с то…
+
+### Блок 14 — names (info)
+
+- имена словаря: есть в ED_RU, нет в EN (проверить): Луны-Близнецы
+- **EN:** Now I have everything I want in the world. This is a feeling I never had before in my life. What is this? Louise noticed the strange expression of Saito. "...Is…
+- **ED_RU:** Такой удовлетворённый, он коснулся чувства, о котором раньше и не подозревал. / Что это? / Заметив странно растерянное лицо Сайто, Луиза спросила: / — …Что с то…
+

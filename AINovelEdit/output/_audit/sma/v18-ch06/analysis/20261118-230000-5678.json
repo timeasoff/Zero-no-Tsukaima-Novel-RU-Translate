@@ -1,0 +1,126 @@
+{
+  "analysis_id": "20261118-230000-5678",
+  "chapter": "v18-ch06",
+  "inputs": {
+    "phase1": "analysis/20261118-230000-1234.phase1.json",
+    "a_runs": ["a/20261118-230000-a1b2.json"],
+    "b_runs": ["b/20261118-230000-c3d4.json"],
+    "c_runs": ["c/20261118-230000-e5f6.json"],
+    "precheck": "precheck/omission-precheck.json"
+  },
+  "results": [
+    {
+      "block": 1,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "COMPONENT_LOSS",
+      "action": "PRESERVED",
+      "note": "Кандидаты A-1 (20261118-230000-a1b2, бл.1, «до седьмого колена») и Phase 1 (20261118-230000-1234.phase1, бл.1) объединены явно. JA 末代までの語りぐさ — гипербола «будут вспоминать очень долго»; RU «до седьмого колена» — та же гипербола в идиоматическом русском выражении. PRESERVED — JA, ACCEPTABLE ADAPTATION."
+    },
+    {
+      "block": 8,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "COMPONENT_LOSS",
+      "action": "PRESERVED",
+      "note": "Кандидат A-2 (бл.8): JA あ、あれ → RU «т-там». Запинка подчинённого и его страх перед святым рыцарём переданы; звуковой состав — инструментальный оттенок. PRESERVED — JA, CHARACTER VOICE."
+    },
+    {
+      "block": 20,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "COMPONENT_LOSS",
+      "action": "PRESERVED",
+      "note": "Кандидат A-3 (бл.20): JA 倍ぐらい → RU «вдвое». Приблизительность ぐらい отчасти сглажена, но комизм и телесная деталь (отекшие кисти, мизинцы) сохранены полностью; усиление модальности ради «точности» ухудшило бы фразу. PRESERVED — FUNCTIONAL."
+    },
+    {
+      "block": 12,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MEANING_SHIFT",
+      "action": "PRESERVED",
+      "note": "Кандидат A-4 (бл.12): крик Сильфиды «Кьюи! Кьюи-кьюи! Не верю!» — звукоподражание きゅい и членораздельная реплика 信じられないのね сохранены оба плана. Голос и восторг переданы. PRESERVED — JA."
+    },
+    {
+      "block": 2,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MEANING_SHIFT",
+      "action": "PRESERVED",
+      "note": "Кандидаты B-1 (бл.2, атрибуция), Phase 1 (бл.2) и C-1 (бл.2, реплика «Но вы же мужчина!») объединены явно. JA 男じゃないのよ — удивлённое отрицание с женской частицей のよ; RU «Но вы же мужчина!» передаёт тот же речевой акт. Реплика «Нет. Перед вами поистине „Подземная вода“» приписана Изабелле по следующему абзацу JA (её появление) и по EN. PRESERVED — JA/EN, CHARACTER VOICE."
+    },
+    {
+      "block": 15,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "MEANING_SHIFT",
+      "action": "FIXED",
+      "note": "Кандидаты B-2 (бл.15, референт) и Phase 1 (бл.15) объединены явно. JA 命がけでつくってもらったチャンス — шанс, добытый Табитой ценой жизни; до правки референт «ценой собственной жизни» читался неоднозначно. Исправлено до финальной сверки: «шанс, который Табита добыла ценой собственной жизни». RECHECK выполнен; в финальном тексте ошибки нет."
+    },
+    {
+      "block": 26,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MEANING_SHIFT",
+      "action": "PRESERVED",
+      "note": "Кандидат B-3 (бл.26): «Мы, четыре из четырёх, вернём Святую землю» — каноническая форма «четыре из четырёх» (dictionary.md, практика v15/v16); JA 我々は四の四を携え — те же носители Пустоты. PRESERVED — канон."
+    },
+    {
+      "block": 17,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "COMPONENT_LOSS",
+      "action": "PRESERVED",
+      "note": "Кандидат C-2 (бл.17): смех Джулио «Ха-ха-ха! Не делай такое лицо!»; следующая реплика прямо раскрывает иронию («Я и сам так думаю»). Подтекст сохранён; усиление смеха добавило бы несуществующий оттенок. PRESERVED — JA, ACCEPTABLE ADAPTATION."
+    },
+    {
+      "block": 29,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "COMPONENT_LOSS",
+      "action": "PRESERVED",
+      "note": "Кандидат C-3 (бл.29): JA は？ → RU «А?»; короткая реакция ошеломления перед признанием «У меня проснулась привязанность» передана точно. PRESERVED — JA."
+    },
+    {
+      "block": 2,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MISSING",
+      "action": "PRESERVED",
+      "note": "Precheck S1-tail-truncation (бл.2, MULTI_BLOCK/PARTIAL, conf=MEDIUM): «непокрытые звенья 14…16» — это реплика «Нет. Перед вами поистине „Подземная вода“» и появление Изабеллы с высоким спутником. Оба звена присутствуют в RU (строки 51–53); счётчик сравнивает число абзацев JA (16) и RU (12) — разница возникает из объединения абзацев. PRESERVED — FUNCTIONAL."
+    },
+    {
+      "block": 3,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MISSING",
+      "action": "PRESERVED",
+      "note": "Precheck S1 (бл.3, MULTI_BLOCK, MEDIUM): «звенья 15…16» — реплика «Неплохое число» и атрибуция Гишу; присутствуют в RU (строка 81). Артефакт разницы числа абзацев. PRESERVED — FUNCTIONAL."
+    },
+    {
+      "block": 4,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MISSING",
+      "action": "PRESERVED",
+      "note": "Precheck S1 (бл.4, MULTI_BLOCK, MEDIUM): «звенья 14…16» — «Сайто, всё это время молча думавший, поднял голову», «Я против», «И что же вы предлагаете?»; все три звена в RU (строки 103–107). PRESERVED — FUNCTIONAL."
+    },
+    {
+      "block": 5,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MISSING",
+      "action": "PRESERVED",
+      "note": "Precheck S1 (бл.5, MULTI_BLOCK, HIGH): «звенья 7…16» — ответ Луизы Кирхе, реакция Сайто, мысль «Я не отсюда…», рука Луизы, вопросы о войне. Все звенья присутствуют в RU (строки 119–129); мысль оформлена курсивом отдельным абзацем по PR-MIND. PRESERVED — FUNCTIONAL."
+    },
+    {
+      "block": 8,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MISSING",
+      "action": "PRESERVED",
+      "note": "Precheck S1 (бл.8, DIALOGUE_FRAGMENT, MEDIUM): «звенья 14…16» — реплика «Южные лорды?», размышление Карло о прошлой войне и выезд трёх всадников; в RU строки 221–225. PRESERVED — FUNCTIONAL."
+    },
+    {
+      "block": 26,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MISSING",
+      "action": "PRESERVED",
+      "note": "Precheck S1 (бл.26, DIALOGUE_FRAGMENT, HIGH): «звенья 11…16» — Витторио берёт Сайто за руку, его речь о сотрудничестве, переглядывание, реакция всех, слишком грандиозный рассказ, гора в небе. Всё присутствует в RU (строки 793–803). PRESERVED — FUNCTIONAL."
+    },
+    {
+      "block": 28,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MISSING",
+      "action": "PRESERVED",
+      "note": "Precheck S1 (бл.28, DIALOGUE_FRAGMENT, MEDIUM): «звенья 15…16» — «Сайто спросил — и Джулио ответил, будто со вздохом» и реплика «У меня проснулась привязанность»; в RU строки 863–865. PRESERVED — FUNCTIONAL."
+    }
+  ],
+  "coverage": "Analysis покрывает все 30 блоков финального текста v18-ch06 (после правок fix_block.py в блоках 1, 6, 10, 12, 13, 15, 20, 24, 25, 28, 29). Все 20 кандидатов (A 4, B 3, C 3, Фаза 1 3, precheck 7) получили status + fidelity + action; объединения перечислены явно. CONFIRMED_ERROR — 1 (FIXED до анализа, RECHECK пройден); все остальные — FALSE_POSITIVE / PRESERVED. Статусов WIP и непокрытых блоков нет — анализ закрывает главу."
+}

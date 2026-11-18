@@ -1,0 +1,115 @@
+{
+  "analysis_id": "20261118-230000-7042",
+  "chapter": "v18-ch07",
+  "inputs": {
+    "phase1": "analysis/20261118-230000-7041.phase1.json",
+    "a_runs": ["a/20261118-230000-a701.json"],
+    "b_runs": ["b/20261118-230000-b702.json"],
+    "c_runs": ["c/20261118-230000-c703.json"],
+    "precheck": "precheck/omission-precheck.json"
+  },
+  "results": [
+    {
+      "block": 4,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MEANING_SHIFT",
+      "action": "PRESERVED",
+      "note": "Кандидаты Phase 1 (бл.4, LOW) и C-1 (бл.4, реплика Луизы) объединены явно, но по разным основаниям. Направление взгляда в финальном тексте исправлено в self-review ещё до сохранения: JA にらまれて — Элеонора смотрит на Луизу, а Луиза замирает; RU «поймав на себе её взгляд» передаёт это верно. Реплика «я уже не ребёнок» сохраняет заикание и вызов. PRESERVED — JA/EN."
+    },
+    {
+      "block": 7,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MEANING_SHIFT",
+      "action": "FIXED",
+      "note": "Кандидат B-2 (бл.7): адресат секретных посланий. Исправлено ДО сохранения в self-review: «послания полетели в Альбион, который уже поделили между собой Ромалия, Галлия и Германия» — точно по JA アルビオンに向けて. RECHECK выполнен, повторной правки не требуется."
+    },
+    {
+      "block": 1,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "COMPONENT_LOSS",
+      "action": "PRESERVED",
+      "note": "Кандидат A-1 (бл.1): «работайте осторожнее» против もっと注意して操作しなさい. Comparative и повелительная модальность сохранены; потеря только инструментальной степени. PRESERVED — JA/EN."
+    },
+    {
+      "block": 5,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "COMPONENT_LOSS",
+      "action": "PRESERVED",
+      "note": "Кандидат A-2 (бл.5): «глаз дёрнулся» против 目がぴくりと動いた. JA не маркирует число; реакция передана полностью. PRESERVED — JA."
+    },
+    {
+      "block": 17,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "COMPONENT_LOSS",
+      "action": "PRESERVED",
+      "note": "Кандидаты A-3 (бл.17) и Phase 1 (бл.17, MEDIUM) объединены явно: «Плоскогрудая персикововолосая девчонка» сохраняет оба компонента 桃髪＋ぺったら и игривый регистр. ACCEPTABLE ADAPTATION, PRESERVED — FUNCTIONAL."
+    },
+    {
+      "block": 22,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "NUANCE_SHIFT",
+      "action": "PRESERVED",
+      "note": "Кандидаты A-4 (бл.22) и Phase 1 (бл.22, LOW) объединены явно: «половинчатость» передаёт оценку 中途半端 без смыслового сдвига. PRESERVED — FUNCTIONAL."
+    },
+    {
+      "block": 2,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MEANING_SHIFT",
+      "action": "PRESERVED",
+      "note": "Кандидат B-1 (бл.2): референты дрожи и «ликования» — Маликорн, Гиш лишь наблюдает. RU сохраняет направленность по JA; EN сдвинут по блокам и не арбитр. PRESERVED — JA/EN."
+    },
+    {
+      "block": 15,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MEANING_SHIFT",
+      "action": "PRESERVED",
+      "note": "Кандидат B-3 (бл.15): «мы с ней станем равны» передаёт 並ばれてしまう (страх сравняться в правах) в мысли Луизы. ACCEPTABLE ADAPTATION."
+    },
+    {
+      "block": 20,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "COMPONENT_LOSS",
+      "action": "PRESERVED",
+      "note": "Кандидат B-4 (бл.20): игра じかに／さわりまーす непереводима; ирония и содержание ремарки сохранены. PRESERVED — FUNCTIONAL."
+    },
+    {
+      "block": 13,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "REGISTER",
+      "action": "PRESERVED",
+      "note": "Кандидат C-2 (бл.13): «Телами? / Не говори пошлостей» — контраст регистров Сиесты и Луизы сохранён. PRESERVED — CHARACTER VOICE."
+    },
+    {
+      "block": 16,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "PARTICLE_LOSS",
+      "action": "PRESERVED",
+      "note": "Кандидат C-3 (бл.16): частица のね передана регулярным «нэ» в речи Сильфиды. PRESERVED — CHARACTER VOICE."
+    },
+    {
+      "block": 21,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MODALITY",
+      "action": "PRESERVED",
+      "note": "Кандидат C-4 (бл.21): паника и утешение в «Ты тоже лучшая!» сохранены без усиления. PRESERVED — JA/EN."
+    },
+    {
+      "block": 12,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MISSING",
+      "action": "PRESERVED",
+      "note": "Кандидат pre-check (бл.12, S1-tail-truncation, DIALOGUE_FRAGMENT, MEDIUM): утверждение о непокрытом хвосте JA опровергается фактом — последняя реплика JA 「サイトさんにキスしちゃいますよー」 присутствует в ED_RU блока 12 как «— Я сейчас поцелую Сайто-сана-а!», а все 7 реплик-маркеров JA налицо. Счётчик pre-check смещён из-за слияния абзацев и переноса сцены на границе блоков 12/13. PRESERVED — FALSE_POSITIVE."
+    }
+  ],
+  "post_final_read": {
+    "note": "После FINAL READ (RU-only) внесены четыре немесемантические правки через fix_block.py с RECHECK; смысловые вердикты above остаются в силе, pre-check перезапущен на финальном тексте.",
+    "fixes": [
+      "блок 1: атрибуция «— говорила Элеонора» встроена в реплику (была отдельным абзацем с тире)",
+      "блок 6: «и правда были правдой» → «и впрямь оказались правдой» (тавтология)",
+      "блок 13: «выпалила: «Что вы сделали?»» → реплика с новой строки после двоеточия",
+      "блок 21: «— раздались голоса…» встроено в предшествующую реплику (было отдельным абзацем с тире)",
+      "блок 1: «— Госпожа Элеонора...» → «— Мадемуазель Элеонора...» (address_scan: FIXED по addresses.md, повторный скан — 0 кандидатов)"
+    ]
+  },
+  "coverage": "Анализ покрывает все 22 блока финального текста v18-ch07 (после правок и пересохранения всех блоков). Статусов WIP и непокрытых блоков нет. Каждый кандидат A/B/C/Фазы 1/pre-check получил status + fidelity + action; majority vote не применялся. Анализ закрывает главу."
+}
