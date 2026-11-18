@@ -18278,6 +18278,130 @@
           "note": "completed"
         }
       ]
+    },
+    {
+      "id": "T-0084",
+      "text": "Polnyi perevod i audit v17-afterword: bloki po JA, prefilytry, SMA A/B/C + Analyzer 1/2, otchet, gate 12/12, commit",
+      "created": "2026-11-18 20:30:52",
+      "status": "done",
+      "note": "v17-afterword polnyi audit, gate 12/12",
+      "subtasks": [
+        {
+          "id": "T-0084-S1",
+          "kind": "sma-a",
+          "volume": 17,
+          "chapter": "afterword",
+          "chapter_id": "v17-afterword",
+          "status": "done",
+          "prompt_file": "agent_prompts/agent_prompt.v17-afterword.sma-a.md",
+          "expected": [
+            "output/_audit/sma/v17-afterword/a/20261118-203844-33dd.json"
+          ],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-11-18 20:38:44",
+              "prompt": "agent_prompts/agent_prompt.v17-afterword.sma-a.md",
+              "finished": "2026-11-18 20:50:14",
+              "result": "done",
+              "note": "completed"
+            }
+          ],
+          "note": "completed"
+        },
+        {
+          "id": "T-0084-S2",
+          "kind": "sma-b",
+          "volume": 17,
+          "chapter": "afterword",
+          "chapter_id": "v17-afterword",
+          "status": "done",
+          "prompt_file": "agent_prompts/agent_prompt.v17-afterword.sma-b.md",
+          "expected": [
+            "output/_audit/sma/v17-afterword/b/20261118-203844-6559.json"
+          ],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-11-18 20:38:44",
+              "prompt": "agent_prompts/agent_prompt.v17-afterword.sma-b.md",
+              "finished": "2026-11-18 20:50:14",
+              "result": "done",
+              "note": "completed"
+            }
+          ],
+          "note": "completed"
+        },
+        {
+          "id": "T-0084-S3",
+          "kind": "sma-c",
+          "volume": 17,
+          "chapter": "afterword",
+          "chapter_id": "v17-afterword",
+          "status": "done",
+          "prompt_file": "agent_prompts/agent_prompt.v17-afterword.sma-c.md",
+          "expected": [
+            "output/_audit/sma/v17-afterword/c/20261118-203844-0925.json"
+          ],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-11-18 20:38:44",
+              "prompt": "agent_prompts/agent_prompt.v17-afterword.sma-c.md",
+              "finished": "2026-11-18 20:50:14",
+              "result": "done",
+              "note": "completed"
+            }
+          ],
+          "note": "completed"
+        },
+        {
+          "id": "T-0084-S4",
+          "kind": "analyzer-phase1",
+          "volume": 17,
+          "chapter": "afterword",
+          "chapter_id": "v17-afterword",
+          "status": "done",
+          "prompt_file": "agent_prompts/agent_prompt.v17-afterword.analyzer-phase1.md",
+          "expected": [],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-11-18 20:38:44",
+              "prompt": "agent_prompts/agent_prompt.v17-afterword.analyzer-phase1.md",
+              "finished": "2026-11-18 20:50:14",
+              "result": "done",
+              "note": "completed"
+            }
+          ],
+          "note": "completed"
+        },
+        {
+          "id": "T-0084-S5",
+          "kind": "analyzer-phase2",
+          "volume": 17,
+          "chapter": "afterword",
+          "chapter_id": "v17-afterword",
+          "status": "done",
+          "prompt_file": "agent_prompts/agent_prompt.v17-afterword.analyzer-phase2.md",
+          "expected": [
+            "output/_audit/sma/v17-afterword/precheck/omission-precheck.json",
+            "output/_audit/sma/v17-afterword/analysis/20261118-203844-b1bb.json",
+            "output/_audit/sma/v17-afterword/analysis/20261118-203844-b1bb.md"
+          ],
+          "attempts": [
+            {
+              "n": 1,
+              "started": "2026-11-18 20:38:44",
+              "prompt": "agent_prompts/agent_prompt.v17-afterword.analyzer-phase2.md",
+              "finished": "2026-11-18 20:50:14",
+              "result": "done",
+              "note": "completed"
+            }
+          ],
+          "note": "completed"
+        }
+      ]
     }
   ]
 }
