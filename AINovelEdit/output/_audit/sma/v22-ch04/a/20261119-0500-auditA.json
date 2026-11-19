@@ -1,0 +1,38 @@
+{
+  "schema": "sma-audit-evidence/v1",
+  "kind": "a",
+  "run_id": "20261119-0500-auditA",
+  "chapter": "v22-ch04.md",
+  "auditor": "semantic-audit-a",
+  "scope": "микро-семантика: лексика, оттенки, эмоция, мимика, интонация",
+  "inputs": {"ja": "translates/ja/v22-ch04.md", "ru": "output/chapters/v22-ch04.md", "en": "translates/en/v22-ch04.md", "merged": "translates/_report/merged/v22-ch04.md"},
+  "findings": [
+    {
+      "id": "A-01",
+      "block": 2,
+      "issue_type": "NUANCE_SHIFT",
+      "severity": "CANDIDATE",
+      "confidence": "LOW",
+      "evidence": "JA 「テ、テファ……、もが！」 — RU «— Ти-Тиффа… вот это да!». Междометие в JA неоднозначно (EN передаёт как «wow!»); проверки заслуживает регистр восклицания.",
+      "reason": "Сверить, сохраняет ли «вот это да!» удивлённо-недоумевающую интонацию Сайто."
+    },
+    {
+      "id": "A-02",
+      "block": 2,
+      "issue_type": "NUANCE_SHIFT",
+      "severity": "CANDIDATE",
+      "confidence": "LOW",
+      "evidence": "JA 「いや、いいって、ほんと、眼福だったし……」 — RU «— Да нет, не извиняйся… Честно говоря, я и сам не против был». Игривый подтекст «услада для глаз» передан описательно.",
+      "reason": "Проверить, не утрачена ли игривость и не усилена ли грубость."
+    },
+    {
+      "id": "A-03",
+      "block": 11,
+      "issue_type": "LEXICAL_MISMATCH",
+      "severity": "CANDIDATE",
+      "confidence": "LOW",
+      "evidence": "JA 「糸の切れた人形のように」 — RU «как кукла с перерезанными нитями». Образ сохранён дословно; проверка на естественность русского сравнительного оборота.",
+      "reason": "Убедиться, что метафора не превратилась в кальку."
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "schema": "sma-audit-evidence/v1",
+  "kind": "c",
+  "run_id": "20261119-0500-auditC",
+  "chapter": "v22-ch06.md",
+  "auditor": "pragmatic-audit",
+  "scope": "прагматика: речевой акт, сила реплики, подтекст, вежливость",
+  "inputs": {"ja": "translates/ja/v22-ch06.md", "ru": "output/chapters/v22-ch06.md", "en": "translates/en/v22-ch06.md", "merged": "translates/_report/merged/v22-ch06.md"},
+  "findings": [
+    {
+      "id": "C-01",
+      "block": 3,
+      "issue_type": "PRAGMATIC_SHIFT",
+      "severity": "CANDIDATE",
+      "confidence": "MEDIUM",
+      "evidence": "JA 「聖下は、仇敵であったエルフと、随分と仲よくなったものですわね」 — RU «Как же Его Святейшество подружился с эльфами, бывшими заклятыми врагами?». Сарказм прикушенной губы.",
+      "reason": "Проверить, сохранена ли ироническая сила реплики."
+    },
+    {
+      "id": "C-02",
+      "block": 16,
+      "issue_type": "PRAGMATIC_SHIFT",
+      "severity": "CANDIDATE",
+      "confidence": "LOW",
+      "evidence": "JA 「不躾ながら、陛下にご請願したいことがあるのです」 — RU «простите за дерзость, у меня есть просьба к Вашему Величеству». Просьба-ходатайство от лица вассала.",
+      "reason": "Проверить, сохранена ли почтительная смягчённость просьбы."
+    }
+  ]
+}

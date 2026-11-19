@@ -1,0 +1,125 @@
+{
+  "schema": "sma-analysis-phase2/v1",
+  "run_id": "20261119-0520-phase2",
+  "chapter": "v22-ch06.md",
+  "phase": 2,
+  "mode": "EVIDENCE_REVIEW",
+  "inputs": {
+    "phase1": "output/_audit/sma/v22-ch06/analysis/20261119-0510-phase1.phase1.json",
+    "precheck": "output/_audit/sma/v22-ch06/precheck/omission-precheck.json",
+    "sources": {
+      "a": ["output/_audit/sma/v22-ch06/a/20261119-0500-auditA.json"],
+      "b": ["output/_audit/sma/v22-ch06/b/20261119-0500-auditB.json"],
+      "c": ["output/_audit/sma/v22-ch06/c/20261119-0500-auditC.json"]
+    }
+  },
+  "coverage_attestation": {
+    "applies_to_final_text": true,
+    "blocks_covered": 18,
+    "total_blocks": 18,
+    "phase1_covered_all_blocks": true,
+    "note": "Артефакты созданы после сохранения всех 18 блоков и двенадцати точечных правок FINAL READ (блоки 2, 3, 5, 6, 7, 9, 11, 12, 13) через fix_block.py, merged обновлён после последней правки. Pre-check кандидатов не дал. Ни один кандидат этого отчёта не затронут правками FINAL READ."
+  },
+  "decision_axes": {
+    "fidelity": ["MEANING_SHIFT", "COMPONENT_LOSS", "ADDITION", "MISSING", "RUSSIAN_ERROR", "FORMAT", "NONE"],
+    "action": ["FIXED", "REPORT_ONLY", "PRESERVED"],
+    "status": ["CONFIRMED_ERROR", "DISPUTED", "FALSE_POSITIVE"]
+  },
+  "results": [
+    {
+      "id": "A-01",
+      "block": 1,
+      "candidate": "A-01/P1-01",
+      "issue_type": "NUANCE_SHIFT",
+      "status": "FALSE_POSITIVE",
+      "fidelity": "NONE",
+      "action": "PRESERVED",
+      "before": "Генриетта в одиночестве испустила тяжёлый вздох.",
+      "after": "Генриетта в одиночестве испустила тяжёлый вздох.",
+      "reason": "JA 苦悩のため息 — «вздох тоски/муки». В ближайшем контексте («Неужто дошло до такого...», молитва, нежелание войны) степень страдания передана полностью. «Тяжёлый вздох» — естественная русская форма; предпочтение более прямого слова не доказательство ошибки. Ср. Фазу 1, блок 1."
+    },
+    {
+      "id": "A-02",
+      "block": 3,
+      "candidate": "A-02/P1-02",
+      "issue_type": "LEXICAL_MISMATCH",
+      "status": "DISPUTED",
+      "fidelity": "NONE",
+      "action": "REPORT_ONLY",
+      "before": "«Шато-д'Иф»",
+      "after": "«Шато-д'Иф»",
+      "reason": "PROVISIONAL: новый топоним JA 『シャトー・ディフ』 (фр. Château d'If) передан как «Шато-д'Иф». Прямой записи в dictionary.md и формы в завершённых томах нет. Форма выбрана по этимологии и русской традиции («Граф Монте-Кристо»); требуется подтверждение пользователя. В журнале и отчёте главы помечено PROVISIONAL."
+    },
+    {
+      "id": "A-03",
+      "block": 11,
+      "candidate": "A-03",
+      "issue_type": "NUANCE_SHIFT",
+      "status": "FALSE_POSITIVE",
+      "fidelity": "NONE",
+      "action": "PRESERVED",
+      "before": "и эльфийка с большим бюстом тоже не вернулась",
+      "after": "и эльфийка с большим бюстом тоже не вернулась",
+      "reason": "JA おっぱいエルフちゃん — грубоватый жаргонизм в устах Маликорна; RU «эльфийка с большим бюстом» сохраняет шутливую функцию и регистр, смягчая пошлость. Допустимая художественная адаптация."
+    },
+    {
+      "id": "B-01",
+      "block": 4,
+      "candidate": "B-01",
+      "issue_type": "MISTRANSLATION",
+      "status": "FALSE_POSITIVE",
+      "fidelity": "NONE",
+      "action": "PRESERVED",
+      "before": "вместо Сайто следовало бы заполучить самих носителей «Пустоты» — Луизу и Тиффанию",
+      "after": "вместо Сайто следовало бы заполучить самих носителей «Пустоты» — Луизу и Тиффанию",
+      "reason": "JA 才人よりも…こそ — явное противопоставление. RU «вместо Сайто… самих» передаёт то же сравнение: подлежащие и целевая установка не смещены. Ср. Фазу 1, блок 4."
+    },
+    {
+      "id": "B-02",
+      "block": 13,
+      "candidate": "B-02",
+      "issue_type": "OTHER",
+      "status": "FALSE_POSITIVE",
+      "fidelity": "NONE",
+      "action": "PRESERVED",
+      "before": "пали ниц в японском стиле",
+      "after": "пали ниц в японском стиле",
+      "reason": "JA прямо называет 日本の土下座スタイル и поясняет отсутствие такого обычая в Халкегинии. RU воспроизводит и жест, и объяснение, включая подражание Сайто. Смыслового сдвига нет."
+    },
+    {
+      "id": "C-01",
+      "block": 3,
+      "candidate": "C-01",
+      "issue_type": "PRAGMATIC_SHIFT",
+      "status": "FALSE_POSITIVE",
+      "fidelity": "NONE",
+      "action": "PRESERVED",
+      "before": "— Как же Его Святейшество подружился с эльфами, бывшими заклятыми врагами?",
+      "after": "— Как же Его Святейшество подружился с эльфами, бывшими заклятыми врагами?",
+      "reason": "JA 随分と仲よくなったものですわね + 唇を嚙み — ирония. RU-вопросительная конструкция с «Как же» и последующая атрибуция «бросила эту насмешку» сохраняют речевой акт и силу.Модальность не изменена."
+    },
+    {
+      "id": "C-02",
+      "block": 16,
+      "candidate": "C-02",
+      "issue_type": "PRAGMATIC_SHIFT",
+      "status": "FALSE_POSITIVE",
+      "fidelity": "NONE",
+      "action": "PRESERVED",
+      "before": "— Но... простите за дерзость, у меня есть просьба к Вашему Величеству.",
+      "after": "— Но... простите за дерзость, у меня есть просьба к Вашему Величеству.",
+      "reason": "JA 不躾ながら…ご請願したい — смягчённое ходатайство вассала. «Простите за дерзость» + «просьба к Вашему Величеству» передаёт ту же вежливость и дистанцию; титул в прямом обращении с заглавной — по PR-TITLE."
+    }
+  ],
+  "summary": {
+    "candidates_total": 7,
+    "confirmed_errors": 0,
+    "disputed": 1,
+    "false_positives": 6,
+    "fixed": 0,
+    "report_only": 1,
+    "preserved": 5,
+    "acceptable_adaptation": 1,
+    "note": "Закрывающий SMA-проход по финальному тексту; все 18 блоков покрыты Фазой 1. Единственный DISPUTED — PROVISIONAL-топоним «Шато-д'Иф». Pre-check кандидатов не дал."
+  }
+}

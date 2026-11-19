@@ -1,0 +1,28 @@
+{
+  "audit_id": "sma-c",
+  "audit_type": "pragmatic-audit",
+  "audit_run_id": "20261119-030000-e5f6",
+  "chapter": "v22-prologue",
+  "findings": [
+    {
+      "block": 2,
+      "source": "もう、この唐変木",
+      "current": "Ах ты, болван!..",
+      "problem": "PRAGMATIC_SHIFT: 唐変木 — ласково-укоризненное «тупица/болван»; в EN усилено до «I hate you, you big idiot»",
+      "reason": " Сразу за репликой идёт поцелуй и «愛してるわ», то есть это не враждебность, а ворчливое ласковое словцо. Текущий RU «Ах ты, болван!..» сохраняет силу реплики и её warmth; EN-гипербола не принята (JA > EN).",
+      "suggestion": null,
+      "severity": "CANDIDATE",
+      "issue_type": "PRAGMATIC_SHIFT"
+    },
+    {
+      "block": 1,
+      "source": "ええ、頼んだわよ",
+      "current": "Да, я рассчитываю на тебя.",
+      "problem": "SPEECH_ACT: 頼んだわよ — «полагаюсь на тебя / я тебя попросила», а не «спрошу» (сырой RU)",
+      "reason": " Саша отвечает на просьбу Бримира и принимает её; речевой акт — подтверждение доверия. Текущая формулировка передаёт именно это, модальность не усилена и не ослаблена.",
+      "suggestion": null,
+      "severity": "CANDIDATE",
+      "issue_type": "SPEECH_ACT"
+    }
+  ]
+}

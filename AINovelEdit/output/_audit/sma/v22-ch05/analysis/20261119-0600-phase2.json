@@ -1,0 +1,160 @@
+{
+  "schema": "sma-analysis-phase2/v1",
+  "run_id": "20261119-0600-phase2",
+  "chapter": "v22-ch05.md",
+  "phase": 2,
+  "mode": "EVIDENCE_REVIEW",
+  "inputs": {
+    "phase1": "output/_audit/sma/v22-ch05/analysis/20261119-0500-phase1.phase1.json",
+    "precheck": "output/_audit/sma/v22-ch05/precheck/omission-precheck.json",
+    "sources": {
+      "a": ["output/_audit/sma/v22-ch05/a/20261119-0500-auditA.json"],
+      "b": ["output/_audit/sma/v22-ch05/b/20261119-0500-auditB.json"],
+      "c": ["output/_audit/sma/v22-ch05/c/20261119-0500-auditC.json"]
+    }
+  },
+  "coverage_attestation": {
+    "applies_to_final_text": true,
+    "blocks_covered": 23,
+    "total_blocks": 23,
+    "phase1_covered_all_blocks": true,
+    "note": "Все 23 блока сохранены через save_block.py; FINAL READ (RU-only) выявил дефекты оформления и стиля, исправленные до этого прохода (пропущенные пустые строки перед маркерами, «...» → «…», кальки в блоках 1, 2, 4, 5, 6, 7, 9, 10, 13, 14, 15, 18, 20, 21). После правок merged обновлён заново, все пять предфильтров и pre-check перезапущены; A/B/C и оба анализа выполнены на финальном тексте. Pre-check дал 0 кандидатов."
+  },
+  "decision_axes": {
+    "fidelity": ["MEANING_SHIFT", "COMPONENT_LOSS", "ADDITION", "MISSING", "RUSSIAN_ERROR", "FORMAT", "NONE"],
+    "action": ["FIXED", "REPORT_ONLY", "PRESERVED"],
+    "status": ["CONFIRMED_ERROR", "DISPUTED", "FALSE_POSITIVE"]
+  },
+  "results": [
+    {
+      "id": "A-01",
+      "block": 5,
+      "candidate": "A-01/P1-01",
+      "issue_type": "LEXICAL_MISMATCH",
+      "status": "DISPUTED",
+      "fidelity": "NONE",
+      "action": "REPORT_ONLY",
+      "before": "_Ясное зеркало, тихая вода, ясное зеркало, тихая вода…_",
+      "after": "_Ясное зеркало, тихая вода, ясное зеркало, тихая вода…_",
+      "reason": "PROVISIONAL: 明止鏡水 переведено калькой с дзен-формулы 明鏡止水; в JA намеренно нарушен порядок и Сайто сам сомневается в правильности формы. Прямой словарной записи нет; форма зафиксирована в журнале как PROVISIONAL и требует подтверждения пользователя. Смысл и комизм сомнения сохранены, FIXED не требуется."
+    },
+    {
+      "id": "A-02",
+      "block": 10,
+      "candidate": "A-02",
+      "issue_type": "NUANCE_SHIFT",
+      "status": "FALSE_POSITIVE",
+      "fidelity": "NONE",
+      "action": "PRESERVED",
+      "before": "Сайто узнал это самодовольное, наглое лицо.",
+      "after": "Сайто узнал это самодовольное, наглое лицо.",
+      "reason": "JA キザったらしい — именно «нагловато-самодовольный»; оба оттенка переданы, эмоциональная степень не усилена. Предпочтение более мягкого эпитета не является доказательством ошибки."
+    },
+    {
+      "id": "A-03",
+      "block": 17,
+      "candidate": "A-03",
+      "issue_type": "NUANCE_SHIFT",
+      "status": "FALSE_POSITIVE",
+      "fidelity": "NONE",
+      "action": "PRESERVED",
+      "before": "— Ты… стрелять — это грязно, чёрт…",
+      "after": "— Ты… стрелять — это грязно, чёрт…",
+      "reason": "JA きたねえぞ — просторечное «грязно»; RU с разговорным «чёрт» и усечённым синтаксисом сохраняет регистр реплики. PRESERVED — CHARACTER VOICE."
+    },
+    {
+      "id": "B-01",
+      "block": 1,
+      "candidate": "B-01",
+      "issue_type": "MISTRANSLATION",
+      "status": "FALSE_POSITIVE",
+      "fidelity": "NONE",
+      "action": "PRESERVED",
+      "before": "Отряд водных духов — её личная гвардия, напрямую ей подчинённая.",
+      "after": "Отряд водных духов — её личная гвардия, напрямую ей подчинённая.",
+      "reason": "JA アンリエッタ直属の近衛隊: обе формы «её» относятся к Генриетте (соседнее предложение). Актанты не смещены. Ср. Фазу 1, блок 1."
+    },
+    {
+      "id": "B-02",
+      "block": 15,
+      "candidate": "B-02",
+      "issue_type": "MISTRANSLATION",
+      "status": "FALSE_POSITIVE",
+      "fidelity": "NONE",
+      "action": "PRESERVED",
+      "before": "внутри этого цилиндра спит сила Пустоты… вернее, нечто очень близкое к ней по своей природе. Быть может, она таит…",
+      "after": "внутри этого цилиндра спит сила Пустоты… вернее, нечто очень близкое к ней по своей природе. Быть может, она таит…",
+      "reason": "Местоимения «ней»/«она» согласованы с «сила» (жен. род), подлежащее следующего предложения — та же сила, а не лодка. Смысл JA сохранён."
+    },
+    {
+      "id": "B-03",
+      "block": 18,
+      "candidate": "B-03",
+      "issue_type": "MISTRANSLATION",
+      "status": "FALSE_POSITIVE",
+      "fidelity": "NONE",
+      "action": "PRESERVED",
+      "before": "Подкрасться к ней со спины — к ней, бывшему рыцарю Ордена Северной Клумбы…",
+      "after": "Подкрасться к ней со спины — к ней, бывшему рыцарю Ордена Северной Клумбы…",
+      "reason": "JA 元北花壇騎士の自分: «бывший рыцарь» — это Табита, к которой подкралась Жозетта. FINAL READ перестроил фразу для устранения двусмысленности; актанты сверены по JA."
+    },
+    {
+      "id": "C-01",
+      "block": 16,
+      "candidate": "C-01",
+      "issue_type": "PRAGMATIC_SHIFT",
+      "status": "FALSE_POSITIVE",
+      "fidelity": "NONE",
+      "action": "PRESERVED",
+      "before": "— Похоже, уговаривать бесполезно, «брат».",
+      "after": "— Похоже, уговаривать бесполезно, «брат».",
+      "reason": "JA 〝兄弟〟 — ироническое подчёркивание мнимого родства перед поединком; RU «брат» в кавычках сохраняет ту же прагматическую силу."
+    },
+    {
+      "id": "C-02",
+      "block": 10,
+      "candidate": "C-02",
+      "issue_type": "PRAGMATIC_SHIFT",
+      "status": "FALSE_POSITIVE",
+      "fidelity": "NONE",
+      "action": "PRESERVED",
+      "before": "— Что здесь делает тристейнский плебей?!",
+      "after": "— Что здесь делает тристейнский плебей?!",
+      "reason": "JA 平民風情 — пренебрежительное обращение; RU «плебей» сохраняет презрение без усиления модальности. EN 'commoner' слабее, но JA > EN."
+    },
+    {
+      "id": "C-03",
+      "block": 14,
+      "candidate": "C-03",
+      "issue_type": "PRAGMATIC_SHIFT",
+      "status": "FALSE_POSITIVE",
+      "fidelity": "NONE",
+      "action": "PRESERVED",
+      "before": "— Ну-ну, постойте. Дайте ему хоть немного рассказать.",
+      "after": "— Ну-ну, постойте. Дайте ему хоть немного рассказать.",
+      "reason": "JA まあまあ… — смягчающая, останавливающая реплика; RU передаёт тот же речевой акт и степень вежливости."
+    },
+    {
+      "id": "P1-02",
+      "block": 14,
+      "candidate": "P1-02",
+      "issue_type": "OTHER",
+      "status": "DISPUTED",
+      "fidelity": "NONE",
+      "action": "REPORT_ONLY",
+      "before": "— Господин Чезаре…",
+      "after": "— Господин Чезаре…",
+      "reason": "PROVISIONAL: JA 「チェザーレ殿」 — нейтральный гоноратив. В завершённых томах зафиксированы «Чезаре-сама» (v13-ch04, речь Сайто) и «месье Чезаре» (v14-ch02, речь Луизы); «синьор» в томе 22 не практикуется. Нейтральное «господин» сохранено, форма помечена PROVISIONAL и вынесена в отчёт."
+    }
+  ],
+  "summary": {
+    "candidates_total": 10,
+    "confirmed_errors": 0,
+    "disputed": 2,
+    "false_positives": 8,
+    "fixed": 0,
+    "report_only": 2,
+    "preserved": 8,
+    "note": "Закрывающий SMA-проход по финальному тексту: все 23 блока покрыты Фазой 1; pre-check — 0 кандидатов. Два DISPUTED — PROVISIONAL-формы «ясное зеркало, тихая вода» и «господин Чезаре»."
+  }
+}

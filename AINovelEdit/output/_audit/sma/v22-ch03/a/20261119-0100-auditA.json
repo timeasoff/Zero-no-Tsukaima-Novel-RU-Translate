@@ -1,0 +1,38 @@
+{
+  "schema": "sma-audit-evidence/v1",
+  "kind": "a",
+  "run_id": "20261119-0100-auditA",
+  "chapter": "v22-ch03.md",
+  "auditor": "semantic-audit-a",
+  "scope": "микро-семантика: лексика, оттенки, эмоция, мимика, интонация",
+  "inputs": {"ja": "translates/ja/v22-ch03.md", "ru": "output/chapters/v22-ch03.md", "en": "translates/en/v22-ch03.md", "merged": "translates/_report/merged/v22-ch03.md"},
+  "findings": [
+    {
+      "id": "A-01",
+      "block": 6,
+      "issue_type": "NUANCE_SHIFT",
+      "severity": "CANDIDATE",
+      "confidence": "MEDIUM",
+      "evidence": "JA 〝すげえ……、俺のご主人様、かっけえ〟 — RU «Ого... Моя госпожа — просто супер!». Разговорное восхищение Сайто передано, но «супер» звучит современнее, чем JA かっけえ.",
+      "reason": "Проверить, сохраняет ли «супер» эмоциональную степень и просторечный регистр реплики."
+    },
+    {
+      "id": "A-02",
+      "block": 15,
+      "issue_type": "LEXICAL_MISMATCH",
+      "severity": "CANDIDATE",
+      "confidence": "LOW",
+      "evidence": "JA 〝炎のルビー〟 (память о матери) — RU «Рубин Огня»; параллель словаря 風のルビー → «Рубин Ветра».",
+      "reason": "Проверить каноническую параллель; в словаре прямой записи 炎のルビー нет."
+    },
+    {
+      "id": "A-03",
+      "block": 16,
+      "issue_type": "LEXICAL_MISMATCH",
+      "severity": "CANDIDATE",
+      "confidence": "LOW",
+      "evidence": "JA 〝火石〟 — RU «камень огня»; синтагматическая параллель канону 風石 → «камень ветра».",
+      "reason": "Проверить, не расходится ли с практикой соседних глав тома 22."
+    }
+  ]
+}

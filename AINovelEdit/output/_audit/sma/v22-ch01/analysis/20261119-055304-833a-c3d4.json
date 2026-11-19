@@ -1,0 +1,61 @@
+{
+ "analysis_id": "20261119-055304-833a-c3d4",
+ "chapter": "v22-ch01",
+ "inputs": {
+  "phase1": "analysis/20261119-055304-833a.phase1.json",
+  "a_runs": [
+   "a/20261119-055304-833a.json"
+  ],
+  "b_runs": [
+   "b/20261119-055304-6f37.json"
+  ],
+  "c_runs": [
+   "c/20261119-055304-a9ba.json"
+  ],
+  "precheck": "precheck/omission-precheck.json"
+ },
+ "results": [
+  {
+   "block": 8,
+   "status": "CONFIRMED_ERROR",
+   "fidelity": "MEANING_SHIFT",
+   "action": "REPORT_ONLY",
+   "note": "Галлия короля Жозефа воевала с объединённой армией Халкегинии — исправлено."
+  },
+  {
+   "block": 10,
+   "status": "CONFIRMED_ERROR",
+   "fidelity": "COMPONENT_LOSS",
+   "action": "REPORT_ONLY",
+   "note": "原子力潜水艦→«атомная подводная лодка» — исправлено."
+  },
+  {
+   "block": 14,
+   "status": "CONFIRMED_ERROR",
+   "fidelity": "COMPONENT_LOSS",
+   "action": "REPORT_ONLY",
+   "note": "泣き叫ぶ→«плачущий крик», «вомбу» устранено — исправлено."
+  },
+  {
+   "block": 1,
+   "status": "CONFIRMED_ERROR",
+   "fidelity": "NUANCE_SHIFT",
+   "action": "REPORT_ONLY",
+   "note": "неторопливая беспечная зевота — исправлено."
+  },
+  {
+   "block": 5,
+   "status": "CONFIRMED_ERROR",
+   "fidelity": "MEANING_SHIFT",
+   "action": "REPORT_ONLY",
+   "note": "睨む→«глянула с вызовом» — исправлено."
+  },
+  {
+   "block": 11,
+   "status": "FALSE_POSITIVE",
+   "fidelity": "NUANCE_SHIFT",
+   "action": "PRESERVED",
+   "note": "ошеломлённый голос — исправлено; прочие LOW-нюансы — стилистика."
+  }
+ ]
+}

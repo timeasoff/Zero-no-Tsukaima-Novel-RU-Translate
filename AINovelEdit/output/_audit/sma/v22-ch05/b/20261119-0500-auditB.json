@@ -1,0 +1,38 @@
+{
+  "schema": "sma-audit-evidence/v1",
+  "kind": "b",
+  "run_id": "20261119-0500-auditB",
+  "chapter": "v22-ch05.md",
+  "auditor": "semantic-audit-b",
+  "scope": "макро-семантика и логика: субъект/объект, действия, причинность, связи, контекст",
+  "inputs": {"ja": "translates/ja/v22-ch05.md", "ru": "output/chapters/v22-ch05.md", "en": "translates/en/v22-ch05.md (reference only)", "merged": "translates/_report/merged/v22-ch05.md"},
+  "findings": [
+    {
+      "id": "B-01",
+      "block": 1,
+      "issue_type": "MISTRANSLATION",
+      "severity": "CANDIDATE",
+      "confidence": "LOW",
+      "evidence": "JA 「水精霊騎士隊は、アンリエッタ直属の近衛隊なのである」 — RU «Отряд водных духов — её личная гвардия, напрямую ей подчинённая».",
+      "reason": "Проверить, кто именно является подчинённым и чья гвардия имеется в виду; местоимение «её» относится к Генриетте."
+    },
+    {
+      "id": "B-02",
+      "block": 15,
+      "issue_type": "MISTRANSLATION",
+      "severity": "CANDIDATE",
+      "confidence": "LOW",
+      "evidence": "JA 「信じがたいことに、あの円筒形の中に眠っているのは、虚無の力……」 — RU «внутри этого цилиндра спит сила Пустоты… вернее, нечто очень близкое к ней по своей природе».",
+      "reason": "Проверить референты: «она» в следующем предложении («она таит…») относится к силе, а не к лодке."
+    },
+    {
+      "id": "B-03",
+      "block": 18,
+      "issue_type": "MISTRANSLATION",
+      "severity": "CANDIDATE",
+      "confidence": "LOW",
+      "evidence": "JA 「元北花壇騎士の自分に気づかれることなく背後に回るなど…」 — RU «Подкрасться к ней со спины — к ней, бывшему рыцарю Ордена Северной Клумбы…».",
+      "reason": "Проверить, не смещены ли актанты: Табита — бывший рыцарь, Жозетта — подошедшая сзади."
+    }
+  ]
+}

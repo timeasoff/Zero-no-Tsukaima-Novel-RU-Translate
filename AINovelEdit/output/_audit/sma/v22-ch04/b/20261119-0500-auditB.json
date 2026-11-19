@@ -1,0 +1,44 @@
+{
+  "schema": "sma-audit-evidence/v1",
+  "kind": "b",
+  "run_id": "20261119-0500-auditB",
+  "chapter": "v22-ch04.md",
+  "auditor": "semantic-audit-b",
+  "scope": "макро-семантика: субъект/объект, причинность, связи, намерение",
+  "inputs": {"ja": "translates/ja/v22-ch04.md", "ru": "output/chapters/v22-ch04.md", "en": "translates/en/v22-ch04.md", "merged": "translates/_report/merged/v22-ch04.md"},
+  "findings": [
+    {
+      "id": "B-01",
+      "block": 4,
+      "issue_type": "MISSING_TRANSLATION",
+      "omission_scope": "DIALOGUE_FRAGMENT",
+      "omission_kind": "PARTIAL",
+      "severity": "CANDIDATE",
+      "confidence": "MEDIUM",
+      "ja_span": "「やっぱり、怒ってる？」\n\n才人が尋ねると、",
+      "ru_before": "«— Ты всё-таки злишься?\n\nСпросил Сайто.»",
+      "missing_content": "Pre-check заявил, что будто бы не покрыты реплика «Ты всё-таки злишься?» и атрибуция «Спросил Сайто.» (позиции 15…16 из 16 JA-звеньев).",
+      "not_compression_reason": "Проверка по JA: оба звена присутствуют в финальном блоке 4 — реплика и атрибуция стоят отдельными абзацами. Сигнал вызван тем, что сканер сравнивает последний ED_RU-абзац с хвостом JA при сдвиге границ merged.",
+      "evidence": "Pre-check S1-tail-truncation (DIALOGUE_FRAGMENT/PARTIAL, conf=MEDIUM): n_ja=16, n_ru=15, ja_turns=8, ru_turns=7.",
+      "reason": "Сверить реальное покрытие хвоста JA в финальном блоке 4 до вердикта."
+    },
+    {
+      "id": "B-02",
+      "block": 8,
+      "issue_type": "MISTRANSLATION",
+      "severity": "CANDIDATE",
+      "confidence": "LOW",
+      "evidence": "JA 「大事な手駒であるルイズのことは、無下にはできないようであった」 — RU «для Папы она была слишком важной пешкой, чтобы её могли принять с пренебрежением». Двойное отрицание устранено правкой.",
+      "reason": "Проверить, что отрицание и модальность JA сохранены."
+    },
+    {
+      "id": "B-03",
+      "block": 10,
+      "issue_type": "MISTRANSLATION",
+      "severity": "CANDIDATE",
+      "confidence": "LOW",
+      "evidence": "JA 「喉を突いて死にますわ」 — RU «я проткну себе горло и умру». Субъект действия — Луиза; агент не потерян.",
+      "reason": "Проверить актантную структуру и категоричность угрозы."
+    }
+  ]
+}

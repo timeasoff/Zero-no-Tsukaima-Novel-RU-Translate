@@ -1,0 +1,335 @@
+{
+  "analysis_id": "20261119-063000-f5e6",
+  "chapter": "v22-ch14",
+  "final_read_recheck": "RU-only перечит всех 35 блоков сверху донизу без подглядывания в JA/EN, затем контекстная сверка подозрительных мест. Цепочка «окончание Священной войны → поездка к озеру → поминки Дерфа → помолвка → свадьба → подарок mirrors → решение остаться → письмо матери → прощание с друзьями» связная. Все правки внесены до финального прогона префильтров и omission_precheck; merged синхронизирован; 35/35 блоков покрыты; 0 открытых маркеров, 0 #-пометок.",
+  "inputs": {
+    "phase1": "analysis/20261119-063000-f5e6.phase1.json",
+    "a_runs": [
+      "a/20261119-063000-a1b2.json"
+    ],
+    "b_runs": [
+      "b/20261119-063000-b2c3.json"
+    ],
+    "c_runs": [
+      "c/20261119-063000-c3d4.json"
+    ],
+    "precheck": "precheck/omission-precheck.json"
+  },
+  "results": [
+    {
+      "block": 1,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "FORMAT",
+      "action": "FIXED",
+      "before": "Альбрехту III пришлось",
+      "after": "Альбрехту Третьему пришлось",
+      "note": "Проверка блоков на постороннюю латиницу: римская цифра заменена кириллицей; имя «Альбрехт» по словарю."
+    },
+    {
+      "block": 3,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "FORMAT",
+      "action": "FIXED",
+      "before": "Рассудок Сайто был уже на пределе. _Эта госпожа, эта самая милая в мире госпожа — что мне с ней делать..._",
+      "after": "Рассудок Сайто был уже на пределе.\n\n_Эта госпожа, эта самая милая в мире госпожа — что мне с ней делать..._",
+      "note": "format_scan/thoughtinline: нарратив и внутренняя речь в одной строке; PR-MIND требует отдельного абзаца."
+    },
+    {
+      "block": 12,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "FORMAT",
+      "action": "FIXED",
+      "before": "достойный рыцарь Её Величества",
+      "after": "достойный рыцарь её величества",
+      "note": "format_scan/title: косвенное упоминание титула в нарративе — строчная буква."
+    },
+    {
+      "block": 13,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "FORMAT",
+      "action": "FIXED",
+      "before": "«Шарлотта по-прежнему прекрасна», — подумал Сайто.",
+      "after": "_Шарлотта по-прежнему прекрасна_, — подумал Сайто.",
+      "note": "format_scan/thought: мысль с глаголом мысли переведена из кавычек в курсив по PR-MIND."
+    },
+    {
+      "block": 16,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "FORMAT",
+      "action": "FIXED",
+      "before": "«Ну вот», — подумала Кирхе, вытащив глаза.",
+      "after": "_Ну вот_, — подумала Кирхе, вытащив глаза.",
+      "note": "format_scan/thought: та же правка; JA まあ — реакция Кирхе, не реплика."
+    },
+    {
+      "block": 23,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "FORMAT",
+      "action": "REPORT_ONLY",
+      "before": "—",
+      "after": "—",
+      "note": "blockgap 33 кандидата устранены нормализацией разделителей через fix_block.py (пустой список замен) по всем 35 блокам; merged обновлён."
+    },
+    {
+      "block": 28,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "FORMAT",
+      "action": "FIXED",
+      "before": "«Что ты делаешь...» — Сайто растерялся.",
+      "after": "_«Что ты делаешь...?»_ — Сайто растерялся.",
+      "note": "check_records: слитная запись «наррация. — Реплика»; JA な、なな、なにしてんの… — мысль с атрибуцией, оформлена курсивом."
+    },
+    {
+      "block": 35,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "FORMAT",
+      "action": "FIXED",
+      "before": "«Может, этот профессор когда-нибудь и вправду изобретёт то, что откроет „Врата“», — подумал Сайто.",
+      "after": "_Может, этот профессор когда-нибудь и вправду изобретёт то, что откроет „Врата“_, — подумал Сайто.",
+      "note": "format_scan/thought: гипотеза Сайто — внутренняя речь, курсив по PR-MIND."
+    },
+    {
+      "block": 1,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MEANING_SHIFT",
+      "action": "PRESERVED",
+      "before": "— Да ладно, какая разница? Ты и вправду спасла мир.",
+      "after": "— Да ладно, какая разница? Ты и вправду спасла мир.",
+      "note": "B1 / JA↔EN: EN «saved the Earth» противоречит JA 世界; исправлено ещё при переводе, расхождение зафиксировано в журнале и аудите."
+    },
+    {
+      "block": 0,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MEANING_SHIFT",
+      "action": "PRESERVED",
+      "before": "—",
+      "after": "—",
+      "note": "A1–A6 (блоки 1, 2, 3, 11, 18, 25): оттенки лексики и интонации сохранены; никакой правки по предпочтению редактора не требуется."
+    },
+    {
+      "block": 0,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "COMPONENT_LOSS",
+      "action": "PRESERVED",
+      "before": "—",
+      "after": "—",
+      "note": "B2–B6 (блоки 5, 16, 22, 24, 27): причинно-следственные цепочки и ограничение «на одного» сохранены; сдвиг границ EN компенсирован сверкой по JA."
+    },
+    {
+      "block": 0,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MEANING_SHIFT",
+      "action": "PRESERVED",
+      "before": "—",
+      "after": "—",
+      "note": "C1–C6 (блоки 1, 2, 8, 9, 27, 34): речевые акты (оправдание, извинение, шутка, условное примирение, мольба, пьяная шутка) сохранены; まな板 → «разделочная доска» по JA, не по EN «Washboard»."
+    },
+    {
+      "block": 0,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "RUSSIAN_ERROR",
+      "action": "PRESERVED",
+      "before": "—",
+      "after": "—",
+      "note": "grammar_scan: 13 кандидатов. Схемы «кто → что делает → whom/what» разобраны: «была охвачена смутой» — JA 乱れ + страна как подлежащее; «прекратился» —рост прекратился сам, актант на месте; «колотится/удержался/улыбнулась/женился/ухватилась/налились/удалось/остались» — активные конструкции с верным субъектом; «продиктованы» — пассив с деятелем «одним желанием»; «Большинство студентов ушли» — подлежащее мн. ч. «студенты». Все 13 — FALSE POSITIVE (артефакты сдвига EN-блоков)."
+    },
+    {
+      "block": 0,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "FORMAT",
+      "action": "PRESERVED",
+      "before": "—",
+      "after": "—",
+      "note": "style_scan: REPETITION «стране/халкегинии/когда/грудь/месье/книгу/зеркало/площади/помнить/всегда» — функциональные повторы и повторы JA; PRESERVED — FUNCTIONAL / PRESERVED — JA/EN. Правок по предпочтению не вносилось."
+    },
+    {
+      "block": 0,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "FORMAT",
+      "action": "PRESERVED",
+      "before": "—",
+      "after": "—",
+      "note": "format_scan (финальный): 9 кандидатов, все thoughtinline межабзацевые; чистые курсивные абзацы после нарратива — норма PR-MIND (тот же паттерн в завершённой главе v22-ch11), поэтому PRESERVED — FUNCTIONAL, а не ошибка."
+    },
+    {
+      "block": 0,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "FORMAT",
+      "action": "PRESERVED",
+      "before": "—",
+      "after": "—",
+      "note": "address_scan: 4 кандидата («эта госпожа» — не обращение, а описание в мысли Сайто; «господин Осман» ×3 — JA オスマン氏 / EN Headmaster Osman, обращение подтверждено источниками) — FALSE_POSITIVE / PRESERVED — JA/EN."
+    },
+    {
+      "block": 0,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "PASS",
+      "action": "PRESERVED",
+      "before": "—",
+      "after": "—",
+      "note": "check_alignment: 0 строгих / 65 прочих / 33 инфо; check_records (финальный): 0 кандидатов; курсив чётный (44 подчёркивания), маркеры 35 в порядке."
+    },
+    {
+      "block": 0,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "COMPONENT_LOSS",
+      "action": "PRESERVED",
+      "before": "—",
+      "after": "—",
+      "note": "omission_precheck (финальный прогон по 35 блокам): 0 кандидатов — обрывов хвостов, пустых RU и пропущенных числовых якорей нет."
+    },
+    {
+      "block": 0,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "PASS",
+      "action": "PRESERVED",
+      "before": "—",
+      "after": "—",
+      "note": "Phase 1 (BLIND): 35/35 блоков PASS — сплошная сверка JA→RU без findings A/B/C; ни один блок не остался без покрытия."
+    },
+    {
+      "block": 1,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "RUSSIAN_ERROR",
+      "action": "FIXED",
+      "before": "прошло почти месяц",
+      "after": "прошёл почти месяц",
+      "note": "FINAL READ (RU-only): устранена калька, несогласование или неудачная коллокация; смысл и модальность JA сохранены."
+    },
+    {
+      "block": 4,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "RUSSIAN_ERROR",
+      "action": "FIXED",
+      "before": "«Напарник, сделай её счастливой, девушку»",
+      "after": "«Напарник, сделай девушку счастливой»",
+      "note": "FINAL READ (RU-only): устранена калька, несогласование или неудачная коллокация; смысл и модальность JA сохранены."
+    },
+    {
+      "block": 5,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "RUSSIAN_ERROR",
+      "action": "FIXED",
+      "before": "для того, что он собирался сделать, нет места лучше, чем это озеро",
+      "after": "для того, что он задумал, нет места лучше этого озера",
+      "note": "FINAL READ (RU-only): устранена калька, несогласование или неудачная коллокация; смысл и модальность JA сохранены."
+    },
+    {
+      "block": 7,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "RUSSIAN_ERROR",
+      "action": "FIXED",
+      "before": "что за деревня такой Тарб",
+      "after": "что за место этот Тарб",
+      "note": "FINAL READ (RU-only): устранена калька, несогласование или неудачная коллокация; смысл и модальность JA сохранены."
+    },
+    {
+      "block": 7,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "RUSSIAN_ERROR",
+      "action": "FIXED",
+      "before": "Значительно посодействовало и то, что",
+      "after": "Большую роль сыграло и то, что",
+      "note": "FINAL READ (RU-only): устранена калька, несогласование или неудачная коллокация; смысл и модальность JA сохранены."
+    },
+    {
+      "block": 9,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "RUSSIAN_ERROR",
+      "action": "FIXED",
+      "before": "Для королевы быть на свадьбе — значит, брак был очень знатного рода",
+      "after": "А королева присутствовала на свадьбах лишь очень знатных дворян",
+      "note": "FINAL READ (RU-only): устранена калька, несогласование или неудачная коллокация; смысл и модальность JA сохранены."
+    },
+    {
+      "block": 15,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "RUSSIAN_ERROR",
+      "action": "FIXED",
+      "before": "шумели и крутили бокалы",
+      "after": "шумели и поднимали бокалы",
+      "note": "FINAL READ (RU-only): устранена калька, несогласование или неудачная коллокация; смысл и модальность JA сохранены."
+    },
+    {
+      "block": 16,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "RUSSIAN_ERROR",
+      "action": "FIXED",
+      "before": "Представьте: королева Жозетта",
+      "after": "И правда: королева Жозетта",
+      "note": "FINAL READ (RU-only): устранена калька, несогласование или неудачная коллокация; смысл и модальность JA сохранены."
+    },
+    {
+      "block": 16,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "RUSSIAN_ERROR",
+      "action": "FIXED",
+      "before": "вытащив глаза",
+      "after": "округлив глаза",
+      "note": "FINAL READ (RU-only): устранена калька, несогласование или неудачная коллокация; смысл и модальность JA сохранены."
+    },
+    {
+      "block": 17,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "RUSSIAN_ERROR",
+      "action": "FIXED",
+      "before": "отвел глаза",
+      "after": "отвёл глаза",
+      "note": "FINAL READ (RU-only): устранена калька, несогласование или неудачная коллокация; смысл и модальность JA сохранены."
+    },
+    {
+      "block": 22,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "RUSSIAN_ERROR",
+      "action": "FIXED",
+      "before": "Это была поистине одна из сокровищ",
+      "after": "Это было поистине одно из сокровищ",
+      "note": "FINAL READ (RU-only): устранена калька, несогласование или неудачная коллокация; смысл и модальность JA сохранены."
+    },
+    {
+      "block": 23,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "RUSSIAN_ERROR",
+      "action": "FIXED",
+      "before": "Сайто сказал это бледный как смерть.",
+      "after": "Сайто произнёс это, бледный как смерть.",
+      "note": "FINAL READ (RU-only): устранена калька, несогласование или неудачная коллокация; смысл и модальность JA сохранены."
+    },
+    {
+      "block": 25,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "RUSSIAN_ERROR",
+      "action": "FIXED",
+      "before": "Мама, которая, веря, что сын вернётся, писала ему каждый день по несколько писем; она готовит",
+      "after": "Мама, которая верила, что сын вернётся, и каждый день писала ему по несколько писем. Она готовит",
+      "note": "FINAL READ (RU-only): устранена калька, несогласование или неудачная коллокация; смысл и модальность JA сохранены."
+    },
+    {
+      "block": 29,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "RUSSIAN_ERROR",
+      "action": "FIXED",
+      "before": "было прекрасно до божественности",
+      "after": "было божественно прекрасно",
+      "note": "FINAL READ (RU-only): устранена калька, несогласование или неудачная коллокация; смысл и модальность JA сохранены."
+    },
+    {
+      "block": 30,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "RUSSIAN_ERROR",
+      "action": "FIXED",
+      "before": "поцеловал её, обводя губами контур её губ",
+      "after": "поцеловал её, словно обводя контур её губ",
+      "note": "FINAL READ (RU-only): устранена калька, несогласование или неудачная коллокация; смысл и модальность JA сохранены."
+    },
+    {
+      "block": 32,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "RUSSIAN_ERROR",
+      "action": "FIXED",
+      "before": "разрыдался навзрыд",
+      "after": "разрыдался",
+      "note": "FINAL READ (RU-only): устранена калька, несогласование или неудачная коллокация; смысл и модальность JA сохранены."
+    }
+  ]
+}

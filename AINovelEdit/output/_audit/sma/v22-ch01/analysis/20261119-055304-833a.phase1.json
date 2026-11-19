@@ -1,0 +1,26 @@
+{
+ "analysis_id": "20261119-055304-833a.phase1",
+ "chapter": "v22-ch01",
+ "phase": 1,
+ "scope": "blind",
+ "results": [
+  {
+   "block": 8,
+   "finding": "MEANING_SHIFT",
+   "note": "состав воюющих сторон в бл.8",
+   "confidence": "MEDIUM"
+  },
+  {
+   "block": 10,
+   "finding": "COMPONENT_LOSS",
+   "note": "原潜 атомная подлодка",
+   "confidence": "MEDIUM"
+  },
+  {
+   "block": 14,
+   "finding": "COMPONENT_LOSS",
+   "note": "泣き叫ぶ плачущий крик",
+   "confidence": "LOW"
+  }
+ ]
+}

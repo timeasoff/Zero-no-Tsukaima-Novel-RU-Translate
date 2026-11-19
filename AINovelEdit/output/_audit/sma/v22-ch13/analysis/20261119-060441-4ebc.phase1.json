@@ -1,0 +1,26 @@
+{
+ "analysis_id": "20261119-060441-4ebc.phase1",
+ "chapter": "v22-ch13",
+ "phase": 1,
+ "scope": "blind",
+ "results": [
+  {
+   "block": 18,
+   "finding": "MEANING_SHIFT",
+   "note": "魔法→заклинание, не закон",
+   "confidence": "MEDIUM"
+  },
+  {
+   "block": 19,
+   "finding": "COMPONENT_LOSS",
+   "note": "貸し одолжение",
+   "confidence": "MEDIUM"
+  },
+  {
+   "block": 5,
+   "finding": "MEANING_SHIFT",
+   "note": "ここじゃない —negation of place",
+   "confidence": "LOW"
+  }
+ ]
+}

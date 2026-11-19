@@ -1,0 +1,59 @@
+{
+ "analysis_id": "20261119-060441-4ebc-c3d4",
+ "chapter": "v22-ch13",
+ "inputs": {
+  "phase1": "analysis/20261119-060441-4ebc.phase1.json",
+  "a_runs": [
+   "a/20261119-060441-4ebc.json"
+  ],
+  "b_runs": [
+   "b/20261119-060441-492a.json"
+  ],
+  "c_runs": [],
+  "precheck": "precheck/omission-precheck.json"
+ },
+ "results": [
+  {
+   "block": 18,
+   "status": "CONFIRMED_ERROR",
+   "fidelity": "MEANING_SHIFT",
+   "action": "REPORT_ONLY",
+   "note": "«закон»→«заклинание Пустоты» — исправлено."
+  },
+  {
+   "block": 19,
+   "status": "CONFIRMED_ERROR",
+   "fidelity": "COMPONENT_LOSS",
+   "action": "REPORT_ONLY",
+   "note": "貸し→«запишу в счёт» / «что за одолжение» — исправлено; ぐったり→«обессилевший»."
+  },
+  {
+   "block": 5,
+   "status": "CONFIRMED_ERROR",
+   "fidelity": "MEANING_SHIFT",
+   "action": "REPORT_ONLY",
+   "note": "ここじゃない→«в то место, которое не здесь» — исправлено."
+  },
+  {
+   "block": 13,
+   "status": "CONFIRMED_ERROR",
+   "fidelity": "MEANING_SHIFT",
+   "action": "REPORT_ONLY",
+   "note": "きょとん→«оторопелый вид», しんみり→«проникновенный тон» — исправлено."
+  },
+  {
+   "block": 3,
+   "status": "CONFIRMED_ERROR",
+   "fidelity": "NUANCE_SHIFT",
+   "action": "REPORT_ONLY",
+   "note": "自嘲→«самоиронично» — исправлено."
+  },
+  {
+   "block": 19,
+   "status": "FALSE_POSITIVE",
+   "fidelity": "MEANING_SHIFT",
+   "action": "PRESERVED",
+   "note": "прочие наблюдения (блок 9, 18) — стилистика."
+  }
+ ]
+}
