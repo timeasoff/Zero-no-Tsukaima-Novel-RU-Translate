@@ -192,3 +192,15 @@
   «И вдруг» / «И вскоре»; зеркало не правилось, синхронизация — отдельная
   задача.
 - ОТЧЁТ: `output/_audit/v15-afterword.md`, раздел HUMANIZER.
+
+## v15-afterword — STYLE AUDIT (19.11.2026)
+
+- `style_scan.py --report`: 35 абзацев, 19 кандидатов; `russian-style-audit`:
+  полный чек-лист по всем абзацам + обязательный RU-only проход вслух без JA/EN.
+  ERROR/WARNING 0, FIXED 0; дефектов §19.1 (кальки-безделки, выдуманные деятели,
+  разговорный регистр в нарративе) не найдено; MONOTONY 0.
+- Судьба кандидатов S1–S19 (каждый поименован в отчёте): PRESERVED — FUNCTIONAL 9,
+  PRESERVED — JA/EN 2, FALSE POSITIVE 8. Объединения S1+S2, S4+S5, S11–S14, S17+S18
+  сделаны с явным перечислением. Правок текста нет.
+- ОТЧЁТ: `output/_audit/v15-afterword.md`, раздел «Стилевой контроль» + сводка
+  STYLE AUDIT в FINAL AUDIT.
