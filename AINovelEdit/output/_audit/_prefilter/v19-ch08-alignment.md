@@ -1,8 +1,8 @@
 # Выгрузка предфильтра (сверка смысловых блоков): v19-ch08.md
 
-Блоков 8, переведено 8. Сигналов: строгих 0, прочих 14, инфо 7.
+Блоков 8, переведено 8. Сигналов: строгих 0, прочих 13, инфо 7.
 
-По типам: marks 2, names 15, negation 2, pronouns 2
+По типам: marks 2, names 14, negation 2, pronouns 2
 
 Единица — смысловой блок: блоки JA/EN/RU/ED_RU выровнены при нормализации, «съезда» нет. Сигнал — обнаружение, не вердикт: разбор по скиллу translation-audit.
 
@@ -43,12 +43,6 @@
 - имена словаря: есть в ED_RU, нет в EN (проверить): Развеивание магии
 - **EN:** "You are in love with Louise." / Saito said quickly. / "Hmm... not like that. As a friend. Friends can support you, right?" / Tiffania laughed. / "Thank you. Bu…
 - **ED_RU:** — По правде сказать, эта сила... «Пустота». Всё время я чувствовала её как тяжёлое бремя. Я думала, что мне не спасти мир, — нет, я и сейчас так думаю. Но благо…
-
-### Блок 4 — names (weak)
-
-- имена словаря: есть в EN, нет в ED_RU: Тиффания Уэствуд
-- **EN:** "Ouch! Damn!" Saito crouched holding his belly. / "What happened? Saito! Are you ok?" / "It's bad... stomachache... must be that dish we ate earlier... elvish f…
-- **ED_RU:** — Т-точно! — сказал Сайто, стараясь развеять неловкую тишину. / — Ах, нет! Я всё только «нет» да «нет» твержу, но я же не хочу сказать, что Сайто некрасивый или…
 
 ### Блок 4 — names (info)
 
