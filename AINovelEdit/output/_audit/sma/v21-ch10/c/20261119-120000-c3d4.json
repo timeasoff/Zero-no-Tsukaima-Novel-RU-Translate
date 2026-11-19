@@ -1,0 +1,62 @@
+{
+  "audit_id": "sma-c",
+  "audit_type": "semantic-audit-c",
+  "audit_run_id": "20261119-120000-c1c",
+  "chapter": "v21-ch10",
+  "findings": [
+    {
+      "block": 1,
+      "source": "イチかバチかで、強行突破するか？",
+      "current": "Что ж, рискнём — прорвёмся с боем?",
+      "problem": "Речевой акт: предложение рискнуть",
+      "reason": "Вопросительная модальность и готовность к риску сохранены.",
+      "issue_type": "PRAGMATIC_SHIFT",
+      "severity": "CANDIDATE"
+    },
+    {
+      "block": 9,
+      "source": "ここにはルイズがいない",
+      "current": "И главное — здесь не было Луизы",
+      "problem": "Подтекст: причина слабости Гандальва",
+      "reason": "Следующее предложение прямо называет вывод; недосказанность сохранена.",
+      "issue_type": "PRAGMATIC_SHIFT",
+      "severity": "CANDIDATE"
+    },
+    {
+      "block": 10,
+      "source": "俺、ここまでだ",
+      "current": "Кажется, я дошёл до конца",
+      "problem": "Степень отчаяния",
+      "reason": "Не усилено; прощание с жизнью передано сдержанно.",
+      "issue_type": "PRAGMATIC_SHIFT",
+      "severity": "CANDIDATE"
+    },
+    {
+      "block": 15,
+      "source": "テメエが、なんでこんなとこにいやがる！",
+      "current": "Вард! Чёрт возьми, что ты здесь делаешь?!",
+      "problem": "Враждебность и грубость",
+      "reason": "Грубость сохранена без лишней грубости; обращение по канону.",
+      "issue_type": "PRAGMATIC_SHIFT",
+      "severity": "CANDIDATE"
+    },
+    {
+      "block": 19,
+      "source": "絶対、死ぬなよ",
+      "current": "Ни в коем случае не умирай",
+      "problem": "Категоричность просьбы",
+      "reason": "Модальность 絶対 усилена не была: «ни в коем случае» — равнозначно.",
+      "issue_type": "PRAGMATIC_SHIFT",
+      "severity": "CANDIDATE"
+    },
+    {
+      "block": 20,
+      "source": "元グリフィン隊隊長、〝閃光〟のワルド",
+      "current": "Бывший командир отряда Грифонов, Вард-Вспышка",
+      "problem": "Прозвище 閃光 и титул",
+      "reason": "По словарю: 閃光 → «Вспышка» (PROVISIONAL), отряд Грифонов — канон.",
+      "issue_type": "PRAGMATIC_SHIFT",
+      "severity": "CANDIDATE"
+    }
+  ]
+}

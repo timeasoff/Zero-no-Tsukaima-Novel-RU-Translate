@@ -1,0 +1,51 @@
+{
+  "analysis_id": "20261119-030000-e5f6.phase1",
+  "chapter": "v21-ch02",
+  "phase": 1,
+  "scope": "blind",
+  "inputs_note": "Только JA, RU, EN и зеркало блоков (контекст). Findings A/B/C, pre-check, sources и прежние analysis-результаты не передавались.",
+  "results": [
+    {
+      "block": 1,
+      "finding": "CANON_UNITS",
+      "note": "200 メイル в авторском описании башни — по канону «метр (нарратив)»; EN-форма «mails» не арбитр",
+      "confidence": "HIGH"
+    },
+    {
+      "block": 2,
+      "finding": "PRAGMATIC_PARADOX",
+      "note": "paradox «не по-здоровому → именно поэтому шанс»: ирония Кольбера должна остаться спокойной, без усиления",
+      "confidence": "HIGH"
+    },
+    {
+      "block": 5,
+      "finding": "NEW_COLLOCATION",
+      "note": "悪魔の担い手 — новое сочетание; основано на словарном «носитель Пустоты», требует пометки PROVISIONAL",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 6,
+      "finding": "MICRO_LEXIS",
+      "note": "まな板 / タルブの大平原 — «разделочная доска» / «Великая равнина Тарба»; проверить точность звеньев",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 9,
+      "finding": "MICRO_LEXIS",
+      "note": "ちび桃 — обращение Сильфиды; сверить с завершёнными томами до выставления вердикта",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 11,
+      "finding": "ATTRIBUTION_PLACEMENT",
+      "note": "атрибуция からかうキュルケに、ギーシュは嘯いた стоит между репликами; проверить, не приклеена ли она к предыдущей",
+      "confidence": "HIGH"
+    },
+    {
+      "block": 13,
+      "finding": "MODALITY",
+      "note": "かもしれない ×2 — гипотеза, затем 絶対にあきらめないわ — решимость; важна некатастрофичность гипотезы",
+      "confidence": "HIGH"
+    }
+  ]
+}

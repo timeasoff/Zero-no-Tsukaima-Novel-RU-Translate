@@ -1,0 +1,389 @@
+{
+  "analysis_id": "20261119-051200-5678",
+  "chapter": "v21-ch09",
+  "inputs": {
+    "phase1": "analysis/20261119-051100-1234.phase1.json",
+    "a_runs": ["a/20261119-051000-a1b2.json"],
+    "b_runs": ["b/20261119-051000-b2c3.json"],
+    "c_runs": ["c/20261119-051000-c3d4.json"],
+    "precheck": "precheck/omission-precheck.json"
+  },
+  "results": [
+    {
+      "block": 0,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "RUSSIAN_ERROR",
+      "action": "FIXED",
+      "before": "FINAL READ (RU-only) — 4 неестественные/семантически неточные формулировки",
+      "after": "исправлены по-русски без изменения смысла JA",
+      "note": "FINAL READ после SMA-правок: бл.5 «друг к другу, — и в этот миг» → «друг к другу — и в этот миг» (лишняя запятая перед тире); бл.11 «Я бы рад был порадоваться» → «Я бы с радостью порадовался» (тавтология); бл.12 «подёржал себя за подбородок» → «положил руку на подбородок» (JA 顎に手をあてて); бл.15 «я тебе не указ» → «я не могу тебе перечить» (JA 逆らえない — инверсия смысла). RECHECK после каждой группы правок: merged пересобран, все 5 предфильтров и omission pre-check перезапущены, кандидаты неизменны."
+    },
+    {
+      "block": 3,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "FORMAT",
+      "action": "FIXED",
+      "before": "и грудь — просто загляденье",
+      "after": "и грудь — загляденье",
+      "note": "style_scan REPETITION: «просто» ×2 в абзаце; устранён один повтор без потери комического эффекта JA 胸がすごい…胸がすごくて. Правка через fix_block.py, RECHECK пройден."
+    },
+    {
+      "block": 4,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "FORMAT",
+      "action": "FIXED",
+      "before": "Конечно, с точки зрения морали это нельзя.",
+      "after": "Конечно, это аморально.",
+      "note": "style_scan COLLOCATION: канцелярская связка «с точки зрения» заменена естественной русской конструкцией; смысл JA 道義的にはだめだ сохранён. Правка через fix_block.py, RECHECK пройден."
+    },
+    {
+      "block": 6,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "FORMAT",
+      "action": "FIXED",
+      "before": "а Сайто только и твердил: «Простите, простите».",
+      "after": "а Сайто только и делал, что просил прощения.",
+      "note": "style_scan REPETITION: дубль «простите» в соседних абзацах; JA ひたすら謝った — «непрерывно извинялся», что точнее передано новой формулировкой. Правка через fix_block.py, RECHECK пройден."
+    },
+    {
+      "block": 1,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "LEXICAL_MISMATCH",
+      "action": "FIXED",
+      "before": "Эвмен / Адиирн (RU-сырьё)",
+      "after": "Эвменес / Адиль",
+      "note": "B + Фаза 1: «Эвменес» — унаследованный PROVISIONAL v21-ch01; «Адиль» — v21-ch03. EN «Eumenes» / «Adyl» — справка."
+    },
+    {
+      "block": 1,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "LEXICAL_MISMATCH",
+      "action": "FIXED",
+      "before": "Партия «Кровь и железо» (RU-сырьё)",
+      "after": "«Партия стальной крови и единства»",
+      "note": "B: канон v18–v21; форма применена во всех вхождениях (блоки 1, 8, 11, 12, 18)."
+    },
+    {
+      "block": 1,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "LEXICAL_MISMATCH",
+      "action": "FIXED",
+      "before": "Святой земли / Святой земле (RU-сырьё, без кавычек)",
+      "after": "«Святая земля»",
+      "note": "B: каноническое название в кавычках с падежными формами; сохранено во всех вхождениях."
+    },
+    {
+      "block": 1,
+      "status": "DISPUTED",
+      "fidelity": "AMBIGUITY",
+      "action": "REPORT_ONLY",
+      "note": "B: «Эвменес» (エウメネス) — унаследованный PROVISIONAL из v21-ch01. Зафиксировано в журнале и отчёте; PROVISIONAL ≠ CANONICAL, подтверждение пользователя не ожидается."
+    },
+    {
+      "block": 4,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "LEXICAL_MISMATCH",
+      "action": "FIXED",
+      "before": "любовницей великого герцога (RU-сырьё)",
+      "after": "наложницей великого герцога",
+      "note": "B + Фаза 1: JA お妾さん → «наложница»; 大公 → «великий герцог»."
+    },
+    {
+      "block": 5,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "LEXICAL_MISMATCH",
+      "action": "FIXED",
+      "before": "хозяйкой Сайто (RU-сырьё)",
+      "after": "любовницей Сайто",
+      "note": "B + Фаза 1: JA 愛人 → «любовница»; EN «mistress» — только справка, калька «хозяйка» отклонена по JA > EN."
+    },
+    {
+      "block": 7,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "LEXICAL_MISMATCH",
+      "action": "FIXED",
+      "before": "Германия / крестовый поход / перст Папы (RU-сырьё)",
+      "after": "Генриетта / Священная война / приспешники папы",
+      "note": "B + Фаза 1: RU-сырьё подменило субъекта (Германия вместо Генриетты) и термины. Исправлено по JA; логика «Генриетта не станет активно помогать» восстановлена."
+    },
+    {
+      "block": 10,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "LEXICAL_MISMATCH",
+      "action": "FIXED",
+      "before": "Фукэ глиняный кулак / Сестра Матильда (RU-сырьё)",
+      "after": "Фуке Глиняный Ком / Матильда-сан",
+      "note": "B + Фаза 1: канон dictionary.md и архива Vote on Agreement; «Матильда-сан» по completed v11-ch09."
+    },
+    {
+      "block": 12,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "LEXICAL_MISMATCH",
+      "action": "FIXED",
+      "before": "Исмаил (RU-сырьё) / Aishmail (EN)",
+      "after": "Эсмаил",
+      "note": "B + Фаза 1: канон завершённого v20-ch04; JA > EN."
+    },
+    {
+      "block": 14,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "LEXICAL_MISMATCH",
+      "action": "FIXED",
+      "before": "Гандальв / Гнездо дракона (RU-сырьё искажало)",
+      "after": "«Гандальв» / «Гнездо дракона»",
+      "note": "B: dictionary.md и v20/v21-log; связь «оставил её — рана, угрожавшая жизни» сохранена."
+    },
+    {
+      "block": 15,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "LEXICAL_MISMATCH",
+      "action": "FIXED",
+      "before": "Бидашал без обращения / инверсия 逆らえない",
+      "after": "господин Бидашал / «я не могу тебе перечить»",
+      "note": "B + Фаза 1 + FINAL READ: JA ビダーシャル殿 и 逆らえない; обращение и направление действия исправлены."
+    },
+    {
+      "block": 16,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "LEXICAL_MISMATCH",
+      "action": "FIXED",
+      "before": "семидесятитысячная армия (число 七万 в RU-сырье отсутствовало)",
+      "after": "семидесятитысячная армия",
+      "note": "B: числовой якорь 七万 восстановлен по JA; прецедент v21-ch08."
+    },
+    {
+      "block": 17,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "LEXICAL_MISMATCH",
+      "action": "FIXED",
+      "before": "Камень огня / Джозеф (RU-сырьё)",
+      "after": "«огненный камень» / Жозеф",
+      "note": "B + Фаза 1: JA 火石 → «огненный камень» (не «Камень огня»); «камень ветра» — это 風石, иной термин, в этой главе не встречается. Жозеф — dictionary.md."
+    },
+    {
+      "block": 17,
+      "status": "DISPUTED",
+      "fidelity": "AMBIGUITY",
+      "action": "REPORT_ONLY",
+      "note": "B + Фаза 1: новый топоним 〝ソフィア大祭殿〟 → «Великий храм Софии» (НОВЫЙ PROVISIONAL). Нейтральная форма по JA/EN; в dictionary.md не вносится, подтверждение пользователя не ожидается."
+    },
+    {
+      "block": 1,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "NUANCE_SHIFT",
+      "action": "PRESERVED",
+      "note": "A: ますます喧噪を増していく → «шум в нём только нарастал». Отрицание затишья и прогрессирующий шум переданы; «красивее» не основание для правки."
+    },
+    {
+      "block": 1,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "NUANCE_SHIFT",
+      "action": "PRESERVED",
+      "note": "A: 猥雑な活気 → «пёстрая, шумная суета». Контраст с Адилью сохранён."
+    },
+    {
+      "block": 2,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "NUANCE_SHIFT",
+      "action": "PRESERVED",
+      "note": "A: 澄んだ垂れ目気味の碧眼…潤んだ目 → «ясные голубые глаза с чуть приопущенными уголками… с влажным блеском». Все компоненты переданы."
+    },
+    {
+      "block": 3,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "NUANCE_SHIFT",
+      "action": "PRESERVED",
+      "note": "A: 胸がすごい…胸がすごくて → «грудь — загляденье… грудь — просто чудо». Комический повтор JA сохранён как функциональный приём."
+    },
+    {
+      "block": 5,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "NUANCE_SHIFT",
+      "action": "PRESERVED",
+      "note": "A: 透き通った紺碧の瞳が、涙で潤む → «прозрачные сине-голубые глаза заволокло слезами». Цвет, прозрачность и постепенность переданы."
+    },
+    {
+      "block": 7,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "NUANCE_SHIFT",
+      "action": "PRESERVED",
+      "note": "A: 腹の底でなにを考えているのか知れたものではない → «Кто знает, что у него на уме». Неизвестность сохранена, умысел не приписан."
+    },
+    {
+      "block": 9,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "NUANCE_SHIFT",
+      "action": "PRESERVED",
+      "note": "A: 電光石火の早業 → «Всё заняло меньше секунды». Скорость передана без навязанной метафоры."
+    },
+    {
+      "block": 10,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "NUANCE_SHIFT",
+      "action": "PRESERVED",
+      "note": "A: あの冷酷な盗賊の面影はなく → «не осталось и следа той холодной воровки». Полнота контраста сохранена без усиления."
+    },
+    {
+      "block": 13,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "NUANCE_SHIFT",
+      "action": "PRESERVED",
+      "note": "A: 無駄死にするだけさ → «просто напрасно погибнешь». Интонация увещевания Фуке сохранена."
+    },
+    {
+      "block": 17,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "NUANCE_SHIFT",
+      "action": "PRESERVED",
+      "note": "A: 至難のわざらしい → «так трудно её разрушить». Модальность presumption («говорят») передана, «невозможно» не приписано."
+    },
+    {
+      "block": 18,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "NUANCE_SHIFT",
+      "action": "PRESERVED",
+      "note": "A: どこで油を売っているんだか → «где он, подумать только, околачивается?». Идиома и раздражение переданы без добавлений."
+    },
+    {
+      "block": 1,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "PRAGMATIC_SHIFT",
+      "action": "PRESERVED",
+      "note": "C: 甘かったのかな → «может, я и вправду был наивным?»; вопрос-сомнение не превращён в утверждение. Модальность неприкосновенна."
+    },
+    {
+      "block": 3,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "PRAGMATIC_SHIFT",
+      "action": "PRESERVED",
+      "note": "C: 好き…どうにかなってしまいそう → «Люблю… Так, что самой становится не по себе». Сила признания сохранена."
+    },
+    {
+      "block": 4,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "PRAGMATIC_SHIFT",
+      "action": "PRESERVED",
+      "note": "C: だ、だめ！ → «Н-нет! ... нельзя!»; запинка и категоричность отказа сохранены."
+    },
+    {
+      "block": 5,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "PRAGMATIC_SHIFT",
+      "action": "PRESERVED",
+      "note": "C: いいの、それでいいの → «Да. Да, хочу». Настойчивость Тиффании без смягчения."
+    },
+    {
+      "block": 6,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "PRAGMATIC_SHIFT",
+      "action": "PRESERVED",
+      "note": "C: ちゅっちゅはしてねえよ！ → «Никакого чмок-чмока не было!»; возмущение сохранено без добавочной грубости."
+    },
+    {
+      "block": 11,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "PRAGMATIC_SHIFT",
+      "action": "PRESERVED",
+      "note": "C: ご名答 → «Угадал»; ирония Фуке сохранена."
+    },
+    {
+      "block": 13,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "PRAGMATIC_SHIFT",
+      "action": "PRESERVED",
+      "note": "C: できねえよ…ぽつりと呟いた → «Не могу я так… выдавил шёпотом». Тихий, но твёрдый отказ."
+    },
+    {
+      "block": 16,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "PRAGMATIC_SHIFT",
+      "action": "PRESERVED",
+      "note": "C: 信じろってのかい？ → «И ты хочешь, чтобы я поверила?»; скепсис перед уступкой сохранён."
+    },
+    {
+      "block": 18,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "PRAGMATIC_SHIFT",
+      "action": "PRESERVED",
+      "note": "C: 任せときな → «Оставь это мне»; уверенное обещание без бравады."
+    },
+    {
+      "block": 4,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "FORMAT",
+      "action": "PRESERVED",
+      "note": "Фаза 1: 〝なに考えてんだよ、俺〟 → курсивная строка _О чём я думаю, чёрт возьми?_; PR-MIND, не потеря содержания."
+    },
+    {
+      "block": 10,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "FORMAT",
+      "action": "PRESERVED",
+      "note": "Фаза 1: 〝でも、なんでこんなとこにフーケが？〟 → _А что Фуке здесь?_ отдельным абзацем; PR-MIND."
+    },
+    {
+      "block": 14,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "FORMAT",
+      "action": "PRESERVED",
+      "note": "Фаза 1: 〝だったら、やらなきゃだめだよな〟 → _Так что придётся это сделать._ отдельной строкой; модальность необходимости сохранена."
+    },
+    {
+      "block": 1,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "COMPONENT_LOSS",
+      "action": "PRESERVED",
+      "note": "Фаза 1: проверка полноты блока 1 — все звенья JA покрыты RU. Pre-check: 0 кандидатов."
+    },
+    {
+      "block": 2,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "COMPONENT_LOSS",
+      "action": "PRESERVED",
+      "note": "Фаза 1: блок 2 — армия, Луиза, самоуговор, извинение и догадка покрыты."
+    },
+    {
+      "block": 6,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "COMPONENT_LOSS",
+      "action": "PRESERVED",
+      "note": "Фаза 1: блок 6 — реакция Лукшаны, извинения, «чмок-чмок»,土下座 и вопрос об армии покрыты."
+    },
+    {
+      "block": 7,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "COMPONENT_LOSS",
+      "action": "PRESERVED",
+      "note": "Фаза 1: блок 7 — цели армии, предупреждение, обещание и согласие Лукшаны покрыты."
+    },
+    {
+      "block": 8,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "COMPONENT_LOSS",
+      "action": "PRESERVED",
+      "note": "Фаза 1: блок 8 — вход Алия, окружение, подозрение и реплика Лукшаны покрыты."
+    },
+    {
+      "block": 13,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "COMPONENT_LOSS",
+      "action": "PRESERVED",
+      "note": "Фаза 1: блок 13 — предостережение, отказ Тиффании, уговоры и образы горожан покрыты."
+    },
+    {
+      "block": 16,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "COMPONENT_LOSS",
+      "action": "PRESERVED",
+      "note": "Фаза 1: блок 16 — скепсис, попытка увести, мольба, напряжение и вздох покрыты."
+    },
+    {
+      "block": 18,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "COMPONENT_LOSS",
+      "action": "PRESERVED",
+      "note": "Фаза 1: проверка полноты финального блока — обрыва хвоста нет. Pre-check: 0 кандидатов."
+    }
+  ],
+  "coverage": "Analyzer сверил все candidates Фазы 1, A/B/C и omission pre-check с финальным текстом 18 блоков; каждый candidate получил status + fidelity + action. 16 CONFIRMED_ERROR/FIXED (правки применены при переводе, через fix_block.py и в FINAL READ; RECHECK после каждой группы пройден), 31 FALSE_POSITIVE/PRESERVED, 2 DISPUTED/REPORT_ONLY (PROVISIONAL). Фаза 2 адресует конкретный слепой вывод analysis/20261119-051100-1234.phase1.json. Покрытие: 18/18 блоков финальной версии текста; SMA закрывает главу."
+}

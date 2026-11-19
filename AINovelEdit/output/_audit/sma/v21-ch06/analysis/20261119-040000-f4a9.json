@@ -1,0 +1,190 @@
+{
+  "analysis_id": "20261119-040000-f4a9",
+  "chapter": "v21-ch06",
+  "final_read_recheck": "RU-only перечит после последних правок (блоки 3, 6, 8, 12, 23, 24, 27): все смысловые и форматные правки сверены с JA; omission_precheck перезапущен по финальному merged — 4 кандидата, все разобраны как FALSE_POSITIVE (эвристика счёта абзацев при сдвиге границ блоков); 27/27 блоков покрыты финальным текстом.",
+  "inputs": {
+    "phase1": "analysis/20261119-040000-f4a9.phase1.json",
+    "a_runs": ["a/20261119-040000-a1c6.json"],
+    "b_runs": ["b/20261119-040000-b2d7.json"],
+    "c_runs": ["c/20261119-040000-c3e8.json"],
+    "precheck": "precheck/omission-precheck.json"
+  },
+  "results": [
+    {
+      "block": 3,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "FORMAT",
+      "action": "FIXED",
+      "before": "«Как-то всё слишком просто», — подумал Сайто; может, они просто не переносили сентиментов.",
+      "after": "_Как-то всё слишком просто_, — подумал Сайто; может, они просто не переносили сентиментов.",
+      "note": "Ф1 бл.3 + format_scan (kind=thought): мысль переведена в курсив и вынесена отдельным абзацем (PR-MIND)"
+    },
+    {
+      "block": 6,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "MEANING_SHIFT",
+      "action": "FIXED",
+      "before": "— Вы двое что здесь делаете? — Лукшана подозрительно посмотрела на них.",
+      "after": "— Вы двое что здесь делаете? — Лукшана прищурилась и подозрительно посмотрела на них.",
+      "note": "A2 + Ф1 бл.6: восстановлен жест ジ目で睨む (прищур) — микросемантика взгляда"
+    },
+    {
+      "block": 8,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "FORMAT",
+      "action": "FIXED",
+      "before": "_«Луиза, подожди меня. Я обязательно вернусь...»_",
+      "after": "_Луиза, подожди меня. Я обязательно вернусь..._",
+      "note": "Ф1 бл.8: кавычки внутри курсива убраны (PR-MIND: внутренняя речь без кавычек)"
+    },
+    {
+      "block": 12,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "FORMAT",
+      "action": "FIXED",
+      "before": "_«Да я наверняка сделаю не хуже, чем они?»_",
+      "after": "_Да я наверняка сделаю не хуже, чем они?_",
+      "note": "Ф1 бл.12: кавычки внутри курсива убраны (PR-MIND)"
+    },
+    {
+      "block": 23,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "FORMAT",
+      "action": "FIXED",
+      "before": "_«Скоро я увижу Луизу...!»_",
+      "after": "_Скоро я увижу Луизу...!_",
+      "note": "Ф1 бл.23: кавычки внутри курсива убраны (PR-MIND)"
+    },
+    {
+      "block": 24,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "RUSSIAN_ERROR",
+      "action": "FIXED",
+      "before": "флот эльфийской военно-морской силы продолжал",
+      "after": "эльфийский военно-морской флот продолжал",
+      "note": "FINAL READ: устранена тавтология «флот … военно-морской силы» (エルフ水軍の艦隊)"
+    },
+    {
+      "block": 27,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "FORMAT",
+      "action": "FIXED",
+      "before": "_«Сжечь город огненными камнями?! Это не шутка!»_ / _«Надо поторопиться...»_",
+      "after": "_Сжечь город огненными камнями?! Это не шутка!_ / _Надо поторопиться..._",
+      "note": "Ф1 бл.27: кавычки внутри курсива убраны (PR-MIND)"
+    },
+    {
+      "block": 6,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MISSING",
+      "action": "PRESERVED",
+      "note": "pre-check S1 бл.6: эвристика счёта абзацев/реплик; JA-звенья («Потом она направилась к полке…», «— Я тоже чем-нибудь помогу…») присутствуют в RU — пропуска нет"
+    },
+    {
+      "block": 10,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MISSING",
+      "action": "PRESERVED",
+      "note": "pre-check S1 бл.10: хвост JA («Фатима покраснела до ушей и закричала») переведён; сдвиг счётчика абзацев из-за 22 EN-блоков против 27 JA"
+    },
+    {
+      "block": 12,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MISSING",
+      "action": "PRESERVED",
+      "note": "pre-check S1 бл.12: реплика «— Хм, ладно.» покрывает ふん、まあいいだろう; пропуска нет"
+    },
+    {
+      "block": 17,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MISSING",
+      "action": "PRESERVED",
+      "note": "pre-check S1 бл.17: финал 才人はちょっと驚いた переведён («...и слегка удивился»); слияние абзацев допустимо"
+    },
+    {
+      "block": 1,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "RUSSIAN_ERROR",
+      "action": "PRESERVED",
+      "note": "grammar_scan G1 (добрались): JA 到着した — активный глагол прибытия, субъект — Сайто и компания; схема верна"
+    },
+    {
+      "block": 3,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "RUSSIAN_ERROR",
+      "action": "PRESERVED",
+      "note": "grammar_scan G2/G3 (был обязан, справились): JA 命を救われたことに変わりはない / よくやってくれた — агенты названы, возвратные глаголы не подменяют субъект"
+    },
+    {
+      "block": 4,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "RUSSIAN_ERROR",
+      "action": "PRESERVED",
+      "note": "grammar_scan G4 (оказалось): JA 建物の中は見かけよりも広く — состояние, не страдательный залог"
+    },
+    {
+      "block": 5,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MEANING_SHIFT",
+      "action": "PRESERVED",
+      "note": "grammar_scan G5 (Luctiana's condition was): EN-якорь из соседнего блока; JA бл.5 — разговор о полуэльфах и груди, переведён точно"
+    },
+    {
+      "block": 11,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "RUSSIAN_ERROR",
+      "action": "PRESERVED",
+      "note": "grammar_scan G6/G7 (был голоден, ухмыльнулся): JA 腹が減っている / ニンマリと…浮かべる — состояния и активное действие, не пассив"
+    },
+    {
+      "block": 14,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "RUSSIAN_ERROR",
+      "action": "PRESERVED",
+      "note": "grammar_scan G8 (закрутился): JA 風が渦巻く — ветер — субъект вращения, возвратность не меняет актант"
+    },
+    {
+      "block": 17,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "RUSSIAN_ERROR",
+      "action": "PRESERVED",
+      "note": "grammar_scan G9 (принялся): JA ガツガツと食べはじめた — активное начало действия"
+    },
+    {
+      "block": 18,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "RUSSIAN_ERROR",
+      "action": "PRESERVED",
+      "note": "grammar_scan G10 (была усыплена): JA アリィーの魔法で眠らされていた — деятель (Алий) назван, актант не утрачен"
+    },
+    {
+      "block": 23,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "RUSSIAN_ERROR",
+      "action": "PRESERVED",
+      "note": "grammar_scan G11 (расположилась): JA 宿営地を設けたと聞きました — «разбили лагерь», субъект — армия, переход не нарушен"
+    },
+    {
+      "block": 18,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "FORMAT",
+      "action": "PRESERVED",
+      "note": "format_scan thought (стр. 471): «Партия стальной крови и единства» — название организации в кавычках, а не мысль; глагол «вспомнил» вызвал ложный сигнал"
+    },
+    {
+      "block": 1,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "FORMAT",
+      "action": "PRESERVED",
+      "note": "format_scan thoughtinline ×5 (блоки 8, 12, 23, 27): курсивные мысли вынесены в отдельные абзацы — соответствует PR-MIND и практике v21-ch04"
+    },
+    {
+      "block": 18,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MEANING_SHIFT",
+      "action": "PRESERVED",
+      "note": "A1, A3, B1–B5, C1–C4: кавычки «кукла», «отличная грудь», «Эсмаил», «Объединённая армия возвращения Святой земли», «Фуке Глиняный Ком» и смягчённые реплики сохранены после сверки с JA; ACCEPTABLE ADAPTATION"
+    }
+  ],
+  "coverage": "27/27 блоков финального текста; каждый candidate леджера имеет status + fidelity + action. Phase 2 адресует слепой вывод analysis/20261119-040000-f4a9.phase1.json (inputs.phase1)."
+}

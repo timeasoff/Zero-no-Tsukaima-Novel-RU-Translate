@@ -1,0 +1,123 @@
+{
+  "analysis_id": "20261119-033000-e5f6",
+  "chapter": "v21-ch04",
+  "final_read_recheck": "RU-only перечит после последних правок (блоки 1, 5, 8, 9, 14, 16, 19, 22 и прежние форматные правки блоков 1, 9–13, 15, 20, 21, 23): все смысловые правки сверены с JA; omission_precheck перезапущен по финальному merged — 0 кандидатов; 24/24 блоков покрыты.",
+  "inputs": {
+    "phase1": "analysis/20261119-033000-e5f6.phase1.json",
+    "a_runs": [
+      "a/20261119-033000-a1b2.json"
+    ],
+    "b_runs": [
+      "b/20261119-033000-b2c3.json"
+    ],
+    "c_runs": [
+      "c/20261119-033000-c3d4.json"
+    ],
+    "precheck": "precheck/omission-precheck.json"
+  },
+  "results": [
+    {
+      "block": 4,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "MEANING_SHIFT",
+      "action": "FIXED",
+      "before": "Слышала я, её мать стала любовницей дворянина в стране варваров.",
+      "after": "Слышала я, тётя моя стала любовницей дворянина в стране варваров.",
+      "note": "A1 + B1 + Ф1 бл.4: «её мать» → «тётя моя» (восстановлена родственная перспектива 叔母 и голос Фатимы)"
+    },
+    {
+      "block": 4,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "RUSSIAN_ERROR",
+      "action": "FIXED",
+      "before": "А её ненавистью, верно, воспользовались эти… «Партия стальной крови и единства».",
+      "after": "А её ненавистью, верно, воспользовались люди из «Партии стальной крови и единства».",
+      "note": "Ф1 бл.4: «эти… «Партия стальной крови и единства»» → «люди из «Партии стальной крови и единства»» (согласование)"
+    },
+    {
+      "block": 5,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "RUSSIAN_ERROR",
+      "action": "FIXED",
+      "before": "— Мать Тефу убили люди.",
+      "after": "— Мать Тефы убили люди.",
+      "note": "A4 + Ф1 бл.5: «Мать Тефу» → «Мать Тефы» ( JA テファのお母さん; устранено ложное прочтение)"
+    },
+    {
+      "block": 21,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "FORMAT",
+      "action": "FIXED",
+      "before": "Недурная была игра, да? — Тюрюк показал язык.",
+      "after": "_Недурная была игра, да?_\n\nТюрюк показал язык.",
+      "note": "Ф1 бл.21 + format_scan: мысль оформлена курсивом отдельным абзацем, атрибутивный оборот убран (PR-MIND); check_records после правки — 0"
+    },
+    {
+      "block": 14,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "MEANING_SHIFT",
+      "action": "FIXED",
+      "before": "Алий с омерзением посмотрел на Фатиму, валявшуюся на полу.",
+      "after": "Алий с неудовольствием посмотрел сверху вниз на Фатиму, валявшуюся на полу.",
+      "note": "FINAL READ + JA 苦々しく見下ろした: «омерзение» усиливало модальность; «неудовольствие» точнее передаёт 苦々しく и сохраняет взгляд сверху вниз"
+    },
+    {
+      "block": 19,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "COMPONENT_LOSS",
+      "action": "FIXED",
+      "before": "— Кьюи-кьюи! Вы вернулись!",
+      "after": "— Кьюи-кьюи! Сестрицы, вы вернулись!",
+      "note": "FINAL READ + JA お姉様たち: восстановлено обращение Сильфиды «сестрицы» (канон v19/v20), утраченное в черновике"
+    },
+    {
+      "block": 1,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MEANING_SHIFT",
+      "action": "PRESERVED",
+      "note": "A2, Ф1 бл.1: «Лежи смирно!» — допустимая адаптация おとなしくしろって！ в контексте удержания; ACCEPTABLE ADAPTATION"
+    },
+    {
+      "block": 13,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MEANING_SHIFT",
+      "action": "PRESERVED",
+      "note": "A3: «дыня» — стандартная русская лексема для メロン; образ упругости сохранён"
+    },
+    {
+      "block": 16,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "COMPONENT_LOSS",
+      "action": "PRESERVED",
+      "note": "B2: «полуэльфийку» по JA ハーフの娘; референт Тиффания однозначен по контексту"
+    },
+    {
+      "block": 23,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MEANING_SHIFT",
+      "action": "PRESERVED",
+      "note": "B3, Ф1 бл.23: «обойти Совет» сохраняет логику инсценировки при 謀る; ACCEPTABLE ADAPTATION"
+    },
+    {
+      "block": 18,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MEANING_SHIFT",
+      "action": "PRESERVED",
+      "note": "C1: упрёк 〜んじゃなかったの？ передан восклицанием «Вы же обещали…»; JA > EN"
+    },
+    {
+      "block": 21,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MEANING_SHIFT",
+      "action": "PRESERVED",
+      "note": "C2: «Не надо такой настороженности…» — снятие угрозы, прагматическая сила сохранена"
+    },
+    {
+      "block": 7,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MEANING_SHIFT",
+      "action": "PRESERVED",
+      "note": "C3: двойное «сейчас» — функциональный повтор いまさら, PRESERVED — FUNCTIONAL"
+    }
+  ]
+}

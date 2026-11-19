@@ -1,0 +1,6 @@
+{
+  "check_type": "omission-precheck",
+  "chapter": "v21-ch05.md",
+  "coverage": "Просмотрены все 13 смысловых блоков JA ↔ ED_RU финального merged; детерминированный слой S1/S2/S3 не дал кандидатов на пропуск (edited blocks: 13).",
+  "findings": []
+}

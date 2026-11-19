@@ -1,0 +1,123 @@
+{
+  "analysis_id": "20261119-030200-5678",
+  "chapter": "v21-ch01",
+  "inputs": {
+    "phase1": "analysis/20261119-030100-1234.phase1.json",
+    "a_runs": ["a/20261119-030000-a1b2.json"],
+    "b_runs": ["b/20261119-030000-b2c3.json"],
+    "c_runs": ["c/20261119-030000-c3d4.json"],
+    "precheck": "precheck/omission-precheck.json"
+  },
+  "results": [
+    {
+      "block": 4,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "COMPONENT_LOSS",
+      "action": "FIXED",
+      "before": "Светло-розовые волосы, прозрачно-белая кожа",
+      "after": "розовато-русые волосы, прозрачно-белая кожа",
+      "note": "JA 桃色がかったブロンドの髪 содержит компонент «блонд» (EN «strawberry blond»); правка применена до анализа, RECHECK пройден. Источник: A finding + Фаза 1."
+    },
+    {
+      "block": 4,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "LEXICAL_MISMATCH",
+      "action": "FIXED",
+      "before": "господин Кольбер",
+      "after": "учитель Кольбер",
+      "note": "JA コルベール先生; форма «учитель Кольбер» зафиксирована в v18-ch09 для того же JA-обращения; адрес-сканер closed. Правка применена до анализа. Источник: адрес-предфильтр + B."
+    },
+    {
+      "block": 1,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "NUANCE_SHIFT",
+      "action": "PRESERVED",
+      "note": "A + Фаза 1: すぁすぁと → «ровно и тихо дыша». Звуковой оттенок сведён к описанию, но смысл и эмоция сцены сохранены; «красивее» не является основанием для правки."
+    },
+    {
+      "block": 7,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "NUANCE_SHIFT",
+      "action": "PRESERVED",
+      "note": "A + C: んぐ、ぐ → «Глю… глю…». Функциональный звуковой эквивалент глотания; восторг «うめえ!» сохранён. Допустимая адаптация."
+    },
+    {
+      "block": 9,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "NUANCE_SHIFT",
+      "action": "PRESERVED",
+      "note": "A + Фаза 1: 透き通るような金髪 → «Светлые, словно прозрачные, волосы». Образ сохранён; точная передача японского прилагательного не требуется."
+    },
+    {
+      "block": 1,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "LEXICAL_MISMATCH",
+      "action": "PRESERVED",
+      "note": "B + Фаза 1: 海竜船 → «корабль-морской дракон» — канон v20; EN «sea dragon ship» справка. Расхождений с завершёнными томами нет."
+    },
+    {
+      "block": 5,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "LEXICAL_MISMATCH",
+      "action": "PRESERVED",
+      "note": "B + Фаза 1: 日本刀 → «японский меч»; конкретизация «катана» без явной JA-опоры не вводится."
+    },
+    {
+      "block": 8,
+      "status": "DISPUTED",
+      "fidelity": "AMBIGUITY",
+      "action": "REPORT_ONLY",
+      "note": "B + Фаза 1: новый топоним エウメネс → «Эвменес» (PROVISIONAL). Зафиксировано в журнале и отчёте; PROVISIONAL ≠ CANONICAL, подтверждение пользователя не ожидается."
+    },
+    {
+      "block": 3,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "FORMAT",
+      "action": "PRESERVED",
+      "note": "Фаза 1: беззвучная речь Тиффании оформлена курсивом без кавычек по PR-MIND; это способ передачи мысли, не потеря содержания."
+    },
+    {
+      "block": 2,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "COMPONENT_LOSS",
+      "action": "PRESERVED",
+      "note": "Фаза 1: проверка полноты блока 2 — все звенья JA покрыты RU; потерь нет."
+    },
+    {
+      "block": 1,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "PRAGMATIC_SHIFT",
+      "action": "PRESERVED",
+      "note": "C: ごめん…守れなかった → «прости… не смог защитить». Речевой акт покаяния и интимность интонации сохранены."
+    },
+    {
+      "block": 8,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "PRAGMATIC_SHIFT",
+      "action": "PRESERVED",
+      "note": "C: 当然だろう → «Естественно». Категоричность Алия сохранена, смягчения нет."
+    },
+    {
+      "block": 9,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "PRAGMATIC_SHIFT",
+      "action": "PRESERVED",
+      "note": "C: 悪魔ど、もめ → «Ах вы… демоны…!». Ненависть и запинающаяся интонация сохранены; адаптация брани допустима."
+    },
+    {
+      "block": 2,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "COMPONENT_LOSS",
+      "action": "PRESERVED",
+      "note": "Pre-check S1-tail-truncation (HIGH): alleged JA-хвост блока 2 полностью присутствует в RU блока 2 (спокойное дыхание, «使い魔, значит…», руна, 召喚). Сигнал вызван сдвигом границ merged и курсивом беззвучной речи."
+    },
+    {
+      "block": 3,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "COMPONENT_LOSS",
+      "action": "PRESERVED",
+      "note": "Pre-check S1-tail-truncation (MEDIUM): JA-звенья начала блока 3 («Я так рада…», врата призыва, вопросы) присутствуют в RU блока 3; дефицит маркеров речи вызван курсивом мысли, а не пропуском."
+    }
+  ],
+  "coverage": "Analyzer сверил все candidates Фазы 1, A/B/C и omission pre-check с финальным текстом 9 блоков; каждый candidate получил status/fidelity/action. 2 CONFIRMED_ERROR/FIXED (правки применены до анализа, RECHECK пройден), 12 FALSE_POSITIVE/PRESERVED, 1 DISPUTED/REPORT_ONLY (PROVISIONAL-топоним). Фаза 2 адресует конкретный слепой вывод analysis/20261119-030100-1234.phase1.json. Покрытие: 9/9 блоков финальной версии текста; SMA закрывает главу."
+}

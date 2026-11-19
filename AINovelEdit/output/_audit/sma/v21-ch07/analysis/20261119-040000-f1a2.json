@@ -1,0 +1,281 @@
+{
+  "analysis_id": "20261119-040000-f1a2",
+  "chapter": "v21-ch07",
+  "final_read_recheck": "RU-only перечит после последних правок (блоки 1, 2, 3, 4, 6, 7, 8, 9, 10, 12, 13, 14, 15, 17, 22, 23, 24): все смысловые правки сверены с JA. После финальной терминологической сверки блоки 1, 5, 11 приведены к канону v21-ch06 «Объединённая армия возвращения Святой земли»; выполнена адресная повторная JA→RU сверка этих трёх блоков и повторный прогон всех пяти предфильтров и omission_precheck по финальному merged — 2 кандидата разобраны как FALSE_POSITIVE; 25/25 блоков покрыты.",
+  "inputs": {
+    "phase1": "analysis/20261119-040000-f1a2.phase1.json",
+    "a_runs": ["a/20261119-040000-a7b8.json"],
+    "b_runs": ["b/20261119-040000-b8c9.json"],
+    "c_runs": ["c/20261119-040000-c9d0.json"],
+    "precheck": "precheck/omission-precheck.json"
+  },
+  "results": [
+    {
+      "block": 1,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "FORMAT",
+      "action": "FIXED",
+      "before": "Союз возвращения Святой земли",
+      "after": "Объединённая армия возвращения Святой земли",
+      "note": "Итоговая терминологическая сверка: канон v21-ch06/log для 聖地回復連合軍 — «Объединённая армия возвращения Святой земли»; заменено в блоках 1, 5, 11 с согласованием падежа и рода."
+    },
+    {
+      "block": 9,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "MEANING_SHIFT",
+      "action": "FIXED",
+      "before": "Не вы ли, а мы — настоящие дикари!",
+      "after": "Не мы, а вы — настоящие дикари!",
+      "note": "A1 + Ф1 бл.9: инвертирована полярность упрёка; JA あなたたちのほうが、よほど蛮人ではありませんか обвиняет эльфов."
+    },
+    {
+      "block": 2,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "RUSSIAN_ERROR",
+      "action": "FIXED",
+      "before": "в этом и состоит обаяние Луизы, тому, чему меня не научиться.",
+      "after": "в этом и состоит обаяние Луизы — то, чему мне не научиться.",
+      "note": "Ф1 бл.2: несогласованное «обаяние … тому» заменено на «— то, чему мне не научиться»."
+    },
+    {
+      "block": 6,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "RUSSIAN_ERROR",
+      "action": "FIXED",
+      "before": "Быстрее всех среагировал Джулио, стоявший подле Папы",
+      "after": "Первым двинулся Джулио, стоявший подле Папы",
+      "note": "Ф1 бл.6: JA 最も早く動いたのは — «первым двинулся»."
+    },
+    {
+      "block": 10,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "MEANING_SHIFT",
+      "action": "FIXED",
+      "before": "на этого ничтожного торгаша",
+      "after": "на этого ничтожного человека",
+      "note": "Ф1 бл.10: JA 俗物 — «ничтожный человек»; «торгаш» добавлял не акцентированный коммерческий оттенок."
+    },
+    {
+      "block": 10,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "RUSSIAN_ERROR",
+      "action": "FIXED",
+      "before": "И после времени, показавшегося бесконечным…",
+      "after": "И после того, что показалось вечностью…",
+      "note": "Ф1 бл.10: нормализация тяжеловесной конструкции при сохранении модальности «бесконечного» ожидания."
+    },
+    {
+      "block": 14,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "COMPONENT_LOSS",
+      "action": "FIXED",
+      "before": "А тут ещё и эта грудь…",
+      "after": "А тут ещё и грудь Тиффании…",
+      "note": "A3 + Ф1 бл.14: восстановлен референт JA おっぱいちゃんのあのおっぱい."
+    },
+    {
+      "block": 22,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "RUSSIAN_ERROR",
+      "action": "FIXED",
+      "before": "Саша, первый Гандальв эльфов, — та, кого",
+      "after": "Саша, первая Гандальв эльфов, — та, кого",
+      "note": "Ф1 бл.22: родовое согласование с «та, кого вы называете героем Анубисом»."
+    },
+    {
+      "block": 23,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "FORMAT",
+      "action": "FIXED",
+      "before": "Бримир что-то нашептывает, накладывая заклинание. Саша сидит у его ног, согнувшись от боли.",
+      "after": "Бримир что-то нашептывал, накладывая заклинание. Саша сидела у его ног, согнувшись от боли.",
+      "note": "Ф1 бл.23 + PR-TENSE: нарратив видения приведён к прошедшему времени без смены аспекта."
+    },
+    {
+      "block": 23,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "RUSSIAN_ERROR",
+      "action": "FIXED",
+      "before": "«Великой катастрофы», бывшей шесть тысяч лет назад",
+      "after": "«Великой катастрофы», случившейся шесть тысяч лет назад",
+      "note": "Ф1 бл.23: причастие согласовано с «катастрофы»."
+    },
+    {
+      "block": 24,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "RUSSIAN_ERROR",
+      "action": "FIXED",
+      "before": "— Так вот вы что хотите вернуть… эту вашу Святую землю, — заметил Тюрюк.",
+      "after": "— Так вот что вы хотите вернуть… свою Святую землю, — заметил Тюрюк.",
+      "note": "Ф1 бл.24: порядок слов при JA なるほど…取り戻すべき聖地というのは、つまり……."
+    },
+    {
+      "block": 24,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "RUSSIAN_ERROR",
+      "action": "FIXED",
+      "before": "по-эльфийски рационально",
+      "after": "вполне в эльфийском духе, рационально",
+      "note": "Ф1 бл.24: JA いかにもエルフらしい、合理的な判断で."
+    },
+    {
+      "block": 1,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "FORMAT",
+      "action": "FIXED",
+      "before": "Восседая на единороге и облачившись в чисто белое боевое облачение",
+      "after": "Надев чисто белое боевое облачение и восседая на единороге",
+      "note": "style_scan ROOT_REPETITION «облачившись … облачение»: устранён однокоренной повтор."
+    },
+    {
+      "block": 1,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "FORMAT",
+      "action": "FIXED",
+      "before": "такой огромной армии",
+      "after": "такой громадной армии",
+      "note": "style_scan MONOTONY: пять вхождений корня «огромн» в главе; разведены по JA-лексике (大軍/巨大/多大/大きな/とてつもない)."
+    },
+    {
+      "block": 3,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "FORMAT",
+      "action": "FIXED",
+      "before": "огромный корабль",
+      "after": "гигантский корабль",
+      "note": "style_scan MONOTONY; JA 巨大なフネ."
+    },
+    {
+      "block": 7,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "FORMAT",
+      "action": "FIXED",
+      "before": "Я — председатель эльфийского Совета, Тюрюк, — представился он.",
+      "after": "Я — Тюрюк, председатель эльфийского Совета, — сказал он.",
+      "note": "style_scan ROOT_REPETITION «председатель … представился»."
+    },
+    {
+      "block": 12,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "FORMAT",
+      "action": "FIXED",
+      "before": "огромным кротом",
+      "after": "большим кротом",
+      "note": "style_scan MONOTONY; JA 大きなモグラ."
+    },
+    {
+      "block": 14,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "FORMAT",
+      "action": "FIXED",
+      "before": "кое-что такое всплывает… Вернее, всплывает слишком много.",
+      "after": "кое-что такое всплывает… Вернее, примеров тому слишком много.",
+      "note": "style_scan REPETITION; сохранена риторика самоуточнения."
+    },
+    {
+      "block": 17,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "FORMAT",
+      "action": "FIXED",
+      "before": "огромную магическую силу",
+      "after": "небывалую магическую силу",
+      "note": "style_scan MONOTONY; JA とてつもない魔力."
+    },
+    {
+      "block": 4,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "FORMAT",
+      "action": "FIXED",
+      "before": "господина Сайто и мисс Уэствуд",
+      "after": "месье Сайто и мадемуазель Уэствуд",
+      "note": "address_scan FA-1:говорящий Генриетта — Тристейн, норма «месье/мадемуазель» (addresses.md, v14-ch02)."
+    },
+    {
+      "block": 15,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "FORMAT",
+      "action": "FIXED",
+      "before": "с господином Сайто и мисс Уэствуд",
+      "after": "с Сайто-саном и мисс Уэствуд",
+      "note": "address_scan FA-1: JA サイトさん от Сиесты — исключение для японского происхождения (addresses.md); «мисс Уэствуд» от неё же — норма Альбиона."
+    },
+    {
+      "block": 8,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "FORMAT",
+      "action": "FIXED",
+      "before": "Альбрехт III на миг онемел и проворчал: «Гм…»",
+      "after": "Альбрехт III на миг онемел и проворчал:\n\n— Гм…",
+      "note": "omission_precheck бл.8: дробление абзацев по JA (ぐぬ と唸った / だが、すぐにニヤリと笑い) без потери реплик."
+    },
+    {
+      "block": 8,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "FORMAT",
+      "action": "FIXED",
+      "before": "— Признаю: ваше «деяние демона» и вправду страшно, — спокойно согласился Тюрюк.",
+      "after": "— Признаю: ваше «деяние демона» и вправду страшно.\n\nТюрюк признал это без обиняков.",
+      "note": "omission_precheck бл.8: разделены JA-звенья あっさりと認めた и предшествующая реплика."
+    },
+    {
+      "block": 9,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "FORMAT",
+      "action": "FIXED",
+      "before": "— Ваше Святейшество, тогда… — Луиза встрепенулась.",
+      "after": "— Ваше Святейшество, тогда…\n\nЛуиза встрепенулась и подняла лицо.",
+      "note": "omission_precheck бл.9: отдельная JA-реплика 聖下、では…… и наррация ルイズがはっと顔を上げる."
+    },
+    {
+      "block": 13,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "FORMAT",
+      "action": "FIXED",
+      "before": "Тут Ренар пододвинул очки и негромко пробормотал:\n\n— Хорошо, что он жив…",
+      "after": "Тут Ренар пододвинул очки и негромко пробормотал:\n\n— Хм-м…\n\n— Хорошо, что он жив…",
+      "note": "omission_precheck бл.13: JA うむむ、と唸った выделено отдельной репликой."
+    },
+    {
+      "block": 9,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MISSING",
+      "action": "PRESERVED",
+      "note": "precheck S1 бл.9 (DIALOGUE_FRAGMENT): все перечисленные JA-звенья присутствуют в RU — «— Ваше Святейшество, тогда…», «Луиза встрепенулась и подняла лицо», «— Ваша Святейшество, неужели…», «Альбрехт III вступил в разговор с упрёком…». Эвристика считает хвост по числу абзацев; это слияние без потери реплик (исключение в pre-check)."
+    },
+    {
+      "block": 13,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MISSING",
+      "action": "PRESERVED",
+      "note": "precheck S1 бл.13: JA 「なにがまずいんだね？」と、ギーシュ покрыто строкой «— Что ты имеешь в виду? — спросил Гиш.»; потери содержания нет."
+    },
+    {
+      "block": 2,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MEANING_SHIFT",
+      "action": "PRESERVED",
+      "note": "A2: 羨ましい → «завидую» — точная лексема; интимность «тебе» передаёт わたくし-внутреннюю речь без книжного «вам»."
+    },
+    {
+      "block": 8,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MEANING_SHIFT",
+      "action": "PRESERVED",
+      "note": "B1: логика избрания нового председателя Совета сохранена полностью; ACCEPTABLE ADAPTATION."
+    },
+    {
+      "block": 1,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MEANING_SHIFT",
+      "action": "PRESERVED",
+      "note": "C1: призыв «Не останавливаться! … Вперёд, вперёд!» сохраняет категорическую модальность 〜てはなりません и эмфазу."
+    },
+    {
+      "block": 24,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MEANING_SHIFT",
+      "action": "PRESERVED",
+      "note": "C4: «Доверять ему нельзя. Но его словам можно верить.» сохраняет различение 信頼/信用."
+    }
+  ]
+}

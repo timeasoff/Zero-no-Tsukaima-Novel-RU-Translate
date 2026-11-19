@@ -1,0 +1,175 @@
+{
+  "analysis_id": "20261119-060100-sm1",
+  "chapter": "v21-ch05",
+  "final_read_recheck": "RU-only перечит после всех правок (блоки 1, 3, 4, 5, 7, 8, 9, 10, 12; нормализация отбивки маркеров 1–13): все смысловые правки сверены с JA; FINAL READ нашёл и исправил две кальки в блоках 3 и 5; omission_precheck перезапущен по финальному merged — 0 кандидатов; 13/13 блоков покрыты.",
+  "inputs": {
+    "phase1": "analysis/20261119-060100-sm1.phase1.json",
+    "a_runs": ["a/20261119-060100-a1.json"],
+    "b_runs": ["b/20261119-060100-b1.json"],
+    "c_runs": ["c/20261119-060100-c1.json"],
+    "precheck": "precheck/omission-precheck.json"
+  },
+  "results": [
+    {
+      "block": 3,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "RUSSIAN_ERROR",
+      "action": "FIXED",
+      "before": "он вдруг проникся чем-то вроде родства к этому эльфу-юноше",
+      "after": "он вдруг почувствовал родство с этим эльфом-юношей",
+      "note": "FINAL READ (RU-only): несвойственная коллокация «проникся родством к» заменена естественной «почувствовал родство с»; JA 親近感がわいてくる сохранён"
+    },
+    {
+      "block": 5,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "RUSSIAN_ERROR",
+      "action": "FIXED",
+      "before": "Гандальв и… это… Лифсрасил — были Сашей… кажется.",
+      "after": "Гандальв и… это… Лифсрасил — оба были Сашей… кажется.",
+      "note": "FINAL READ (RU-only): согласование составного подлежащего — добавлено «оба»; JA ガンダールヴと…リーヴスラシルは、サーシャだった сохранён"
+    },
+    {
+      "block": 12,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "MEANING_SHIFT",
+      "action": "FIXED",
+      "before": "— Она не пострадала?",
+      "after": "— Они не пострадали?",
+      "note": "B7 + Ф1 бл.12: JA 彼女たち (мн. ч.) — «Она не пострадала?» → «Они не пострадали?» (восстановлено число субъекта; EN «they» — справка)"
+    },
+    {
+      "block": 9,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "FORMAT",
+      "action": "FIXED",
+      "before": "господин Сайто / Господин Сайто",
+      "after": "месье Сайто / Месье Сайто",
+      "note": "A6, Ф1 бл.9–10, address_scan: «господин Сайто» → «месье Сайто» по addresses.md (строки «Сайто Хирага»), JA サイト殿 сохранено как вежливое обращение, японский суффикс не выдуман"
+    },
+    {
+      "block": 7,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "FORMAT",
+      "action": "FIXED",
+      "before": "…возразил Алий. — Пусть пока идёт с нами.",
+      "after": "…возразил Алий.\n\n— Пусть пока идёт с нами.",
+      "note": "check_records: слитная запись «наррация. — Реплика» разделена на абзацы по JA (アリィーが反対した。/ 「しばらくは…」)"
+    },
+    {
+      "block": 1,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "FORMAT",
+      "action": "FIXED",
+      "before": "На стенах пещеры виднелись следы затопления.",
+      "after": "На стенах пещеры остались следы затопления.",
+      "note": "style_scan ROOT_REPETITION «виднелись… видно»: устранён корневой повтор без изменения смысла JA 浸水した跡があった"
+    },
+    {
+      "block": 3,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "FORMAT",
+      "action": "FIXED",
+      "before": "не прекращали упорно бомбить глубинными бомбами обломки",
+      "after": "упорно атаковали глубинными бомбами обломки",
+      "note": "style_scan ROOT_REPETITION «бомбить… бомбами»: устранена тавтология, признак глубинной бомбы сохранён по JA 爆雷攻撃"
+    },
+    {
+      "block": 1,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "COMPONENT_LOSS",
+      "action": "PRESERVED",
+      "note": "B1: эпизод отпускания Шаллара есть только в EN, в JA-блоке 1 отсутствует; по JA > EN не добавлен"
+    },
+    {
+      "block": 1,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MEANING_SHIFT",
+      "action": "PRESERVED",
+      "note": "A2: おっぱい → «грудь» — допустимая нейтрализация внутреннего голоса, степень (すごく) передана «насквозь», ACCEPTABLE ADAPTATION"
+    },
+    {
+      "block": 2,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MEANING_SHIFT",
+      "action": "PRESERVED",
+      "note": "A3: すげえ痛かった → «очень больно» — разговорный интенсив передан нейтрально, модальность сохранена"
+    },
+    {
+      "block": 3,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MEANING_SHIFT",
+      "action": "PRESERVED",
+      "note": "C2: いつもいつも → «всегда, всегда» — функциональный повтор, PRESERVED — FUNCTIONAL"
+    },
+    {
+      "block": 4,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "FORMAT",
+      "action": "PRESERVED",
+      "note": "B4: «Эвменес» вместо сырого «Эвмен» — форма завершённого тома v21-ch01, уже применена в финальном тексте"
+    },
+    {
+      "block": 5,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MEANING_SHIFT",
+      "action": "PRESERVED",
+      "note": "A4: 歯切れ悪い → «мямлишь» — фамильярный голос Дерфа сохранён, ACCEPTABLE ADAPTATION"
+    },
+    {
+      "block": 6,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MEANING_SHIFT",
+      "action": "PRESERVED",
+      "note": "A5: 嬢ちゃん → «девчонка/полуэльфийка» — референты однозначны, фамильярность сохранена"
+    },
+    {
+      "block": 7,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "FORMAT",
+      "action": "PRESERVED",
+      "note": "B5: «Круденхоф» по завершённому v12-ch04; EN «Guldenhorf» — справка, расхождение зафиксировано в аудите"
+    },
+    {
+      "block": 8,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "FORMAT",
+      "action": "PRESERVED",
+      "note": "B6: «Альгамбра» по завершённым v10/v11; сырое «Альхамбра» исправлено, расхождение зафиксировано"
+    },
+    {
+      "block": 9,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "FORMAT",
+      "action": "PRESERVED",
+      "note": "A6, format_scan title: «Его Святейшество» в курсивной мысли — почтительная форма внутренней речи, не нарративная атрибуция; регистр не меняется механически"
+    },
+    {
+      "block": 10,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MEANING_SHIFT",
+      "action": "PRESERVED",
+      "note": "C4: сарказм 皮肉 передан ремаркой «с горькой иронией», сила реплики не завышена"
+    },
+    {
+      "block": 11,
+      "status": "DISPUTED",
+      "fidelity": "ADDITION",
+      "action": "REPORT_ONLY",
+      "note": "B8, Ф1 бл.11: «Рубин Пламени» (炎のルビー) — PROVISIONAL, рабочая форма по образцу «Рубин Ветра/Воды»; требуется подтверждение пользователя, канон не создаётся"
+    },
+    {
+      "block": 11,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MEANING_SHIFT",
+      "action": "PRESERVED",
+      "note": "C5: 後悔……そうですね → «Сожаление… да.» — неохотное признание, пауза и модальность сохранены"
+    },
+    {
+      "block": 13,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MEANING_SHIFT",
+      "action": "PRESERVED",
+      "note": "C6: признание Джулио — пауза сохранена, последующая «вечная слава» сохраняет контраст по JA"
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "audit_id": "sma-b",
+  "audit_type": "semantic-audit-b",
+  "audit_run_id": "20261119-120000-b1b",
+  "chapter": "v21-ch10",
+  "findings": [
+    {
+      "block": 1,
+      "source": "エウメネスの街は、中心を流れる川を挟んで",
+      "current": "Город Эвменес, раскинувшийся на двух берегах реки, что текла через самый его центр",
+      "problem": "География города",
+      "reason": "Оба берега и центральное течение сохранены.",
+      "issue_type": "LEXICAL_MISMATCH",
+      "severity": "CANDIDATE"
+    },
+    {
+      "block": 3,
+      "source": "両手足はロープで固定され",
+      "current": "Руки и ноги были стянуты верёвкой",
+      "problem": "Актант: associated with Фатима",
+      "reason": "Подлежащее — части тела Фатимы; действие претерпевает она; схема верна.",
+      "issue_type": "LEXICAL_MISMATCH",
+      "severity": "CANDIDATE"
+    },
+    {
+      "block": 4,
+      "source": "叔父に誓った復讐",
+      "current": "Клятва мести, данная дяде, так и не была исполнена",
+      "problem": "JA 叔父 = дядя (сырой RU давал «тётя»); адресат клятвы",
+      "reason": "Исправлено по JA с опорой на завершённые тома; в финальный текст внесено.",
+      "issue_type": "MISTRANSLATION",
+      "severity": "CANDIDATE"
+    },
+    {
+      "block": 5,
+      "source": "サルカン提督だ／水軍きっての猛将",
+      "current": "Это адмирал Салкан／Гроза флота",
+      "problem": "Роль и титул персонажа",
+      "reason": "Титул «адмирал», транслитерация «Салкан» унаследована из v21-ch06 (PROVISIONAL).",
+      "issue_type": "LEXICAL_MISMATCH",
+      "severity": "CANDIDATE"
+    },
+    {
+      "block": 7,
+      "source": "数十秒はまともな身動きがとれなくなる",
+      "current": "не может нормально двигаться десяток секунд",
+      "problem": "Число: 数十秒",
+      "reason": "«Десяток секунд» сохраняет приблизительность JA.",
+      "issue_type": "OTHER",
+      "severity": "CANDIDATE"
+    },
+    {
+      "block": 8,
+      "source": "立て続けに三発、腹を狙った",
+      "current": "Три выстрела подряд — в живот",
+      "problem": "Число и цель",
+      "reason": "Три выстрела и прицел на живот сохранены.",
+      "issue_type": "OTHER",
+      "severity": "CANDIDATE"
+    },
+    {
+      "block": 14,
+      "source": "この〝常時錬金〟、あんまり加減ができないんだ",
+      "current": "эту „Постоянную алхимию“ не слишком-то дозировать",
+      "problem": "Новый термин 常時錬金",
+      "reason": "Выбрана нейтральная рабочая форма; PROVISIONAL, зафиксировано в журнале и отчёте.",
+      "issue_type": "LEXICAL_MISMATCH",
+      "severity": "CANDIDATE"
+    }
+  ]
+}
