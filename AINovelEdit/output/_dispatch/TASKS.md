@@ -1,6 +1,6 @@
 # Реестр задач диспетчера
 
-Обновлено: 2026-11-19 06:12:20
+Обновлено: 2026-11-19 22:19:00
 
 Генерируется автоматически командой `python tools/dispatch.py`. Не редактируй вручную.
 
@@ -2724,4 +2724,176 @@ Polnyi perevod i audit v22-epilogue (first-launch po agent_workflow): bloki, pre
 | ID | Режим | Глава | Статус | Попыток | Промпт |
 | --- | --- | --- | --- | --- | --- |
 | T-0145-S1 | first-launch | v22-epilogue | done | 1 | `agent_prompts/agent_prompt.v22-epilogue.first-launch.md` |
+
+## T-0146 — OPEN
+
+Recheck v15-v22 (v16 DEFERRED): full A+B+C -> omissions -> humanizer -> grammar -> style -> format -> terminology -> final
+
+| ID | Режим | Глава | Статус | Попыток | Промпт |
+| --- | --- | --- | --- | --- | --- |
+| T-0146-S1 | sma-a | v15-afterword | done | 1 | `agent_prompts/agent_prompt.v15-afterword.sma-a.md` |
+| T-0146-S2 | sma-b | v15-afterword | done | 1 | `agent_prompts/agent_prompt.v15-afterword.sma-b.md` |
+| T-0146-S3 | sma-c | v15-afterword | done | 1 | `agent_prompts/agent_prompt.v15-afterword.sma-c.md` |
+| T-0146-S4 | analyzer-phase1 | v15-afterword | done | 1 | `agent_prompts/agent_prompt.v15-afterword.analyzer-phase1.md` |
+| T-0146-S5 | analyzer-phase2 | v15-afterword | done | 1 | `agent_prompts/agent_prompt.v15-afterword.analyzer-phase2.md` |
+| T-0146-S6 | grammar-audit | v15-afterword | done | 1 | `agent_prompts/agent_prompt.v15-afterword.grammar-audit.md` |
+| T-0146-S7 | style-audit | v15-afterword | done | 1 | `agent_prompts/agent_prompt.v15-afterword.style-audit.md` |
+| T-0146-S8 | humanizer | v15-afterword | done | 1 | `agent_prompts/agent_prompt.v15-afterword.humanizer.md` |
+| T-0146-S9 | full-audit | v15-afterword | planned | 0 | `—` |
+| T-0146-S10 | sma-a | v15-ch01 | done | 1 | `agent_prompts/agent_prompt.v15-ch01.sma-a.md` |
+| T-0146-S11 | sma-b | v15-ch01 | done | 1 | `agent_prompts/agent_prompt.v15-ch01.sma-b.md` |
+| T-0146-S12 | sma-c | v15-ch01 | done | 1 | `agent_prompts/agent_prompt.v15-ch01.sma-c.md` |
+| T-0146-S13 | analyzer-phase1 | v15-ch01 | done | 1 | `agent_prompts/agent_prompt.v15-ch01.analyzer-phase1.md` |
+| T-0146-S14 | analyzer-phase2 | v15-ch01 | done | 1 | `agent_prompts/agent_prompt.v15-ch01.analyzer-phase2.md` |
+| T-0146-S15 | grammar-audit | v15-ch01 | done | 1 | `agent_prompts/agent_prompt.v15-ch01.grammar-audit.md` |
+| T-0146-S16 | style-audit | v15-ch01 | done | 1 | `agent_prompts/agent_prompt.v15-ch01.style-audit.md` |
+| T-0146-S17 | humanizer | v15-ch01 | done | 1 | `agent_prompts/agent_prompt.v15-ch01.humanizer.md` |
+| T-0146-S18 | full-audit | v15-ch01 | planned | 0 | `—` |
+| T-0146-S19 | sma-a | v15-ch02 | done | 1 | `agent_prompts/agent_prompt.v15-ch02.sma-a.md` |
+| T-0146-S20 | sma-b | v15-ch02 | done | 1 | `agent_prompts/agent_prompt.v15-ch02.sma-b.md` |
+| T-0146-S21 | sma-c | v15-ch02 | done | 1 | `agent_prompts/agent_prompt.v15-ch02.sma-c.md` |
+| T-0146-S22 | analyzer-phase1 | v15-ch02 | done | 1 | `agent_prompts/agent_prompt.v15-ch02.analyzer-phase1.md` |
+| T-0146-S23 | analyzer-phase2 | v15-ch02 | done | 1 | `agent_prompts/agent_prompt.v15-ch02.analyzer-phase2.md` |
+| T-0146-S24 | grammar-audit | v15-ch02 | done | 1 | `agent_prompts/agent_prompt.v15-ch02.grammar-audit.md` |
+| T-0146-S25 | style-audit | v15-ch02 | done | 1 | `agent_prompts/agent_prompt.v15-ch02.style-audit.md` |
+| T-0146-S26 | humanizer | v15-ch02 | done | 1 | `agent_prompts/agent_prompt.v15-ch02.humanizer.md` |
+| T-0146-S27 | full-audit | v15-ch02 | planned | 0 | `—` |
+| T-0146-S28 | sma-a | v15-ch03 | done | 1 | `agent_prompts/agent_prompt.v15-ch03.sma-a.md` |
+| T-0146-S29 | sma-b | v15-ch03 | done | 1 | `agent_prompts/agent_prompt.v15-ch03.sma-b.md` |
+| T-0146-S30 | sma-c | v15-ch03 | done | 1 | `agent_prompts/agent_prompt.v15-ch03.sma-c.md` |
+| T-0146-S31 | analyzer-phase1 | v15-ch03 | done | 1 | `agent_prompts/agent_prompt.v15-ch03.analyzer-phase1.md` |
+| T-0146-S32 | analyzer-phase2 | v15-ch03 | done | 1 | `agent_prompts/agent_prompt.v15-ch03.analyzer-phase2.md` |
+| T-0146-S33 | grammar-audit | v15-ch03 | done | 1 | `agent_prompts/agent_prompt.v15-ch03.grammar-audit.md` |
+| T-0146-S34 | style-audit | v15-ch03 | done | 1 | `agent_prompts/agent_prompt.v15-ch03.style-audit.md` |
+| T-0146-S35 | humanizer | v15-ch03 | running | 2 | `agent_prompts/agent_prompt.v15-ch03.humanizer.attempt2.md` |
+| T-0146-S36 | full-audit | v15-ch03 | planned | 0 | `—` |
+| T-0146-S37 | sma-a | v15-ch04 | done | 1 | `agent_prompts/agent_prompt.v15-ch04.sma-a.md` |
+| T-0146-S38 | sma-b | v15-ch04 | done | 1 | `agent_prompts/agent_prompt.v15-ch04.sma-b.md` |
+| T-0146-S39 | sma-c | v15-ch04 | done | 1 | `agent_prompts/agent_prompt.v15-ch04.sma-c.md` |
+| T-0146-S40 | analyzer-phase1 | v15-ch04 | done | 1 | `agent_prompts/agent_prompt.v15-ch04.analyzer-phase1.md` |
+| T-0146-S41 | analyzer-phase2 | v15-ch04 | done | 1 | `agent_prompts/agent_prompt.v15-ch04.analyzer-phase2.md` |
+| T-0146-S42 | grammar-audit | v15-ch04 | done | 1 | `agent_prompts/agent_prompt.v15-ch04.grammar-audit.md` |
+| T-0146-S43 | style-audit | v15-ch04 | done | 1 | `agent_prompts/agent_prompt.v15-ch04.style-audit.md` |
+| T-0146-S44 | humanizer | v15-ch04 | failed | 2 | `agent_prompts/agent_prompt.v15-ch04.humanizer.attempt2.md` |
+| T-0146-S45 | full-audit | v15-ch04 | planned | 0 | `—` |
+| T-0146-S46 | sma-a | v15-ch05 | done | 1 | `agent_prompts/agent_prompt.v15-ch05.sma-a.md` |
+| T-0146-S47 | sma-b | v15-ch05 | done | 1 | `agent_prompts/agent_prompt.v15-ch05.sma-b.md` |
+| T-0146-S48 | sma-c | v15-ch05 | done | 1 | `agent_prompts/agent_prompt.v15-ch05.sma-c.md` |
+| T-0146-S49 | analyzer-phase1 | v15-ch05 | done | 1 | `agent_prompts/agent_prompt.v15-ch05.analyzer-phase1.md` |
+| T-0146-S50 | analyzer-phase2 | v15-ch05 | done | 1 | `agent_prompts/agent_prompt.v15-ch05.analyzer-phase2.md` |
+| T-0146-S51 | grammar-audit | v15-ch05 | done | 1 | `agent_prompts/agent_prompt.v15-ch05.grammar-audit.md` |
+| T-0146-S52 | style-audit | v15-ch05 | done | 1 | `agent_prompts/agent_prompt.v15-ch05.style-audit.md` |
+| T-0146-S53 | humanizer | v15-ch05 | done | 2 | `agent_prompts/agent_prompt.v15-ch05.humanizer.attempt2.md` |
+| T-0146-S54 | full-audit | v15-ch05 | planned | 0 | `—` |
+| T-0146-S55 | sma-a | v15-ch06 | done | 1 | `agent_prompts/agent_prompt.v15-ch06.sma-a.md` |
+| T-0146-S56 | sma-b | v15-ch06 | done | 1 | `agent_prompts/agent_prompt.v15-ch06.sma-b.md` |
+| T-0146-S57 | sma-c | v15-ch06 | done | 1 | `agent_prompts/agent_prompt.v15-ch06.sma-c.md` |
+| T-0146-S58 | analyzer-phase1 | v15-ch06 | done | 1 | `agent_prompts/agent_prompt.v15-ch06.analyzer-phase1.md` |
+| T-0146-S59 | analyzer-phase2 | v15-ch06 | done | 1 | `agent_prompts/agent_prompt.v15-ch06.analyzer-phase2.md` |
+| T-0146-S60 | grammar-audit | v15-ch06 | done | 1 | `agent_prompts/agent_prompt.v15-ch06.grammar-audit.md` |
+| T-0146-S61 | style-audit | v15-ch06 | done | 1 | `agent_prompts/agent_prompt.v15-ch06.style-audit.md` |
+| T-0146-S62 | humanizer | v15-ch06 | failed | 2 | `agent_prompts/agent_prompt.v15-ch06.humanizer.attempt2.md` |
+| T-0146-S63 | full-audit | v15-ch06 | planned | 0 | `—` |
+| T-0146-S64 | sma-a | v15-ch07 | done | 1 | `agent_prompts/agent_prompt.v15-ch07.sma-a.md` |
+| T-0146-S65 | sma-b | v15-ch07 | done | 1 | `agent_prompts/agent_prompt.v15-ch07.sma-b.md` |
+| T-0146-S66 | sma-c | v15-ch07 | done | 1 | `agent_prompts/agent_prompt.v15-ch07.sma-c.md` |
+| T-0146-S67 | analyzer-phase1 | v15-ch07 | done | 1 | `agent_prompts/agent_prompt.v15-ch07.analyzer-phase1.md` |
+| T-0146-S68 | analyzer-phase2 | v15-ch07 | done | 1 | `agent_prompts/agent_prompt.v15-ch07.analyzer-phase2.md` |
+| T-0146-S69 | grammar-audit | v15-ch07 | done | 1 | `agent_prompts/agent_prompt.v15-ch07.grammar-audit.md` |
+| T-0146-S70 | style-audit | v15-ch07 | done | 1 | `agent_prompts/agent_prompt.v15-ch07.style-audit.md` |
+| T-0146-S71 | humanizer | v15-ch07 | failed | 2 | `agent_prompts/agent_prompt.v15-ch07.humanizer.attempt2.md` |
+| T-0146-S72 | full-audit | v15-ch07 | planned | 0 | `—` |
+| T-0146-S73 | sma-a | v15-ch08 | done | 1 | `agent_prompts/agent_prompt.v15-ch08.sma-a.md` |
+| T-0146-S74 | sma-b | v15-ch08 | done | 1 | `agent_prompts/agent_prompt.v15-ch08.sma-b.md` |
+| T-0146-S75 | sma-c | v15-ch08 | done | 1 | `agent_prompts/agent_prompt.v15-ch08.sma-c.md` |
+| T-0146-S76 | analyzer-phase1 | v15-ch08 | done | 1 | `agent_prompts/agent_prompt.v15-ch08.analyzer-phase1.md` |
+| T-0146-S77 | analyzer-phase2 | v15-ch08 | done | 1 | `agent_prompts/agent_prompt.v15-ch08.analyzer-phase2.md` |
+| T-0146-S78 | grammar-audit | v15-ch08 | done | 1 | `agent_prompts/agent_prompt.v15-ch08.grammar-audit.md` |
+| T-0146-S79 | style-audit | v15-ch08 | done | 1 | `agent_prompts/agent_prompt.v15-ch08.style-audit.md` |
+| T-0146-S80 | humanizer | v15-ch08 | failed | 2 | `agent_prompts/agent_prompt.v15-ch08.humanizer.attempt2.md` |
+| T-0146-S81 | full-audit | v15-ch08 | planned | 0 | `—` |
+| T-0146-S82 | sma-a | v15-ch09 | done | 1 | `agent_prompts/agent_prompt.v15-ch09.sma-a.md` |
+| T-0146-S83 | sma-b | v15-ch09 | done | 1 | `agent_prompts/agent_prompt.v15-ch09.sma-b.md` |
+| T-0146-S84 | sma-c | v15-ch09 | done | 1 | `agent_prompts/agent_prompt.v15-ch09.sma-c.md` |
+| T-0146-S85 | analyzer-phase1 | v15-ch09 | done | 1 | `agent_prompts/agent_prompt.v15-ch09.analyzer-phase1.md` |
+| T-0146-S86 | analyzer-phase2 | v15-ch09 | done | 1 | `agent_prompts/agent_prompt.v15-ch09.analyzer-phase2.md` |
+| T-0146-S87 | grammar-audit | v15-ch09 | done | 1 | `agent_prompts/agent_prompt.v15-ch09.grammar-audit.md` |
+| T-0146-S88 | style-audit | v15-ch09 | done | 1 | `agent_prompts/agent_prompt.v15-ch09.style-audit.md` |
+| T-0146-S89 | humanizer | v15-ch09 | failed | 2 | `agent_prompts/agent_prompt.v15-ch09.humanizer.attempt2.md` |
+| T-0146-S90 | full-audit | v15-ch09 | planned | 0 | `—` |
+| T-0146-S91 | sma-a | v15-epilogue | done | 1 | `agent_prompts/agent_prompt.v15-epilogue.sma-a.md` |
+| T-0146-S92 | sma-b | v15-epilogue | done | 1 | `agent_prompts/agent_prompt.v15-epilogue.sma-b.md` |
+| T-0146-S93 | sma-c | v15-epilogue | done | 1 | `agent_prompts/agent_prompt.v15-epilogue.sma-c.md` |
+| T-0146-S94 | analyzer-phase1 | v15-epilogue | done | 1 | `agent_prompts/agent_prompt.v15-epilogue.analyzer-phase1.md` |
+| T-0146-S95 | analyzer-phase2 | v15-epilogue | done | 1 | `agent_prompts/agent_prompt.v15-epilogue.analyzer-phase2.md` |
+| T-0146-S96 | grammar-audit | v15-epilogue | done | 1 | `agent_prompts/agent_prompt.v15-epilogue.grammar-audit.md` |
+| T-0146-S97 | style-audit | v15-epilogue | done | 1 | `agent_prompts/agent_prompt.v15-epilogue.style-audit.md` |
+| T-0146-S98 | humanizer | v15-epilogue | failed | 2 | `agent_prompts/agent_prompt.v15-epilogue.humanizer.attempt2.md` |
+| T-0146-S99 | full-audit | v15-epilogue | planned | 0 | `—` |
+
+Заметки:
+- T-0146-S1: verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)
+- T-0146-S2: verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)
+- T-0146-S3: verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)
+- T-0146-S4: verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)
+- T-0146-S5: verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)
+- T-0146-S10: verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)
+- T-0146-S11: verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)
+- T-0146-S12: verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)
+- T-0146-S13: verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)
+- T-0146-S14: verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)
+- T-0146-S19: verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)
+- T-0146-S20: verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)
+- T-0146-S21: verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)
+- T-0146-S22: verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)
+- T-0146-S23: verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)
+- T-0146-S26: humanizer ch02: 4 fixes
+- T-0146-S28: verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)
+- T-0146-S29: verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)
+- T-0146-S30: verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)
+- T-0146-S31: verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)
+- T-0146-S32: verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)
+- T-0146-S35: false DONE: provider limit, HUMANIZER section absent in audit report
+- T-0146-S37: verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)
+- T-0146-S38: verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)
+- T-0146-S39: verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)
+- T-0146-S40: verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)
+- T-0146-S41: verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)
+- T-0146-S44: not executed: subagent silently produced no artifacts (no HUMANIZER section in audit, no text change); rerun required
+- T-0146-S46: verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)
+- T-0146-S47: verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)
+- T-0146-S48: verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)
+- T-0146-S49: verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)
+- T-0146-S50: verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)
+- T-0146-S53: humanizer ch05 attempt2: 2 fixes, commit 00bef1a2
+- T-0146-S55: verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)
+- T-0146-S56: verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)
+- T-0146-S57: verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)
+- T-0146-S58: verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)
+- T-0146-S59: verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)
+- T-0146-S62: not executed: subagent silently produced no artifacts (no HUMANIZER section in audit, no text change); rerun required
+- T-0146-S64: verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)
+- T-0146-S65: verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)
+- T-0146-S66: verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)
+- T-0146-S67: verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)
+- T-0146-S68: verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)
+- T-0146-S71: not executed: subagent silently produced no artifacts (no HUMANIZER section in audit, no text change); rerun required
+- T-0146-S73: verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)
+- T-0146-S74: verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)
+- T-0146-S75: verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)
+- T-0146-S76: verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)
+- T-0146-S77: verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)
+- T-0146-S80: not executed: subagent silently produced no artifacts (no HUMANIZER section in audit, no text change); rerun required
+- T-0146-S82: verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)
+- T-0146-S83: verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)
+- T-0146-S84: verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)
+- T-0146-S85: verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)
+- T-0146-S86: verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)
+- T-0146-S89: not executed: subagent silently produced no artifacts (no HUMANIZER section in audit, no text change); rerun required
+- T-0146-S91: verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)
+- T-0146-S92: verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)
+- T-0146-S93: verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)
+- T-0146-S94: verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)
+- T-0146-S95: verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)
+- T-0146-S98: not executed: subagent silently produced no artifacts (no HUMANIZER section in audit, no text change); rerun required
 
