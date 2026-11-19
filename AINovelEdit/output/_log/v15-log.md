@@ -666,3 +666,38 @@
   текст не стерилизован.
 - ОТЧЁТ: `output/_audit/v15-ch02.md`, раздел «Стилевой контроль»; сводка
   STYLE AUDIT добавлена в «Итоги (FINAL AUDIT)».
+
+## v15-epilogue — СТИЛЕВОЙ АУДИТ (19.11.2026)
+
+- `style_scan.py --selftest` 28/28; `--file output/chapters/v15-epilogue.md
+  --report`: 91 абзац, 7 кандидатов; выгрузка
+  `output/_audit/_prefilter/v15-epilogue-style.md`. Полный чек-лист §20
+  пройден по всем 7 блокам (198 строк); RU-only проход (вслух, без JA/EN)
+  выполнен по всему файлу; трек MONOTONY — 0 («огромн» ×2 при пороге ≥5).
+- Все 7 кандидатов предфильтра разобраны поименно: CLASSIFICATION CANDIDATE 7;
+  DISPOSITION PRESERVED — FUNCTIONAL 4, PRESERVED — JA/EN 1,
+  PRESERVED — CHARACTER VOICE 2. По кандидатам предфильтра FIXED 0: повторы
+  «огненный шар», «святой друг / святой враг», «четыре из четырёх», «Устроим!»,
+  «почему… почему», «понимаю… понимаю», «коронация… корона» — функциональные
+  анафоры, риторика и голос персонажей, прямо поддержанные JA.
+- RU-only: 7 закреплённых паттернов — 0 совпадений. Найдена и исправлена
+  калька-безделка бл. 6, абз. 81: «что **на кровь создаёт** точную копию» →
+  «что **с помощью крови создаёт** точную копию» (JA 血を使い…, EN *Through
+  blood*, сырой RU «С помощью крови…»). Грамматический аудит ранее пометил
+  место PRESERVED со сноской «зона стилевого слоя» — здесь решено как
+  WARNING → FIXED. Правка через `fix_block.py --block 6 --replace-file`
+  (UTF-8 JSON), затем `update_merged.py` (7/7 ED_RU, строгих 0).
+- Прочие находки полного прохода (9) — без правки: 1 FALSE POSITIVE
+  («неужто… и вправду» — не тавтология), 5 PRESERVED — FUNCTIONAL,
+  1 PRESERVED — JA/EN, 1 PRESERVED — CHARACTER VOICE, 1 ACCEPTABLE ADAPTATION.
+  Не трогались зоны других скиллов: атрибуция бл. 2 и пунктуация при авторских
+  словах (стр. 107, 129) — prose/translation/grammar-слои.
+- RECHECK: `style_scan` — те же 7 кандидатов, `grammar_scan` — 3 прежних FP,
+  `check_alignment` — строгих 0; `git diff --text` — только ожидаемые строки
+  в output и merged бл. 6; маркеры 7/7, U+FFFD = 0.
+- Итог STYLE AUDIT: ERROR 0, WARNING 1, CANDIDATE 16; FIXED 1,
+  FALSE POSITIVE 1, PRESERVED — FUNCTIONAL 9, PRESERVED — JA/EN 2,
+  PRESERVED — CHARACTER VOICE 3, ACCEPTABLE ADAPTATION 1, USER DECISION 0,
+  `???` 0.
+- ОТЧЁТ: `output/_audit/v15-epilogue.md`, раздел «Стилевой контроль»; сводка
+  STYLE AUDIT добавлена в «Итоги (FINAL AUDIT)».
