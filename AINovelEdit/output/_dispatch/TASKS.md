@@ -1,6 +1,6 @@
 # Реестр задач диспетчера
 
-Обновлено: 2026-11-19 22:19:00
+Обновлено: 2026-11-19 22:47:05
 
 Генерируется автоматически командой `python tools/dispatch.py`. Не редактируй вручную.
 
@@ -2765,7 +2765,7 @@ Recheck v15-v22 (v16 DEFERRED): full A+B+C -> omissions -> humanizer -> grammar 
 | T-0146-S32 | analyzer-phase2 | v15-ch03 | done | 1 | `agent_prompts/agent_prompt.v15-ch03.analyzer-phase2.md` |
 | T-0146-S33 | grammar-audit | v15-ch03 | done | 1 | `agent_prompts/agent_prompt.v15-ch03.grammar-audit.md` |
 | T-0146-S34 | style-audit | v15-ch03 | done | 1 | `agent_prompts/agent_prompt.v15-ch03.style-audit.md` |
-| T-0146-S35 | humanizer | v15-ch03 | running | 2 | `agent_prompts/agent_prompt.v15-ch03.humanizer.attempt2.md` |
+| T-0146-S35 | humanizer | v15-ch03 | done | 2 | `agent_prompts/agent_prompt.v15-ch03.humanizer.attempt2.md` |
 | T-0146-S36 | full-audit | v15-ch03 | planned | 0 | `—` |
 | T-0146-S37 | sma-a | v15-ch04 | done | 1 | `agent_prompts/agent_prompt.v15-ch04.sma-a.md` |
 | T-0146-S38 | sma-b | v15-ch04 | done | 1 | `agent_prompts/agent_prompt.v15-ch04.sma-b.md` |
@@ -2853,7 +2853,7 @@ Recheck v15-v22 (v16 DEFERRED): full A+B+C -> omissions -> humanizer -> grammar 
 - T-0146-S30: verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)
 - T-0146-S31: verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)
 - T-0146-S32: verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)
-- T-0146-S35: false DONE: provider limit, HUMANIZER section absent in audit report
+- T-0146-S35: humanizer ch03 attempt3: 2 fixes, commit fa97e558
 - T-0146-S37: verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)
 - T-0146-S38: verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)
 - T-0146-S39: verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)

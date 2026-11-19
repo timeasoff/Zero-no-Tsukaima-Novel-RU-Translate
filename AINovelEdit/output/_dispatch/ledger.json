@@ -22099,7 +22099,7 @@
           "volume": 15,
           "chapter": "03",
           "chapter_id": "v15-ch03",
-          "status": "running",
+          "status": "done",
           "prompt_file": "agent_prompts/agent_prompt.v15-ch03.humanizer.attempt2.md",
           "expected": [
             "AINovelEdit/output/_audit/v15-ch03.md",
@@ -22119,12 +22119,12 @@
               "n": 2,
               "started": "2026-11-19 20:34:51",
               "prompt": "agent_prompts/agent_prompt.v15-ch03.humanizer.attempt2.md",
-              "finished": "",
-              "result": "",
-              "note": ""
+              "finished": "2026-11-19 22:47:05",
+              "result": "done",
+              "note": "humanizer ch03 attempt3: 2 fixes, commit fa97e558"
             }
           ],
-          "note": "false DONE: provider limit, HUMANIZER section absent in audit report"
+          "note": "humanizer ch03 attempt3: 2 fixes, commit fa97e558"
         },
         {
           "id": "T-0146-S36",
