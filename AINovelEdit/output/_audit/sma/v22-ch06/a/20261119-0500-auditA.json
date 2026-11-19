@@ -1,0 +1,38 @@
+{
+  "schema": "sma-audit-evidence/v1",
+  "kind": "a",
+  "run_id": "20261119-0500-auditA",
+  "chapter": "v22-ch06.md",
+  "auditor": "semantic-audit-a",
+  "scope": "микро-семантика: лексика, оттенки, эмоция, мимика, интонация",
+  "inputs": {"ja": "translates/ja/v22-ch06.md", "ru": "output/chapters/v22-ch06.md", "en": "translates/en/v22-ch06.md", "merged": "translates/_report/merged/v22-ch06.md"},
+  "findings": [
+    {
+      "id": "A-01",
+      "block": 1,
+      "issue_type": "NUANCE_SHIFT",
+      "severity": "CANDIDATE",
+      "confidence": "MEDIUM",
+      "evidence": "JA 「苦悩のため息を洩らした」 — RU «испустила тяжёлый вздох». Слово «тяжёлый» передаёт тяжесть, но не прямо называет муку (苦悩).",
+      "reason": "Проверить, сохраняет ли «тяжёлый вздох» эмоциональную степень 苦悩 в контексте последующей молитвы."
+    },
+    {
+      "id": "A-02",
+      "block": 3,
+      "issue_type": "LEXICAL_MISMATCH",
+      "severity": "CANDIDATE",
+      "confidence": "LOW",
+      "evidence": "JA 『シャトー・ディフ』 — RU «Шато-д'Иф». Новый топоним; прямой записи в dictionary.md нет.",
+      "reason": "Проверить, нужна ли пометка PROVISIONAL и нет ли устоявшейся формы в завершённых томах."
+    },
+    {
+      "id": "A-03",
+      "block": 11,
+      "issue_type": "NUANCE_SHIFT",
+      "severity": "CANDIDATE",
+      "confidence": "MEDIUM",
+      "evidence": "JA 「おっぱいエルフちゃんもだぜ」 — RU «и эльфийка с большим бюстом тоже не вернулась». Грубоватый чисторечный анекдот передан мягче.",
+      "reason": "Проверить, сохранена ли шутливая функция реплики и её регистр."
+    }
+  ]
+}

@@ -1,0 +1,468 @@
+{
+  "analysis_id": "20261119-041200-f1a2",
+  "chapter": "v21-epilogue",
+  "inputs": {
+    "phase1": "analysis/20261119-041100-e1f2.phase1.json",
+    "a_runs": [
+      "a/20261119-041000-a1b2.json"
+    ],
+    "b_runs": [
+      "b/20261119-041000-b2c3.json"
+    ],
+    "c_runs": [
+      "c/20261119-041000-c3d4.json"
+    ],
+    "precheck": "precheck/omission-precheck.json"
+  },
+  "results": [
+    {
+      "block": 1,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MEANING_SHIFT",
+      "action": "PRESERVED",
+      "source": "A1 ズキズキと痛む頭",
+      "note": "Сверка JA→RU: «пульсирующую от боли голову» передаёт и характер боли, и жест; NUANCE_SHIFT не подтвердился."
+    },
+    {
+      "block": 2,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MEANING_SHIFT",
+      "action": "PRESERVED",
+      "source": "A2 とろんとした目",
+      "note": "«Затуманенные сном глаза» — адекватная передача мимики пробуждения."
+    },
+    {
+      "block": 3,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MEANING_SHIFT",
+      "action": "PRESERVED",
+      "source": "A3 いじらしく思った",
+      "note": "«С умилением смотрел» сохраняет оттенок いじらしい; эмоция не смещена."
+    },
+    {
+      "block": 5,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MEANING_SHIFT",
+      "action": "PRESERVED",
+      "source": "A4 もじもじさせた",
+      "note": "«Заёрзала» — жест смущения по JA; потери нет."
+    },
+    {
+      "block": 9,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MEANING_SHIFT",
+      "action": "PRESERVED",
+      "source": "A5 目頭が熱くなった",
+      "note": "«Защекотало в глазах» — идиоматическая передача подступающих слёз."
+    },
+    {
+      "block": 20,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MEANING_SHIFT",
+      "action": "PRESERVED",
+      "source": "A6 世話の焼ける男だよ、まったく",
+      "note": "«Хлопотный мужчина, ничего не скажешь» сохраняет вздох и снисходительность."
+    },
+    {
+      "block": 21,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MEANING_SHIFT",
+      "action": "PRESERVED",
+      "source": "A7 紺碧の瞳",
+      "note": "«Лазурных глаз» — устоявшаяся передача 紺碧; «хлынули» по 溢れた."
+    },
+    {
+      "block": 23,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MEANING_SHIFT",
+      "action": "PRESERVED",
+      "source": "A8 ふぉふぉと笑った",
+      "note": "«Хихикнул» передаёт смех старого эльфа в рамках допустимой адаптации; смысл не теряется."
+    },
+    {
+      "block": 25,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "COMPONENT_LOSS",
+      "action": "FIXED",
+      "source": "A9 海母は一同をじろりと見下ろした",
+      "before": "— О, вы уже вернулись? — Мать-моря оглядела их всех.",
+      "after": "— О, вы уже вернулись? — Мать-моря пристально оглядела их всех сверху вниз.",
+      "note": "Пристальность (じろり) и направление взгляда (見下ろした) действительно отсутствовали; правка через fix_block.py, RECHECK: merged пересобран."
+    },
+    {
+      "block": 27,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MEANING_SHIFT",
+      "action": "PRESERVED",
+      "source": "A10 キラキラ光る豆粒のような点",
+      "note": "«Мерцающая, как зёрнышко» сохраняет и переливы, и масштаб."
+    },
+    {
+      "block": 1,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MEANING_SHIFT",
+      "action": "PRESERVED",
+      "source": "B1 火石 → огненный камень",
+      "note": "Канон v15/v19/v20 подтверждён; альтернатива «Камень ветра» не подменена. EN вторичен."
+    },
+    {
+      "block": 3,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MEANING_SHIFT",
+      "action": "PRESERVED",
+      "source": "B2 鉄血団結党 → Партия стальной крови и единства",
+      "note": "Унаследованный PROVISIONAL из v18–v21-ch08; форма применена единообразно."
+    },
+    {
+      "block": 3,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MEANING_SHIFT",
+      "action": "PRESERVED",
+      "source": "B3 聖地回復連合軍",
+      "note": "Каноническая форма «Объединённая армия возвращения Святой земли» по v20-ch06/v21-ch07."
+    },
+    {
+      "block": 10,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MEANING_SHIFT",
+      "action": "PRESERVED",
+      "source": "B4 アディール → Адиль",
+      "note": "Канон завершённых томов; EN «Adyl» справкой не является."
+    },
+    {
+      "block": 11,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MEANING_SHIFT",
+      "action": "PRESERVED",
+      "source": "B5 四の四 → четверо из четырёх",
+      "note": "Канон v20-log; блоки 11 и 19 согласованы."
+    },
+    {
+      "block": 18,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MEANING_SHIFT",
+      "action": "PRESERVED",
+      "source": "B6 最後の使い魔 / Лифсрасил",
+      "note": "Прямое указание координатора соблюдено; JA-смысл «последний фамильяр» сохранён."
+    },
+    {
+      "block": 19,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MEANING_SHIFT",
+      "action": "PRESERVED",
+      "source": "B7 〝生命〟 → «Жизнь»",
+      "note": "Канон v21-ch08; написание и кавычки единообразны."
+    },
+    {
+      "block": 23,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MEANING_SHIFT",
+      "action": "PRESERVED",
+      "source": "B8 悪魔の門 → Врата демона",
+      "note": "v20-log прямо закрепляет форму для 悪魔の門; «Врата Шайтана» относится к другой записи JA."
+    },
+    {
+      "block": 24,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MEANING_SHIFT",
+      "action": "PRESERVED",
+      "source": "B9 十五メイル → метров пятнадцать",
+      "note": "Решение пользователя 2026-10-07: «метр» в нарративе, «мейл» в речи; блок 24 — нарратив."
+    },
+    {
+      "block": 27,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MEANING_SHIFT",
+      "action": "PRESERVED",
+      "source": "B10 風石 → камень ветра",
+      "note": "Размежевание с 火石 («огненный камень») соблюдено в блоках 1, 11 и 27."
+    },
+    {
+      "block": 28,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MEANING_SHIFT",
+      "action": "PRESERVED",
+      "source": "B11 マギ族 → род Магов",
+      "note": "Словарный канон т.14; серия «Zero no Tsukaima» не переводится по словарю."
+    },
+    {
+      "block": 30,
+      "status": "DISPUTED",
+      "fidelity": "MEANING_SHIFT",
+      "action": "REPORT_ONLY",
+      "source": "B12 三坂泰二 → Мисака Тайдзи",
+      "note": "Новое имя в выходных данных; канона в dictionary.md/завершённых томах нет. Рабочая транслитерация помечена PROVISIONAL в журнале, пользовательское подтверждение не ожидается."
+    },
+    {
+      "block": 2,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MEANING_SHIFT",
+      "action": "PRESERVED",
+      "source": "C1 смущённое отрицание Луизы",
+      "note": "Запинка и уход от ответа сохранены; сила реплики не изменена."
+    },
+    {
+      "block": 3,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MEANING_SHIFT",
+      "action": "PRESERVED",
+      "source": "C2 «Впрочем… хорошо, что всё позади»",
+      "note": "Сдержанность JA (呟いた) сохранена; усиления нет."
+    },
+    {
+      "block": 6,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MEANING_SHIFT",
+      "action": "PRESERVED",
+      "source": "C3 «больше не могу терпеть!»",
+      "note": "Шутливо-возмущённый тон Феи ветра передан; речевой акт «прекратите» сохранён."
+    },
+    {
+      "block": 8,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MEANING_SHIFT",
+      "action": "PRESERVED",
+      "source": "C4 «Два дня, два!»",
+      "note": "Возмущённая поправка и повтор числа сохранены."
+    },
+    {
+      "block": 15,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MEANING_SHIFT",
+      "action": "PRESERVED",
+      "source": "C5 «л-лимончики»",
+      "note": "Игривый укол и самоирония Луизы сохранены без сглаживания."
+    },
+    {
+      "block": 20,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MEANING_SHIFT",
+      "action": "PRESERVED",
+      "source": "C6 притворное безразличие Фуке",
+      "note": "Поза «меня не касается» сохранена; подтекст раскрыт следующей репликой."
+    },
+    {
+      "block": 26,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MEANING_SHIFT",
+      "action": "PRESERVED",
+      "source": "C7 оправдание Папы",
+      "note": "Официальный регистр и скрытое принуждение сохранены; модальность не усилена."
+    },
+    {
+      "block": 28,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MEANING_SHIFT",
+      "action": "PRESERVED",
+      "source": "C8 «Вот она — заветная мечта…»",
+      "note": "Торжественность и долженствование «должен вернуться» сохранены."
+    },
+    {
+      "block": 9,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "COMPONENT_LOSS",
+      "action": "PRESERVED",
+      "source": "precheck S1-tail-truncation",
+      "note": "Все JA-звенья блока 9 присутствуют в RU (наполненная каюта, слёзы, недовольство Луизы, «ну что за дела», рассказ Гиша). Сокращение числа абзацев — допустимая компрессия; сдвиг границ EN/RU известен."
+    },
+    {
+      "block": 10,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "COMPONENT_LOSS",
+      "action": "PRESERVED",
+      "source": "precheck S1-tail-truncation",
+      "note": "Блок 10 полностью покрыт: рассказ о похищении, башня, Бидашал, Лукшана, водный дракон, Дерф, «Гнездо дракона», «Святая земля»."
+    },
+    {
+      "block": 16,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "COMPONENT_LOSS",
+      "action": "PRESERVED",
+      "source": "precheck S1-tail-truncation",
+      "note": "Диалог о «зажать/мыть» и все реплики полностью перенесены в RU 16; пре-check сравнивал сдвинутый EN-якорь."
+    },
+    {
+      "block": 22,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "COMPONENT_LOSS",
+      "action": "PRESERVED",
+      "source": "precheck S1-tail-truncation",
+      "note": "Финал блока 22 (рыдания Фатимы, прибытие флота, скалы, обстрел) на месте; пропуска нет."
+    },
+    {
+      "block": 25,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "COMPONENT_LOSS",
+      "action": "PRESERVED",
+      "source": "precheck S1-tail-truncation",
+      "note": "Блок 25 покрыт, включая реплику Джулио о катакомбах; pre-check реагировал на сдвинутые якоря EN."
+    },
+    {
+      "block": 26,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "COMPONENT_LOSS",
+      "action": "PRESERVED",
+      "source": "precheck S1-tail-truncation",
+      "note": "Все звенья блока 26 (признание отсутствия механизма, реакция остальных, вопрос Тиффании, слова Генриетты и Папы) присутствуют."
+    },
+    {
+      "block": 28,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "COMPONENT_LOSS",
+      "action": "PRESERVED",
+      "source": "precheck S1-tail-truncation",
+      "note": "Блок 28 (дверь, Земля, начало послесловия) покрыт полностью; пре-check сравнивал сдвинутые границы EN."
+    },
+    {
+      "block": 30,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "COMPONENT_LOSS",
+      "action": "PRESERVED",
+      "source": "precheck S1-tail-truncation/FULL",
+      "note": "JA-блок 30 (дата, издатель, оба био) переведён; EN содержит только одну строку, поэтому сигнал FULL ложен по определению."
+    },
+    {
+      "block": 3,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "FORMAT",
+      "action": "FIXED",
+      "before": "Фатима, подумал Сайто.",
+      "after": "_Фатима…_, — подумал Сайто.",
+      "note": "PR-MIND: явная маркированная мысль оформлена курсивом без кавычек; RECHECK после правки — курсив чётный."
+    },
+    {
+      "block": 6,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "FORMAT",
+      "action": "FIXED",
+      "before": "«А-а-а, это объявление Феи ветра. Пора бы остановиться, вы двое».",
+      "after": "— А-а-а, это объявление Феи ветра. Пора бы остановиться, вы двое.",
+      "note": "quotespeech: голос из трубы — прямая речь, переведена в тире-форму по PR-QUOTE."
+    },
+    {
+      "block": 7,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "FORMAT",
+      "action": "FIXED",
+      "before": "«Занавеску закрой — мне стыдно». / «Эй, погаси свет». / «Я хочу всегда видеть твоё лицо».",
+      "after": "— Занавеску закрой — мне стыдно. / — Эй, погаси свет. / — Я хочу всегда видеть твоё лицо.",
+      "note": "quotespeech (4 кандидата блока 6–7): реплики Маликорна переведены в тире-форму; RECHECK: 0 кандидатов quotespeech."
+    },
+    {
+      "block": 22,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "RUSSIAN_ERROR",
+      "action": "FIXED",
+      "before": "Над водой торчали десятки причудливых скал, похожих на щупальца, — каждая длиной в десятки метров.",
+      "after": "Над водой торчали причудливые скалы, похожие на щупальца, — каждая длиной в десятки метров.",
+      "note": "style_scan: удалён неоправданный повтор «десятки», JA говорит о нескольких скалах длиной в десятки метров."
+    },
+    {
+      "block": 27,
+      "status": "DISPUTED",
+      "fidelity": "MEANING_SHIFT",
+      "action": "REPORT_ONLY",
+      "note": "Новые рунические инкантации «Ир Ил Наутиз Гебо Сир Мари» и «Хагал Эох Пеос Инг Мансур» — этимологически обоснованные PROVISIONAL-формы по канону рун (Ир, Наутиз, Хагал, Эох); пользовательское подтверждение не требуется, в dictionary.md не вносятся."
+    },
+    {
+      "block": 1,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "RUSSIAN_ERROR",
+      "action": "FIXED",
+      "source": "FINAL READ (RU-only)",
+      "before": "_……Э?.. Почему я здесь?_",
+      "after": "_……?.. Да почему я здесь?_",
+      "note": "FINAL READ: «Э?» — опечатка при передаче JA「……？」; заменено на «……?.. Да почему я здесь?» (つーか → «да»)."
+    },
+    {
+      "block": 4,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "RUSSIAN_ERROR",
+      "action": "FIXED",
+      "source": "FINAL READ (RU-only)",
+      "before": "— П-прости…",
+      "after": "— П-прости… — сразу же сказал Сайто.",
+      "note": "FINAL READ: уточнена атрибуция — «П-прости…» говорит Сайто, а не Луиза."
+    },
+    {
+      "block": 10,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "RUSSIAN_ERROR",
+      "action": "FIXED",
+      "source": "FINAL READ (RU-only)",
+      "before": "Договорив до сюда, Сайто вдруг вспомнил кое-что.",
+      "after": "Рассказав до этого места, Сайто вдруг вспомнил кое-что.",
+      "note": "FINAL READ: «Договорив до сюда» — калька JA そこまで; переведено «Рассказав до этого места»."
+    },
+    {
+      "block": 14,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "RUSSIAN_ERROR",
+      "action": "FIXED",
+      "source": "FINAL READ (RU-only)",
+      "before": "сквозь вырез ночной рубашки выглянула руна у него на груди",
+      "after": "сквозь вырез его ночной рубашки выглянула руна на груди",
+      "note": "FINAL READ: уточнён референт — вырез ночной рубашки Сайто, руна у него на груди."
+    },
+    {
+      "block": 18,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "RUSSIAN_ERROR",
+      "action": "FIXED",
+      "source": "FINAL READ (RU-only)",
+      "before": "Наверное, это случилось тогда, на корабле-водном драконе, когда его вдруг пронзила острая боль.",
+      "after": "Наверное, это случилось тогда, когда они плыли на драконьем корабле, — и его вдруг пронзила острая боль.",
+      "note": "FINAL READ: «корабле-водном драконе» — тяжеловесная калька 海竜船; переведено «драконьем корабле»."
+    },
+    {
+      "block": 19,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "RUSSIAN_ERROR",
+      "action": "FIXED",
+      "source": "FINAL READ (RU-only)",
+      "before": "Подойдя к двери, она как раз застала Фуке Глиняный Ком выходящей.",
+      "after": "Подойдя к двери, она как раз застала выходящую Фуке Глиняный Ком.",
+      "note": "FINAL READ: исправлена несогласованная конструкция с несклоняемым прозвищем."
+    },
+    {
+      "block": 22,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "MEANING_SHIFT",
+      "action": "FIXED",
+      "source": "FINAL READ (RU-only)",
+      "before": "Задолго до того, как на небо поднимутся Луны-Близнецы,",
+      "after": "Незадолго до того, как на небо поднимутся Луны-Близнецы,",
+      "note": "FINAL READ: СЕМАНТИЧЕСКАЯ ОШИБКА — JA「昇る少し前» = «незадолго до», а не «задолго до»; исправлено."
+    },
+    {
+      "block": 23,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "RUSSIAN_ERROR",
+      "action": "FIXED",
+      "source": "FINAL READ (RU-only)",
+      "before": "— Неужели «Святая земля» здесь? — Луиза выглянула из каютного иллюминатора.",
+      "after": "— Неужели «Святая земля» здесь? — спросила Луиза, выглянув из каютного иллюминатора.",
+      "note": "FINAL READ: после реплики стоял неглагольный оборот; введена корректная атрибуция «спросила Луиза, выглянув…»."
+    },
+    {
+      "block": 28,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "RUSSIAN_ERROR",
+      "action": "FIXED",
+      "source": "FINAL READ (RU-only)",
+      "before": "он попеременно лёг в больницу и выписывался",
+      "after": "он то ложился в больницу, то выписывался",
+      "note": "FINAL READ: видовой дефект «попеременно лёг» → «то ложился, то выписывался»."
+    },
+    {
+      "block": 29,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "MEANING_SHIFT",
+      "action": "FIXED",
+      "source": "FINAL READ (RU-only)",
+      "before": "И совсем недавно, четвёртого апреля 2013 года,",
+      "after": "И четвёртого апреля 2013 года,",
+      "note": "FINAL READ: устранено необоснованное «совсем недавно» (2013 год относительно 2016)."
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 # Реестр задач диспетчера
 
-Обновлено: 2026-11-19 22:00:24
+Обновлено: 2026-11-19 22:04:39
 
 Генерируется автоматически командой `python tools/dispatch.py`. Не редактируй вручную.
 
@@ -4052,4 +4052,936 @@ Polnyi perevod i audit v15-epilogue: 7 blokov po JA, prefilytry, SMA A/B/C + Ana
 - T-0063-S383: раунд fullABC: precheck+A/B/C+ph1+ph2 артефакты верифицированы оркестратором, коммит не делался
 - T-0063-S384: раунд fullABC: precheck+A/B/C+ph1+ph2 артефакты верифицированы оркестратором, коммит не делался
 - T-0063-S385: раунд fullABC: precheck+A/B/C+ph1+ph2 артефакты верифицированы оркестратором, коммит не делался
+
+## T-0064 — DONE
+
+Polnyi perevod i audit v16-ch05: bloki po JA, prefilytry, SMA A/B/C + Analyzer 1/2, otchet, gate 12/12, commit
+
+| ID | Режим | Глава | Статус | Попыток | Промпт |
+| --- | --- | --- | --- | --- | --- |
+| T-0064-S1 | sma-a | v16-ch05 | done | 1 | `agent_prompts/agent_prompt.v16-ch05.sma-a.md` |
+| T-0064-S2 | sma-b | v16-ch05 | done | 1 | `agent_prompts/agent_prompt.v16-ch05.sma-b.md` |
+| T-0064-S3 | sma-c | v16-ch05 | done | 1 | `agent_prompts/agent_prompt.v16-ch05.sma-c.md` |
+| T-0064-S4 | analyzer-phase1 | v16-ch05 | done | 1 | `agent_prompts/agent_prompt.v16-ch05.analyzer-phase1.md` |
+| T-0064-S5 | analyzer-phase2 | v16-ch05 | done | 1 | `agent_prompts/agent_prompt.v16-ch05.analyzer-phase2.md` |
+
+Заметки:
+- T-0064-S1: SMA/Phase1 completed
+- T-0064-S2: SMA/Phase1 completed
+- T-0064-S3: SMA/Phase1 completed
+- T-0064-S4: SMA/Phase1 completed
+- T-0064-S5: Phase2: 10 FIXED, 1 FP, 1 DISPUTED
+
+## T-0065 — DONE
+
+Polnyi perevod i audit v16-ch06: bloki po JA, prefilytry, SMA A/B/C + Analyzer 1/2, otchet, gate 12/12, commit
+
+| ID | Режим | Глава | Статус | Попыток | Промпт |
+| --- | --- | --- | --- | --- | --- |
+| T-0065-S1 | sma-a | v16-ch06 | done | 1 | `agent_prompts/agent_prompt.v16-ch06.sma-a.md` |
+| T-0065-S2 | sma-b | v16-ch06 | done | 1 | `agent_prompts/agent_prompt.v16-ch06.sma-b.md` |
+| T-0065-S3 | sma-c | v16-ch06 | done | 1 | `agent_prompts/agent_prompt.v16-ch06.sma-c.md` |
+| T-0065-S4 | analyzer-phase1 | v16-ch06 | done | 1 | `agent_prompts/agent_prompt.v16-ch06.analyzer-phase1.md` |
+| T-0065-S5 | analyzer-phase2 | v16-ch06 | done | 1 | `agent_prompts/agent_prompt.v16-ch06.analyzer-phase2.md` |
+
+Заметки:
+- T-0065-S1: SMA/Phase1 completed
+- T-0065-S2: SMA/Phase1 completed
+- T-0065-S3: SMA/Phase1 completed
+- T-0065-S4: SMA/Phase1 completed
+- T-0065-S5: Phase2: 18 FIXED
+
+## T-0066 — DONE
+
+Polnyi perevod i audit v16-ch07: bloki po JA, prefilytry, SMA A/B/C + Analyzer 1/2, otchet, gate 12/12, commit
+
+| ID | Режим | Глава | Статус | Попыток | Промпт |
+| --- | --- | --- | --- | --- | --- |
+| T-0066-S1 | sma-a | v16-ch07 | done | 1 | `agent_prompts/agent_prompt.v16-ch07.sma-a.md` |
+| T-0066-S2 | sma-b | v16-ch07 | done | 1 | `agent_prompts/agent_prompt.v16-ch07.sma-b.md` |
+| T-0066-S3 | sma-c | v16-ch07 | done | 1 | `agent_prompts/agent_prompt.v16-ch07.sma-c.md` |
+| T-0066-S4 | analyzer-phase1 | v16-ch07 | done | 1 | `agent_prompts/agent_prompt.v16-ch07.analyzer-phase1.md` |
+| T-0066-S5 | analyzer-phase2 | v16-ch07 | done | 2 | `agent_prompts/agent_prompt.v16-ch07.analyzer-phase2.attempt2.md` |
+
+Заметки:
+- T-0066-S1: SMA/Phase1 completed
+- T-0066-S2: SMA/Phase1 completed
+- T-0066-S3: SMA/Phase1 completed
+- T-0066-S4: SMA/Phase1 completed
+- T-0066-S5: Phase2 retry: 12 FIXED
+
+## T-0067 — DONE
+
+Polnyi perevod i audit v16-ch08: bloki po JA, prefilytry, SMA A/B/C + Analyzer 1/2, otchet, gate 12/12, commit
+
+| ID | Режим | Глава | Статус | Попыток | Промпт |
+| --- | --- | --- | --- | --- | --- |
+| T-0067-S1 | sma-a | v16-ch08 | done | 1 | `agent_prompts/agent_prompt.v16-ch08.sma-a.md` |
+| T-0067-S2 | sma-b | v16-ch08 | done | 1 | `agent_prompts/agent_prompt.v16-ch08.sma-b.md` |
+| T-0067-S3 | sma-c | v16-ch08 | done | 1 | `agent_prompts/agent_prompt.v16-ch08.sma-c.md` |
+| T-0067-S4 | analyzer-phase1 | v16-ch08 | done | 1 | `agent_prompts/agent_prompt.v16-ch08.analyzer-phase1.md` |
+| T-0067-S5 | analyzer-phase2 | v16-ch08 | done | 1 | `agent_prompts/agent_prompt.v16-ch08.analyzer-phase2.md` |
+
+Заметки:
+- T-0067-S1: SMA/Phase1 completed
+- T-0067-S2: SMA/Phase1 completed
+- T-0067-S3: SMA/Phase1 completed
+- T-0067-S4: SMA/Phase1 completed
+- T-0067-S5: Phase2: 15 FIXED, 3 REPORT_ONLY, 1 PRESERVED
+
+## T-0068 — DONE
+
+Polnyi perevod i audit v16-ch09: bloki po JA, prefilytry, SMA A/B/C + Analyzer 1/2, otchet, gate 12/12, commit
+
+| ID | Режим | Глава | Статус | Попыток | Промпт |
+| --- | --- | --- | --- | --- | --- |
+| T-0068-S1 | sma-a | v16-ch09 | done | 1 | `agent_prompts/agent_prompt.v16-ch09.sma-a.md` |
+| T-0068-S2 | sma-b | v16-ch09 | done | 1 | `agent_prompts/agent_prompt.v16-ch09.sma-b.md` |
+| T-0068-S3 | sma-c | v16-ch09 | done | 1 | `agent_prompts/agent_prompt.v16-ch09.sma-c.md` |
+| T-0068-S4 | analyzer-phase1 | v16-ch09 | done | 1 | `agent_prompts/agent_prompt.v16-ch09.analyzer-phase1.md` |
+| T-0068-S5 | analyzer-phase2 | v16-ch09 | done | 1 | `agent_prompts/agent_prompt.v16-ch09.analyzer-phase2.md` |
+
+Заметки:
+- T-0068-S1: SMA/Phase1 completed
+- T-0068-S2: SMA/Phase1 completed
+- T-0068-S3: SMA/Phase1 completed
+- T-0068-S4: SMA/Phase1 completed
+- T-0068-S5: Phase2: 4 FIXED, 3 PRESERVED, 4 REPORT_ONLY
+
+## T-0069 — DONE
+
+Polnyi perevod i audit v16-ch10: bloki po JA, prefilytry, SMA A/B/C + Analyzer 1/2, otchet, gate 12/12, commit
+
+| ID | Режим | Глава | Статус | Попыток | Промпт |
+| --- | --- | --- | --- | --- | --- |
+| T-0069-S1 | sma-a | v16-ch10 | done | 1 | `agent_prompts/agent_prompt.v16-ch10.sma-a.md` |
+| T-0069-S2 | sma-b | v16-ch10 | done | 1 | `agent_prompts/agent_prompt.v16-ch10.sma-b.md` |
+| T-0069-S3 | sma-c | v16-ch10 | done | 1 | `agent_prompts/agent_prompt.v16-ch10.sma-c.md` |
+| T-0069-S4 | analyzer-phase1 | v16-ch10 | done | 1 | `agent_prompts/agent_prompt.v16-ch10.analyzer-phase1.md` |
+| T-0069-S5 | analyzer-phase2 | v16-ch10 | done | 1 | `agent_prompts/agent_prompt.v16-ch10.analyzer-phase2.md` |
+
+Заметки:
+- T-0069-S1: SMA/Phase1 completed
+- T-0069-S2: SMA/Phase1 completed
+- T-0069-S3: SMA/Phase1 completed
+- T-0069-S4: SMA/Phase1 completed
+- T-0069-S5: Phase2: 7 FIXED, 7 REPORT_ONLY, 3 PRESERVED
+
+## T-0070 — DONE
+
+Polnyi perevod i audit v16-epilogue: bloki po JA, prefilytry, SMA A/B/C + Analyzer 1/2, otchet, gate 12/12, commit
+
+| ID | Режим | Глава | Статус | Попыток | Промпт |
+| --- | --- | --- | --- | --- | --- |
+| T-0070-S1 | sma-a | v16-epilogue | done | 1 | `agent_prompts/agent_prompt.v16-epilogue.sma-a.md` |
+| T-0070-S2 | sma-b | v16-epilogue | done | 1 | `agent_prompts/agent_prompt.v16-epilogue.sma-b.md` |
+| T-0070-S3 | sma-c | v16-epilogue | done | 1 | `agent_prompts/agent_prompt.v16-epilogue.sma-c.md` |
+| T-0070-S4 | analyzer-phase1 | v16-epilogue | done | 1 | `agent_prompts/agent_prompt.v16-epilogue.analyzer-phase1.md` |
+| T-0070-S5 | analyzer-phase2 | v16-epilogue | done | 1 | `agent_prompts/agent_prompt.v16-epilogue.analyzer-phase2.md` |
+
+Заметки:
+- T-0070-S1: SMA/Phase1 completed
+- T-0070-S2: SMA/Phase1 completed
+- T-0070-S3: SMA/Phase1 completed
+- T-0070-S4: SMA/Phase1 completed
+- T-0070-S5: Phase2: 2 FIXED, 8 REPORT_ONLY, 1 PRESERVED
+
+## T-0071 — DONE
+
+Polnyi perevod i audit v16-afterword: bloki po JA, prefilytry, SMA A/B/C + Analyzer 1/2, otchet, gate 12/12, commit
+
+| ID | Режим | Глава | Статус | Попыток | Промпт |
+| --- | --- | --- | --- | --- | --- |
+| T-0071-S1 | sma-a | v16-afterword | done | 1 | `agent_prompts/agent_prompt.v16-afterword.sma-a.md` |
+| T-0071-S2 | sma-b | v16-afterword | done | 1 | `agent_prompts/agent_prompt.v16-afterword.sma-b.md` |
+| T-0071-S3 | sma-c | v16-afterword | done | 1 | `agent_prompts/agent_prompt.v16-afterword.sma-c.md` |
+| T-0071-S4 | analyzer-phase1 | v16-afterword | done | 1 | `agent_prompts/agent_prompt.v16-afterword.analyzer-phase1.md` |
+| T-0071-S5 | analyzer-phase2 | v16-afterword | done | 1 | `agent_prompts/agent_prompt.v16-afterword.analyzer-phase2.md` |
+
+Заметки:
+- T-0071-S1: SMA/Phase1 completed
+- T-0071-S2: SMA/Phase1 completed
+- T-0071-S3: SMA/Phase1 completed
+- T-0071-S4: SMA/Phase1 completed
+- T-0071-S5: Phase2: 3 FIXED, 9 REPORT_ONLY
+
+## T-0072 — DONE
+
+Polnyi perevod i audit v17-ch01: bloki po JA, prefilytry, SMA A/B/C + Analyzer 1/2, otchet, gate 12/12, commit
+
+| ID | Режим | Глава | Статус | Попыток | Промпт |
+| --- | --- | --- | --- | --- | --- |
+| T-0072-S1 | sma-a | v17-ch01 | done | 1 | `agent_prompts/agent_prompt.v17-ch01.sma-a.md` |
+| T-0072-S2 | sma-b | v17-ch01 | done | 1 | `agent_prompts/agent_prompt.v17-ch01.sma-b.md` |
+| T-0072-S3 | sma-c | v17-ch01 | done | 1 | `agent_prompts/agent_prompt.v17-ch01.sma-c.md` |
+| T-0072-S4 | analyzer-phase1 | v17-ch01 | done | 1 | `agent_prompts/agent_prompt.v17-ch01.analyzer-phase1.md` |
+| T-0072-S5 | analyzer-phase2 | v17-ch01 | done | 1 | `agent_prompts/agent_prompt.v17-ch01.analyzer-phase2.md` |
+
+Заметки:
+- T-0072-S1: SMA/Phase1 completed
+- T-0072-S2: SMA/Phase1 completed
+- T-0072-S3: SMA/Phase1 completed
+- T-0072-S4: SMA/Phase1 completed
+- T-0072-S5: Phase2: 7 FIXED, 2 REPORT_ONLY, 2 DISPUTED, 1 PRESERVED
+
+## T-0073 — DONE
+
+Polnyi perevod i audit v17-ch02: bloki po JA, prefilytry, SMA A/B/C + Analyzer 1/2, otchet, gate 12/12, commit
+
+| ID | Режим | Глава | Статус | Попыток | Промпт |
+| --- | --- | --- | --- | --- | --- |
+| T-0073-S1 | sma-a | v17-ch02 | done | 1 | `agent_prompts/agent_prompt.v17-ch02.sma-a.md` |
+| T-0073-S2 | sma-b | v17-ch02 | done | 1 | `agent_prompts/agent_prompt.v17-ch02.sma-b.md` |
+| T-0073-S3 | sma-c | v17-ch02 | done | 1 | `agent_prompts/agent_prompt.v17-ch02.sma-c.md` |
+| T-0073-S4 | analyzer-phase1 | v17-ch02 | done | 1 | `agent_prompts/agent_prompt.v17-ch02.analyzer-phase1.md` |
+| T-0073-S5 | analyzer-phase2 | v17-ch02 | done | 1 | `agent_prompts/agent_prompt.v17-ch02.analyzer-phase2.md` |
+
+Заметки:
+- T-0073-S1: SMA/Phase1 completed
+- T-0073-S2: SMA/Phase1 completed
+- T-0073-S3: SMA/Phase1 completed
+- T-0073-S4: SMA/Phase1 completed
+- T-0073-S5: Phase2: 7 FIXED, 23 REPORT_ONLY, 1 PRESERVED
+
+## T-0074 — DONE
+
+Polnyi perevod i audit v17-ch03: bloki po JA, prefilytry, SMA A/B/C + Analyzer 1/2, otchet, gate 12/12, commit
+
+| ID | Режим | Глава | Статус | Попыток | Промпт |
+| --- | --- | --- | --- | --- | --- |
+| T-0074-S1 | sma-a | v17-ch03 | done | 1 | `agent_prompts/agent_prompt.v17-ch03.sma-a.md` |
+| T-0074-S2 | sma-b | v17-ch03 | done | 1 | `agent_prompts/agent_prompt.v17-ch03.sma-b.md` |
+| T-0074-S3 | sma-c | v17-ch03 | done | 1 | `agent_prompts/agent_prompt.v17-ch03.sma-c.md` |
+| T-0074-S4 | analyzer-phase1 | v17-ch03 | done | 1 | `agent_prompts/agent_prompt.v17-ch03.analyzer-phase1.md` |
+| T-0074-S5 | analyzer-phase2 | v17-ch03 | done | 1 | `agent_prompts/agent_prompt.v17-ch03.analyzer-phase2.md` |
+
+Заметки:
+- T-0074-S1: SMA/Phase1 completed
+- T-0074-S2: SMA/Phase1 completed
+- T-0074-S3: SMA/Phase1 completed
+- T-0074-S4: SMA/Phase1 completed
+- T-0074-S5: Phase2: 12 FIXED, 4 REPORT_ONLY, 3 PRESERVED
+
+## T-0075 — DONE
+
+Polnyi perevod i audit v17-ch04: bloki po JA, prefilytry, SMA A/B/C + Analyzer 1/2, otchet, gate 12/12, commit
+
+| ID | Режим | Глава | Статус | Попыток | Промпт |
+| --- | --- | --- | --- | --- | --- |
+| T-0075-S1 | sma-a | v17-ch04 | done | 1 | `agent_prompts/agent_prompt.v17-ch04.sma-a.md` |
+| T-0075-S2 | sma-b | v17-ch04 | done | 1 | `agent_prompts/agent_prompt.v17-ch04.sma-b.md` |
+| T-0075-S3 | sma-c | v17-ch04 | done | 1 | `agent_prompts/agent_prompt.v17-ch04.sma-c.md` |
+| T-0075-S4 | analyzer-phase1 | v17-ch04 | done | 1 | `agent_prompts/agent_prompt.v17-ch04.analyzer-phase1.md` |
+| T-0075-S5 | analyzer-phase2 | v17-ch04 | done | 1 | `agent_prompts/agent_prompt.v17-ch04.analyzer-phase2.md` |
+
+Заметки:
+- T-0075-S1: SMA/Phase1 completed
+- T-0075-S2: SMA/Phase1 completed
+- T-0075-S3: SMA/Phase1 completed
+- T-0075-S4: SMA/Phase1 completed
+- T-0075-S5: Phase2: 8 FIXED, 7 REPORT_ONLY, 5 PRESERVED
+
+## T-0076 — DONE
+
+Polnyi perevod i audit v17-ch05: bloki po JA, prefilytry, SMA A/B/C + Analyzer 1/2, otchet, gate 12/12, commit
+
+| ID | Режим | Глава | Статус | Попыток | Промпт |
+| --- | --- | --- | --- | --- | --- |
+| T-0076-S1 | sma-a | v17-ch05 | done | 1 | `agent_prompts/agent_prompt.v17-ch05.sma-a.md` |
+| T-0076-S2 | sma-b | v17-ch05 | done | 1 | `agent_prompts/agent_prompt.v17-ch05.sma-b.md` |
+| T-0076-S3 | sma-c | v17-ch05 | done | 1 | `agent_prompts/agent_prompt.v17-ch05.sma-c.md` |
+| T-0076-S4 | analyzer-phase1 | v17-ch05 | done | 1 | `agent_prompts/agent_prompt.v17-ch05.analyzer-phase1.md` |
+| T-0076-S5 | analyzer-phase2 | v17-ch05 | done | 1 | `agent_prompts/agent_prompt.v17-ch05.analyzer-phase2.md` |
+
+Заметки:
+- T-0076-S1: SMA/Phase1 completed
+- T-0076-S2: SMA/Phase1 completed
+- T-0076-S3: SMA/Phase1 completed
+- T-0076-S4: SMA/Phase1 completed
+- T-0076-S5: Phase2: 7 FIXED, 21 REPORT_ONLY, 1 DISPUTED
+
+## T-0077 — DONE
+
+Polnyi perevod i audit v17-ch06: bloki po JA, prefilytry, SMA A/B/C + Analyzer 1/2, otchet, gate 12/12, commit
+
+| ID | Режим | Глава | Статус | Попыток | Промпт |
+| --- | --- | --- | --- | --- | --- |
+| T-0077-S1 | sma-a | v17-ch06 | done | 1 | `agent_prompts/agent_prompt.v17-ch06.sma-a.md` |
+| T-0077-S2 | sma-b | v17-ch06 | done | 1 | `agent_prompts/agent_prompt.v17-ch06.sma-b.md` |
+| T-0077-S3 | sma-c | v17-ch06 | done | 1 | `agent_prompts/agent_prompt.v17-ch06.sma-c.md` |
+| T-0077-S4 | analyzer-phase1 | v17-ch06 | done | 1 | `agent_prompts/agent_prompt.v17-ch06.analyzer-phase1.md` |
+| T-0077-S5 | analyzer-phase2 | v17-ch06 | done | 1 | `agent_prompts/agent_prompt.v17-ch06.analyzer-phase2.md` |
+
+Заметки:
+- T-0077-S1: SMA/Phase1 completed
+- T-0077-S2: SMA/Phase1 completed
+- T-0077-S3: SMA/Phase1 completed
+- T-0077-S4: SMA/Phase1 completed
+- T-0077-S5: Phase2: 4 FIXED, 12 PRESERVED
+
+## T-0078 — DONE
+
+Polnyi perevod i audit v17-ch07: bloki po JA, prefilytry, SMA A/B/C + Analyzer 1/2, otchet, gate 12/12, commit
+
+| ID | Режим | Глава | Статус | Попыток | Промпт |
+| --- | --- | --- | --- | --- | --- |
+| T-0078-S1 | sma-a | v17-ch07 | done | 1 | `agent_prompts/agent_prompt.v17-ch07.sma-a.md` |
+| T-0078-S2 | sma-b | v17-ch07 | done | 1 | `agent_prompts/agent_prompt.v17-ch07.sma-b.md` |
+| T-0078-S3 | sma-c | v17-ch07 | done | 1 | `agent_prompts/agent_prompt.v17-ch07.sma-c.md` |
+| T-0078-S4 | analyzer-phase1 | v17-ch07 | done | 1 | `agent_prompts/agent_prompt.v17-ch07.analyzer-phase1.md` |
+| T-0078-S5 | analyzer-phase2 | v17-ch07 | done | 1 | `agent_prompts/agent_prompt.v17-ch07.analyzer-phase2.md` |
+
+Заметки:
+- T-0078-S1: SMA/Phase1 completed
+- T-0078-S2: SMA/Phase1 completed
+- T-0078-S3: SMA/Phase1 completed
+- T-0078-S4: SMA/Phase1 completed
+- T-0078-S5: Phase2: 3 FIXED, 7 REPORT_ONLY
+
+## T-0079 — DONE
+
+Polnyi perevod i audit v17-ch08: bloki po JA, prefilytry, SMA A/B/C + Analyzer 1/2, otchet, gate 12/12, commit
+
+| ID | Режим | Глава | Статус | Попыток | Промпт |
+| --- | --- | --- | --- | --- | --- |
+| T-0079-S1 | sma-a | v17-ch08 | done | 1 | `agent_prompts/agent_prompt.v17-ch08.sma-a.md` |
+| T-0079-S2 | sma-b | v17-ch08 | done | 1 | `agent_prompts/agent_prompt.v17-ch08.sma-b.md` |
+| T-0079-S3 | sma-c | v17-ch08 | done | 1 | `agent_prompts/agent_prompt.v17-ch08.sma-c.md` |
+| T-0079-S4 | analyzer-phase1 | v17-ch08 | done | 1 | `agent_prompts/agent_prompt.v17-ch08.analyzer-phase1.md` |
+| T-0079-S5 | analyzer-phase2 | v17-ch08 | done | 1 | `agent_prompts/agent_prompt.v17-ch08.analyzer-phase2.md` |
+
+Заметки:
+- T-0079-S1: SMA/Phase1 completed
+- T-0079-S2: SMA/Phase1 completed
+- T-0079-S3: SMA/Phase1 completed
+- T-0079-S4: SMA/Phase1 completed
+- T-0079-S5: Phase2: 2 FIXED, 12 REPORT_ONLY, 1 PRESERVED, 1 DISPUTED
+
+## T-0080 — DONE
+
+Polnyi perevod i audit v17-ch09: bloki po JA, prefilytry, SMA A/B/C + Analyzer 1/2, otchet, gate 12/12, commit
+
+| ID | Режим | Глава | Статус | Попыток | Промпт |
+| --- | --- | --- | --- | --- | --- |
+| T-0080-S1 | sma-a | v17-ch09 | done | 1 | `agent_prompts/agent_prompt.v17-ch09.sma-a.md` |
+| T-0080-S2 | sma-b | v17-ch09 | done | 1 | `agent_prompts/agent_prompt.v17-ch09.sma-b.md` |
+| T-0080-S3 | sma-c | v17-ch09 | done | 1 | `agent_prompts/agent_prompt.v17-ch09.sma-c.md` |
+| T-0080-S4 | analyzer-phase1 | v17-ch09 | done | 1 | `agent_prompts/agent_prompt.v17-ch09.analyzer-phase1.md` |
+| T-0080-S5 | analyzer-phase2 | v17-ch09 | done | 1 | `agent_prompts/agent_prompt.v17-ch09.analyzer-phase2.md` |
+
+Заметки:
+- T-0080-S1: completed
+- T-0080-S2: completed
+- T-0080-S3: completed
+- T-0080-S4: completed
+- T-0080-S5: completed
+
+## T-0081 — DONE
+
+Polnyi perevod i audit v17-ch10: bloki po JA, prefilytry, SMA A/B/C + Analyzer 1/2, otchet, gate 12/12, commit
+
+| ID | Режим | Глава | Статус | Попыток | Промпт |
+| --- | --- | --- | --- | --- | --- |
+| T-0081-S1 | sma-a | v17-ch10 | done | 1 | `agent_prompts/agent_prompt.v17-ch10.sma-a.md` |
+| T-0081-S2 | sma-b | v17-ch10 | done | 1 | `agent_prompts/agent_prompt.v17-ch10.sma-b.md` |
+| T-0081-S3 | sma-c | v17-ch10 | done | 1 | `agent_prompts/agent_prompt.v17-ch10.sma-c.md` |
+| T-0081-S4 | analyzer-phase1 | v17-ch10 | done | 1 | `agent_prompts/agent_prompt.v17-ch10.analyzer-phase1.md` |
+| T-0081-S5 | analyzer-phase2 | v17-ch10 | done | 1 | `agent_prompts/agent_prompt.v17-ch10.analyzer-phase2.md` |
+
+Заметки:
+- T-0081-S1: completed
+- T-0081-S2: completed
+- T-0081-S3: completed
+- T-0081-S4: completed
+- T-0081-S5: completed
+
+## T-0082 — DONE
+
+Polnyi perevod i audit v17-ch11: bloki po JA, prefilytry, SMA A/B/C + Analyzer 1/2, otchet, gate 12/12, commit
+
+| ID | Режим | Глава | Статус | Попыток | Промпт |
+| --- | --- | --- | --- | --- | --- |
+| T-0082-S1 | sma-a | v17-ch11 | done | 1 | `agent_prompts/agent_prompt.v17-ch11.sma-a.md` |
+| T-0082-S2 | sma-b | v17-ch11 | done | 1 | `agent_prompts/agent_prompt.v17-ch11.sma-b.md` |
+| T-0082-S3 | sma-c | v17-ch11 | done | 1 | `agent_prompts/agent_prompt.v17-ch11.sma-c.md` |
+| T-0082-S4 | analyzer-phase1 | v17-ch11 | done | 1 | `agent_prompts/agent_prompt.v17-ch11.analyzer-phase1.md` |
+| T-0082-S5 | analyzer-phase2 | v17-ch11 | done | 1 | `agent_prompts/agent_prompt.v17-ch11.analyzer-phase2.md` |
+
+Заметки:
+- T-0082-S1: completed
+- T-0082-S2: completed
+- T-0082-S3: completed
+- T-0082-S4: completed
+- T-0082-S5: completed
+
+## T-0083 — DONE
+
+Polnyi perevod i audit v17-epilogue: bloki po JA, prefilytry, SMA A/B/C + Analyzer 1/2, otchet, gate 12/12, commit
+
+| ID | Режим | Глава | Статус | Попыток | Промпт |
+| --- | --- | --- | --- | --- | --- |
+| T-0083-S1 | sma-a | v17-epilogue | done | 1 | `agent_prompts/agent_prompt.v17-epilogue.sma-a.md` |
+| T-0083-S2 | sma-b | v17-epilogue | done | 1 | `agent_prompts/agent_prompt.v17-epilogue.sma-b.md` |
+| T-0083-S3 | sma-c | v17-epilogue | done | 1 | `agent_prompts/agent_prompt.v17-epilogue.sma-c.md` |
+| T-0083-S4 | analyzer-phase1 | v17-epilogue | done | 1 | `agent_prompts/agent_prompt.v17-epilogue.analyzer-phase1.md` |
+| T-0083-S5 | analyzer-phase2 | v17-epilogue | done | 1 | `agent_prompts/agent_prompt.v17-epilogue.analyzer-phase2.md` |
+
+Заметки:
+- T-0083-S1: completed
+- T-0083-S2: completed
+- T-0083-S3: completed
+- T-0083-S4: completed
+- T-0083-S5: completed
+
+## T-0084 — DONE
+
+Polnyi perevod i audit v17-afterword: bloki po JA, prefilytry, SMA A/B/C + Analyzer 1/2, otchet, gate 12/12, commit
+
+| ID | Режим | Глава | Статус | Попыток | Промпт |
+| --- | --- | --- | --- | --- | --- |
+| T-0084-S1 | sma-a | v17-afterword | done | 1 | `agent_prompts/agent_prompt.v17-afterword.sma-a.md` |
+| T-0084-S2 | sma-b | v17-afterword | done | 1 | `agent_prompts/agent_prompt.v17-afterword.sma-b.md` |
+| T-0084-S3 | sma-c | v17-afterword | done | 1 | `agent_prompts/agent_prompt.v17-afterword.sma-c.md` |
+| T-0084-S4 | analyzer-phase1 | v17-afterword | done | 1 | `agent_prompts/agent_prompt.v17-afterword.analyzer-phase1.md` |
+| T-0084-S5 | analyzer-phase2 | v17-afterword | done | 1 | `agent_prompts/agent_prompt.v17-afterword.analyzer-phase2.md` |
+
+Заметки:
+- T-0084-S1: completed
+- T-0084-S2: completed
+- T-0084-S3: completed
+- T-0084-S4: completed
+- T-0084-S5: completed
+
+## T-0085 — DONE
+
+Polnyi perevod i audit v18-ch01: bloki po JA, prefilytry, SMA A/B/C + Analyzer 1/2, otchet, gate 12/12, commit
+
+| ID | Режим | Глава | Статус | Попыток | Промпт |
+| --- | --- | --- | --- | --- | --- |
+| T-0085-S1 | sma-a | v18-ch01 | done | 1 | `agent_prompts/agent_prompt.v18-ch01.sma-a.md` |
+| T-0085-S2 | sma-b | v18-ch01 | done | 1 | `agent_prompts/agent_prompt.v18-ch01.sma-b.md` |
+| T-0085-S3 | sma-c | v18-ch01 | done | 1 | `agent_prompts/agent_prompt.v18-ch01.sma-c.md` |
+| T-0085-S4 | analyzer-phase1 | v18-ch01 | done | 1 | `agent_prompts/agent_prompt.v18-ch01.analyzer-phase1.md` |
+| T-0085-S5 | analyzer-phase2 | v18-ch01 | done | 1 | `agent_prompts/agent_prompt.v18-ch01.analyzer-phase2.md` |
+
+Заметки:
+- T-0085-S1: completed
+- T-0085-S2: completed
+- T-0085-S3: completed
+- T-0085-S4: completed
+- T-0085-S5: completed
+
+## T-0086 — DONE
+
+Polnyi perevod i audit v18-ch02: bloki po JA, prefilytry, SMA A/B/C + Analyzer 1/2, otchet, gate 12/12, commit
+
+| ID | Режим | Глава | Статус | Попыток | Промпт |
+| --- | --- | --- | --- | --- | --- |
+| T-0086-S1 | sma-a | v18-ch02 | done | 1 | `agent_prompts/agent_prompt.v18-ch02.sma-a.md` |
+| T-0086-S2 | sma-b | v18-ch02 | done | 0 | `—` |
+| T-0086-S3 | sma-c | v18-ch02 | done | 0 | `—` |
+| T-0086-S4 | analyzer-phase1 | v18-ch02 | done | 0 | `—` |
+| T-0086-S5 | analyzer-phase2 | v18-ch02 | done | 0 | `—` |
+| T-0086-S6 | sma-a | v18-ch02 | done | 1 | `agent_prompts/agent_prompt.v18-ch02.sma-a.md` |
+| T-0086-S7 | sma-b | v18-ch02 | done | 1 | `agent_prompts/agent_prompt.v18-ch02.sma-b.md` |
+| T-0086-S8 | sma-c | v18-ch02 | done | 1 | `agent_prompts/agent_prompt.v18-ch02.sma-c.md` |
+| T-0086-S9 | analyzer-phase1 | v18-ch02 | done | 1 | `agent_prompts/agent_prompt.v18-ch02.analyzer-phase1.md` |
+| T-0086-S10 | analyzer-phase2 | v18-ch02 | done | 1 | `agent_prompts/agent_prompt.v18-ch02.analyzer-phase2.md` |
+
+## T-0087 — DONE
+
+Polnyi perevod i audit v18-ch03 (first-launch po agent_workflow): bloki, prefilytry, SMA, otchet, gate 12/12, commit
+
+| ID | Режим | Глава | Статус | Попыток | Промпт |
+| --- | --- | --- | --- | --- | --- |
+| T-0087-S1 | first-launch | v18-ch03 | done | 1 | `agent_prompts/agent_prompt.v18-ch03.first-launch.md` |
+
+## T-0088 — DONE
+
+Polnyi perevod i audit v18-ch04 (first-launch po agent_workflow): bloki, prefilytry, SMA, otchet, gate 12/12, commit
+
+| ID | Режим | Глава | Статус | Попыток | Промпт |
+| --- | --- | --- | --- | --- | --- |
+| T-0088-S1 | first-launch | v18-ch04 | done | 1 | `agent_prompts/agent_prompt.v18-ch04.first-launch.md` |
+
+## T-0089 — DONE
+
+Polnyi perevod i audit v18-ch05 (first-launch po agent_workflow): bloki, prefilytry, SMA, otchet, gate 12/12, commit
+
+| ID | Режим | Глава | Статус | Попыток | Промпт |
+| --- | --- | --- | --- | --- | --- |
+| T-0089-S1 | first-launch | v18-ch05 | done | 1 | `agent_prompts/agent_prompt.v18-ch05.first-launch.md` |
+
+## T-0090 — DONE
+
+Polnyi perevod i audit v18-ch06 (first-launch po agent_workflow): bloki, prefilytry, SMA, otchet, gate 12/12, commit
+
+| ID | Режим | Глава | Статус | Попыток | Промпт |
+| --- | --- | --- | --- | --- | --- |
+| T-0090-S1 | first-launch | v18-ch06 | done | 1 | `agent_prompts/agent_prompt.v18-ch06.first-launch.md` |
+
+## T-0091 — DONE
+
+Polnyi perevod i audit v18-ch07 (first-launch po agent_workflow): bloki, prefilytry, SMA, otchet, gate 12/12, commit
+
+| ID | Режим | Глава | Статус | Попыток | Промпт |
+| --- | --- | --- | --- | --- | --- |
+| T-0091-S1 | first-launch | v18-ch07 | done | 1 | `agent_prompts/agent_prompt.v18-ch07.first-launch.md` |
+
+## T-0092 — DONE
+
+Polnyi perevod i audit v18-ch08 (first-launch po agent_workflow): bloki, prefilytry, SMA, otchet, gate 12/12, commit
+
+| ID | Режим | Глава | Статус | Попыток | Промпт |
+| --- | --- | --- | --- | --- | --- |
+| T-0092-S1 | first-launch | v18-ch08 | done | 1 | `agent_prompts/agent_prompt.v18-ch08.first-launch.md` |
+
+## T-0093 — DONE
+
+Polnyi perevod i audit v18-ch09 (first-launch po agent_workflow): bloki, prefilytry, SMA, otchet, gate 12/12, commit
+
+| ID | Режим | Глава | Статус | Попыток | Промпт |
+| --- | --- | --- | --- | --- | --- |
+| T-0093-S1 | first-launch | v18-ch09 | done | 1 | `agent_prompts/agent_prompt.v18-ch09.first-launch.md` |
+
+## T-0094 — DONE
+
+Polnyi perevod i audit v18-epilogue (first-launch po agent_workflow): bloki, prefilytry, SMA, otchet, gate 12/12, commit
+
+| ID | Режим | Глава | Статус | Попыток | Промпт |
+| --- | --- | --- | --- | --- | --- |
+| T-0094-S1 | first-launch | v18-epilogue | done | 1 | `agent_prompts/agent_prompt.v18-epilogue.first-launch.md` |
+
+## T-0095 — DONE
+
+Polnyi perevod i audit v18-afterword (first-launch po agent_workflow): bloki, prefilytry, SMA, otchet, gate 12/12, commit
+
+| ID | Режим | Глава | Статус | Попыток | Промпт |
+| --- | --- | --- | --- | --- | --- |
+| T-0095-S1 | first-launch | v18-afterword | done | 1 | `agent_prompts/agent_prompt.v18-afterword.first-launch.md` |
+
+## T-0096 — DONE
+
+Polnyi perevod i audit v19-ch01 (first-launch po agent_workflow): bloki, prefilytry, SMA, otchet, gate 12/12, commit
+
+| ID | Режим | Глава | Статус | Попыток | Промпт |
+| --- | --- | --- | --- | --- | --- |
+| T-0096-S1 | first-launch | v19-ch01 | done | 1 | `agent_prompts/agent_prompt.v19-ch01.first-launch.md` |
+| T-0096-S2 | sma-a | v19-ch01 | done | 1 | `agent_prompts/agent_prompt.v19-ch01.sma-a.md` |
+| T-0096-S3 | sma-b | v19-ch01 | done | 1 | `agent_prompts/agent_prompt.v19-ch01.sma-b.md` |
+| T-0096-S4 | sma-c | v19-ch01 | done | 1 | `agent_prompts/agent_prompt.v19-ch01.sma-c.md` |
+| T-0096-S5 | analyzer-phase1 | v19-ch01 | done | 1 | `agent_prompts/agent_prompt.v19-ch01.analyzer-phase1.md` |
+| T-0096-S6 | analyzer-phase2 | v19-ch01 | done | 1 | `agent_prompts/agent_prompt.v19-ch01.analyzer-phase2.md` |
+
+## T-0097 — DONE
+
+Polnyi perevod i audit v19-ch02 (first-launch po agent_workflow): bloki, prefilytry, SMA, otchet, gate 12/12, commit
+
+| ID | Режим | Глава | Статус | Попыток | Промпт |
+| --- | --- | --- | --- | --- | --- |
+| T-0097-S1 | first-launch | v19-ch02 | done | 1 | `agent_prompts/agent_prompt.v19-ch02.first-launch.md` |
+
+## T-0098 — DONE
+
+Polnyi perevod i audit v19-ch03 (first-launch po agent_workflow): bloki, prefilytry, SMA, otchet, gate 12/12, commit
+
+| ID | Режим | Глава | Статус | Попыток | Промпт |
+| --- | --- | --- | --- | --- | --- |
+| T-0098-S1 | first-launch | v19-ch03 | done | 1 | `agent_prompts/agent_prompt.v19-ch03.first-launch.md` |
+
+## T-0099 — DONE
+
+Polnyi perevod i audit v19-ch04 (first-launch po agent_workflow): bloki, prefilytry, SMA, otchet, gate 12/12, commit
+
+| ID | Режим | Глава | Статус | Попыток | Промпт |
+| --- | --- | --- | --- | --- | --- |
+| T-0099-S1 | first-launch | v19-ch04 | done | 1 | `agent_prompts/agent_prompt.v19-ch04.first-launch.md` |
+
+## T-0100 — DONE
+
+Polnyi perevod i audit v19-ch05 (first-launch po agent_workflow): bloki, prefilytry, SMA, otchet, gate 12/12, commit
+
+| ID | Режим | Глава | Статус | Попыток | Промпт |
+| --- | --- | --- | --- | --- | --- |
+| T-0100-S1 | first-launch | v19-ch05 | done | 1 | `agent_prompts/agent_prompt.v19-ch05.first-launch.md` |
+| T-0100-S2 | sma-a | v19-ch05 | done | 1 | `agent_prompts/agent_prompt.v19-ch05.sma-a.md` |
+| T-0100-S3 | sma-b | v19-ch05 | done | 1 | `agent_prompts/agent_prompt.v19-ch05.sma-b.md` |
+| T-0100-S4 | sma-c | v19-ch05 | done | 1 | `agent_prompts/agent_prompt.v19-ch05.sma-c.md` |
+| T-0100-S5 | analyzer-phase1 | v19-ch05 | done | 1 | `agent_prompts/agent_prompt.v19-ch05.analyzer-phase1.md` |
+| T-0100-S6 | analyzer-phase2 | v19-ch05 | done | 1 | `agent_prompts/agent_prompt.v19-ch05.analyzer-phase2.md` |
+
+## T-0101 — DONE
+
+Polnyi perevod i audit v19-ch06 (first-launch po agent_workflow): bloki, prefilytry, SMA, otchet, gate 12/12, commit
+
+| ID | Режим | Глава | Статус | Попыток | Промпт |
+| --- | --- | --- | --- | --- | --- |
+| T-0101-S1 | first-launch | v19-ch06 | done | 1 | `agent_prompts/agent_prompt.v19-ch06.first-launch.md` |
+
+## T-0102 — DONE
+
+Polnyi perevod i audit v19-ch07 (first-launch po agent_workflow): bloki, prefilytry, SMA, otchet, gate 12/12, commit
+
+| ID | Режим | Глава | Статус | Попыток | Промпт |
+| --- | --- | --- | --- | --- | --- |
+| T-0102-S1 | first-launch | v19-ch07 | done | 1 | `agent_prompts/agent_prompt.v19-ch07.first-launch.md` |
+
+## T-0103 — DONE
+
+Polnyi perevod i audit v19-ch08 (first-launch po agent_workflow): bloki, prefilytry, SMA, otchet, gate 12/12, commit
+
+| ID | Режим | Глава | Статус | Попыток | Промпт |
+| --- | --- | --- | --- | --- | --- |
+| T-0103-S1 | first-launch | v19-ch08 | done | 1 | `agent_prompts/agent_prompt.v19-ch08.first-launch.md` |
+
+## T-0104 — DONE
+
+Polnyi perevod i audit v19-ch09 (first-launch po agent_workflow): bloki, prefilytry, SMA, otchet, gate 12/12, commit
+
+| ID | Режим | Глава | Статус | Попыток | Промпт |
+| --- | --- | --- | --- | --- | --- |
+| T-0104-S1 | first-launch | v19-ch09 | done | 1 | `agent_prompts/agent_prompt.v19-ch09.first-launch.md` |
+
+## T-0105 — DONE
+
+Polnyi perevod i audit v19-ch10 (first-launch po agent_workflow): bloki, prefilytry, SMA, otchet, gate 12/12, commit
+
+| ID | Режим | Глава | Статус | Попыток | Промпт |
+| --- | --- | --- | --- | --- | --- |
+| T-0105-S1 | first-launch | v19-ch10 | done | 1 | `agent_prompts/agent_prompt.v19-ch10.first-launch.md` |
+| T-0105-S2 | sma-a | v19-ch10 | done | 1 | `agent_prompts/agent_prompt.v19-ch10.sma-a.md` |
+| T-0105-S3 | sma-b | v19-ch10 | done | 1 | `agent_prompts/agent_prompt.v19-ch10.sma-b.md` |
+| T-0105-S4 | sma-c | v19-ch10 | done | 1 | `agent_prompts/agent_prompt.v19-ch10.sma-c.md` |
+| T-0105-S5 | analyzer-phase1 | v19-ch10 | done | 1 | `agent_prompts/agent_prompt.v19-ch10.analyzer-phase1.md` |
+| T-0105-S6 | analyzer-phase2 | v19-ch10 | done | 1 | `agent_prompts/agent_prompt.v19-ch10.analyzer-phase2.md` |
+
+## T-0106 — DONE
+
+Polnyi perevod i audit v19-afterword (first-launch po agent_workflow): bloki, prefilytry, SMA, otchet, gate 12/12, commit
+
+| ID | Режим | Глава | Статус | Попыток | Промпт |
+| --- | --- | --- | --- | --- | --- |
+| T-0106-S1 | first-launch | v19-afterword | done | 1 | `agent_prompts/agent_prompt.v19-afterword.first-launch.md` |
+
+## T-0107 — DONE
+
+Polnyi perevod i audit v20-ch01 (first-launch po agent_workflow): bloki, prefilytry, SMA, otchet, gate 12/12, commit
+
+| ID | Режим | Глава | Статус | Попыток | Промпт |
+| --- | --- | --- | --- | --- | --- |
+| T-0107-S1 | first-launch | v20-ch01 | done | 1 | `agent_prompts/agent_prompt.v20-ch01.first-launch.md` |
+
+## T-0108 — DONE
+
+Polnyi perevod i audit v20-ch02 (first-launch po agent_workflow): bloki, prefilytry, SMA, otchet, gate 12/12, commit
+
+| ID | Режим | Глава | Статус | Попыток | Промпт |
+| --- | --- | --- | --- | --- | --- |
+| T-0108-S1 | first-launch | v20-ch02 | done | 1 | `agent_prompts/agent_prompt.v20-ch02.first-launch.md` |
+
+## T-0109 — DONE
+
+Polnyi perevod i audit v20-ch03 (first-launch po agent_workflow): bloki, prefilytry, SMA, otchet, gate 12/12, commit
+
+| ID | Режим | Глава | Статус | Попыток | Промпт |
+| --- | --- | --- | --- | --- | --- |
+| T-0109-S1 | first-launch | v20-ch03 | done | 1 | `agent_prompts/agent_prompt.v20-ch03.first-launch.md` |
+
+## T-0110 — DONE
+
+Polnyi perevod i audit v20-ch04 (first-launch po agent_workflow): bloki, prefilytry, SMA, otchet, gate 12/12, commit
+
+| ID | Режим | Глава | Статус | Попыток | Промпт |
+| --- | --- | --- | --- | --- | --- |
+| T-0110-S1 | first-launch | v20-ch04 | done | 1 | `agent_prompts/agent_prompt.v20-ch04.first-launch.md` |
+
+## T-0111 — DONE
+
+Polnyi perevod i audit v20-ch05 (first-launch po agent_workflow): bloki, prefilytry, SMA, otchet, gate 12/12, commit
+
+| ID | Режим | Глава | Статус | Попыток | Промпт |
+| --- | --- | --- | --- | --- | --- |
+| T-0111-S1 | first-launch | v20-ch05 | done | 1 | `agent_prompts/agent_prompt.v20-ch05.first-launch.md` |
+
+## T-0112 — DONE
+
+Polnyi perevod i audit v20-ch06 (first-launch po agent_workflow): bloki, prefilytry, SMA, otchet, gate 12/12, commit
+
+| ID | Режим | Глава | Статус | Попыток | Промпт |
+| --- | --- | --- | --- | --- | --- |
+| T-0112-S1 | first-launch | v20-ch06 | done | 1 | `agent_prompts/agent_prompt.v20-ch06.first-launch.md` |
+
+## T-0113 — DONE
+
+Polnyi perevod i audit v20-ch07 (first-launch po agent_workflow): bloki, prefilytry, SMA, otchet, gate 12/12, commit
+
+| ID | Режим | Глава | Статус | Попыток | Промпт |
+| --- | --- | --- | --- | --- | --- |
+| T-0113-S1 | first-launch | v20-ch07 | done | 1 | `agent_prompts/agent_prompt.v20-ch07.first-launch.md` |
+
+## T-0114 — DONE
+
+Polnyi perevod i audit v20-ch08 (first-launch po agent_workflow): bloki, prefilytry, SMA, otchet, gate 12/12, commit
+
+| ID | Режим | Глава | Статус | Попыток | Промпт |
+| --- | --- | --- | --- | --- | --- |
+| T-0114-S1 | first-launch | v20-ch08 | done | 1 | `agent_prompts/agent_prompt.v20-ch08.first-launch.md` |
+
+## T-0115 — DONE
+
+Polnyi perevod i audit v20-ch09 (first-launch po agent_workflow): bloki, prefilytry, SMA, otchet, gate 12/12, commit
+
+| ID | Режим | Глава | Статус | Попыток | Промпт |
+| --- | --- | --- | --- | --- | --- |
+| T-0115-S1 | first-launch | v20-ch09 | done | 1 | `agent_prompts/agent_prompt.v20-ch09.first-launch.md` |
+
+## T-0116 — DONE
+
+Polnyi perevod i audit v20-epilogue (first-launch po agent_workflow): bloki, prefilytry, SMA, otchet, gate 12/12, commit
+
+| ID | Режим | Глава | Статус | Попыток | Промпт |
+| --- | --- | --- | --- | --- | --- |
+| T-0116-S1 | first-launch | v20-epilogue | done | 1 | `agent_prompts/agent_prompt.v20-epilogue.first-launch.md` |
+
+## T-0117 — DONE
+
+Polnyi perevod i audit v20-afterword (first-launch po agent_workflow): bloki, prefilytry, SMA, otchet, gate 12/12, commit
+
+| ID | Режим | Глава | Статус | Попыток | Промпт |
+| --- | --- | --- | --- | --- | --- |
+| T-0117-S1 | first-launch | v20-afterword | done | 1 | `agent_prompts/agent_prompt.v20-afterword.first-launch.md` |
+
+## T-0118 — DONE
+
+Polnyi perevod i audit v21-ch01 (first-launch po agent_workflow): bloki, prefilytry, SMA, otchet, gate 12/12, commit
+
+| ID | Режим | Глава | Статус | Попыток | Промпт |
+| --- | --- | --- | --- | --- | --- |
+| T-0118-S1 | first-launch | v21-ch01 | done | 1 | `agent_prompts/agent_prompt.v21-ch01.first-launch.md` |
+
+## T-0119 — DONE
+
+Polnyi perevod i audit v21-ch02 (first-launch po agent_workflow): bloki, prefilytry, SMA, otchet, gate 12/12, commit
+
+| ID | Режим | Глава | Статус | Попыток | Промпт |
+| --- | --- | --- | --- | --- | --- |
+| T-0119-S1 | first-launch | v21-ch02 | done | 1 | `agent_prompts/agent_prompt.v21-ch02.first-launch.md` |
+
+## T-0120 — DONE
+
+Polnyi perevod i audit v21-ch03 (first-launch po agent_workflow): bloki, prefilytry, SMA, otchet, gate 12/12, commit
+
+| ID | Режим | Глава | Статус | Попыток | Промпт |
+| --- | --- | --- | --- | --- | --- |
+| T-0120-S1 | first-launch | v21-ch03 | done | 1 | `agent_prompts/agent_prompt.v21-ch03.first-launch.md` |
+
+## T-0121 — DONE
+
+Polnyi perevod i audit v21-ch04 (first-launch po agent_workflow): bloki, prefilytry, SMA, otchet, gate 12/12, commit
+
+| ID | Режим | Глава | Статус | Попыток | Промпт |
+| --- | --- | --- | --- | --- | --- |
+| T-0121-S1 | first-launch | v21-ch04 | done | 1 | `agent_prompts/agent_prompt.v21-ch04.first-launch.md` |
+
+## T-0122 — DONE
+
+Polnyi perevod i audit v21-ch05 (first-launch po agent_workflow): bloki, prefilytry, SMA, otchet, gate 12/12, commit
+
+| ID | Режим | Глава | Статус | Попыток | Промпт |
+| --- | --- | --- | --- | --- | --- |
+| T-0122-S1 | first-launch | v21-ch05 | done | 1 | `agent_prompts/agent_prompt.v21-ch05.first-launch.md` |
+
+## T-0123 — DONE
+
+Polnyi perevod i audit v21-ch06 (first-launch po agent_workflow): bloki, prefilytry, SMA, otchet, gate 12/12, commit
+
+| ID | Режим | Глава | Статус | Попыток | Промпт |
+| --- | --- | --- | --- | --- | --- |
+| T-0123-S1 | first-launch | v21-ch06 | done | 1 | `agent_prompts/agent_prompt.v21-ch06.first-launch.md` |
+
+## T-0124 — DONE
+
+Polnyi perevod i audit v21-ch07 (first-launch po agent_workflow): bloki, prefilytry, SMA, otchet, gate 12/12, commit
+
+| ID | Режим | Глава | Статус | Попыток | Промпт |
+| --- | --- | --- | --- | --- | --- |
+| T-0124-S1 | first-launch | v21-ch07 | done | 1 | `agent_prompts/agent_prompt.v21-ch07.first-launch.md` |
+
+## T-0125 — DONE
+
+Polnyi perevod i audit v21-ch08 (first-launch po agent_workflow): bloki, prefilytry, SMA, otchet, gate 12/12, commit
+
+| ID | Режим | Глава | Статус | Попыток | Промпт |
+| --- | --- | --- | --- | --- | --- |
+| T-0125-S1 | first-launch | v21-ch08 | done | 1 | `agent_prompts/agent_prompt.v21-ch08.first-launch.md` |
+
+## T-0126 — DONE
+
+Polnyi perevod i audit v21-ch09 (first-launch po agent_workflow): bloki, prefilytry, SMA, otchet, gate 12/12, commit
+
+| ID | Режим | Глава | Статус | Попыток | Промпт |
+| --- | --- | --- | --- | --- | --- |
+| T-0126-S1 | first-launch | v21-ch09 | done | 1 | `agent_prompts/agent_prompt.v21-ch09.first-launch.md` |
+
+## T-0127 — DONE
+
+Polnyi perevod i audit v21-ch10 (first-launch po agent_workflow): bloki, prefilytry, SMA, otchet, gate 12/12, commit
+
+| ID | Режим | Глава | Статус | Попыток | Промпт |
+| --- | --- | --- | --- | --- | --- |
+| T-0127-S1 | first-launch | v21-ch10 | done | 1 | `agent_prompts/agent_prompt.v21-ch10.first-launch.md` |
+
+## T-0128 — DONE
+
+Polnyi perevod i audit v21-ch11 (first-launch po agent_workflow): bloki, prefilytry, SMA, otchet, gate 12/12, commit
+
+| ID | Режим | Глава | Статус | Попыток | Промпт |
+| --- | --- | --- | --- | --- | --- |
+| T-0128-S1 | first-launch | v21-ch11 | done | 1 | `agent_prompts/agent_prompt.v21-ch11.first-launch.md` |
+
+## T-0129 — DONE
+
+Polnyi perevod i audit v21-epilogue (first-launch po agent_workflow): bloki, prefilytry, SMA, otchet, gate 12/12, commit
+
+| ID | Режим | Глава | Статус | Попыток | Промпт |
+| --- | --- | --- | --- | --- | --- |
+| T-0129-S1 | first-launch | v21-epilogue | done | 1 | `agent_prompts/agent_prompt.v21-epilogue.first-launch.md` |
+
+## T-0130 — DONE
+
+Polnyi perevod i audit v22-prologue (first-launch po agent_workflow): bloki, prefilytry, SMA, otchet, gate 12/12, commit
+
+| ID | Режим | Глава | Статус | Попыток | Промпт |
+| --- | --- | --- | --- | --- | --- |
+| T-0130-S1 | first-launch | v22-prologue | done | 1 | `agent_prompts/agent_prompt.v22-prologue.first-launch.md` |
+
+## T-0131 — DONE
+
+Polnyi perevod i audit v22-ch01 (first-launch po agent_workflow): bloki, prefilytry, SMA, otchet, gate 12/12, commit
+
+| ID | Режим | Глава | Статус | Попыток | Промпт |
+| --- | --- | --- | --- | --- | --- |
+| T-0131-S1 | first-launch | v22-ch01 | done | 1 | `agent_prompts/agent_prompt.v22-ch01.first-launch.md` |
+| T-0131-S2 | sma-a | v22-ch01 | done | 1 | `agent_prompts/agent_prompt.v22-ch01.sma-a.md` |
+| T-0131-S3 | sma-b | v22-ch01 | done | 1 | `agent_prompts/agent_prompt.v22-ch01.sma-b.md` |
+| T-0131-S4 | sma-c | v22-ch01 | done | 1 | `agent_prompts/agent_prompt.v22-ch01.sma-c.md` |
+| T-0131-S5 | analyzer-phase1 | v22-ch01 | done | 1 | `agent_prompts/agent_prompt.v22-ch01.analyzer-phase1.md` |
+| T-0131-S6 | analyzer-phase2 | v22-ch01 | done | 1 | `agent_prompts/agent_prompt.v22-ch01.analyzer-phase2.md` |
+
+## T-0132 — DONE
+
+Polnyi perevod i audit v22-ch02 (first-launch po agent_workflow): bloki, prefilytry, SMA, otchet, gate 12/12, commit
+
+| ID | Режим | Глава | Статус | Попыток | Промпт |
+| --- | --- | --- | --- | --- | --- |
+| T-0132-S1 | first-launch | v22-ch02 | done | 1 | `agent_prompts/agent_prompt.v22-ch02.first-launch.md` |
+
+## T-0133 — DONE
+
+Polnyi perevod i audit v22-ch03 (first-launch po agent_workflow): bloki, prefilytry, SMA, otchet, gate 12/12, commit
+
+| ID | Режим | Глава | Статус | Попыток | Промпт |
+| --- | --- | --- | --- | --- | --- |
+| T-0133-S1 | first-launch | v22-ch03 | done | 1 | `agent_prompts/agent_prompt.v22-ch03.first-launch.md` |
+
+## T-0134 — DONE
+
+Polnyi perevod i audit v22-ch04 (first-launch po agent_workflow): bloki, prefilytry, SMA, otchet, gate 12/12, commit
+
+| ID | Режим | Глава | Статус | Попыток | Промпт |
+| --- | --- | --- | --- | --- | --- |
+| T-0134-S1 | first-launch | v22-ch04 | done | 1 | `agent_prompts/agent_prompt.v22-ch04.first-launch.md` |
+
+## T-0135 — DONE
+
+Polnyi perevod i audit v22-ch05 (first-launch po agent_workflow): bloki, prefilytry, SMA, otchet, gate 12/12, commit
+
+| ID | Режим | Глава | Статус | Попыток | Промпт |
+| --- | --- | --- | --- | --- | --- |
+| T-0135-S1 | first-launch | v22-ch05 | done | 1 | `agent_prompts/agent_prompt.v22-ch05.first-launch.md` |
+
+## T-0136 — DONE
+
+Polnyi perevod i audit v22-ch06 (first-launch po agent_workflow): bloki, prefilytry, SMA, otchet, gate 12/12, commit
+
+| ID | Режим | Глава | Статус | Попыток | Промпт |
+| --- | --- | --- | --- | --- | --- |
+| T-0136-S1 | first-launch | v22-ch06 | done | 1 | `agent_prompts/agent_prompt.v22-ch06.first-launch.md` |
+
+## T-0137 — DONE
+
+Polnyi perevod i audit v22-ch07 (first-launch po agent_workflow): bloki, prefilytry, SMA, otchet, gate 12/12, commit
+
+| ID | Режим | Глава | Статус | Попыток | Промпт |
+| --- | --- | --- | --- | --- | --- |
+| T-0137-S1 | first-launch | v22-ch07 | done | 1 | `agent_prompts/agent_prompt.v22-ch07.first-launch.md` |
+
+## T-0138 — DONE
+
+Polnyi perevod i audit v22-ch08 (first-launch po agent_workflow): bloki, prefilytry, SMA, otchet, gate 12/12, commit
+
+| ID | Режим | Глава | Статус | Попыток | Промпт |
+| --- | --- | --- | --- | --- | --- |
+| T-0138-S1 | first-launch | v22-ch08 | done | 1 | `agent_prompts/agent_prompt.v22-ch08.first-launch.md` |
+
+## T-0139 — DONE
+
+Polnyi perevod i audit v22-ch09 (first-launch po agent_workflow): bloki, prefilytry, SMA, otchet, gate 12/12, commit
+
+| ID | Режим | Глава | Статус | Попыток | Промпт |
+| --- | --- | --- | --- | --- | --- |
+| T-0139-S1 | first-launch | v22-ch09 | done | 1 | `agent_prompts/agent_prompt.v22-ch09.first-launch.md` |
+
+## T-0140 — DONE
+
+Polnyi perevod i audit v22-ch10 (first-launch po agent_workflow): bloki, prefilytry, SMA, otchet, gate 12/12, commit
+
+| ID | Режим | Глава | Статус | Попыток | Промпт |
+| --- | --- | --- | --- | --- | --- |
+| T-0140-S1 | first-launch | v22-ch10 | done | 1 | `agent_prompts/agent_prompt.v22-ch10.first-launch.md` |
+
+## T-0141 — DONE
+
+Polnyi perevod i audit v22-ch11 (first-launch po agent_workflow): bloki, prefilytry, SMA, otchet, gate 12/12, commit
+
+| ID | Режим | Глава | Статус | Попыток | Промпт |
+| --- | --- | --- | --- | --- | --- |
+| T-0141-S1 | first-launch | v22-ch11 | done | 1 | `agent_prompts/agent_prompt.v22-ch11.first-launch.md` |
+
+## T-0142 — DONE
+
+Polnyi perevod i audit v22-ch12 (first-launch po agent_workflow): bloki, prefilytry, SMA, otchet, gate 12/12, commit
+
+| ID | Режим | Глава | Статус | Попыток | Промпт |
+| --- | --- | --- | --- | --- | --- |
+| T-0142-S1 | first-launch | v22-ch12 | done | 1 | `agent_prompts/agent_prompt.v22-ch12.first-launch.md` |
+
+## T-0143 — DONE
+
+Polnyi perevod i audit v22-ch13 (first-launch po agent_workflow): bloki, prefilytry, SMA, otchet, gate 12/12, commit
+
+| ID | Режим | Глава | Статус | Попыток | Промпт |
+| --- | --- | --- | --- | --- | --- |
+| T-0143-S1 | first-launch | v22-ch13 | done | 1 | `agent_prompts/agent_prompt.v22-ch13.first-launch.md` |
+| T-0143-S2 | sma-a | v22-ch13 | done | 1 | `agent_prompts/agent_prompt.v22-ch13.sma-a.md` |
+| T-0143-S3 | sma-b | v22-ch13 | done | 1 | `agent_prompts/agent_prompt.v22-ch13.sma-b.md` |
+| T-0143-S4 | sma-c | v22-ch13 | done | 1 | `agent_prompts/agent_prompt.v22-ch13.sma-c.md` |
+| T-0143-S5 | analyzer-phase1 | v22-ch13 | done | 1 | `agent_prompts/agent_prompt.v22-ch13.analyzer-phase1.md` |
+| T-0143-S6 | analyzer-phase2 | v22-ch13 | done | 1 | `agent_prompts/agent_prompt.v22-ch13.analyzer-phase2.md` |
+
+## T-0144 — DONE
+
+Polnyi perevod i audit v22-ch14 (first-launch po agent_workflow): bloki, prefilytry, SMA, otchet, gate 12/12, commit
+
+| ID | Режим | Глава | Статус | Попыток | Промпт |
+| --- | --- | --- | --- | --- | --- |
+| T-0144-S1 | first-launch | v22-ch14 | done | 1 | `agent_prompts/agent_prompt.v22-ch14.first-launch.md` |
+
+## T-0145 — DONE
+
+Polnyi perevod i audit v22-epilogue (first-launch po agent_workflow): bloki, prefilytry, SMA, otchet, gate 12/12, commit
+
+| ID | Режим | Глава | Статус | Попыток | Промпт |
+| --- | --- | --- | --- | --- | --- |
+| T-0145-S1 | first-launch | v22-epilogue | done | 1 | `agent_prompts/agent_prompt.v22-epilogue.first-launch.md` |
 

@@ -1,0 +1,6 @@
+{
+  "check_type": "omission-precheck",
+  "chapter": "v18-epilogue.md",
+  "coverage": "блоки 1–6 проверены сплошь по JA↔ED_RU; непокрытых фрагментов и обрывов не найдено",
+  "findings": []
+}

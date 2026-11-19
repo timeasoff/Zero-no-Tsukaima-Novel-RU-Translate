@@ -1,0 +1,48 @@
+{
+  "analysis_id": "20261119-160000-1234.phase1",
+  "chapter": "v19-ch09",
+  "phase": 1,
+  "scope": "blind",
+  "inputs": {
+    "sources": [
+      "translates/ja/v19-ch09.md",
+      "output/chapters/v19-ch09.md",
+      "translates/en/v19-ch09.md",
+      "translates/_report/merged/v19-ch09.md"
+    ],
+    "note": "JA — авторитетный источник истины; RU — проверяемый перевод; EN — только справка (JA > EN). Findings A/B/C, evidence pre-check и прежние analysis-файлы в слепую фазу не передавались."
+  },
+  "findings": [],
+  "results": [
+    {
+      "block": 1,
+      "finding": "OTHER",
+      "confidence": "LOW",
+      "note": "Якорь 六日が過ぎた朝 передан как «Прошло шесть дней. Утро…»; сырой RU давал «утром шестого дня». Смысл six days later сохранён — сверить на финале."
+    },
+    {
+      "block": 5,
+      "finding": "OTHER",
+      "confidence": "LOW",
+      "note": "バームクーヘンのように — сравнение с баумкухеном оставлено без сноски (в JA сноски нет). Образ сохраняет послойную структуру города."
+    },
+    {
+      "block": 13,
+      "finding": "MEANING_SHIFT",
+      "confidence": "HIGH",
+      "note": "二回りは大きかった — проверь, не подменено ли «на два размера» кратным «в два раза». Требует сверки с JA."
+    },
+    {
+      "block": 16,
+      "finding": "OTHER",
+      "confidence": "MEDIUM",
+      "note": "Крик «Дер-р-р-р…линг-г-г…» — растянутая огласовка; инструментальный приём, не потеря содержания."
+    },
+    {
+      "block": 17,
+      "finding": "OTHER",
+      "confidence": "LOW",
+      "note": "戦車 (танк) — отсылка к миру Сайто; сохранена как современная отсылка, не заменена на «повозку»."
+    }
+  ]
+}

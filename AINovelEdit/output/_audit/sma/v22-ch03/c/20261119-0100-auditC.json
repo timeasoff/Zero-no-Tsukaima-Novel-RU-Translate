@@ -1,0 +1,29 @@
+{
+  "schema": "sma-audit-evidence/v1",
+  "kind": "c",
+  "run_id": "20261119-0100-auditC",
+  "chapter": "v22-ch03.md",
+  "auditor": "pragmatic-audit",
+  "scope": "прагматика: речевой акт, сила реплики, подтекст, вежливость",
+  "inputs": {"ja": "translates/ja/v22-ch03.md", "ru": "output/chapters/v22-ch03.md", "en": "translates/en/v22-ch03.md", "merged": "translates/_report/merged/v22-ch03.md"},
+  "findings": [
+    {
+      "id": "C-01",
+      "block": 13,
+      "issue_type": "PRAGMATIC_SHIFT",
+      "severity": "CANDIDATE",
+      "confidence": "MEDIUM",
+      "evidence": "JA 「ない、と言い切れますか？ 民の命にかけて」 — RU «А вы можете с уверенностью сказать «нет»? Поклянитесь жизнью своего народа». Клятвенное давление Папы сохранено.",
+      "reason": "Проверить, не ослаблена ли сила требования при переходе от 言い切れますか к «можете с уверенностью»."
+    },
+    {
+      "id": "C-02",
+      "block": 12,
+      "issue_type": "PRAGMATIC_SHIFT",
+      "severity": "CANDIDATE",
+      "confidence": "LOW",
+      "evidence": "JA 「アンリエッタ殿」 от Папы — RU «Госпожа Генриетта»; в завершённом томе 14 (v14-ch06) та же форма уже употребляется.",
+      "reason": "Сверка с каноном завершённого тома и справочником обращений."
+    }
+  ]
+}

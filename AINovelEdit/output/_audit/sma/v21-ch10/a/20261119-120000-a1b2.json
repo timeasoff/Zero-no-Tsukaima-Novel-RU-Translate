@@ -1,0 +1,71 @@
+{
+  "audit_id": "sma-a",
+  "audit_type": "semantic-audit-a",
+  "audit_run_id": "20261119-120000-a1a",
+  "chapter": "v21-ch10",
+  "findings": [
+    {
+      "block": 1,
+      "source": "フードつきの旅装束／任侠映画のカチコミ",
+      "current": "дорожные плащи с капюшонами／облава в фильме о якудза",
+      "problem": "Оттенок 任侠映画 (криминальное кино о якудза) и カチコミ (облава)",
+      "reason": "Передано образно без кальки; мысль вынесена отдельным абзацем по PR-MIND.",
+      "issue_type": "NUANCE_SHIFT",
+      "severity": "CANDIDATE"
+    },
+    {
+      "block": 2,
+      "source": "まいったわねー……",
+      "current": "Ну и дела…",
+      "problem": "Интонация Лукшаны",
+      "reason": "Негромкое сетование передано; modality не усилена.",
+      "issue_type": "NUANCE_SHIFT",
+      "severity": "CANDIDATE"
+    },
+    {
+      "block": 3,
+      "source": "峰打ちだよ",
+      "current": "Я бил плашмя",
+      "problem": "Удар_plankой (峰打ち)",
+      "reason": "«Бил плашмя» точно передаёт удар не лезвием; кровь не идёт — подтверждено следующим абзацем.",
+      "issue_type": "NUANCE_SHIFT",
+      "severity": "CANDIDATE"
+    },
+    {
+      "block": 6,
+      "source": "おまえも平気かよ",
+      "current": "Дерф, а ты как?",
+      "problem": "Т-degree Дерфлингера",
+      "reason": "Разговорное «а ты как?» сохраняет близость напарников.",
+      "issue_type": "NUANCE_SHIFT",
+      "severity": "CANDIDATE"
+    },
+    {
+      "block": 9,
+      "source": "守るべきご主人様",
+      "current": "госпожа, которую он должен защищать",
+      "problem": "Слово ご主人様",
+      "reason": "«Госпожа» — каноническая форма Сайто по dictionary.md; снисхождения к тону нет.",
+      "issue_type": "NUANCE_SHIFT",
+      "severity": "CANDIDATE"
+    },
+    {
+      "block": 12,
+      "source": "あの教皇も、とんだ食わせものだね",
+      "current": "И этот папа — настоящий мошенник",
+      "problem": "Оценочное 食わせもの",
+      "reason": "«Мошенник» сохраняет ироническую оценку Фуке.",
+      "issue_type": "NUANCE_SHIFT",
+      "severity": "CANDIDATE"
+    },
+    {
+      "block": 20,
+      "source": "お相手しよう",
+      "current": "будет вашим противником",
+      "problem": "Вызов в お相手しよう",
+      "reason": "Форма вежливого вызова передана без угрозы; титул по канону «Вард-Вспышка».",
+      "issue_type": "NUANCE_SHIFT",
+      "severity": "CANDIDATE"
+    }
+  ]
+}

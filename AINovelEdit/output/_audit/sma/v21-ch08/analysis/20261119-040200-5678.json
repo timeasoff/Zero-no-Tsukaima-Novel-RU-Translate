@@ -1,0 +1,269 @@
+{
+  "analysis_id": "20261119-040200-5678",
+  "chapter": "v21-ch08",
+  "inputs": {
+    "phase1": "analysis/20261119-040100-1234.phase1.json",
+    "a_runs": ["a/20261119-040000-a1b2.json"],
+    "b_runs": ["b/20261119-040000-b2c3.json"],
+    "c_runs": ["c/20261119-040000-c3d4.json"],
+    "precheck": "precheck/omission-precheck.json"
+  },
+  "results": [
+    {
+      "block": 0,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "RUSSIAN_ERROR",
+      "action": "FIXED",
+      "before": "FINAL READ (RU-only) — 11 неестественных формулировок",
+      "after": "исправлены по-русски без изменения смысла JA",
+      "note": "FINAL READ после SMA: бл.2 «изыскано у той Мьёдвитнир» → «отыскано»; бл.5 «осела на место» → «осела на землю»; бл.6 «послужить ею Халкегинии» → «применять её во благо Халкегинии»; бл.7 «плащ был с длинными полами и очень нарядным» → «плащ — с длинными полами, очень нарядный»; бл.9 «какой я был храбрый» → «как я храбро сражался»; бл.10 «с ним бы не случилось того, что случилось» → «всё и обошлось бы иначе»; бл.15 «Перед таким Луиза и та дрогнула» → «Даже Луиза дрогнула»; бл.17 «лишь теперь наконец объединилась» → «только что объединилась»; бл.21 «Они точно как» → «Они словно»; бл.24 «во имя всего святого» → «Да что же он говорит» (убрана чужеродная вставка); бл.25 «Глаза Эсмаила говорили серьёзно» → «Взгляд Эсмаила был серьёзным». RECHECK после каждой группы правок: merged пересобран, все 5 предфильтров и omission pre-check перезапущены, кандидаты неизменны."
+    },
+    {
+      "block": 18,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "FORMAT",
+      "action": "FIXED",
+      "before": "Отдыхая по пути и повторяя телепорт снова и снова",
+      "after": "Отдыхая по пути и прибегая к телепорту снова и снова",
+      "note": "JA 何度もテレポートを繰り返せば; тавтология «повторяя… снова и снова» устранена по russian-style-audit. Правка через fix_block.py, RECHECK пройден. Источник: Фаза 1 (FORMAT) + style_scan тавтология."
+    },
+    {
+      "block": 21,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "FORMAT",
+      "action": "FIXED",
+      "before": "Этот старый премьер, всю жизнь служивший королевскому дому",
+      "after": "Этот премьер, всю жизнь служивший королевскому дому",
+      "note": "Стилевой повтор «старый» в близких абзацах устранён без потери смысла JA 老宰相. Правка через fix_block.py, RECHECK пройден. Источник: Фаза 1 + style_scan."
+    },
+    {
+      "block": 23,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "LEXICAL_MISMATCH",
+      "action": "FIXED",
+      "before": "товарищ Исмаил",
+      "after": "товарищ Эсмаил",
+      "note": "JA エスマーイル; канон завершённого v20-ch04 — «Эсмаил», RU-сырьё давало «Исмаил», EN «Aishmail» — только справка. Форма применена во всех вхождениях (блоки 22–25) при переводе, до финального анализа. Источник: B + Фаза 1."
+    },
+    {
+      "block": 3,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "LEXICAL_MISMATCH",
+      "action": "FIXED",
+      "before": "«Камень огня» / «огненный камень» RU-сырья",
+      "after": "«огненный камень»",
+      "note": "JA 火石; канон v19-log — «огненный камень» (не «Камень огня»). «Камень ветра» — это 風石, иной термин (v18/v19). Различение применено в блоках 2, 3, 24. Источник: B + Фаза 1."
+    },
+    {
+      "block": 1,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "NUANCE_SHIFT",
+      "action": "PRESERVED",
+      "note": "A + Фаза 1: 心がざわつく → «тревожно на душе». Оттенок передан, мысль оформлена курсивом отдельным абзацем по PR-MIND. «Красивее» не основание для правки."
+    },
+    {
+      "block": 2,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "NUANCE_SHIFT",
+      "action": "PRESERVED",
+      "note": "A: 古ぼけた香炉 → «потемневшая кадильница». Функциональный эквивалент; возраст предмета сохранён."
+    },
+    {
+      "block": 4,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "NUANCE_SHIFT",
+      "action": "PRESERVED",
+      "note": "A: 光のルーン文字 → «светящиеся руны». Образ и световой компонент сохранены."
+    },
+    {
+      "block": 4,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "FORMAT",
+      "action": "PRESERVED",
+      "note": "Фаза 1: 〝生命〟 → _«Жизнь»_ отдельной строкой. Смысловое ударение руны по JA; курсив допустим по PR-MIND/PR-QUOTE, не internal speech в чистом виде."
+    },
+    {
+      "block": 5,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "NUANCE_SHIFT",
+      "action": "PRESERVED",
+      "note": "A: 戦慄し／愕然と → «передёрнуло… остолбенев». Оба компонента реакции переданы."
+    },
+    {
+      "block": 7,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "NUANCE_SHIFT",
+      "action": "PRESERVED",
+      "note": "A: 親しげな口調 → «по-дружески». Теплота интонации сохранена."
+    },
+    {
+      "block": 8,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "NUANCE_SHIFT",
+      "action": "PRESERVED",
+      "note": "A: 鬼気迫るもの → «что-то жуткое». JA прямо не называет источник угрозы; конкретизация не вводилась."
+    },
+    {
+      "block": 9,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "NUANCE_SHIFT",
+      "action": "PRESERVED",
+      "note": "A: どんちゃん騒ぎ → «веселились вовсю». Экспрессия сохранена без добавленных звукоподражаний."
+    },
+    {
+      "block": 21,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "NUANCE_SHIFT",
+      "action": "PRESERVED",
+      "note": "A: 眩しそうに目を細める → «прищурился, словно от блеска». Метафора JA сохранена."
+    },
+    {
+      "block": 25,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "NUANCE_SHIFT",
+      "action": "PRESERVED",
+      "note": "A: 冷笑を浮かべた → «насмешливо фыркнули». Презрение передано без усиления модальности."
+    },
+    {
+      "block": 1,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "LEXICAL_MISMATCH",
+      "action": "PRESERVED",
+      "note": "B + Фаза 1: テュリューク／アディール → «Тюрюк»／«Адиль» по завершённым томам; EN «Turuk»／«Adyl» — справка. Расхождений с завершёнными томами нет."
+    },
+    {
+      "block": 3,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "LEXICAL_MISMATCH",
+      "action": "PRESERVED",
+      "note": "B: 聖地回復連合軍 → «Объединённая армия возвращения Святой земли» по v20-ch06/v20-log. EN-калька не принята (JA > EN)."
+    },
+    {
+      "block": 4,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "LEXICAL_MISMATCH",
+      "action": "PRESERVED",
+      "note": "B + Фаза 1: 四の四 → «четверо из четырёх» по v20-log; числовая и модальная структура сохранена."
+    },
+    {
+      "block": 7,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "LEXICAL_MISMATCH",
+      "action": "PRESERVED",
+      "note": "B + Фаза 1: シャルロット女王陛下 → «королева Шарлотта, Ваше Величество» по dictionary.md/PR-TITLE."
+    },
+    {
+      "block": 12,
+      "status": "DISPUTED",
+      "fidelity": "AMBIGUITY",
+      "action": "REPORT_ONLY",
+      "note": "B + Фаза 1: новый топоним エウメネс → «Эвменес» (унаследованный PROVISIONAL из v21-ch01). Зафиксировано в журнале и отчёте; PROVISIONAL ≠ CANONICAL, подтверждение пользователя не ожидается."
+    },
+    {
+      "block": 19,
+      "status": "DISPUTED",
+      "fidelity": "AMBIGUITY",
+      "action": "REPORT_ONLY",
+      "note": "B: ちびルイズ → «маленькая Луиза», унаследованный PROVISIONAL. EN «chibi-Louise» — справка; японский гоноратив не сохранён."
+    },
+    {
+      "block": 21,
+      "status": "DISPUTED",
+      "fidelity": "AMBIGUITY",
+      "action": "REPORT_ONLY",
+      "note": "B + Фаза 1: 烈風の騎士姫 → «Принцесса-рыцарь яростного ветра» (унаследованный PROVISIONAL v18–v20). Мать Луизы — «Карин» по dictionary.md (RU-сырьё «Катрина» отклонено)."
+    },
+    {
+      "block": 25,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "AMBIGUITY",
+      "action": "PRESERVED",
+      "note": "B: 叔母上 → «тётя» по прецеденту v21-ch04 (родственная перспектива Фатимы). EN «father's sister» — справка."
+    },
+    {
+      "block": 1,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "PRAGMATIC_SHIFT",
+      "action": "PRESERVED",
+      "note": "C: あとのことは頼んだぞ → «Остальное я доверил тебе». Приказ-поручение и доверие сохранены."
+    },
+    {
+      "block": 3,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "PRAGMATIC_SHIFT",
+      "action": "PRESERVED",
+      "note": "C: おそれながら → «Прошу прощения…». Смягчение перед возражением сохранено."
+    },
+    {
+      "block": 8,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "PRAGMATIC_SHIFT",
+      "action": "PRESERVED",
+      "note": "C + Фаза 1: 死ねと言われれば死ぬわ → «Велит умереть — умру». Абсолютная покорность без смягчения."
+    },
+    {
+      "block": 15,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "PRAGMATIC_SHIFT",
+      "action": "PRESERVED",
+      "note": "C: 二人は聖下の道具ではありません！ → «Они не инструменты Вашего Святейшества!»; сила отрицания сохранена."
+    },
+    {
+      "block": 16,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "PRAGMATIC_SHIFT",
+      "action": "PRESERVED",
+      "note": "C: защитный акт Генриетты — противопоставление «не ваш — моя» передаёт ту же прагматическую силу."
+    },
+    {
+      "block": 24,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "PRAGMATIC_SHIFT",
+      "action": "PRESERVED",
+      "note": "C: 街のひとつやふたつ、些細なことだ → «Один-два города — это так, мелочь»; фанатическое преуменьшение сохранено."
+    },
+    {
+      "block": 25,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "PRAGMATIC_SHIFT",
+      "action": "PRESERVED",
+      "note": "C + Фаза 1: 喜ぶがいい → «Радуйся»; злая ирония приговора сохранена без добавлений."
+    },
+    {
+      "block": 6,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "COMPONENT_LOSS",
+      "action": "PRESERVED",
+      "note": "Фаза 1: ゼロのルイズ → «Луиза-Нулиза» по dictionary.md; трёхчленная анафора сохранена, потерь нет."
+    },
+    {
+      "block": 1,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "COMPONENT_LOSS",
+      "action": "PRESERVED",
+      "note": "Фаза 1: проверка полноты блока 1 — все звенья JA покрыты RU. Pre-check: 0 кандидатов."
+    },
+    {
+      "block": 9,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "COMPONENT_LOSS",
+      "action": "PRESERVED",
+      "note": "Фаза 1: проверка полноты блока 9 — похвальба, ремарка, реакция и угощение покрыты."
+    },
+    {
+      "block": 15,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "COMPONENT_LOSS",
+      "action": "PRESERVED",
+      "note": "Фаза 1: проверка полноты блока 15 — угроза ересью и последствия для семьи покрыты."
+    },
+    {
+      "block": 25,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "COMPONENT_LOSS",
+      "action": "PRESERVED",
+      "note": "Фаза 1: проверка полноты финального блока — обрыва хвоста нет. Pre-check: 0 кандидатов."
+    }
+  ],
+  "coverage": "Analyzer сверил все candidates Фазы 1, A/B/C и omission pre-check с финальным текстом 25 блоков; каждый candidate получил status/fidelity/action. 5 CONFIRMED_ERROR/FIXED (правки применены при переводе, через fix_block.py и в FINAL READ; RECHECK после каждой группы пройден), 27 FALSE_POSITIVE/PRESERVED, 3 DISPUTED/REPORT_ONLY (унаследованные PROVISIONAL). Фаза 2 адресует конкретный слепой вывод analysis/20261119-040100-1234.phase1.json. Покрытие: 25/25 блоков финальной версии текста; SMA закрывает главу."
+}

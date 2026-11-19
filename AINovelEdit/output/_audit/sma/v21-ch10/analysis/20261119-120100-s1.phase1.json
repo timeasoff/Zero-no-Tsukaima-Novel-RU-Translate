@@ -1,0 +1,128 @@
+{
+  "analysis_id": "20261119-120100-s1.phase1",
+  "chapter": "v21-ch10",
+  "phase": 1,
+  "scope": "blind",
+  "observations": [
+    {
+      "block": 1,
+      "finding": "COMPONENT_LOSS",
+      "note": "Блок 1 coverage: отряд в переулке, деление Эвменеса, оружие Бримира, реплики Алия и Сайто, взрыв на складах, описание святыни — все звенья покрыты.",
+      "confidence": "LOW"
+    },
+    {
+      "block": 2,
+      "finding": "COMPONENT_LOSS",
+      "note": "Блок 2 coverage: стена и часовые, объяснение Лукшаны, реплики, сваливание часовых, протест Лукшаны — покрыто.",
+      "confidence": "LOW"
+    },
+    {
+      "block": 3,
+      "finding": "COMPONENT_LOSS",
+      "note": "Блок 3 coverage: удар плашмя, «Великолепно», приоритет жизней, открытие ворот, пробуждение Фатимы, алтарь и Эсмаил — покрыто.",
+      "confidence": "LOW"
+    },
+    {
+      "block": 4,
+      "finding": "COMPONENT_LOSS",
+      "note": "Блок 4 coverage: сбор силы духов, мысли Фатимы, прошлое, фейерверк Эсмаила, взрыв гранаты, шестеро эльфов, светящийся шар — покрыто.",
+      "confidence": "LOW"
+    },
+    {
+      "block": 5,
+      "finding": "COMPONENT_LOSS",
+      "note": "Блок 5 coverage: «идём», огненные стрелы, появление Салкана, реплики Алия, вызов — покрыто.",
+      "confidence": "LOW"
+    },
+    {
+      "block": 6,
+      "finding": "COMPONENT_LOSS",
+      "note": "Блок 6 coverage: парирование, три стрелы, сравнение с Аньес и Кастельмором, приказ Салкана, граната — покрыто.",
+      "confidence": "LOW"
+    },
+    {
+      "block": 7,
+      "finding": "COMPONENT_LOSS",
+      "note": "Блок 7 coverage: взрыв стены, спор с Тифанией, прорыв, мысли Сайто, дрогнувший стан — покрыто.",
+      "confidence": "LOW"
+    },
+    {
+      "block": 8,
+      "finding": "COMPONENT_LOSS",
+      "note": "Блок 8 coverage: огонь сабли, диалог с Дерфлингером, приближение подкрепления, пистолет и его взрыв — покрыто.",
+      "confidence": "LOW"
+    },
+    {
+      "block": 9,
+      "finding": "COMPONENT_LOSS",
+      "note": "Блок 9 coverage: нехватка защитной магии, отсутствие Луизы, ловушка, удар, онемевшие пальцы — покрыто.",
+      "confidence": "LOW"
+    },
+    {
+      "block": 10,
+      "finding": "COMPONENT_LOSS",
+      "note": "Блок 10 coverage: угроза Салкана, мысли о Тефе и Луизе, крик Дерфлингера, удар молотом, подъём — покрыто.",
+      "confidence": "LOW"
+    },
+    {
+      "block": 11,
+      "finding": "COMPONENT_LOSS",
+      "note": "Блок 11 coverage: обращение Варда, големы Фуке, алхимия соли, появление «Братьев стихий» — покрыто.",
+      "confidence": "LOW"
+    },
+    {
+      "block": 12,
+      "finding": "COMPONENT_LOSS",
+      "note": "Блок 12 coverage: «Глиняный Ком», «Братья стихий», Орден Северной Клумбы, Ромалия, плата — покрыто.",
+      "confidence": "LOW"
+    },
+    {
+      "block": 13,
+      "finding": "COMPONENT_LOSS",
+      "note": "Блок 13 coverage: реакция на плату, «длинноухие», «Блейд», secreted, появление Дамиана — покрыто.",
+      "confidence": "LOW"
+    },
+    {
+      "block": 14,
+      "finding": "COMPONENT_LOSS",
+      "note": "Блок 14 coverage: диалог с Дамианом, сокрытие цели, болото, „Постоянная алхимия“, «Ах, ты…!» — покрыто.",
+      "confidence": "LOW"
+    },
+    {
+      "block": 15,
+      "finding": "COMPONENT_LOSS",
+      "note": "Блок 15 coverage: Вард, Реконкиста, принц Уэльский, Пустота, наём Ромалии, подъём Сайто — покрыто.",
+      "confidence": "LOW"
+    },
+    {
+      "block": 16,
+      "finding": "COMPONENT_LOSS",
+      "note": "Блок 16 coverage: Салкан поднялся, окружение, спор Сайто и Варда, «Блейд», Матильда — покрыто.",
+      "confidence": "LOW"
+    },
+    {
+      "block": 17,
+      "finding": "COMPONENT_LOSS",
+      "note": "Блок 17 coverage: нетерпение Варда, прорыв, приказ Салкана, стрелы, свалка, сила Варда — покрыто.",
+      "confidence": "LOW"
+    },
+    {
+      "block": 18,
+      "finding": "COMPONENT_LOSS",
+      "note": "Блок 18 coverage: прыжок Сайто, дрожание сердца Гандальва, удар в грудь, падение Салкана — покрыто.",
+      "confidence": "LOW"
+    },
+    {
+      "block": 19,
+      "finding": "COMPONENT_LOSS",
+      "note": "Блок 19 coverage: паника эльфов, «я возьму на себя», просьба не умирать, счёты за левую руку, бегство — покрыто.",
+      "confidence": "LOW"
+    },
+    {
+      "block": 20,
+      "finding": "COMPONENT_LOSS",
+      "note": "Блок 20 coverage: инкантация, восемь копий, квадратное заклинание ветра, вызов Варда — покрыто.",
+      "confidence": "LOW"
+    }
+  ]
+}

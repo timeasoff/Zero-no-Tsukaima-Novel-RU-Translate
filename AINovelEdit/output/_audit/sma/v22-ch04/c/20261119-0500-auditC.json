@@ -1,0 +1,38 @@
+{
+  "schema": "sma-audit-evidence/v1",
+  "kind": "c",
+  "run_id": "20261119-0500-auditC",
+  "chapter": "v22-ch04.md",
+  "auditor": "pragmatic-audit",
+  "scope": "прагматика: речевой акт, сила реплики, подтекст, вежливость",
+  "inputs": {"ja": "translates/ja/v22-ch04.md", "ru": "output/chapters/v22-ch04.md", "en": "translates/en/v22-ch04.md", "merged": "translates/_report/merged/v22-ch04.md"},
+  "findings": [
+    {
+      "id": "C-01",
+      "block": 1,
+      "issue_type": "PRAGMATIC_SHIFT",
+      "severity": "CANDIDATE",
+      "confidence": "MEDIUM",
+      "evidence": "JA 「サイトさん」 в речи Сиесты — RU «Сайто-сан». Суффикс сохранён как маркер японского происхождения персонажа (addresses.md).",
+      "reason": "Подтвердить, что это не translationese, а осознанный маркер."
+    },
+    {
+      "id": "C-02",
+      "block": 9,
+      "issue_type": "PRAGMATIC_SHIFT",
+      "severity": "CANDIDATE",
+      "confidence": "MEDIUM",
+      "evidence": "JA 「わたくし…お願いをするためでございます」 — RU «Я пришла просить Его Святейшество. Ваше Святейшество, умоляю вас…». Формальность и дистанция сохранены, но «умоляю» усиливает мольбу.",
+      "reason": "Проверить, не усилена ли прагматическая сила просьбы."
+    },
+    {
+      "id": "C-03",
+      "block": 11,
+      "issue_type": "PRAGMATIC_SHIFT",
+      "severity": "CANDIDATE",
+      "confidence": "LOW",
+      "evidence": "JA 「あなたは、彼を無駄死にさせたいというのですか？」 — RU «Вы хотите, чтобы он умер напрасно?». Давление Папы передано вопросом.",
+      "reason": "Сверить, сохранены ли укоризна и модальность вопроса."
+    }
+  ]
+}

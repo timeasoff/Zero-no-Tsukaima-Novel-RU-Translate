@@ -1,0 +1,532 @@
+{
+  "analysis_id": "20261119-120200-s2",
+  "chapter": "v21-ch10",
+  "inputs": {
+    "phase1": "analysis/20261119-120100-s1.phase1.json",
+    "a_runs": [
+      "a/20261119-120000-a1b2.json"
+    ],
+    "b_runs": [
+      "b/20261119-120000-b2c3.json"
+    ],
+    "c_runs": [
+      "c/20261119-120000-c3d4.json"
+    ],
+    "precheck": "precheck/omission-precheck.json"
+  },
+  "results": [
+    {
+      "block": 1,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "COMPONENT_LOSS",
+      "action": "PRESERVED",
+      "finding": "COMPONENT_LOSS",
+      "note": "Блок 1 coverage: отряд в переулке, деление Эвменеса, оружие Бримира, реплики Алия и Сайто, взрыв на складах, описание святыни — все звенья покрыты. Итог слепого прохода подтверждён Phase 2 по финальному тексту."
+    },
+    {
+      "block": 2,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "COMPONENT_LOSS",
+      "action": "PRESERVED",
+      "finding": "COMPONENT_LOSS",
+      "note": "Блок 2 coverage: стена и часовые, объяснение Лукшаны, реплики, сваливание часовых, протест Лукшаны — покрыто. Итог слепого прохода подтверждён Phase 2 по финальному тексту."
+    },
+    {
+      "block": 3,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "COMPONENT_LOSS",
+      "action": "PRESERVED",
+      "finding": "COMPONENT_LOSS",
+      "note": "Блок 3 coverage: удар плашмя, «Великолепно», приоритет жизней, открытие ворот, пробуждение Фатимы, алтарь и Эсмаил — покрыто. Итог слепого прохода подтверждён Phase 2 по финальному тексту."
+    },
+    {
+      "block": 4,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "COMPONENT_LOSS",
+      "action": "PRESERVED",
+      "finding": "COMPONENT_LOSS",
+      "note": "Блок 4 coverage: сбор силы духов, мысли Фатимы, прошлое, фейерверк Эсмаила, взрыв гранаты, шестеро эльфов, светящийся шар — покрыто. Итог слепого прохода подтверждён Phase 2 по финальному тексту."
+    },
+    {
+      "block": 5,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "COMPONENT_LOSS",
+      "action": "PRESERVED",
+      "finding": "COMPONENT_LOSS",
+      "note": "Блок 5 coverage: «идём», огненные стрелы, появление Салкана, реплики Алия, вызов — покрыто. Итог слепого прохода подтверждён Phase 2 по финальному тексту."
+    },
+    {
+      "block": 6,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "COMPONENT_LOSS",
+      "action": "PRESERVED",
+      "finding": "COMPONENT_LOSS",
+      "note": "Блок 6 coverage: парирование, три стрелы, сравнение с Аньес и Кастельмором, приказ Салкана, граната — покрыто. Итог слепого прохода подтверждён Phase 2 по финальному тексту."
+    },
+    {
+      "block": 7,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "COMPONENT_LOSS",
+      "action": "PRESERVED",
+      "finding": "COMPONENT_LOSS",
+      "note": "Блок 7 coverage: взрыв стены, спор с Тифанией, прорыв, мысли Сайто, дрогнувший стан — покрыто. Итог слепого прохода подтверждён Phase 2 по финальному тексту."
+    },
+    {
+      "block": 8,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "COMPONENT_LOSS",
+      "action": "PRESERVED",
+      "finding": "COMPONENT_LOSS",
+      "note": "Блок 8 coverage: огонь сабли, диалог с Дерфлингером, приближение подкрепления, пистолет и его взрыв — покрыто. Итог слепого прохода подтверждён Phase 2 по финальному тексту."
+    },
+    {
+      "block": 9,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "COMPONENT_LOSS",
+      "action": "PRESERVED",
+      "finding": "COMPONENT_LOSS",
+      "note": "Блок 9 coverage: нехватка защитной магии, отсутствие Луизы, ловушка, удар, онемевшие пальцы — покрыто. Итог слепого прохода подтверждён Phase 2 по финальному тексту."
+    },
+    {
+      "block": 10,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "COMPONENT_LOSS",
+      "action": "PRESERVED",
+      "finding": "COMPONENT_LOSS",
+      "note": "Блок 10 coverage: угроза Салкана, мысли о Тефе и Луизе, крик Дерфлингера, удар молотом, подъём — покрыто. Итог слепого прохода подтверждён Phase 2 по финальному тексту."
+    },
+    {
+      "block": 11,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "COMPONENT_LOSS",
+      "action": "PRESERVED",
+      "finding": "COMPONENT_LOSS",
+      "note": "Блок 11 coverage: обращение Варда, големы Фуке, алхимия соли, появление «Братьев стихий» — покрыто. Итог слепого прохода подтверждён Phase 2 по финальному тексту."
+    },
+    {
+      "block": 12,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "COMPONENT_LOSS",
+      "action": "PRESERVED",
+      "finding": "COMPONENT_LOSS",
+      "note": "Блок 12 coverage: «Глиняный Ком», «Братья стихий», Орден Северной Клумбы, Ромалия, плата — покрыто. Итог слепого прохода подтверждён Phase 2 по финальному тексту."
+    },
+    {
+      "block": 13,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "COMPONENT_LOSS",
+      "action": "PRESERVED",
+      "finding": "COMPONENT_LOSS",
+      "note": "Блок 13 coverage: реакция на плату, «длинноухие», «Блейд», secreted, появление Дамиана — покрыто. Итог слепого прохода подтверждён Phase 2 по финальному тексту."
+    },
+    {
+      "block": 14,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "COMPONENT_LOSS",
+      "action": "PRESERVED",
+      "finding": "COMPONENT_LOSS",
+      "note": "Блок 14 coverage: диалог с Дамианом, сокрытие цели, болото, „Постоянная алхимия“, «Ах, ты…!» — покрыто. Итог слепого прохода подтверждён Phase 2 по финальному тексту."
+    },
+    {
+      "block": 15,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "COMPONENT_LOSS",
+      "action": "PRESERVED",
+      "finding": "COMPONENT_LOSS",
+      "note": "Блок 15 coverage: Вард, Реконкиста, принц Уэльский, Пустота, наём Ромалии, подъём Сайто — покрыто. Итог слепого прохода подтверждён Phase 2 по финальному тексту."
+    },
+    {
+      "block": 16,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "COMPONENT_LOSS",
+      "action": "PRESERVED",
+      "finding": "COMPONENT_LOSS",
+      "note": "Блок 16 coverage: Салкан поднялся, окружение, спор Сайто и Варда, «Блейд», Матильда — покрыто. Итог слепого прохода подтверждён Phase 2 по финальному тексту."
+    },
+    {
+      "block": 17,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "COMPONENT_LOSS",
+      "action": "PRESERVED",
+      "finding": "COMPONENT_LOSS",
+      "note": "Блок 17 coverage: нетерпение Варда, прорыв, приказ Салкана, стрелы, свалка, сила Варда — покрыто. Итог слепого прохода подтверждён Phase 2 по финальному тексту."
+    },
+    {
+      "block": 18,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "COMPONENT_LOSS",
+      "action": "PRESERVED",
+      "finding": "COMPONENT_LOSS",
+      "note": "Блок 18 coverage: прыжок Сайто, дрожание сердца Гандальва, удар в грудь, падение Салкана — покрыто. Итог слепого прохода подтверждён Phase 2 по финальному тексту."
+    },
+    {
+      "block": 19,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "COMPONENT_LOSS",
+      "action": "PRESERVED",
+      "finding": "COMPONENT_LOSS",
+      "note": "Блок 19 coverage: паника эльфов, «я возьму на себя», просьба не умирать, счёты за левую руку, бегство — покрыто. Итог слепого прохода подтверждён Phase 2 по финальному тексту."
+    },
+    {
+      "block": 20,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "COMPONENT_LOSS",
+      "action": "PRESERVED",
+      "finding": "COMPONENT_LOSS",
+      "note": "Блок 20 coverage: инкантация, восемь копий, квадратное заклинание ветра, вызов Варда — покрыто. Итог слепого прохода подтверждён Phase 2 по финальному тексту."
+    },
+    {
+      "block": 1,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MEANING_SHIFT",
+      "action": "PRESERVED",
+      "candidate": "a/1: Оттенок 任侠映画 (криминальное кино о якудза) и カチコミ (облава)",
+      "note": "Передано образно без кальки; мысль вынесена отдельным абзацем по PR-MIND. Проверено по JA → RU на финальном тексте."
+    },
+    {
+      "block": 2,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MEANING_SHIFT",
+      "action": "PRESERVED",
+      "candidate": "a/2: Интонация Лукшаны",
+      "note": "Негромкое сетование передано; modality не усилена. Проверено по JA → RU на финальном тексте."
+    },
+    {
+      "block": 3,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MEANING_SHIFT",
+      "action": "PRESERVED",
+      "candidate": "a/3: Удар_plankой (峰打ち)",
+      "note": "«Бил плашмя» точно передаёт удар не лезвием; кровь не идёт — подтверждено следующим абзацем. Проверено по JA → RU на финальном тексте."
+    },
+    {
+      "block": 6,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MEANING_SHIFT",
+      "action": "PRESERVED",
+      "candidate": "a/6: Т-degree Дерфлингера",
+      "note": "Разговорное «а ты как?» сохраняет близость напарников. Проверено по JA → RU на финальном тексте."
+    },
+    {
+      "block": 9,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MEANING_SHIFT",
+      "action": "PRESERVED",
+      "candidate": "a/9: Слово ご主人様",
+      "note": "«Госпожа» — каноническая форма Сайто по dictionary.md; снисхождения к тону нет. Проверено по JA → RU на финальном тексте."
+    },
+    {
+      "block": 12,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MEANING_SHIFT",
+      "action": "PRESERVED",
+      "candidate": "a/12: Оценочное 食わせもの",
+      "note": "«Мошенник» сохраняет ироническую оценку Фуке. Проверено по JA → RU на финальном тексте."
+    },
+    {
+      "block": 20,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MEANING_SHIFT",
+      "action": "PRESERVED",
+      "candidate": "a/20: Вызов в お相手しよう",
+      "note": "Форма вежливого вызова передана без угрозы; титул по канону «Вард-Вспышка». Проверено по JA → RU на финальном тексте."
+    },
+    {
+      "block": 1,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MEANING_SHIFT",
+      "action": "PRESERVED",
+      "candidate": "b/1: География города",
+      "note": "Оба берега и центральное течение сохранены. Проверено по JA → RU на финальном тексте."
+    },
+    {
+      "block": 3,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MEANING_SHIFT",
+      "action": "PRESERVED",
+      "candidate": "b/3: Актант: associated with Фатима",
+      "note": "Подлежащее — части тела Фатимы; действие претерпевает она; схема верна. Проверено по JA → RU на финальном тексте."
+    },
+    {
+      "block": 4,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MEANING_SHIFT",
+      "action": "PRESERVED",
+      "candidate": "b/4: JA 叔父 = дядя (сырой RU давал «тётя»); адресат клятвы",
+      "note": "Исправлено по JA с опорой на завершённые тома; в финальный текст внесено. Проверено по JA → RU на финальном тексте."
+    },
+    {
+      "block": 5,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MEANING_SHIFT",
+      "action": "PRESERVED",
+      "candidate": "b/5: Роль и титул персонажа",
+      "note": "Титул «адмирал», транслитерация «Салкан» унаследована из v21-ch06 (PROVISIONAL). Проверено по JA → RU на финальном тексте."
+    },
+    {
+      "block": 7,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MEANING_SHIFT",
+      "action": "PRESERVED",
+      "candidate": "b/7: Число: 数十秒",
+      "note": "«Десяток секунд» сохраняет приблизительность JA. Проверено по JA → RU на финальном тексте."
+    },
+    {
+      "block": 8,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MEANING_SHIFT",
+      "action": "PRESERVED",
+      "candidate": "b/8: Число и цель",
+      "note": "Три выстрела и прицел на живот сохранены. Проверено по JA → RU на финальном тексте."
+    },
+    {
+      "block": 14,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MEANING_SHIFT",
+      "action": "PRESERVED",
+      "candidate": "b/14: Новый термин 常時錬金",
+      "note": "Выбрана нейтральная рабочая форма; PROVISIONAL, зафиксировано в журнале и отчёте. Проверено по JA → RU на финальном тексте."
+    },
+    {
+      "block": 1,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MEANING_SHIFT",
+      "action": "PRESERVED",
+      "candidate": "c/1: Речевой акт: предложение рискнуть",
+      "note": "Вопросительная модальность и готовность к риску сохранены. Проверено по JA → RU на финальном тексте."
+    },
+    {
+      "block": 9,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MEANING_SHIFT",
+      "action": "PRESERVED",
+      "candidate": "c/9: Подтекст: причина слабости Гандальва",
+      "note": "Следующее предложение прямо называет вывод; недосказанность сохранена. Проверено по JA → RU на финальном тексте."
+    },
+    {
+      "block": 10,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MEANING_SHIFT",
+      "action": "PRESERVED",
+      "candidate": "c/10: Степень отчаяния",
+      "note": "Не усилено; прощание с жизнью передано сдержанно. Проверено по JA → RU на финальном тексте."
+    },
+    {
+      "block": 15,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MEANING_SHIFT",
+      "action": "PRESERVED",
+      "candidate": "c/15: Враждебность и грубость",
+      "note": "Грубость сохранена без лишней грубости; обращение по канону. Проверено по JA → RU на финальном тексте."
+    },
+    {
+      "block": 19,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MEANING_SHIFT",
+      "action": "PRESERVED",
+      "candidate": "c/19: Категоричность просьбы",
+      "note": "Модальность 絶対 усилена не была: «ни в коем случае» — равнозначно. Проверено по JA → RU на финальном тексте."
+    },
+    {
+      "block": 20,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MEANING_SHIFT",
+      "action": "PRESERVED",
+      "candidate": "c/20: Прозвище 閃光 и титул",
+      "note": "По словарю: 閃光 → «Вспышка» (PROVISIONAL), отряд Грифонов — канон. Проверено по JA → RU на финальном тексте."
+    },
+    {
+      "block": 1,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "FORMAT",
+      "action": "FIXED",
+      "before": "Мысль была вписана в абзац нарратива",
+      "after": "вынесена отдельным абзацем курсивом",
+      "note": "Правка применена до SMA и подтверждена на финальном тексте; RECHECK после каждой группы правок."
+    },
+    {
+      "block": 4,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "RUSSIAN_ERROR",
+      "action": "FIXED",
+      "before": "«месть, которую она поклялась отомстить дяде»",
+      "after": "«клятва мести, данная дяде, так и не была исполнена»",
+      "note": "Правка применена до SMA и подтверждена на финальном тексте; RECHECK после каждой группы правок."
+    },
+    {
+      "block": 4,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "FORMAT",
+      "action": "FIXED",
+      "before": "«Лукшана наложила заклинание» после «вошли Лукшана и Тиффания»",
+      "after": "«Она наложила заклинание»",
+      "note": "Правка применена до SMA и подтверждена на финальном тексте; RECHECK после каждой группы правок."
+    },
+    {
+      "block": 5,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "RUSSIAN_ERROR",
+      "action": "FIXED",
+      "before": "«огромную кривую саблю»",
+      "after": "«массивную кривую саблю»",
+      "note": "Правка применена до SMA и подтверждена на финальном тексте; RECHECK после каждой группы правок."
+    },
+    {
+      "block": 7,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "RUSSIAN_ERROR",
+      "action": "FIXED",
+      "before": "«В огромной пробоине»",
+      "after": "«В широкой пробоине»",
+      "note": "Правка применена до SMA и подтверждена на финальном тексте; RECHECK после каждой группы правок."
+    },
+    {
+      "block": 8,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "RUSSIAN_ERROR",
+      "action": "FIXED",
+      "before": "«пробивался бледно-голубой свет»",
+      "after": "«струился бледно-голубой свет»",
+      "note": "Правка применена до SMA и подтверждена на финальном тексте; RECHECK после каждой группы правок."
+    },
+    {
+      "block": 12,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "MEANING_SHIFT",
+      "action": "FIXED",
+      "before": "«именно они были застрахованы ею»",
+      "after": "«именно они и были её подстраховкой»",
+      "note": "Правка применена до SMA и подтверждена на финальном тексте; RECHECK после каждой группы правок."
+    },
+    {
+      "block": 13,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "RUSSIAN_ERROR",
+      "action": "FIXED",
+      "before": "«больше, чем нам»",
+      "after": "«больше, чем у нас»",
+      "note": "Правка применена до SMA и подтверждена на финальном тексте; RECHECK после каждой группы правок."
+    },
+    {
+      "block": 13,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "RUSSIAN_ERROR",
+      "action": "FIXED",
+      "before": "«верзила-мужчина»",
+      "after": "«мужчина-верзила»",
+      "note": "Правка применена до SMA и подтверждена на финальном тексте; RECHECK после каждой группы правок."
+    },
+    {
+      "block": 14,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "RUSSIAN_ERROR",
+      "action": "FIXED",
+      "before": "«он заставил булыжную мостовую обмякнуть и изменить форму»",
+      "after": "«свет заставил булыжную мостовую обмякнуть»",
+      "note": "Правка применена до SMA и подтверждена на финальном тексте; RECHECK после каждой группы правок."
+    },
+    {
+      "block": 18,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "RUSSIAN_ERROR",
+      "action": "FIXED",
+      "before": "«Что бушевало сейчас в Сайто, — гнев…»",
+      "after": "«Сейчас в Сайто бушевали гнев…»",
+      "note": "Правка применена до SMA и подтверждена на финальном тексте; RECHECK после каждой группы правок."
+    },
+    {
+      "block": 18,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "RUSSIAN_ERROR",
+      "action": "FIXED",
+      "before": "«ворвался к нему в грудь — и, целясь в грудь…»",
+      "after": "«бросился вплотную к Салкану и, целясь в прикрытую кольчугой грудь…»",
+      "note": "Правка применена до SMA и подтверждена на финальном тексте; RECHECK после каждой группы правок."
+    },
+    {
+      "block": 18,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "RUSSIAN_ERROR",
+      "action": "FIXED",
+      "before": "«хватая ртом воздух, захлебнулся»",
+      "after": "«будто задыхаясь, ловил ртом воздух»",
+      "note": "Правка применена до SMA и подтверждена на финальном тексте; RECHECK после каждой группы правок."
+    },
+    {
+      "block": 10,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "RUSSIAN_ERROR",
+      "action": "FIXED",
+      "before": "«Сайто хлопнул глазами»",
+      "after": "«Сайто удивлённо захлопал глазами»",
+      "note": "Правка применена до SMA и подтверждена на финальном тексте; RECHECK после каждой группы правок."
+    },
+    {
+      "block": 12,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "FORMAT",
+      "action": "FIXED",
+      "before": "«хи-хи… хи-ре»",
+      "after": "«хи-ри… хи-ре»",
+      "note": "Правка применена до SMA и подтверждена на финальном тексте; RECHECK после каждой группы правок."
+    },
+    {
+      "block": 1,
+      "status": "DISPUTED",
+      "fidelity": "MEANING_SHIFT",
+      "action": "REPORT_ONLY",
+      "candidate": "Партия стальной крови и единства",
+      "note": "Рабочая/PROVISIONAL-форма; не подтверждено пользователем. PROVISIONAL ≠ CANONICAL; зафиксировано в журнале и отчёте аудита."
+    },
+    {
+      "block": 5,
+      "status": "DISPUTED",
+      "fidelity": "MEANING_SHIFT",
+      "action": "REPORT_ONLY",
+      "candidate": "Салкан",
+      "note": "Рабочая/PROVISIONAL-форма; не подтверждено пользователем. PROVISIONAL ≠ CANONICAL; зафиксировано в журнале и отчёте аудита."
+    },
+    {
+      "block": 12,
+      "status": "DISPUTED",
+      "fidelity": "MEANING_SHIFT",
+      "action": "REPORT_ONLY",
+      "candidate": "Орден Северной Клумбы",
+      "note": "Рабочая/PROVISIONAL-форма; не подтверждено пользователем. PROVISIONAL ≠ CANONICAL; зафиксировано в журнале и отчёте аудита."
+    },
+    {
+      "block": 14,
+      "status": "DISPUTED",
+      "fidelity": "MEANING_SHIFT",
+      "action": "REPORT_ONLY",
+      "candidate": "Постоянная алхимия",
+      "note": "Рабочая/PROVISIONAL-форма; не подтверждено пользователем. PROVISIONAL ≠ CANONICAL; зафиксировано в журнале и отчёте аудита."
+    },
+    {
+      "block": 20,
+      "status": "DISPUTED",
+      "fidelity": "MEANING_SHIFT",
+      "action": "REPORT_ONLY",
+      "candidate": "Вездесущность ветра",
+      "note": "Рабочая/PROVISIONAL-форма; не подтверждено пользователем. PROVISIONAL ≠ CANONICAL; зафиксировано в журнале и отчёте аудита."
+    },
+    {
+      "block": 20,
+      "status": "DISPUTED",
+      "fidelity": "MEANING_SHIFT",
+      "action": "REPORT_ONLY",
+      "candidate": "Убиквитус Дель Винде",
+      "note": "Рабочая/PROVISIONAL-форма; не подтверждено пользователем. PROVISIONAL ≠ CANONICAL; зафиксировано в журнале и отчёте аудита."
+    },
+    {
+      "block": 0,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "RUSSIAN_ERROR",
+      "action": "FIXED",
+      "before": "FINAL READ (RU-only) — 16 правок по 7 блокам",
+      "after": "исправлено по-русски без изменения смысла JA",
+      "note": "FINAL READ выполнен по всем 20 блокам; найденные дефекты исправлены, merged пересобран, 5 предфильтров и omission pre-check перезапущены."
+    }
+  ],
+  "coverage": "Анализатор сверил все 20 слепых observation Фазы 1, 20 находок A/B/C, 0 кандидатов omission pre-check и собственные находки FINAL READ с финальным текстом 20 блоков. Каждый candidate получил status/fidelity/action: CONFIRMED_ERROR/FIXED — 16, FALSE_POSITIVE/PRESERVED — 40, DISPUTED/REPORT_ONLY — 6. SMA покрывает все 20 блоков финальной версии главы."
+}

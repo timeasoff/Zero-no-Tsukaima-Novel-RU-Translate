@@ -1,0 +1,139 @@
+{
+  "analysis_id": "20261119-160000-5678",
+  "chapter": "v19-ch08",
+  "inputs": {
+    "phase1": "analysis/20261119-160000-1234.phase1.json",
+    "a_runs": ["a/20261119-160000-a1b2.json"],
+    "b_runs": ["b/20261119-160000-c3d4.json"],
+    "c_runs": ["c/20261119-160000-e5f6.json"],
+    "precheck": "precheck/omission-precheck.json"
+  },
+  "results": [
+    {
+      "block": 1,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "NUANCE_SHIFT",
+      "action": "PRESERVED",
+      "note": "Кандидаты A-1 (a1b2, бл.1) и Phase 1 (бл.1): 〝自白薬〟 → «сыворотка правды». EN «truth serum» — только справка; устоявшаяся идиома сохраняет функцию зелья, вызвавшего признание, и ироничный регистр; JA прямо подтверждает, что Сайто помнил содержание разговора. PRESERVED — JA."
+    },
+    {
+      "block": 2,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "LEXICAL_MISMATCH",
+      "action": "PRESERVED",
+      "note": "Кандидат A-2 (бл.2): 〝担い手〟 → «носитель». Канон dictionary.md — «носитель Пустоты», но здесь JA даёт краткую форму сразу после упоминания 虚無; контекст восстанавливает значение. PRESERVED — JA."
+    },
+    {
+      "block": 7,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "NUANCE_SHIFT",
+      "action": "PRESERVED",
+      "note": "Кандидат A-3 (бл.7): 居場所 → «твоё место». Метафора последовательно проведена через весь блок и через блок 3; замена на громоздкую кальку была бы предпочтением. PRESERVED — FUNCTIONAL."
+    },
+    {
+      "block": 1,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "LEXICAL_MISMATCH",
+      "action": "PRESERVED",
+      "note": "Кандидат B-1 (бл.1): неопределённо-личное «отобрали» при JA 取り上げられ (пассив без деятеля) и «палочка» по канону dictionary.md (杖, не 軍杖). Актант сохранён предыдущим предложением. PRESERVED — JA."
+    },
+    {
+      "block": 5,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "LEXICAL_MISMATCH",
+      "action": "PRESERVED",
+      "note": "Кандидат B-2 (бл.5): 備えられた水の魔道具 → «водный магический прибор, установленный здесь заранее». EN «with water magic» только справка; JA подтверждает заблаговременность и функцию слежения. PRESERVED — JA."
+    },
+    {
+      "block": 6,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "LEXICAL_MISMATCH",
+      "action": "PRESERVED",
+      "note": "Кандидат B-3 (бл.6): 現に → «же». Настаивание и апелляция к примеру матери Табиты сохранены; модальность не усилена. PRESERVED — JA."
+    },
+    {
+      "block": 2,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "PRAGMATIC_SHIFT",
+      "action": "PRESERVED",
+      "note": "Кандидат C-1 (бл.2): повтор «мученицей» воспроизводит риторику JA 殉教者？…そういうつもりはまったくないの. PRESERVED — FUNCTIONAL."
+    },
+    {
+      "block": 4,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "PRAGMATIC_SHIFT",
+      "action": "PRESERVED",
+      "note": "Кандидат C-2 (бл.4): «Слушай, Сайто, так не годится» + «мне захочется на тебя опереться» — смущённое предостережение и признание в уязвимости по JA あのね、だめだよ…頼りたくなっちゃうから. PRESERVED — CHARACTER VOICE."
+    },
+    {
+      "block": 6,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "PRAGMATIC_SHIFT",
+      "action": "PRESERVED",
+      "note": "Кандидат C-3 (бл.6): «Сдаюсь!» — отказ от плана жертвы и побега, а не капитуляция; JA 諦める и следом «Давай верить» подтверждают разворот. PRESERVED — JA."
+    },
+    {
+      "block": 4,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MISSING_TRANSLATION",
+      "action": "PRESERVED",
+      "note": "Pre-check S1-tail-truncation (бл.4, DIALOGUE_FRAGMENT/PARTIAL, conf=MEDIUM): все три помеченные JA-звенья (手を放したが…すがってきた / 「ちょっと！まずい！テファ！……テファ？」 / よく見ると…泣いていた) на месте в ED_RU бл.4: «Он быстро убрал руки, но Тифания вцепилась в них. / — Эй! Это не... Тефа!.. Тефа? / Присмотревшись, Сайто увидел, что она плачет.». Дефицит числа абзацев/маркеров — слияние нарратива, разрешённое AGENTS.md; пропуска нет. PRESERVED — JA."
+    },
+    {
+      "block": 3,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "OTHER",
+      "action": "PRESERVED",
+      "note": "Кандидат Phase 1 (бл.3): わたしね → «— Я вот...» — дискурсивная затворка перед репликой о «Пустоте»; JA не содержит содержательного фрагмента, который можно было бы потерять. PRESERVED — JA."
+    },
+    {
+      "block": 5,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "NUANCE_SHIFT",
+      "action": "PRESERVED",
+      "note": "Кандидат Phase 1 (бл.5): 気持ちが膨れ上がる → «внутри разрастается твёрдая решимость». Образ нарастания сохранён; JA 絶対に脱出してやる оправдывает решимость. PRESERVED — JA."
+    },
+    {
+      "block": 7,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "PRAGMATIC_SHIFT",
+      "action": "PRESERVED",
+      "note": "Кандидат Phase 1 (бл.7): «Хнык» и образ «дыня/маршмеллоу» передают комизм и игривость JA ひう / 奇跡の物体 без вульгаризации. PRESERVED — FUNCTIONAL."
+    },
+    {
+      "block": 8,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "NUANCE_SHIFT",
+      "action": "PRESERVED",
+      "note": "Кандидат Phase 1 (бл.8): 〝ここは諦める…でも、諦めねえ〟 → «Отсюда нет выхода… Но я не сдаюсь». Противопоставление сохранено; замена «сдаюсь» на «сдамся» сохранению модальности не служит. PRESERVED — JA."
+    },
+    {
+      "block": 5,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "RUSSIAN_ERROR",
+      "action": "FIXED",
+      "before": "Видно, твоей куцой голове не хватило ума, но мы отлично следим",
+      "after": "Похоже, ты придумал это своей куцой головой, но мы отлично следим",
+      "note": "Собственная находка RU-only (FINAL READ): тавтологичная и угловатая конструкция «куцой голове не хватило ума» заменена на «придумал это своей куцой головой». Смысл JA 足りない頭で考えたようだが сохранён. Правка через fix_block.py --replace-file, RECHECK пройден."
+    },
+    {
+      "block": 7,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "RUSSIAN_ERROR",
+      "action": "FIXED",
+      "before": "а мягкостью равное маршмеллоу",
+      "after": "а на ощупь такое же мягкое, как маршмеллоу",
+      "note": "Собственная находка RU-only (FINAL READ): тяжеловесное «мягкостью равное маршмеллоу» заменено на естественное «на ощупь такое же мягкое, как маршмеллоу». Смысл JA マシュマロの柔らかさを兼ね備えた сохранён. Правка через fix_block.py --replace-file, RECHECK пройден."
+    },
+    {
+      "block": 8,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "RUSSIAN_ERROR",
+      "action": "FIXED",
+      "before": "Рядом с необычайно красивой девушкой — в любой, самой безнадёжной ситуации начинаешь верить",
+      "after": "Когда рядом необычайно красивая девушка... в любой, самой безнадёжной ситуации начинаешь верить",
+      "note": "Собственная находка RU-only (FINAL READ): висящая конструкция «Рядом с … девушкой — в любой … ситуации» перестроена на «Когда рядом … девушка... в любой … ситуации». Смысл JA とんでもなく綺麗な女の子がそばにいると…… сохранён. Правка через fix_block.py --replace-file, RECHECK пройден."
+    }
+  ],
+  "coverage": "Analysis покрывает все 8 блоков главы v19-ch08 (финальный текст после трёх правок блоков 5, 7 и 8). Pre-check дал 1 CANDIDATE (FALSE_POSITIVE: все помеченные звенья присутствуют). Все 17 кандидатов получили status + fidelity + action: 3 CONFIRMED_ERROR/FIXED (RU-only, правки применены до анализа, RECHECK пройден), 14 FALSE_POSITIVE/PRESERVED. Статусов WIP и непокрытых блоков нет; анализ создан после последней правки текста и закрывает главу."
+}

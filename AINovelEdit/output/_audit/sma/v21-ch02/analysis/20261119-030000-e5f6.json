@@ -1,0 +1,175 @@
+{
+  "analysis_id": "20261119-030000-e5f6",
+  "chapter": "v21-ch02",
+  "final_read_recheck": "RU-only перечит после всех правок (блоки 1, 5, 9, 10, 11, 13), включая согласование «плавало множество» в бл.1, и итоговой терминологической сверки: смысл JA сохранён; omission_precheck перезапущен по финальному merged — 2 кандидата разобраны как FALSE_POSITIVE; все 14 блоков покрыты финальным анализом.",
+  "inputs": {
+    "phase1": "analysis/20261119-030000-e5f6.phase1.json",
+    "a_runs": ["a/20261119-030000-a1b2.json"],
+    "b_runs": ["b/20261119-030000-b2c3.json"],
+    "c_runs": ["c/20261119-030000-c3d4.json"],
+    "precheck": "precheck/omission-precheck.json"
+  },
+  "results": [
+    {
+      "block": 11,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "FORMAT",
+      "action": "FIXED",
+      "note": "атрибуция からかうキュルケに、ギーシュは嘯いた вынесена отдельным абзацом между репликами по JA; B1, Ф1 бл.11"
+    },
+    {
+      "block": 5,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "FORMAT",
+      "action": "FIXED",
+      "note": "внутренняя речь 〝どしがたい阿呆どもじゃ〟: нарратив и мысль объединены конструкцией с двоеточием (format_scan thoughtinline → 0); Ф2"
+    },
+    {
+      "block": 9,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "FORMAT",
+      "action": "FIXED",
+      "note": "мысль _ах, падаю…_ встроена после тире в нарратив (format_scan thoughtinline → 0); Ф2"
+    },
+    {
+      "block": 13,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "FORMAT",
+      "action": "FIXED",
+      "note": "три внутренних монолога объединены в одну курсивную реплику после двоеточия (format_scan thoughtinline → 0); Ф2"
+    },
+    {
+      "block": 1,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "RUSSIAN_ERROR",
+      "action": "FIXED",
+      "note": "ROOT_REPETITION «корабль … кораблей» → «судно … кораблей» (style S1); монотонность «огромн…» → «гигантский»"
+    },
+    {
+      "block": 9,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "RUSSIAN_ERROR",
+      "action": "FIXED",
+      "note": "монотонность эпитета: «огромная гильза» → «крупная гильза» (style MONOTONY)"
+    },
+    {
+      "block": 10,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "RUSSIAN_ERROR",
+      "action": "FIXED",
+      "note": "монотонность эпитета: «Огромный нос» → «Громадный нос» (style MONOTONY)"
+    },
+    {
+      "block": 6,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MEANING_SHIFT",
+      "action": "PRESERVED",
+      "note": "まな板 / タルブの大平原 → «разделочная доска / Великая равнина Тарба»; оба звена JA на месте; A1, Ф1 бл.6"
+    },
+    {
+      "block": 8,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MEANING_SHIFT",
+      "action": "PRESERVED",
+      "note": "行かず後家の意地 → «упрямая гордость старой девы»; EN стушёвывает 意地, JA > EN; A2"
+    },
+    {
+      "block": 9,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MEANING_SHIFT",
+      "action": "PRESERVED",
+      "note": "ちび桃 → «маленькая персиковая» по завершённому v19-ch01; клич «кьюи-кьюи» по v13-ch04/v18-ch06; A3, Ф1 бл.9"
+    },
+    {
+      "block": 13,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MEANING_SHIFT",
+      "action": "PRESERVED",
+      "note": "заикание こ…/キ… → «и я… я», «потом… потом»; модальность かもしれない → «может быть» сохранена; A4, C4, Ф1 бл.13"
+    },
+    {
+      "block": 4,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MEANING_SHIFT",
+      "action": "PRESERVED",
+      "note": "マイペース → «всегда по-своему»; оттенок привычности и лёгкого удивления сохранён; A5"
+    },
+    {
+      "block": 5,
+      "status": "DISPUTED",
+      "fidelity": "MEANING_SHIFT",
+      "action": "PRESERVED",
+      "note": "悪魔の担い手 → «носители демона» — мотивировано словарным «носитель Пустоты» и завершённым v18-ch08; зафиксировано как PROVISIONAL, не канон; B2, Ф1 бл.5"
+    },
+    {
+      "block": 1,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "FORMAT",
+      "action": "PRESERVED",
+      "note": "200 メイル → 200 метров: канон «метр (нарратив), мейл (реплики)» из v20-log; B3, Ф1 бл.1"
+    },
+    {
+      "block": 9,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "FORMAT",
+      "action": "PRESERVED",
+      "note": "отсчёт 五十メイル… → «метров»: нарратив, канон «метр»; повтор — анафора JA; B4"
+    },
+    {
+      "block": 10,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MEANING_SHIFT",
+      "action": "PRESERVED",
+      "note": "破損/無事: субъекты «броня повреждена — двигатель уцелел» сохранены; EN-сдвиг якорной границы; B5"
+    },
+    {
+      "block": 2,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MEANING_SHIFT",
+      "action": "PRESERVED",
+      "note": "だからこそ → «именно поэтому»: спокойная ирония Кольбера без усиления модальности; C1, Ф1 бл.2"
+    },
+    {
+      "block": 3,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MEANING_SHIFT",
+      "action": "PRESERVED",
+      "note": "心中 → «двойное самоубийство» как флёрт, ответ «Вот этого я точно не хочу!»; C2"
+    },
+    {
+      "block": 11,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MEANING_SHIFT",
+      "action": "PRESERVED",
+      "note": " шутливая угроза Сиесты + にこっと微笑んだ → «чуть заметно улыбнулась»; C3"
+    },
+    {
+      "block": 6,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MISSING",
+      "action": "PRESERVED",
+      "note": "omission-precheck S1 бл.6: оба JA-звена (ぴくっ。 и «貧乳。まな板。タルブの大平原») присутствуют в RU как «Дёрнулось.» и отдельная реплика; дефицит счётчика абзацев/реплик — артефакт слияния, не пропуск"
+    },
+    {
+      "block": 11,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MISSING",
+      "action": "PRESERVED",
+      "note": "omission-precheck S1 бл.11: атрибуция и длинная реплика Гиша присутствуют; после FIXED атрибуция вынесена отдельным абзацом по JA; пропуска нет"
+    },
+    {
+      "block": 5,
+      "status": "PRESERVED",
+      "fidelity": "FORMAT",
+      "action": "PRESERVED",
+      "note": "address_scan «господин президент»: JA 統領閣下, EN Mr. President, канон завершённого v20-ch04 — «господин президент»; ложное срабатывание предфильтра"
+    },
+    {
+      "block": 1,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MEANING_SHIFT",
+      "action": "PRESERVED",
+      "note": "grammar_scan G1–G9 (9 кандидатов): RU-пассив/возвратные глаголы соответствуют JA-страдательности/непереходности или к активному действию в JA; EN-пассивы относятся к соседним предложениям со сдвинутыми якорями — все 9 FALSE POSITIVE"
+    }
+  ]
+}

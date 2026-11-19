@@ -1,0 +1,32 @@
+{
+ "analysis_id": "20261119-013212-1b2f.phase1",
+ "chapter": "v19-ch01",
+ "phase": 1,
+ "scope": "blind",
+ "results": [
+  {
+   "block": 4,
+   "finding": "MISSING_TRANSLATION",
+   "note": "две реплики в конце бл.4 не покрыты RU",
+   "confidence": "MEDIUM"
+  },
+  {
+   "block": 4,
+   "finding": "MISTRANSLATION",
+   "note": "идиома 泣く子も黙る",
+   "confidence": "MEDIUM"
+  },
+  {
+   "block": 5,
+   "finding": "MISTRANSLATION",
+   "note": "発情, субъект жестикуляции",
+   "confidence": "LOW"
+  },
+  {
+   "block": 11,
+   "finding": "NUANCE_SHIFT",
+   "note": "かもしれない",
+   "confidence": "LOW"
+  }
+ ]
+}

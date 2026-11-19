@@ -1,0 +1,38 @@
+{
+  "audit_id": "sma-b",
+  "audit_type": "semantic-audit-b",
+  "audit_run_id": "20261119-160000-c3d4",
+  "chapter": "v19-ch09",
+  "findings": [
+    {
+      "block": 1,
+      "source": "一人の腹に拳を叩き込み、悶絶させたところで魔法が飛ぶ。空気のロープでがんじがらめにされて…",
+      "current": "...в этот миг в воздухе сверкнуло заклинание. Спутанный верёвками из воздуха, Сайто упал на пол.",
+      "problem": "EN glosses the flying magic as «magic fists»; JA ties it to the following air ropes",
+      "reason": "JA > EN: причина и способ связывания восстановлены следующим абзацем; EN — только справка.",
+      "suggestion": "Оставить; пропуска нет.",
+      "issue_type": "COMPONENT_LOSS",
+      "severity": "CANDIDATE"
+    },
+    {
+      "block": 13,
+      "source": "火竜や風竜なんかより、二回りは大きかった",
+      "current": "было раза в два больше, чем у огненных или ветреных драконов",
+      "problem": "二回り = «на два размера», а не кратное doubling",
+      "reason": "Числовая компонента JA искажена; EN даёт неопределённое «larger», но JA арбитр. Исправлено до анализа.",
+      "suggestion": "Исправить на «на два размера крупнее».",
+      "issue_type": "MEANING_SHIFT",
+      "severity": "ERROR"
+    },
+    {
+      "block": 10,
+      "source": "あの人、あれで強力な〝行使手〟なのよ",
+      "current": "Он очень сильный «носитель» — мне некуда вмешаться.",
+      "problem": "行使手 передан как «носитель» без уточнения, чего именно",
+      "reason": "Предыдущая фраза называет силу духов; «носитель» читается в этом контексте. Новый термин зафиксирован PROVISIONAL в журнале.",
+      "suggestion": "Оставить; PROVISIONAL ≠ CANONICAL.",
+      "issue_type": "LEXICAL_MISMATCH",
+      "severity": "CANDIDATE"
+    }
+  ]
+}

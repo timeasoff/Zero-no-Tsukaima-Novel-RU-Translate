@@ -1,0 +1,224 @@
+{
+  "analysis_id": "20261119-170000-5678",
+  "chapter": "v21-ch03",
+  "inputs": {
+    "phase1": "analysis/20261119-170000-1234.phase1.json",
+    "a_runs": ["a/20261119-170000-a1b2.json"],
+    "b_runs": ["b/20261119-170000-c3d4.json"],
+    "c_runs": ["c/20261119-170000-e5f6.json"],
+    "precheck": "precheck/omission-precheck.json"
+  },
+  "post_sma_notes": [
+    "FINAL READ (RU-only) после SMA: 6 правок по-русски (блоки 2, 4, 9, 18, 26, 28) — уточнение атрибуции, согласование сказуемого, устранение висящей атрибуции и тавтологии. Ни один кандидат леджера не затронут; merged и все 5 предфильтров + omission pre-check перезапущены, кандидаты неизменны."
+  ],
+  "results": [
+    {
+      "block": 1,
+      "candidate": "A-1",
+      "status": "FALSE_POSITIVE",
+      "fidelity": "COMPONENT_LOSS",
+      "action": "PRESERVED",
+      "note": "〝カスバ〟 → «Касба» закреплено в завершённых томах; «ランタンのような魔法装置» → «магические светильники, похожие на фонари» сохраняет сравнение JA. PRESERVED — JA."
+    },
+    {
+      "block": 2,
+      "candidate": "A-2",
+      "status": "FALSE_POSITIVE",
+      "fidelity": "NUANCE_SHIFT",
+      "action": "PRESERVED",
+      "note": "先住魔法 → «Древняя магия» — канон dictionary.md; 炎の四乗 → «вчетверо мощнее» передаёт степень. PRESERVED — JA."
+    },
+    {
+      "block": 8,
+      "candidate": "A-3",
+      "status": "FALSE_POSITIVE",
+      "fidelity": "LEXICAL_MISMATCH",
+      "action": "PRESERVED",
+      "note": "氷嵐 → «Ледяная буря» совпадает с завершённым v13-ch04; не смешано с ウィンディ・アイシクル → «Ледяной шквал». Инкантация «Рагузу-вотару-ису-иса-хагарас...» — нейтральная транслитерация без доказанной этимологии, зафиксирована PROVISIONAL в журнале. PRESERVED — JA."
+    },
+    {
+      "block": 16,
+      "candidate": "A-4",
+      "status": "FALSE_POSITIVE",
+      "fidelity": "NUANCE_SHIFT",
+      "action": "PRESERVED",
+      "note": "«Версальтейль» — канон; 生まれたままの姿 → «голыми» сохранено без сглаживания. PRESERVED — JA."
+    },
+    {
+      "block": 29,
+      "candidate": "A-5",
+      "status": "FALSE_POSITIVE",
+      "fidelity": "LEXICAL_MISMATCH",
+      "action": "PRESERVED",
+      "note": "Эох Суну Фир Ярнсакса / Ос Суну Ур Ру Рад / Беозус Ир Свюэль Кано Ошера — канонические этимологические формы словаря и завершённых томов; ユル → «Ир» в инкантации. PRESERVED — JA."
+    },
+    {
+      "block": 32,
+      "candidate": "A-6",
+      "status": "FALSE_POSITIVE",
+      "fidelity": "NUANCE_SHIFT",
+      "action": "PRESERVED",
+      "note": "〝担い手〟の娘 → «девушка-носительница»: канон «носительница Пустоты» сохранён, новый титул не изобретён; EN «undertaker girl» — только справка. PRESERVED — JA."
+    },
+    {
+      "block": 4,
+      "candidate": "B-1",
+      "status": "FALSE_POSITIVE",
+      "fidelity": "COMPONENT_LOSS",
+      "action": "PRESERVED",
+      "note": "Цепочка «удар судна → трещины → заманивание → обрушение → Алхимия» полностью покрыта JA → RU, все звенья на месте. PRESERVED — JA."
+    },
+    {
+      "block": 5,
+      "candidate": "B-2",
+      "status": "FALSE_POSITIVE",
+      "fidelity": "COMPONENT_LOSS",
+      "action": "PRESERVED",
+      "note": "Намерение Табиты провернуть врага слабым заклинанием и вывод об отсутствии «Отражения» сохранены дословно по смыслу JA. PRESERVED — JA."
+    },
+    {
+      "block": 20,
+      "candidate": "B-3",
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MEANING_SHIFT",
+      "action": "PRESERVED",
+      "note": "Вывод Луизы («по крайней мере Сайто и Тиффанию оставили в живых») сохраняет модальность ということは; категоричность не усилена. PRESERVED — JA."
+    },
+    {
+      "block": 28,
+      "candidate": "B-4",
+      "status": "FALSE_POSITIVE",
+      "fidelity": "COMPONENT_LOSS",
+      "action": "PRESERVED",
+      "note": "Связь «сила Сайто → Телепорт → Взрыв сквозь Отражение» покрыта полностью; неопределённость JA о способе передачи силы сохранена. PRESERVED — JA."
+    },
+    {
+      "block": 12,
+      "candidate": "C-1",
+      "status": "FALSE_POSITIVE",
+      "fidelity": "PRAGMATIC_SHIFT",
+      "action": "PRESERVED",
+      "note": "Предложение Гиша «давайте извинимся» с かも → «Может» сохраняет неуверенность; сразу следующий отказ Луизы передаёт несостоятельность идеи. PRESERVED — FUNCTIONAL."
+    },
+    {
+      "block": 19,
+      "candidate": "C-2",
+      "status": "FALSE_POSITIVE",
+      "fidelity": "PRAGMATIC_SHIFT",
+      "action": "PRESERVED",
+      "note": "«Добро пожаловать в Адиль, варвары» сохраняет церемониальность и иронический оттенок JA; упрек «так грубо» — та же прагматическая сила. PRESERVED — JA."
+    },
+    {
+      "block": 20,
+      "candidate": "C-3",
+      "status": "FALSE_POSITIVE",
+      "fidelity": "NUANCE_SHIFT",
+      "action": "PRESERVED",
+      "note": "Идиома «два иероглифа капитуляции» заменена естественным «нет слова „капитуляция»» — ACCEPTABLE ADAPTATION, вызов и отказ сохранены. PRESERVED — FUNCTIONAL."
+    },
+    {
+      "block": 25,
+      "candidate": "C-4",
+      "status": "FALSE_POSITIVE",
+      "fidelity": "PRAGMATIC_SHIFT",
+      "action": "PRESERVED",
+      "note": "«Вы же не можете меня убить, верно?» сохраняет расчёт Луизы на известный ей ответ (でしょう？) без усиления в утверждение. PRESERVED — JA."
+    },
+    {
+      "block": 17,
+      "candidate": "PRECHECK-1",
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MISSING",
+      "action": "PRESERVED",
+      "note": "S1-tail-truncation: позиционный артефакт. JA-звенья «Кирхе зажгла огонёк…», «Это был уже не тот коридор», «зал с потолком метров в двадцать», реплика Кольбера о совете и подъёмнике ПРИСУТСТВУЮТ в начале RU-блока 17; RU объединил 16 JA-абзацев в 8. Компрессия без потери содержания, не пропуск. PRESERVED — JA."
+    },
+    {
+      "block": 20,
+      "candidate": "PRECHECK-2",
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MISSING",
+      "action": "PRESERVED",
+      "note": "S1-tail-truncation: позиционный артефакт. «Кирхе обворожительно улыбнулась и выхватила палочку» и «В словаре Цербст нет слова „капитуляция»» присутствуют в конце RU-блока 20. PRESERVED — JA."
+    },
+    {
+      "block": 21,
+      "candidate": "PRECHECK-3",
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MISSING",
+      "action": "PRESERVED",
+      "note": "S1-tail-truncation: позиционный артефакт. «Тюрюк поднял обе руки и начал читать Древнюю магию», «О, духи камня…», «Земля сотряслась», «пол… взмыли в воздух» присутствуют в RU-блоке 21 в другом порядке абзацев. PRESERVED — JA."
+    },
+    {
+      "block": 30,
+      "candidate": "PRECHECK-4",
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MISSING",
+      "action": "PRESERVED",
+      "note": "S1-tail-truncation: позиционный артефакт. «Кирхе посмотрела на неё в недоумении», «О, вот оно — дело дьявола… Как страшно…», «прошептал Тюрюк, остолбенев» присутствуют в RU-блоке 30. PRESERVED — JA."
+    },
+    {
+      "blocks": "1–4",
+      "candidate": "PHASE1-1",
+      "status": "FALSE_POSITIVE",
+      "fidelity": "COMPONENT_LOSS",
+      "action": "PRESERVED",
+      "note": "Слепое наблюдение подтверждено: канонические формы и причинная цепочка на месте, модальность размышлений Кольбера сохранена курсивом отдельным абзацем."
+    },
+    {
+      "blocks": "5–8",
+      "candidate": "PHASE1-2",
+      "status": "FALSE_POSITIVE",
+      "fidelity": "COMPONENT_LOSS",
+      "action": "PRESERVED",
+      "note": "Монолог «Герой Ивальди» и инкантация на месте; 氷嵐 → «Ледяная буря» не смешано с «Ледяным шквалом»."
+    },
+    {
+      "blocks": "9–12",
+      "candidate": "PHASE1-3",
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MEANING_SHIFT",
+      "action": "PRESERVED",
+      "note": "Сцены Бидашала и погони переданы без усиления категоричности; отчаянный тон Гиша сохранён."
+    },
+    {
+      "blocks": "13–16",
+      "candidate": "PHASE1-4",
+      "status": "FALSE_POSITIVE",
+      "fidelity": "COMPONENT_LOSS",
+      "action": "PRESERVED",
+      "note": "Подъёмник, удар сверху и воспоминания Луизы (включая Версальтейль) покрыты полностью."
+    },
+    {
+      "blocks": "17–20",
+      "candidate": "PHASE1-5",
+      "status": "FALSE_POSITIVE",
+      "fidelity": "PRAGMATIC_SHIFT",
+      "action": "PRESERVED",
+      "note": "Ирония приветствия и вывод о живых Сайто/Тиффании сохранены."
+    },
+    {
+      "blocks": "21–24",
+      "candidate": "PHASE1-6",
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MEANING_SHIFT",
+      "action": "PRESERVED",
+      "note": "«Духи камня», «Отражение» и бравада Луизы переданы по JA."
+    },
+    {
+      "blocks": "25–28",
+      "candidate": "PHASE1-7",
+      "status": "FALSE_POSITIVE",
+      "fidelity": "COMPONENT_LOSS",
+      "action": "PRESERVED",
+      "note": "Почти выкрикнутое имя Сайто и приток силы сохранены без превращения сомнения в уверенность."
+    },
+    {
+      "blocks": "29–32",
+      "candidate": "PHASE1-8",
+      "status": "FALSE_POSITIVE",
+      "fidelity": "LEXICAL_MISMATCH",
+      "action": "PRESERVED",
+      "note": "Все четыре инкантации сверены с каноном словаря; «девушка-носительница» не создаёт нового титула."
+    }
+  ]
+}

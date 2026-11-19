@@ -1,0 +1,116 @@
+{
+  "audit_id": "sma-b",
+  "audit_type": "semantic-audit-b",
+  "audit_run_id": "20261119-041000-b2c3",
+  "chapter": "v21-epilogue",
+  "findings": [
+    {
+      "block": 1,
+      "source": "〝火石〟",
+      "current": "«огненный камень»",
+      "problem": "Канон термина 火石: «огненный камень» (v15-ch04, v19/v20-log), а не «Камень огня»; EN «Jewels of Fire» — только справка",
+      "reason": "KR: форма сверена с завершёнными томами; JA > EN. «Камень ветра» — это 風石, другой термин, в главе он есть в блоке 27.",
+      "issue_type": "LEXICAL_MISMATCH",
+      "severity": "CANDIDATE"
+    },
+    {
+      "block": 3,
+      "source": "『鉄血団結党』",
+      "current": "«Партия стальной крови и единства»",
+      "problem": "Унаследованный PROVISIONAL-термин из v18/v19/v20/v21-ch08",
+      "reason": "KR: формы «Кровь и железо», «Союз Возращения» из сырого RU отклонены в пользу устоявшегося канона; решение по завершённым томам и v21-ch08.",
+      "issue_type": "LEXICAL_MISMATCH",
+      "severity": "CANDIDATE"
+    },
+    {
+      "block": 3,
+      "source": "『聖地回復連合軍』",
+      "current": "«Объединённая армия возвращения Святой земли»",
+      "problem": "Калька EN «Coalition Army for the Restoration of the Holy Lands»",
+      "reason": "KR: канон v20-ch06/v21-ch07; «Святая земля» — словарная форма 聖地. EN вторичен.",
+      "issue_type": "LEXICAL_MISMATCH",
+      "severity": "CANDIDATE"
+    },
+    {
+      "block": 10,
+      "source": "アディール",
+      "current": "Адиль",
+      "problem": "Топоним アディール: канон «Адиль» по v19/v20; EN «Adyl», RU-сырьё «Адиир»",
+      "reason": "KR: форма по завершённым томам, JA > EN/RU-сырья. В блоке 10 употреблена последовательно.",
+      "issue_type": "LEXICAL_MISMATCH",
+      "severity": "CANDIDATE"
+    },
+    {
+      "block": 11,
+      "source": "〝四の四〟",
+      "current": "«четверо из четырёх»",
+      "problem": "Числовая и модальная структура 四の四",
+      "reason": "KR: канон v20-log; в блоках 11 и 19 форма единообразна. Модальность «не appeared, пока не соберутся» сохранена.",
+      "issue_type": "LEXICAL_MISMATCH",
+      "severity": "CANDIDATE"
+    },
+    {
+      "block": 18,
+      "source": "〝最後の使い魔〟",
+      "current": "«последнего фамильяра» — Лифсрасила",
+      "problem": "Прямое указание координатора: канон «Лифсрасил», форма «Лифтрасир» запрещена",
+      "reason": "KR: уточняющая аппозиция введена по канону v21-log; JA называет только «последнего фамильяра», EN даёт «Lífþrasir» как справку.",
+      "issue_type": "LEXICAL_MISMATCH",
+      "severity": "CANDIDATE"
+    },
+    {
+      "block": 19,
+      "source": "始祖の虚無……〝生命〟",
+      "current": "Пустота Основателя… «Жизнь»",
+      "problem": "Название руны 〝生命〟 — канон v21-ch08 «Жизнь»",
+      "reason": "KR: написание с заглавной и кавычками согласовано с v21-ch08; смысл «Void of the Founder» сохранён.",
+      "issue_type": "LEXICAL_MISMATCH",
+      "severity": "CANDIDATE"
+    },
+    {
+      "block": 23,
+      "source": "〝悪魔の門〟",
+      "current": "«Врата демона»",
+      "problem": "Вариант «Врата Шайтана» (シャイターンの門) относится к другой форме; здесь JA даёт 悪魔の門",
+      "reason": "KR: v20-log прямо закрепляет «Врата демона» для 悪魔の門; в главе форма единообразна.",
+      "issue_type": "LEXICAL_MISMATCH",
+      "severity": "CANDIDATE"
+    },
+    {
+      "block": 24,
+      "source": "全長十五メイルほど",
+      "current": "длиной метров пятнадцать",
+      "problem": "メイル: «метр» в нарративе, «мейл» в прямой речи — решение пользователя 2026-10-07",
+      "reason": "KR: это авторский нарратив, применена форма «метр»; в блоке 25 «二十メイル» → «метров двадцать».",
+      "issue_type": "LEXICAL_MISMATCH",
+      "severity": "CANDIDATE"
+    },
+    {
+      "block": 27,
+      "source": "〝風石〟の暴走",
+      "current": "«камень ветра» вышел из-под контроля",
+      "problem": "Отличие 風石 («камень ветра») от 火石 («огненный камень»)",
+      "reason": "KR: оба термина в главе размежеваны (блоки 1, 11 — огненный камень; блок 27 — камень ветра).",
+      "issue_type": "LEXICAL_MISMATCH",
+      "severity": "CANDIDATE"
+    },
+    {
+      "block": 28,
+      "source": "〝マギ族〟が帰還すべき〝約束の地〟",
+      "current": "«род Магов» … «земля обетованная»",
+      "problem": "Канон マギ族 → «род Магов» (dictionary.md, т.14)",
+      "reason": "KR: «Зеро»/«Zero no Tsukaima» в послесловии оставлены по канону серии; термин «род Магов» взят из словаря.",
+      "issue_type": "LEXICAL_MISMATCH",
+      "severity": "CANDIDATE"
+    },
+    {
+      "block": 30,
+      "source": "発行人 三坂泰二（前ＭＦ文庫Ｊ編集長）",
+      "current": "Издатель: Мисака Тайдзи (бывший главный редактор MF Bunko J)",
+      "problem": "Новое имя в выходных данных; в dictionary.md и завершённых томах формы нет",
+      "reason": "KR: транслитерация по JA 三坂泰二 (Мисака Тайдзи) — WORKING/PROVISIONAL; статус требует пометки в журнале. EN эту строку не передаёт.",
+      "issue_type": "LEXICAL_MISMATCH",
+      "severity": "CANDIDATE"
+    }
+  ]
+}

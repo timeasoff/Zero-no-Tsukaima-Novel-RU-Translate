@@ -1,0 +1,353 @@
+{
+  "analysis_id": "20261119-160000-5678",
+  "chapter": "v19-ch09",
+  "inputs": {
+    "phase1": "analysis/20261119-160000-1234.phase1.json",
+    "a_runs": [
+      "a/20261119-160000-a1b2.json"
+    ],
+    "b_runs": [
+      "b/20261119-160000-c3d4.json"
+    ],
+    "c_runs": [
+      "c/20261119-160000-e5f6.json"
+    ],
+    "precheck": "precheck/omission-precheck.json"
+  },
+  "results": [
+    {
+      "block": 13,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "MEANING_SHIFT",
+      "action": "FIXED",
+      "note": "Б-2 и Фаза 1 (бл.13): 二回りは大きかった → «на два размера крупнее». Было «раза в два больше» (кратное увеличение). Исправлено через fix_block.py --replace-file до анализа; merged обновлён, RECHECK пройден.",
+      "before": "было: раза в два больше",
+      "after": "стало: на два размера крупнее"
+    },
+    {
+      "block": 3,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "RUSSIAN_ERROR",
+      "action": "FIXED",
+      "note": "FINAL READ (RU-only): «Да нет у нас выбора, чтобы соглашаться или нет» — ущербная конструкция. По JA いいも悪いもないだろ。俺たちに選択肢なんかあるもんか исправлено на два вопроса; RECHECK пройден.",
+      "before": "было: — Да нет у нас выбора, чтобы соглашаться или нет.",
+      "after": "стало: — Что тут хорошего, что плохого? Разве у нас есть выбор?"
+    },
+    {
+      "block": 1,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "NUANCE_SHIFT",
+      "action": "PRESERVED",
+      "note": "A-1 (бл.1): つん → «резкий»; интенсификация передана, оттенок инструментален. PRESERVED — JA."
+    },
+    {
+      "block": 2,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "NUANCE_SHIFT",
+      "action": "PRESERVED",
+      "note": "A-2 (бл.2): ぐッ！ぐおッ！ → «гх! гхо!»; стоны и падение налицо. PRESERVED — FUNCTIONAL."
+    },
+    {
+      "block": 16,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "NUANCE_SHIFT",
+      "action": "PRESERVED",
+      "note": "A-3 (бл.16): 嬢ちゃん → «малышка»; грубовато-свойский регистр Дерфлингера сохранён. PRESERVED — CHARACTER VOICE."
+    },
+    {
+      "block": 1,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "COMPONENT_LOSS",
+      "action": "PRESERVED",
+      "note": "Б-1 (бл.1): EN «magic fists» — справка; JA связываетmagic со ставшимися верёвками; пропуска нет. PRESERVED — JA/EN."
+    },
+    {
+      "block": 10,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "LEXICAL_MISMATCH",
+      "action": "PRESERVED",
+      "note": "Б-3 (бл.10): 行使手 → «носитель» (PROVISIONAL, записано в журнал); контекст «сила духов» рядом. PRESERVED — JA."
+    },
+    {
+      "block": 7,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "PRAGMATIC_SHIFT",
+      "action": "PRESERVED",
+      "note": "C-1 (бл.7): скрытая угроза Алия сохранена; модальность не усилена и не ослаблена. PRESERVED — JA."
+    },
+    {
+      "block": 3,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "PRAGMATIC_SHIFT",
+      "action": "PRESERVED",
+      "note": "C-2 (бл.3): оба вопроса Лукшаны остались вопросами. PRESERVED — JA."
+    },
+    {
+      "block": 19,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "PRAGMATIC_SHIFT",
+      "action": "PRESERVED",
+      "note": "C-3 (бл.19): раздражённое «もう知らんぞ» передано естественной фразой. PRESERVED — CHARACTER VOICE."
+    },
+    {
+      "block": 1,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "voice",
+      "action": "PRESERVED",
+      "note": "grammar_scan (voice): «проснулись»: JA 目覚めた — непереходное «проснуться»; EN-пассив «were awakened» — справка, актант не потерян."
+    },
+    {
+      "block": 2,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "agreement",
+      "action": "PRESERVED",
+      "note": "grammar_scan (agreement): «смогли» согласуется с подлежащим «они» (Сайто и Тиффания); сканер принял за подлежащее «заклинание»."
+    },
+    {
+      "block": 3,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "passive-ru",
+      "action": "PRESERVED",
+      "note": "grammar_scan (passive-ru): «был отделан штукатуркой» — пассив с орудийным актантом; JA 塗り壁でできた. Деятель-материал налицо."
+    },
+    {
+      "block": 3,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "voice",
+      "action": "PRESERVED",
+      "note": "grammar_scan (voice): «не нравится» — дативная конструкция с подлежащим «мне»; JA 納得いかない. EN-опора сдвинута («Известные ограничения»)."
+    },
+    {
+      "block": 5,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "passive-ru",
+      "action": "PRESERVED",
+      "note": "grammar_scan (passive-ru): «был поражён» — JA 驚いた, неопределённо-личный пассив корректен; EN-опора сдвинута на соседнюю сцену."
+    },
+    {
+      "block": 7,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "voice",
+      "action": "PRESERVED",
+      "note": "grammar_scan (voice): «раздался голос» — нормативная русская конструкция; JA 声が響いた."
+    },
+    {
+      "block": 9,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "RUSSIAN_ERROR",
+      "action": "PRESERVED",
+      "note": "grammar_scan (RUSSIAN_ERROR): «ему пришлось несладко» — JA 苦労させられた; дативная конструкция передаёт претерпевание. EN-опора сдвинута."
+    },
+    {
+      "block": 10,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "RUSSIAN_ERROR",
+      "action": "PRESERVED",
+      "note": "grammar_scan (RUSSIAN_ERROR): EN «Saito's position was desperate» — справка из соседнего блока;RU даёт «тяжело приходится Сайто» без пассива."
+    },
+    {
+      "block": 15,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "voice",
+      "action": "PRESERVED",
+      "note": "grammar_scan (voice): «вырвавшейся из пасти» — активное причастие к ほとばしる; EN-опора сдвинута на реплику о мече."
+    },
+    {
+      "block": 2,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "RUSSIAN_ERROR",
+      "action": "PRESERVED",
+      "note": "style_scan (REPETITION): «мантию … стащил» ×2: JA ローブを脱がす повторяется для двух эльфов — два разных действия. PRESERVED — JA."
+    },
+    {
+      "block": 2,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "RUSSIAN_ERROR",
+      "action": "PRESERVED",
+      "note": "style_scan (REPETITION): «стащил» ×2: то же, два последовательных действия Сайто. PRESERVED — JA."
+    },
+    {
+      "block": 4,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "RUSSIAN_ERROR",
+      "action": "PRESERVED",
+      "note": "style_scan (REPETITION): «стояли» ×2: Лукшана и двое рядом, затем другие эльфы — разные субъекты. PRESERVED — FUNCTIONAL."
+    },
+    {
+      "block": 5,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "RUSSIAN_ERROR",
+      "action": "PRESERVED",
+      "note": "style_scan (ROOT_REPETITION): «проезжую … проезжей»: одно слово в разных падежах, JA 車道 … 車道. PRESERVED — JA."
+    },
+    {
+      "block": 5,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "RUSSIAN_ERROR",
+      "action": "PRESERVED",
+      "note": "style_scan (ROOT_REPETITION): «часть … части»: разные синтаксические роли в описании улицы. PRESERVED — FUNCTIONAL."
+    },
+    {
+      "block": 8,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "RUSSIAN_ERROR",
+      "action": "PRESERVED",
+      "note": "style_scan (ROOT_REPETITION): «возлюбленной … возлюбленный»: каламбур JA 恋人 … 恋人じゃない — GCCORE смысл реплики. PRESERVED — FUNCTIONAL."
+    },
+    {
+      "block": 9,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "RUSSIAN_ERROR",
+      "action": "PRESERVED",
+      "note": "style_scan (REPETITION): «скорость» ×2: JA スピード практическиPEED двух combatants — противопоставление. PRESERVED — JA."
+    },
+    {
+      "block": 9,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "RUSSIAN_ERROR",
+      "action": "PRESERVED",
+      "note": "style_scan (ROOT_REPETITION): «плечо … плеча»: ранение и кровь — JA 肩 … 肩. PRESERVED — JA."
+    },
+    {
+      "block": 10,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "RUSSIAN_ERROR",
+      "action": "PRESERVED",
+      "note": "style_scan (ROOT_REPETITION): «воинами … воинов»: JA 戦士 … 戦士, сравнение с пятью воинами и их бестелесностью. PRESERVED — JA."
+    },
+    {
+      "block": 10,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "RUSSIAN_ERROR",
+      "action": "PRESERVED",
+      "note": "style_scan (REPETITION): «подойти» ×2: JA 近づかないと … 近づいても — сомнение Тиффании. PRESERVED — JA."
+    },
+    {
+      "block": 11,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "RUSSIAN_ERROR",
+      "action": "PRESERVED",
+      "note": "style_scan (REPETITION): «раздался» ×2: JA 声が聞こえた … 声は響いた — повтор голоса. PRESERVED — JA."
+    },
+    {
+      "block": 12,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "RUSSIAN_ERROR",
+      "action": "PRESERVED",
+      "note": "style_scan (REPETITION): «задрала» ×2: JA たくしあげ … たくしあげ — намеренный повтор. PRESERVED — JA."
+    },
+    {
+      "block": 13,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "RUSSIAN_ERROR",
+      "action": "PRESERVED",
+      "note": "style_scan (REPETITION): «клинки» ×2: JA 曲刀たち … 曲刀 — та же сцена. PRESERVED — JA."
+    },
+    {
+      "block": 13,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "RUSSIAN_ERROR",
+      "action": "PRESERVED",
+      "note": "style_scan (ROOT_REPETITION): «драконах … драконы»: JA 火竜や風竜 … ドラコ classify — перечисление видов. PRESERVED — JA."
+    },
+    {
+      "block": 18,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "RUSSIAN_ERROR",
+      "action": "PRESERVED",
+      "note": "style_scan (REPETITION): «дракон» ×2: JA 水竜 … 水竜 в одной сцене поражения. PRESERVED — JA."
+    },
+    {
+      "block": 5,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "RUSSIAN_ERROR",
+      "action": "PRESERVED",
+      "note": "style_scan (MONOTONY): «огромн…»: эпитет применён к разным объектам (пространство, цилиндр, витрины, грудь, дракон); 3 вхождения заменены на «громадный/гигантский» до анализа. Остаток — разные референты, JA повторяет 巨大 в этой же сцене; PRESERVED — JA."
+    },
+    {
+      "block": 10,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "RUSSIAN_ERROR",
+      "action": "PRESERVED",
+      "note": "style_scan (REPETITION): «заклинание» ×4: JA 呪文 повторяется в микросцене наложения «Сна». PRESERVED — JA."
+    },
+    {
+      "block": 15,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "RUSSIAN_ERROR",
+      "action": "PRESERVED",
+      "note": "style_scan (REPETITION): «голос» ×4: JA 声 … 声 — узнавание Дерфлингера. PRESERVED — JA."
+    },
+    {
+      "block": 19,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "RUSSIAN_ERROR",
+      "action": "PRESERVED",
+      "note": "style_scan (REPETITION): «лодку» ×4: JA 小舟 — центральный предмет сцены. PRESERVED — JA."
+    },
+    {
+      "block": 17,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "RUSSIAN_ERROR",
+      "action": "PRESERVED",
+      "note": "style_scan (REPETITION): «разряд» ×4: JA 電撃 — нарастание electricity во время удара. PRESERVED — JA."
+    },
+    {
+      "block": 9,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "FORMAT",
+      "action": "PRESERVED",
+      "note": "format_scan thoughtinline, строка 275: мысль/голос уже вынесен отдельным абзацем и оформлен _…_ по PR-MIND; межабзацевая эвристика сканера противоречит каноническому правилу. Курсив чётный (16 подчёркиваний)."
+    },
+    {
+      "block": 11,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "FORMAT",
+      "action": "PRESERVED",
+      "note": "format_scan thoughtinline, строка 343: мысль/голос уже вынесен отдельным абзацем и оформлен _…_ по PR-MIND; межабзацевая эвристика сканера противоречит каноническому правилу. Курсив чётный (16 подчёркиваний)."
+    },
+    {
+      "block": 11,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "FORMAT",
+      "action": "PRESERVED",
+      "note": "format_scan thoughtinline, строка 353: мысль/голос уже вынесен отдельным абзацем и оформлен _…_ по PR-MIND; межабзацевая эвристика сканера противоречит каноническому правилу. Курсив чётный (16 подчёркиваний)."
+    },
+    {
+      "block": 11,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "FORMAT",
+      "action": "PRESERVED",
+      "note": "format_scan thoughtinline, строка 359: мысль/голос уже вынесен отдельным абзацем и оформлен _…_ по PR-MIND; межабзацевая эвристика сканера противоречит каноническому правилу. Курсив чётный (16 подчёркиваний)."
+    },
+    {
+      "block": 11,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "FORMAT",
+      "action": "PRESERVED",
+      "note": "format_scan thoughtinline, строка 363: мысль/голос уже вынесен отдельным абзацем и оформлен _…_ по PR-MIND; межабзацевая эвристика сканера противоречит каноническому правилу. Курсив чётный (16 подчёркиваний)."
+    },
+    {
+      "block": 12,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "FORMAT",
+      "action": "PRESERVED",
+      "note": "format_scan thoughtinline, строка 370: мысль/голос уже вынесен отдельным абзацем и оформлен _…_ по PR-MIND; межабзацевая эвристика сканера противоречит каноническому правилу. Курсив чётный (16 подчёркиваний)."
+    },
+    {
+      "block": 12,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "FORMAT",
+      "action": "PRESERVED",
+      "note": "format_scan thoughtinline, строка 376: мысль/голос уже вынесен отдельным абзацем и оформлен _…_ по PR-MIND; межабзацевая эвристика сканера противоречит каноническому правилу. Курсив чётный (16 подчёркиваний)."
+    },
+    {
+      "block": 12,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "FORMAT",
+      "action": "PRESERVED",
+      "note": "format_scan thoughtinline, строка 384: мысль/голос уже вынесен отдельным абзацем и оформлен _…_ по PR-MIND; межабзацевая эвристика сканера противоречит каноническому правилу. Курсив чётный (16 подчёркиваний)."
+    }
+  ],
+  "coverage": "Analysis покрывает все 19 блоков финального текста v19-ch09 (после правок блоков 3 и 13, включая находки FINAL READ). Pre-check: 0 CANDIDATE. Все 48 кандидатов получили status + fidelity + action: 2 CONFIRMED_ERROR/FIXED (блоки 3, 13; правки применены до анализа, RECHECK пройден), 46 FALSE_POSITIVE/PRESERVED. Статусов WIP и непокрытых блоков нет; analysis создан после последней правки текста и закрывает главу."
+}

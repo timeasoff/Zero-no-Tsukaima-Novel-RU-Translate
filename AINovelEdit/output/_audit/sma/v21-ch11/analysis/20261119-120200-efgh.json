@@ -1,0 +1,494 @@
+{
+  "analysis_id": "20261119-120200-efgh",
+  "chapter": "v21-ch11",
+  "inputs": {
+    "phase1": "analysis/20261119-120100-abcd.phase1.json",
+    "a_runs": [
+      "a/20261119-120000-a1b2.json"
+    ],
+    "b_runs": [
+      "b/20261119-120000-b2c3.json"
+    ],
+    "c_runs": [
+      "c/20261119-120000-c3d4.json"
+    ],
+    "precheck": "precheck/omission-precheck.json"
+  },
+  "coverage": "Phase 2 покрывает все 26 блоков финального текста (после FINAL READ и всех правок). Источник-solving: JA → RU, EN — только справка. Каждый кандидат A/B/C, pre-check и всех пяти предфильтров получил status + fidelity + action.",
+  "results": [
+    {
+      "block": 25,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "MISSING_TRANSLATION",
+      "action": "FIXED",
+      "issue_type": "MISSING_TRANSLATION",
+      "omission_scope": "DIALOGUE_FRAGMENT",
+      "omission_kind": "PARTIAL",
+      "ja_span": "ルイズが快哉の声をあげた。 「やったな、テファ……」",
+      "ru_before": "Для эльфов страх исчезнуть из этого мира без следа оказался куда ужаснее просто смерти.",
+      "missing_content": "Атрибуция речи Луизы и реплика Сайто «やったな、テファ……» — два звена хвоста JA-блока 25.",
+      "not_compression_reason": "Реплики физически отсутствовали в блоке 25 и были отнесены к блоку 26; это сдвиг границы, а не слияние абзацев внутри блока.",
+      "before": "блок 25 заканчивался фразой про страх эльфов; блок 26 начинался с реплик Луизы и Сайто",
+      "after": "реплики возвращены в блок 25 по JA; границы 25/26 восстановлены",
+      "note": "Обнаружено детерминированным pre-check (S1) и подтверждено Phase 1 + B. После правки omission_precheck — 0 кандидатов, merged пересобран, все предфильтры перезапущены."
+    },
+    {
+      "block": 4,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "RUSSIAN_ERROR",
+      "action": "FIXED",
+      "before": "на снисходящего ветряного дракона",
+      "after": "на снижавшегося ветряного дракона",
+      "note": "JA 舞い降りてきた = снижавшийся; «снисходящий» — неверное слово (от «снисходить»). FINAL READ + Phase 1."
+    },
+    {
+      "block": 17,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "MEANING_SHIFT",
+      "action": "FIXED",
+      "before": "— Отличный день, напарник.",
+      "after": "— Ты в ударе, напарник.",
+      "note": "JA 絶好調だね = «ты в отличной форме»; черновик подменил состояние днём. Источник: A + Phase 1."
+    },
+    {
+      "block": 15,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "RUSSIAN_ERROR",
+      "action": "FIXED",
+      "before": "словно божественная богиня",
+      "after": "словно богиня",
+      "note": "Тавтология устранена без потери сравнения JA 神々しい女神のようだった. Источник: A + Phase 1 + style_scan."
+    },
+    {
+      "block": 18,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "MEANING_SHIFT",
+      "action": "FIXED",
+      "before": "— Проклятый… я, я — и вдруг от какого-то варвара!",
+      "after": "— Проклятый… я, я — и проиграть какому-то варвару?!",
+      "note": "JA この私が、蛮人ごときに！ требует глагола «проиграть»; черновик оставлял реплику оборванной. Источник: Phase 1."
+    },
+    {
+      "block": 20,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "LEXICAL_MISMATCH",
+      "action": "FIXED",
+      "before": "Это дьявольское искусство в одно мгновение уничтожило огненные камни",
+      "after": "Это деяние демона мгновенно уничтожило огненные камни",
+      "note": "JA 悪魔の業; канон v20-ch09 — «деяние демона». Источник: Phase 1 + итоговая терминологическая сверка."
+    },
+    {
+      "block": 3,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "RUSSIAN_ERROR",
+      "action": "FIXED",
+      "before": "прорвалось наружу, словно плотина",
+      "after": "хлынуло наружу, будто прорвало плотину",
+      "note": "Метафора 堰を切ったように сохранена; устранена корневой повтор style_scan после первой правки. Источник: A + Phase 1 + style_scan."
+    },
+    {
+      "block": 6,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "FORMAT",
+      "action": "FIXED",
+      "before": "— Фуке, что здесь происходит? Где Сайто и Тиффания? — Луиза подступила к нему вплотную.",
+      "after": "— Фуке, что здесь происходит? Где Сайто и Тиффания?\n\nЛуиза подступила к нему вплотную.",
+      "note": "check_records: JA оформляет ルイズはフーケに詰め寄った отдельным предложением. Источник: Phase 1 (FORMAT) + check_records."
+    },
+    {
+      "block": 22,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "FORMAT",
+      "action": "FIXED",
+      "before": "— Тиффания, что с тобой? — Луиза, заметив её странное поведение, окликнула её.",
+      "after": "— Тиффания, что с тобой?\n\nЛуиза, заметив её странное поведение, окликнула её.",
+      "note": "check_records: JA と、様子がおかしいことに気づいたルイズが、声をかけてくる — отдельное предложение. Источник: Phase 1 (FORMAT) + check_records."
+    },
+    {
+      "block": 0,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "RUSSIAN_ERROR",
+      "action": "FIXED",
+      "before": "RU-only проход: 27 неестественных формулировок в блоках 1–26",
+      "after": "исправлены по-русски без изменения смысла JA; RECHECK после каждой группы правок",
+      "note": "FINAL READ: бл.1 «напевать заклинания» → «читать», «силачей» → «воинов»; бл.2 уточнена сравнительная конструкция; бл.3 «Не выдумывайте» → «Не выдумывай» (регистр); бл.4 «против воли госпожи» убрано; бл.5 атрибуция без тире; бл.7 «её след пропал» → «она исчезла»; бл.8 «напевала» → «наложила», «разрезанная по спине» → «клинок полоснул»; бл.9 «…когда» → «…как вдруг», «в голове» → «в сознании»; бл.10 «Какими-то чарами» → «Наверное, какая-то магия»; бл.16 «вытолкнула» → «отпихнула»; бл.17 убрано добавление «но он летел»; бл.18 перестановка «до краёв наполнил»; бл.20 «крики, похожие на вопли» → «больше похожие на визг», «прибавишь звеньев» → «добавишь ещё одно звено»; бл.22 «почти забылась» → «заслушалась»; бл.24 «вознося их на напев» → «под мелодию»; бл.25 «вспыхнула вспышка» → «брызнул свет»; бл.26 финальная фраза перестроена. Источник: FINAL READ + Phase 1."
+    },
+    {
+      "block": 1,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "LEXICAL_MISMATCH",
+      "action": "FIXED",
+      "before": "RU-сырьё: «Исмаил», «Люксиана», «Арий», «Тифания»",
+      "after": "«Эсмаил», «Лукшана», «Алий», «Тиффания»",
+      "note": "Канон завершённых томов и прямое указание координатора (эти имена не редактировались в чужих главах). Применено во всех блоках при переводе, подтверждено term_consistency: «Исмаил» — 0 вхождений."
+    },
+    {
+      "block": 23,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "LEXICAL_MISMATCH",
+      "action": "FIXED",
+      "before": "RU-сырьё: «Ливтрасир», «Эвмен»",
+      "after": "«Лифсрасил», «Эвменес»",
+      "note": "«Лифсрасил» — прямое указание координатора; «Эвменес» — канон v21-ch01. Разнесено по всем вхождениям при переводе."
+    },
+    {
+      "block": 8,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "RUSSIAN_ERROR",
+      "action": "FIXED",
+      "before": "Разрезанная по спине, Лукшана выгнулась дугой",
+      "after": "Клинок полоснул её по спине — и Лукшана выгнулась дугой",
+      "note": "RGC-1: подлежащее в JA претерпевает действие (背中を斬りつけられ); активная конструкция с агентом-клинком устраняет возвратно-страдательный оборот."
+    },
+    {
+      "block": 1,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "NUANCE_SHIFT",
+      "action": "PRESERVED",
+      "note": "A: 後ろ髪を引かれる思い → «всё оглядывалась назад». Оттенок неохоты передан без добавления наречия."
+    },
+    {
+      "block": 3,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "NUANCE_SHIFT",
+      "action": "PRESERVED",
+      "note": "A: образ прорванной плотины сохранён после правки; «красивее» не основание для новой правки."
+    },
+    {
+      "block": 9,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "PRAGMATIC_SHIFT",
+      "action": "PRESERVED",
+      "note": "C/Фаза 1: телепатия Фатимы курсивом отдельными абзацами по PR-MIND; источник голоса не раскрыт раньше JA."
+    },
+    {
+      "block": 10,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "PRAGMATIC_SHIFT",
+      "action": "PRESERVED",
+      "note": "C: …可哀想な人ね → «Бедный вы человек». Частица ね передана интонацией, без насмешки."
+    },
+    {
+      "block": 11,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "PRAGMATIC_SHIFT",
+      "action": "PRESERVED",
+      "note": "C: угроза «Теперь левое ухо» не смягчена и не усилена."
+    },
+    {
+      "block": 12,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "FORMAT",
+      "action": "PRESERVED",
+      "note": "B: обрыв «но» на стыке блоков 12/13 сохранён по JA (即座に発砲するが、); граница блока не перенесена."
+    },
+    {
+      "block": 14,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "LEXICAL_MISMATCH",
+      "action": "PRESERVED",
+      "note": "B: «Тигриный тракт», «Тигр», «Ёрмунганд» — канон завершённых томов, не повтор корня."
+    },
+    {
+      "block": 15,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "PRAGMATIC_SHIFT",
+      "action": "PRESERVED",
+      "note": "C: «твоя госпожа пришла» — Луиза говорит о себе в третьем лице; род согласован с подлежащим."
+    },
+    {
+      "block": 19,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "PRAGMATIC_SHIFT",
+      "action": "PRESERVED",
+      "note": "C: «Не попадусь я в руки варвару» — вызов и модальность かからんぞ сохранены."
+    },
+    {
+      "block": 20,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "PRAGMATIC_SHIFT",
+      "action": "PRESERVED",
+      "note": "C: «товарищ Эсмаил», «Что вы делаете?!» — почтительный тон подчинённых и паника переданы."
+    },
+    {
+      "block": 21,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "PRAGMATIC_SHIFT",
+      "action": "PRESERVED",
+      "note": "C: «Девочка» (嬢ちゃん) — фамильярно-снисходительное обращение Дерфлингера сохранено."
+    },
+    {
+      "block": 22,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "NUANCE_SHIFT",
+      "action": "PRESERVED",
+      "note": "A: «до боли знакомое» — функциональная передача 懐かしい; JA прямо боли не называет, но образ сохранён."
+    },
+    {
+      "block": 25,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "NUANCE_SHIFT",
+      "action": "PRESERVED",
+      "note": "A: образ пятен света и исчезновения камней передан без конкретизации сверх JA."
+    },
+    {
+      "block": 26,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "NUANCE_SHIFT",
+      "action": "PRESERVED",
+      "note": "A: «жгучий, словно огонь» сохраняет 燃えるような灼熱; модальность не усилена."
+    },
+    {
+      "block": 5,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MODALITY_SHIFT",
+      "action": "PRESERVED",
+      "note": "B: «могли переметнуться» сохраняет гипотетичность JA; уверенная форма не введена."
+    },
+    {
+      "block": 8,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "ACTANT_SHIFT",
+      "action": "PRESERVED",
+      "note": "B: «Он выхватил у Алия силу» — субъект Эсмаил, объект Алий; направление действия проверено обратным переводом."
+    },
+    {
+      "block": 26,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "LEXICAL_MISMATCH",
+      "action": "PRESERVED",
+      "note": "B: «Лифсрасил» по прямому указанию; причинная связь «руны → боль → утрата существования» сохранена."
+    },
+    {
+      "block": 7,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "PRAGMATIC_SHIFT",
+      "action": "PRESERVED",
+      "note": "C: кредо Эсмаила — анафора без смягчения; мысль «Он безумен…» курсивом по PR-MIND."
+    },
+    {
+      "block": 8,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "NUANCE_SHIFT",
+      "action": "PRESERVED",
+      "note": "A: «выгнулась дугой» сохраняет 大きくのけぞった после правки залога."
+    },
+    {
+      "block": 20,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "ACTANT_SHIFT",
+      "action": "PRESERVED",
+      "note": "B: «та Шеффилд из Мьёдвитнира» — связь по JA の, не отождествление с рунным именем."
+    },
+    {
+      "block": 8,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "RUSSIAN_ERROR",
+      "action": "PRESERVED",
+      "note": "grammar_scan #1: EN-опора сдвинута (20 маркеров против 26 JA); возвратный глагол «развернулись» здесь означает поворот клинков, не пассив."
+    },
+    {
+      "block": 9,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "RUSSIAN_ERROR",
+      "action": "PRESERVED",
+      "note": "grammar_scan #2: «не могли двигаться» — JA 動けない, подлежащее само не способно двигаться; EN-опора из соседнего JA-блока."
+    },
+    {
+      "block": 13,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "ACTANT_SHIFT",
+      "action": "PRESERVED",
+      "note": "grammar_scan #3: «колонна изогнулась» — JA 石柱がねじ曲がり, подлежащее претерпевает изменение формы; «X's Y was» из EN-reference неприменим."
+    },
+    {
+      "block": 14,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "RUSSIAN_ERROR",
+      "action": "PRESERVED",
+      "note": "grammar_scan #4: «врезался в пол» — JA 叩きつけられ, но русское возвратное здесь передаёт резкое движение Сайто, не пассив; смысл сохранён."
+    },
+    {
+      "block": 15,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "RUSSIAN_ERROR",
+      "action": "PRESERVED",
+      "note": "grammar_scan #5: «он был ошеломлён» — JA 呆然として, состояние, а не пассив с упущенным агентом."
+    },
+    {
+      "block": 15,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "RUSSIAN_ERROR",
+      "action": "PRESERVED",
+      "note": "grammar_scan #6: «развевающийся плащ» — JA たなびくマント, возвратное причастие передаёт состояние, не залог."
+    },
+    {
+      "block": 17,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "ACTANT_SHIFT",
+      "action": "PRESERVED",
+      "note": "grammar_scan #7: «Ну, сдавайся» — JA 観念しなさい, прямое обращение; EN «Saito's body was thrown» относится к соседнему блоку."
+    },
+    {
+      "block": 18,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "RUSSIAN_ERROR",
+      "action": "PRESERVED",
+      "note": "grammar_scan #8: «было наложено» — JA かかった, агент не назван и в JA; пассив уместен."
+    },
+    {
+      "block": 18,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "RUSSIAN_ERROR",
+      "action": "PRESERVED",
+      "note": "grammar_scan #9: «Пустота завершилась» — JA 虚無が完成する, процесс завершения, не страдательный залог."
+    },
+    {
+      "block": 20,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "ACTANT_SHIFT",
+      "action": "PRESERVED",
+      "note": "grammar_scan #10: «разразился смехом» — JA 哄笑をあげた; EN-опора «had been scarred» сдвинута на соседнюю сцену."
+    },
+    {
+      "block": 22,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "RUSSIAN_ERROR",
+      "action": "PRESERVED",
+      "note": "grammar_scan #11: «взорвётся» — JA 爆発寸前, предстоящее действие камня; пассивная EN-форма из соседнего блока."
+    },
+    {
+      "block": 23,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "ACTANT_SHIFT",
+      "action": "PRESERVED",
+      "note": "grammar_scan #12: «Рубин отозвался» — JA 共鳴し, подлежащее — само кольцо; смысловой сдвига нет."
+    },
+    {
+      "block": 25,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "RUSSIAN_ERROR",
+      "action": "PRESERVED",
+      "note": "grammar_scan #13: «Заклинание завершилось» — JA 呪文が完成した; возвратный глагол обозначает завершение процесса, а не пассив."
+    },
+    {
+      "block": 7,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "FORMAT",
+      "action": "PRESERVED",
+      "note": "style_scan: «убивать» ×4 и «демонов» ×2 в абз.99 — ритуальная анафора JA (悪魔は殺す…); удаление повтора исказит клятву."
+    },
+    {
+      "block": 10,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "FORMAT",
+      "action": "PRESERVED",
+      "note": "style_scan: «подбрасывали» ×2 в абз.145 — передача непрерывности くべ続けている; функциональный повтор."
+    },
+    {
+      "block": 14,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "FORMAT",
+      "action": "PRESERVED",
+      "note": "style_scan: «тигрином … тигр» — два канонических имени («Тигриный тракт», «Тигр»), не однокоренной повтор."
+    },
+    {
+      "block": 17,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "FORMAT",
+      "action": "PRESERVED",
+      "note": "style_scan: «рубил» ×3 и «огромной … огромные» в абз.256 — JA 斬って斬って、斬りまくる; ритмический повтор боя."
+    },
+    {
+      "block": 21,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "FORMAT",
+      "action": "PRESERVED",
+      "note": "style_scan: «камень» в абз.297 и «камни» ×4 в близких абзацах — один и тот же предмет сцены «огненные камни»."
+    },
+    {
+      "block": 21,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "FORMAT",
+      "action": "PRESERVED",
+      "note": "style_scan: «дзы-дзы» — звукоподражание вибрации камня (ビチチチチチ), функционально."
+    },
+    {
+      "block": 23,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "FORMAT",
+      "action": "PRESERVED",
+      "note": "style_scan: «шкатулка» ×2 — название артефакта и его описание,разные функции."
+    },
+    {
+      "block": 18,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "FORMAT",
+      "action": "PRESERVED",
+      "note": "style_scan: «заклинание» ×2 в абз.368 — разные объекты (руны Пустоты и сравнение со «Взрывом»)."
+    },
+    {
+      "block": 25,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "FORMAT",
+      "action": "PRESERVED",
+      "note": "style_scan: «которых … которую» — разные синтаксические роли в одном абзаце; ошибочный ложное совпадение корня."
+    },
+    {
+      "block": 9,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "FORMAT",
+      "action": "PRESERVED",
+      "note": "style_scan: «голос» ×4 в близких абзацах — телепатический голос Фатимы как мотив сцены; намеренный повтор."
+    },
+    {
+      "block": 1,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "FORMAT",
+      "action": "PRESERVED",
+      "note": "style_scan: «камень» ×4 в близких абзацах блока 25/20 — сквозной мотив «огненного камня»."
+    },
+    {
+      "block": 7,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "FORMAT",
+      "action": "PRESERVED",
+      "note": "format_scan #1–#13 (thoughtinline): все 13 мыслей/инкантаций оформлены курсивом отдельными абзацами по PR-MIND; межабзацевый эвристический сигнал, нарушения нет."
+    },
+    {
+      "block": 15,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "FORMAT",
+      "action": "PRESERVED",
+      "note": "format_scan #14 (gender_vocative): «Сайто, твоя госпожа пришла» — глагол согласован с подлежащим «госпожа» (Луиза о себе), не с обращением «Сайто»."
+    },
+    {
+      "block": 7,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "FORMAT",
+      "action": "PRESERVED",
+      "note": "format_scan: blockgap 25 кандидатов устранены нормализацией fix_block.py --replace-file [] до анализа; в финальном отчёте 0."
+    },
+    {
+      "block": 6,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "FORMAT",
+      "action": "PRESERVED",
+      "note": "address_scan: «госпожа пришла» — не обращение из воздуха; JA ご主人様, Луиза называет себя «госпожой» Сайто. Сигнал ложный."
+    },
+    {
+      "block": 0,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "FORMAT",
+      "action": "PRESERVED",
+      "note": "check_alignment: строгих 0, прочих 57, инфо 25 — ожидаемый сдвиг якорей (EN 20 маркеров против 26 JA); проверка смысла велась по JA-блокам."
+    },
+    {
+      "block": 0,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "FORMAT",
+      "action": "PRESERVED",
+      "note": "term_consistency: «Исмаил» — 0 вхождений, «Эсмаил» — во всех репликах; конкуренции форм в близких блоках нет."
+    }
+  ]
+}

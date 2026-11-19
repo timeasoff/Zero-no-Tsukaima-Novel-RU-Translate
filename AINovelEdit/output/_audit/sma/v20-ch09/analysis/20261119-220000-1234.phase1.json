@@ -1,0 +1,91 @@
+{
+  "analysis_id": "20261119-220000-1234.phase1",
+  "chapter": "v20-ch09",
+  "phase": 1,
+  "scope": "blind",
+  "inputs": {
+    "sources": [
+      "translates/ja/v20-ch09.md",
+      "output/chapters/v20-ch09.md",
+      "translates/en/v20-ch09.md",
+      "translates/_report/merged/v20-ch09.md"
+    ],
+    "note": "JA — авторитетный источник истины; RU — проверяемый перевод; EN — только справка (JA > EN). Находки A/B/C, evidence pre-check и прежние analysis-файлы в слепую фазу не передавались."
+  },
+  "findings": [],
+  "coverage": "Слепой проход просмотрел все 12 блоков JA/EN/RU и зеркало merged; наблюдения зафиксированы по блокам 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12. Вердиктов Фаза 1 не выносит — решение принимается только в Фазе 2 после сверки с A/B/C и pre-check.",
+  "results": [
+    {
+      "block": 1,
+      "finding": "OTHER",
+      "confidence": "MEDIUM",
+      "note": "Название корабля メスディエ: сверить RU-форму с JA-катаканой; EN даёт иную форму."
+    },
+    {
+      "block": 2,
+      "finding": "FORMAT",
+      "confidence": "MEDIUM",
+      "note": "Проверить атрибуцию реплик адъютанта и оформление обращения «Учитель»."
+    },
+    {
+      "block": 3,
+      "finding": "NUANCE_SHIFT",
+      "confidence": "MEDIUM",
+      "note": "Сверить оттенок 神妙な顔 и японский гоноратив в полном имени Луизы."
+    },
+    {
+      "block": 4,
+      "finding": "PRAGMATIC_SHIFT",
+      "confidence": "LOW",
+      "note": "Проверить гиперболическую реплику Маликорна и ответ Кирхе: сохранена ли комедийная сила."
+    },
+    {
+      "block": 5,
+      "finding": "FORMAT",
+      "confidence": "LOW",
+      "note": "Проверить, что реплики Сильфиды и Табиты не слиты с наррацией."
+    },
+    {
+      "block": 6,
+      "finding": "MEANING_SHIFT",
+      "confidence": "MEDIUM",
+      "note": "Сверить «Сайто-сан» (Японское происхождение Сиесты) и описание ауры уверенности."
+    },
+    {
+      "block": 7,
+      "finding": "PRAGMATIC_SHIFT",
+      "confidence": "MEDIUM",
+      "note": "Сверить риторическое пренебрежение Амрана и термин «Партия стальной крови и единства»."
+    },
+    {
+      "block": 8,
+      "finding": "MISSING",
+      "confidence": "HIGH",
+      "note": "EN-блок 8 содержит полностью иную сцену; проверить полноту JA-сцены (Эох…, «Святая земля», взрыв) в RU по JA, а не по EN."
+    },
+    {
+      "block": 9,
+      "finding": "FORMAT",
+      "confidence": "MEDIUM",
+      "note": "Проверить курсив внутреннего голоса «Я... иду к «Святой земле»» и рунические строки."
+    },
+    {
+      "block": 10,
+      "finding": "FORMAT",
+      "confidence": "MEDIUM",
+      "note": "Проверить отдельные абзацы мыслей Амрана и знак при вопросе «Что это...»."
+    },
+    {
+      "block": 11,
+      "finding": "OTHER",
+      "confidence": "MEDIUM",
+      "note": "Сверить «камни ветра», «духовная сила», «Великая Цель» и форму «деяние демона»."
+    },
+    {
+      "block": 12,
+      "finding": "MEANING_SHIFT",
+      "confidence": "HIGH",
+      "note": "Проверить модальность надежды なんとかなるんじゃないだろうか？ — вопрос, не утверждение."
+    }
+  ]
+}

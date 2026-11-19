@@ -1,0 +1,6 @@
+{
+  "check_type": "omission-precheck",
+  "chapter": "v20-ch09.md",
+  "findings": [],
+  "coverage": "Common Omission Pre-check просмотрел все 12 смысловых блоков JA ↔ ED_RU финального текста: обрывов хвоста, пустых RU-блоков и числовых якорей без соответствия не обнаружено; все 12 блоков ED_RU заполнены. CANDIDATE = 0."
+}

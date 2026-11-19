@@ -1,0 +1,61 @@
+{
+ "analysis_id": "20261119-013212-1b2f-c3d4",
+ "chapter": "v19-ch01",
+ "inputs": {
+  "phase1": "analysis/20261119-013212-1b2f.phase1.json",
+  "a_runs": [
+   "a/20261119-012730-14a1.json"
+  ],
+  "b_runs": [
+   "b/20261119-012730-737c.json"
+  ],
+  "c_runs": [
+   "c/20261119-012730-6f9a.json"
+  ],
+  "precheck": "precheck/omission-precheck.json"
+ },
+ "results": [
+  {
+   "block": 4,
+   "status": "CONFIRMED_ERROR",
+   "fidelity": "MISSING",
+   "action": "REPORT_ONLY",
+   "note": "восстановлены две реплики в конце бл.4."
+  },
+  {
+   "block": 4,
+   "status": "CONFIRMED_ERROR",
+   "fidelity": "MEANING_SHIFT",
+   "action": "REPORT_ONLY",
+   "note": "泣く子も黙る→«умолкает даже плачущий ребёнок»."
+  },
+  {
+   "block": 5,
+   "status": "CONFIRMED_ERROR",
+   "fidelity": "MEANING_SHIFT",
+   "action": "REPORT_ONLY",
+   "note": "発情→«в течке», жестикуляция — Сиеста, 竜→дракон."
+  },
+  {
+   "block": 1,
+   "status": "CONFIRMED_ERROR",
+   "fidelity": "MEANING_SHIFT",
+   "action": "REPORT_ONLY",
+   "note": "節操なし→«бессовестный»."
+  },
+  {
+   "block": 9,
+   "status": "CONFIRMED_ERROR",
+   "fidelity": "MEANING_SHIFT",
+   "action": "REPORT_ONLY",
+   "note": "かもしれない→«может быть, и взрослее»."
+  },
+  {
+   "block": 2,
+   "status": "FALSE_POSITIVE",
+   "fidelity": "COMPONENT_LOSS",
+   "action": "PRESERVED",
+   "note": "«Хи-хи» по くすくす; прочие LOW — нюансы."
+  }
+ ]
+}

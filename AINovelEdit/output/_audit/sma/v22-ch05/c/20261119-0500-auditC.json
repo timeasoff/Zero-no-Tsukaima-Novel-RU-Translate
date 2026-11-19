@@ -1,0 +1,38 @@
+{
+  "schema": "sma-audit-evidence/v1",
+  "kind": "c",
+  "run_id": "20261119-0500-auditC",
+  "chapter": "v22-ch05.md",
+  "auditor": "pragmatic-audit",
+  "scope": "прагматика: речевой акт, сила реплики, подтекст, модальность, вежливость",
+  "inputs": {"ja": "translates/ja/v22-ch05.md", "ru": "output/chapters/v22-ch05.md", "en": "translates/en/v22-ch05.md (reference only)", "merged": "translates/_report/merged/v22-ch05.md"},
+  "findings": [
+    {
+      "id": "C-01",
+      "block": 16,
+      "issue_type": "PRAGMATIC_SHIFT",
+      "severity": "CANDIDATE",
+      "confidence": "LOW",
+      "evidence": "JA 「説得は無駄みたいだな、〝兄弟〟」 — RU «Похоже, уговаривать бесполезно, „брат“». Обращение «брат» — намеренная ирония Джулио.",
+      "reason": "Проверить, сохранена ли прагматическая сила иронического «братства» перед поединком."
+    },
+    {
+      "id": "C-02",
+      "block": 10,
+      "issue_type": "PRAGMATIC_SHIFT",
+      "severity": "CANDIDATE",
+      "confidence": "LOW",
+      "evidence": "JA 「トリステインの平民風情が、なにをしにきた！」 — RU «Что здесь делает тристейнский плебей?!».",
+      "reason": "Проверить, сохранено ли презрительное отношение без усиления модальности."
+    },
+    {
+      "id": "C-03",
+      "block": 14,
+      "issue_type": "PRAGMATIC_SHIFT",
+      "severity": "CANDIDATE",
+      "confidence": "LOW",
+      "evidence": "JA 「まあまあ、待ちたまえ、少しは彼の話を聞こうじゃないか」 — RU «Ну-ну, постойте. Дайте ему хоть немного рассказать».",
+      "reason": "Проверить смягчающую функцию реплики Джулио, останавливающей рыцарей."
+    }
+  ]
+}

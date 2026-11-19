@@ -1,0 +1,166 @@
+{
+  "schema": "sma-analysis-phase2/v1",
+  "run_id": "20261119-0600-phase2",
+  "chapter": "v22-ch04.md",
+  "phase": 2,
+  "mode": "EVIDENCE_REVIEW",
+  "inputs": {
+    "phase1": "output/_audit/sma/v22-ch04/analysis/20261119-0500-phase1.phase1.json",
+    "precheck": "output/_audit/sma/v22-ch04/precheck/omission-precheck.json",
+    "sources": {
+      "a": ["output/_audit/sma/v22-ch04/a/20261119-0500-auditA.json"],
+      "b": ["output/_audit/sma/v22-ch04/b/20261119-0500-auditB.json"],
+      "c": ["output/_audit/sma/v22-ch04/c/20261119-0500-auditC.json"]
+    }
+  },
+  "coverage_attestation": {
+    "applies_to_final_text": true,
+    "blocks_covered": 12,
+    "total_blocks": 12,
+    "phase1_covered_all_blocks": true,
+    "note": "Артефакты SMA созданы после сохранения всех 12 блоков, после 10 точечных правок FINAL READ/STYLE (через fix_block.py) и после обновления merged. Фаза 1 покрыла все 12 блоков; ни одна финальная правка не затронула кандидатов этого отчёта."
+  },
+  "decision_axes": {
+    "fidelity": ["MEANING_SHIFT", "COMPONENT_LOSS", "ADDITION", "MISSING", "RUSSIAN_ERROR", "FORMAT", "NONE"],
+    "action": ["FIXED", "REPORT_ONLY", "PRESERVED"],
+    "status": ["CONFIRMED_ERROR", "DISPUTED", "FALSE_POSITIVE"]
+  },
+  "results": [
+    {
+      "id": "A-01",
+      "block": 2,
+      "candidate": "A-01",
+      "issue_type": "NUANCE_SHIFT",
+      "status": "FALSE_POSITIVE",
+      "fidelity": "NONE",
+      "action": "PRESERVED",
+      "before": "— Ти-Тиффа… вот это да!",
+      "after": "— Ти-Тиффа… вот это да!",
+      "reason": "JA 「もが！」 — неоднозначное междометие; EN даёт «wow!». «Вот это да!» сохраняет удивлённо-недоумевающую интонацию. Нет JA-основания для замены; предпочтение редактора не доказательство ошибки."
+    },
+    {
+      "id": "A-02",
+      "block": 2,
+      "candidate": "A-02",
+      "issue_type": "NUANCE_SHIFT",
+      "status": "FALSE_POSITIVE",
+      "fidelity": "NONE",
+      "action": "PRESERVED",
+      "before": "— Да нет, не извиняйся… Честно говоря, я и сам не против был.",
+      "after": "— Да нет, не извиняйся… Честно говоря, я и сам не против был.",
+      "reason": "JA 「眼福だったし」 — игривая самоирония Сайто; описательная передача сохраняет подтекст без вульгаризации. Проверка FINAL READ подтвердила естественность фразы."
+    },
+    {
+      "id": "A-03",
+      "block": 11,
+      "candidate": "A-03",
+      "issue_type": "LEXICAL_MISMATCH",
+      "status": "FALSE_POSITIVE",
+      "fidelity": "NONE",
+      "action": "PRESERVED",
+      "before": "как кукла с перерезанными нитями",
+      "after": "как кукла с перерезанными нитями",
+      "reason": "JA 「糸の切れた人形のように」 — образ передан дословно и звучит по-русски; калькой не является."
+    },
+    {
+      "id": "B-01",
+      "block": 4,
+      "candidate": "B-01 + precheck (S1-tail-truncation, DIALOGUE_FRAGMENT/PARTIAL, conf=MEDIUM) + P1-02",
+      "issue_type": "MISSING_TRANSLATION",
+      "omission_scope": "DIALOGUE_FRAGMENT",
+      "omission_kind": "PARTIAL",
+      "ja_span": "「やっぱり、怒ってる？」\n\n才人が尋ねると、",
+      "ru_before": "— Ты всё-таки злишься?\n\nСпросил Сайто.",
+      "missing_content": "Pre-check заявил, что будто бы потеряны финальная реплика и атрибуция блока 4.",
+      "not_compression_reason": "Проверка по JA: оба звена налицо в ED_RU блока 4 — реплика «— Ты всё-таки злишься?» и атрибуция «Спросил Сайто.» стоят отдельными абзацами. Сдвиг чисел абзацев вызван разной гранулярностью JA и RU в merged (16 против 15).",
+      "status": "FALSE_POSITIVE",
+      "fidelity": "NONE",
+      "action": "PRESERVED",
+      "before": "— Ты всё-таки злишься? … Спросил Сайто.",
+      "after": "— Ты всё-таки злишься? … Спросил Сайто.",
+      "reason": "Артефакт выравнивания merged. Pre-check — evidence, а не вердикт. Сплошная сверка JA→RU блока 4 в Фазе 1 подтвердила полное покрытие."
+    },
+    {
+      "id": "B-02",
+      "block": 8,
+      "candidate": "B-02",
+      "issue_type": "MISTRANSLATION",
+      "status": "FALSE_POSITIVE",
+      "fidelity": "NONE",
+      "action": "PRESERVED",
+      "before": "для Папы она была слишком важной пешкой, чтобы её могли принять с пренебрежением",
+      "after": "для Папы она была слишком важной пешкой, чтобы её могли принять с пренебрежением",
+      "reason": "JA 「無下にはできない」 — «нельзя обращаться пренебрежительно». Двойное отрицание в черновике было исправлено до SMA; текущая форма передаёт модальность JA точно."
+    },
+    {
+      "id": "B-03",
+      "block": 10,
+      "candidate": "B-03",
+      "issue_type": "MISTRANSLATION",
+      "status": "FALSE_POSITIVE",
+      "fidelity": "NONE",
+      "action": "PRESERVED",
+      "before": "я проткну себе горло и умру",
+      "after": "я проткну себе горло и умру",
+      "reason": "JA 「喉を突いて死にますわ」: субъект — Луиза, действие — проткнуть горло, категоричность сохранена. Актанты не смещены."
+    },
+    {
+      "id": "C-01",
+      "block": 1,
+      "candidate": "C-01 + P1-01",
+      "issue_type": "PRAGMATIC_SHIFT",
+      "status": "FALSE_POSITIVE",
+      "fidelity": "NONE",
+      "action": "PRESERVED",
+      "before": "— Сайто-сан, я слышала от мадемуазель Вальер, что вы проснулись.",
+      "after": "— Сайто-сан, я слышала от мадемуазель Вальер, что вы проснулись.",
+      "reason": "JA 「サイトさん」 — осознанный маркер японского происхождения Сиесты; addresses.md прямо предписывает сохранять «Сайто-сан». Не translationese."
+    },
+    {
+      "id": "C-02",
+      "block": 9,
+      "candidate": "C-02 + P1-03",
+      "issue_type": "PRAGMATIC_SHIFT",
+      "status": "FALSE_POSITIVE",
+      "fidelity": "NONE",
+      "action": "PRESERVED",
+      "before": "Ваше Святейшество, умоляю вас пересмотреть решение насчёт «Священной войны».",
+      "after": "Ваше Святейшество, умоляю вас пересмотреть решение насчёт «Священной войны».",
+      "reason": "JA 「どうか…お願いをするためでございます」 — настойчивая, но почтительная просьба. «Умоляю» передаёт ту же силу при сохранении обращения «Ваше Святейшество» (addresses.md). Модальность не усилена сверх JA."
+    },
+    {
+      "id": "C-03",
+      "block": 11,
+      "candidate": "C-03",
+      "issue_type": "PRAGMATIC_SHIFT",
+      "status": "FALSE_POSITIVE",
+      "fidelity": "NONE",
+      "action": "PRESERVED",
+      "before": "Вы хотите, чтобы он умер напрасно?",
+      "after": "Вы хотите, чтобы он умер напрасно?",
+      "reason": "JA 「無駄死にさせたいというのですか？」 — риторический вопрос-обвинение; RU сохраняет и вопрос, и укоризну."
+    },
+    {
+      "id": "P1-04",
+      "block": 7,
+      "candidate": "P1-04",
+      "issue_type": "LEXICAL_MISMATCH",
+      "status": "DISPUTED",
+      "fidelity": "NONE",
+      "action": "REPORT_ONLY",
+      "before": "оружие в десятки раз мощнее «камня огня»",
+      "after": "оружие в десятки раз мощнее «камня огня»",
+      "reason": "PROVISIONAL: TERM 火石 → «камень огня» выбран по синтагматической параллели с каноном 風石 → «камень ветра»; прямой словарной записи нет, в сыром RU соседних глав встречается «Огненный камень». В dictionary.md как канон не вносилось; требуется подтверждение пользователя. Зафиксировано в журнале и отчёте главы."
+    }
+  ],
+  "summary": {
+    "candidates_total": 10,
+    "confirmed_errors": 0,
+    "disputed": 1,
+    "false_positives": 9,
+    "fixed": 0,
+    "report_only": 1,
+    "preserved": 9,
+    "note": "Закрывающий SMA-проход по финальному тексту: все 12 блоков покрыты Фазой 1; 9 кандидатов закрыты как FALSE_POSITIVE/PRESERVED, 1 DISPUTED/REPORT_ONLY — PROVISIONAL-термин «камень огня»."
+  }
+}

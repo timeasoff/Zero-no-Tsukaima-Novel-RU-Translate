@@ -54,7 +54,6 @@ russian-grammar-control, либо отклоняется с обосновани
 
 - **EN:** Henrietta instantly displayed a charming expression and replied firmly "If the ties between Gallia and elves are severed, the 'Crusade' will therefore end.
 - **ED_RU:** Жозеф улыбнулся:
-
 — А цель?
 - **Подсказка:** RGC-1: «X's Y was stolen» ≠ «X лишился Y». Правильно: «X лишили Y» / «у X отобрали Y» / «Y у X отобрали».
 

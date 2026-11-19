@@ -1,0 +1,38 @@
+{
+  "analysis_id": "20261118-231000-f1e2.phase1",
+  "chapter": "v18-afterword",
+  "phase": 1,
+  "scope": "blind",
+  "inputs": {
+    "ja": "translates/ja/v18-afterword.md",
+    "ru": "output/chapters/v18-afterword.md",
+    "en": "translates/en/v18-afterword.md",
+    "mirror": "translates/_report/merged/v18-afterword.md"
+  },
+  "results": [
+    {
+      "block": 1,
+      "finding": "MODALITY_STRENGTHENING",
+      "note": "«もうこの本が出るころには終わってるでしょうけど» — в JA presumption (でしょう); в RU после правки стоит «наверное, уже закончится», модальность исправлена. Первоначально было «наверняка», что превращало предположение в уверенность.",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 1,
+      "finding": "MISTRANSLATION",
+      "note": "«なんだとコラ表に出ろ» передано «Что ты сказал, чёрт возьми, — выходи вперёд, на обложку!»; JA даёт только 表に出ろ («выходи вперёд/покажись»), уточнение «на обложку» — интерпретация без прямой опоры.",
+      "confidence": "LOW"
+    },
+    {
+      "block": 2,
+      "finding": "LEXICAL_MISMATCH",
+      "note": "『烈風の騎士姫』 переведено «Принцесса-рыцарь яростного ветра»; канонического соответствия в dictionary.md и завершённых томах нет. Форма выбрана по JA как PROVISIONAL; возможны альтернативы («Рыцарь-принцесса ураганного ветра» и др.).",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 2,
+      "finding": "COMPONENT_LOSS",
+      "note": "«最近は同人活動にも積極的に参加しています» → «он активно участвует и в додзин-издательстве»: 同人活動 шире, чем одно издательство (включает комикеты и создание работ).",
+      "confidence": "LOW"
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "schema": "sma-audit-evidence/v1",
+  "kind": "a",
+  "run_id": "20261119-0500-auditA",
+  "chapter": "v22-ch05.md",
+  "auditor": "semantic-audit-a",
+  "scope": "микро-семантика: лексика, оттенки, эмоция, мимика, интонация",
+  "inputs": {"ja": "translates/ja/v22-ch05.md", "ru": "output/chapters/v22-ch05.md", "en": "translates/en/v22-ch05.md (reference only)", "merged": "translates/_report/merged/v22-ch05.md"},
+  "findings": [
+    {
+      "id": "A-01",
+      "block": 5,
+      "issue_type": "LEXICAL_MISMATCH",
+      "severity": "CANDIDATE",
+      "confidence": "LOW",
+      "evidence": "JA 「明止鏡水、明止鏡水……」 — RU курсивом «Ясное зеркало, тихая вода, ясное зеркало, тихая вода…». В JA формула дана в необычном порядке (ср. дзен-выражение 明鏡止水) и Сайто сам сомневается в ней: 「あれ、明止鏡水で合ってたっけ？」.",
+      "reason": "Проверить, сохранена ли функция разговорного самонапоминания и комизм сомнения; прямой словарной записи 明止鏡水 нет."
+    },
+    {
+      "id": "A-02",
+      "block": 10,
+      "issue_type": "NUANCE_SHIFT",
+      "severity": "CANDIDATE",
+      "confidence": "LOW",
+      "evidence": "JA 「キザったらしいその顔」 — RU «это самодовольное, наглое лицо». EN 'pompous-like mug'.",
+      "reason": "Проверить, не усилена ли эмоциональная оценка: JA даёт комическую характеристику Карло."
+    },
+    {
+      "id": "A-03",
+      "block": 17,
+      "issue_type": "NUANCE_SHIFT",
+      "severity": "CANDIDATE",
+      "confidence": "LOW",
+      "evidence": "JA 「てめえ、銃とか、きたねえぞ……」 — RU «Ты… стрелять — это грязно, чёрт…». Разговорное «きたねえ» передано нейтральным «грязно».",
+      "reason": "Проверить, сохранён ли просторечный регистр реплики Сайто."
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "analysis_id": "20261118-220500-f505",
+  "chapter": "v18-ch03",
+  "inputs": {
+    "phase1": "analysis/20261118-220500-f404.phase1.json",
+    "a_runs": ["a/20261118-220500-a101.json"],
+    "b_runs": ["b/20261118-220500-b202.json"],
+    "c_runs": ["c/20261118-220500-c303.json"],
+    "precheck": "precheck/omission-precheck.json"
+  },
+  "results": [
+    {
+      "block": 2,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "COMPONENT_LOSS",
+      "action": "FIXED",
+      "note": "頬を寄せ → «прижался к её щеке» (было «наклонил лицо»). Подтверждено Фазой 1 (HIGH) и Auditor A."
+    },
+    {
+      "block": 5,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "MEANING_SHIFT",
+      "action": "FIXED",
+      "note": "目をしばたたかせた → «часто заморгал» (было «зажмурился»). Подтверждено Фазой 1 (HIGH) и Auditor A."
+    },
+    {
+      "block": 7,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "MEANING_SHIFT",
+      "action": "FIXED",
+      "note": "憚られた → «она не решалась» (было «было страшно»). Подтверждено Фазой 1 (MEDIUM) и Auditor A."
+    },
+    {
+      "block": 9,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "COMPONENT_LOSS",
+      "action": "FIXED",
+      "note": "トリステインからの → «из Тристейна» (было опущено). Auditor A."
+    },
+    {
+      "block": 9,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "FORMAT",
+      "action": "FIXED",
+      "note": "Прямое обращение «Ваша светлость» — заглавная буква по PR-TITLE; Auditor A."
+    },
+    {
+      "block": 17,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MISSING",
+      "action": "PRESERVED",
+      "note": "Pre-check S1 — артефакт разбиения на абзацы: JA-звенья 14…16 блока 17 («情けねえじゃねえか», реакция Луизы, финал сцены) полностью присутствуют в RU-блоке 17 в трёх абзацах вместо четырёх. Содержание не пропущено."
+    },
+    {
+      "block": 4,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MEANING_SHIFT",
+      "action": "PRESERVED",
+      "note": "Auditor B: логика «вина = счастье» сохранена; кандидат снят после сверки JA → RU."
+    },
+    {
+      "block": 8,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MEANING_SHIFT",
+      "action": "PRESERVED",
+      "note": "Auditor C: прагматическая сила торга и подтекст предательства сохранены."
+    },
+    {
+      "block": 15,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "COMPONENT_LOSS",
+      "action": "PRESERVED",
+      "note": "Auditor C: недосказанность и мягкая интонация объяснения сохранены."
+    }
+  ]
+}
