@@ -493,8 +493,10 @@
     "No matter how perfect the plan Henrietta …".
 - RECHECK: правки через `fix_block.py --block 5/6 --replace-file`; после
   КАЖДОЙ — `update_merged.py` и повторный `grammar_scan.py --report`
-  (те же 8 FP, новых нет) и синтаксический переразбор блока; `git diff` —
-  только две ожидаемые строки. Итог: FIXED 2, FALSE POSITIVE 8, `???` 0.
+  (те же 8 FP, новых нет) и синтаксический переразбор блока; относительно
+  состояния до правок изменились только две ожидаемые строки (прочие отличия
+  от HEAD — от предыдущих слоёв обработки этой же главы). Итог: FIXED 2,
+  FALSE POSITIVE 8, `???` 0.
 - Выгрузка предфильтра: `output/_audit/_prefilter/v15-ch08-grammar.md`.
   ОТЧЁТ: `output/_audit/v15-ch08.md`, раздел «Грамматический контроль».
 
