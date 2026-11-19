@@ -641,3 +641,28 @@
   затронуты; U+FFFD — 0, маркеры 16/16 по порядку.
 - ОТЧЁТ: `output/_audit/v15-ch03.md`, раздел «Стилевой контроль»; сводка
   STYLE AUDIT добавлена в «Итоги (FINAL AUDIT)».
+
+
+## v15-ch02 — СТИЛЕВОЙ АУДИТ (19.11.2026)
+
+- `style_scan.py --selftest` 28/28; `--file output/chapters/v15-ch02.md
+  --report`: 313 абзацев, 18 кандидатов; выгрузка
+  `output/_audit/_prefilter/v15-ch02-style.md`. RU-only проход (вслух, без
+  JA/EN) выполнен по всему файлу; трек MONOTONY — 0.
+- Разобраны все 18 кандидатов предфильтра + 15 дополнительных RU-only/LLM-
+  находок (33 итого): ERROR 2, WARNING 0, CANDIDATE 31. Disposition:
+  FIXED 2, FALSE POSITIVE 8, PRESERVED — FUNCTIONAL 11, PRESERVED — JA/EN 10,
+  PRESERVED — CHARACTER VOICE 2, ACCEPTABLE ADAPTATION / USER DECISION / ???
+  0. Объединений кандидатов нет; каждый имеет прослеживаемое решение.
+- ПРАВКИ (RU-only, блок 20): «об этом Халкегинии» → «об этой Халкегинии»
+  (согласование с ж. р.; JA このハルケギニアのことで); «такое быстрое
+  вторжение была бы невозможна» → «...было бы невозможно» (ср. р. подлеж.;
+  JA ここまでの素早い侵攻は無理). Обе — через `fix_block.py --replace-file`,
+  затем `update_merged.py --file v15-ch02.md` (21/21 ED_RU, строгих 0).
+- RECHECK: `style_scan.py --report` — те же 18 кандидатов, новых нет;
+  `git diff --text` — только ожидаемые две строки в output и merged.
+  Остальные повторы (боевые кличи, песня, «杖» в поединке, анафоры в
+  репликах) сохранены как функциональные и соответствующие источнику —
+  текст не стерилизован.
+- ОТЧЁТ: `output/_audit/v15-ch02.md`, раздел «Стилевой контроль»; сводка
+  STYLE AUDIT добавлена в «Итоги (FINAL AUDIT)».
