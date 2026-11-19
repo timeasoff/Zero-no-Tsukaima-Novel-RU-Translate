@@ -1,0 +1,179 @@
+{
+  "analysis_id": "20261119-220000-e5f6",
+  "chapter": "v20-epilogue",
+  "final_read_recheck": "RU-only перечит финального текста (5 блоков, 160 строк) после последних правок выполнен; найденные в этом проходе дефекты (падежное управление, дублирование смысла, усиление модальности, необоснованные детали) исправлены и отражены в леджере ниже. Omission pre-check перезапущен по финальному merged: 0 кандидатов. Покрытие: 5/5 блоков финального текста; все предфильтры перезапущены после последней правки.",
+  "inputs": {
+    "phase1": "analysis/20261119-220000-e5f6.phase1.json",
+    "a_runs": ["a/20261119-220000-a1b2.json"],
+    "b_runs": ["b/20261119-220000-b2c3.json"],
+    "c_runs": ["c/20261119-220000-c3d4.json"],
+    "precheck": "precheck/omission-precheck.json"
+  },
+  "results": [
+    {
+      "block": 1,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "MEANING_SHIFT",
+      "action": "FIXED",
+      "before": "Ах. Значит после лотки, я каким то образом, оказался здесь. Это случилось когда всё успокоилось и мы скрылись от военно-морского флота, я попал к вам.",
+      "after": "Ага. Ещё чуть — и лечебный аппарат здесь уже ничем не помог бы. Когда я ускользнул из-под носа у флота и добрался до вас, всё уже было кончено.",
+      "note": "реплика Алия о спасении: сырой RU подменял субъекта и время; восстановлено по JA (b1, Ф1 бл.1)"
+    },
+    {
+      "block": 1,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MEANING_SHIFT",
+      "action": "PRESERVED",
+      "note": "«Не мешало бы и поблагодарить» — ироничный упрёк せいぜい…もんだな сохранён без усиления (a1, Ф1 бл.1)"
+    },
+    {
+      "block": 1,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "FORMAT",
+      "action": "PRESERVED",
+      "note": "«— Проснулся?» — безатрибутная реплика 起きたか？; атрибуция не добавлена (c1)"
+    },
+    {
+      "block": 1,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "FORMAT",
+      "action": "PRESERVED",
+      "note": "style S1: «Тиффании … Тиффании» — JA повторяет ティファニア в том же абзаце; PRESERVED — JA"
+    },
+    {
+      "block": 1,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "FORMAT",
+      "action": "PRESERVED",
+      "note": "style S2: «Хорошо… хорошо…» — дословный повтор よかった……、よかった……; PRESERVED — JA / CHARACTER VOICE"
+    },
+    {
+      "block": 2,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "MEANING_SHIFT",
+      "action": "FIXED",
+      "before": "жизни нашей не будет",
+      "after": "жизнь наша будет в опасности",
+      "note": "命の危険がある — опасность, а не неизбежная смерть; b2, Ф1 бл.2"
+    },
+    {
+      "block": 2,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "COMPONENT_LOSS",
+      "action": "FIXED",
+      "before": "он не смог смириться с мыслью",
+      "after": "он, видимо, не смог смириться с мыслью",
+      "note": "восстановлена модальность のだろう (b3, Ф1 бл.2)"
+    },
+    {
+      "block": 2,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "RUSSIAN_ERROR",
+      "action": "FIXED",
+      "before": "сдавить этой тонкой шеи",
+      "after": "сдавить ей тонкую шею",
+      "note": "падежное управление при прямом объекте действия (a3, Ф1 бл.2)"
+    },
+    {
+      "block": 2,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "RUSSIAN_ERROR",
+      "action": "FIXED",
+      "before": "Мы не монолит, между нами нет полного единства.",
+      "after": "Мы не монолит, знаете ли.",
+      "note": "тавтология ослабляла прагматику признания; «знаете ли» передаёт んでね (c2, Ф1 бл.2)"
+    },
+    {
+      "block": 2,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MEANING_SHIFT",
+      "action": "PRESERVED",
+      "note": "«влюблён по уши» — точная передача ベタ惚れ, ироническая окраска сохранена (a2)"
+    },
+    {
+      "block": 2,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "FORMAT",
+      "action": "PRESERVED",
+      "note": "style S3: «Замысел флота… замысел уничтожить вас» — JA повторяет 企て с уточнением; PRESERVED — JA"
+    },
+    {
+      "block": 3,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "ADDITION",
+      "action": "FIXED",
+      "before": "но Алий остановил их жестом.",
+      "after": "но Алий остановил их.",
+      "note": "удалено необоснованное «жестом»: アリィーはそれを制した называет только действие (b4)"
+    },
+    {
+      "block": 3,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MEANING_SHIFT",
+      "action": "PRESERVED",
+      "note": "«Ну и надоедливый же ты» — раздражённый тон めんどくさいやつだな без усиления (a4)"
+    },
+    {
+      "block": 3,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "FORMAT",
+      "action": "PRESERVED",
+      "note": "format paragraph: «выпалил: / — То «Гнездо дракона»…» — по russian-prose-rules слова автора с глаголом речи требуют двоеточия и реплики с новой строки; это один абзац, не слипшиеся"
+    },
+    {
+      "block": 3,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "FORMAT",
+      "action": "FIXED",
+      "before": "_Когда вернёмся в Галлию… надо рассказать Луизе и остальным о Святой земле._",
+      "after": "_Когда вернёмся в Галлию… надо рассказать Луизе и остальным о Святой земле_, — подумал Сайто.",
+      "note": "внутренние речи (_Хватит_, _Если она ещё раз…_, _Ну и любят же…_) и атрибуции мыслей в блоке 4 оформлены курсивом по PR-MIND; blockgap нормализован (Ф1 бл.3)"
+    },
+    {
+      "block": 4,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MEANING_SHIFT",
+      "action": "PRESERVED",
+      "note": "мольба в бреду «Где ты? Не оставляй меня одну…» — прагматическая сила わたしを一人にしないで сохранена (c3)"
+    },
+    {
+      "block": 4,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "COMPONENT_LOSS",
+      "action": "FIXED",
+      "before": "Потому что нам повезло.",
+      "after": "Я с тобой.",
+      "note": "俺がついてるから — восстановлены адресат и смысл (Ф1 бл.4)"
+    },
+    {
+      "block": 5,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "MEANING_SHIFT",
+      "action": "FIXED",
+      "before": "выжженная у него на груди",
+      "after": "начертанная у него на груди",
+      "note": "刻まれた — способ нанесения руны в JA не назван (b5, Ф1 бл.5)"
+    },
+    {
+      "block": 5,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MEANING_SHIFT",
+      "action": "PRESERVED",
+      "note": "«цвета темноты» — образ 闇のような色 сохранён без подмены на «чёрное/синее» (a5)"
+    },
+    {
+      "block": 5,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MEANING_SHIFT",
+      "action": "PRESERVED",
+      "note": "«Что же со мной будет?.. Луиза…» — риторический вопрос и зов без ответа сохранены (c4)"
+    },
+    {
+      "block": 5,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "FORMAT",
+      "action": "PRESERVED",
+      "note": "style S4: «фамильяром … фамильяр» — JA повторяет 使い魔 в противопоставленных парах; PRESERVED — JA / FUNCTIONAL"
+    }
+  ]
+}

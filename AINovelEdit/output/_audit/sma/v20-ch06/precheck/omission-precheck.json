@@ -1,0 +1,6 @@
+{
+  "check_type": "omission-precheck",
+  "chapter": "v20-ch06.md",
+  "findings": [],
+  "coverage": "Детерминированный Common Omission Pre-check просмотрел все 12 блоков JA ↔ ED_RU финального текста v20-ch06 (S1-tail-truncation / S2-empty-ru / S3-number-anchor). Непокрытых содержательных JA-фрагментов и обрывов хвоста не обнаружено: 0 CANDIDATE. Аттестация coverage добавлена при пустом массиве findings по требованию semantic_findings.py --validate."
+}

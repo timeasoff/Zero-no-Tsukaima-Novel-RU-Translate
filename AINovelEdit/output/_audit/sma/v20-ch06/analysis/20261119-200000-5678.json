@@ -1,0 +1,171 @@
+{
+  "analysis_id": "20261119-200000-5678",
+  "chapter": "v20-ch06",
+  "inputs": {
+    "phase1": "analysis/20261119-200000-1234.phase1.json",
+    "a_runs": ["a/20261119-200000-a1b2.json"],
+    "b_runs": ["b/20261119-200000-c3d4.json"],
+    "c_runs": ["c/20261119-200000-e5f6.json"],
+    "precheck": "precheck/omission-precheck.json"
+  },
+  "results": [
+    {
+      "block": 9,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "MISSING",
+      "action": "FIXED",
+      "note": "B-1 и наблюдение Фазы 1 (блок 9) подтвердились: JA 杖を振り下ろした — отдельное действие с палочкой; в RU осталось только движение руки. Компрессией не является.",
+      "before": "Когда оно завершилось, Жозетта медленно отвела руку вниз.",
+      "after": "Когда оно завершилось, Жозетта медленно опустила палочку."
+    },
+    {
+      "block": 8,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "MEANING_SHIFT",
+      "action": "FIXED",
+      "note": "B-2: референт чувства смещён. JA あなたへのこの気持ち — чувство направлено на Джулио; в RU было «ко мне».",
+      "before": "Что это чувство ко мне — не «любовь»?",
+      "after": "Что это чувство к тебе — не «любовь»?"
+    },
+    {
+      "block": 4,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "OTHER",
+      "action": "PRESERVED",
+      "note": "B-3 и Фаза 1 (блок 4): EN сдвигает границу 4/5; в JA реплика «четверо из четырёх» завершает блок 4, «Да.» начинает блок 5. Границы не переносились (JA > EN). PRESERVED — JA."
+    },
+    {
+      "block": 1,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "FORMAT",
+      "action": "PRESERVED",
+      "note": "A-1: 鼻白む → «сник»; разочарование и спад воодушевления переданы. PRESERVED — FUNCTIONAL."
+    },
+    {
+      "block": 6,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "FORMAT",
+      "action": "PRESERVED",
+      "note": "A-2: くっくっくっくっ → «кх-кх-кх-кх»; сдержанный смех передан звукописью. PRESERVED — FUNCTIONAL."
+    },
+    {
+      "block": 11,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "FORMAT",
+      "action": "PRESERVED",
+      "note": "A-3: リーヴスラシル → «Лифтрасир»; новый PROVISIONAL-термин по JA-катакане, занесён в журнал. PRESERVED — JA."
+    },
+    {
+      "block": 2,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MEANING_SHIFT",
+      "action": "PRESERVED",
+      "note": "C-1: саркастический вопрос Альбрехта сохранён как вопрос, модальность не сглажена. PRESERVED — CHARACTER VOICE."
+    },
+    {
+      "block": 6,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MEANING_SHIFT",
+      "action": "PRESERVED",
+      "note": "C-2: категоричное самоуговорение 言うべきではない сохранено как «Говорить об этом не следует». PRESERVED — JA."
+    },
+    {
+      "block": 12,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MEANING_SHIFT",
+      "action": "PRESERVED",
+      "note": "C-3: тихое обречённое согласие ほんとに、そうだ сохранено; модальность не усилена. PRESERVED — CHARACTER VOICE."
+    },
+    {
+      "block": 1,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "RUSSIAN_ERROR",
+      "action": "FIXED",
+      "note": "FINAL READ (RU-only): несогласованная конструкция «Что Жозетта — сестра-близнец … не объявляли» переписана на полную по JA 11.",
+      "before": "Что Жозетта — сестра-близнец Шарлотты, известной также как Табита, — ради избежания смуты до сих пор не объявляли публично.",
+      "after": "О том, что Жозетта — сестра-близнец Шарлотты, известной также как Табита, ради избежания смуты до сих пор не объявляли."
+    },
+    {
+      "block": 3,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "FORMAT",
+      "action": "FIXED",
+      "note": "FINAL READ: мысль в кавычках переведена в курсив по PR-MIND (внутренняя речь).",
+      "before": "«Не остановить ли мне её было, хоть бы и связав по шее», — подумала Генриетта, крепко сжимая губы.",
+      "after": "_Не остановить ли мне её было, хоть бы верёвку на шею накинув_, — подумала Генриетта, крепко сжимая губы."
+    },
+    {
+      "block": 4,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "RUSSIAN_ERROR",
+      "action": "FIXED",
+      "note": "FINAL READ: устранено дублирование титула «Его Императорское Величество императора».",
+      "before": "Если мои действия не удовлетворят Его Императорское Величество императора Германии, я отдам половину территории нашего королевства.",
+      "after": "Если император Германии останется недоволен моими действиями, я отдам половину территории нашего королевства."
+    },
+    {
+      "block": 5,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "FORMAT",
+      "action": "FIXED",
+      "note": "FINAL READ: пунктуация вводного «однако» и атрибуция мысли после тире (PR-MIND) по формат-сканеру.",
+      "before": "Заметив однако, что … / _Этот человек … важное._",
+      "after": "Заметив, однако, что … / _Этот человек … важное_, — подумалось Генриетте."
+    },
+    {
+      "block": 8,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "RUSSIAN_ERROR",
+      "action": "FIXED",
+      "note": "FINAL READ: просторечное «физиономия» заменено нейтральным «лицо» (JA 顔).",
+      "before": "…до чего серьёзна её физиономия.",
+      "after": "…до чего серьёзно её лицо."
+    },
+    {
+      "block": 9,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "FORMAT",
+      "action": "FIXED",
+      "note": "FINAL READ: «начала напевать заклинание» → «начала читать заклинание» (JA 唱え始めた).",
+      "before": "Жозетта приставила пистолет к левому виску и начала напевать заклинание.",
+      "after": "Жозетта приставила пистолет к левому виску и начала читать заклинание."
+    },
+    {
+      "block": 9,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "RUSSIAN_ERROR",
+      "action": "FIXED",
+      "note": "FINAL READ: исправлено согласование по полу — Витторио говорит Джулио.",
+      "before": "— Ты проиграла, Джулио.",
+      "after": "— Ты проиграл, Джулио."
+    },
+    {
+      "block": 10,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "FORMAT",
+      "action": "FIXED",
+      "note": "Итоговая терминологическая сверка: канон словаря — ジョゼフ → «Жозеф» (не «Джозеф»).",
+      "before": "вместо короля Джозефа",
+      "after": "вместо короля Жозефа"
+    },
+    {
+      "block": 10,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "RUSSIAN_ERROR",
+      "action": "FIXED",
+      "note": "FINAL READ: устранён повтор «шагнул … шагнул» в одном абзаце.",
+      "before": "Джулио встал и шагнул сквозь врата. … будто он просто шагнул через светлое зеркало.",
+      "after": "Джулио встал и прошёл сквозь врата. … будто он просто шагнул через светлое зеркало."
+    },
+    {
+      "block": 11,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "FORMAT",
+      "action": "FIXED",
+      "note": "Итоговая терминологическая сверка: канон v01 — ペンタゴン → «Пентагон, владыка пяти сил».",
+      "before": "Пентагон, повелевающий пятью силами.",
+      "after": "Пентагон, владыка пяти сил."
+    }
+  ],
+  "coverage": "Analysis создан после последней правки текста и покрывает все 12 блоков финального текста v20-ch06. Pre-check: 0 CANDIDATE. A/B/C: по 3 находки. FINAL READ (RU-only) дал 6 правок (блоки 1, 5, 8, 9), все применены до этого анализа, RECHECK пройден. Итого 19 результатов: 12 CONFIRMED_ERROR/FIXED, 7 FALSE_POSITIVE/PRESERVED. Статусов WIP и непокрытых блоков нет; analysis-отчёт закрывает главу."
+}

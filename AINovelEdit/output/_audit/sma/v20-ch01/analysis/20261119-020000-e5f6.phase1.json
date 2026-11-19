@@ -1,0 +1,32 @@
+{
+  "analysis_id": "20261119-020000-e5f6.phase1",
+  "chapter": "v20-ch01",
+  "phase": 1,
+  "scope": "blind",
+  "results": [
+    {
+      "block": 1,
+      "finding": "ATTRIBUTION",
+      "note": "цитата 〝…〟 после ぽつりと呟いた требует голоса Дерфлингера; в сыром RU атрибуции нет",
+      "confidence": "HIGH"
+    },
+    {
+      "block": 2,
+      "finding": "MODALITY_SHIFT",
+      "note": "しょうがない — «ничего не поделаешь», черновик давал «простительно»",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 11,
+      "finding": "COMPONENT_LOSS",
+      "note": "реплика «嬢ちゃんのせいだよ» без атрибуции говорящего теряет адресата обвинения",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 13,
+      "finding": "MISTRANSLATION",
+      "note": "звуки うご！もが！ごぺ！ — это мучение Дерфлингера, а не смех; EN здесь расходится с JA",
+      "confidence": "MEDIUM"
+    }
+  ]
+}

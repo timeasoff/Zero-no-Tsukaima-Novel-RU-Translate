@@ -1,0 +1,63 @@
+{
+  "analysis_id": "20261119-020000-e5f6",
+  "chapter": "v20-ch01",
+  "final_read_recheck": "RU-only перечит после последних правок (блоки 6 и 16): две стилистические правки не затронули смысл; omission_precheck перезапущен по финальному merged — 0 кандидатов; все 16 блоков покрыты.",
+  "inputs": {
+    "phase1": "analysis/20261119-020000-e5f6.phase1.json",
+    "a_runs": ["a/20261119-020000-a1b2.json"],
+    "b_runs": ["b/20261119-020000-b2c3.json"],
+    "c_runs": ["c/20261119-020000-c3d4.json"],
+    "precheck": "precheck/omission-precheck.json"
+  },
+  "results": [
+    {
+      "block": 1,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "FORMAT",
+      "action": "FIXED",
+      "note": "атрибуция «бросил он» по ぽつりと呟いた; a1, b1, Ф1 бл.1"
+    },
+    {
+      "block": 2,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "MEANING_SHIFT",
+      "action": "FIXED",
+      "note": "«простительно» → «ничего не поделаешь» (しょうがない); a2, Ф1 бл.2"
+    },
+    {
+      "block": 11,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "COMPONENT_LOSS",
+      "action": "FIXED",
+      "note": "восстановлена атрибуция «— заметил Дерфлингер»; b2, Ф1 бл.11"
+    },
+    {
+      "block": 13,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MEANING_SHIFT",
+      "action": "PRESERVED",
+      "note": "EN «Haha! Waha!» — ошибка; звук うご！もが！ごぺ！ = мучение меча, RU «Ух! Ммм! Бла!» по JA; b3, Ф1 бл.13"
+    },
+    {
+      "block": 8,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MEANING_SHIFT",
+      "action": "PRESERVED",
+      "note": "«Тебе показалось» с満足気 — речевой акт снятия неловкости, implied meaning сохранён; c1"
+    },
+    {
+      "block": 12,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MEANING_SHIFT",
+      "action": "PRESERVED",
+      "note": "«узнаете, когда последуете за мной» — уклонение ついてからのお楽しみ сохранено; c2"
+    },
+    {
+      "block": 6,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MEANING_SHIFT",
+      "action": "PRESERVED",
+      "note": "самоуничижение «Я… извращенец» — прагматическая функция охлаждения чувств сохранена; a3, c3"
+    }
+  ]
+}

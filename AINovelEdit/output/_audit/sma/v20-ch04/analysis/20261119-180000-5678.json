@@ -1,0 +1,173 @@
+{
+  "analysis_id": "20261119-180000-5678",
+  "chapter": "v20-ch04",
+  "inputs": {
+    "phase1": "analysis/20261119-180000-1234.phase1.json",
+    "a_runs": [
+      "a/20261119-180000-a1b2.json"
+    ],
+    "b_runs": [
+      "b/20261119-180000-c3d4.json"
+    ],
+    "c_runs": [
+      "c/20261119-180000-e5f6.json"
+    ],
+    "precheck": "precheck/omission-precheck.json"
+  },
+  "results": [
+    {
+      "block": 14,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "MISSING",
+      "action": "FIXED",
+      "note": "Pre-check S1 (блок 14) подтверждён: JA-хвост блока 14 (水兵は、すぐさま頭をさげる / 士官の少女は…見上げた / 「たるんでいるから…」) оказался в блоке 15. Перенесён в блок 14 через fix_block.py --replace-file; merged обновлён, RECHECK пройден.",
+      "before": "блок 14 заканчивался «— Ой! П-простите!»; сцена опрокинутого чана и выговор отсутствовали",
+      "after": "блок 14 включает «Матрос тотчас склонил голову. Юная офицерша шагнула к нему… — Расслабишься — и вот что получается…»"
+    },
+    {
+      "block": 15,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "ADDITION",
+      "action": "FIXED",
+      "note": "Следствие переноса: блок 15 начинался с чужих абзацев блока 14. Удалены через fix_block.py --replace-file; блок 15 начинается с «— Впредь буду осторожен!» по JA 481.",
+      "before": "— Впредь буду осторожен! + чужие абзацы (склонённая голова, выход офицерши, выговор)",
+      "after": "— Впредь буду осторожен!"
+    },
+    {
+      "block": 8,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MISSING",
+      "action": "PRESERVED",
+      "note": "Pre-check S1 (блок 8): счётчик реплик 12 против 13 — артефакт переноса атрибуции 尋ねた в конец предыдущей реплики по format_scan. Оба JA-звена («Бидашал остановился» и вопрос о любви) присутствуют в ED_RU; пропуска нет."
+    },
+    {
+      "block": 1,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MEANING_SHIFT",
+      "action": "PRESERVED",
+      "note": "A-1: あの蛮人かぶれの → «Варварская зараза!»; презрительная модальность и образность сохранены. PRESERVED — FUNCTIONAL."
+    },
+    {
+      "block": 3,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "FORMAT",
+      "action": "PRESERVED",
+      "note": "A-2: 目を丸く見開いた → «глаза его стали круглыми»; удивление передано, буквальная форма допустима. PRESERVED — JA."
+    },
+    {
+      "block": 14,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "FORMAT",
+      "action": "PRESERVED",
+      "note": "A-3: 鯨竜 → «дракон-кит»; новый PROVISIONAL-термин, оба компонента JA сохранены. PRESERVED — JA."
+    },
+    {
+      "block": 13,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MEANING_SHIFT",
+      "action": "PRESERVED",
+      "note": "B-2: JA здесь 悪魔の門, а не シャイターンの門; канон v19 «Врата Шайтана» на этот термин не распространяется. PRESERVED — JA."
+    },
+    {
+      "block": 12,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "FORMAT",
+      "action": "PRESERVED",
+      "note": "B-3: ヨルムンガント → «Йормунгант»; новый PROVISIONAL-термин по JA-катакане, занесён в журнал. PRESERVED — JA."
+    },
+    {
+      "block": 4,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MEANING_SHIFT",
+      "action": "PRESERVED",
+      "note": "C-1: саркастический вопрос Бидашала сохранён как вопрос; модальность не сглажена. PRESERVED — CHARACTER VOICE."
+    },
+    {
+      "block": 10,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MEANING_SHIFT",
+      "action": "PRESERVED",
+      "note": "C-2: самоирония Тюрюка («упиваюсь только вином») сохранена. PRESERVED — CHARACTER VOICE."
+    },
+    {
+      "block": 17,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MEANING_SHIFT",
+      "action": "PRESERVED",
+      "note": "C-3: категоричное наставление о старшинстве партийного чина сохранено, модальность JA (のだよ) не ослаблена. PRESERVED — JA."
+    },
+    {
+      "block": 4,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "FORMAT",
+      "action": "FIXED",
+      "note": "FINAL READ (RU-only): вложенная цитата оформлена „лапками“ по PR-QUOTE вместо двойных ёлочек.",
+      "before": "будто хотел сказать: «Разговаривать с вами бесполезно».",
+      "after": "будто хотел сказать: „Разговаривать с вами бесполезно“."
+    },
+    {
+      "block": 4,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "RUSSIAN_ERROR",
+      "action": "FIXED",
+      "note": "FINAL READ (RU-only): «Один вялый вид кругом» — несогласованная конструкция; по JA 腑抜けた顔ばかりが並んでいる исправлено.",
+      "before": "Один вялый вид кругом.",
+      "after": "Кругом одни вялые лица."
+    },
+    {
+      "block": 7,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "RUSSIAN_ERROR",
+      "action": "FIXED",
+      "note": "FINAL READ (RU-only): дублирование наблюдения «вёл прицельно / держал в поле зрения» заменено на естественную форму по JA きっちりマークしていた.",
+      "before": "Флот, похоже, вёл их прицельно, просто держал в поле зрения.",
+      "after": "Флот, похоже, тоже пристально за ними следил."
+    },
+    {
+      "block": 11,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "RUSSIAN_ERROR",
+      "action": "FIXED",
+      "note": "FINAL READ (RU-only): «чернеющую вещь» не передаёт 黒光りする (чёрный глянец); уточнено.",
+      "before": "Бидашал взял в руку чернеющую вещь.",
+      "after": "Бидашал взял в руку вещь, отливавшую чёрным блеском."
+    },
+    {
+      "block": 12,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "RUSSIAN_ERROR",
+      "action": "FIXED",
+      "note": "FINAL READ (RU-only): оборванный инструментальный оборот заменён полным предложением по JA 発射の際のガスを利用してな.",
+      "before": "Газами, образующимися при выстреле.",
+      "after": "Он использует газы, образующиеся при выстреле."
+    },
+    {
+      "block": 13,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "RUSSIAN_ERROR",
+      "action": "FIXED",
+      "note": "FINAL READ (RU-only): повтор «подумал … подумалось» и «лицо» устранён (JA アリの顔を思い出した).",
+      "before": "Бидашал подумал о лице Али, с которым они только что расстались.",
+      "after": "Бидашал вспомнил Али, с которым они только что расстались."
+    },
+    {
+      "block": 13,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "RUSSIAN_ERROR",
+      "action": "FIXED",
+      "note": "FINAL READ (RU-only): рассогласование «какой бывает … и означавший» исправлено.",
+      "before": "Флаг, какой бывает только у эльфийского флота и означавший власть над обеими стихиями.",
+      "after": "Флаг, присущий только эльфийскому флоту и означавший власть над обеими стихиями."
+    },
+    {
+      "block": 17,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "RUSSIAN_ERROR",
+      "action": "FIXED",
+      "note": "FINAL READ (RU-only): «ребёнок пустыни» утрачивает смысл 砂漠の民; заменено на «сын пустыни».",
+      "before": "полный сознания и гордости ребёнка пустыни",
+      "after": "полный сознания и гордости сына пустыни"
+    }
+  ],
+  "coverage": "Analysis создан после последней правки текста и покрывает все 17 блоков финального текста v20-ch04. Pre-check: 2 CANDIDATE (блоки 8, 14) → 1 CONFIRMED_ERROR/FIXED (блок 14, с следствием в блоке 15), 1 FALSE_POSITIVE (блок 8). A/B/C: по 3 находки. FINAL READ (RU-only) дал 8 правок (блоки 4, 7, 11, 12, 13, 17), все применены до этого анализа, RECHECK пройден. Итого 19 результатов: 10 CONFIRMED_ERROR/FIXED, 9 FALSE_POSITIVE/PRESERVED. Статусов WIP и непокрытых блоков нет; analysis-отчёт закрывает главу."
+}

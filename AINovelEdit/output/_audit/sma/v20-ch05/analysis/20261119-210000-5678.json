@@ -1,0 +1,336 @@
+{
+  "analysis_id": "20261119-210000-5678",
+  "chapter": "v20-ch05",
+  "inputs": {
+    "phase1": "analysis/20261119-210000-1234.phase1.json",
+    "a_runs": [
+      "a/20261119-210000-a1b2.json"
+    ],
+    "b_runs": [
+      "b/20261119-210000-c3d4.json"
+    ],
+    "c_runs": [
+      "c/20261119-210000-e5f6.json"
+    ],
+    "precheck": "precheck/omission-precheck.json"
+  },
+  "results": [
+    {
+      "block": 5,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MISSING",
+      "action": "PRESERVED",
+      "note": "Pre-check S1 (блок 5): счётчик звеньев 16 против 14. Оба JA-звена хвоста — «海母に尋ねられ、ルクシャナは首を振った» и реплика об оружии врагов — присутствуют в ED_RU. Атрибуция встроена в реплику, content loss отсутствует."
+    },
+    {
+      "block": 6,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MISSING",
+      "action": "PRESERVED",
+      "note": "Pre-check S1 (блок 6): четыре непокрытых звена на самом деле на месте — реплика о находке, сравнение с ребёнком, надпись U.S. NAVY, руны и «судно живое». Артефакт слияния нарративных абзацев."
+    },
+    {
+      "block": 1,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MEANING_SHIFT",
+      "action": "PRESERVED",
+      "note": "A-1: 悩む → «погружённый в мысли»; тревожная модальность сохранена следующим пояснением. PRESERVED — JA."
+    },
+    {
+      "block": 4,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MEANING_SHIFT",
+      "action": "PRESERVED",
+      "note": "A-2: 哀愁 → «горе»; допустимая эмоциональная адаптация на фоне нагнетаемого мрачного тона. ACCEPTABLE ADAPTATION."
+    },
+    {
+      "block": 13,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "FORMAT",
+      "action": "PRESERVED",
+      "note": "A-3: 爛々 → «глаза загорелись гневом»; идиома передана функционально. PRESERVED — FUNCTIONAL."
+    },
+    {
+      "block": 18,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "FORMAT",
+      "action": "PRESERVED",
+      "note": "A-4: かたかと → «загремел»; звуковой оборот передан по-русски, без латиницы. PRESERVED — FUNCTIONAL."
+    },
+    {
+      "block": 23,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MEANING_SHIFT",
+      "action": "PRESERVED",
+      "note": "A-5: 泥をすする → «есть грязь»; образ унижения сохранён. PRESERVED — JA."
+    },
+    {
+      "block": 11,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "OTHER",
+      "action": "PRESERVED",
+      "note": "B-3: Фатима — 上校 (полковник), собеседник — 艦長 (капитан); адресаты обращений проверены по JA и по блоку 12. PRESERVED — JA."
+    },
+    {
+      "block": 26,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MEANING_SHIFT",
+      "action": "PRESERVED",
+      "note": "B-4: «застрелили Лукшану и Тиффанию» — восприятие Сайто в ярости, между тем как следующий абзац содержит «Тиффания ещё жива!». PRESERVED — JA/EN."
+    },
+    {
+      "block": 7,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MEANING_SHIFT",
+      "action": "PRESERVED",
+      "note": "C-1: грубый тон ответа Сайто сохранён; модальность JA (ボケ) не ослаблена. PRESERVED — CHARACTER VOICE."
+    },
+    {
+      "block": 12,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MEANING_SHIFT",
+      "action": "PRESERVED",
+      "note": "C-2: пафос партийного лозунга и обращение к Великой Цели сохранены. PRESERVED — JA."
+    },
+    {
+      "block": 21,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MEANING_SHIFT",
+      "action": "PRESERVED",
+      "note": "C-3: ироническое «рада тебя видеть, предательница народа» сохраняет скрытую угрозу. PRESERVED — FUNCTIONAL."
+    },
+    {
+      "block": 23,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MEANING_SHIFT",
+      "action": "PRESERVED",
+      "note": "C-4: холодная жестокость Фатимы («умрёшь медленно») не смягчена. PRESERVED — CHARACTER VOICE."
+    },
+    {
+      "block": 28,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MEANING_SHIFT",
+      "action": "PRESERVED",
+      "note": "C-5: запинка «поэтому, поэтому…» сохраняет речевой сбой Сайто. PRESERVED — FUNCTIONAL."
+    },
+    {
+      "block": 7,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "FORMAT",
+      "action": "FIXED",
+      "note": "FINAL READ: ««Живое», — прошептал Сайто и направился…» → тире-форма или отдельная атрибуция; Thought quotes → курсив; мысль вынесена отдельным абзацем.",
+      "before": "«Живое», — прошептал Сайто и направился к штурвалу. … «Машины…», — подумал Сайто.",
+      "after": "— Живое, — прошептал Сайто. / Он направился к штурвалу. … / _Машины с каждым днём становятся всё удобнее_, — подумал Сайто."
+    },
+    {
+      "block": 8,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "FORMAT",
+      "action": "FIXED",
+      "note": "FINAL READ: внутренняя речь «Бесит она меня…» получила явную атрибуцию по PR-MIND.",
+      "before": "_Бесит она меня…_",
+      "after": "_Бесит она меня…_ — подумал Сайто."
+    },
+    {
+      "block": 14,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "FORMAT",
+      "action": "FIXED",
+      "note": "FINAL READ: атрибуция после реплики вынесена отдельным абзацем без тире (check_records).",
+      "before": "— Я не дам тебе одному идти на приманку! — Тиффания схватила его за руку…",
+      "after": "— Я не дам тебе одному идти на приманку! / Тиффания схватила его за руку…"
+    },
+    {
+      "block": 19,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "FORMAT",
+      "action": "FIXED",
+      "note": "FINAL READ: внутренний вопрос в кавычках переведён в курсив с атрибуцией.",
+      "before": "«А если и найдётся мастер?» — подумал Сайто…",
+      "after": "_А если и найдётся мастер?_ — подумал Сайто и нажал на спуск."
+    },
+    {
+      "block": 21,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "FORMAT",
+      "action": "FIXED",
+      "note": "FINAL READ: наррация и реплика разделены абзацем (check_records).",
+      "before": "Увидев уши Тиффании, её лицо исказилось. — Ты одна из демонов, да?",
+      "after": "Увидев уши Тиффании, её лицо исказилось. / — Ты одна из демонов, да?"
+    },
+    {
+      "block": 23,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "FORMAT",
+      "action": "FIXED",
+      "note": "FINAL READ: мысль Тиффании получила атрибуцию; PR-MIND.",
+      "before": "_Нигде у меня нет союзников._",
+      "after": "_Нигде у меня нет союзников._ — подумала Тиффания."
+    },
+    {
+      "block": 24,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "FORMAT",
+      "action": "FIXED",
+      "note": "FINAL READ: три внутренние реплики оформлены курсивом с атрибуцией/цепочкой, нарратив вынесен отдельным абзацем.",
+      "before": "„Нет!…“ (кавычки) + мысль, слитая с нарративом",
+      "after": "_Нет! Не хочу умирать. Хочу увидеть Сайто._ — подумала Тиффания. / _Не хочу умирать._ / _Хочу увидеть Сайто._"
+    },
+    {
+      "block": 25,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "FORMAT",
+      "action": "FIXED",
+      "note": "FINAL READ: мысль «Помоги» получила атрибуцию; PR-MIND.",
+      "before": "_Помоги._",
+      "after": "_Помоги._ — подумала Тиффания."
+    },
+    {
+      "block": 26,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "FORMAT",
+      "action": "FIXED",
+      "note": "FINAL READ: звукоподражание без дефисной атрибуции; мысль Тиффании введена двоеточием в том же абзаце; «Тиффания ещё жива!» переведено в курсив.",
+      "before": "С плеском — «за-а-ап!» — … / «Тиффания ещё жива!»",
+      "after": "С громким плеском … / …крик Тиффании: _Не убивай! Мы же сами станем демонами!_ / _Тиффания ещё жива!_ — подумал Сайто."
+    },
+    {
+      "block": 28,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "FORMAT",
+      "action": "FIXED",
+      "note": "FINAL READ: финальная мысль Сайто получила атрибуцию; PR-MIND.",
+      "before": "_Вот как она думала обо мне…_",
+      "after": "_Вот как она думала обо мне…_ — подумал Сайто."
+    },
+    {
+      "block": 7,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "RUSSIAN_ERROR",
+      "action": "FIXED",
+      "note": "FINAL READ (RU-only): знаки при кавычках «покажи»?,, исправлена пунктуация реплики.",
+      "before": "— Что ты сказала — «покажи»?, болван? Говори как следует.",
+      "after": "— Как ты сказал? «Покажи»? Болван, поговори как следует."
+    },
+    {
+      "block": 16,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "RUSSIAN_ERROR",
+      "action": "FIXED",
+      "note": "FINAL READ (RU-only): тяжеловесная конструкция «донесло ли это до кого-то» нормализована.",
+      "before": "Не дожидаясь, донесло ли это до кого-то, Сайто дал газу винту.",
+      "after": "Не дождавшись, дошла ли до них его просьба, Сайто дал газу винту."
+    },
+    {
+      "block": 19,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "RUSSIAN_ERROR",
+      "action": "FIXED",
+      "note": "FINAL READ (RU-only): «направить на него только одну башню» → «навести … лишь одну башню»; уточнена конструкция со спуском.",
+      "before": "нажимая на спуск РПГ-7, направленного на мостик … направить на него только одну башню",
+      "after": "нажал на спуск … навести на него лишь одну башню"
+    },
+    {
+      "block": 20,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "MEANING_SHIFT",
+      "action": "FIXED",
+      "note": "FINAL READ: JA 自分たちを殺したらまずいはずではなかったか — речь о Сайто и его спутниках; местоимение «его» заменено на «нас».",
+      "before": "Разве им не было бы хуже, если бы они его убили?",
+      "after": "Разве им не было бы хуже, если бы они нас убили?"
+    },
+    {
+      "block": 21,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "RUSSIAN_ERROR",
+      "action": "FIXED",
+      "note": "FINAL READ (RU-only): неестественная инверсия «Слышала я, и вправду говорили» нормализована.",
+      "before": "Слышала я, и вправду говорили, что флот захвачен ими.",
+      "after": "Говорили, что флот и вправду захвачен ими."
+    },
+    {
+      "block": 27,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "RUSSIAN_ERROR",
+      "action": "FIXED",
+      "note": "FINAL READ (RU-only): «Пули вошли во всё тело» — калька; заменено на естественное «тело изрешечено пулями».",
+      "before": "Пули вошли во всё тело, дыхание еле слышалось.",
+      "after": "Тело было буквально изрешечено пулями, дыхание еле слышалось."
+    },
+    {
+      "block": 9,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "FORMAT",
+      "action": "PRESERVED",
+      "note": "format_scan: quotespeech — «Подобное „оружие“ …» — это цитата слов Джулио в воспоминании (JA 『…』), не реплика вслух. PRESERVED — JA (PR-QUOTE)."
+    },
+    {
+      "block": 21,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "FORMAT",
+      "action": "PRESERVED",
+      "note": "format_scan: quotespeech — «Партия стальной крови и единства» — название на нарукавной эмблеме, не реплика. PRESERVED — JA."
+    },
+    {
+      "block": 11,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "FORMAT",
+      "action": "PRESERVED",
+      "note": "format_scan: title — «Её величественная неподвижность» — «её» местомение к Фатиме, не титул. PRESERVED — FUNCTIONAL."
+    },
+    {
+      "block": 1,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "FORMAT",
+      "action": "FIXED",
+      "note": "STYLE AUDIT: однокоренной повтор «мысли … мысль» в соседних абзацах; заменено на «раздумья».",
+      "before": "погружённый в свои мысли. Вернее, его угнетала мысль…",
+      "after": "погружённый в раздумья. Вернее, его угнетала мысль…"
+    },
+    {
+      "block": 6,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "FORMAT",
+      "action": "FIXED",
+      "note": "STYLE AUDIT: тавтология «установлена … установка»; заменено на «был установлен пулемёт».",
+      "before": "но в носу была установлена пулемётная установка",
+      "after": "но в носу был установлен пулемёт"
+    },
+    {
+      "block": 7,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "FORMAT",
+      "action": "FIXED",
+      "note": "STYLE AUDIT: однокоренной повтор «провернул … провернулся»; первое заменено на «повернул ключ зажигания».",
+      "before": "Сайто провернул зажигание. Стартёр провернулся…",
+      "after": "Сайто повернул ключ зажигания. Стартёр провернулся…"
+    },
+    {
+      "block": 9,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "FORMAT",
+      "action": "FIXED",
+      "note": "STYLE AUDIT: монотонность эпитета «огромн…» — «огромную» заменено на «громадную».",
+      "before": "такую огромную атомную подводную лодку",
+      "after": "такую громадную атомную подводную лодку"
+    },
+    {
+      "block": 13,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "FORMAT",
+      "action": "FIXED",
+      "note": "STYLE AUDIT: монотонность эпитета — «огромный столб» заменён на «гигантский столб».",
+      "before": "Поднялся огромный столб воды",
+      "after": "Поднялся гигантский столб воды"
+    },
+    {
+      "block": 19,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "FORMAT",
+      "action": "FIXED",
+      "note": "STYLE AUDIT: монотонность эпитета — «огромному дракон-киту» заменено на «гигантскому».",
+      "before": "Но огромному «дракон-киту» это было каплей в море.",
+      "after": "Но гигантскому «дракон-киту» это было каплей в море."
+    }
+  ]
+}

@@ -1,0 +1,127 @@
+{
+  "analysis_id": "20261119-170000-5678",
+  "chapter": "v20-ch03",
+  "inputs": {
+    "phase1": "analysis/20261119-170000-1234.phase1.json",
+    "a_runs": [
+      "a/20261119-170000-a1b2.json"
+    ],
+    "b_runs": [
+      "b/20261119-170000-c3d4.json"
+    ],
+    "c_runs": [
+      "c/20261119-170000-e5f6.json"
+    ],
+    "precheck": "precheck/omission-precheck.json"
+  },
+  "results": [
+    {
+      "block": 1,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "NUANCE_SHIFT",
+      "action": "PRESERVED",
+      "note": "Кандидат A-1 (a1b2, бл.1): 〝水中話術〟 → «Подводная речь». JA даёт 기능 заклинания, а не его буквальный состав; EN «underwater communication spell» — только справка. Форма зафиксирована PROVISIONAL в журнале. PRESERVED — JA."
+    },
+    {
+      "block": 1,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "COMPONENT_LOSS",
+      "action": "PRESERVED",
+      "note": "Наблюдение Фазы 1 (бл.1): 120 メイル → «сто двадцать метров» по канону «метр» в нарративе (v19-log); мера сохранена, пропуска нет. PRESERVED — JA."
+    },
+    {
+      "block": 4,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "COMPONENT_LOSS",
+      "action": "PRESERVED",
+      "note": "Наблюдение Фазы 1 (бл.4): JA-цепочка 原潜 → 原子力 → 放射能漏れ → 被爆/チェルノブイリ полностью покрыта RU: «Атомная подводная лодка» → «Атомная!» → «утечка радиации» → «Облучение. Чернобыль». PRESERVED — JA."
+    },
+    {
+      "block": 6,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MEANING_SHIFT",
+      "action": "PRESERVED",
+      "note": "Наблюдение Фазы 1 (бл.6): «Это ядерное оружие. Вот что» — точное соответствие JA 「核兵器だよ。これ」; модальность не усилена, «сидел в углу, обхватив колени» повторяет JA 膝を抱えて隅にうずくまってしまった. PRESERVED — JA."
+    },
+    {
+      "block": 7,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "COMPONENT_LOSS",
+      "action": "PRESERVED",
+      "note": "Наблюдение Фазы 1 (бл.7): цепочка сомнений, идиома 背に腹は代えられない → «Не до жиру — быть бы живу» и сравнение с ジョゼフ → «Жозеф» (канон dictionary.md) на месте; внутренняя речь вынесена курсивом отдельным абзацем по PR-MIND. PRESERVED — JA."
+    },
+    {
+      "block": 7,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "LEXICAL_MISMATCH",
+      "action": "PRESERVED",
+      "note": "Кандидат A-2 (a1b2, бл.7): 火石 → «огненный камень», 両用艦隊 → «объединённый флот» — канон dictionary.md и завершённых томов. PRESERVED — JA."
+    },
+    {
+      "block": 9,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "NUANCE_SHIFT",
+      "action": "PRESERVED",
+      "note": "Кандидат A-3 (a1b2, бл.9): 果実 → «плоды» в кавычках сохраняет смягчающий эвфемизм JA. PRESERVED — FUNCTIONAL."
+    },
+    {
+      "block": 3,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "REGISTER_SHIFT",
+      "action": "PRESERVED",
+      "note": "Кандидат B-1 (c3d4, бл.3): просторечие Дерфлингера みてえだね передано разговорным «кажется»; смысл и регистр сохранены, стилизация была бы предпочтением. PRESERVED — CHARACTER VOICE."
+    },
+    {
+      "block": 5,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MODALITY_SHIFT",
+      "action": "PRESERVED",
+      "note": "Кандидат B-2 (c3d4, бл.5): これもロシア製か — риторическое подтверждение догадки; «И эта тоже русская...» сохраняет модальность, вопрос не требовался. PRESERVED — JA."
+    },
+    {
+      "block": 9,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "LEXICAL_MISMATCH",
+      "action": "PRESERVED",
+      "note": "Кандидат B-3 (c3d4, бл.9): 聖地 → «Святая земля» (канон dictionary.md), 明け渡してもらう → «заставить уступить» сохраняет субъект и направление. PRESERVED — JA."
+    },
+    {
+      "block": 2,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "PRAGMATIC_SHIFT",
+      "action": "PRESERVED",
+      "note": "Кандидат C-1 (e5f6, бл.2): повторы «эльфийка, эльфийка» / «варварами... варварами» передают насмешку JA エルエルさん / 蛮人蛮人. PRESERVED — FUNCTIONAL."
+    },
+    {
+      "block": 8,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "PRAGMATIC_SHIFT",
+      "action": "PRESERVED",
+      "note": "Кандидат C-2 (e5f6, бл.8): «все погибнем вместе» — демонстрация силы перед эльфами, сразу снимаемая JA 「なんてね… 封印だ」 и RU «Я пошутил». PRESERVED — JA."
+    },
+    {
+      "block": 10,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "PRAGMATIC_SHIFT",
+      "action": "PRESERVED",
+      "note": "Кандидат C-3 (e5f6, бл.10): «Если бы я была возлюбленной Сайто...» — тихое сожаление JA 〜だったらな; атрибуция «прошептала» и многоточие передают ту же степень уверенности. PRESERVED — CHARACTER VOICE."
+    },
+    {
+      "block": 12,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "COMPONENT_LOSS",
+      "action": "PRESERVED",
+      "note": "Наблюдение Фазы 1 (бл.12): история кольца полностью покрыта — «камень духов» (PROVISIONAL), серебряная оправа, Альбион, «пустыня» матери, оазис и город. Пропуска нет. PRESERVED — JA."
+    }
+  ],
+  "precheck": {
+    "candidates": 0,
+    "note": "precheck/omission-precheck.json: 0 candidates на 13 отредактированных блоков; пропусков не найдено. Analyzer отдельно проверил полноту покрытия в Фазе 1 и подтвердил отсутствие MISSING_TRANSLATION."
+  },
+  "notes": [
+    "Правки до SMA (self-review, fix_block.py --replace-file, RECHECK после каждой): бл.2 исправлена грамматика «Этакую... лодку не может быть живой» → «Такая... лодка просто не может быть живой» (RUSSIAN_ERROR); бл.5 «Сыплюсь ржавчиной» → «С ржавчиной, сыпавшейся кусками» (RUSSIAN_ERROR), «кафейне» → «кафе», «сохраняло здесь» → «сохраняло в ней»; бл.6 «Та, что... способна» → «То, что... способно» (согласование рода); бл.7 внутренняя речь «Плохо. О чём я думаю?...» вынесена в курсивный абзац (FORMAT/PR-MIND); бл.8 «сидела на корточках» → «сидела, поджав колени». Также устранены 12 blockgap-кандидатов нормализацией разделителей блоков. Все правки применены до SMA и вошли в финальный текст, который и покрывает настоящий analysis.",
+    "Канон/JA > EN: «Жозеф» (ジョゼフ, dictionary.md) — не «Жозетта» из канон-списка задания (это другой персонаж, ジョゼット); «Святая земля» (聖地), «огненный камень» (火石), «объединённый флот» (両用艦隊), «палочка» (杖), «магия общего доступа» (コモン・マジック, PROVISIONAL), «камень духов» (精霊石, PROVISIONAL), «Подводная речь» (水中話術, PROVISIONAL).",
+    "FINAL READ после Фазы 2 (RU-only, все 13 блоков) нашёл одну коллокационную шероховатость в бл.12: «Даже от этого её беды не решались» → «Но от этого её тревога не проходила» (fix_block.py --replace-file, RECHECK пройден, merged пересобран, 5 предфильтров и omission pre-check перезапущены). Правка не затрагивает ни одного кандидата леджера; все решения выше сохраняются, покрытие относится к финальному тексту."
+  ],
+  "coverage": "13/13 блоков финального текста. Analysis закрывает главу: все 14 логических кандидатов (3 A + 3 B + 3 C + 5 Phase 1) получили status + fidelity + action; 0 precheck-кандидатов. Статусов WIP и непокрытых блоков нет."
+}

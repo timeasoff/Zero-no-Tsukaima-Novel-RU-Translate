@@ -19746,6 +19746,380 @@
      "note": ""
     }
    ]
+  },
+  {
+   "id": "T-0107",
+   "text": "Polnyi perevod i audit v20-ch01 (first-launch po agent_workflow): bloki, prefilytry, SMA, otchet, gate 12/12, commit",
+   "created": "2026-11-19 01:39:00",
+   "status": "done",
+   "note": "polnyi audit, gate 12/12",
+   "subtasks": [
+    {
+     "id": "T-0107-S1",
+     "kind": "first-launch",
+     "volume": 20,
+     "chapter": "01",
+     "chapter_id": "v20-ch01",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v20-ch01.first-launch.md",
+     "expected": [
+      "AINovelEdit/output/chapters/v20-ch01.md",
+      "AINovelEdit/output/_log/v20-log.md",
+      "AINovelEdit/translates/_report/merged/v20-ch01.md"
+     ],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-19 01:39:12",
+       "prompt": "agent_prompts/agent_prompt.v20-ch01.first-launch.md",
+       "finished": "",
+       "result": "",
+       "note": ""
+      }
+     ],
+     "note": ""
+    }
+   ]
+  },
+  {
+   "id": "T-0108",
+   "text": "Polnyi perevod i audit v20-ch02 (first-launch po agent_workflow): bloki, prefilytry, SMA, otchet, gate 12/12, commit",
+   "created": "2026-11-19 01:39:00",
+   "status": "done",
+   "note": "polnyi audit, gate 12/12",
+   "subtasks": [
+    {
+     "id": "T-0108-S1",
+     "kind": "first-launch",
+     "volume": 20,
+     "chapter": "02",
+     "chapter_id": "v20-ch02",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v20-ch02.first-launch.md",
+     "expected": [
+      "AINovelEdit/output/chapters/v20-ch02.md",
+      "AINovelEdit/output/_log/v20-log.md",
+      "AINovelEdit/translates/_report/merged/v20-ch02.md"
+     ],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-19 01:39:13",
+       "prompt": "agent_prompts/agent_prompt.v20-ch02.first-launch.md",
+       "finished": "",
+       "result": "",
+       "note": ""
+      }
+     ],
+     "note": ""
+    }
+   ]
+  },
+  {
+   "id": "T-0109",
+   "text": "Polnyi perevod i audit v20-ch03 (first-launch po agent_workflow): bloki, prefilytry, SMA, otchet, gate 12/12, commit",
+   "created": "2026-11-19 01:39:00",
+   "status": "done",
+   "note": "polnyi audit, gate 12/12",
+   "subtasks": [
+    {
+     "id": "T-0109-S1",
+     "kind": "first-launch",
+     "volume": 20,
+     "chapter": "03",
+     "chapter_id": "v20-ch03",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v20-ch03.first-launch.md",
+     "expected": [
+      "AINovelEdit/output/chapters/v20-ch03.md",
+      "AINovelEdit/output/_log/v20-log.md",
+      "AINovelEdit/translates/_report/merged/v20-ch03.md"
+     ],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-19 01:39:13",
+       "prompt": "agent_prompts/agent_prompt.v20-ch03.first-launch.md",
+       "finished": "",
+       "result": "",
+       "note": ""
+      }
+     ],
+     "note": ""
+    }
+   ]
+  },
+  {
+   "id": "T-0110",
+   "text": "Polnyi perevod i audit v20-ch04 (first-launch po agent_workflow): bloki, prefilytry, SMA, otchet, gate 12/12, commit",
+   "created": "2026-11-19 01:39:00",
+   "status": "done",
+   "note": "polnyi audit, gate 12/12",
+   "subtasks": [
+    {
+     "id": "T-0110-S1",
+     "kind": "first-launch",
+     "volume": 20,
+     "chapter": "04",
+     "chapter_id": "v20-ch04",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v20-ch04.first-launch.md",
+     "expected": [
+      "AINovelEdit/output/chapters/v20-ch04.md",
+      "AINovelEdit/output/_log/v20-log.md",
+      "AINovelEdit/translates/_report/merged/v20-ch04.md"
+     ],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-19 01:39:13",
+       "prompt": "agent_prompts/agent_prompt.v20-ch04.first-launch.md",
+       "finished": "",
+       "result": "",
+       "note": ""
+      }
+     ],
+     "note": ""
+    }
+   ]
+  },
+  {
+   "id": "T-0111",
+   "text": "Polnyi perevod i audit v20-ch05 (first-launch po agent_workflow): bloki, prefilytry, SMA, otchet, gate 12/12, commit",
+   "created": "2026-11-19 01:39:00",
+   "status": "done",
+   "note": "polnyi audit, gate 12/12",
+   "subtasks": [
+    {
+     "id": "T-0111-S1",
+     "kind": "first-launch",
+     "volume": 20,
+     "chapter": "05",
+     "chapter_id": "v20-ch05",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v20-ch05.first-launch.md",
+     "expected": [
+      "AINovelEdit/output/chapters/v20-ch05.md",
+      "AINovelEdit/output/_log/v20-log.md",
+      "AINovelEdit/translates/_report/merged/v20-ch05.md"
+     ],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-19 01:39:13",
+       "prompt": "agent_prompts/agent_prompt.v20-ch05.first-launch.md",
+       "finished": "",
+       "result": "",
+       "note": ""
+      }
+     ],
+     "note": ""
+    }
+   ]
+  },
+  {
+   "id": "T-0112",
+   "text": "Polnyi perevod i audit v20-ch06 (first-launch po agent_workflow): bloki, prefilytry, SMA, otchet, gate 12/12, commit",
+   "created": "2026-11-19 01:39:00",
+   "status": "done",
+   "note": "polnyi audit, gate 12/12",
+   "subtasks": [
+    {
+     "id": "T-0112-S1",
+     "kind": "first-launch",
+     "volume": 20,
+     "chapter": "06",
+     "chapter_id": "v20-ch06",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v20-ch06.first-launch.md",
+     "expected": [
+      "AINovelEdit/output/chapters/v20-ch06.md",
+      "AINovelEdit/output/_log/v20-log.md",
+      "AINovelEdit/translates/_report/merged/v20-ch06.md"
+     ],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-19 01:39:13",
+       "prompt": "agent_prompts/agent_prompt.v20-ch06.first-launch.md",
+       "finished": "",
+       "result": "",
+       "note": ""
+      }
+     ],
+     "note": ""
+    }
+   ]
+  },
+  {
+   "id": "T-0113",
+   "text": "Polnyi perevod i audit v20-ch07 (first-launch po agent_workflow): bloki, prefilytry, SMA, otchet, gate 12/12, commit",
+   "created": "2026-11-19 01:39:00",
+   "status": "done",
+   "note": "polnyi audit, gate 12/12",
+   "subtasks": [
+    {
+     "id": "T-0113-S1",
+     "kind": "first-launch",
+     "volume": 20,
+     "chapter": "07",
+     "chapter_id": "v20-ch07",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v20-ch07.first-launch.md",
+     "expected": [
+      "AINovelEdit/output/chapters/v20-ch07.md",
+      "AINovelEdit/output/_log/v20-log.md",
+      "AINovelEdit/translates/_report/merged/v20-ch07.md"
+     ],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-19 01:39:13",
+       "prompt": "agent_prompts/agent_prompt.v20-ch07.first-launch.md",
+       "finished": "",
+       "result": "",
+       "note": ""
+      }
+     ],
+     "note": ""
+    }
+   ]
+  },
+  {
+   "id": "T-0114",
+   "text": "Polnyi perevod i audit v20-ch08 (first-launch po agent_workflow): bloki, prefilytry, SMA, otchet, gate 12/12, commit",
+   "created": "2026-11-19 01:39:00",
+   "status": "done",
+   "note": "polnyi audit, gate 12/12",
+   "subtasks": [
+    {
+     "id": "T-0114-S1",
+     "kind": "first-launch",
+     "volume": 20,
+     "chapter": "08",
+     "chapter_id": "v20-ch08",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v20-ch08.first-launch.md",
+     "expected": [
+      "AINovelEdit/output/chapters/v20-ch08.md",
+      "AINovelEdit/output/_log/v20-log.md",
+      "AINovelEdit/translates/_report/merged/v20-ch08.md"
+     ],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-19 01:39:14",
+       "prompt": "agent_prompts/agent_prompt.v20-ch08.first-launch.md",
+       "finished": "",
+       "result": "",
+       "note": ""
+      }
+     ],
+     "note": ""
+    }
+   ]
+  },
+  {
+   "id": "T-0115",
+   "text": "Polnyi perevod i audit v20-ch09 (first-launch po agent_workflow): bloki, prefilytry, SMA, otchet, gate 12/12, commit",
+   "created": "2026-11-19 01:39:00",
+   "status": "done",
+   "note": "polnyi audit, gate 12/12",
+   "subtasks": [
+    {
+     "id": "T-0115-S1",
+     "kind": "first-launch",
+     "volume": 20,
+     "chapter": "09",
+     "chapter_id": "v20-ch09",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v20-ch09.first-launch.md",
+     "expected": [
+      "AINovelEdit/output/chapters/v20-ch09.md",
+      "AINovelEdit/output/_log/v20-log.md",
+      "AINovelEdit/translates/_report/merged/v20-ch09.md"
+     ],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-19 01:39:14",
+       "prompt": "agent_prompts/agent_prompt.v20-ch09.first-launch.md",
+       "finished": "",
+       "result": "",
+       "note": ""
+      }
+     ],
+     "note": ""
+    }
+   ]
+  },
+  {
+   "id": "T-0116",
+   "text": "Polnyi perevod i audit v20-epilogue (first-launch po agent_workflow): bloki, prefilytry, SMA, otchet, gate 12/12, commit",
+   "created": "2026-11-19 01:39:00",
+   "status": "done",
+   "note": "polnyi audit, gate 12/12",
+   "subtasks": [
+    {
+     "id": "T-0116-S1",
+     "kind": "first-launch",
+     "volume": 20,
+     "chapter": "epilogue",
+     "chapter_id": "v20-epilogue",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v20-epilogue.first-launch.md",
+     "expected": [
+      "AINovelEdit/output/chapters/v20-epilogue.md",
+      "AINovelEdit/output/_log/v20-log.md",
+      "AINovelEdit/translates/_report/merged/v20-epilogue.md"
+     ],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-19 01:39:14",
+       "prompt": "agent_prompts/agent_prompt.v20-epilogue.first-launch.md",
+       "finished": "",
+       "result": "",
+       "note": ""
+      }
+     ],
+     "note": ""
+    }
+   ]
+  },
+  {
+   "id": "T-0117",
+   "text": "Polnyi perevod i audit v20-afterword (first-launch po agent_workflow): bloki, prefilytry, SMA, otchet, gate 12/12, commit",
+   "created": "2026-11-19 01:39:00",
+   "status": "done",
+   "note": "polnyi audit, gate 12/12",
+   "subtasks": [
+    {
+     "id": "T-0117-S1",
+     "kind": "first-launch",
+     "volume": 20,
+     "chapter": "afterword",
+     "chapter_id": "v20-afterword",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v20-afterword.first-launch.md",
+     "expected": [
+      "AINovelEdit/output/chapters/v20-afterword.md",
+      "AINovelEdit/output/_log/v20-log.md",
+      "AINovelEdit/translates/_report/merged/v20-afterword.md"
+     ],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-19 01:39:14",
+       "prompt": "agent_prompts/agent_prompt.v20-afterword.first-launch.md",
+       "finished": "",
+       "result": "",
+       "note": ""
+      }
+     ],
+     "note": ""
+    }
+   ]
   }
  ]
 }

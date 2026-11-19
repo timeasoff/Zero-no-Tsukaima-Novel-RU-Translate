@@ -1,0 +1,62 @@
+{
+  "analysis_id": "20261119-220000-e5f6.phase1",
+  "chapter": "v20-epilogue",
+  "phase": 1,
+  "scope": "blind",
+  "results": [
+    {
+      "block": 1,
+      "finding": "MISTRANSLATION",
+      "note": "реплика Алия о спасении: сырой RU переворачивает субъекта и время — «я попал к вам» вместо «я добрался к вам, когда всё уже кончено»",
+      "confidence": "HIGH"
+    },
+    {
+      "block": 1,
+      "finding": "PRAGMATICS",
+      "note": "реплика «せいぜい、感謝してほしいもんだな» — ироничная просьба-упрёк; нужна интонация без усиления",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 2,
+      "finding": "MEANING_SHIFT",
+      "note": "命の危険がある — опасность, а не неизбежная смерть; черновик давал «жизни нашей не будет»",
+      "confidence": "HIGH"
+    },
+    {
+      "block": 2,
+      "finding": "COMPONENT_LOSS",
+      "note": "предположительная модальность のだろう теряется без «видимо»",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 2,
+      "finding": "RUSSIAN_ERROR",
+      "note": "падежное управление: «сдавить этой тонкой шеи» вместо «сдавить ей тонкую шею»",
+      "confidence": "HIGH"
+    },
+    {
+      "block": 2,
+      "finding": "ADDITION",
+      "note": "дублирование смысла «мы не монолит / между нами нет полного единства»",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 3,
+      "finding": "FORMAT",
+      "note": "внутренние мысли требуют курсива и отдельного оформления: やめよう / 次…許さない / なんでも竜に引かせるのが好き",
+      "confidence": "HIGH"
+    },
+    {
+      "block": 4,
+      "finding": "COMPONENT_LOSS",
+      "note": "俺がついてるから — «потому что я с тобой»; сырой RU подменял «потому что нам повезло»",
+      "confidence": "HIGH"
+    },
+    {
+      "block": 5,
+      "finding": "MEANING_SHIFT",
+      "note": "刻まれた — «начертанная», не «выжженная»; способ нанесения руны в JA не назван",
+      "confidence": "MEDIUM"
+    }
+  ]
+}

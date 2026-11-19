@@ -1,0 +1,340 @@
+{
+  "analysis_id": "20261119-024500-5678",
+  "chapter": "v20-ch08",
+  "inputs": {
+    "phase1": "analysis/20261119-024500-1234.phase1.json",
+    "a_runs": [
+      "a/20261119-024500-a1b2.json"
+    ],
+    "b_runs": [
+      "b/20261119-024500-c3d4.json"
+    ],
+    "c_runs": [
+      "c/20261119-024500-e5f6.json"
+    ],
+    "precheck": "precheck/omission-precheck.json"
+  },
+  "coverage": {
+    "blocks": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16
+    ],
+    "attestation": "Артефакты созданы после последней правки текста; покрывают все 16 блоков финального текста. Статусов WIP и непокрытых блоков нет. Сверка с Фазой 1 выполнена конкретным файлом inputs.phase1."
+  },
+  "results": [
+    {
+      "candidate": "A1",
+      "block": 1,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MEANING_SHIFT",
+      "action": "PRESERVED",
+      "note": "一・五倍 → «в полтора раза»: JA > EN («150 percent faster»). Числовой якорь сохранён."
+    },
+    {
+      "candidate": "A2",
+      "block": 3,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MEANING_SHIFT",
+      "action": "PRESERVED",
+      "note": "空飛ぶヘビくん → «Летающая Змейка»: форма из завершённого v6-ch07, каноническая."
+    },
+    {
+      "candidate": "A3",
+      "block": 6,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MEANING_SHIFT",
+      "action": "PRESERVED",
+      "note": "犬かき → «как пёс в воде»: комический образ сохранён, модальность не изменена."
+    },
+    {
+      "candidate": "A4",
+      "block": 7,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MEANING_SHIFT",
+      "action": "PRESERVED",
+      "note": "北花壇騎士 → «рыцарь Северной Клумбы»: канон завершённых томов; 機を見るに敏 передано без усиления."
+    },
+    {
+      "candidate": "A5",
+      "block": 11,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "MEANING_SHIFT",
+      "action": "FIXED",
+      "note": "FR: «Наверное, уже лишили его рассудка…» → «Уже выкрали у него рассудок…» — снято ослабление модальности (とっくに).",
+      "before": "Наверное, уже лишили его рассудка и превратили в куклу...",
+      "after": "Уже выкрали у него рассудок и превратили в куклу..."
+    },
+    {
+      "candidate": "A6",
+      "block": 15,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MEANING_SHIFT",
+      "action": "PRESERVED",
+      "note": "桃髪脳天気 → «персиковолосой легкомысленной дурочкой»: оба компонента прозвища на месте."
+    },
+    {
+      "candidate": "B1",
+      "block": 1,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MEANING_SHIFT",
+      "action": "PRESERVED",
+      "note": "こちらのスケール — сравнение не в пользу гигантской птицы; направление сохранено."
+    },
+    {
+      "candidate": "B2",
+      "block": 3,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "COMPONENT_LOSS",
+      "action": "PRESERVED",
+      "note": "Причинная связка «уход → потеря корабля» передана полностью."
+    },
+    {
+      "candidate": "B3",
+      "block": 4,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "RUSSIAN_ERROR",
+      "action": "FIXED",
+      "note": "FR: «стерега свежую угрозу» → «высматривая новую угрозу» (新手): уточнена лексика и устранена корявость.",
+      "before": "стерега свежую угрозу",
+      "after": "высматривая новую угрозу"
+    },
+    {
+      "candidate": "B4",
+      "block": 8,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MEANING_SHIFT",
+      "action": "PRESERVED",
+      "note": "立てないようにする → «сбить с ног»: угроза Элеоноры сохранена."
+    },
+    {
+      "candidate": "B5",
+      "block": 10,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MEANING_SHIFT",
+      "action": "PRESERVED",
+      "note": "頭を取られる → «зайти в голову — обогнать и оказаться сверху»: субъект — варварское судно, направление подтверждено последующими звеньями JA."
+    },
+    {
+      "candidate": "B6",
+      "block": 14,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MEANING_SHIFT",
+      "action": "PRESERVED",
+      "note": "本気だわ、この子 — восприятие Луизы; подмена субъекта отсутствует."
+    },
+    {
+      "candidate": "C1",
+      "block": 2,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MEANING_SHIFT",
+      "action": "PRESERVED",
+      "note": "追いつくものか → «Да разве их догнать!»: риторическое отрицание сохранено."
+    },
+    {
+      "candidate": "C2",
+      "block": 3,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MEANING_SHIFT",
+      "action": "PRESERVED",
+      "note": "ね → «да?»: игривая интонация Кирхе сохранена как CHARACTER VOICE."
+    },
+    {
+      "candidate": "C3",
+      "block": 5,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MEANING_SHIFT",
+      "action": "PRESERVED",
+      "note": "でしょ/わよ → «Разве не видно?!»: раздражённый отпор сохранён."
+    },
+    {
+      "candidate": "C4",
+      "block": 9,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MEANING_SHIFT",
+      "action": "PRESERVED",
+      "note": "おっきい戦艦ダメ / 行かず後家 → «большущий корабль — нет!» / «старая дева»: речевой акт поддёвки сохранён."
+    },
+    {
+      "candidate": "C5",
+      "block": 12,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MEANING_SHIFT",
+      "action": "PRESERVED",
+      "note": "いいじゃありませんか → «А что плохого?»: мягкое успокоение, не вопрос и не приказ."
+    },
+    {
+      "candidate": "C6",
+      "block": 13,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MEANING_SHIFT",
+      "action": "PRESERVED",
+      "note": "そういうもんですよ → «Так оно и есть»: утешительное обобщение сохранено."
+    },
+    {
+      "candidate": "C7",
+      "block": 16,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MEANING_SHIFT",
+      "action": "PRESERVED",
+      "note": "地獄に落ちろ → «Гори в аду»: тихое сердитое проклятие, сила не сглажена."
+    },
+    {
+      "candidate": "P8",
+      "block": 8,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MISSING",
+      "action": "PRESERVED",
+      "note": "S1-tail-truncation: все JA-звенья блока 8 присутствуют в RU (крик Гиша, описание линкора, «Что это...?», дрожание Элеоноры). Сигнал вызван иным числом абзацев."
+    },
+    {
+      "candidate": "P12",
+      "block": 12,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MISSING",
+      "action": "PRESERVED",
+      "note": "S1-tail-truncation: «Луиза пристально посмотрела на Сиесту» и её реплика о де Орньере присутствуют в RU; пропуска нет."
+    },
+    {
+      "candidate": "P14",
+      "block": 14,
+      "status": "FALSE_POSITIVE",
+      "fidelity": "MISSING",
+      "action": "PRESERVED",
+      "note": "S1-tail-truncation: реплика Сиесты «Да. Разве это не весело?..» и финальное наблюдение на месте; пропуска нет."
+    },
+    {
+      "candidate": "FR-1",
+      "block": 3,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "RUSSIAN_ERROR",
+      "action": "FIXED",
+      "note": "RU-only: «мысли дошли до этого места» (калька) → «подумав так».",
+      "before": "«Подумать бы о обратном пути...» — мысли дошли до этого места, и Кольбер горько усмехнулся.",
+      "after": "«А что будет на обратном пути...» — подумав так, Кольбер горько усмехнулся."
+    },
+    {
+      "candidate": "FR-2",
+      "block": 3,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "FORMAT",
+      "action": "FIXED",
+      "note": "RU-only: «оглушительный грохот; под крылом» → «оглушительный грохот: под крылом» (пунктуация).",
+      "before": "«Бах!» — оглушительный грохот; под крылом раскрылся люк",
+      "after": "«Бах!» — оглушительный грохот: под крылом раскрылся люк"
+    },
+    {
+      "candidate": "FR-3",
+      "block": 3,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "RUSSIAN_ERROR",
+      "action": "FIXED",
+      "note": "RU-only: «посылал сигнал из устройства на носнике» → «посылал сигнал через детектор магии на носнике».",
+      "before": "посылал сигнал из устройства на носнике",
+      "after": "посылал сигнал через детектор магии на носнике"
+    },
+    {
+      "candidate": "FR-4",
+      "block": 4,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "RUSSIAN_ERROR",
+      "action": "FIXED",
+      "note": "RU-only: «так точно наносить такие удары» → «так метко бить» (устранён повтор).",
+      "before": "умудряться так точно наносить такие удары!",
+      "after": "умудряться так метко бить!"
+    },
+    {
+      "candidate": "FR-5",
+      "block": 5,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "RUSSIAN_ERROR",
+      "action": "FIXED",
+      "note": "RU-only: «С её магией они бы не так выбивались из сил» → «С её магией нам бы не пришлось так туго».",
+      "before": "С её магией они бы не так выбивались из сил...",
+      "after": "С её магией нам бы не пришлось так туго..."
+    },
+    {
+      "candidate": "FR-6",
+      "block": 8,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "FORMAT",
+      "action": "FIXED",
+      "note": "RU-only/check_records: две реплики в одной строке («Кто это несчастная?» / «Да вот...») разнесены по абзацам.",
+      "before": "— Кто это «несчастная»? — Да вот... помолвка расстроилась и всё такое.",
+      "after": "— Кто это «несчастная»?\n\n— Да вот... помолвка расстроилась и всё такое."
+    },
+    {
+      "candidate": "FR-7",
+      "block": 10,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "RUSSIAN_ERROR",
+      "action": "FIXED",
+      "note": "RU-only: «омерзения, что исходили» → «омерзения, которое исходило» (согласование).",
+      "before": "от омерзения, что исходили от толстяка рядом",
+      "after": "от омерзения, которое исходило от толстяка рядом"
+    },
+    {
+      "candidate": "FR-8",
+      "block": 14,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "RUSSIAN_ERROR",
+      "action": "FIXED",
+      "note": "RU-only: «И это стало началом» → «И этого хватило» (неясная референция).",
+      "before": "И это стало началом: Луиза принялась поедать всё подряд, не разбирая.",
+      "after": "И этого хватило: Луиза принялась поедать всё подряд, не разбирая."
+    },
+    {
+      "candidate": "FMT-1",
+      "block": 1,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "FORMAT",
+      "action": "FIXED",
+      "note": "15 blockgap-кандидатов (отсутствие пустой строки перед маркерами блоков 2–16) устранены нормализацией fix_block.py.",
+      "before": "текст вплотную к маркеру <!-- block: N --> (15 мест)",
+      "after": "пустая строка перед каждым маркером <!-- block: N -->"
+    },
+    {
+      "candidate": "FMT-2",
+      "block": 5,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "FORMAT",
+      "action": "FIXED",
+      "note": "Мысли Табиты вынесены в отдельные абзацы: «_Первый выстрел..._» / нарратив / «_Хотя бы на миг..._».",
+      "before": "_Первый выстрел не должен промахнуться._ Но найти лазейку никак не удавалось. _Хотя бы на миг этот ритм нарушился бы..._",
+      "after": "_Первый выстрел не должен промахнуться._\n\nНо найти лазейку никак не удавалось.\n\n_Хотя бы на миг этот ритм нарушился бы..._"
+    },
+    {
+      "candidate": "FMT-3",
+      "block": 12,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "FORMAT",
+      "action": "FIXED",
+      "note": "«Луиза остолбенела. _Я — опора?.._» → мысль вынесена отдельным абзацем.",
+      "before": "Луиза остолбенела. _Я — опора?.._",
+      "after": "Луиза остолбенела.\n\n_Я — опора?.._"
+    },
+    {
+      "candidate": "CC-1",
+      "block": 1,
+      "status": "CONFIRMED_ERROR",
+      "fidelity": "FORMAT",
+      "action": "FIXED",
+      "note": "Межблочная сверка тома: メスディエ → «Месудие» (2 вхождения, блоки 1–2) — форма уже принята как PROVISIONAL в v20-ch09; единообразие внутри тома.",
+      "before": "«Месдие»",
+      "after": "«Месудие»"
+    }
+  ]
+}
