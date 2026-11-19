@@ -48136,6 +48136,2965 @@
      "note": ""
     }
    ]
+  },
+  {
+   "id": "T-0146",
+   "text": "Recheck v15-v22 (v16 DEFERRED): full A+B+C -> omissions -> humanizer -> grammar -> style -> format -> terminology -> final",
+   "created": "2026-11-19 08:37:53",
+   "status": "open",
+   "note": "Round R-RECHECK-1522, independent new run IDs, v16 excluded",
+   "subtasks": [
+    {
+     "id": "T-0146-S1",
+     "kind": "sma-a",
+     "volume": 15,
+     "chapter": "afterword",
+     "chapter_id": "v15-afterword",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v15-afterword.sma-a.md",
+     "expected": [
+      "output/_audit/sma/v15-afterword/a/20261119-083816-59e0.json"
+     ],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-19 08:38:16",
+       "prompt": "agent_prompts/agent_prompt.v15-afterword.sma-a.md",
+       "finished": "2026-11-19 20:37:45",
+       "result": "done",
+       "note": "verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)"
+      }
+     ],
+     "note": "verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)"
+    },
+    {
+     "id": "T-0146-S2",
+     "kind": "sma-b",
+     "volume": 15,
+     "chapter": "afterword",
+     "chapter_id": "v15-afterword",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v15-afterword.sma-b.md",
+     "expected": [
+      "output/_audit/sma/v15-afterword/b/20261119-083816-9d34.json"
+     ],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-19 08:38:16",
+       "prompt": "agent_prompts/agent_prompt.v15-afterword.sma-b.md",
+       "finished": "2026-11-19 20:37:45",
+       "result": "done",
+       "note": "verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)"
+      }
+     ],
+     "note": "verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)"
+    },
+    {
+     "id": "T-0146-S3",
+     "kind": "sma-c",
+     "volume": 15,
+     "chapter": "afterword",
+     "chapter_id": "v15-afterword",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v15-afterword.sma-c.md",
+     "expected": [
+      "output/_audit/sma/v15-afterword/c/20261119-083816-a8b1.json"
+     ],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-19 08:38:16",
+       "prompt": "agent_prompts/agent_prompt.v15-afterword.sma-c.md",
+       "finished": "2026-11-19 20:37:45",
+       "result": "done",
+       "note": "verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)"
+      }
+     ],
+     "note": "verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)"
+    },
+    {
+     "id": "T-0146-S4",
+     "kind": "analyzer-phase1",
+     "volume": 15,
+     "chapter": "afterword",
+     "chapter_id": "v15-afterword",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v15-afterword.analyzer-phase1.md",
+     "expected": [],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-19 09:08:16",
+       "prompt": "agent_prompts/agent_prompt.v15-afterword.analyzer-phase1.md",
+       "finished": "2026-11-19 20:37:45",
+       "result": "done",
+       "note": "verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)"
+      }
+     ],
+     "note": "verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)"
+    },
+    {
+     "id": "T-0146-S5",
+     "kind": "analyzer-phase2",
+     "volume": 15,
+     "chapter": "afterword",
+     "chapter_id": "v15-afterword",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v15-afterword.analyzer-phase2.md",
+     "expected": [
+      "output/_audit/sma/v15-afterword/precheck/omission-precheck.json",
+      "output/_audit/sma/v15-afterword/analysis/20261119-091528-7b98.json",
+      "output/_audit/sma/v15-afterword/analysis/20261119-091528-7b98.md"
+     ],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-19 09:15:28",
+       "prompt": "agent_prompts/agent_prompt.v15-afterword.analyzer-phase2.md",
+       "finished": "2026-11-19 20:37:45",
+       "result": "done",
+       "note": "verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)"
+      }
+     ],
+     "note": "verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)"
+    },
+    {
+     "id": "T-0146-S6",
+     "kind": "grammar-audit",
+     "volume": 15,
+     "chapter": "afterword",
+     "chapter_id": "v15-afterword",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v15-afterword.grammar-audit.md",
+     "expected": [
+      "AINovelEdit/output/_audit/v15-afterword.md",
+      "AINovelEdit/output/chapters/v15-afterword.md",
+      "AINovelEdit/output/_log/v15-log.md"
+     ],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-19 09:43:10",
+       "prompt": "agent_prompts/agent_prompt.v15-afterword.grammar-audit.md",
+       "finished": "2026-11-19 20:26:53",
+       "result": "done",
+       "note": "verify --mark"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "id": "T-0146-S7",
+     "kind": "style-audit",
+     "volume": 15,
+     "chapter": "afterword",
+     "chapter_id": "v15-afterword",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v15-afterword.style-audit.md",
+     "expected": [
+      "AINovelEdit/output/_audit/v15-afterword.md",
+      "AINovelEdit/output/chapters/v15-afterword.md",
+      "AINovelEdit/output/_log/v15-log.md"
+     ],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-19 09:43:10",
+       "prompt": "agent_prompts/agent_prompt.v15-afterword.style-audit.md",
+       "finished": "2026-11-19 20:26:53",
+       "result": "done",
+       "note": "verify --mark"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "id": "T-0146-S8",
+     "kind": "humanizer",
+     "volume": 15,
+     "chapter": "afterword",
+     "chapter_id": "v15-afterword",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v15-afterword.humanizer.md",
+     "expected": [
+      "AINovelEdit/output/_audit/v15-afterword.md",
+      "AINovelEdit/output/chapters/v15-afterword.md",
+      "AINovelEdit/output/_log/v15-log.md"
+     ],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-19 09:43:10",
+       "prompt": "agent_prompts/agent_prompt.v15-afterword.humanizer.md",
+       "finished": "2026-11-19 20:26:53",
+       "result": "done",
+       "note": "verify --mark"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "id": "T-0146-S9",
+     "kind": "full-audit",
+     "volume": 15,
+     "chapter": "afterword",
+     "chapter_id": "v15-afterword",
+     "status": "planned",
+     "prompt_file": "",
+     "expected": [
+      "AINovelEdit/output/_audit/v15-afterword.md",
+      "AINovelEdit/output/chapters/v15-afterword.md",
+      "AINovelEdit/output/_log/v15-log.md"
+     ],
+     "attempts": [],
+     "note": ""
+    },
+    {
+     "id": "T-0146-S10",
+     "kind": "sma-a",
+     "volume": 15,
+     "chapter": "01",
+     "chapter_id": "v15-ch01",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v15-ch01.sma-a.md",
+     "expected": [
+      "output/_audit/sma/v15-ch01/a/20261119-083846-0229.json"
+     ],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-19 08:38:46",
+       "prompt": "agent_prompts/agent_prompt.v15-ch01.sma-a.md",
+       "finished": "2026-11-19 20:37:45",
+       "result": "done",
+       "note": "verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)"
+      }
+     ],
+     "note": "verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)"
+    },
+    {
+     "id": "T-0146-S11",
+     "kind": "sma-b",
+     "volume": 15,
+     "chapter": "01",
+     "chapter_id": "v15-ch01",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v15-ch01.sma-b.md",
+     "expected": [
+      "output/_audit/sma/v15-ch01/b/20261119-083846-ce7d.json"
+     ],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-19 08:38:46",
+       "prompt": "agent_prompts/agent_prompt.v15-ch01.sma-b.md",
+       "finished": "2026-11-19 20:37:45",
+       "result": "done",
+       "note": "verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)"
+      }
+     ],
+     "note": "verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)"
+    },
+    {
+     "id": "T-0146-S12",
+     "kind": "sma-c",
+     "volume": 15,
+     "chapter": "01",
+     "chapter_id": "v15-ch01",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v15-ch01.sma-c.md",
+     "expected": [
+      "output/_audit/sma/v15-ch01/c/20261119-083846-4aa4.json"
+     ],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-19 08:38:46",
+       "prompt": "agent_prompts/agent_prompt.v15-ch01.sma-c.md",
+       "finished": "2026-11-19 20:37:45",
+       "result": "done",
+       "note": "verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)"
+      }
+     ],
+     "note": "verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)"
+    },
+    {
+     "id": "T-0146-S13",
+     "kind": "analyzer-phase1",
+     "volume": 15,
+     "chapter": "01",
+     "chapter_id": "v15-ch01",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v15-ch01.analyzer-phase1.md",
+     "expected": [],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-19 09:08:16",
+       "prompt": "agent_prompts/agent_prompt.v15-ch01.analyzer-phase1.md",
+       "finished": "2026-11-19 20:37:45",
+       "result": "done",
+       "note": "verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)"
+      }
+     ],
+     "note": "verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)"
+    },
+    {
+     "id": "T-0146-S14",
+     "kind": "analyzer-phase2",
+     "volume": 15,
+     "chapter": "01",
+     "chapter_id": "v15-ch01",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v15-ch01.analyzer-phase2.md",
+     "expected": [
+      "output/_audit/sma/v15-ch01/precheck/omission-precheck.json",
+      "output/_audit/sma/v15-ch01/analysis/20261119-091528-934a.json",
+      "output/_audit/sma/v15-ch01/analysis/20261119-091528-934a.md"
+     ],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-19 09:15:28",
+       "prompt": "agent_prompts/agent_prompt.v15-ch01.analyzer-phase2.md",
+       "finished": "2026-11-19 20:37:45",
+       "result": "done",
+       "note": "verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)"
+      }
+     ],
+     "note": "verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)"
+    },
+    {
+     "id": "T-0146-S15",
+     "kind": "grammar-audit",
+     "volume": 15,
+     "chapter": "01",
+     "chapter_id": "v15-ch01",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v15-ch01.grammar-audit.md",
+     "expected": [
+      "AINovelEdit/output/_audit/v15-ch01.md",
+      "AINovelEdit/output/chapters/v15-ch01.md",
+      "AINovelEdit/output/_log/v15-log.md"
+     ],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-19 09:43:10",
+       "prompt": "agent_prompts/agent_prompt.v15-ch01.grammar-audit.md",
+       "finished": "2026-11-19 20:26:53",
+       "result": "done",
+       "note": "verify --mark"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "id": "T-0146-S16",
+     "kind": "style-audit",
+     "volume": 15,
+     "chapter": "01",
+     "chapter_id": "v15-ch01",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v15-ch01.style-audit.md",
+     "expected": [
+      "AINovelEdit/output/_audit/v15-ch01.md",
+      "AINovelEdit/output/chapters/v15-ch01.md",
+      "AINovelEdit/output/_log/v15-log.md"
+     ],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-19 09:43:10",
+       "prompt": "agent_prompts/agent_prompt.v15-ch01.style-audit.md",
+       "finished": "2026-11-19 20:26:53",
+       "result": "done",
+       "note": "verify --mark"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "id": "T-0146-S17",
+     "kind": "humanizer",
+     "volume": 15,
+     "chapter": "01",
+     "chapter_id": "v15-ch01",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v15-ch01.humanizer.md",
+     "expected": [
+      "AINovelEdit/output/_audit/v15-ch01.md",
+      "AINovelEdit/output/chapters/v15-ch01.md",
+      "AINovelEdit/output/_log/v15-log.md"
+     ],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-19 09:43:10",
+       "prompt": "agent_prompts/agent_prompt.v15-ch01.humanizer.md",
+       "finished": "2026-11-19 20:26:53",
+       "result": "done",
+       "note": "verify --mark"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "id": "T-0146-S18",
+     "kind": "full-audit",
+     "volume": 15,
+     "chapter": "01",
+     "chapter_id": "v15-ch01",
+     "status": "planned",
+     "prompt_file": "",
+     "expected": [
+      "AINovelEdit/output/_audit/v15-ch01.md",
+      "AINovelEdit/output/chapters/v15-ch01.md",
+      "AINovelEdit/output/_log/v15-log.md"
+     ],
+     "attempts": [],
+     "note": ""
+    },
+    {
+     "id": "T-0146-S19",
+     "kind": "sma-a",
+     "volume": 15,
+     "chapter": "02",
+     "chapter_id": "v15-ch02",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v15-ch02.sma-a.md",
+     "expected": [
+      "output/_audit/sma/v15-ch02/a/20261119-084632-a934.json"
+     ],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-19 08:46:32",
+       "prompt": "agent_prompts/agent_prompt.v15-ch02.sma-a.md",
+       "finished": "2026-11-19 20:37:45",
+       "result": "done",
+       "note": "verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)"
+      }
+     ],
+     "note": "verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)"
+    },
+    {
+     "id": "T-0146-S20",
+     "kind": "sma-b",
+     "volume": 15,
+     "chapter": "02",
+     "chapter_id": "v15-ch02",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v15-ch02.sma-b.md",
+     "expected": [
+      "output/_audit/sma/v15-ch02/b/20261119-084632-b230.json"
+     ],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-19 08:46:32",
+       "prompt": "agent_prompts/agent_prompt.v15-ch02.sma-b.md",
+       "finished": "2026-11-19 20:37:45",
+       "result": "done",
+       "note": "verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)"
+      }
+     ],
+     "note": "verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)"
+    },
+    {
+     "id": "T-0146-S21",
+     "kind": "sma-c",
+     "volume": 15,
+     "chapter": "02",
+     "chapter_id": "v15-ch02",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v15-ch02.sma-c.md",
+     "expected": [
+      "output/_audit/sma/v15-ch02/c/20261119-084632-2c0f.json"
+     ],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-19 08:46:32",
+       "prompt": "agent_prompts/agent_prompt.v15-ch02.sma-c.md",
+       "finished": "2026-11-19 20:37:46",
+       "result": "done",
+       "note": "verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)"
+      }
+     ],
+     "note": "verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)"
+    },
+    {
+     "id": "T-0146-S22",
+     "kind": "analyzer-phase1",
+     "volume": 15,
+     "chapter": "02",
+     "chapter_id": "v15-ch02",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v15-ch02.analyzer-phase1.md",
+     "expected": [],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-19 09:08:16",
+       "prompt": "agent_prompts/agent_prompt.v15-ch02.analyzer-phase1.md",
+       "finished": "2026-11-19 20:37:46",
+       "result": "done",
+       "note": "verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)"
+      }
+     ],
+     "note": "verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)"
+    },
+    {
+     "id": "T-0146-S23",
+     "kind": "analyzer-phase2",
+     "volume": 15,
+     "chapter": "02",
+     "chapter_id": "v15-ch02",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v15-ch02.analyzer-phase2.md",
+     "expected": [
+      "output/_audit/sma/v15-ch02/precheck/omission-precheck.json",
+      "output/_audit/sma/v15-ch02/analysis/20261119-091528-1c26.json",
+      "output/_audit/sma/v15-ch02/analysis/20261119-091528-1c26.md"
+     ],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-19 09:15:28",
+       "prompt": "agent_prompts/agent_prompt.v15-ch02.analyzer-phase2.md",
+       "finished": "2026-11-19 20:37:46",
+       "result": "done",
+       "note": "verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)"
+      }
+     ],
+     "note": "verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)"
+    },
+    {
+     "id": "T-0146-S24",
+     "kind": "grammar-audit",
+     "volume": 15,
+     "chapter": "02",
+     "chapter_id": "v15-ch02",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v15-ch02.grammar-audit.md",
+     "expected": [
+      "AINovelEdit/output/_audit/v15-ch02.md",
+      "AINovelEdit/output/chapters/v15-ch02.md",
+      "AINovelEdit/output/_log/v15-log.md"
+     ],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-19 09:43:10",
+       "prompt": "agent_prompts/agent_prompt.v15-ch02.grammar-audit.md",
+       "finished": "2026-11-19 20:26:53",
+       "result": "done",
+       "note": "verify --mark"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "id": "T-0146-S25",
+     "kind": "style-audit",
+     "volume": 15,
+     "chapter": "02",
+     "chapter_id": "v15-ch02",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v15-ch02.style-audit.md",
+     "expected": [
+      "AINovelEdit/output/_audit/v15-ch02.md",
+      "AINovelEdit/output/chapters/v15-ch02.md",
+      "AINovelEdit/output/_log/v15-log.md"
+     ],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-19 09:43:10",
+       "prompt": "agent_prompts/agent_prompt.v15-ch02.style-audit.md",
+       "finished": "2026-11-19 20:26:53",
+       "result": "done",
+       "note": "verify --mark"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "id": "T-0146-S26",
+     "kind": "humanizer",
+     "volume": 15,
+     "chapter": "02",
+     "chapter_id": "v15-ch02",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v15-ch02.humanizer.md",
+     "expected": [
+      "AINovelEdit/output/_audit/v15-ch02.md",
+      "AINovelEdit/output/chapters/v15-ch02.md",
+      "AINovelEdit/output/_log/v15-log.md"
+     ],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-19 09:43:10",
+       "prompt": "agent_prompts/agent_prompt.v15-ch02.humanizer.md",
+       "finished": "2026-11-19 20:34:51",
+       "result": "done",
+       "note": "humanizer ch02: 4 fixes"
+      }
+     ],
+     "note": "humanizer ch02: 4 fixes"
+    },
+    {
+     "id": "T-0146-S27",
+     "kind": "full-audit",
+     "volume": 15,
+     "chapter": "02",
+     "chapter_id": "v15-ch02",
+     "status": "planned",
+     "prompt_file": "",
+     "expected": [
+      "AINovelEdit/output/_audit/v15-ch02.md",
+      "AINovelEdit/output/chapters/v15-ch02.md",
+      "AINovelEdit/output/_log/v15-log.md"
+     ],
+     "attempts": [],
+     "note": ""
+    },
+    {
+     "id": "T-0146-S28",
+     "kind": "sma-a",
+     "volume": 15,
+     "chapter": "03",
+     "chapter_id": "v15-ch03",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v15-ch03.sma-a.md",
+     "expected": [
+      "output/_audit/sma/v15-ch03/a/20261119-084632-0208.json"
+     ],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-19 08:46:32",
+       "prompt": "agent_prompts/agent_prompt.v15-ch03.sma-a.md",
+       "finished": "2026-11-19 20:37:46",
+       "result": "done",
+       "note": "verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)"
+      }
+     ],
+     "note": "verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)"
+    },
+    {
+     "id": "T-0146-S29",
+     "kind": "sma-b",
+     "volume": 15,
+     "chapter": "03",
+     "chapter_id": "v15-ch03",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v15-ch03.sma-b.md",
+     "expected": [
+      "output/_audit/sma/v15-ch03/b/20261119-084632-62b0.json"
+     ],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-19 08:46:32",
+       "prompt": "agent_prompts/agent_prompt.v15-ch03.sma-b.md",
+       "finished": "2026-11-19 20:37:46",
+       "result": "done",
+       "note": "verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)"
+      }
+     ],
+     "note": "verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)"
+    },
+    {
+     "id": "T-0146-S30",
+     "kind": "sma-c",
+     "volume": 15,
+     "chapter": "03",
+     "chapter_id": "v15-ch03",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v15-ch03.sma-c.md",
+     "expected": [
+      "output/_audit/sma/v15-ch03/c/20261119-084632-72e7.json"
+     ],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-19 08:46:32",
+       "prompt": "agent_prompts/agent_prompt.v15-ch03.sma-c.md",
+       "finished": "2026-11-19 20:37:46",
+       "result": "done",
+       "note": "verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)"
+      }
+     ],
+     "note": "verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)"
+    },
+    {
+     "id": "T-0146-S31",
+     "kind": "analyzer-phase1",
+     "volume": 15,
+     "chapter": "03",
+     "chapter_id": "v15-ch03",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v15-ch03.analyzer-phase1.md",
+     "expected": [],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-19 09:08:16",
+       "prompt": "agent_prompts/agent_prompt.v15-ch03.analyzer-phase1.md",
+       "finished": "2026-11-19 20:37:46",
+       "result": "done",
+       "note": "verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)"
+      }
+     ],
+     "note": "verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)"
+    },
+    {
+     "id": "T-0146-S32",
+     "kind": "analyzer-phase2",
+     "volume": 15,
+     "chapter": "03",
+     "chapter_id": "v15-ch03",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v15-ch03.analyzer-phase2.md",
+     "expected": [
+      "output/_audit/sma/v15-ch03/precheck/omission-precheck.json",
+      "output/_audit/sma/v15-ch03/analysis/20261119-091528-29d3.json",
+      "output/_audit/sma/v15-ch03/analysis/20261119-091528-29d3.md"
+     ],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-19 09:15:28",
+       "prompt": "agent_prompts/agent_prompt.v15-ch03.analyzer-phase2.md",
+       "finished": "2026-11-19 20:37:46",
+       "result": "done",
+       "note": "verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)"
+      }
+     ],
+     "note": "verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)"
+    },
+    {
+     "id": "T-0146-S33",
+     "kind": "grammar-audit",
+     "volume": 15,
+     "chapter": "03",
+     "chapter_id": "v15-ch03",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v15-ch03.grammar-audit.md",
+     "expected": [
+      "AINovelEdit/output/_audit/v15-ch03.md",
+      "AINovelEdit/output/chapters/v15-ch03.md",
+      "AINovelEdit/output/_log/v15-log.md"
+     ],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-19 09:43:10",
+       "prompt": "agent_prompts/agent_prompt.v15-ch03.grammar-audit.md",
+       "finished": "2026-11-19 20:26:53",
+       "result": "done",
+       "note": "verify --mark"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "id": "T-0146-S34",
+     "kind": "style-audit",
+     "volume": 15,
+     "chapter": "03",
+     "chapter_id": "v15-ch03",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v15-ch03.style-audit.md",
+     "expected": [
+      "AINovelEdit/output/_audit/v15-ch03.md",
+      "AINovelEdit/output/chapters/v15-ch03.md",
+      "AINovelEdit/output/_log/v15-log.md"
+     ],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-19 09:43:10",
+       "prompt": "agent_prompts/agent_prompt.v15-ch03.style-audit.md",
+       "finished": "2026-11-19 20:26:53",
+       "result": "done",
+       "note": "verify --mark"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "id": "T-0146-S35",
+     "kind": "humanizer",
+     "volume": 15,
+     "chapter": "03",
+     "chapter_id": "v15-ch03",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v15-ch03.humanizer.attempt2.md",
+     "expected": [
+      "AINovelEdit/output/_audit/v15-ch03.md",
+      "AINovelEdit/output/chapters/v15-ch03.md",
+      "AINovelEdit/output/_log/v15-log.md"
+     ],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-19 09:43:10",
+       "prompt": "agent_prompts/agent_prompt.v15-ch03.humanizer.md",
+       "finished": "2026-11-19 20:28:15",
+       "result": "failed",
+       "note": "false DONE: provider limit, HUMANIZER section absent in audit report"
+      },
+      {
+       "n": 2,
+       "started": "2026-11-19 20:34:51",
+       "prompt": "agent_prompts/agent_prompt.v15-ch03.humanizer.attempt2.md",
+       "finished": "2026-11-19 22:47:05",
+       "result": "done",
+       "note": "humanizer ch03 attempt3: 2 fixes, commit fa97e558"
+      }
+     ],
+     "note": "humanizer ch03 attempt3: 2 fixes, commit fa97e558"
+    },
+    {
+     "id": "T-0146-S36",
+     "kind": "full-audit",
+     "volume": 15,
+     "chapter": "03",
+     "chapter_id": "v15-ch03",
+     "status": "planned",
+     "prompt_file": "",
+     "expected": [
+      "AINovelEdit/output/_audit/v15-ch03.md",
+      "AINovelEdit/output/chapters/v15-ch03.md",
+      "AINovelEdit/output/_log/v15-log.md"
+     ],
+     "attempts": [],
+     "note": ""
+    },
+    {
+     "id": "T-0146-S37",
+     "kind": "sma-a",
+     "volume": 15,
+     "chapter": "04",
+     "chapter_id": "v15-ch04",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v15-ch04.sma-a.md",
+     "expected": [
+      "output/_audit/sma/v15-ch04/a/20261119-084632-7688.json"
+     ],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-19 08:46:32",
+       "prompt": "agent_prompts/agent_prompt.v15-ch04.sma-a.md",
+       "finished": "2026-11-19 20:37:46",
+       "result": "done",
+       "note": "verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)"
+      }
+     ],
+     "note": "verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)"
+    },
+    {
+     "id": "T-0146-S38",
+     "kind": "sma-b",
+     "volume": 15,
+     "chapter": "04",
+     "chapter_id": "v15-ch04",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v15-ch04.sma-b.md",
+     "expected": [
+      "output/_audit/sma/v15-ch04/b/20261119-084632-675e.json"
+     ],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-19 08:46:32",
+       "prompt": "agent_prompts/agent_prompt.v15-ch04.sma-b.md",
+       "finished": "2026-11-19 20:37:46",
+       "result": "done",
+       "note": "verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)"
+      }
+     ],
+     "note": "verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)"
+    },
+    {
+     "id": "T-0146-S39",
+     "kind": "sma-c",
+     "volume": 15,
+     "chapter": "04",
+     "chapter_id": "v15-ch04",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v15-ch04.sma-c.md",
+     "expected": [
+      "output/_audit/sma/v15-ch04/c/20261119-084632-c28d.json"
+     ],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-19 08:46:32",
+       "prompt": "agent_prompts/agent_prompt.v15-ch04.sma-c.md",
+       "finished": "2026-11-19 20:37:46",
+       "result": "done",
+       "note": "verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)"
+      }
+     ],
+     "note": "verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)"
+    },
+    {
+     "id": "T-0146-S40",
+     "kind": "analyzer-phase1",
+     "volume": 15,
+     "chapter": "04",
+     "chapter_id": "v15-ch04",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v15-ch04.analyzer-phase1.md",
+     "expected": [],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-19 09:08:16",
+       "prompt": "agent_prompts/agent_prompt.v15-ch04.analyzer-phase1.md",
+       "finished": "2026-11-19 20:37:46",
+       "result": "done",
+       "note": "verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)"
+      }
+     ],
+     "note": "verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)"
+    },
+    {
+     "id": "T-0146-S41",
+     "kind": "analyzer-phase2",
+     "volume": 15,
+     "chapter": "04",
+     "chapter_id": "v15-ch04",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v15-ch04.analyzer-phase2.md",
+     "expected": [
+      "output/_audit/sma/v15-ch04/precheck/omission-precheck.json",
+      "output/_audit/sma/v15-ch04/analysis/20261119-091528-5d95.json",
+      "output/_audit/sma/v15-ch04/analysis/20261119-091528-5d95.md"
+     ],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-19 09:15:28",
+       "prompt": "agent_prompts/agent_prompt.v15-ch04.analyzer-phase2.md",
+       "finished": "2026-11-19 20:37:46",
+       "result": "done",
+       "note": "verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)"
+      }
+     ],
+     "note": "verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)"
+    },
+    {
+     "id": "T-0146-S42",
+     "kind": "grammar-audit",
+     "volume": 15,
+     "chapter": "04",
+     "chapter_id": "v15-ch04",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v15-ch04.grammar-audit.md",
+     "expected": [
+      "AINovelEdit/output/_audit/v15-ch04.md",
+      "AINovelEdit/output/chapters/v15-ch04.md",
+      "AINovelEdit/output/_log/v15-log.md"
+     ],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-19 09:43:10",
+       "prompt": "agent_prompts/agent_prompt.v15-ch04.grammar-audit.md",
+       "finished": "2026-11-19 20:26:53",
+       "result": "done",
+       "note": "verify --mark"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "id": "T-0146-S43",
+     "kind": "style-audit",
+     "volume": 15,
+     "chapter": "04",
+     "chapter_id": "v15-ch04",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v15-ch04.style-audit.md",
+     "expected": [
+      "AINovelEdit/output/_audit/v15-ch04.md",
+      "AINovelEdit/output/chapters/v15-ch04.md",
+      "AINovelEdit/output/_log/v15-log.md"
+     ],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-19 09:43:10",
+       "prompt": "agent_prompts/agent_prompt.v15-ch04.style-audit.md",
+       "finished": "2026-11-19 20:26:53",
+       "result": "done",
+       "note": "verify --mark"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "id": "T-0146-S44",
+     "kind": "humanizer",
+     "volume": 15,
+     "chapter": "04",
+     "chapter_id": "v15-ch04",
+     "status": "failed",
+     "prompt_file": "agent_prompts/agent_prompt.v15-ch04.humanizer.attempt2.md",
+     "expected": [
+      "AINovelEdit/output/_audit/v15-ch04.md",
+      "AINovelEdit/output/chapters/v15-ch04.md",
+      "AINovelEdit/output/_log/v15-log.md"
+     ],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-19 09:43:10",
+       "prompt": "agent_prompts/agent_prompt.v15-ch04.humanizer.md",
+       "finished": "2026-11-19 20:28:15",
+       "result": "failed",
+       "note": "false DONE: provider limit, HUMANIZER section absent in audit report"
+      },
+      {
+       "n": 2,
+       "started": "2026-11-19 20:34:51",
+       "prompt": "agent_prompts/agent_prompt.v15-ch04.humanizer.attempt2.md",
+       "finished": "2026-11-19 22:19:00",
+       "result": "failed",
+       "note": "not executed: subagent silently produced no artifacts (no HUMANIZER section in audit, no text change); rerun required"
+      }
+     ],
+     "note": "not executed: subagent silently produced no artifacts (no HUMANIZER section in audit, no text change); rerun required"
+    },
+    {
+     "id": "T-0146-S45",
+     "kind": "full-audit",
+     "volume": 15,
+     "chapter": "04",
+     "chapter_id": "v15-ch04",
+     "status": "planned",
+     "prompt_file": "",
+     "expected": [
+      "AINovelEdit/output/_audit/v15-ch04.md",
+      "AINovelEdit/output/chapters/v15-ch04.md",
+      "AINovelEdit/output/_log/v15-log.md"
+     ],
+     "attempts": [],
+     "note": ""
+    },
+    {
+     "id": "T-0146-S46",
+     "kind": "sma-a",
+     "volume": 15,
+     "chapter": "05",
+     "chapter_id": "v15-ch05",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v15-ch05.sma-a.md",
+     "expected": [
+      "output/_audit/sma/v15-ch05/a/20261119-084632-8da7.json"
+     ],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-19 08:46:32",
+       "prompt": "agent_prompts/agent_prompt.v15-ch05.sma-a.md",
+       "finished": "2026-11-19 20:37:46",
+       "result": "done",
+       "note": "verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)"
+      }
+     ],
+     "note": "verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)"
+    },
+    {
+     "id": "T-0146-S47",
+     "kind": "sma-b",
+     "volume": 15,
+     "chapter": "05",
+     "chapter_id": "v15-ch05",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v15-ch05.sma-b.md",
+     "expected": [
+      "output/_audit/sma/v15-ch05/b/20261119-084632-aad4.json"
+     ],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-19 08:46:32",
+       "prompt": "agent_prompts/agent_prompt.v15-ch05.sma-b.md",
+       "finished": "2026-11-19 20:37:47",
+       "result": "done",
+       "note": "verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)"
+      }
+     ],
+     "note": "verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)"
+    },
+    {
+     "id": "T-0146-S48",
+     "kind": "sma-c",
+     "volume": 15,
+     "chapter": "05",
+     "chapter_id": "v15-ch05",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v15-ch05.sma-c.md",
+     "expected": [
+      "output/_audit/sma/v15-ch05/c/20261119-084632-7c1a.json"
+     ],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-19 08:46:32",
+       "prompt": "agent_prompts/agent_prompt.v15-ch05.sma-c.md",
+       "finished": "2026-11-19 20:37:47",
+       "result": "done",
+       "note": "verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)"
+      }
+     ],
+     "note": "verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)"
+    },
+    {
+     "id": "T-0146-S49",
+     "kind": "analyzer-phase1",
+     "volume": 15,
+     "chapter": "05",
+     "chapter_id": "v15-ch05",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v15-ch05.analyzer-phase1.md",
+     "expected": [],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-19 09:08:16",
+       "prompt": "agent_prompts/agent_prompt.v15-ch05.analyzer-phase1.md",
+       "finished": "2026-11-19 20:37:47",
+       "result": "done",
+       "note": "verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)"
+      }
+     ],
+     "note": "verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)"
+    },
+    {
+     "id": "T-0146-S50",
+     "kind": "analyzer-phase2",
+     "volume": 15,
+     "chapter": "05",
+     "chapter_id": "v15-ch05",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v15-ch05.analyzer-phase2.md",
+     "expected": [
+      "output/_audit/sma/v15-ch05/precheck/omission-precheck.json",
+      "output/_audit/sma/v15-ch05/analysis/20261119-091528-00c9.json",
+      "output/_audit/sma/v15-ch05/analysis/20261119-091528-00c9.md"
+     ],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-19 09:15:28",
+       "prompt": "agent_prompts/agent_prompt.v15-ch05.analyzer-phase2.md",
+       "finished": "2026-11-19 20:37:47",
+       "result": "done",
+       "note": "verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)"
+      }
+     ],
+     "note": "verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)"
+    },
+    {
+     "id": "T-0146-S51",
+     "kind": "grammar-audit",
+     "volume": 15,
+     "chapter": "05",
+     "chapter_id": "v15-ch05",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v15-ch05.grammar-audit.md",
+     "expected": [
+      "AINovelEdit/output/_audit/v15-ch05.md",
+      "AINovelEdit/output/chapters/v15-ch05.md",
+      "AINovelEdit/output/_log/v15-log.md"
+     ],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-19 09:43:10",
+       "prompt": "agent_prompts/agent_prompt.v15-ch05.grammar-audit.md",
+       "finished": "2026-11-19 20:26:53",
+       "result": "done",
+       "note": "verify --mark"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "id": "T-0146-S52",
+     "kind": "style-audit",
+     "volume": 15,
+     "chapter": "05",
+     "chapter_id": "v15-ch05",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v15-ch05.style-audit.md",
+     "expected": [
+      "AINovelEdit/output/_audit/v15-ch05.md",
+      "AINovelEdit/output/chapters/v15-ch05.md",
+      "AINovelEdit/output/_log/v15-log.md"
+     ],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-19 09:43:10",
+       "prompt": "agent_prompts/agent_prompt.v15-ch05.style-audit.md",
+       "finished": "2026-11-19 20:26:53",
+       "result": "done",
+       "note": "verify --mark"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "id": "T-0146-S53",
+     "kind": "humanizer",
+     "volume": 15,
+     "chapter": "05",
+     "chapter_id": "v15-ch05",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v15-ch05.humanizer.attempt2.md",
+     "expected": [
+      "AINovelEdit/output/_audit/v15-ch05.md",
+      "AINovelEdit/output/chapters/v15-ch05.md",
+      "AINovelEdit/output/_log/v15-log.md"
+     ],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-19 09:43:10",
+       "prompt": "agent_prompts/agent_prompt.v15-ch05.humanizer.md",
+       "finished": "2026-11-19 20:28:15",
+       "result": "failed",
+       "note": "false DONE: provider limit, HUMANIZER section absent in audit report"
+      },
+      {
+       "n": 2,
+       "started": "2026-11-19 20:34:51",
+       "prompt": "agent_prompts/agent_prompt.v15-ch05.humanizer.attempt2.md",
+       "finished": "2026-11-19 21:48:18",
+       "result": "done",
+       "note": "humanizer ch05 attempt2: 2 fixes, commit 00bef1a2"
+      }
+     ],
+     "note": "humanizer ch05 attempt2: 2 fixes, commit 00bef1a2"
+    },
+    {
+     "id": "T-0146-S54",
+     "kind": "full-audit",
+     "volume": 15,
+     "chapter": "05",
+     "chapter_id": "v15-ch05",
+     "status": "planned",
+     "prompt_file": "",
+     "expected": [
+      "AINovelEdit/output/_audit/v15-ch05.md",
+      "AINovelEdit/output/chapters/v15-ch05.md",
+      "AINovelEdit/output/_log/v15-log.md"
+     ],
+     "attempts": [],
+     "note": ""
+    },
+    {
+     "id": "T-0146-S55",
+     "kind": "sma-a",
+     "volume": 15,
+     "chapter": "06",
+     "chapter_id": "v15-ch06",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v15-ch06.sma-a.md",
+     "expected": [
+      "output/_audit/sma/v15-ch06/a/20261119-085630-ac29.json"
+     ],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-19 08:56:30",
+       "prompt": "agent_prompts/agent_prompt.v15-ch06.sma-a.md",
+       "finished": "2026-11-19 20:37:47",
+       "result": "done",
+       "note": "verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)"
+      }
+     ],
+     "note": "verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)"
+    },
+    {
+     "id": "T-0146-S56",
+     "kind": "sma-b",
+     "volume": 15,
+     "chapter": "06",
+     "chapter_id": "v15-ch06",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v15-ch06.sma-b.md",
+     "expected": [
+      "output/_audit/sma/v15-ch06/b/20261119-085630-2e64.json"
+     ],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-19 08:56:30",
+       "prompt": "agent_prompts/agent_prompt.v15-ch06.sma-b.md",
+       "finished": "2026-11-19 20:37:47",
+       "result": "done",
+       "note": "verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)"
+      }
+     ],
+     "note": "verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)"
+    },
+    {
+     "id": "T-0146-S57",
+     "kind": "sma-c",
+     "volume": 15,
+     "chapter": "06",
+     "chapter_id": "v15-ch06",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v15-ch06.sma-c.md",
+     "expected": [
+      "output/_audit/sma/v15-ch06/c/20261119-085630-b402.json"
+     ],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-19 08:56:30",
+       "prompt": "agent_prompts/agent_prompt.v15-ch06.sma-c.md",
+       "finished": "2026-11-19 20:37:47",
+       "result": "done",
+       "note": "verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)"
+      }
+     ],
+     "note": "verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)"
+    },
+    {
+     "id": "T-0146-S58",
+     "kind": "analyzer-phase1",
+     "volume": 15,
+     "chapter": "06",
+     "chapter_id": "v15-ch06",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v15-ch06.analyzer-phase1.md",
+     "expected": [],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-19 09:08:16",
+       "prompt": "agent_prompts/agent_prompt.v15-ch06.analyzer-phase1.md",
+       "finished": "2026-11-19 20:37:47",
+       "result": "done",
+       "note": "verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)"
+      }
+     ],
+     "note": "verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)"
+    },
+    {
+     "id": "T-0146-S59",
+     "kind": "analyzer-phase2",
+     "volume": 15,
+     "chapter": "06",
+     "chapter_id": "v15-ch06",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v15-ch06.analyzer-phase2.md",
+     "expected": [
+      "output/_audit/sma/v15-ch06/precheck/omission-precheck.json",
+      "output/_audit/sma/v15-ch06/analysis/20261119-091528-b436.json",
+      "output/_audit/sma/v15-ch06/analysis/20261119-091528-b436.md"
+     ],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-19 09:15:28",
+       "prompt": "agent_prompts/agent_prompt.v15-ch06.analyzer-phase2.md",
+       "finished": "2026-11-19 20:37:47",
+       "result": "done",
+       "note": "verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)"
+      }
+     ],
+     "note": "verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)"
+    },
+    {
+     "id": "T-0146-S60",
+     "kind": "grammar-audit",
+     "volume": 15,
+     "chapter": "06",
+     "chapter_id": "v15-ch06",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v15-ch06.grammar-audit.md",
+     "expected": [
+      "AINovelEdit/output/_audit/v15-ch06.md",
+      "AINovelEdit/output/chapters/v15-ch06.md",
+      "AINovelEdit/output/_log/v15-log.md"
+     ],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-19 09:43:10",
+       "prompt": "agent_prompts/agent_prompt.v15-ch06.grammar-audit.md",
+       "finished": "2026-11-19 20:26:53",
+       "result": "done",
+       "note": "verify --mark"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "id": "T-0146-S61",
+     "kind": "style-audit",
+     "volume": 15,
+     "chapter": "06",
+     "chapter_id": "v15-ch06",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v15-ch06.style-audit.md",
+     "expected": [
+      "AINovelEdit/output/_audit/v15-ch06.md",
+      "AINovelEdit/output/chapters/v15-ch06.md",
+      "AINovelEdit/output/_log/v15-log.md"
+     ],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-19 09:43:10",
+       "prompt": "agent_prompts/agent_prompt.v15-ch06.style-audit.md",
+       "finished": "2026-11-19 20:26:53",
+       "result": "done",
+       "note": "verify --mark"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "id": "T-0146-S62",
+     "kind": "humanizer",
+     "volume": 15,
+     "chapter": "06",
+     "chapter_id": "v15-ch06",
+     "status": "failed",
+     "prompt_file": "agent_prompts/agent_prompt.v15-ch06.humanizer.attempt2.md",
+     "expected": [
+      "AINovelEdit/output/_audit/v15-ch06.md",
+      "AINovelEdit/output/chapters/v15-ch06.md",
+      "AINovelEdit/output/_log/v15-log.md"
+     ],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-19 09:43:10",
+       "prompt": "agent_prompts/agent_prompt.v15-ch06.humanizer.md",
+       "finished": "2026-11-19 20:28:15",
+       "result": "failed",
+       "note": "false DONE: provider limit, HUMANIZER section absent in audit report"
+      },
+      {
+       "n": 2,
+       "started": "2026-11-19 20:34:51",
+       "prompt": "agent_prompts/agent_prompt.v15-ch06.humanizer.attempt2.md",
+       "finished": "2026-11-19 22:19:00",
+       "result": "failed",
+       "note": "not executed: subagent silently produced no artifacts (no HUMANIZER section in audit, no text change); rerun required"
+      }
+     ],
+     "note": "not executed: subagent silently produced no artifacts (no HUMANIZER section in audit, no text change); rerun required"
+    },
+    {
+     "id": "T-0146-S63",
+     "kind": "full-audit",
+     "volume": 15,
+     "chapter": "06",
+     "chapter_id": "v15-ch06",
+     "status": "planned",
+     "prompt_file": "",
+     "expected": [
+      "AINovelEdit/output/_audit/v15-ch06.md",
+      "AINovelEdit/output/chapters/v15-ch06.md",
+      "AINovelEdit/output/_log/v15-log.md"
+     ],
+     "attempts": [],
+     "note": ""
+    },
+    {
+     "id": "T-0146-S64",
+     "kind": "sma-a",
+     "volume": 15,
+     "chapter": "07",
+     "chapter_id": "v15-ch07",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v15-ch07.sma-a.md",
+     "expected": [
+      "output/_audit/sma/v15-ch07/a/20261119-085630-fdaa.json"
+     ],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-19 08:56:30",
+       "prompt": "agent_prompts/agent_prompt.v15-ch07.sma-a.md",
+       "finished": "2026-11-19 20:37:47",
+       "result": "done",
+       "note": "verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)"
+      }
+     ],
+     "note": "verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)"
+    },
+    {
+     "id": "T-0146-S65",
+     "kind": "sma-b",
+     "volume": 15,
+     "chapter": "07",
+     "chapter_id": "v15-ch07",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v15-ch07.sma-b.md",
+     "expected": [
+      "output/_audit/sma/v15-ch07/b/20261119-085630-fcf4.json"
+     ],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-19 08:56:30",
+       "prompt": "agent_prompts/agent_prompt.v15-ch07.sma-b.md",
+       "finished": "2026-11-19 20:37:47",
+       "result": "done",
+       "note": "verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)"
+      }
+     ],
+     "note": "verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)"
+    },
+    {
+     "id": "T-0146-S66",
+     "kind": "sma-c",
+     "volume": 15,
+     "chapter": "07",
+     "chapter_id": "v15-ch07",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v15-ch07.sma-c.md",
+     "expected": [
+      "output/_audit/sma/v15-ch07/c/20261119-085630-2a84.json"
+     ],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-19 08:56:30",
+       "prompt": "agent_prompts/agent_prompt.v15-ch07.sma-c.md",
+       "finished": "2026-11-19 20:37:47",
+       "result": "done",
+       "note": "verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)"
+      }
+     ],
+     "note": "verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)"
+    },
+    {
+     "id": "T-0146-S67",
+     "kind": "analyzer-phase1",
+     "volume": 15,
+     "chapter": "07",
+     "chapter_id": "v15-ch07",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v15-ch07.analyzer-phase1.md",
+     "expected": [],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-19 09:08:16",
+       "prompt": "agent_prompts/agent_prompt.v15-ch07.analyzer-phase1.md",
+       "finished": "2026-11-19 20:37:47",
+       "result": "done",
+       "note": "verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)"
+      }
+     ],
+     "note": "verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)"
+    },
+    {
+     "id": "T-0146-S68",
+     "kind": "analyzer-phase2",
+     "volume": 15,
+     "chapter": "07",
+     "chapter_id": "v15-ch07",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v15-ch07.analyzer-phase2.md",
+     "expected": [
+      "output/_audit/sma/v15-ch07/precheck/omission-precheck.json",
+      "output/_audit/sma/v15-ch07/analysis/20261119-091528-de8e.json",
+      "output/_audit/sma/v15-ch07/analysis/20261119-091528-de8e.md"
+     ],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-19 09:15:28",
+       "prompt": "agent_prompts/agent_prompt.v15-ch07.analyzer-phase2.md",
+       "finished": "2026-11-19 20:37:47",
+       "result": "done",
+       "note": "verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)"
+      }
+     ],
+     "note": "verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)"
+    },
+    {
+     "id": "T-0146-S69",
+     "kind": "grammar-audit",
+     "volume": 15,
+     "chapter": "07",
+     "chapter_id": "v15-ch07",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v15-ch07.grammar-audit.md",
+     "expected": [
+      "AINovelEdit/output/_audit/v15-ch07.md",
+      "AINovelEdit/output/chapters/v15-ch07.md",
+      "AINovelEdit/output/_log/v15-log.md"
+     ],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-19 09:43:10",
+       "prompt": "agent_prompts/agent_prompt.v15-ch07.grammar-audit.md",
+       "finished": "2026-11-19 20:26:53",
+       "result": "done",
+       "note": "verify --mark"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "id": "T-0146-S70",
+     "kind": "style-audit",
+     "volume": 15,
+     "chapter": "07",
+     "chapter_id": "v15-ch07",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v15-ch07.style-audit.md",
+     "expected": [
+      "AINovelEdit/output/_audit/v15-ch07.md",
+      "AINovelEdit/output/chapters/v15-ch07.md",
+      "AINovelEdit/output/_log/v15-log.md"
+     ],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-19 09:43:10",
+       "prompt": "agent_prompts/agent_prompt.v15-ch07.style-audit.md",
+       "finished": "2026-11-19 20:26:53",
+       "result": "done",
+       "note": "verify --mark"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "id": "T-0146-S71",
+     "kind": "humanizer",
+     "volume": 15,
+     "chapter": "07",
+     "chapter_id": "v15-ch07",
+     "status": "failed",
+     "prompt_file": "agent_prompts/agent_prompt.v15-ch07.humanizer.attempt2.md",
+     "expected": [
+      "AINovelEdit/output/_audit/v15-ch07.md",
+      "AINovelEdit/output/chapters/v15-ch07.md",
+      "AINovelEdit/output/_log/v15-log.md"
+     ],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-19 09:43:10",
+       "prompt": "agent_prompts/agent_prompt.v15-ch07.humanizer.md",
+       "finished": "2026-11-19 20:28:15",
+       "result": "failed",
+       "note": "false DONE: provider limit, HUMANIZER section absent in audit report"
+      },
+      {
+       "n": 2,
+       "started": "2026-11-19 20:34:51",
+       "prompt": "agent_prompts/agent_prompt.v15-ch07.humanizer.attempt2.md",
+       "finished": "2026-11-19 22:19:00",
+       "result": "failed",
+       "note": "not executed: subagent silently produced no artifacts (no HUMANIZER section in audit, no text change); rerun required"
+      }
+     ],
+     "note": "not executed: subagent silently produced no artifacts (no HUMANIZER section in audit, no text change); rerun required"
+    },
+    {
+     "id": "T-0146-S72",
+     "kind": "full-audit",
+     "volume": 15,
+     "chapter": "07",
+     "chapter_id": "v15-ch07",
+     "status": "planned",
+     "prompt_file": "",
+     "expected": [
+      "AINovelEdit/output/_audit/v15-ch07.md",
+      "AINovelEdit/output/chapters/v15-ch07.md",
+      "AINovelEdit/output/_log/v15-log.md"
+     ],
+     "attempts": [],
+     "note": ""
+    },
+    {
+     "id": "T-0146-S73",
+     "kind": "sma-a",
+     "volume": 15,
+     "chapter": "08",
+     "chapter_id": "v15-ch08",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v15-ch08.sma-a.md",
+     "expected": [
+      "output/_audit/sma/v15-ch08/a/20261119-085630-bd07.json"
+     ],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-19 08:56:30",
+       "prompt": "agent_prompts/agent_prompt.v15-ch08.sma-a.md",
+       "finished": "2026-11-19 20:37:47",
+       "result": "done",
+       "note": "verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)"
+      }
+     ],
+     "note": "verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)"
+    },
+    {
+     "id": "T-0146-S74",
+     "kind": "sma-b",
+     "volume": 15,
+     "chapter": "08",
+     "chapter_id": "v15-ch08",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v15-ch08.sma-b.md",
+     "expected": [
+      "output/_audit/sma/v15-ch08/b/20261119-085630-5992.json"
+     ],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-19 08:56:30",
+       "prompt": "agent_prompts/agent_prompt.v15-ch08.sma-b.md",
+       "finished": "2026-11-19 20:37:48",
+       "result": "done",
+       "note": "verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)"
+      }
+     ],
+     "note": "verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)"
+    },
+    {
+     "id": "T-0146-S75",
+     "kind": "sma-c",
+     "volume": 15,
+     "chapter": "08",
+     "chapter_id": "v15-ch08",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v15-ch08.sma-c.md",
+     "expected": [
+      "output/_audit/sma/v15-ch08/c/20261119-085630-f999.json"
+     ],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-19 08:56:30",
+       "prompt": "agent_prompts/agent_prompt.v15-ch08.sma-c.md",
+       "finished": "2026-11-19 20:37:48",
+       "result": "done",
+       "note": "verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)"
+      }
+     ],
+     "note": "verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)"
+    },
+    {
+     "id": "T-0146-S76",
+     "kind": "analyzer-phase1",
+     "volume": 15,
+     "chapter": "08",
+     "chapter_id": "v15-ch08",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v15-ch08.analyzer-phase1.md",
+     "expected": [],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-19 09:08:16",
+       "prompt": "agent_prompts/agent_prompt.v15-ch08.analyzer-phase1.md",
+       "finished": "2026-11-19 20:37:48",
+       "result": "done",
+       "note": "verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)"
+      }
+     ],
+     "note": "verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)"
+    },
+    {
+     "id": "T-0146-S77",
+     "kind": "analyzer-phase2",
+     "volume": 15,
+     "chapter": "08",
+     "chapter_id": "v15-ch08",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v15-ch08.analyzer-phase2.md",
+     "expected": [
+      "output/_audit/sma/v15-ch08/precheck/omission-precheck.json",
+      "output/_audit/sma/v15-ch08/analysis/20261119-091528-7393.json",
+      "output/_audit/sma/v15-ch08/analysis/20261119-091528-7393.md"
+     ],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-19 09:15:28",
+       "prompt": "agent_prompts/agent_prompt.v15-ch08.analyzer-phase2.md",
+       "finished": "2026-11-19 20:37:48",
+       "result": "done",
+       "note": "verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)"
+      }
+     ],
+     "note": "verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)"
+    },
+    {
+     "id": "T-0146-S78",
+     "kind": "grammar-audit",
+     "volume": 15,
+     "chapter": "08",
+     "chapter_id": "v15-ch08",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v15-ch08.grammar-audit.md",
+     "expected": [
+      "AINovelEdit/output/_audit/v15-ch08.md",
+      "AINovelEdit/output/chapters/v15-ch08.md",
+      "AINovelEdit/output/_log/v15-log.md"
+     ],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-19 09:43:10",
+       "prompt": "agent_prompts/agent_prompt.v15-ch08.grammar-audit.md",
+       "finished": "2026-11-19 20:26:53",
+       "result": "done",
+       "note": "verify --mark"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "id": "T-0146-S79",
+     "kind": "style-audit",
+     "volume": 15,
+     "chapter": "08",
+     "chapter_id": "v15-ch08",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v15-ch08.style-audit.md",
+     "expected": [
+      "AINovelEdit/output/_audit/v15-ch08.md",
+      "AINovelEdit/output/chapters/v15-ch08.md",
+      "AINovelEdit/output/_log/v15-log.md"
+     ],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-19 09:43:10",
+       "prompt": "agent_prompts/agent_prompt.v15-ch08.style-audit.md",
+       "finished": "2026-11-19 20:26:53",
+       "result": "done",
+       "note": "verify --mark"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "id": "T-0146-S80",
+     "kind": "humanizer",
+     "volume": 15,
+     "chapter": "08",
+     "chapter_id": "v15-ch08",
+     "status": "failed",
+     "prompt_file": "agent_prompts/agent_prompt.v15-ch08.humanizer.attempt2.md",
+     "expected": [
+      "AINovelEdit/output/_audit/v15-ch08.md",
+      "AINovelEdit/output/chapters/v15-ch08.md",
+      "AINovelEdit/output/_log/v15-log.md"
+     ],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-19 09:43:10",
+       "prompt": "agent_prompts/agent_prompt.v15-ch08.humanizer.md",
+       "finished": "2026-11-19 20:28:15",
+       "result": "failed",
+       "note": "false DONE: provider limit, HUMANIZER section absent in audit report"
+      },
+      {
+       "n": 2,
+       "started": "2026-11-19 20:34:51",
+       "prompt": "agent_prompts/agent_prompt.v15-ch08.humanizer.attempt2.md",
+       "finished": "2026-11-19 22:19:00",
+       "result": "failed",
+       "note": "not executed: subagent silently produced no artifacts (no HUMANIZER section in audit, no text change); rerun required"
+      }
+     ],
+     "note": "not executed: subagent silently produced no artifacts (no HUMANIZER section in audit, no text change); rerun required"
+    },
+    {
+     "id": "T-0146-S81",
+     "kind": "full-audit",
+     "volume": 15,
+     "chapter": "08",
+     "chapter_id": "v15-ch08",
+     "status": "planned",
+     "prompt_file": "",
+     "expected": [
+      "AINovelEdit/output/_audit/v15-ch08.md",
+      "AINovelEdit/output/chapters/v15-ch08.md",
+      "AINovelEdit/output/_log/v15-log.md"
+     ],
+     "attempts": [],
+     "note": ""
+    },
+    {
+     "id": "T-0146-S82",
+     "kind": "sma-a",
+     "volume": 15,
+     "chapter": "09",
+     "chapter_id": "v15-ch09",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v15-ch09.sma-a.md",
+     "expected": [
+      "output/_audit/sma/v15-ch09/a/20261119-085630-c355.json"
+     ],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-19 08:56:30",
+       "prompt": "agent_prompts/agent_prompt.v15-ch09.sma-a.md",
+       "finished": "2026-11-19 20:37:48",
+       "result": "done",
+       "note": "verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)"
+      }
+     ],
+     "note": "verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)"
+    },
+    {
+     "id": "T-0146-S83",
+     "kind": "sma-b",
+     "volume": 15,
+     "chapter": "09",
+     "chapter_id": "v15-ch09",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v15-ch09.sma-b.md",
+     "expected": [
+      "output/_audit/sma/v15-ch09/b/20261119-085630-0ea3.json"
+     ],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-19 08:56:30",
+       "prompt": "agent_prompts/agent_prompt.v15-ch09.sma-b.md",
+       "finished": "2026-11-19 20:37:48",
+       "result": "done",
+       "note": "verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)"
+      }
+     ],
+     "note": "verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)"
+    },
+    {
+     "id": "T-0146-S84",
+     "kind": "sma-c",
+     "volume": 15,
+     "chapter": "09",
+     "chapter_id": "v15-ch09",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v15-ch09.sma-c.md",
+     "expected": [
+      "output/_audit/sma/v15-ch09/c/20261119-085630-a972.json"
+     ],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-19 08:56:30",
+       "prompt": "agent_prompts/agent_prompt.v15-ch09.sma-c.md",
+       "finished": "2026-11-19 20:37:48",
+       "result": "done",
+       "note": "verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)"
+      }
+     ],
+     "note": "verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)"
+    },
+    {
+     "id": "T-0146-S85",
+     "kind": "analyzer-phase1",
+     "volume": 15,
+     "chapter": "09",
+     "chapter_id": "v15-ch09",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v15-ch09.analyzer-phase1.md",
+     "expected": [],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-19 09:08:16",
+       "prompt": "agent_prompts/agent_prompt.v15-ch09.analyzer-phase1.md",
+       "finished": "2026-11-19 20:37:48",
+       "result": "done",
+       "note": "verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)"
+      }
+     ],
+     "note": "verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)"
+    },
+    {
+     "id": "T-0146-S86",
+     "kind": "analyzer-phase2",
+     "volume": 15,
+     "chapter": "09",
+     "chapter_id": "v15-ch09",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v15-ch09.analyzer-phase2.md",
+     "expected": [
+      "output/_audit/sma/v15-ch09/precheck/omission-precheck.json",
+      "output/_audit/sma/v15-ch09/analysis/20261119-091528-58b3.json",
+      "output/_audit/sma/v15-ch09/analysis/20261119-091528-58b3.md"
+     ],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-19 09:15:28",
+       "prompt": "agent_prompts/agent_prompt.v15-ch09.analyzer-phase2.md",
+       "finished": "2026-11-19 20:37:48",
+       "result": "done",
+       "note": "verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)"
+      }
+     ],
+     "note": "verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)"
+    },
+    {
+     "id": "T-0146-S87",
+     "kind": "grammar-audit",
+     "volume": 15,
+     "chapter": "09",
+     "chapter_id": "v15-ch09",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v15-ch09.grammar-audit.md",
+     "expected": [
+      "AINovelEdit/output/_audit/v15-ch09.md",
+      "AINovelEdit/output/chapters/v15-ch09.md",
+      "AINovelEdit/output/_log/v15-log.md"
+     ],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-19 09:43:10",
+       "prompt": "agent_prompts/agent_prompt.v15-ch09.grammar-audit.md",
+       "finished": "2026-11-19 20:26:53",
+       "result": "done",
+       "note": "verify --mark"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "id": "T-0146-S88",
+     "kind": "style-audit",
+     "volume": 15,
+     "chapter": "09",
+     "chapter_id": "v15-ch09",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v15-ch09.style-audit.md",
+     "expected": [
+      "AINovelEdit/output/_audit/v15-ch09.md",
+      "AINovelEdit/output/chapters/v15-ch09.md",
+      "AINovelEdit/output/_log/v15-log.md"
+     ],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-19 09:43:10",
+       "prompt": "agent_prompts/agent_prompt.v15-ch09.style-audit.md",
+       "finished": "2026-11-19 20:26:53",
+       "result": "done",
+       "note": "verify --mark"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "id": "T-0146-S89",
+     "kind": "humanizer",
+     "volume": 15,
+     "chapter": "09",
+     "chapter_id": "v15-ch09",
+     "status": "failed",
+     "prompt_file": "agent_prompts/agent_prompt.v15-ch09.humanizer.attempt2.md",
+     "expected": [
+      "AINovelEdit/output/_audit/v15-ch09.md",
+      "AINovelEdit/output/chapters/v15-ch09.md",
+      "AINovelEdit/output/_log/v15-log.md"
+     ],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-19 09:43:10",
+       "prompt": "agent_prompts/agent_prompt.v15-ch09.humanizer.md",
+       "finished": "2026-11-19 20:28:15",
+       "result": "failed",
+       "note": "false DONE: provider limit, HUMANIZER section absent in audit report"
+      },
+      {
+       "n": 2,
+       "started": "2026-11-19 20:34:51",
+       "prompt": "agent_prompts/agent_prompt.v15-ch09.humanizer.attempt2.md",
+       "finished": "2026-11-19 22:19:00",
+       "result": "failed",
+       "note": "not executed: subagent silently produced no artifacts (no HUMANIZER section in audit, no text change); rerun required"
+      }
+     ],
+     "note": "not executed: subagent silently produced no artifacts (no HUMANIZER section in audit, no text change); rerun required"
+    },
+    {
+     "id": "T-0146-S90",
+     "kind": "full-audit",
+     "volume": 15,
+     "chapter": "09",
+     "chapter_id": "v15-ch09",
+     "status": "planned",
+     "prompt_file": "",
+     "expected": [
+      "AINovelEdit/output/_audit/v15-ch09.md",
+      "AINovelEdit/output/chapters/v15-ch09.md",
+      "AINovelEdit/output/_log/v15-log.md"
+     ],
+     "attempts": [],
+     "note": ""
+    },
+    {
+     "id": "T-0146-S91",
+     "kind": "sma-a",
+     "volume": 15,
+     "chapter": "epilogue",
+     "chapter_id": "v15-epilogue",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v15-epilogue.sma-a.md",
+     "expected": [
+      "output/_audit/sma/v15-epilogue/a/20261119-085630-e341.json"
+     ],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-19 08:56:30",
+       "prompt": "agent_prompts/agent_prompt.v15-epilogue.sma-a.md",
+       "finished": "2026-11-19 20:37:48",
+       "result": "done",
+       "note": "verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)"
+      }
+     ],
+     "note": "verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)"
+    },
+    {
+     "id": "T-0146-S92",
+     "kind": "sma-b",
+     "volume": 15,
+     "chapter": "epilogue",
+     "chapter_id": "v15-epilogue",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v15-epilogue.sma-b.md",
+     "expected": [
+      "output/_audit/sma/v15-epilogue/b/20261119-085630-6672.json"
+     ],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-19 08:56:30",
+       "prompt": "agent_prompts/agent_prompt.v15-epilogue.sma-b.md",
+       "finished": "2026-11-19 20:37:48",
+       "result": "done",
+       "note": "verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)"
+      }
+     ],
+     "note": "verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)"
+    },
+    {
+     "id": "T-0146-S93",
+     "kind": "sma-c",
+     "volume": 15,
+     "chapter": "epilogue",
+     "chapter_id": "v15-epilogue",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v15-epilogue.sma-c.md",
+     "expected": [
+      "output/_audit/sma/v15-epilogue/c/20261119-085630-355e.json"
+     ],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-19 08:56:30",
+       "prompt": "agent_prompts/agent_prompt.v15-epilogue.sma-c.md",
+       "finished": "2026-11-19 20:37:48",
+       "result": "done",
+       "note": "verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)"
+      }
+     ],
+     "note": "verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)"
+    },
+    {
+     "id": "T-0146-S94",
+     "kind": "analyzer-phase1",
+     "volume": 15,
+     "chapter": "epilogue",
+     "chapter_id": "v15-epilogue",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v15-epilogue.analyzer-phase1.md",
+     "expected": [],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-19 09:08:16",
+       "prompt": "agent_prompts/agent_prompt.v15-epilogue.analyzer-phase1.md",
+       "finished": "2026-11-19 20:37:48",
+       "result": "done",
+       "note": "verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)"
+      }
+     ],
+     "note": "verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)"
+    },
+    {
+     "id": "T-0146-S95",
+     "kind": "analyzer-phase2",
+     "volume": 15,
+     "chapter": "epilogue",
+     "chapter_id": "v15-epilogue",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v15-epilogue.analyzer-phase2.md",
+     "expected": [
+      "output/_audit/sma/v15-epilogue/precheck/omission-precheck.json",
+      "output/_audit/sma/v15-epilogue/analysis/20261119-091528-d4d4.json",
+      "output/_audit/sma/v15-epilogue/analysis/20261119-091528-d4d4.md"
+     ],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-19 09:15:28",
+       "prompt": "agent_prompts/agent_prompt.v15-epilogue.analyzer-phase2.md",
+       "finished": "2026-11-19 20:37:48",
+       "result": "done",
+       "note": "verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)"
+      }
+     ],
+     "note": "verified: SMA artifacts a/b/c + phase1/phase2 complete (session interrupted before registry update)"
+    },
+    {
+     "id": "T-0146-S96",
+     "kind": "grammar-audit",
+     "volume": 15,
+     "chapter": "epilogue",
+     "chapter_id": "v15-epilogue",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v15-epilogue.grammar-audit.md",
+     "expected": [
+      "AINovelEdit/output/_audit/v15-epilogue.md",
+      "AINovelEdit/output/chapters/v15-epilogue.md",
+      "AINovelEdit/output/_log/v15-log.md"
+     ],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-19 09:43:10",
+       "prompt": "agent_prompts/agent_prompt.v15-epilogue.grammar-audit.md",
+       "finished": "2026-11-19 20:26:53",
+       "result": "done",
+       "note": "verify --mark"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "id": "T-0146-S97",
+     "kind": "style-audit",
+     "volume": 15,
+     "chapter": "epilogue",
+     "chapter_id": "v15-epilogue",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v15-epilogue.style-audit.md",
+     "expected": [
+      "AINovelEdit/output/_audit/v15-epilogue.md",
+      "AINovelEdit/output/chapters/v15-epilogue.md",
+      "AINovelEdit/output/_log/v15-log.md"
+     ],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-19 09:43:10",
+       "prompt": "agent_prompts/agent_prompt.v15-epilogue.style-audit.md",
+       "finished": "2026-11-19 20:26:53",
+       "result": "done",
+       "note": "verify --mark"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "id": "T-0146-S98",
+     "kind": "humanizer",
+     "volume": 15,
+     "chapter": "epilogue",
+     "chapter_id": "v15-epilogue",
+     "status": "failed",
+     "prompt_file": "agent_prompts/agent_prompt.v15-epilogue.humanizer.attempt2.md",
+     "expected": [
+      "AINovelEdit/output/_audit/v15-epilogue.md",
+      "AINovelEdit/output/chapters/v15-epilogue.md",
+      "AINovelEdit/output/_log/v15-log.md"
+     ],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-19 09:43:10",
+       "prompt": "agent_prompts/agent_prompt.v15-epilogue.humanizer.md",
+       "finished": "2026-11-19 20:28:15",
+       "result": "failed",
+       "note": "false DONE: provider limit, HUMANIZER section absent in audit report"
+      },
+      {
+       "n": 2,
+       "started": "2026-11-19 20:34:51",
+       "prompt": "agent_prompts/agent_prompt.v15-epilogue.humanizer.attempt2.md",
+       "finished": "2026-11-19 22:19:00",
+       "result": "failed",
+       "note": "not executed: subagent silently produced no artifacts (no HUMANIZER section in audit, no text change); rerun required"
+      }
+     ],
+     "note": "not executed: subagent silently produced no artifacts (no HUMANIZER section in audit, no text change); rerun required"
+    },
+    {
+     "id": "T-0146-S99",
+     "kind": "full-audit",
+     "volume": 15,
+     "chapter": "epilogue",
+     "chapter_id": "v15-epilogue",
+     "status": "planned",
+     "prompt_file": "",
+     "expected": [
+      "AINovelEdit/output/_audit/v15-epilogue.md",
+      "AINovelEdit/output/chapters/v15-epilogue.md",
+      "AINovelEdit/output/_log/v15-log.md"
+     ],
+     "attempts": [],
+     "note": ""
+    }
+   ]
+  },
+  {
+   "id": "T-0201",
+   "text": "Polnyi perevod i audit v15-afterword: 3 bloka po JA, ED_RU v merged vruchnuyu, prefilytry, SMA A/B/C + Analyzer 1/2, otchet, gate 12/12, commit",
+   "created": "2026-11-18 06:14:06",
+   "status": "done",
+   "note": "v15-afterword: gate 12/12",
+   "subtasks": [
+    {
+     "id": "T-0201-S1",
+     "kind": "sma-a",
+     "volume": 15,
+     "chapter": "afterword",
+     "chapter_id": "v15-afterword",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v15-afterword.sma-a.md",
+     "expected": [
+      "output/_audit/sma/v15-afterword/a/20261118-061546-0bca.json"
+     ],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-18 06:15:46",
+       "prompt": "agent_prompts/agent_prompt.v15-afterword.sma-a.md",
+       "finished": "2026-11-18 06:29:44",
+       "result": "done",
+       "note": "SMA + Analyzer applied, gate 12/12"
+      }
+     ],
+     "note": "SMA + Analyzer applied, gate 12/12"
+    },
+    {
+     "id": "T-0201-S2",
+     "kind": "sma-b",
+     "volume": 15,
+     "chapter": "afterword",
+     "chapter_id": "v15-afterword",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v15-afterword.sma-b.md",
+     "expected": [
+      "output/_audit/sma/v15-afterword/b/20261118-061546-bc15.json"
+     ],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-18 06:15:46",
+       "prompt": "agent_prompts/agent_prompt.v15-afterword.sma-b.md",
+       "finished": "2026-11-18 06:29:44",
+       "result": "done",
+       "note": "SMA + Analyzer applied, gate 12/12"
+      }
+     ],
+     "note": "SMA + Analyzer applied, gate 12/12"
+    },
+    {
+     "id": "T-0201-S3",
+     "kind": "sma-c",
+     "volume": 15,
+     "chapter": "afterword",
+     "chapter_id": "v15-afterword",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v15-afterword.sma-c.md",
+     "expected": [
+      "output/_audit/sma/v15-afterword/c/20261118-061546-c31b.json"
+     ],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-18 06:15:46",
+       "prompt": "agent_prompts/agent_prompt.v15-afterword.sma-c.md",
+       "finished": "2026-11-18 06:29:44",
+       "result": "done",
+       "note": "SMA + Analyzer applied, gate 12/12"
+      }
+     ],
+     "note": "SMA + Analyzer applied, gate 12/12"
+    },
+    {
+     "id": "T-0201-S4",
+     "kind": "analyzer-phase1",
+     "volume": 15,
+     "chapter": "afterword",
+     "chapter_id": "v15-afterword",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v15-afterword.analyzer-phase1.md",
+     "expected": [],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-18 06:15:46",
+       "prompt": "agent_prompts/agent_prompt.v15-afterword.analyzer-phase1.md",
+       "finished": "2026-11-18 06:29:44",
+       "result": "done",
+       "note": "SMA + Analyzer applied, gate 12/12"
+      }
+     ],
+     "note": "SMA + Analyzer applied, gate 12/12"
+    },
+    {
+     "id": "T-0201-S5",
+     "kind": "analyzer-phase2",
+     "volume": 15,
+     "chapter": "afterword",
+     "chapter_id": "v15-afterword",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v15-afterword.analyzer-phase2.md",
+     "expected": [
+      "output/_audit/sma/v15-afterword/precheck/omission-precheck.json",
+      "output/_audit/sma/v15-afterword/analysis/20261118-062529-2870.json",
+      "output/_audit/sma/v15-afterword/analysis/20261118-062529-2870.md"
+     ],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-18 06:25:29",
+       "prompt": "agent_prompts/agent_prompt.v15-afterword.analyzer-phase2.md",
+       "finished": "2026-11-18 06:29:44",
+       "result": "done",
+       "note": "SMA + Analyzer applied, gate 12/12"
+      }
+     ],
+     "note": "SMA + Analyzer applied, gate 12/12"
+    }
+   ]
+  },
+  {
+   "id": "T-0202",
+   "text": "Polnyi perevod i audit v16-ch01: 24 bloka po JA, prefilytry, SMA A/B/C + Analyzer 1/2, otchet, gate 12/12, commit",
+   "created": "2026-11-18 06:30:28",
+   "status": "done",
+   "note": "v16-ch01: gate 12/12",
+   "subtasks": [
+    {
+     "id": "T-0202-S1",
+     "kind": "sma-a",
+     "volume": 16,
+     "chapter": "1",
+     "chapter_id": "v16-ch01",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v16-ch01.sma-a.md",
+     "expected": [
+      "output/_audit/sma/v16-ch01/a/20261118-063738-f199.json"
+     ],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-18 06:37:38",
+       "prompt": "agent_prompts/agent_prompt.v16-ch01.sma-a.md",
+       "finished": "2026-11-18 07:00:49",
+       "result": "done",
+       "note": "SMA + Analyzer applied, gate 12/12"
+      }
+     ],
+     "note": "SMA + Analyzer applied, gate 12/12"
+    },
+    {
+     "id": "T-0202-S2",
+     "kind": "sma-b",
+     "volume": 16,
+     "chapter": "1",
+     "chapter_id": "v16-ch01",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v16-ch01.sma-b.md",
+     "expected": [
+      "output/_audit/sma/v16-ch01/b/20261118-063738-544f.json"
+     ],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-18 06:37:38",
+       "prompt": "agent_prompts/agent_prompt.v16-ch01.sma-b.md",
+       "finished": "2026-11-18 07:00:49",
+       "result": "done",
+       "note": "SMA + Analyzer applied, gate 12/12"
+      }
+     ],
+     "note": "SMA + Analyzer applied, gate 12/12"
+    },
+    {
+     "id": "T-0202-S3",
+     "kind": "sma-c",
+     "volume": 16,
+     "chapter": "1",
+     "chapter_id": "v16-ch01",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v16-ch01.sma-c.md",
+     "expected": [
+      "output/_audit/sma/v16-ch01/c/20261118-063738-12d5.json"
+     ],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-18 06:37:38",
+       "prompt": "agent_prompts/agent_prompt.v16-ch01.sma-c.md",
+       "finished": "2026-11-18 07:00:49",
+       "result": "done",
+       "note": "SMA + Analyzer applied, gate 12/12"
+      }
+     ],
+     "note": "SMA + Analyzer applied, gate 12/12"
+    },
+    {
+     "id": "T-0202-S4",
+     "kind": "analyzer-phase1",
+     "volume": 16,
+     "chapter": "1",
+     "chapter_id": "v16-ch01",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v16-ch01.analyzer-phase1.md",
+     "expected": [],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-18 06:37:38",
+       "prompt": "agent_prompts/agent_prompt.v16-ch01.analyzer-phase1.md",
+       "finished": "2026-11-18 07:00:49",
+       "result": "done",
+       "note": "SMA + Analyzer applied, gate 12/12"
+      }
+     ],
+     "note": "SMA + Analyzer applied, gate 12/12"
+    },
+    {
+     "id": "T-0202-S5",
+     "kind": "analyzer-phase2",
+     "volume": 16,
+     "chapter": "1",
+     "chapter_id": "v16-ch01",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v16-ch01.analyzer-phase2.md",
+     "expected": [
+      "output/_audit/sma/v16-ch01/precheck/omission-precheck.json",
+      "output/_audit/sma/v16-ch01/analysis/20261118-065359-8ce3.json",
+      "output/_audit/sma/v16-ch01/analysis/20261118-065359-8ce3.md"
+     ],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-18 06:53:59",
+       "prompt": "agent_prompts/agent_prompt.v16-ch01.analyzer-phase2.md",
+       "finished": "2026-11-18 07:00:49",
+       "result": "done",
+       "note": "SMA + Analyzer applied, gate 12/12"
+      }
+     ],
+     "note": "SMA + Analyzer applied, gate 12/12"
+    }
+   ]
+  },
+  {
+   "id": "T-0203",
+   "text": "Polnyi perevod i audit v16-ch02: 16 blokov po JA, prefilytry, SMA A/B/C + Analyzer 1/2, otchet, gate 12/12, commit",
+   "created": "2026-11-18 07:01:02",
+   "status": "done",
+   "note": "v16-ch02: gate 12/12",
+   "subtasks": [
+    {
+     "id": "T-0203-S1",
+     "kind": "sma-a",
+     "volume": 16,
+     "chapter": "2",
+     "chapter_id": "v16-ch02",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v16-ch02.sma-a.md",
+     "expected": [
+      "output/_audit/sma/v16-ch02/a/20261118-070648-0fa1.json"
+     ],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-18 07:06:48",
+       "prompt": "agent_prompts/agent_prompt.v16-ch02.sma-a.md",
+       "finished": "2026-11-18 07:32:20",
+       "result": "done",
+       "note": "SMA + Analyzer applied, gate 12/12"
+      }
+     ],
+     "note": "SMA + Analyzer applied, gate 12/12"
+    },
+    {
+     "id": "T-0203-S2",
+     "kind": "sma-b",
+     "volume": 16,
+     "chapter": "2",
+     "chapter_id": "v16-ch02",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v16-ch02.sma-b.md",
+     "expected": [
+      "output/_audit/sma/v16-ch02/b/20261118-070648-acb4.json"
+     ],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-18 07:06:48",
+       "prompt": "agent_prompts/agent_prompt.v16-ch02.sma-b.md",
+       "finished": "2026-11-18 07:32:20",
+       "result": "done",
+       "note": "SMA + Analyzer applied, gate 12/12"
+      }
+     ],
+     "note": "SMA + Analyzer applied, gate 12/12"
+    },
+    {
+     "id": "T-0203-S3",
+     "kind": "sma-c",
+     "volume": 16,
+     "chapter": "2",
+     "chapter_id": "v16-ch02",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v16-ch02.sma-c.md",
+     "expected": [
+      "output/_audit/sma/v16-ch02/c/20261118-070648-a274.json"
+     ],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-18 07:06:48",
+       "prompt": "agent_prompts/agent_prompt.v16-ch02.sma-c.md",
+       "finished": "2026-11-18 07:32:20",
+       "result": "done",
+       "note": "SMA + Analyzer applied, gate 12/12"
+      }
+     ],
+     "note": "SMA + Analyzer applied, gate 12/12"
+    },
+    {
+     "id": "T-0203-S4",
+     "kind": "analyzer-phase1",
+     "volume": 16,
+     "chapter": "2",
+     "chapter_id": "v16-ch02",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v16-ch02.analyzer-phase1.md",
+     "expected": [],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-18 07:06:48",
+       "prompt": "agent_prompts/agent_prompt.v16-ch02.analyzer-phase1.md",
+       "finished": "2026-11-18 07:32:20",
+       "result": "done",
+       "note": "SMA + Analyzer applied, gate 12/12"
+      }
+     ],
+     "note": "SMA + Analyzer applied, gate 12/12"
+    },
+    {
+     "id": "T-0203-S5",
+     "kind": "analyzer-phase2",
+     "volume": 16,
+     "chapter": "2",
+     "chapter_id": "v16-ch02",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v16-ch02.analyzer-phase2.md",
+     "expected": [
+      "output/_audit/sma/v16-ch02/precheck/omission-precheck.json",
+      "output/_audit/sma/v16-ch02/analysis/20261118-072427-8b3d.json",
+      "output/_audit/sma/v16-ch02/analysis/20261118-072427-8b3d.md"
+     ],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-18 07:24:27",
+       "prompt": "agent_prompts/agent_prompt.v16-ch02.analyzer-phase2.md",
+       "finished": "2026-11-18 07:32:20",
+       "result": "done",
+       "note": "SMA + Analyzer applied, gate 12/12"
+      }
+     ],
+     "note": "SMA + Analyzer applied, gate 12/12"
+    }
+   ]
+  },
+  {
+   "id": "T-0204",
+   "text": "Polnyi perevod i audit v16-ch03: 16 blokov po JA, prefilytry, SMA A/B/C + Analyzer 1/2, otchet, gate 12/12, commit",
+   "created": "2026-11-18 07:32:32",
+   "status": "done",
+   "note": "",
+   "subtasks": [
+    {
+     "id": "T-0204-S1",
+     "kind": "sma-a",
+     "volume": 16,
+     "chapter": "03",
+     "chapter_id": "v16-ch03",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v16-ch03.sma-a.md",
+     "expected": [
+      "output/_audit/sma/v16-ch03/a/20261118-075826-40be.json"
+     ],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-18 07:58:26",
+       "prompt": "agent_prompts/agent_prompt.v16-ch03.sma-a.md",
+       "finished": "2026-11-18 08:15:42",
+       "result": "done",
+       "note": "SMA A: 6 findings"
+      }
+     ],
+     "note": "SMA A: 6 findings"
+    },
+    {
+     "id": "T-0204-S2",
+     "kind": "sma-b",
+     "volume": 16,
+     "chapter": "03",
+     "chapter_id": "v16-ch03",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v16-ch03.sma-b.md",
+     "expected": [
+      "output/_audit/sma/v16-ch03/b/20261118-075826-a917.json"
+     ],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-18 07:58:26",
+       "prompt": "agent_prompts/agent_prompt.v16-ch03.sma-b.md",
+       "finished": "2026-11-18 08:15:43",
+       "result": "done",
+       "note": "SMA B: 1 finding"
+      }
+     ],
+     "note": "SMA B: 1 finding"
+    },
+    {
+     "id": "T-0204-S3",
+     "kind": "sma-c",
+     "volume": 16,
+     "chapter": "03",
+     "chapter_id": "v16-ch03",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v16-ch03.sma-c.md",
+     "expected": [
+      "output/_audit/sma/v16-ch03/c/20261118-075826-2ce5.json"
+     ],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-18 07:58:26",
+       "prompt": "agent_prompts/agent_prompt.v16-ch03.sma-c.md",
+       "finished": "2026-11-18 08:15:43",
+       "result": "done",
+       "note": "SMA C: 0 findings"
+      }
+     ],
+     "note": "SMA C: 0 findings"
+    },
+    {
+     "id": "T-0204-S4",
+     "kind": "analyzer-phase1",
+     "volume": 16,
+     "chapter": "03",
+     "chapter_id": "v16-ch03",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v16-ch03.analyzer-phase1.md",
+     "expected": [],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-18 07:58:26",
+       "prompt": "agent_prompts/agent_prompt.v16-ch03.analyzer-phase1.md",
+       "finished": "2026-11-18 08:15:43",
+       "result": "done",
+       "note": "Phase1 blind: 2 preliminary findings"
+      }
+     ],
+     "note": "Phase1 blind: 2 preliminary findings"
+    },
+    {
+     "id": "T-0204-S5",
+     "kind": "analyzer-phase2",
+     "volume": 16,
+     "chapter": "03",
+     "chapter_id": "v16-ch03",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v16-ch03.analyzer-phase2.md",
+     "expected": [
+      "output/_audit/sma/v16-ch03/precheck/omission-precheck.json",
+      "output/_audit/sma/v16-ch03/analysis/20261118-081234-e8fd.json",
+      "output/_audit/sma/v16-ch03/analysis/20261118-081234-e8fd.md"
+     ],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-18 08:12:34",
+       "prompt": "agent_prompts/agent_prompt.v16-ch03.analyzer-phase2.md",
+       "finished": "2026-11-18 08:15:43",
+       "result": "done",
+       "note": "Phase2: 7 FIXED, final text covered"
+      }
+     ],
+     "note": "Phase2: 7 FIXED, final text covered"
+    }
+   ]
+  },
+  {
+   "id": "T-0205",
+   "text": "Polnyi perevod i audit v16-ch04: 15 blokov po JA, prefilytry, SMA A/B/C + Analyzer 1/2, otchet, gate 12/12, commit",
+   "created": "2026-11-18 08:39:10",
+   "status": "done",
+   "note": "",
+   "subtasks": [
+    {
+     "id": "T-0205-S1",
+     "kind": "sma-a",
+     "volume": 16,
+     "chapter": "04",
+     "chapter_id": "v16-ch04",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v16-ch04.sma-a.md",
+     "expected": [
+      "output/_audit/sma/v16-ch04/a/20261118-084726-edd7.json"
+     ],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-18 08:47:26",
+       "prompt": "agent_prompts/agent_prompt.v16-ch04.sma-a.md",
+       "finished": "2026-11-18 09:02:53",
+       "result": "done",
+       "note": "SMA/Phase1 completed"
+      }
+     ],
+     "note": "SMA/Phase1 completed"
+    },
+    {
+     "id": "T-0205-S2",
+     "kind": "sma-b",
+     "volume": 16,
+     "chapter": "04",
+     "chapter_id": "v16-ch04",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v16-ch04.sma-b.md",
+     "expected": [
+      "output/_audit/sma/v16-ch04/b/20261118-084726-8fc7.json"
+     ],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-18 08:47:26",
+       "prompt": "agent_prompts/agent_prompt.v16-ch04.sma-b.md",
+       "finished": "2026-11-18 09:02:53",
+       "result": "done",
+       "note": "SMA/Phase1 completed"
+      }
+     ],
+     "note": "SMA/Phase1 completed"
+    },
+    {
+     "id": "T-0205-S3",
+     "kind": "sma-c",
+     "volume": 16,
+     "chapter": "04",
+     "chapter_id": "v16-ch04",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v16-ch04.sma-c.md",
+     "expected": [
+      "output/_audit/sma/v16-ch04/c/20261118-084726-6a1a.json"
+     ],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-18 08:47:26",
+       "prompt": "agent_prompts/agent_prompt.v16-ch04.sma-c.md",
+       "finished": "2026-11-18 09:02:53",
+       "result": "done",
+       "note": "SMA/Phase1 completed"
+      }
+     ],
+     "note": "SMA/Phase1 completed"
+    },
+    {
+     "id": "T-0205-S4",
+     "kind": "analyzer-phase1",
+     "volume": 16,
+     "chapter": "04",
+     "chapter_id": "v16-ch04",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v16-ch04.analyzer-phase1.md",
+     "expected": [],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-18 08:47:26",
+       "prompt": "agent_prompts/agent_prompt.v16-ch04.analyzer-phase1.md",
+       "finished": "2026-11-18 09:02:53",
+       "result": "done",
+       "note": "SMA/Phase1 completed"
+      }
+     ],
+     "note": "SMA/Phase1 completed"
+    },
+    {
+     "id": "T-0205-S5",
+     "kind": "analyzer-phase2",
+     "volume": 16,
+     "chapter": "04",
+     "chapter_id": "v16-ch04",
+     "status": "done",
+     "prompt_file": "agent_prompts/agent_prompt.v16-ch04.analyzer-phase2.md",
+     "expected": [
+      "output/_audit/sma/v16-ch04/precheck/omission-precheck.json",
+      "output/_audit/sma/v16-ch04/analysis/20261118-090253-4791.json",
+      "output/_audit/sma/v16-ch04/analysis/20261118-090253-4791.md"
+     ],
+     "attempts": [
+      {
+       "n": 1,
+       "started": "2026-11-18 09:02:53",
+       "prompt": "agent_prompts/agent_prompt.v16-ch04.analyzer-phase2.md",
+       "finished": "2026-11-18 09:14:01",
+       "result": "done",
+       "note": "Phase2: 10 FIXED, 2 FP"
+      }
+     ],
+     "note": "Phase2: 10 FIXED, 2 FP"
+    }
+   ]
   }
  ],
  "updated": "2026-11-19T21:59:00"
