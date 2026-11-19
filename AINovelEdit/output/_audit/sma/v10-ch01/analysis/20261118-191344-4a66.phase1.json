@@ -1,0 +1,128 @@
+{
+  "analysis_id": "20261118-191344-4a66.phase1",
+  "chapter": "v10-ch01",
+  "phase": 1,
+  "scope": "blind",
+  "results": [
+    {
+      "block": 1,
+      "finding": "LEXICAL_MISMATCH",
+      "note": "В JA 百メイルにも及ぶ — о прямых железных трубах длиной около ста меилов (миль); в RU «чуть не в сто метров»: единица длины заменена, добавлено «чуть не» вместо «достигая».",
+      "confidence": "LOW"
+    },
+    {
+      "block": 2,
+      "finding": "MISTRANSLATION",
+      "note": "JA アンリエッタを問い詰めたら — Луиза допытывалась у Генриетты, подлинны ли её чувства; в RU «Когда она прижала Генриетту к стенке» — вместо расспроса возникает физическое прижатие к стене, которого в JA нет. Возможен идиом, но смысл сдвинут.",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 3,
+      "finding": "NONE",
+      "note": "Блок сверен JA → RU: существенных расхождений не найдено.",
+      "confidence": "HIGH"
+    },
+    {
+      "block": 4,
+      "finding": "NONE",
+      "note": "Блок сверен JA → RU: существенных расхождений не найдено.",
+      "confidence": "HIGH"
+    },
+    {
+      "block": 5,
+      "finding": "NONE",
+      "note": "Блок сверен JA → RU: существенных расхождений не найдено.",
+      "confidence": "HIGH"
+    },
+    {
+      "block": 6,
+      "finding": "NONE",
+      "note": "Блок сверен JA → RU: существенных расхождений не найдено.",
+      "confidence": "HIGH"
+    },
+    {
+      "block": 7,
+      "finding": "NONE",
+      "note": "Блок сверен JA → RU: существенных расхождений не найдено.",
+      "confidence": "HIGH"
+    },
+    {
+      "block": 8,
+      "finding": "NONE",
+      "note": "Блок сверен JA → RU: существенных расхождений не найдено.",
+      "confidence": "HIGH"
+    },
+    {
+      "block": 9,
+      "finding": "NONE",
+      "note": "Блок сверен JA → RU: существенных расхождений не найдено.",
+      "confidence": "HIGH"
+    },
+    {
+      "block": 10,
+      "finding": "NONE",
+      "note": "Блок сверен JA → RU: существенных расхождений не найдено.",
+      "confidence": "HIGH"
+    },
+    {
+      "block": 11,
+      "finding": "NONE",
+      "note": "Блок сверен JA → RU: существенных расхождений не найдено.",
+      "confidence": "HIGH"
+    },
+    {
+      "block": 12,
+      "finding": "NONE",
+      "note": "Блок сверен JA → RU: существенных расхождений не найдено.",
+      "confidence": "HIGH"
+    },
+    {
+      "block": 13,
+      "finding": "NONE",
+      "note": "Блок сверен JA → RU: существенных расхождений не найдено.",
+      "confidence": "HIGH"
+    },
+    {
+      "block": 14,
+      "finding": "NONE",
+      "note": "Блок сверен JA → RU: существенных расхождений не найдено.",
+      "confidence": "HIGH"
+    },
+    {
+      "block": 15,
+      "finding": "NONE",
+      "note": "Блок сверен JA → RU: существенных расхождений не найдено.",
+      "confidence": "HIGH"
+    },
+    {
+      "block": 16,
+      "finding": "NONE",
+      "note": "Блок сверен JA → RU: существенных расхождений не найдено.",
+      "confidence": "HIGH"
+    },
+    {
+      "block": 17,
+      "finding": "NONE",
+      "note": "Блок сверен JA → RU: существенных расхождений не найдено.",
+      "confidence": "HIGH"
+    },
+    {
+      "block": 18,
+      "finding": "NONE",
+      "note": "Блок сверен JA → RU: существенных расхождений не найдено.",
+      "confidence": "HIGH"
+    },
+    {
+      "block": 19,
+      "finding": "NONE",
+      "note": "Блок сверен JA → RU: существенных расхождений не найдено.",
+      "confidence": "HIGH"
+    },
+    {
+      "block": 20,
+      "finding": "NONE",
+      "note": "Блок сверен JA → RU: существенных расхождений не найдено.",
+      "confidence": "HIGH"
+    }
+  ]
+}

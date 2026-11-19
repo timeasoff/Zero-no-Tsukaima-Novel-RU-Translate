@@ -1,0 +1,120 @@
+{
+  "analysis_id": "20261119-165602-2ca0",
+  "chapter": "v11-ch05",
+  "inputs": {
+    "a_runs": [
+      "20261117-121829-bd01",
+      "20261118-171529-a37c",
+      "20261119-165602-5390"
+    ],
+    "b_runs": [
+      "20261117-121829-639e",
+      "20261119-032659-c086",
+      "20261119-165602-6e04"
+    ],
+    "c_runs": [
+      "20261117-121829-5361",
+      "20261119-103608-1d9a",
+      "20261119-165602-d1e3"
+    ],
+    "precheck": "output/_audit/sma/v11-ch05/precheck/omission-precheck.json",
+    "phase1": "20261119-165602-459f.phase1.json"
+  },
+  "results": [
+    {
+      "block": 2,
+      "candidate_id": "CH05-01-elixir",
+      "sources": {
+        "a": [
+          "20261119-165602-5390"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "「エルフの薬でやられたんだろ？ ぼくたちじゃお手上げさ」",
+      "current": "— Но её же отравили эльфийским зельем, верно?",
+      "fidelity": "ADDITION",
+      "status": "DISPUTED",
+      "reason": " JA говорит лишь о воздействии эльфийским средством; «отравили» конкретизирует способ. Фаза 1 и A; REPORT_ONLY.",
+      "suggestion": "— Но с ней же что-то сделали этим зельем, верно?",
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 8,
+      "candidate_id": "CH05-02-wishful",
+      "sources": {
+        "a": [
+          "20261119-165602-5390"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "鼻の下こぉーんなにのばしてたわよ",
+      "current": "и нос аж вытянулся от вожделения",
+      "fidelity": "ADDITION",
+      "status": "DISPUTED",
+      "reason": "Оценка «от вожделения» добавлена к чистому жесту. Фаза 1 и A; REPORT_ONLY.",
+      "suggestion": "…и нос аж вытянулся!",
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 4,
+      "candidate_id": "CH05-03-aborigen",
+      "sources": {
+        "a": [],
+        "b": [
+          "20261119-165602-6e04"
+        ],
+        "c": [],
+        "precheck": false
+      },
+      "source": "手前の先住魔法より強力な、ぼくの風魔法",
+      "current": "заклинание ветра покруче, чем у здешних аборигенов",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "DISPUTED",
+      "reason": "先住 → «аборигены»: регистр и референс сдвинуты. Фаза 1 и B; REPORT_ONLY.",
+      "suggestion": "…покруче, чем местная исконная магия…",
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 9,
+      "candidate_id": "CH05-04-kakehiki",
+      "sources": {
+        "a": [],
+        "b": [],
+        "c": [
+          "20261119-165602-d1e3"
+        ],
+        "precheck": false
+      },
+      "source": "「あなた駆け引き？ 駆け引き使ってるつもり？」",
+      "current": "— ты что — прибегаешь к хитрости?",
+      "fidelity": "MEANING_SHIFT",
+      "status": "DISPUTED",
+      "reason": "駆け引き — любовная игра/тактика; «хитрость» — обвинение. Фаза 1 и C; REPORT_ONLY.",
+      "suggestion": "— ты что — ведёшь любовную игру?",
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 10,
+      "candidate_id": "CH05-05-tashinami",
+      "sources": {
+        "a": [],
+        "b": [],
+        "c": [
+          "20261119-165602-d1e3"
+        ],
+        "precheck": false
+      },
+      "source": "大人の女性のたしなみってものをアドバイスしてあげる",
+      "current": "подскажет тебе, что такое светская дама",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "たしなみ → «светская дама»: спорная замена, но общий смысл «взрослая дама» передан; PRESERVED.",
+      "suggestion": "Нет (текст сохранён).",
+      "action": "PRESERVED"
+    }
+  ]
+}

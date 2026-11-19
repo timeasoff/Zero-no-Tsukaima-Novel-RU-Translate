@@ -1,0 +1,109 @@
+{
+  "analysis_id": "20261119-025429-d40a",
+  "chapter": "v10-ch10",
+  "inputs": {
+    "a_runs": ["20261117-090720-3fbf", "20261118-164233-a1c7"],
+    "b_runs": ["20261117-090720-aec8", "20261119-024139-aa7e"],
+    "c_runs": ["20261117-090720-c7c2"],
+    "precheck": "output/_audit/sma/v10-ch10/precheck/omission-precheck.json",
+    "phase1": "20261119-024139-2248.phase1.json"
+  },
+  "results": [
+    {
+      "block": 1,
+      "candidate_id": "C-01-01",
+      "sources": {"a": ["20261117-090720-3fbf"], "b": [], "c": [], "precheck": false},
+      "source": "崩れかけた白い城壁が、月明かりを受けて妖しく光る。",
+      "current": "Полуразрушенные белые стены жутко блестели в лунном свете.",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "DISPUTED",
+      "reason": "A1: 妖しく (завораживающе, колдовски) → «жутко». В контексте «жутко» также несёт оттенок зловещего свечения, поэтому это спорный оттенок, а не искажение действия; правка не вносится.",
+      "suggestion": "",
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 19,
+      "candidate_id": "C-19-01",
+      "sources": {"a": ["20261117-090720-3fbf"], "b": [], "c": [], "precheck": false},
+      "source": "「お前とどのような関係があるのだ？」「なんの関係もない…」「それでお前は命を捨てるのか」",
+      "current": "— Какие у тебя с ней отношения? — Никаких… — И за это ты готов отдать жизнь? — И за это я ставлю жизнь на кон.",
+      "fidelity": "MISSING",
+      "status": "FALSE_POSITIVE",
+      "reason": "ERROR A1 (MISSING_TRANSLATION) и пре-check по блоку 24: пропуск двух реплик. В актуальном ED_RU все четыре реплики диалога на месте; исправлено. Артефакт старой редакции.",
+      "suggestion": "",
+      "action": "PRESERVED"
+    },
+    {
+      "block": 18,
+      "candidate_id": "C-18-01",
+      "sources": {"a": ["20261117-090720-3fbf"], "b": [], "c": [], "precheck": false},
+      "source": "明日、自分は心を失う。",
+      "current": "Завтра она потеряет сердце.",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "A1: 心を失う → «потерять рассудок». В актуальном ED_RU «потеряет сердце» — 心 переведено верно; исправлено.",
+      "suggestion": "",
+      "action": "PRESERVED"
+    },
+    {
+      "block": 16,
+      "candidate_id": "C-16-01",
+      "sources": {"a": ["20261117-090720-3fbf", "20261118-164233-a1c7"], "b": [], "c": [], "precheck": false},
+      "source": "偉そうに余裕を気取ったやつ／年頃の少女",
+      "current": "важных и невозмутимых／девушка в этом возрасте",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "Объединены A1 (добавлено «семнадцатилетняя») и A2 (余裕 → «смелость»). В актуальном ED_RU «невозмутимых» и «девушка в этом возрасте» — оба кандидата исправлены.",
+      "suggestion": "",
+      "action": "PRESERVED"
+    },
+    {
+      "block": 6,
+      "candidate_id": "C-06-01",
+      "sources": {"a": [], "b": [], "c": [], "precheck": true},
+      "source": "指先に触れたものに気づく。ゆっくりとそれをつまんで引き出した。",
+      "current": "Он нащупал что-то кончиками пальцев. Медленно вытащил — и, поняв, что держит, испустил стон.",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "Pre-check: непокрытые звенья блока 6. Все действия на месте; артефакт границы блоков между ED_RU и JA, пропуска нет.",
+      "suggestion": "",
+      "action": "PRESERVED"
+    },
+    {
+      "block": 3,
+      "candidate_id": "C-03-01",
+      "sources": {"a": [], "b": ["20261117-090720-aec8"], "c": [], "precheck": true},
+      "source": "「どうしてはたくのね！」「あんた慎みってものを持ちなさいよ！」",
+      "current": "— Зачем ты меня бьёшь! — Ты бы хоть скромность соблюдала! Скромность!",
+      "fidelity": "MEANING_SHIFT",
+      "status": "FALSE_POSITIVE",
+      "reason": "Объединены B (референс местоимения) и pre-check блока 3. В актуальном ED_RU Сильфида говорит, что её бьют, Луиза требует скромности — субъекты верны; реплики на месте.",
+      "suggestion": "",
+      "action": "PRESERVED"
+    },
+    {
+      "block": 9,
+      "candidate_id": "C-09-01",
+      "sources": {"a": [], "b": ["20261117-090720-aec8"], "c": [], "precheck": false},
+      "source": "「ギーシュ、マリコルヌ。キュルケを頼む」",
+      "current": "— Гиш, Маликорн. Позаботьтесь о Кирхе, — сказал Сайто.",
+      "fidelity": "MEANING_SHIFT",
+      "status": "FALSE_POSITIVE",
+      "reason": "WARNING старого B: смена субъекта речи. В актуальном ED_RU Сайто поручает Кирхе Гишу и Маликорну — атрибуция верна; исправлено.",
+      "suggestion": "",
+      "action": "PRESERVED"
+    },
+    {
+      "block": 2,
+      "candidate_id": "C-02-01",
+      "sources": {"a": [], "b": [], "c": ["20261117-090720-c7c2"], "precheck": false},
+      "source": "「お、踊るから！ 黙ってて！」",
+      "current": "— Ладно, я потанцую! Заткнитесь!",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "C: прагматический слой (коммуникативная сила реплики) — вне зоны макросемантики; фактическое действие (Монморанси соглашается танцевать) передано верно.",
+      "suggestion": "",
+      "action": "PRESERVED"
+    }
+  ]
+}

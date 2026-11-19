@@ -1,0 +1,297 @@
+{
+  "analysis_id": "20261119-092107-550e",
+  "chapter": "v9-ch06",
+  "inputs": {
+    "a_runs": [
+      "20261117-040031-1cbf",
+      "20261118-154526-01a0"
+    ],
+    "b_runs": [
+      "20261117-040031-21e8",
+      "20261119-011757-778e"
+    ],
+    "c_runs": [
+      "20261117-040031-7cce",
+      "20261119-091441-91e0"
+    ],
+    "precheck": "output/_audit/sma/v9-ch06/precheck/omission-precheck.json",
+    "phase1": "20261119-091441-30cd.phase1.json"
+  },
+  "results": [
+    {
+      "block": 2,
+      "candidate_id": "C-2-01",
+      "sources": {
+        "a": [
+          "20261117-040031-1cbf"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "デヴィッチェ・シャイ",
+      "current": "девичьей щепетильностью",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "A1 historical: «невинность» исправлено на «щепетильность».",
+      "suggestion": "",
+      "action": "PRESERVED"
+    },
+    {
+      "block": 3,
+      "candidate_id": "C-3-01",
+      "sources": {
+        "a": [
+          "20261117-040031-1cbf"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "半頭ほど",
+      "current": "на одну лошадиную голову позади",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "A1 historical: мера дистанции передана («одна лошадиная голова»).",
+      "suggestion": "",
+      "action": "PRESERVED"
+    },
+    {
+      "block": 4,
+      "candidate_id": "C-4-01",
+      "sources": {
+        "a": [
+          "20261118-154526-01a0"
+        ],
+        "b": [
+          "20261119-011757-778e"
+        ],
+        "c": [],
+        "precheck": false
+      },
+      "source": "Gish の腕振り",
+      "current": "Он махал рукой Сайто, шагавшему впереди",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "CONFIRMED_ERROR",
+      "reason": "A2 и новый B: размашистость жеста 腕を振って утрачена; правка не применяется.",
+      "suggestion": "Гиш размашисто махал рукой идущему впереди Сайто",
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 4,
+      "candidate_id": "C-4-02",
+      "sources": {
+        "a": [
+          "20261117-040031-1cbf"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "Gish の自己満足",
+      "current": "Гиш самодовольно склонил голову",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "A1 historical: «довольный» заменено «самодовольно» — оттенок самодовольства передан.",
+      "suggestion": "",
+      "action": "PRESERVED"
+    },
+    {
+      "block": 5,
+      "candidate_id": "C-5-01",
+      "sources": {
+        "a": [
+          "20261117-040031-1cbf"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "どよめき／嘲笑",
+      "current": "насмешливый смех",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "A1 historical: «В толпе вырвался смех» дополнено «насмешливый» — оттенок недоверия/насмешки передан.",
+      "suggestion": "",
+      "action": "PRESERVED"
+    },
+    {
+      "block": 6,
+      "candidate_id": "C-6-01",
+      "sources": {
+        "a": [
+          "20261117-040031-1cbf"
+        ],
+        "b": [
+          "20261119-011757-778e"
+        ],
+        "c": [],
+        "precheck": false
+      },
+      "source": "照れ隠し",
+      "current": "Под приветствия Сайто изобразил растерянное лицо",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "CONFIRMED_ERROR",
+      "reason": "A1 и новый B: 照れ隠し — скрываемое смущение, «растерянное лицо» подменяет состояние; правка не применяется.",
+      "suggestion": "Скорчил странную рожу, скрывая смущение",
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 7,
+      "candidate_id": "C-7-01",
+      "sources": {
+        "a": [
+          "20261117-040031-1cbf"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "寂しそうに",
+      "current": "— Правда… вы всё распродали, — грустно сказала она",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "A1 historical: «тихо» заменено «грустно» — эмоция одиночества передана.",
+      "suggestion": "",
+      "action": "PRESERVED"
+    },
+    {
+      "block": 9,
+      "candidate_id": "C-9-01",
+      "sources": {
+        "a": [
+          "20261118-154526-01a0"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "財務卿の笑み",
+      "current": "он ответил встревоженным голосом",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "A2 historical: «улыбнулся» заменено «встревоженным голосом» — мимика/эмоция исправлена.",
+      "suggestion": "",
+      "action": "PRESERVED"
+    },
+    {
+      "block": 10,
+      "candidate_id": "C-10-01",
+      "sources": {
+        "a": [
+          "20261117-040031-1cbf",
+          "20261118-154526-01a0"
+        ],
+        "b": [
+          "20261117-040031-21e8"
+        ],
+        "c": [],
+        "precheck": false
+      },
+      "source": "安心したのか／剪切",
+      "current": "Я заметила, что мне стало легче, только когда слеза уже покатилась",
+      "fidelity": "MEANING_SHIFT",
+      "status": "FALSE_POSITIVE",
+      "reason": "A1/A2/B-old historical: «обрадовалась, что слеза пошла» исправлено на «стало легче, когда слеза покатилась»; инверсия состояния устранена.",
+      "suggestion": "",
+      "action": "PRESERVED"
+    },
+    {
+      "block": 13,
+      "candidate_id": "C-13-01",
+      "sources": {
+        "a": [
+          "20261117-040031-1cbf"
+        ],
+        "b": [
+          "20261117-040031-21e8"
+        ],
+        "c": [],
+        "precheck": false
+      },
+      "source": "場所や姿まで変える",
+      "current": "Причём не просто маску или костюм…",
+      "fidelity": "ADDITION",
+      "status": "FALSE_POSITIVE",
+      "reason": "A1/B-old фиксировали добавление о смене места и облика; текущий RU оборвал фразу на «не просто маску или костюм…», добавление устранено.",
+      "suggestion": "",
+      "action": "PRESERVED"
+    },
+    {
+      "block": 2,
+      "candidate_id": "C-R4-20261119-091441-91e0-02-01",
+      "sources": {
+        "a": [],
+        "b": [],
+        "c": [
+          "20261119-091441-91e0"
+        ],
+        "precheck": false
+      },
+      "source": "「これではまるで……、観客に媚を売る三文芝居のようではありませんか」",
+      "current": "- Это выглядит как... дешёвая игра, чтобы польстить народу.",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "DISPUTED",
+      "reason": "JA「〜ではありませんか」— риторический вопрос, Expressing негодование и брезгливое удивление; в RU «Это выглядит как...» — нейтральная констатация, вопросительность убрана. Словарный смысл передан, но коммуникативный акт «выразить возмущение вопросом» заменён актом «сообщить оценку»; утрачена установка говорящего.",
+      "suggestion": "Неужели это не похоже на... дешёвую пьесу, угодничающую перед зрителями?",
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 2,
+      "candidate_id": "C-R4-20261119-091441-91e0-02-02",
+      "sources": {
+        "a": [],
+        "b": [],
+        "c": [
+          "20261119-091441-91e0"
+        ],
+        "precheck": false
+      },
+      "source": "「いつか申したではありませんか」",
+      "current": "- Я уже говорил это раньше.",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "DISPUTED",
+      "reason": "JA「申したではありませんか」— напоминание в форме риторического вопроса; RU «Я уже говорил это раньше» — плоское утверждение. Изменена коммуникативная сила: напоминание-упрёк → нейтральное сообщение.",
+      "suggestion": "Разве я не говорил это раньше?",
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 3,
+      "candidate_id": "C-R4-20261119-091441-91e0-03-03",
+      "sources": {
+        "a": [],
+        "b": [],
+        "c": [
+          "20261119-091441-91e0"
+        ],
+        "precheck": false
+      },
+      "source": "「よせやい」",
+      "current": "- Тебя не касается.",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "DISPUTED",
+      "reason": "JA「よせやい」— смущённое, незлобивое «да ладно, брось» в ответ на поддёвку; RU «Тебя не касается» звучит как сухой отпор. Отношение говорящего к собеседнику изменилось: смущение → отчуждённость; сила реплики возросла.",
+      "suggestion": "Да ладно, брось...",
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 13,
+      "candidate_id": "C-R4-20261119-091441-91e0-13-04",
+      "sources": {
+        "a": [],
+        "b": [],
+        "c": [
+          "20261119-091441-91e0"
+        ],
+        "precheck": false
+      },
+      "source": "「よろしいのですか？」",
+      "current": "- Как вы считаете?",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "DISPUTED",
+      "reason": "JA「よろしいのですか？」произнесено «ほっとしたような口調» — с облегчением: королева надеется на отмену бала; RU «Как вы считаете?» — нейтральный вопрос-запрос. Речевой акт «надеяться на отмену» подменён актом «запрашивать мнение»; утрачен подтекст облегчения.",
+      "suggestion": "Правда? Вы и правда отмените?",
+      "action": "REPORT_ONLY"
+    }
+  ]
+}

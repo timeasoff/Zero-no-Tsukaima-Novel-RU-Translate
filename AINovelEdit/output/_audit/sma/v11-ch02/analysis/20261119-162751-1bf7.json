@@ -1,0 +1,336 @@
+{
+  "analysis_id": "20261119-162751-1bf7",
+  "chapter": "v11-ch02",
+  "inputs": {
+    "a_runs": [
+      "20261117-104122-618c",
+      "20261118-201139-043",
+      "20261119-162751-eb83"
+    ],
+    "b_runs": [
+      "20261117-104122-c409",
+      "20261119-030406-96a5",
+      "20261119-162751-9e0c"
+    ],
+    "c_runs": [
+      "20261117-104122-5adf",
+      "20261119-103607-04aa",
+      "20261119-162751-5027"
+    ],
+    "precheck": "output/_audit/sma/v11-ch02/precheck/omission-precheck.json",
+    "phase1": "20261119-162751-2df2.phase1.json"
+  },
+  "results": [
+    {
+      "block": 1,
+      "candidate_id": "CH02-01-rinreshii",
+      "sources": {
+        "a": [
+          "20261117-104122-618c",
+          "20261119-162751-eb83"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "鉄のような、凛々しいアニエス",
+      "current": "Появилась Аньес — железная, воинственная",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "DISPUTED",
+      "reason": "凛々しい — бравая, статная выправка; «воинственная» сохраняет только агрессивность и теряет оттенок стати. Подтверждено Фазой 1 и новым A; REPORT_ONLY.",
+      "suggestion": "…железная, бравая…",
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 5,
+      "candidate_id": "CH02-02-king",
+      "sources": {
+        "a": [
+          "20261117-104122-618c"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "陛下直々お裁きを下しに",
+      "current": "Сам король собирался её судить",
+      "fidelity": "MEANING_SHIFT",
+      "status": "FALSE_POSITIVE",
+      "reason": "Старая находка «陛下 (королева) → король»: текущий RU называет королеву; дефект устранён.",
+      "suggestion": "Нет (текст уже исправлен).",
+      "action": "PRESERVED"
+    },
+    {
+      "block": 3,
+      "candidate_id": "CH02-03-tanjin",
+      "sources": {
+        "a": [
+          "20261117-104122-618c"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "連れて行く隊員を選出する",
+      "current": "выбрать нескольких надёжных подчинённых",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "DISPUTED",
+      "reason": "隊員 — «члены отряда/подчинённые»;в старой ревизии «работники» меняли регистр. Подтверждено Фазой 1; REPORT_ONLY.",
+      "suggestion": "…выбрать нескольких надёжных из отряда…",
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 2,
+      "candidate_id": "CH02-04-muri",
+      "sources": {
+        "a": [
+          "20261118-201139-043"
+        ],
+        "b": [
+          "20261119-030406-96a5"
+        ],
+        "c": [],
+        "precheck": false
+      },
+      "source": "陛下は、無理をしておいでです。",
+      "current": "Вы переутомились, Ваше Величество.",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "DISPUTED",
+      "reason": "無理をする — «делать сверх меры, переусердствовать»; «переутомились» подменяет действие состоянием. Подтверждено Фазой 1, A и B; REPORT_ONLY.",
+      "suggestion": "Вы слишком усердствуете, Ваше Величество.",
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 4,
+      "candidate_id": "CH02-05-icken",
+      "sources": {
+        "a": [
+          "20261118-201139-043"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "コルベールの一見のん気な顔",
+      "current": "показалось привычно беззаботное лицо Кольбера",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "DISPUTED",
+      "reason": "一見 — «на первый взгляд, по видимости»; «показалось привычно» подменяет оценку внешнего впечатления оценкой привычности. REPORT_ONLY.",
+      "suggestion": "…на первый взгляд беззаботное лицо…",
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 4,
+      "candidate_id": "CH02-06-katte",
+      "sources": {
+        "a": [
+          "20261118-201139-043"
+        ],
+        "b": [
+          "20261119-030406-96a5"
+        ],
+        "c": [],
+        "precheck": false
+      },
+      "source": "勝手に国境を越えてガリアに潜入した",
+      "current": "тайно перешла границу и проникла в Галлию",
+      "fidelity": "MEANING_SHIFT",
+      "status": "DISPUTED",
+      "reason": "勝手に — самовольно, без спроса; «тайно» переносит причину упрёка на скрытность и противоречит «без позволения семьи» в том же блоке. Подтверждено A, B и Фазой 1; REPORT_ONLY.",
+      "suggestion": "…самовольно перешла границу…",
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 4,
+      "candidate_id": "CH02-07-yatsu",
+      "sources": {
+        "a": [
+          "20261118-201139-043"
+        ],
+        "b": [
+          "20261119-030406-96a5"
+        ],
+        "c": [],
+        "precheck": false
+      },
+      "source": "ルイズの奴は、どこまで",
+      "current": "До когда Луиза будет",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "DISPUTED",
+      "reason": "奴 — грубовато-фамильярное «эта» в речи раздражённого отца; нейтральное «Луиза» сглаживает экспрессию. REPORT_ONLY.",
+      "suggestion": "До когда эта Луиза будет…",
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 5,
+      "candidate_id": "CH02-08-korokoro",
+      "sources": {
+        "a": [
+          "20261118-201139-043"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "コロコロと笑った。",
+      "current": "рассмеялась:",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "DISPUTED",
+      "reason": "コロコロ — лёгкий частый смех; нейтральное «рассмеялась» теряет звуковую и эмоциональную окраску. Подтверждено Фазой 1 и новым A; REPORT_ONLY.",
+      "suggestion": "легонько рассмеялась",
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 5,
+      "candidate_id": "CH02-09-jiro",
+      "sources": {
+        "a": [
+          "20261118-201139-043"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "じろりとそんなカトレアを睨みつけた",
+      "current": "Элеонор сверкнула глазами на Катлею",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "DISPUTED",
+      "reason": "じろり и 睨みつけた — пристальный пронзительный взгляд-предупреждение; «сверкнула глазами» даёт быстрый блеск, теряя оттенок угрозы. REPORT_ONLY.",
+      "suggestion": "Элеонор пронзительно уставилась на Катлею",
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 8,
+      "candidate_id": "CH02-10-tremble",
+      "sources": {
+        "a": [
+          "20261117-104122-618c"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "ガタガタわなわなと、落ち着きなく震えるルイズ",
+      "current": "глядя на дрожавшую Луизу",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "DISPUTED",
+      "reason": "Утрачены конкретные признаки крупной судорожной дрожи и беспокойства; нейтральное «дрожавшую» снижает интенсивность сцены. REPORT_ONLY.",
+      "suggestion": "…на то, как Луиза дрожит мелкой дрожью и не может успокоиться…",
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 10,
+      "candidate_id": "CH02-11-aogi",
+      "sources": {
+        "a": [
+          "20261117-104122-618c"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "ギーシュが青い顔になった",
+      "current": "Гиш побледнел",
+      "fidelity": "MEANING_SHIFT",
+      "status": "FALSE_POSITIVE",
+      "reason": "Старая находка «青い顔 → побледнел»: текущий RU «побледнел» — естественная и точная передача идиомы «побелеть/позеленеть от страха»; находка историческая.",
+      "suggestion": "Нет (текст уже исправлен).",
+      "action": "PRESERVED"
+    },
+    {
+      "block": 9,
+      "candidate_id": "CH02-12-tataku",
+      "sources": {
+        "a": [
+          "20261118-201139-043"
+        ],
+        "b": [],
+        "c": [
+          "20261119-103607-04aa",
+          "20261119-162751-5027"
+        ],
+        "precheck": false
+      },
+      "source": "お尻でも叩かれんのか？",
+      "current": "— Тебе что — высечь тебя, что ли?",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "DISPUTED",
+      "reason": "叩かれる в комизме — «шлёпнут по попе»; «высечь» — жёсткое телесное наказание, прагматическая сила завышена. Подтверждено A(старый)/C(оба)/Фазой 1; REPORT_ONLY.",
+      "suggestion": "— Тебе что — шлёпнуть тебя, что ли?",
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 2,
+      "candidate_id": "CH02-13-yasashii",
+      "sources": {
+        "a": [],
+        "b": [],
+        "c": [
+          "20261119-103607-04aa",
+          "20261119-162751-5027"
+        ],
+        "precheck": false
+      },
+      "source": "隊長殿は、お優しいのね",
+      "current": "— Вы добры, командир,",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "DISPUTED",
+      "reason": "お優しいのね — мягкое чуть ироничное восхищение (ね); сухое «Вы добры» теряет подтекст. REPORT_ONLY.",
+      "suggestion": "— Какая вы добрая, командир,",
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 10,
+      "candidate_id": "CH02-14-dragon",
+      "sources": {
+        "a": [],
+        "b": [],
+        "c": [
+          "20261117-104122-5adf"
+        ],
+        "precheck": false
+      },
+      "source": "一人でドラゴンの群れをやっつけたこともあるんだろ？",
+      "current": "Говорят, она и стаю драконов в одиночку одолела, правда?",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "DISPUTED",
+      "reason": "Старая находка C: вопросительная реплика передана утвердительной с «правда?»; оттенок вопроса отчасти сохранён, но сила реплики сдвинута. REPORT_ONLY.",
+      "suggestion": "…одолела, правда?",
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 2,
+      "candidate_id": "CH02-15-precheck-b2",
+      "sources": {
+        "a": [],
+        "b": [],
+        "c": [],
+        "precheck": true
+      },
+      "source": "Хвост JA-блока 2 (диалог королевы и Аньес)",
+      "current": "— Вы добры, командир, — заметила Генриетта.",
+      "fidelity": "MISSING",
+      "status": "FALSE_POSITIVE",
+      "reason": "Pre-check S1-tail-truncation (MEDIUM) для блока 2: сверка JA → RU показывает, что реплики и звенья перенесены в соседние блоки при нормализации; содержание покрыто. Сдвиг границ, не пропуск — PRESERVED.",
+      "suggestion": "Нет (сдвиг границ блоков).",
+      "action": "PRESERVED"
+    },
+    {
+      "block": 4,
+      "candidate_id": "CH02-16-precheck-b4",
+      "sources": {
+        "a": [],
+        "b": [],
+        "c": [],
+        "precheck": true
+      },
+      "source": "Хвост JA-блока 4 (упрёк отца)",
+      "current": "— Отец прав. Подумать только…",
+      "fidelity": "MISSING",
+      "status": "FALSE_POSITIVE",
+      "reason": "Pre-check S1-tail-truncation (MEDIUM) для блока 4: реплики отца/Элеонор/Катлеи присутствуют в текущем RU блока 4–5; это артефакт выравнивания блоков. Реального обрыва содержания нет — PRESERVED.",
+      "suggestion": "Нет (сдвиг границ блоков).",
+      "action": "PRESERVED"
+    }
+  ]
+}

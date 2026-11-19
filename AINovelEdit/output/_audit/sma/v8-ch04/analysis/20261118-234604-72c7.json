@@ -1,0 +1,345 @@
+{
+  "analysis_id": "20261118-234604-72c7",
+  "chapter": "v8-ch04",
+  "inputs": {
+    "a_runs": [
+      "20261117-015304-f4fe",
+      "20261118-143331-7d5a"
+    ],
+    "b_runs": [
+      "20261117-015304-30b9",
+      "20261118-233311-f647"
+    ],
+    "c_runs": [
+      "20261117-015304-7daf"
+    ],
+    "precheck": "output/_audit/sma/v8-ch04/precheck/omission-precheck.json",
+    "phase1": "20261118-233311-62e3.phase1.json"
+  },
+  "results": [
+    {
+      "block": 1,
+      "candidate_id": "C-01-01",
+      "sources": {
+        "a": [
+          "20261117-015304-f4fe",
+          "20261118-143331-7d5a"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "女生徒の間からため息が漏れた",
+      "current": "девушки дружно ахнули",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "CONFIRMED_ERROR",
+      "reason": "JA ため息 («вздох») → ED_RU «дахнули»; вздох заменён возгласом. Правка не вносится.",
+      "suggestion": null,
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 3,
+      "candidate_id": "C-03-01",
+      "sources": {
+        "a": [
+          "20261117-015304-f4fe"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "",
+      "current": "",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "ED_RU: «Улыбка была невероятно обаятельна» — улыбка на месте.",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 4,
+      "candidate_id": "C-04-01",
+      "sources": {
+        "a": [
+          "20261117-015304-f4fe"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "",
+      "current": "",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "ED_RU: «Пелиссон, скрестив руки, зло глядел» — враждебность на месте.",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 7,
+      "candidate_id": "C-07-01",
+      "sources": {
+        "a": [
+          "20261117-015304-f4fe"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "",
+      "current": "",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "ED_RU: «Он вскочил — прыг! — и поклонился» — порывистость на месте.",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 13,
+      "candidate_id": "C-13-01",
+      "sources": {
+        "a": [
+          "20261117-015304-f4fe"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "",
+      "current": "",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "ED_RU: «— …Н-ну как? Маленькая?» — эмоция передана.",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 14,
+      "candidate_id": "C-14-01",
+      "sources": {
+        "a": [
+          "20261117-015304-f4fe"
+        ],
+        "b": [
+          "20261117-015304-30b9"
+        ],
+        "c": [],
+        "precheck": false
+      },
+      "source": "",
+      "current": "",
+      "fidelity": "MEANING_SHIFT",
+      "status": "FALSE_POSITIVE",
+      "reason": "ED_RU: «— Потому что люблю, — ответил он» — субъект Сайто верен.",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 17,
+      "candidate_id": "C-17-01",
+      "sources": {
+        "a": [
+          "20261117-015304-f4fe"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "",
+      "current": "",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "ED_RU: «Но момент важен» — смысл сохранён.",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 20,
+      "candidate_id": "C-20-01",
+      "sources": {
+        "a": [
+          "20261117-015304-f4fe"
+        ],
+        "b": [],
+        "c": [
+          "20261117-015304-7daf"
+        ],
+        "precheck": false
+      },
+      "source": "",
+      "current": "",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "ED_RU: «— Он не мёртв, правда? — Он жив, правда?» — модальность ожидания подтверждения сохранена.",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 22,
+      "candidate_id": "C-22-01",
+      "sources": {
+        "a": [
+          "20261117-015304-f4fe"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "",
+      "current": "",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "ED_RU: «устало выдохнула» — вздох на месте.",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 22,
+      "candidate_id": "C-22-02",
+      "sources": {
+        "a": [
+          "20261117-015304-f4fe"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "",
+      "current": "",
+      "fidelity": "MEANING_SHIFT",
+      "status": "FALSE_POSITIVE",
+      "reason": "ED_RU: «какая жалость… Очень достойного сожаления человека» — полярность оценки верна.",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 12,
+      "candidate_id": "C-12-01",
+      "sources": {
+        "a": [
+          "20261118-143331-7d5a"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "サイトわたしのこと嫌いになっちゃうもん",
+      "current": "если ты увидишь — возненавидишь меня",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "CONFIRMED_ERROR",
+      "reason": "JA 嫌いになっちゃう («разлюбишь») → ED_RU «возненавидишь»: усиление интенсивности. Правка не вносится.",
+      "suggestion": null,
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 13,
+      "candidate_id": "C-13-02",
+      "sources": {
+        "a": [
+          "20261118-143331-7d5a"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "才人はあきれたに違いない",
+      "current": "он в ужасе",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "CONFIRMED_ERROR",
+      "reason": "JA あきれたに違いない («должно быть, изумлён») → ED_RU «он в ужасе»: сдвиг эмоции. Правка не вносится.",
+      "suggestion": null,
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 21,
+      "candidate_id": "C-21-01",
+      "sources": {
+        "a": [],
+        "b": [
+          "20261118-233311-f647"
+        ],
+        "c": [],
+        "precheck": false
+      },
+      "source": "アンロックのような、系統魔法ではない、コモン・マジック",
+      "current": "в отличие от «Отпирания», не системная магия, а простая",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "DISPUTED",
+      "reason": "Собственная находка B: JA «アンロックのような、系統魔法ではない、コモン・マジック» допускает сходство; ED_RU даёт «в отличие от». Оба прочтения JA возможны — DISPUTED, правка не вносится.",
+      "suggestion": null,
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 4,
+      "candidate_id": "C-04-02",
+      "sources": {
+        "a": [],
+        "b": [
+          "20261117-015304-30b9"
+        ],
+        "c": [],
+        "precheck": false
+      },
+      "source": "",
+      "current": "",
+      "fidelity": "MEANING_SHIFT",
+      "status": "FALSE_POSITIVE",
+      "reason": "ED_RU: «как раз когда вы там играли в медали и подвиги» — референс верен.",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 18,
+      "candidate_id": "C-18-01",
+      "sources": {
+        "a": [],
+        "b": [
+          "20261117-015304-30b9"
+        ],
+        "c": [],
+        "precheck": false
+      },
+      "source": "",
+      "current": "",
+      "fidelity": "MEANING_SHIFT",
+      "status": "FALSE_POSITIVE",
+      "reason": "ED_RU: «— Откуда ты знаешь? — …Откуда ты знаешь?» — адресаты верны.",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 4,
+      "candidate_id": "C-04-03",
+      "sources": {
+        "a": [],
+        "b": [],
+        "c": [],
+        "precheck": true
+      },
+      "source": "",
+      "current": "",
+      "fidelity": "MISSING",
+      "status": "FALSE_POSITIVE",
+      "reason": "Pre-check: обрыв Relative к сырому RU; ED_RU блок 4 полный.",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 10,
+      "candidate_id": "C-10-02",
+      "sources": {
+        "a": [],
+        "b": [],
+        "c": [],
+        "precheck": true
+      },
+      "source": "",
+      "current": "",
+      "fidelity": "MISSING",
+      "status": "FALSE_POSITIVE",
+      "reason": "Pre-check: обрыв Relative к сырому RU; ED_RU блок 10 полный.",
+      "suggestion": null,
+      "action": "PRESERVED"
+    }
+  ]
+}

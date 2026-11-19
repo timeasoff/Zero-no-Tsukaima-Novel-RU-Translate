@@ -1,0 +1,311 @@
+{
+  "analysis_id": "20261119-165105-9b03",
+  "chapter": "v11-ch04",
+  "inputs": {
+    "a_runs": [
+      "20261117-113614-3e51",
+      "20261118-171155-fd14",
+      "20261119-165105-d739"
+    ],
+    "b_runs": [
+      "20261117-113614-640e",
+      "20261119-032659-87f3",
+      "20261119-165105-6cb6"
+    ],
+    "c_runs": [
+      "20261117-113614-a970",
+      "20261119-103608-f0ef",
+      "20261119-165105-6b59"
+    ],
+    "precheck": "output/_audit/sma/v11-ch04/precheck/omission-precheck.json",
+    "phase1": "20261119-165105-4ca5.phase1.json"
+  },
+  "results": [
+    {
+      "block": 24,
+      "candidate_id": "CH04-01-fugekizukai",
+      "sources": {
+        "a": [
+          "20261119-165105-d739"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "「あなた、負けず嫌いなのね。人に弱いところ見せるのが、好きじゃない。違って？」",
+      "current": "— А-ха, ты упрямый. Не любишь показывать слабость. Разве я не права?",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "DISPUTED",
+      "reason": "負けず嫌い — нежелание проигрывать; «упрямый» передаёт только упрямство. Подтверждено Фазой 1 и A; REPORT_ONLY, текст не меняем.",
+      "suggestion": "— А-ха, ты не признаёшься в слабости…",
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 29,
+      "candidate_id": "CH04-02-meiwaku",
+      "sources": {
+        "a": [
+          "20261119-165105-d739"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "「い、いい迷惑ですわ」",
+      "current": "— Н-какая помеха!..",
+      "fidelity": "MEANING_SHIFT",
+      "status": "DISPUTED",
+      "reason": "いい迷惑 — ироничное «хлопоты/неудобство»; «помеха» меняет значение. Фаза 1 и A; REPORT_ONLY.",
+      "suggestion": "— Н-какие хлопоты!..",
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 18,
+      "candidate_id": "CH04-03-mukana",
+      "sources": {
+        "a": [
+          "20261119-165105-d739"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "微かな香水のそれが混じった、ふんわりと優しいとてもいい香りがして",
+      "current": "Слегка терпкий аромат духов, тёплый и очень приятный",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "微かな → «терпкий»: оттенок спорен, но общая картина мягкого аромата сохранена «тёплый и очень приятный». Оставляем.",
+      "suggestion": "Нет (текст сохранён).",
+      "action": "PRESERVED"
+    },
+    {
+      "block": 27,
+      "candidate_id": "CH04-04-mail",
+      "sources": {
+        "a": [],
+        "b": [
+          "20261119-165105-6cb6"
+        ],
+        "c": [],
+        "precheck": false
+      },
+      "source": "三メイルもの距離をジャンプしたルイズのとび蹴り",
+      "current": "прыжок на три метра",
+      "fidelity": "MEANING_SHIFT",
+      "status": "DISPUTED",
+      "reason": "メイル (миля) → «метры»: смена единицы и порядка величины. Подтверждено Фазой 1 и B; REPORT_ONLY.",
+      "suggestion": "…прыжок на три мили…",
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 26,
+      "candidate_id": "CH04-05-attribution",
+      "sources": {
+        "a": [],
+        "b": [
+          "20261119-165105-6cb6"
+        ],
+        "c": [],
+        "precheck": false
+      },
+      "source": "「あいたたたたたたた……」「いけない、勢いあまってしまったわ」",
+      "current": "— Ой-ой-ой-ой… — Анриетта поникла. — Я слишком увлеклась.",
+      "fidelity": "ADDITION",
+      "status": "DISPUTED",
+      "reason": "В JA говорящий не назван; RU вводит атрибуцию и «поникла». Фаза 1 и B; REPORT_ONLY.",
+      "suggestion": "— Ой-ой-ой-ой… — Кто-то из них поморщился. — Я слишком увлеклась.",
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 28,
+      "candidate_id": "CH04-06-chigau",
+      "sources": {
+        "a": [],
+        "b": [],
+        "c": [
+          "20261119-165105-6b59"
+        ],
+        "precheck": false
+      },
+      "source": "「恋人じゃないもん！ 違うもん！」",
+      "current": "— Он не возлюбленный! Не такой!..",
+      "fidelity": "MEANING_SHIFT",
+      "status": "DISPUTED",
+      "reason": "違うもん — отрицание обвинения («всё не так!»), а не описание Сайто. Фаза 1 и C; REPORT_ONLY.",
+      "suggestion": "— Он не возлюбленный! Всё не так!..",
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 30,
+      "candidate_id": "CH04-07-yurusu",
+      "sources": {
+        "a": [],
+        "b": [],
+        "c": [
+          "20261119-165105-6b59"
+        ],
+        "precheck": false
+      },
+      "source": "「たまには殿方のわがままを許してあげることも大事よ」",
+      "current": "— Иногда важно потакать капризам мужчины.",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "DISPUTED",
+      "reason": "許して → «потакать»: доброжелательный регистр совета сдвинут. Фаза 1 и C; REPORT_ONLY.",
+      "suggestion": "— Иногда важно позволить мужчине немного своевольничать.",
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 1,
+      "candidate_id": "CH04-P1-pc-b1",
+      "sources": {
+        "a": [],
+        "b": [],
+        "c": [],
+        "precheck": true
+      },
+      "source": "Хвост JA-блока 1 (S1-tail-truncation)",
+      "current": "…",
+      "fidelity": "MISSING",
+      "status": "FALSE_POSITIVE",
+      "reason": "Pre-check S1-tail-truncation (MEDIUM) для блока 1: сверка JA → RU показывает, что звенья и реплики покрыты в соседних блоках после выравнивания границ; реального обрыва нет. Сдвиг границ — PRESERVED.",
+      "suggestion": "Нет (сдвиг границ блоков).",
+      "action": "PRESERVED"
+    },
+    {
+      "block": 2,
+      "candidate_id": "CH04-P2-pc-b2",
+      "sources": {
+        "a": [],
+        "b": [],
+        "c": [],
+        "precheck": true
+      },
+      "source": "Хвост JA-блока 2 (S1-tail-truncation)",
+      "current": "…",
+      "fidelity": "MISSING",
+      "status": "FALSE_POSITIVE",
+      "reason": "Pre-check S1-tail-truncation (MEDIUM) для блока 2: сверка JA → RU показывает, что звенья и реплики покрыты в соседних блоках после выравнивания границ; реального обрыва нет. Сдвиг границ — PRESERVED.",
+      "suggestion": "Нет (сдвиг границ блоков).",
+      "action": "PRESERVED"
+    },
+    {
+      "block": 4,
+      "candidate_id": "CH04-P3-pc-b4",
+      "sources": {
+        "a": [],
+        "b": [],
+        "c": [],
+        "precheck": true
+      },
+      "source": "Хвост JA-блока 4 (S1-tail-truncation)",
+      "current": "…",
+      "fidelity": "MISSING",
+      "status": "FALSE_POSITIVE",
+      "reason": "Pre-check S1-tail-truncation (MEDIUM) для блока 4: сверка JA → RU показывает, что звенья и реплики покрыты в соседних блоках после выравнивания границ; реального обрыва нет. Сдвиг границ — PRESERVED.",
+      "suggestion": "Нет (сдвиг границ блоков).",
+      "action": "PRESERVED"
+    },
+    {
+      "block": 14,
+      "candidate_id": "CH04-P4-pc-b14",
+      "sources": {
+        "a": [],
+        "b": [],
+        "c": [],
+        "precheck": true
+      },
+      "source": "Хвост JA-блока 14 (S1-tail-truncation)",
+      "current": "…",
+      "fidelity": "MISSING",
+      "status": "FALSE_POSITIVE",
+      "reason": "Pre-check S1-tail-truncation (MEDIUM) для блока 14: сверка JA → RU показывает, что звенья и реплики покрыты в соседних блоках после выравнивания границ; реального обрыва нет. Сдвиг границ — PRESERVED.",
+      "suggestion": "Нет (сдвиг границ блоков).",
+      "action": "PRESERVED"
+    },
+    {
+      "block": 19,
+      "candidate_id": "CH04-P5-pc-b19",
+      "sources": {
+        "a": [],
+        "b": [],
+        "c": [],
+        "precheck": true
+      },
+      "source": "Хвост JA-блока 19 (S1-tail-truncation)",
+      "current": "…",
+      "fidelity": "MISSING",
+      "status": "FALSE_POSITIVE",
+      "reason": "Pre-check S1-tail-truncation (MEDIUM) для блока 19: сверка JA → RU показывает, что звенья и реплики покрыты в соседних блоках после выравнивания границ; реального обрыва нет. Сдвиг границ — PRESERVED.",
+      "suggestion": "Нет (сдвиг границ блоков).",
+      "action": "PRESERVED"
+    },
+    {
+      "block": 21,
+      "candidate_id": "CH04-P6-pc-b21",
+      "sources": {
+        "a": [],
+        "b": [],
+        "c": [],
+        "precheck": true
+      },
+      "source": "Хвост JA-блока 21 (S1-tail-truncation)",
+      "current": "…",
+      "fidelity": "MISSING",
+      "status": "FALSE_POSITIVE",
+      "reason": "Pre-check S1-tail-truncation (MEDIUM) для блока 21: сверка JA → RU показывает, что звенья и реплики покрыты в соседних блоках после выравнивания границ; реального обрыва нет. Сдвиг границ — PRESERVED.",
+      "suggestion": "Нет (сдвиг границ блоков).",
+      "action": "PRESERVED"
+    },
+    {
+      "block": 25,
+      "candidate_id": "CH04-P7-pc-b25",
+      "sources": {
+        "a": [],
+        "b": [],
+        "c": [],
+        "precheck": true
+      },
+      "source": "Хвост JA-блока 25 (S1-tail-truncation)",
+      "current": "…",
+      "fidelity": "MISSING",
+      "status": "FALSE_POSITIVE",
+      "reason": "Pre-check S1-tail-truncation (MEDIUM) для блока 25: сверка JA → RU показывает, что звенья и реплики покрыты в соседних блоках после выравнивания границ; реального обрыва нет. Сдвиг границ — PRESERVED.",
+      "suggestion": "Нет (сдвиг границ блоков).",
+      "action": "PRESERVED"
+    },
+    {
+      "block": 26,
+      "candidate_id": "CH04-P8-pc-b26",
+      "sources": {
+        "a": [],
+        "b": [],
+        "c": [],
+        "precheck": true
+      },
+      "source": "Хвост JA-блока 26 (S1-tail-truncation)",
+      "current": "…",
+      "fidelity": "MISSING",
+      "status": "FALSE_POSITIVE",
+      "reason": "Pre-check S1-tail-truncation (MEDIUM) для блока 26: сверка JA → RU показывает, что звенья и реплики покрыты в соседних блоках после выравнивания границ; реального обрыва нет. Сдвиг границ — PRESERVED.",
+      "suggestion": "Нет (сдвиг границ блоков).",
+      "action": "PRESERVED"
+    },
+    {
+      "block": 28,
+      "candidate_id": "CH04-P9-pc-b28",
+      "sources": {
+        "a": [],
+        "b": [],
+        "c": [],
+        "precheck": true
+      },
+      "source": "Хвост JA-блока 28 (S1-tail-truncation)",
+      "current": "…",
+      "fidelity": "MISSING",
+      "status": "FALSE_POSITIVE",
+      "reason": "Pre-check S1-tail-truncation (MEDIUM) для блока 28: сверка JA → RU показывает, что звенья и реплики покрыты в соседних блоках после выравнивания границ; реального обрыва нет. Сдвиг границ — PRESERVED.",
+      "suggestion": "Нет (сдвиг границ блоков).",
+      "action": "PRESERVED"
+    }
+  ]
+}

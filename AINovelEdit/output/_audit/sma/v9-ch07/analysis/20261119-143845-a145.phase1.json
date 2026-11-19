@@ -1,0 +1,86 @@
+{
+  "analysis_id": "20261119-143845-a145.phase1",
+  "chapter": "v9-ch07",
+  "phase": 1,
+  "scope": "blind",
+  "results": [
+    {
+      "block": 1,
+      "finding": "MISTRANSLATION",
+      "note": "«三千メイル» → «три тысячи метров»: единица длины заменена (メイル = майл); ср. блок 4 «мейлов».",
+      "confidence": "HIGH"
+    },
+    {
+      "block": 2,
+      "finding": "MISTRANSLATION",
+      "note": "«百メイル以上» → «сто метров»: та же подмена единицы.",
+      "confidence": "HIGH"
+    },
+    {
+      "block": 3,
+      "finding": "NONE",
+      "note": "Блок 3: самостоятельная сверка JA → RU. Смысл, объём, последовательность реплик и событий переданы; существенного mismatch, omission или добавленного смысла не найдено.",
+      "confidence": "HIGH"
+    },
+    {
+      "block": 4,
+      "finding": "NONE",
+      "note": "Блок 4: самостоятельная сверка JA → RU. Смысл, объём, последовательность реплик и событий переданы; существенного mismatch, omission или добавленного смысла не найдено.",
+      "confidence": "HIGH"
+    },
+    {
+      "block": 5,
+      "finding": "MISTRANSLATION",
+      "note": "«百メイル以上» → «более ста метров»: та же подмена единицы.",
+      "confidence": "HIGH"
+    },
+    {
+      "block": 6,
+      "finding": "NUANCE_SHIFT",
+      "note": "«酔狂ぶり» (причуда) → «странно»: ироничный оттенок утрачен.",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 7,
+      "finding": "NUANCE_SHIFT",
+      "note": "«強引» → «властный»: напористость подменена властностью.",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 8,
+      "finding": "LEXICAL_MISMATCH",
+      "note": "«暖簾に腕押し» → «удар по вате»: образная идиома заменена.",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 9,
+      "finding": "NONE",
+      "note": "Блок 9: самостоятельная сверка JA → RU. Смысл, объём, последовательность реплик и событий переданы; существенного mismatch, omission или добавленного смысла не найдено.",
+      "confidence": "HIGH"
+    },
+    {
+      "block": 10,
+      "finding": "ADDED_CONTENT",
+      "note": "«冷たい空気» → «холодное безразличие»: добавлено эмоциональное состояние.",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 11,
+      "finding": "NUANCE_SHIFT",
+      "note": "«魔法人形» → «волшебный автомат»: кукла → механизм.",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 12,
+      "finding": "PRAGMATIC_SHIFT",
+      "note": "«タバサ殿» → «Табита» без гоноратива: смена регистра обращения.",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 13,
+      "finding": "NONE",
+      "note": "Блок 13: самостоятельная сверка JA → RU. Смысл, объём, последовательность реплик и событий переданы; существенного mismatch, omission или добавленного смысла не найдено.",
+      "confidence": "HIGH"
+    }
+  ]
+}

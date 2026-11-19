@@ -1,0 +1,14 @@
+{
+  "analysis_id": "20261118-165729-2ceb.phase1",
+  "chapter": "v7-ch10",
+  "phase": 1,
+  "scope": "blind",
+  "results": [
+    {
+      "block": 4,
+      "finding": "LEXICAL_MISMATCH",
+      "note": "JA «前方四百メイルほどに…»: единица длины メイル (миля); RU «В четырёхстах метрах впереди…» — замена на метры под влиянием EN («four hundred meters»). При JA > EN следовало сохранить メイル/мили; это не компрессия, а подмена количественной единицы.",
+      "confidence": "MEDIUM"
+    }
+  ]
+}

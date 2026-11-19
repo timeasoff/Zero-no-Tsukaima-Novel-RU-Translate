@@ -1,0 +1,387 @@
+{
+  "analysis_id": "20261119-100732-345d",
+  "chapter": "v10-ch09",
+  "inputs": {
+    "a_runs": [
+      "20261117-083804-b09b",
+      "20261118-164528-7316"
+    ],
+    "b_runs": [
+      "20261117-084318-be27",
+      "20261119-024139-20a2"
+    ],
+    "c_runs": [
+      "20261117-083804-a28c",
+      "20261119-100119-0dd9"
+    ],
+    "precheck": "output/_audit/sma/v10-ch09/precheck/omission-precheck.json",
+    "phase1": "20261119-100119-93b8.phase1.json"
+  },
+  "results": [
+    {
+      "block": 7,
+      "candidate_id": "C-07-01",
+      "sources": {
+        "a": [
+          "20261117-083804-b09b"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "あ、頭をあげなさいよ！ なんなのよもう！ これで断ったらわたしが悪者じゃないの！",
+      "current": "— А, встань же! Что тыまた выдумала! Если я после этого откажу — я же выйду злодейкой!",
+      "fidelity": "FORMAT",
+      "status": "FALSE_POSITIVE",
+      "reason": "Оставшееся японское слово «また» устранено: «Что ты опять выдумала!» — реплика полностью переведена.",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 10,
+      "candidate_id": "C-10-02",
+      "sources": {
+        "a": [
+          "20261117-083804-b09b"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "どうしていやがらないのよ。",
+      "current": "Почему тебе не страшно?",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "«どうしていやがらないのよ» передано «Почему ты не отказываешься?» — оттенок неприятия восстановлен, «не страшно» больше нет.",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 14,
+      "candidate_id": "C-14-03",
+      "sources": {
+        "a": [
+          "20261117-083804-b09b"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "自分が調合したポーションは無味無臭だが、ディテクト・マジックでも唱えられた日には一発である。",
+      "current": "Её зелье было без цвета и запаха — но если он ещё и прочитает «Обнаружение магии», дело труба.",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "«無味無臭» снова «без вкуса и запаха», а не «без цвета».",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 15,
+      "candidate_id": "C-15-04",
+      "sources": {
+        "a": [
+          "20261117-083804-b09b"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "松明を持った、痩せた少年と小太りの少年が現れた。",
+      "current": "Появились двое стройных юношей с факелами.",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "Деталь восстановлена: «появились худой и полноватый юноши с факелами».",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 17,
+      "candidate_id": "C-17-05",
+      "sources": {
+        "a": [
+          "20261117-083804-b09b"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "お前は竜の怖さを知らないのだ",
+      "current": "Ты не знаешь, каков он напуган!",
+      "fidelity": "MEANING_SHIFT",
+      "status": "FALSE_POSITIVE",
+      "reason": "«Ты не знаешь, как страшен дракон!» — инверсия «испуган» устранена.",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 3,
+      "candidate_id": "C-03-06",
+      "sources": {
+        "a": [
+          "20261118-164528-7316"
+        ],
+        "b": [
+          "20261117-084318-be27"
+        ],
+        "c": [],
+        "precheck": false
+      },
+      "source": "モンモランシーは、キュルケのその言葉に恥ずかしそうに顔を伏せたものの、ルイズの目がつりあがる。",
+      "current": "…сказала Кирхе, и Монморанси от её слов залилась краской, а вот у Луизы глаза сузились.",
+      "fidelity": "MEANING_SHIFT",
+      "status": "FALSE_POSITIVE",
+      "reason": "Атрибуция исправлена: реплику произносит Кирхе, смущается Монморанси, у Луизы сузились глаза. Историческая ошибка B устранена.",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 5,
+      "candidate_id": "C-05-07",
+      "sources": {
+        "a": [
+          "20261118-164528-7316"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "「そのとおりよ」 キュルケはいたずらっぽく微笑んだ。",
+      "current": "— Именно, — кивнула Кирхе с озорной улыбкой.",
+      "fidelity": "ADDITION",
+      "status": "DISPUTED",
+      "reason": "«Именно, — кивнула Кирхе с озорной улыбкой» — жест «кивнула» добавлен к JA-улыбке; небольшая деталь, REPORT_ONLY.",
+      "suggestion": null,
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 6,
+      "candidate_id": "C-06-08",
+      "sources": {
+        "a": [
+          "20261118-164528-7316"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "三人は怯えた顔を改め、真剣な顔つきになった。",
+      "current": "…и трое, переменив испуганные лица на серьёзные, кивнули в ответ.",
+      "fidelity": "ADDITION",
+      "status": "DISPUTED",
+      "reason": "«…кивнули в ответ» — добавленный жест; по текущей паре это небольшая деталь мизансцены, без правки.",
+      "suggestion": null,
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 6,
+      "candidate_id": "C-06-09",
+      "sources": {
+        "a": [
+          "20261118-164528-7316"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "そんな殊勝なキュルケを見るのは初めてだったので、",
+      "current": "Видеть её такой представительной было впервые —",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "DISPUTED",
+      "reason": "殊勝な (почтительно-смиренный) → «представительной»; оттенок непривычной почтительности ослаблен, REPORT_ONLY.",
+      "suggestion": null,
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 9,
+      "candidate_id": "C-09-10",
+      "sources": {
+        "a": [
+          "20261118-164528-7316"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "俺ってば、調子にのってみっともない。ああ、みっともねえ！",
+      "current": "Я же потерял голову от радости и выставил себя смешным. Ах, до чего нелепо!",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "DISPUTED",
+      "reason": "みっともない → «нелепо»; оттенок стыда за собственное поведение частично сохранён, но неполон — REPORT_ONLY.",
+      "suggestion": null,
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 13,
+      "candidate_id": "C-13-11",
+      "sources": {
+        "a": [
+          "20261118-164528-7316"
+        ],
+        "b": [
+          "20261119-024139-20a2"
+        ],
+        "c": [],
+        "precheck": false
+      },
+      "source": "彼は一目見るなりキュルケを気に入ったらしく、中庭での慰問会開催を許してくれた。",
+      "current": "Увидев Кирхе, он, кажется, сразу её возненавидел — нет, наоборот, симпатизировал ей: разрешил устроить во дворе концерт для солдат.",
+      "fidelity": "ADDITION",
+      "status": "DISPUTED",
+      "reason": "«сразу её возненавидел — нет, наоборот, симпатизировал» — самоисправление, которого нет в JA; историческая находка B та же. COMPONENT_LOSS/ADDITION, REPORT_ONLY.",
+      "suggestion": null,
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 16,
+      "candidate_id": "C-16-12",
+      "sources": {
+        "a": [
+          "20261118-164528-7316"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "最後は長い青い髪の麗人である。無邪気な、満面の笑顔であった。",
+      "current": "Последняя — статная красавица с длинными голубыми волосами. Беззаботная, сияющая улыбка.",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "DISPUTED",
+      "reason": "無邪気な → «беззаботная»; оттенок наивной невинности утерян частично, REPORT_ONLY.",
+      "suggestion": null,
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 20,
+      "candidate_id": "C-20-13",
+      "sources": {
+        "a": [
+          "20261118-164528-7316"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "小さく、タバサは震え始めた。",
+      "current": "И Табита тихо, совсем тихо, начала дрожать.",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "DISPUTED",
+      "reason": "«тихо, совсем тихо» вместо «小さく» — усилитель добавлен;небольшая сдвиг, REPORT_ONLY.",
+      "suggestion": null,
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 5,
+      "candidate_id": "C-05-14",
+      "sources": {
+        "a": [],
+        "b": [
+          "20261117-084318-be27"
+        ],
+        "c": [],
+        "precheck": false
+      },
+      "source": "だからエルフに限らず、危険を感じたら逃げて。それは臆病でも、なんでもないことよ",
+      "current": "Так что не только эльфы — почувствуете опасность, бегите. Это не трусость и ничего больше.",
+      "fidelity": "MEANING_SHIFT",
+      "status": "FALSE_POSITIVE",
+      "reason": "Уступительная конструкция восстановлена: «Пусть это и трусость — неважно».",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 6,
+      "candidate_id": "C-06-15",
+      "sources": {
+        "a": [],
+        "b": [
+          "20261117-084318-be27"
+        ],
+        "c": [],
+        "precheck": false
+      },
+      "source": "エルフと戦ってもらうわ。ガリア軍は騙せても、おそらくエルフは騙せない",
+      "current": "С вами будем сражаться с эльфом. Галлийцев можно обмануть, но эльфа, скорее всего, нет.",
+      "fidelity": "MEANING_SHIFT",
+      "status": "FALSE_POSITIVE",
+      "reason": "Субъект исправлен: «Вам предстоит сразиться с эльфом».",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 9,
+      "candidate_id": "C-09-16",
+      "sources": {
+        "a": [],
+        "b": [
+          "20261117-084318-be27"
+        ],
+        "c": [],
+        "precheck": false
+      },
+      "source": "なにせトリステインのお城で捕まっていたとき、好き……、と言おうとしたら、「言わないで！」なんて怒鳴られたぐらいであるからして。",
+      "current": "Ведь в замке Тристейна, когда он уже хотел сказать «люблю», его грубо оттолкнули: «Не говори!»",
+      "fidelity": "MEANING_SHIFT",
+      "status": "FALSE_POSITIVE",
+      "reason": "Тип действия восстановлен: «на него накричали: „Не говори!“».",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 15,
+      "candidate_id": "C-15-17",
+      "sources": {
+        "a": [],
+        "b": [
+          "20261117-084318-be27"
+        ],
+        "c": [],
+        "precheck": false
+      },
+      "source": "士官室を辞してホールに出たキュルケに、そっと才人がつぶやいた。「やばかったな……」",
+      "current": "Выйдя из офицерской в зал, Кирхе тихо шепнула Сайто: — Ох, и опасно же было…",
+      "fidelity": "MEANING_SHIFT",
+      "status": "FALSE_POSITIVE",
+      "reason": "Субъект и адресат исправлены: «Сайто тихо шепнул Кирхе».",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 17,
+      "candidate_id": "C-17-18",
+      "sources": {
+        "a": [],
+        "b": [
+          "20261117-084318-be27"
+        ],
+        "c": [],
+        "precheck": false
+      },
+      "source": "本のページをめくる。タバサは朗読を開始した。",
+      "current": "Он перелистнул страницу. Табита начала читать вслух.",
+      "fidelity": "MEANING_SHIFT",
+      "status": "FALSE_POSITIVE",
+      "reason": "Местоимение исправлено: «Табита перелистнула страницу».",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 17,
+      "candidate_id": "C-17-19",
+      "sources": {
+        "a": [],
+        "b": [],
+        "c": [
+          "20261119-100119-0dd9"
+        ],
+        "precheck": false
+      },
+      "source": "去れ。我は戦いを好まぬ",
+      "current": "Уходите. Я не люблю сражаться.",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "DISPUTED",
+      "reason": "Новый запуск C отмечает, что архаичное 去れ и 我 Видашаля сведены к «Уходите. Я не люблю сражаться» — утрачены дистанция и статус. Слепая Фаза 1 сочла это регистровым нюансом; однозначной ошибки по паре JA→RU нет — DISPUTED, REPORT_ONLY.",
+      "suggestion": "Уходите. Я не воюю — не время мне сражаться.",
+      "action": "REPORT_ONLY"
+    }
+  ]
+}

@@ -1,0 +1,2 @@
+Omission pre-check: v11-ch03.md | отредактированных блоков 11 | candidates 1
+  блок 1 [S1-tail-truncation] DIALOGUE_FRAGMENT/PARTIAL conf=MEDIUM

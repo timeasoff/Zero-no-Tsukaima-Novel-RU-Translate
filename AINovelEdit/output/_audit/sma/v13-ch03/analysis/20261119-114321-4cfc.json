@@ -1,0 +1,142 @@
+{
+  "analysis_id": "20261119-114321-4cfc",
+  "chapter": "v13-ch03",
+  "inputs": {
+    "a_runs": [
+      "20261117-215419-f374",
+      "20261118-180355-c0d5"
+    ],
+    "b_runs": [
+      "20261117-215419-3c1b",
+      "20261119-064850-b0d3"
+    ],
+    "c_runs": [
+      "20261117-215419-1924",
+      "20261119-114321-98ce"
+    ],
+    "precheck": "output/_audit/sma/v13-ch03/precheck/omission-precheck.json",
+    "phase1": "20261119-114321-409f.phase1.json"
+  },
+  "results": [
+    {
+      "block": 1,
+      "candidate_id": "C-R4-20261119-114321-98ce-01-01",
+      "sources": {
+        "a": [
+          "20261118-180355-c0d5"
+        ],
+        "b": [
+          "20261119-064850-b0d3"
+        ],
+        "c": [
+          "20261119-114321-98ce"
+        ],
+        "precheck": false
+      },
+      "source": "では副隊長、みんなにこの壮大なる任務を話してやってくれ",
+      "current": "— Ну-ка, заместитель командира, поведай всем об этой важной миссии.",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "DISPUTED",
+      "reason": "A/B (NUANCE_SHIFT) и новый C сходятся: неформальное やってくれ → «Ну-ка… поведай», эпитет 壮大なる ослаблен до «важная». Ядро поручения передано; спорный регистр — DISPUTED, REPORT_ONLY; FIXED = 0.",
+      "suggestion": "— Ну, заместитель, расскажи-ка всем об этой grandiose задаче.",
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 7,
+      "candidate_id": "C-R4-20261119-114321-98ce-07-01",
+      "sources": {
+        "a": [],
+        "b": [],
+        "c": [
+          "20261119-114321-98ce"
+        ],
+        "precheck": false
+      },
+      "source": "「いいんだよ」 笑いながら、才人は言った。",
+      "current": "— Всё нормально, — сказал Сайто с улыбкой.",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "DISPUTED",
+      "reason": "Новый C (LOW) и blind-Фаза 1 отметили потерю утешающей функции よ. Смысл «всё хорошо» передан; нюанс спорен — DISPUTED, REPORT_ONLY.",
+      "suggestion": "— Да ладно, всё хорошо, — сказал Сайто с улыбкой.",
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 3,
+      "candidate_id": "C-R4-20261119-114321-98ce-03-01",
+      "sources": {
+        "a": [],
+        "b": [],
+        "c": [
+          "20261119-114321-98ce"
+        ],
+        "precheck": false
+      },
+      "source": "それって……、もしかして才人の決意なんだわ！",
+      "current": "Неужто это... решение Сайто!",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "Исторический C и новый C отметили сдвиг гипотезы в уверенность; в актуальном RU «Неужто…» сохраняет и вопросительность, и восклицание. По текущему тексту находка не подтверждается — FALSE_POSITIVE, PRESERVED.",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 13,
+      "candidate_id": "C-13-HIST-20261117-215419-1924",
+      "sources": {
+        "a": [],
+        "b": [
+          "20261119-064850-b0d3"
+        ],
+        "c": [
+          "20261117-215419-1924"
+        ],
+        "precheck": false
+      },
+      "source": "きっとこれからの様々な体験が……、自分の進むべき道を教えてくれるに違いないから。",
+      "current": "И разные опыты впереди непременно подскажут мне, по какому пути идти.",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "Исторический C/B фиксировали потерю уверенности (に違いない → «наверное»). В АКТУАЛЬНОМ RU стоит «непременно» — конвикция сохранена. По текущему тексту находка не подтверждается — FALSE_POSITIVE, PRESERVED; история finding не редактируется.",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 1,
+      "candidate_id": "A-1-HIST-20261117-215419-f374",
+      "sources": {
+        "a": [
+          "20261117-215419-f374"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "大声で怒鳴った",
+      "current": "громким голосом обращался",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "CONFIRMED_ERROR",
+      "reason": "A (LEXICAL_MISMATCH): 怒鳴った = «закричал/разорался», а не нейтральное «обращался». Смысл резкости утрачен; компонент «крик» передаётся одной лексемой — по регламенту раунда FIXED не применяется, REPORT_ONLY.",
+      "suggestion": "громко крикнул",
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 5,
+      "candidate_id": "A-5-HIST-20261117-215419-f374",
+      "sources": {
+        "a": [
+          "20261117-215419-f374"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "気が強いくせに傷つきやすいんだから",
+      "current": "Какая упрямая, а ранимая",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "Исторический A:NUANCE_SHIFT по оттенку «у母校»; актуальный RU «Какая упрямая, а ранимая» передаёт контраст くせに…んだから. По текущему тексту находка не подтверждается — FALSE_POSITIVE, PRESERVED.",
+      "suggestion": null,
+      "action": "PRESERVED"
+    }
+  ]
+}

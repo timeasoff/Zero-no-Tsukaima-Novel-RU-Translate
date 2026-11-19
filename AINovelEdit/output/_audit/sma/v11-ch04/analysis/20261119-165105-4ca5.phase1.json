@@ -1,0 +1,194 @@
+{
+  "analysis_id": "20261119-165105-4ca5.phase1",
+  "chapter": "v11-ch04",
+  "phase": 1,
+  "scope": "blind",
+  "results": [
+    {
+      "block": 1,
+      "finding": "NONE",
+      "note": "Блок сверён JA → RU; существенных смысловых расхождений не замечено.",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 2,
+      "finding": "NONE",
+      "note": "Блок сверён JA → RU; существенных смысловых расхождений не замечено.",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 3,
+      "finding": "NONE",
+      "note": "Блок сверён JA → RU; существенных смысловых расхождений не замечено.",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 4,
+      "finding": "NONE",
+      "note": "Блок сверён JA → RU; существенных смысловых расхождений не замечено.",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 5,
+      "finding": "NONE",
+      "note": "Блок сверён JA → RU; существенных смысловых расхождений не замечено.",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 6,
+      "finding": "NONE",
+      "note": "Блок сверён JA → RU; существенных смысловых расхождений не замечено.",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 7,
+      "finding": "NONE",
+      "note": "Блок сверён JA → RU; существенных смысловых расхождений не замечено.",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 8,
+      "finding": "NONE",
+      "note": "Блок сверён JA → RU; существенных смысловых расхождений не замечено.",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 9,
+      "finding": "NONE",
+      "note": "Блок сверён JA → RU; существенных смысловых расхождений не замечено.",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 10,
+      "finding": "NONE",
+      "note": "Блок сверён JA → RU; существенных смысловых расхождений не замечено.",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 11,
+      "finding": "NONE",
+      "note": "Блок сверён JA → RU; существенных смысловых расхождений не замечено.",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 12,
+      "finding": "NONE",
+      "note": "Блок сверён JA → RU; существенных смысловых расхождений не замечено.",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 13,
+      "finding": "NONE",
+      "note": "Блок сверён JA → RU; существенных смысловых расхождений не замечено.",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 14,
+      "finding": "NONE",
+      "note": "Блок сверён JA → RU; существенных смысловых расхождений не замечено.",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 15,
+      "finding": "NONE",
+      "note": "Блок сверён JA → RU; существенных смысловых расхождений не замечено.",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 16,
+      "finding": "NONE",
+      "note": "Блок сверён JA → RU; существенных смысловых расхождений не замечено.",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 17,
+      "finding": "NONE",
+      "note": "Блок сверён JA → RU; существенных смысловых расхождений не замечено.",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 18,
+      "finding": "NUANCE_SHIFT",
+      "note": "微かな → «терпкий»; характер аромата изменён.",
+      "confidence": "LOW"
+    },
+    {
+      "block": 19,
+      "finding": "NONE",
+      "note": "Блок сверён JA → RU; существенных смысловых расхождений не замечено.",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 20,
+      "finding": "NONE",
+      "note": "Блок сверён JA → RU; существенных смысловых расхождений не замечено.",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 21,
+      "finding": "NONE",
+      "note": "Блок сверён JA → RU; существенных смысловых расхождений не замечено.",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 22,
+      "finding": "NONE",
+      "note": "Блок сверён JA → RU; существенных смысловых расхождений не замечено.",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 23,
+      "finding": "NONE",
+      "note": "Блок сверён JA → RU; существенных смысловых расхождений не замечено.",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 24,
+      "finding": "NUANCE_SHIFT",
+      "note": "負けず嫌い → «упрямый»; утерян соревновательный оттенок.",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 25,
+      "finding": "NONE",
+      "note": "Блок сверён JA → RU; существенных смысловых расхождений не замечено.",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 26,
+      "finding": "ADDED_CONTENT",
+      "note": "Атрибуция восклицания приписана Анриетте, хотя в JA имени нет.",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 27,
+      "finding": "MISTRANSLATION",
+      "note": "三メイル → «три метра»; единица длины заменена.",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 28,
+      "finding": "PRAGMATIC_SHIFT",
+      "note": "違うもん → «Не такой!»; сдвиг речевого акта.",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 29,
+      "finding": "LEXICAL_MISMATCH",
+      "note": "いい迷惑 → «помеха»; ирония и значение «неудобство» сглажены.",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 30,
+      "finding": "PRAGMATIC_SHIFT",
+      "note": "許して → «потакать»; регистр совета сдвинут.",
+      "confidence": "LOW"
+    },
+    {
+      "block": 31,
+      "finding": "NONE",
+      "note": "Блок сверён JA → RU; существенных смысловых расхождений не замечено.",
+      "confidence": "MEDIUM"
+    }
+  ]
+}

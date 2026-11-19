@@ -1,0 +1,92 @@
+{
+  "analysis_id": "20261119-165602-459f.phase1",
+  "chapter": "v11-ch05",
+  "phase": 1,
+  "scope": "blind",
+  "results": [
+    {
+      "block": 1,
+      "finding": "NONE",
+      "note": "Блок сверён JA → RU; существенных смысловых расхождений не замечено.",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 2,
+      "finding": "ADDED_CONTENT",
+      "note": "「エルフの薬でやられた」→ «отравили»; добавлен способ.",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 3,
+      "finding": "NONE",
+      "note": "Блок сверён JA → RU; существенных смысловых расхождений не замечено.",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 4,
+      "finding": "NUANCE_SHIFT",
+      "note": "先住 → «аборигены»; регистр и референт сдвинуты.",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 5,
+      "finding": "NONE",
+      "note": "Блок сверён JA → RU; существенных смысловых расхождений не замечено.",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 6,
+      "finding": "NONE",
+      "note": "Блок сверён JA → RU; существенных смысловых расхождений не замечено.",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 7,
+      "finding": "NONE",
+      "note": "Блок сверён JA → RU; существенных смысловых расхождений не замечено.",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 8,
+      "finding": "ADDED_CONTENT",
+      "note": "«от вожделения» — добавленная оценка жеста.",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 9,
+      "finding": "PRAGMATIC_SHIFT",
+      "note": "駆け引き → «хитрость»; поддёвка стала обвинением.",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 10,
+      "finding": "PRAGMATIC_SHIFT",
+      "note": "たしなみ → «светская дама»; сдвиг регистра.",
+      "confidence": "LOW"
+    },
+    {
+      "block": 11,
+      "finding": "NONE",
+      "note": "Блок сверён JA → RU; существенных смысловых расхождений не замечено.",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 12,
+      "finding": "NONE",
+      "note": "Блок сверён JA → RU; существенных смысловых расхождений не замечено.",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 13,
+      "finding": "NONE",
+      "note": "Блок сверён JA → RU; существенных смысловых расхождений не замечено.",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 14,
+      "finding": "NONE",
+      "note": "Блок сверён JA → RU; существенных смысловых расхождений не замечено.",
+      "confidence": "MEDIUM"
+    }
+  ]
+}

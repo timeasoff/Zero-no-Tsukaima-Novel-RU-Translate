@@ -1,0 +1,68 @@
+{
+  "analysis_id": "20261119-162751-2df2.phase1",
+  "chapter": "v11-ch02",
+  "phase": 1,
+  "scope": "blind",
+  "results": [
+    {
+      "block": 1,
+      "finding": "NUANCE_SHIFT",
+      "note": "凛々しい → «воинственная»: сглажен оттенок бравой стати; образ «железная» передан.",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 2,
+      "finding": "PRAGMATIC_SHIFT",
+      "note": "お優しいのね → сухое «Вы добры»; утерян игривый подтекст.",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 3,
+      "finding": "NONE",
+      "note": "Выбор подчинённых и сцена в казарме переданы целиком.",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 4,
+      "finding": "NUANCE_SHIFT",
+      "note": "勝手に → «тайно» (причина упрёка сдвинута); 奴 → нейтральное «Луиза».",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 5,
+      "finding": "NUANCE_SHIFT",
+      "note": "コロコロと и じろりと сглажены; фактический диалог передан.",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 6,
+      "finding": "NONE",
+      "note": "Разговор королевы и Аньес передан без смысловых потерь.",
+      "confidence": "HIGH"
+    },
+    {
+      "block": 7,
+      "finding": "NONE",
+      "note": "Сцена с ветром/заклинанием и реакцией Табиты покрыта; референсы в порядке.",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 8,
+      "finding": "NUANCE_SHIFT",
+      "note": "ガタガタわなわなと → «дрожавшую»: утеряна интенсивность дрожи.",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 9,
+      "finding": "PRAGMATIC_SHIFT",
+      "note": "叩かれる → «высечь»: комичное подшучивание усилено до угрозы.",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 10,
+      "finding": "NONE",
+      "note": "Реплика о драконах и метре/メイル передана; фактический смысл сохранён.",
+      "confidence": "HIGH"
+    }
+  ]
+}

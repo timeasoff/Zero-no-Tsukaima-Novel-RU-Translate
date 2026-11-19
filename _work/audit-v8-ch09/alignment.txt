@@ -1,0 +1,304 @@
+# Выгрузка предфильтра (сверка смысловых блоков): v8-ch09.md
+
+Блоков 19, переведено 19. Сигналов: строгих 0, прочих 30, инфо 19.
+
+По типам: marks 4, names 35, negation 6, numbers 2, pronouns 2
+
+Единица — смысловой блок: блоки JA/EN/RU/ED_RU выровнены при нормализации, «съезда» нет. Сигнал — обнаружение, не вердикт: разбор по скиллу translation-audit.
+
+## Сигналы
+
+### Блок 1 — names (weak)
+
+- имена словаря: есть в EN, нет в ED_RU: «Блудливая Луиза», «Чарующий король Тристейна», Воздушный щит, Горы Огненного Дракона, Чёрный Лес, госпожа Святая
+- **EN:** Louise and Siesta were standing on the hill where Saito fought, looking down at the wide meadow below. / The morning sun rose from the other side of the mountai…
+- **ED_RU:** Луиза и Сиеста стояли на холме, где сражался Сайто, и смотрели на полого спускавшуюся равнину. / Солнце поднималось из-за хребта, рассыпая свет сквозь расщелины…
+
+### Блок 1 — names (info)
+
+- имена словаря: есть в ED_RU, нет в EN (проверить): «Указ о сострадании ко всему живому», «день Йоль», «месяц Ньюи», «месяц Феох», Альбрехт III, Развеивание магии, Тристания, указ о запрете дуэлей
+- **EN:** Louise and Siesta were standing on the hill where Saito fought, looking down at the wide meadow below. / The morning sun rose from the other side of the mountai…
+- **ED_RU:** Луиза и Сиеста стояли на холме, где сражался Сайто, и смотрели на полого спускавшуюся равнину. / Солнце поднималось из-за хребта, рассыпая свет сквозь расщелины…
+
+### Блок 1 — numbers (weak)
+
+- числа EN не подтверждены в ED_RU: 50
+- **EN:** Louise and Siesta were standing on the hill where Saito fought, looking down at the wide meadow below. / The morning sun rose from the other side of the mountai…
+- **ED_RU:** Луиза и Сиеста стояли на холме, где сражался Сайто, и смотрели на полого спускавшуюся равнину. / Солнце поднималось из-за хребта, рассыпая свет сквозь расщелины…
+
+### Блок 2 — marks (weak)
+
+- вопросительный знак: EN и ED_RU расходятся
+- **EN:** Siesta looked into the distance and pointed at the corner of the forest. / "There is a path there." / There was a path that they didn't notice at night. / "It l…
+- **ED_RU:** Тропинка, которую не заметили ночью, и вправду была там. / — Похоже, ведёт в лес. / — Если он пропал — наверное, ушёл в лес, — сказала Луиза. / Тропинка была не…
+
+### Блок 2 — names (weak)
+
+- имена словаря: есть в EN, нет в ED_RU: Тиффания Уэствуд, Чёрный Лес
+- **EN:** Siesta looked into the distance and pointed at the corner of the forest. / "There is a path there." / There was a path that they didn't notice at night. / "It l…
+- **ED_RU:** Тропинка, которую не заметили ночью, и вправду была там. / — Похоже, ведёт в лес. / — Если он пропал — наверное, ушёл в лес, — сказала Луиза. / Тропинка была не…
+
+### Блок 2 — names (info)
+
+- имена словаря: есть в ED_RU, нет в EN (проверить): «разумный меч», Луиза, Луиза-Нулиза
+- **EN:** Siesta looked into the distance and pointed at the corner of the forest. / "There is a path there." / There was a path that they didn't notice at night. / "It l…
+- **ED_RU:** Тропинка, которую не заметили ночью, и вправду была там. / — Похоже, ведёт в лес. / — Если он пропал — наверное, ушёл в лес, — сказала Луиза. / Тропинка была не…
+
+### Блок 3 — names (info)
+
+- имена словаря: есть в ED_RU, нет в EN (проверить): Земля, собор Святой Лутии
+- **EN:** And now… Agnes talked about an "examination". / Saito was told to use all the tricks and techniques he was taught in this one. / "Then, I will call you by name.…
+- **ED_RU:** — …Что это за стойка? / Сайто кончиком меча зачерпнул землю и швырнул её в лицо Аньес. / — Тэя! / Но Аньес не шевельнулась ни на йоту. / — Ух. / — Песок — одно …
+
+### Блок 3 — negation (weak)
+
+- отрицание: EN и ED_RU расходятся
+- **EN:** And now… Agnes talked about an "examination". / Saito was told to use all the tricks and techniques he was taught in this one. / "Then, I will call you by name.…
+- **ED_RU:** — …Что это за стойка? / Сайто кончиком меча зачерпнул землю и швырнул её в лицо Аньес. / — Тэя! / Но Аньес не шевельнулась ни на йоту. / — Ух. / — Песок — одно …
+
+### Блок 4 — names (info)
+
+- имена словаря: есть в ED_RU, нет в EN (проверить): Земля, Сильфида
+- **EN:** But… Agnes stood stone-still. / "Uh." / "The soil won't be caught into one's eyes as easily as sand." / "Sossu." / Saito put on a serious look on his face and s…
+- **ED_RU:** Поэтому — первым же ударом. / Баах! — с сильным звуком деревянный меч влетел ей в плечо. / Сразу же — глянь! — раздался звук упавшего на землю деревянного меча.…
+
+### Блок 5 — names (weak)
+
+- имена словаря: есть в EN, нет в ED_RU: Великая Цель, Маликорн Простуженный, ледяная пика
+- **EN:** Saito ran up panicking. Agnes calmed Saito by standing up. / "I'm all right." / After that, Agnes gave a smile. / "Surely, I'm matched with your sword's full-sw…
+- **ED_RU:** Они отдыхали, прислонившись к дереву. / Аньес заговорила нехотя: / — Итак… тебе, кое-как сдавшему экзамен, надо кое-что сказать. / Сайто подался вперёд. / — Что…
+
+### Блок 5 — names (info)
+
+- имена словаря: есть в ED_RU, нет в EN (проверить): «Колокол сна», зверо-люди
+- **EN:** Saito ran up panicking. Agnes calmed Saito by standing up. / "I'm all right." / After that, Agnes gave a smile. / "Surely, I'm matched with your sword's full-sw…
+- **ED_RU:** Они отдыхали, прислонившись к дереву. / Аньес заговорила нехотя: / — Итак… тебе, кое-как сдавшему экзамен, надо кое-что сказать. / Сайто подался вперёд. / — Что…
+
+### Блок 6 — names (info)
+
+- имена словаря: есть в ED_RU, нет в EN (проверить): «Дерф», Развеивание магии, Сайто Хирага, Сайто Шевалье де Хирага, придворная дама
+- **EN:** "Fuah," Agnes sighed shaking her hand, and Derflinger, who was leaning against the tree, asked. / "Pretended, really?"
+- **ED_RU:** — За обстановкой? / — Прежде всего — внезапная атака. Бей сзади. Если не выйдет и придётся сражаться лицом к лицу — ищи слабину. Найди её во что бы то ни стало.…
+
+### Блок 6 — negation (weak)
+
+- отрицание: EN и ED_RU расходятся
+- **EN:** "Fuah," Agnes sighed shaking her hand, and Derflinger, who was leaning against the tree, asked. / "Pretended, really?"
+- **ED_RU:** — За обстановкой? / — Прежде всего — внезапная атака. Бей сзади. Если не выйдет и придётся сражаться лицом к лицу — ищи слабину. Найди её во что бы то ни стало.…
+
+### Блок 7 — names (weak)
+
+- имена словаря: есть в EN, нет в ED_RU: «Блудливая Луиза», Сиеста, Чёрный Лес, госпожа Святая
+- **EN:** Staring at Derflinger,Agnes answered. / "…Mo, it is still too early to evaluate his progress. But he has already forged a year's worth of practice, that of a co…
+- **ED_RU:** — Специально? / Аньес бросила на Дерфлингера колючий взгляд. / — Впрочем, учишься ты быстро. Год-другой — и, глядишь, станешь довольно искусным. / — Естественно…
+
+### Блок 7 — names (info)
+
+- имена словаря: есть в ED_RU, нет в EN (проверить): «Дерф»
+- **EN:** Staring at Derflinger,Agnes answered. / "…Mo, it is still too early to evaluate his progress. But he has already forged a year's worth of practice, that of a co…
+- **ED_RU:** — Специально? / Аньес бросила на Дерфлингера колючий взгляд. / — Впрочем, учишься ты быстро. Год-другой — и, глядишь, станешь довольно искусным. / — Естественно…
+
+### Блок 7 — numbers (weak)
+
+- числа EN не подтверждены в ED_RU: 80, 90
+- **EN:** Staring at Derflinger,Agnes answered. / "…Mo, it is still too early to evaluate his progress. But he has already forged a year's worth of practice, that of a co…
+- **ED_RU:** — Специально? / Аньес бросила на Дерфлингера колючий взгляд. / — Впрочем, учишься ты быстро. Год-другой — и, глядишь, станешь довольно искусным. / — Естественно…
+
+### Блок 8 — names (weak)
+
+- имена словаря: есть в EN, нет в ED_RU: «Блудливая Луиза», «Матильда из Южной Готы», «мисс Южная Гота», Глава пятая. Шесть тысяч лет назад, Глава шестая. Тигриный тракт, Тигрес Гран-Рут, Тигриный тракт, Тиффания Уэствуд, Южная Гота
+- **EN:** Louise and Siesta reached Westwood Village. / They wandered half of the day following the footpath in the forest, which they entered away from the highway that …
+- **ED_RU:** Сайто онемел и кивнул. / — Да… но что случилось? / — Значит, это, может, всё-таки та Луиза… / — Что? / — Эмма ходила в лес за грибами и видела её — и ещё одну ж…
+
+### Блок 8 — names (info)
+
+- имена словаря: есть в ED_RU, нет в EN (проверить): «Воздушный молот», «господин Шупэ», Воздушный щит, госпожа, собор Святой Лутии
+- **EN:** Louise and Siesta reached Westwood Village. / They wandered half of the day following the footpath in the forest, which they entered away from the highway that …
+- **ED_RU:** Сайто онемел и кивнул. / — Да… но что случилось? / — Значит, это, может, всё-таки та Луиза… / — Что? / — Эмма ходила в лес за грибами и видела её — и ещё одну ж…
+
+### Блок 8 — negation (weak)
+
+- отрицание: EN и ED_RU расходятся
+- **EN:** Louise and Siesta reached Westwood Village. / They wandered half of the day following the footpath in the forest, which they entered away from the highway that …
+- **ED_RU:** Сайто онемел и кивнул. / — Да… но что случилось? / — Значит, это, может, всё-таки та Луиза… / — Что? / — Эмма ходила в лес за грибами и видела её — и ещё одну ж…
+
+### Блок 9 — marks (weak)
+
+- вопросительный знак: EN и ED_RU расходятся
+- **EN:** The girl with the blond hair, turned her face sadly down. And saying "Come"… leading the pair back to the forest, to the opposite direction from which Louise an…
+- **ED_RU:** Хочу увидеть. / Слёзы чуть не хлынули. / Та девушка с розовыми волосами пришла искать меня. / Луиза и Сиеста добрались до деревни Уэствуд. / Они полдня блуждали…
+
+### Блок 9 — names (weak)
+
+- имена словаря: есть в EN, нет в ED_RU: «Блудливая Луиза», Чёрный Лес, госпожа Святая
+- **EN:** The girl with the blond hair, turned her face sadly down. And saying "Come"… leading the pair back to the forest, to the opposite direction from which Louise an…
+- **ED_RU:** Хочу увидеть. / Слёзы чуть не хлынули. / Та девушка с розовыми волосами пришла искать меня. / Луиза и Сиеста добрались до деревни Уэствуд. / Они полдня блуждали…
+
+### Блок 9 — names (info)
+
+- имена словаря: есть в ED_RU, нет в EN (проверить): «приворотное зелье», «„Пришествие Основателя Бримира“», Сайто Хирага, Сайто Шевалье де Хирага
+- **EN:** The girl with the blond hair, turned her face sadly down. And saying "Come"… leading the pair back to the forest, to the opposite direction from which Louise an…
+- **ED_RU:** Хочу увидеть. / Слёзы чуть не хлынули. / Та девушка с розовыми волосами пришла искать меня. / Луиза и Сиеста добрались до деревни Уэствуд. / Они полдня блуждали…
+
+### Блок 9 — negation (weak)
+
+- отрицание: EN и ED_RU расходятся
+- **EN:** The girl with the blond hair, turned her face sadly down. And saying "Come"… leading the pair back to the forest, to the opposite direction from which Louise an…
+- **ED_RU:** Хочу увидеть. / Слёзы чуть не хлынули. / Та девушка с розовыми волосами пришла искать меня. / Луиза и Сиеста добрались до деревни Уэствуд. / Они полдня блуждали…
+
+### Блок 10 — names (weak)
+
+- имена словаря: есть в EN, нет в ED_RU: «Блудливая Луиза», госпожа Святая
+- **EN:** The girl with blond hair, who introduced herself as Teifutenia, brought Louise and Siesta to the old oak tree. A big stone was placed there, decorated with bloo…
+- **ED_RU:** — Не волнуйтесь. Я не страшная, — поспешно сказала Сиеста. — Простите… Вы не видели здесь мальчика? С чёрными волосами, как у меня… лет семнадцати… / Золотоволо…
+
+### Блок 10 — names (info)
+
+- имена словаря: есть в ED_RU, нет в EN (проверить): «приворотное зелье», «„Пришествие Основателя Бримира“», Земля, Магическая Академия Тристейна, придворная дама
+- **EN:** The girl with blond hair, who introduced herself as Teifutenia, brought Louise and Siesta to the old oak tree. A big stone was placed there, decorated with bloo…
+- **ED_RU:** — Не волнуйтесь. Я не страшная, — поспешно сказала Сиеста. — Простите… Вы не видели здесь мальчика? С чёрными волосами, как у меня… лет семнадцати… / Золотоволо…
+
+### Блок 10 — pronouns (weak)
+
+- местоименное лицо: EN — 1-е л. мн. (we/us), в ED_RU — 2-е л. (ты/вы) без мы/нам/нас (подмена «нас/вас»)
+- **EN:** The girl with blond hair, who introduced herself as Teifutenia, brought Louise and Siesta to the old oak tree. A big stone was placed there, decorated with bloo…
+- **ED_RU:** — Не волнуйтесь. Я не страшная, — поспешно сказала Сиеста. — Простите… Вы не видели здесь мальчика? С чёрными волосами, как у меня… лет семнадцати… / Золотоволо…
+
+### Блок 11 — names (weak)
+
+- имена словаря: есть в EN, нет в ED_RU: «Блудливая Луиза», «Чарующий король Тристейна», Аньес, Магическая Академия Тристейна, госпожа Святая
+- **EN:** "When I was about to be crushed by Fouquet's golem… and when I was about to be killed by Wardes… you always saved me. When the Albion fleet attacked Tristain. W…
+- **ED_RU:** — И всё? / Тиффания кивнула. / Потом обняла рыдавшую Сиесту за плечи. / — Здесь холодно… зайдите хоть в дом. Я постелю вам на одну ночь. / Сиеста, будто уже ни …
+
+### Блок 11 — names (info)
+
+- имена словаря: есть в ED_RU, нет в EN (проверить): «разумный меч», «„Пришествие Основателя Бримира“», Альбрехт III, Сиеста, Тиффания Уэствуд, Тристания
+- **EN:** "When I was about to be crushed by Fouquet's golem… and when I was about to be killed by Wardes… you always saved me. When the Albion fleet attacked Tristain. W…
+- **ED_RU:** — И всё? / Тиффания кивнула. / Потом обняла рыдавшую Сиесту за плечи. / — Здесь холодно… зайдите хоть в дом. Я постелю вам на одну ночь. / Сиеста, будто уже ни …
+
+### Блок 11 — pronouns (weak)
+
+- местоименное лицо: EN — 1-е л. мн. (we/us), в ED_RU — 2-е л. (ты/вы) без мы/нам/нас (подмена «нас/вас»)
+- **EN:** "When I was about to be crushed by Fouquet's golem… and when I was about to be killed by Wardes… you always saved me. When the Albion fleet attacked Tristain. W…
+- **ED_RU:** — И всё? / Тиффания кивнула. / Потом обняла рыдавшую Сиесту за плечи. / — Здесь холодно… зайдите хоть в дом. Я постелю вам на одну ночь. / Сиеста, будто уже ни …
+
+### Блок 12 — marks (weak)
+
+- вопросительный знак: EN и ED_RU расходятся
+- **EN:** "I am sure. I am not Gandálfr and I cannot protect Louise, so…" / "I see," Agnes said… / And kept quietly patting the head of the silently sobbing Saito.
+- **ED_RU:** — Ты сказал, что любишь меня. Знаешь ли ты, как я обрадовалась? Только ты… только ты говорил такое мне, такой, как я. Немилой, непохожей на девушку — ты один го…
+
+### Блок 12 — names (weak)
+
+- имена словаря: есть в EN, нет в ED_RU: «Блудливая Луиза», Глава третья. Гандальв эльфов, госпожа Святая
+- **EN:** "I am sure. I am not Gandálfr and I cannot protect Louise, so…" / "I see," Agnes said… / And kept quietly patting the head of the silently sobbing Saito.
+- **ED_RU:** — Ты сказал, что любишь меня. Знаешь ли ты, как я обрадовалась? Только ты… только ты говорил такое мне, такой, как я. Немилой, непохожей на девушку — ты один го…
+
+### Блок 12 — names (info)
+
+- имена словаря: есть в ED_RU, нет в EN (проверить): **«Старый Осман»**, «старшая школа» / «служащий» / «Земля», Магическая Академия Тристейна, Призыв подручного
+- **EN:** "I am sure. I am not Gandálfr and I cannot protect Louise, so…" / "I see," Agnes said… / And kept quietly patting the head of the silently sobbing Saito.
+- **ED_RU:** — Ты сказал, что любишь меня. Знаешь ли ты, как я обрадовалась? Только ты… только ты говорил такое мне, такой, как я. Немилой, непохожей на девушку — ты один го…
+
+### Блок 13 — names (weak)
+
+- имена словаря: есть в EN, нет в ED_RU: «Блудливая Луиза», Чёрный Лес, госпожа Святая
+- **EN:** That night… Louise and Siesta stayed over at Tiffania's house. / Louise got the room where Saito used to sleep, while Siesta slept in Tiffania's room. Tiffania …
+- **ED_RU:** В ту ночь… Луиза и Сиеста остались ночевать в доме Тиффании. / Луизу уложили в комнату, где спал Сайто, Сиесту — в комнате Тиффании. Сама Тиффания сказала, что …
+
+### Блок 13 — names (info)
+
+- имена словаря: есть в ED_RU, нет в EN (проверить): придворная дама
+- **EN:** That night… Louise and Siesta stayed over at Tiffania's house. / Louise got the room where Saito used to sleep, while Siesta slept in Tiffania's room. Tiffania …
+- **ED_RU:** В ту ночь… Луиза и Сиеста остались ночевать в доме Тиффании. / Луизу уложили в комнату, где спал Сайто, Сиесту — в комнате Тиффании. Сама Тиффания сказала, что …
+
+### Блок 14 — names (weak)
+
+- имена словаря: есть в EN, нет в ED_RU: «Блудливая Луиза», «„Пришествие Основателя Бримира“», госпожа Святая
+- **EN:** Louise rushed out, gripping the Founder's Prayer Book. Saito was alive after all! Was the only thought she had. She wasn't alerted by Siesta's tone. / "Which wa…
+- **ED_RU:** — В лесу… / — В лесу!.. / Луиза схватила Молитвенник Основателя и выбежала. Так значит, Сайто жив! Разбираться в подробностях она будет потом. По голосу Сиесты …
+
+### Блок 14 — names (info)
+
+- имена словаря: есть в ED_RU, нет в EN (проверить): «приворотное зелье»
+- **EN:** Louise rushed out, gripping the Founder's Prayer Book. Saito was alive after all! Was the only thought she had. She wasn't alerted by Siesta's tone. / "Which wa…
+- **ED_RU:** — В лесу… / — В лесу!.. / Луиза схватила Молитвенник Основателя и выбежала. Так значит, Сайто жив! Разбираться в подробностях она будет потом. По голосу Сиесты …
+
+### Блок 15 — names (weak)
+
+- имена словаря: есть в EN, нет в ED_RU: «Блудливая Луиза», «старшая школа» / «служащий» / «Земля», «„Пришествие Основателя Бримира“», Луны-Близнецы, Чёрный Лес, госпожа Святая
+- **EN:** Louise started to run after Siesta. / The light of the two moons falling through the openings between the trees was their only signpost. / Their feet were almos…
+- **ED_RU:** — Вон, Сайто-сан там… / — Где? — вгляделась Луиза, но нигде не увидела Сайто. / Может, слишком темно, чтобы разобрать? / Она уже собралась было произнести «Лайт…
+
+### Блок 15 — names (info)
+
+- имена словаря: есть в ED_RU, нет в EN (проверить): «Вспышка», Магическая Академия Тристейна
+- **EN:** Louise started to run after Siesta. / The light of the two moons falling through the openings between the trees was their only signpost. / Their feet were almos…
+- **ED_RU:** — Вон, Сайто-сан там… / — Где? — вгляделась Луиза, но нигде не увидела Сайто. / Может, слишком темно, чтобы разобрать? / Она уже собралась было произнести «Лайт…
+
+### Блок 16 — names (weak)
+
+- имена словаря: есть в EN, нет в ED_RU: «Блудливая Луиза», Великая Цель, Взрыв, Гандальв, Глава третья. Гандальв эльфов, Развеивание магии, Шеффилд, госпожа Святая
+- **EN:** Louise blankly stared at the empty space where Siesta was lying. / Then… she saw a small doll lying there. / She saw that doll before. / The other day, back in …
+- **ED_RU:** — Похоже, она не под чарами… / Сиеста исчезла бесследно. Что это было? / Луиза вгляделась в место, где упала Сиеста. / И увидела… маленькую куклу, валявшуюся на…
+
+### Блок 16 — names (info)
+
+- имена словаря: есть в ED_RU, нет в EN (проверить): Земля, Магическая Академия Тристейна
+- **EN:** Louise blankly stared at the empty space where Siesta was lying. / Then… she saw a small doll lying there. / She saw that doll before. / The other day, back in …
+- **ED_RU:** — Похоже, она не под чарами… / Сиеста исчезла бесследно. Что это было? / Луиза вгляделась в место, где упала Сиеста. / И увидела… маленькую куклу, валявшуюся на…
+
+### Блок 17 — names (weak)
+
+- имена словаря: есть в EN, нет в ED_RU: «Блудливая Луиза», Мьёдвитнир, госпожа Святая
+- **EN:** Louise did nothing, but silently glared at Sheffield. / How does she know that? / And who is this woman that knows it? / "I am god's mind, Myoznitnirn. I can us…
+- **ED_RU:** — Назовись. / — Да… как же мне назваться? / — Не шути. / — Ты не знаешь, но я называлась Шеффилд. Правда, это не настоящее имя. / Луиза произнесла заклинание. /…
+
+### Блок 17 — names (info)
+
+- имена словаря: есть в ED_RU, нет в EN (проверить): «мисс Южная Гота», Валькирия, Вальхалла, Взрыв, Магическая Академия Тристейна
+- **EN:** Louise did nothing, but silently glared at Sheffield. / How does she know that? / And who is this woman that knows it? / "I am god's mind, Myoznitnirn. I can us…
+- **ED_RU:** — Назовись. / — Да… как же мне назваться? / — Не шути. / — Ты не знаешь, но я называлась Шеффилд. Правда, это не настоящее имя. / Луиза произнесла заклинание. /…
+
+### Блок 18 — names (weak)
+
+- имена словаря: есть в EN, нет в ED_RU: «Блудливая Луиза», Весенний призыв фамильяров, Сайто Хирага, Сайто Шевалье де Хирага, госпожа Святая
+- **EN:** Ancient runes. It had been some time since Louise saw those. / The runes imprinted on Saito's left hand… / "Do these ancient runes look familiar? / Louise's fac…
+- **ED_RU:** — Подвластны мне не только горгульи, — ответила она. / Луиза попыталась произнести заклинание — / она хотела разом покончить с этим «Развеиванием магии». / — Не…
+
+### Блок 18 — names (info)
+
+- имена словаря: есть в ED_RU, нет в EN (проверить): «разумный меч», Гандальв, Магическая Академия Тристейна, Мьёдвитнир, Развеивание магии, Шеффилд, рыцари Цветущей Лилии
+- **EN:** Ancient runes. It had been some time since Louise saw those. / The runes imprinted on Saito's left hand… / "Do these ancient runes look familiar? / Louise's fac…
+- **ED_RU:** — Подвластны мне не только горгульи, — ответила она. / Луиза попыталась произнести заклинание — / она хотела разом покончить с этим «Развеиванием магии». / — Не…
+
+### Блок 18 — negation (weak)
+
+- отрицание: EN и ED_RU расходятся
+- **EN:** Ancient runes. It had been some time since Louise saw those. / The runes imprinted on Saito's left hand… / "Do these ancient runes look familiar? / Louise's fac…
+- **ED_RU:** — Подвластны мне не только горгульи, — ответила она. / Луиза попыталась произнести заклинание — / она хотела разом покончить с этим «Развеиванием магии». / — Не…
+
+### Блок 19 — marks (weak)
+
+- вопросительный знак: EN и ED_RU расходятся
+- **EN:** "Indeed, I am a familiar of Void."
+- **ED_RU:** Может, благодаря этой способности горгульи и движутся? / В отличие от големов, которыми создавший их маг должен управлять постоянно, горгульи движутся собственн…
+
+### Блок 19 — names (weak)
+
+- имена словаря: есть в EN, нет в ED_RU: Весенний призыв фамильяров
+- **EN:** "Indeed, I am a familiar of Void."
+- **ED_RU:** Может, благодаря этой способности горгульи и движутся? / В отличие от големов, которыми создавший их маг должен управлять постоянно, горгульи движутся собственн…
+
+### Блок 19 — names (info)
+
+- имена словаря: есть в ED_RU, нет в EN (проверить): Луиза, Луиза-Нулиза, Магическая Академия Тристейна, Сайто Хирага, Сайто Шевалье де Хирага, Чёрный Лес
+- **EN:** "Indeed, I am a familiar of Void."
+- **ED_RU:** Может, благодаря этой способности горгульи и движутся? / В отличие от големов, которыми создавший их маг должен управлять постоянно, горгульи движутся собственн…
+
+### Блок 19 — negation (weak)
+
+- отрицание: EN и ED_RU расходятся
+- **EN:** "Indeed, I am a familiar of Void."
+- **ED_RU:** Может, благодаря этой способности горгульи и движутся? / В отличие от големов, которыми создавший их маг должен управлять постоянно, горгульи движутся собственн…
+

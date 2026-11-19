@@ -1,0 +1,26 @@
+{
+  "analysis_id": "20261119-112144-f579.phase1",
+  "chapter": "v12-ch05",
+  "phase": 1,
+  "scope": "blind",
+  "results": [
+    {
+      "block": 1,
+      "finding": "PRAGMATIC_SHIFT",
+      "note": "っさいわね (лёгкий упрёк с わね) → «Да отстань» (грубый отказ).",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 5,
+      "finding": "PRAGMATIC_SHIFT",
+      "note": "ヨ / ほら…ぞ: дружески-грубый окрик → «Спи.» (чистый приказ).",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 6,
+      "finding": "PRAGMATIC_SHIFT",
+      "note": "いいもん: обидчивое упрямство → нейтральное «Ладно».",
+      "confidence": "MEDIUM"
+    }
+  ]
+}

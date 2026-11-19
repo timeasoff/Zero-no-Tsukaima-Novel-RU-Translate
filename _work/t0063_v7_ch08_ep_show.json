@@ -1,0 +1,5289 @@
+{
+  "id": "T-0063",
+  "text": "Проверка 4 — полный независимый смысловой аудит A+B+C+Analyzer, тома 7-13, раунд fullABC-20261119",
+  "created": "2026-11-19 12:16:25",
+  "status": "open",
+  "note": "Специализация 04-semantic-full-abc; ветка verify-v7-v13; precheck + A/B/C + ph1(blind) + ph2; без слияния с master",
+  "subtasks": [
+    {
+      "id": "T-0063-S1",
+      "kind": "sma-a",
+      "volume": 7,
+      "chapter": "afterword",
+      "chapter_id": "v07-afterword",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v07-afterword.sma-a.md",
+      "expected": [
+        "output/_audit/sma/v7-afterword/a/20261119-122318-cf0f.json"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 12:23:18",
+          "prompt": "agent_prompts/agent_prompt.v07-afterword.sma-a.md",
+          "finished": "2026-11-19 12:32:34",
+          "result": "done",
+          "note": "раунд fullABC-d80be7de: precheck+A/B/C+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд fullABC-d80be7de: precheck+A/B/C+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0063-S2",
+      "kind": "sma-b",
+      "volume": 7,
+      "chapter": "afterword",
+      "chapter_id": "v07-afterword",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v07-afterword.sma-b.md",
+      "expected": [
+        "output/_audit/sma/v7-afterword/b/20261119-122318-f91c.json"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 12:23:18",
+          "prompt": "agent_prompts/agent_prompt.v07-afterword.sma-b.md",
+          "finished": "2026-11-19 12:32:34",
+          "result": "done",
+          "note": "раунд fullABC-d80be7de: precheck+A/B/C+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд fullABC-d80be7de: precheck+A/B/C+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0063-S3",
+      "kind": "sma-c",
+      "volume": 7,
+      "chapter": "afterword",
+      "chapter_id": "v07-afterword",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v07-afterword.sma-c.md",
+      "expected": [
+        "output/_audit/sma/v7-afterword/c/20261119-122318-bcdf.json"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 12:23:18",
+          "prompt": "agent_prompts/agent_prompt.v07-afterword.sma-c.md",
+          "finished": "2026-11-19 12:32:34",
+          "result": "done",
+          "note": "раунд fullABC-d80be7de: precheck+A/B/C+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд fullABC-d80be7de: precheck+A/B/C+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0063-S4",
+      "kind": "analyzer-phase1",
+      "volume": 7,
+      "chapter": "afterword",
+      "chapter_id": "v07-afterword",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v07-afterword.analyzer-phase1.md",
+      "expected": [],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 12:23:18",
+          "prompt": "agent_prompts/agent_prompt.v07-afterword.analyzer-phase1.md",
+          "finished": "2026-11-19 12:32:34",
+          "result": "done",
+          "note": "раунд fullABC-d80be7de: precheck+A/B/C+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд fullABC-d80be7de: precheck+A/B/C+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0063-S5",
+      "kind": "analyzer-phase2",
+      "volume": 7,
+      "chapter": "afterword",
+      "chapter_id": "v07-afterword",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v07-afterword.analyzer-phase2.md",
+      "expected": [
+        "output/_audit/sma/v7-afterword/precheck/omission-precheck.json",
+        "output/_audit/sma/v7-afterword/analysis/20261119-122318-8902.json",
+        "output/_audit/sma/v7-afterword/analysis/20261119-122318-8902.md"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 12:23:18",
+          "prompt": "agent_prompts/agent_prompt.v07-afterword.analyzer-phase2.md",
+          "finished": "2026-11-19 12:32:35",
+          "result": "done",
+          "note": "раунд fullABC-d80be7de: precheck+A/B/C+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд fullABC-d80be7de: precheck+A/B/C+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0063-S6",
+      "kind": "sma-a",
+      "volume": 7,
+      "chapter": "01",
+      "chapter_id": "v07-ch01",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v07-ch01.sma-a.md",
+      "expected": [
+        "output/_audit/sma/v7-ch01/a/20261119-122318-be40.json"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 12:23:18",
+          "prompt": "agent_prompts/agent_prompt.v07-ch01.sma-a.md",
+          "finished": "2026-11-19 12:32:35",
+          "result": "done",
+          "note": "раунд fullABC-d80be7de: precheck+A/B/C+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд fullABC-d80be7de: precheck+A/B/C+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0063-S7",
+      "kind": "sma-b",
+      "volume": 7,
+      "chapter": "01",
+      "chapter_id": "v07-ch01",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v07-ch01.sma-b.md",
+      "expected": [
+        "output/_audit/sma/v7-ch01/b/20261119-122318-9afe.json"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 12:23:18",
+          "prompt": "agent_prompts/agent_prompt.v07-ch01.sma-b.md",
+          "finished": "2026-11-19 12:32:35",
+          "result": "done",
+          "note": "раунд fullABC-d80be7de: precheck+A/B/C+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд fullABC-d80be7de: precheck+A/B/C+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0063-S8",
+      "kind": "sma-c",
+      "volume": 7,
+      "chapter": "01",
+      "chapter_id": "v07-ch01",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v07-ch01.sma-c.md",
+      "expected": [
+        "output/_audit/sma/v7-ch01/c/20261119-122318-533c.json"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 12:23:18",
+          "prompt": "agent_prompts/agent_prompt.v07-ch01.sma-c.md",
+          "finished": "2026-11-19 12:32:35",
+          "result": "done",
+          "note": "раунд fullABC-d80be7de: precheck+A/B/C+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд fullABC-d80be7de: precheck+A/B/C+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0063-S9",
+      "kind": "analyzer-phase1",
+      "volume": 7,
+      "chapter": "01",
+      "chapter_id": "v07-ch01",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v07-ch01.analyzer-phase1.md",
+      "expected": [],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 12:23:18",
+          "prompt": "agent_prompts/agent_prompt.v07-ch01.analyzer-phase1.md",
+          "finished": "2026-11-19 12:32:35",
+          "result": "done",
+          "note": "раунд fullABC-d80be7de: precheck+A/B/C+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд fullABC-d80be7de: precheck+A/B/C+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0063-S10",
+      "kind": "analyzer-phase2",
+      "volume": 7,
+      "chapter": "01",
+      "chapter_id": "v07-ch01",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v07-ch01.analyzer-phase2.md",
+      "expected": [
+        "output/_audit/sma/v7-ch01/precheck/omission-precheck.json",
+        "output/_audit/sma/v7-ch01/analysis/20261119-122318-038b.json",
+        "output/_audit/sma/v7-ch01/analysis/20261119-122318-038b.md"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 12:23:18",
+          "prompt": "agent_prompts/agent_prompt.v07-ch01.analyzer-phase2.md",
+          "finished": "2026-11-19 12:32:35",
+          "result": "done",
+          "note": "раунд fullABC-d80be7de: precheck+A/B/C+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд fullABC-d80be7de: precheck+A/B/C+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0063-S11",
+      "kind": "sma-a",
+      "volume": 7,
+      "chapter": "02",
+      "chapter_id": "v07-ch02",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v07-ch02.sma-a.md",
+      "expected": [
+        "output/_audit/sma/v7-ch02/a/20261119-123819-d17b.json"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 12:38:19",
+          "prompt": "agent_prompts/agent_prompt.v07-ch02.sma-a.md",
+          "finished": "2026-11-19 12:52:05",
+          "result": "done",
+          "note": "раунд fullABC-d80be7de: precheck+A/B/C+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд fullABC-d80be7de: precheck+A/B/C+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0063-S12",
+      "kind": "sma-b",
+      "volume": 7,
+      "chapter": "02",
+      "chapter_id": "v07-ch02",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v07-ch02.sma-b.md",
+      "expected": [
+        "output/_audit/sma/v7-ch02/b/20261119-123819-633b.json"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 12:38:19",
+          "prompt": "agent_prompts/agent_prompt.v07-ch02.sma-b.md",
+          "finished": "2026-11-19 12:52:05",
+          "result": "done",
+          "note": "раунд fullABC-d80be7de: precheck+A/B/C+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд fullABC-d80be7de: precheck+A/B/C+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0063-S13",
+      "kind": "sma-c",
+      "volume": 7,
+      "chapter": "02",
+      "chapter_id": "v07-ch02",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v07-ch02.sma-c.md",
+      "expected": [
+        "output/_audit/sma/v7-ch02/c/20261119-123819-0eab.json"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 12:38:19",
+          "prompt": "agent_prompts/agent_prompt.v07-ch02.sma-c.md",
+          "finished": "2026-11-19 12:52:05",
+          "result": "done",
+          "note": "раунд fullABC-d80be7de: precheck+A/B/C+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд fullABC-d80be7de: precheck+A/B/C+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0063-S14",
+      "kind": "analyzer-phase1",
+      "volume": 7,
+      "chapter": "02",
+      "chapter_id": "v07-ch02",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v07-ch02.analyzer-phase1.md",
+      "expected": [],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 12:38:19",
+          "prompt": "agent_prompts/agent_prompt.v07-ch02.analyzer-phase1.md",
+          "finished": "2026-11-19 12:52:05",
+          "result": "done",
+          "note": "раунд fullABC-d80be7de: precheck+A/B/C+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд fullABC-d80be7de: precheck+A/B/C+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0063-S15",
+      "kind": "analyzer-phase2",
+      "volume": 7,
+      "chapter": "02",
+      "chapter_id": "v07-ch02",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v07-ch02.analyzer-phase2.md",
+      "expected": [
+        "output/_audit/sma/v7-ch02/precheck/omission-precheck.json",
+        "output/_audit/sma/v7-ch02/analysis/20261119-123819-0554.json",
+        "output/_audit/sma/v7-ch02/analysis/20261119-123819-0554.md"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 12:38:19",
+          "prompt": "agent_prompts/agent_prompt.v07-ch02.analyzer-phase2.md",
+          "finished": "2026-11-19 12:52:05",
+          "result": "done",
+          "note": "раунд fullABC-d80be7de: precheck+A/B/C+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд fullABC-d80be7de: precheck+A/B/C+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0063-S16",
+      "kind": "sma-a",
+      "volume": 7,
+      "chapter": "03",
+      "chapter_id": "v07-ch03",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v07-ch03.sma-a.md",
+      "expected": [
+        "output/_audit/sma/v7-ch03/a/20261119-124211-50c9.json"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 12:42:11",
+          "prompt": "agent_prompts/agent_prompt.v07-ch03.sma-a.md",
+          "finished": "2026-11-19 12:52:05",
+          "result": "done",
+          "note": "раунд fullABC-d80be7de: precheck+A/B/C+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд fullABC-d80be7de: precheck+A/B/C+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0063-S17",
+      "kind": "sma-b",
+      "volume": 7,
+      "chapter": "03",
+      "chapter_id": "v07-ch03",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v07-ch03.sma-b.md",
+      "expected": [
+        "output/_audit/sma/v7-ch03/b/20261119-124211-38a6.json"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 12:42:11",
+          "prompt": "agent_prompts/agent_prompt.v07-ch03.sma-b.md",
+          "finished": "2026-11-19 12:52:05",
+          "result": "done",
+          "note": "раунд fullABC-d80be7de: precheck+A/B/C+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд fullABC-d80be7de: precheck+A/B/C+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0063-S18",
+      "kind": "sma-c",
+      "volume": 7,
+      "chapter": "03",
+      "chapter_id": "v07-ch03",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v07-ch03.sma-c.md",
+      "expected": [
+        "output/_audit/sma/v7-ch03/c/20261119-124211-6aee.json"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 12:42:11",
+          "prompt": "agent_prompts/agent_prompt.v07-ch03.sma-c.md",
+          "finished": "2026-11-19 12:52:06",
+          "result": "done",
+          "note": "раунд fullABC-d80be7de: precheck+A/B/C+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд fullABC-d80be7de: precheck+A/B/C+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0063-S19",
+      "kind": "analyzer-phase1",
+      "volume": 7,
+      "chapter": "03",
+      "chapter_id": "v07-ch03",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v07-ch03.analyzer-phase1.md",
+      "expected": [],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 12:42:11",
+          "prompt": "agent_prompts/agent_prompt.v07-ch03.analyzer-phase1.md",
+          "finished": "2026-11-19 12:52:06",
+          "result": "done",
+          "note": "раунд fullABC-d80be7de: precheck+A/B/C+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд fullABC-d80be7de: precheck+A/B/C+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0063-S20",
+      "kind": "analyzer-phase2",
+      "volume": 7,
+      "chapter": "03",
+      "chapter_id": "v07-ch03",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v07-ch03.analyzer-phase2.md",
+      "expected": [
+        "output/_audit/sma/v7-ch03/precheck/omission-precheck.json",
+        "output/_audit/sma/v7-ch03/analysis/20261119-124211-2919.json",
+        "output/_audit/sma/v7-ch03/analysis/20261119-124211-2919.md"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 12:42:11",
+          "prompt": "agent_prompts/agent_prompt.v07-ch03.analyzer-phase2.md",
+          "finished": "2026-11-19 12:52:06",
+          "result": "done",
+          "note": "раунд fullABC-d80be7de: precheck+A/B/C+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд fullABC-d80be7de: precheck+A/B/C+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0063-S21",
+      "kind": "sma-a",
+      "volume": 7,
+      "chapter": "04",
+      "chapter_id": "v07-ch04",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v07-ch04.sma-a.md",
+      "expected": [
+        "output/_audit/sma/v7-ch04/a/20261119-130038-2f46.json"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 13:00:38",
+          "prompt": "agent_prompts/agent_prompt.v07-ch04.sma-a.md",
+          "finished": "2026-11-19 13:05:43",
+          "result": "done",
+          "note": "раунд fullABC-d80be7de: precheck+A/B/C+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд fullABC-d80be7de: precheck+A/B/C+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0063-S22",
+      "kind": "sma-b",
+      "volume": 7,
+      "chapter": "04",
+      "chapter_id": "v07-ch04",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v07-ch04.sma-b.md",
+      "expected": [
+        "output/_audit/sma/v7-ch04/b/20261119-130038-9ff8.json"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 13:00:38",
+          "prompt": "agent_prompts/agent_prompt.v07-ch04.sma-b.md",
+          "finished": "2026-11-19 13:05:43",
+          "result": "done",
+          "note": "раунд fullABC-d80be7de: precheck+A/B/C+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд fullABC-d80be7de: precheck+A/B/C+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0063-S23",
+      "kind": "sma-c",
+      "volume": 7,
+      "chapter": "04",
+      "chapter_id": "v07-ch04",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v07-ch04.sma-c.md",
+      "expected": [
+        "output/_audit/sma/v7-ch04/c/20261119-130038-8412.json"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 13:00:38",
+          "prompt": "agent_prompts/agent_prompt.v07-ch04.sma-c.md",
+          "finished": "2026-11-19 13:05:43",
+          "result": "done",
+          "note": "раунд fullABC-d80be7de: precheck+A/B/C+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд fullABC-d80be7de: precheck+A/B/C+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0063-S24",
+      "kind": "analyzer-phase1",
+      "volume": 7,
+      "chapter": "04",
+      "chapter_id": "v07-ch04",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v07-ch04.analyzer-phase1.md",
+      "expected": [],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 13:00:38",
+          "prompt": "agent_prompts/agent_prompt.v07-ch04.analyzer-phase1.md",
+          "finished": "2026-11-19 13:05:43",
+          "result": "done",
+          "note": "раунд fullABC-d80be7de: precheck+A/B/C+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд fullABC-d80be7de: precheck+A/B/C+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0063-S25",
+      "kind": "analyzer-phase2",
+      "volume": 7,
+      "chapter": "04",
+      "chapter_id": "v07-ch04",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v07-ch04.analyzer-phase2.md",
+      "expected": [
+        "output/_audit/sma/v7-ch04/precheck/omission-precheck.json",
+        "output/_audit/sma/v7-ch04/analysis/20261119-130038-1681.json",
+        "output/_audit/sma/v7-ch04/analysis/20261119-130038-1681.md"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 13:00:38",
+          "prompt": "agent_prompts/agent_prompt.v07-ch04.analyzer-phase2.md",
+          "finished": "2026-11-19 13:05:43",
+          "result": "done",
+          "note": "раунд fullABC-d80be7de: precheck+A/B/C+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд fullABC-d80be7de: precheck+A/B/C+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0063-S26",
+      "kind": "sma-a",
+      "volume": 7,
+      "chapter": "05",
+      "chapter_id": "v07-ch05",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v07-ch05.sma-a.md",
+      "expected": [
+        "output/_audit/sma/v7-ch05/a/20261119-130110-224e.json"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 13:01:10",
+          "prompt": "agent_prompts/agent_prompt.v07-ch05.sma-a.md",
+          "finished": "2026-11-19 13:05:43",
+          "result": "done",
+          "note": "раунд fullABC-d80be7de: precheck+A/B/C+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд fullABC-d80be7de: precheck+A/B/C+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0063-S27",
+      "kind": "sma-b",
+      "volume": 7,
+      "chapter": "05",
+      "chapter_id": "v07-ch05",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v07-ch05.sma-b.md",
+      "expected": [
+        "output/_audit/sma/v7-ch05/b/20261119-130110-eb76.json"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 13:01:10",
+          "prompt": "agent_prompts/agent_prompt.v07-ch05.sma-b.md",
+          "finished": "2026-11-19 13:05:43",
+          "result": "done",
+          "note": "раунд fullABC-d80be7de: precheck+A/B/C+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд fullABC-d80be7de: precheck+A/B/C+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0063-S28",
+      "kind": "sma-c",
+      "volume": 7,
+      "chapter": "05",
+      "chapter_id": "v07-ch05",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v07-ch05.sma-c.md",
+      "expected": [
+        "output/_audit/sma/v7-ch05/c/20261119-130110-077d.json"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 13:01:10",
+          "prompt": "agent_prompts/agent_prompt.v07-ch05.sma-c.md",
+          "finished": "2026-11-19 13:05:44",
+          "result": "done",
+          "note": "раунд fullABC-d80be7de: precheck+A/B/C+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд fullABC-d80be7de: precheck+A/B/C+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0063-S29",
+      "kind": "analyzer-phase1",
+      "volume": 7,
+      "chapter": "05",
+      "chapter_id": "v07-ch05",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v07-ch05.analyzer-phase1.md",
+      "expected": [],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 13:01:10",
+          "prompt": "agent_prompts/agent_prompt.v07-ch05.analyzer-phase1.md",
+          "finished": "2026-11-19 13:05:44",
+          "result": "done",
+          "note": "раунд fullABC-d80be7de: precheck+A/B/C+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд fullABC-d80be7de: precheck+A/B/C+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0063-S30",
+      "kind": "analyzer-phase2",
+      "volume": 7,
+      "chapter": "05",
+      "chapter_id": "v07-ch05",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v07-ch05.analyzer-phase2.md",
+      "expected": [
+        "output/_audit/sma/v7-ch05/precheck/omission-precheck.json",
+        "output/_audit/sma/v7-ch05/analysis/20261119-130110-d9a2.json",
+        "output/_audit/sma/v7-ch05/analysis/20261119-130110-d9a2.md"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 13:01:11",
+          "prompt": "agent_prompts/agent_prompt.v07-ch05.analyzer-phase2.md",
+          "finished": "2026-11-19 13:05:44",
+          "result": "done",
+          "note": "раунд fullABC-d80be7de: precheck+A/B/C+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд fullABC-d80be7de: precheck+A/B/C+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0063-S31",
+      "kind": "sma-a",
+      "volume": 7,
+      "chapter": "06",
+      "chapter_id": "v07-ch06",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v07-ch06.sma-a.md",
+      "expected": [
+        "output/_audit/sma/v7-ch06/a/20261119-130111-b4d1.json"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 13:01:11",
+          "prompt": "agent_prompts/agent_prompt.v07-ch06.sma-a.md",
+          "finished": "2026-11-19 13:05:44",
+          "result": "done",
+          "note": "раунд fullABC-d80be7de: precheck+A/B/C+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд fullABC-d80be7de: precheck+A/B/C+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0063-S32",
+      "kind": "sma-b",
+      "volume": 7,
+      "chapter": "06",
+      "chapter_id": "v07-ch06",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v07-ch06.sma-b.md",
+      "expected": [
+        "output/_audit/sma/v7-ch06/b/20261119-130111-ea24.json"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 13:01:11",
+          "prompt": "agent_prompts/agent_prompt.v07-ch06.sma-b.md",
+          "finished": "2026-11-19 13:05:44",
+          "result": "done",
+          "note": "раунд fullABC-d80be7de: precheck+A/B/C+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд fullABC-d80be7de: precheck+A/B/C+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0063-S33",
+      "kind": "sma-c",
+      "volume": 7,
+      "chapter": "06",
+      "chapter_id": "v07-ch06",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v07-ch06.sma-c.md",
+      "expected": [
+        "output/_audit/sma/v7-ch06/c/20261119-130111-c349.json"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 13:01:11",
+          "prompt": "agent_prompts/agent_prompt.v07-ch06.sma-c.md",
+          "finished": "2026-11-19 13:05:44",
+          "result": "done",
+          "note": "раунд fullABC-d80be7de: precheck+A/B/C+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд fullABC-d80be7de: precheck+A/B/C+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0063-S34",
+      "kind": "analyzer-phase1",
+      "volume": 7,
+      "chapter": "06",
+      "chapter_id": "v07-ch06",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v07-ch06.analyzer-phase1.md",
+      "expected": [],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 13:01:11",
+          "prompt": "agent_prompts/agent_prompt.v07-ch06.analyzer-phase1.md",
+          "finished": "2026-11-19 13:05:44",
+          "result": "done",
+          "note": "раунд fullABC-d80be7de: precheck+A/B/C+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд fullABC-d80be7de: precheck+A/B/C+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0063-S35",
+      "kind": "analyzer-phase2",
+      "volume": 7,
+      "chapter": "06",
+      "chapter_id": "v07-ch06",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v07-ch06.analyzer-phase2.md",
+      "expected": [
+        "output/_audit/sma/v7-ch06/precheck/omission-precheck.json",
+        "output/_audit/sma/v7-ch06/analysis/20261119-130111-f6f1.json",
+        "output/_audit/sma/v7-ch06/analysis/20261119-130111-f6f1.md"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 13:01:11",
+          "prompt": "agent_prompts/agent_prompt.v07-ch06.analyzer-phase2.md",
+          "finished": "2026-11-19 13:05:45",
+          "result": "done",
+          "note": "раунд fullABC-d80be7de: precheck+A/B/C+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд fullABC-d80be7de: precheck+A/B/C+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0063-S36",
+      "kind": "sma-a",
+      "volume": 7,
+      "chapter": "07",
+      "chapter_id": "v07-ch07",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v07-ch07.sma-a.md",
+      "expected": [
+        "output/_audit/sma/v7-ch07/a/20261119-130111-c22b.json"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 13:01:11",
+          "prompt": "agent_prompts/agent_prompt.v07-ch07.sma-a.md",
+          "finished": "2026-11-19 13:05:45",
+          "result": "done",
+          "note": "раунд fullABC-d80be7de: precheck+A/B/C+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд fullABC-d80be7de: precheck+A/B/C+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0063-S37",
+      "kind": "sma-b",
+      "volume": 7,
+      "chapter": "07",
+      "chapter_id": "v07-ch07",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v07-ch07.sma-b.md",
+      "expected": [
+        "output/_audit/sma/v7-ch07/b/20261119-130111-ad4d.json"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 13:01:11",
+          "prompt": "agent_prompts/agent_prompt.v07-ch07.sma-b.md",
+          "finished": "2026-11-19 13:05:45",
+          "result": "done",
+          "note": "раунд fullABC-d80be7de: precheck+A/B/C+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд fullABC-d80be7de: precheck+A/B/C+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0063-S38",
+      "kind": "sma-c",
+      "volume": 7,
+      "chapter": "07",
+      "chapter_id": "v07-ch07",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v07-ch07.sma-c.md",
+      "expected": [
+        "output/_audit/sma/v7-ch07/c/20261119-130111-acc7.json"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 13:01:11",
+          "prompt": "agent_prompts/agent_prompt.v07-ch07.sma-c.md",
+          "finished": "2026-11-19 13:05:45",
+          "result": "done",
+          "note": "раунд fullABC-d80be7de: precheck+A/B/C+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд fullABC-d80be7de: precheck+A/B/C+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0063-S39",
+      "kind": "analyzer-phase1",
+      "volume": 7,
+      "chapter": "07",
+      "chapter_id": "v07-ch07",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v07-ch07.analyzer-phase1.md",
+      "expected": [],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 13:01:11",
+          "prompt": "agent_prompts/agent_prompt.v07-ch07.analyzer-phase1.md",
+          "finished": "2026-11-19 13:05:45",
+          "result": "done",
+          "note": "раунд fullABC-d80be7de: precheck+A/B/C+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд fullABC-d80be7de: precheck+A/B/C+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0063-S40",
+      "kind": "analyzer-phase2",
+      "volume": 7,
+      "chapter": "07",
+      "chapter_id": "v07-ch07",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v07-ch07.analyzer-phase2.md",
+      "expected": [
+        "output/_audit/sma/v7-ch07/precheck/omission-precheck.json",
+        "output/_audit/sma/v7-ch07/analysis/20261119-130111-8221.json",
+        "output/_audit/sma/v7-ch07/analysis/20261119-130111-8221.md"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 13:01:11",
+          "prompt": "agent_prompts/agent_prompt.v07-ch07.analyzer-phase2.md",
+          "finished": "2026-11-19 13:05:45",
+          "result": "done",
+          "note": "раунд fullABC-d80be7de: precheck+A/B/C+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд fullABC-d80be7de: precheck+A/B/C+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0063-S41",
+      "kind": "sma-a",
+      "volume": 7,
+      "chapter": "08",
+      "chapter_id": "v07-ch08",
+      "status": "running",
+      "prompt_file": "agent_prompts/agent_prompt.v07-ch08.sma-a.md",
+      "expected": [
+        "output/_audit/sma/v7-ch08/a/20261119-130914-26d3.json"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 13:09:14",
+          "prompt": "agent_prompts/agent_prompt.v07-ch08.sma-a.md",
+          "finished": "",
+          "result": "",
+          "note": ""
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S42",
+      "kind": "sma-b",
+      "volume": 7,
+      "chapter": "08",
+      "chapter_id": "v07-ch08",
+      "status": "running",
+      "prompt_file": "agent_prompts/agent_prompt.v07-ch08.sma-b.md",
+      "expected": [
+        "output/_audit/sma/v7-ch08/b/20261119-130914-80ed.json"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 13:09:14",
+          "prompt": "agent_prompts/agent_prompt.v07-ch08.sma-b.md",
+          "finished": "",
+          "result": "",
+          "note": ""
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S43",
+      "kind": "sma-c",
+      "volume": 7,
+      "chapter": "08",
+      "chapter_id": "v07-ch08",
+      "status": "running",
+      "prompt_file": "agent_prompts/agent_prompt.v07-ch08.sma-c.md",
+      "expected": [
+        "output/_audit/sma/v7-ch08/c/20261119-130914-426c.json"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 13:09:14",
+          "prompt": "agent_prompts/agent_prompt.v07-ch08.sma-c.md",
+          "finished": "",
+          "result": "",
+          "note": ""
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S44",
+      "kind": "analyzer-phase1",
+      "volume": 7,
+      "chapter": "08",
+      "chapter_id": "v07-ch08",
+      "status": "running",
+      "prompt_file": "agent_prompts/agent_prompt.v07-ch08.analyzer-phase1.md",
+      "expected": [],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 13:09:14",
+          "prompt": "agent_prompts/agent_prompt.v07-ch08.analyzer-phase1.md",
+          "finished": "",
+          "result": "",
+          "note": ""
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S45",
+      "kind": "analyzer-phase2",
+      "volume": 7,
+      "chapter": "08",
+      "chapter_id": "v07-ch08",
+      "status": "running",
+      "prompt_file": "agent_prompts/agent_prompt.v07-ch08.analyzer-phase2.md",
+      "expected": [
+        "output/_audit/sma/v7-ch08/precheck/omission-precheck.json",
+        "output/_audit/sma/v7-ch08/analysis/20261119-130914-3d4d.json",
+        "output/_audit/sma/v7-ch08/analysis/20261119-130914-3d4d.md"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 13:09:14",
+          "prompt": "agent_prompts/agent_prompt.v07-ch08.analyzer-phase2.md",
+          "finished": "",
+          "result": "",
+          "note": ""
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S46",
+      "kind": "sma-a",
+      "volume": 7,
+      "chapter": "09",
+      "chapter_id": "v07-ch09",
+      "status": "running",
+      "prompt_file": "agent_prompts/agent_prompt.v07-ch09.sma-a.md",
+      "expected": [
+        "output/_audit/sma/v7-ch09/a/20261119-130925-eb54.json"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 13:09:25",
+          "prompt": "agent_prompts/agent_prompt.v07-ch09.sma-a.md",
+          "finished": "",
+          "result": "",
+          "note": ""
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S47",
+      "kind": "sma-b",
+      "volume": 7,
+      "chapter": "09",
+      "chapter_id": "v07-ch09",
+      "status": "running",
+      "prompt_file": "agent_prompts/agent_prompt.v07-ch09.sma-b.md",
+      "expected": [
+        "output/_audit/sma/v7-ch09/b/20261119-130925-f0fc.json"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 13:09:25",
+          "prompt": "agent_prompts/agent_prompt.v07-ch09.sma-b.md",
+          "finished": "",
+          "result": "",
+          "note": ""
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S48",
+      "kind": "sma-c",
+      "volume": 7,
+      "chapter": "09",
+      "chapter_id": "v07-ch09",
+      "status": "running",
+      "prompt_file": "agent_prompts/agent_prompt.v07-ch09.sma-c.md",
+      "expected": [
+        "output/_audit/sma/v7-ch09/c/20261119-130925-619e.json"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 13:09:25",
+          "prompt": "agent_prompts/agent_prompt.v07-ch09.sma-c.md",
+          "finished": "",
+          "result": "",
+          "note": ""
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S49",
+      "kind": "analyzer-phase1",
+      "volume": 7,
+      "chapter": "09",
+      "chapter_id": "v07-ch09",
+      "status": "running",
+      "prompt_file": "agent_prompts/agent_prompt.v07-ch09.analyzer-phase1.md",
+      "expected": [],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 13:09:25",
+          "prompt": "agent_prompts/agent_prompt.v07-ch09.analyzer-phase1.md",
+          "finished": "",
+          "result": "",
+          "note": ""
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S50",
+      "kind": "analyzer-phase2",
+      "volume": 7,
+      "chapter": "09",
+      "chapter_id": "v07-ch09",
+      "status": "running",
+      "prompt_file": "agent_prompts/agent_prompt.v07-ch09.analyzer-phase2.md",
+      "expected": [
+        "output/_audit/sma/v7-ch09/precheck/omission-precheck.json",
+        "output/_audit/sma/v7-ch09/analysis/20261119-130925-2029.json",
+        "output/_audit/sma/v7-ch09/analysis/20261119-130925-2029.md"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 13:09:26",
+          "prompt": "agent_prompts/agent_prompt.v07-ch09.analyzer-phase2.md",
+          "finished": "",
+          "result": "",
+          "note": ""
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S51",
+      "kind": "sma-a",
+      "volume": 7,
+      "chapter": "10",
+      "chapter_id": "v07-ch10",
+      "status": "running",
+      "prompt_file": "agent_prompts/agent_prompt.v07-ch10.sma-a.md",
+      "expected": [
+        "output/_audit/sma/v7-ch10/a/20261119-130926-c4aa.json"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 13:09:26",
+          "prompt": "agent_prompts/agent_prompt.v07-ch10.sma-a.md",
+          "finished": "",
+          "result": "",
+          "note": ""
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S52",
+      "kind": "sma-b",
+      "volume": 7,
+      "chapter": "10",
+      "chapter_id": "v07-ch10",
+      "status": "running",
+      "prompt_file": "agent_prompts/agent_prompt.v07-ch10.sma-b.md",
+      "expected": [
+        "output/_audit/sma/v7-ch10/b/20261119-130926-0446.json"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 13:09:26",
+          "prompt": "agent_prompts/agent_prompt.v07-ch10.sma-b.md",
+          "finished": "",
+          "result": "",
+          "note": ""
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S53",
+      "kind": "sma-c",
+      "volume": 7,
+      "chapter": "10",
+      "chapter_id": "v07-ch10",
+      "status": "running",
+      "prompt_file": "agent_prompts/agent_prompt.v07-ch10.sma-c.md",
+      "expected": [
+        "output/_audit/sma/v7-ch10/c/20261119-130926-d262.json"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 13:09:26",
+          "prompt": "agent_prompts/agent_prompt.v07-ch10.sma-c.md",
+          "finished": "",
+          "result": "",
+          "note": ""
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S54",
+      "kind": "analyzer-phase1",
+      "volume": 7,
+      "chapter": "10",
+      "chapter_id": "v07-ch10",
+      "status": "running",
+      "prompt_file": "agent_prompts/agent_prompt.v07-ch10.analyzer-phase1.md",
+      "expected": [],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 13:09:26",
+          "prompt": "agent_prompts/agent_prompt.v07-ch10.analyzer-phase1.md",
+          "finished": "",
+          "result": "",
+          "note": ""
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S55",
+      "kind": "analyzer-phase2",
+      "volume": 7,
+      "chapter": "10",
+      "chapter_id": "v07-ch10",
+      "status": "running",
+      "prompt_file": "agent_prompts/agent_prompt.v07-ch10.analyzer-phase2.md",
+      "expected": [
+        "output/_audit/sma/v7-ch10/precheck/omission-precheck.json",
+        "output/_audit/sma/v7-ch10/analysis/20261119-130926-e8ec.json",
+        "output/_audit/sma/v7-ch10/analysis/20261119-130926-e8ec.md"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 13:09:26",
+          "prompt": "agent_prompts/agent_prompt.v07-ch10.analyzer-phase2.md",
+          "finished": "",
+          "result": "",
+          "note": ""
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S56",
+      "kind": "sma-a",
+      "volume": 7,
+      "chapter": "epilogue",
+      "chapter_id": "v07-epilogue",
+      "status": "running",
+      "prompt_file": "agent_prompts/agent_prompt.v07-epilogue.sma-a.md",
+      "expected": [
+        "output/_audit/sma/v7-epilogue/a/20261119-130926-6bf4.json"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 13:09:26",
+          "prompt": "agent_prompts/agent_prompt.v07-epilogue.sma-a.md",
+          "finished": "",
+          "result": "",
+          "note": ""
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S57",
+      "kind": "sma-b",
+      "volume": 7,
+      "chapter": "epilogue",
+      "chapter_id": "v07-epilogue",
+      "status": "running",
+      "prompt_file": "agent_prompts/agent_prompt.v07-epilogue.sma-b.md",
+      "expected": [
+        "output/_audit/sma/v7-epilogue/b/20261119-130926-6df4.json"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 13:09:26",
+          "prompt": "agent_prompts/agent_prompt.v07-epilogue.sma-b.md",
+          "finished": "",
+          "result": "",
+          "note": ""
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S58",
+      "kind": "sma-c",
+      "volume": 7,
+      "chapter": "epilogue",
+      "chapter_id": "v07-epilogue",
+      "status": "running",
+      "prompt_file": "agent_prompts/agent_prompt.v07-epilogue.sma-c.md",
+      "expected": [
+        "output/_audit/sma/v7-epilogue/c/20261119-130926-9684.json"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 13:09:26",
+          "prompt": "agent_prompts/agent_prompt.v07-epilogue.sma-c.md",
+          "finished": "",
+          "result": "",
+          "note": ""
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S59",
+      "kind": "analyzer-phase1",
+      "volume": 7,
+      "chapter": "epilogue",
+      "chapter_id": "v07-epilogue",
+      "status": "running",
+      "prompt_file": "agent_prompts/agent_prompt.v07-epilogue.analyzer-phase1.md",
+      "expected": [],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 13:09:26",
+          "prompt": "agent_prompts/agent_prompt.v07-epilogue.analyzer-phase1.md",
+          "finished": "",
+          "result": "",
+          "note": ""
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S60",
+      "kind": "analyzer-phase2",
+      "volume": 7,
+      "chapter": "epilogue",
+      "chapter_id": "v07-epilogue",
+      "status": "running",
+      "prompt_file": "agent_prompts/agent_prompt.v07-epilogue.analyzer-phase2.md",
+      "expected": [
+        "output/_audit/sma/v7-epilogue/precheck/omission-precheck.json",
+        "output/_audit/sma/v7-epilogue/analysis/20261119-130926-829c.json",
+        "output/_audit/sma/v7-epilogue/analysis/20261119-130926-829c.md"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 13:09:26",
+          "prompt": "agent_prompts/agent_prompt.v07-epilogue.analyzer-phase2.md",
+          "finished": "",
+          "result": "",
+          "note": ""
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S61",
+      "kind": "sma-a",
+      "volume": 8,
+      "chapter": "afterword",
+      "chapter_id": "v08-afterword",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S62",
+      "kind": "sma-b",
+      "volume": 8,
+      "chapter": "afterword",
+      "chapter_id": "v08-afterword",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S63",
+      "kind": "sma-c",
+      "volume": 8,
+      "chapter": "afterword",
+      "chapter_id": "v08-afterword",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S64",
+      "kind": "analyzer-phase1",
+      "volume": 8,
+      "chapter": "afterword",
+      "chapter_id": "v08-afterword",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S65",
+      "kind": "analyzer-phase2",
+      "volume": 8,
+      "chapter": "afterword",
+      "chapter_id": "v08-afterword",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S66",
+      "kind": "sma-a",
+      "volume": 8,
+      "chapter": "01",
+      "chapter_id": "v08-ch01",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S67",
+      "kind": "sma-b",
+      "volume": 8,
+      "chapter": "01",
+      "chapter_id": "v08-ch01",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S68",
+      "kind": "sma-c",
+      "volume": 8,
+      "chapter": "01",
+      "chapter_id": "v08-ch01",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S69",
+      "kind": "analyzer-phase1",
+      "volume": 8,
+      "chapter": "01",
+      "chapter_id": "v08-ch01",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S70",
+      "kind": "analyzer-phase2",
+      "volume": 8,
+      "chapter": "01",
+      "chapter_id": "v08-ch01",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S71",
+      "kind": "sma-a",
+      "volume": 8,
+      "chapter": "02",
+      "chapter_id": "v08-ch02",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S72",
+      "kind": "sma-b",
+      "volume": 8,
+      "chapter": "02",
+      "chapter_id": "v08-ch02",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S73",
+      "kind": "sma-c",
+      "volume": 8,
+      "chapter": "02",
+      "chapter_id": "v08-ch02",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S74",
+      "kind": "analyzer-phase1",
+      "volume": 8,
+      "chapter": "02",
+      "chapter_id": "v08-ch02",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S75",
+      "kind": "analyzer-phase2",
+      "volume": 8,
+      "chapter": "02",
+      "chapter_id": "v08-ch02",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S76",
+      "kind": "sma-a",
+      "volume": 8,
+      "chapter": "03",
+      "chapter_id": "v08-ch03",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S77",
+      "kind": "sma-b",
+      "volume": 8,
+      "chapter": "03",
+      "chapter_id": "v08-ch03",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S78",
+      "kind": "sma-c",
+      "volume": 8,
+      "chapter": "03",
+      "chapter_id": "v08-ch03",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S79",
+      "kind": "analyzer-phase1",
+      "volume": 8,
+      "chapter": "03",
+      "chapter_id": "v08-ch03",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S80",
+      "kind": "analyzer-phase2",
+      "volume": 8,
+      "chapter": "03",
+      "chapter_id": "v08-ch03",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S81",
+      "kind": "sma-a",
+      "volume": 8,
+      "chapter": "04",
+      "chapter_id": "v08-ch04",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S82",
+      "kind": "sma-b",
+      "volume": 8,
+      "chapter": "04",
+      "chapter_id": "v08-ch04",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S83",
+      "kind": "sma-c",
+      "volume": 8,
+      "chapter": "04",
+      "chapter_id": "v08-ch04",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S84",
+      "kind": "analyzer-phase1",
+      "volume": 8,
+      "chapter": "04",
+      "chapter_id": "v08-ch04",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S85",
+      "kind": "analyzer-phase2",
+      "volume": 8,
+      "chapter": "04",
+      "chapter_id": "v08-ch04",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S86",
+      "kind": "sma-a",
+      "volume": 8,
+      "chapter": "05",
+      "chapter_id": "v08-ch05",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S87",
+      "kind": "sma-b",
+      "volume": 8,
+      "chapter": "05",
+      "chapter_id": "v08-ch05",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S88",
+      "kind": "sma-c",
+      "volume": 8,
+      "chapter": "05",
+      "chapter_id": "v08-ch05",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S89",
+      "kind": "analyzer-phase1",
+      "volume": 8,
+      "chapter": "05",
+      "chapter_id": "v08-ch05",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S90",
+      "kind": "analyzer-phase2",
+      "volume": 8,
+      "chapter": "05",
+      "chapter_id": "v08-ch05",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S91",
+      "kind": "sma-a",
+      "volume": 8,
+      "chapter": "06",
+      "chapter_id": "v08-ch06",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S92",
+      "kind": "sma-b",
+      "volume": 8,
+      "chapter": "06",
+      "chapter_id": "v08-ch06",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S93",
+      "kind": "sma-c",
+      "volume": 8,
+      "chapter": "06",
+      "chapter_id": "v08-ch06",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S94",
+      "kind": "analyzer-phase1",
+      "volume": 8,
+      "chapter": "06",
+      "chapter_id": "v08-ch06",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S95",
+      "kind": "analyzer-phase2",
+      "volume": 8,
+      "chapter": "06",
+      "chapter_id": "v08-ch06",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S96",
+      "kind": "sma-a",
+      "volume": 8,
+      "chapter": "07",
+      "chapter_id": "v08-ch07",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S97",
+      "kind": "sma-b",
+      "volume": 8,
+      "chapter": "07",
+      "chapter_id": "v08-ch07",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S98",
+      "kind": "sma-c",
+      "volume": 8,
+      "chapter": "07",
+      "chapter_id": "v08-ch07",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S99",
+      "kind": "analyzer-phase1",
+      "volume": 8,
+      "chapter": "07",
+      "chapter_id": "v08-ch07",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S100",
+      "kind": "analyzer-phase2",
+      "volume": 8,
+      "chapter": "07",
+      "chapter_id": "v08-ch07",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S101",
+      "kind": "sma-a",
+      "volume": 8,
+      "chapter": "08",
+      "chapter_id": "v08-ch08",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S102",
+      "kind": "sma-b",
+      "volume": 8,
+      "chapter": "08",
+      "chapter_id": "v08-ch08",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S103",
+      "kind": "sma-c",
+      "volume": 8,
+      "chapter": "08",
+      "chapter_id": "v08-ch08",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S104",
+      "kind": "analyzer-phase1",
+      "volume": 8,
+      "chapter": "08",
+      "chapter_id": "v08-ch08",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S105",
+      "kind": "analyzer-phase2",
+      "volume": 8,
+      "chapter": "08",
+      "chapter_id": "v08-ch08",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S106",
+      "kind": "sma-a",
+      "volume": 8,
+      "chapter": "09",
+      "chapter_id": "v08-ch09",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S107",
+      "kind": "sma-b",
+      "volume": 8,
+      "chapter": "09",
+      "chapter_id": "v08-ch09",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S108",
+      "kind": "sma-c",
+      "volume": 8,
+      "chapter": "09",
+      "chapter_id": "v08-ch09",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S109",
+      "kind": "analyzer-phase1",
+      "volume": 8,
+      "chapter": "09",
+      "chapter_id": "v08-ch09",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S110",
+      "kind": "analyzer-phase2",
+      "volume": 8,
+      "chapter": "09",
+      "chapter_id": "v08-ch09",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S111",
+      "kind": "sma-a",
+      "volume": 8,
+      "chapter": "10",
+      "chapter_id": "v08-ch10",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S112",
+      "kind": "sma-b",
+      "volume": 8,
+      "chapter": "10",
+      "chapter_id": "v08-ch10",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S113",
+      "kind": "sma-c",
+      "volume": 8,
+      "chapter": "10",
+      "chapter_id": "v08-ch10",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S114",
+      "kind": "analyzer-phase1",
+      "volume": 8,
+      "chapter": "10",
+      "chapter_id": "v08-ch10",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S115",
+      "kind": "analyzer-phase2",
+      "volume": 8,
+      "chapter": "10",
+      "chapter_id": "v08-ch10",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S116",
+      "kind": "sma-a",
+      "volume": 8,
+      "chapter": "epilogue",
+      "chapter_id": "v08-epilogue",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S117",
+      "kind": "sma-b",
+      "volume": 8,
+      "chapter": "epilogue",
+      "chapter_id": "v08-epilogue",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S118",
+      "kind": "sma-c",
+      "volume": 8,
+      "chapter": "epilogue",
+      "chapter_id": "v08-epilogue",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S119",
+      "kind": "analyzer-phase1",
+      "volume": 8,
+      "chapter": "epilogue",
+      "chapter_id": "v08-epilogue",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S120",
+      "kind": "analyzer-phase2",
+      "volume": 8,
+      "chapter": "epilogue",
+      "chapter_id": "v08-epilogue",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S121",
+      "kind": "sma-a",
+      "volume": 9,
+      "chapter": "afterword",
+      "chapter_id": "v09-afterword",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S122",
+      "kind": "sma-b",
+      "volume": 9,
+      "chapter": "afterword",
+      "chapter_id": "v09-afterword",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S123",
+      "kind": "sma-c",
+      "volume": 9,
+      "chapter": "afterword",
+      "chapter_id": "v09-afterword",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S124",
+      "kind": "analyzer-phase1",
+      "volume": 9,
+      "chapter": "afterword",
+      "chapter_id": "v09-afterword",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S125",
+      "kind": "analyzer-phase2",
+      "volume": 9,
+      "chapter": "afterword",
+      "chapter_id": "v09-afterword",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S126",
+      "kind": "sma-a",
+      "volume": 9,
+      "chapter": "01",
+      "chapter_id": "v09-ch01",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S127",
+      "kind": "sma-b",
+      "volume": 9,
+      "chapter": "01",
+      "chapter_id": "v09-ch01",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S128",
+      "kind": "sma-c",
+      "volume": 9,
+      "chapter": "01",
+      "chapter_id": "v09-ch01",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S129",
+      "kind": "analyzer-phase1",
+      "volume": 9,
+      "chapter": "01",
+      "chapter_id": "v09-ch01",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S130",
+      "kind": "analyzer-phase2",
+      "volume": 9,
+      "chapter": "01",
+      "chapter_id": "v09-ch01",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S131",
+      "kind": "sma-a",
+      "volume": 9,
+      "chapter": "02",
+      "chapter_id": "v09-ch02",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S132",
+      "kind": "sma-b",
+      "volume": 9,
+      "chapter": "02",
+      "chapter_id": "v09-ch02",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S133",
+      "kind": "sma-c",
+      "volume": 9,
+      "chapter": "02",
+      "chapter_id": "v09-ch02",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S134",
+      "kind": "analyzer-phase1",
+      "volume": 9,
+      "chapter": "02",
+      "chapter_id": "v09-ch02",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S135",
+      "kind": "analyzer-phase2",
+      "volume": 9,
+      "chapter": "02",
+      "chapter_id": "v09-ch02",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S136",
+      "kind": "sma-a",
+      "volume": 9,
+      "chapter": "03",
+      "chapter_id": "v09-ch03",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S137",
+      "kind": "sma-b",
+      "volume": 9,
+      "chapter": "03",
+      "chapter_id": "v09-ch03",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S138",
+      "kind": "sma-c",
+      "volume": 9,
+      "chapter": "03",
+      "chapter_id": "v09-ch03",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S139",
+      "kind": "analyzer-phase1",
+      "volume": 9,
+      "chapter": "03",
+      "chapter_id": "v09-ch03",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S140",
+      "kind": "analyzer-phase2",
+      "volume": 9,
+      "chapter": "03",
+      "chapter_id": "v09-ch03",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S141",
+      "kind": "sma-a",
+      "volume": 9,
+      "chapter": "04",
+      "chapter_id": "v09-ch04",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S142",
+      "kind": "sma-b",
+      "volume": 9,
+      "chapter": "04",
+      "chapter_id": "v09-ch04",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S143",
+      "kind": "sma-c",
+      "volume": 9,
+      "chapter": "04",
+      "chapter_id": "v09-ch04",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S144",
+      "kind": "analyzer-phase1",
+      "volume": 9,
+      "chapter": "04",
+      "chapter_id": "v09-ch04",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S145",
+      "kind": "analyzer-phase2",
+      "volume": 9,
+      "chapter": "04",
+      "chapter_id": "v09-ch04",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S146",
+      "kind": "sma-a",
+      "volume": 9,
+      "chapter": "05",
+      "chapter_id": "v09-ch05",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S147",
+      "kind": "sma-b",
+      "volume": 9,
+      "chapter": "05",
+      "chapter_id": "v09-ch05",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S148",
+      "kind": "sma-c",
+      "volume": 9,
+      "chapter": "05",
+      "chapter_id": "v09-ch05",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S149",
+      "kind": "analyzer-phase1",
+      "volume": 9,
+      "chapter": "05",
+      "chapter_id": "v09-ch05",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S150",
+      "kind": "analyzer-phase2",
+      "volume": 9,
+      "chapter": "05",
+      "chapter_id": "v09-ch05",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S151",
+      "kind": "sma-a",
+      "volume": 9,
+      "chapter": "06",
+      "chapter_id": "v09-ch06",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S152",
+      "kind": "sma-b",
+      "volume": 9,
+      "chapter": "06",
+      "chapter_id": "v09-ch06",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S153",
+      "kind": "sma-c",
+      "volume": 9,
+      "chapter": "06",
+      "chapter_id": "v09-ch06",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S154",
+      "kind": "analyzer-phase1",
+      "volume": 9,
+      "chapter": "06",
+      "chapter_id": "v09-ch06",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S155",
+      "kind": "analyzer-phase2",
+      "volume": 9,
+      "chapter": "06",
+      "chapter_id": "v09-ch06",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S156",
+      "kind": "sma-a",
+      "volume": 9,
+      "chapter": "07",
+      "chapter_id": "v09-ch07",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S157",
+      "kind": "sma-b",
+      "volume": 9,
+      "chapter": "07",
+      "chapter_id": "v09-ch07",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S158",
+      "kind": "sma-c",
+      "volume": 9,
+      "chapter": "07",
+      "chapter_id": "v09-ch07",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S159",
+      "kind": "analyzer-phase1",
+      "volume": 9,
+      "chapter": "07",
+      "chapter_id": "v09-ch07",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S160",
+      "kind": "analyzer-phase2",
+      "volume": 9,
+      "chapter": "07",
+      "chapter_id": "v09-ch07",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S161",
+      "kind": "sma-a",
+      "volume": 9,
+      "chapter": "08",
+      "chapter_id": "v09-ch08",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S162",
+      "kind": "sma-b",
+      "volume": 9,
+      "chapter": "08",
+      "chapter_id": "v09-ch08",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S163",
+      "kind": "sma-c",
+      "volume": 9,
+      "chapter": "08",
+      "chapter_id": "v09-ch08",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S164",
+      "kind": "analyzer-phase1",
+      "volume": 9,
+      "chapter": "08",
+      "chapter_id": "v09-ch08",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S165",
+      "kind": "analyzer-phase2",
+      "volume": 9,
+      "chapter": "08",
+      "chapter_id": "v09-ch08",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S166",
+      "kind": "sma-a",
+      "volume": 9,
+      "chapter": "09",
+      "chapter_id": "v09-ch09",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S167",
+      "kind": "sma-b",
+      "volume": 9,
+      "chapter": "09",
+      "chapter_id": "v09-ch09",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S168",
+      "kind": "sma-c",
+      "volume": 9,
+      "chapter": "09",
+      "chapter_id": "v09-ch09",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S169",
+      "kind": "analyzer-phase1",
+      "volume": 9,
+      "chapter": "09",
+      "chapter_id": "v09-ch09",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S170",
+      "kind": "analyzer-phase2",
+      "volume": 9,
+      "chapter": "09",
+      "chapter_id": "v09-ch09",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S171",
+      "kind": "sma-a",
+      "volume": 9,
+      "chapter": "epilogue",
+      "chapter_id": "v09-epilogue",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S172",
+      "kind": "sma-b",
+      "volume": 9,
+      "chapter": "epilogue",
+      "chapter_id": "v09-epilogue",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S173",
+      "kind": "sma-c",
+      "volume": 9,
+      "chapter": "epilogue",
+      "chapter_id": "v09-epilogue",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S174",
+      "kind": "analyzer-phase1",
+      "volume": 9,
+      "chapter": "epilogue",
+      "chapter_id": "v09-epilogue",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S175",
+      "kind": "analyzer-phase2",
+      "volume": 9,
+      "chapter": "epilogue",
+      "chapter_id": "v09-epilogue",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S176",
+      "kind": "sma-a",
+      "volume": 10,
+      "chapter": "afterword",
+      "chapter_id": "v10-afterword",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S177",
+      "kind": "sma-b",
+      "volume": 10,
+      "chapter": "afterword",
+      "chapter_id": "v10-afterword",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S178",
+      "kind": "sma-c",
+      "volume": 10,
+      "chapter": "afterword",
+      "chapter_id": "v10-afterword",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S179",
+      "kind": "analyzer-phase1",
+      "volume": 10,
+      "chapter": "afterword",
+      "chapter_id": "v10-afterword",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S180",
+      "kind": "analyzer-phase2",
+      "volume": 10,
+      "chapter": "afterword",
+      "chapter_id": "v10-afterword",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S181",
+      "kind": "sma-a",
+      "volume": 10,
+      "chapter": "01",
+      "chapter_id": "v10-ch01",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S182",
+      "kind": "sma-b",
+      "volume": 10,
+      "chapter": "01",
+      "chapter_id": "v10-ch01",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S183",
+      "kind": "sma-c",
+      "volume": 10,
+      "chapter": "01",
+      "chapter_id": "v10-ch01",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S184",
+      "kind": "analyzer-phase1",
+      "volume": 10,
+      "chapter": "01",
+      "chapter_id": "v10-ch01",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S185",
+      "kind": "analyzer-phase2",
+      "volume": 10,
+      "chapter": "01",
+      "chapter_id": "v10-ch01",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S186",
+      "kind": "sma-a",
+      "volume": 10,
+      "chapter": "02",
+      "chapter_id": "v10-ch02",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S187",
+      "kind": "sma-b",
+      "volume": 10,
+      "chapter": "02",
+      "chapter_id": "v10-ch02",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S188",
+      "kind": "sma-c",
+      "volume": 10,
+      "chapter": "02",
+      "chapter_id": "v10-ch02",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S189",
+      "kind": "analyzer-phase1",
+      "volume": 10,
+      "chapter": "02",
+      "chapter_id": "v10-ch02",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S190",
+      "kind": "analyzer-phase2",
+      "volume": 10,
+      "chapter": "02",
+      "chapter_id": "v10-ch02",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S191",
+      "kind": "sma-a",
+      "volume": 10,
+      "chapter": "03",
+      "chapter_id": "v10-ch03",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S192",
+      "kind": "sma-b",
+      "volume": 10,
+      "chapter": "03",
+      "chapter_id": "v10-ch03",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S193",
+      "kind": "sma-c",
+      "volume": 10,
+      "chapter": "03",
+      "chapter_id": "v10-ch03",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S194",
+      "kind": "analyzer-phase1",
+      "volume": 10,
+      "chapter": "03",
+      "chapter_id": "v10-ch03",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S195",
+      "kind": "analyzer-phase2",
+      "volume": 10,
+      "chapter": "03",
+      "chapter_id": "v10-ch03",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S196",
+      "kind": "sma-a",
+      "volume": 10,
+      "chapter": "04",
+      "chapter_id": "v10-ch04",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S197",
+      "kind": "sma-b",
+      "volume": 10,
+      "chapter": "04",
+      "chapter_id": "v10-ch04",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S198",
+      "kind": "sma-c",
+      "volume": 10,
+      "chapter": "04",
+      "chapter_id": "v10-ch04",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S199",
+      "kind": "analyzer-phase1",
+      "volume": 10,
+      "chapter": "04",
+      "chapter_id": "v10-ch04",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S200",
+      "kind": "analyzer-phase2",
+      "volume": 10,
+      "chapter": "04",
+      "chapter_id": "v10-ch04",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S201",
+      "kind": "sma-a",
+      "volume": 10,
+      "chapter": "05",
+      "chapter_id": "v10-ch05",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S202",
+      "kind": "sma-b",
+      "volume": 10,
+      "chapter": "05",
+      "chapter_id": "v10-ch05",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S203",
+      "kind": "sma-c",
+      "volume": 10,
+      "chapter": "05",
+      "chapter_id": "v10-ch05",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S204",
+      "kind": "analyzer-phase1",
+      "volume": 10,
+      "chapter": "05",
+      "chapter_id": "v10-ch05",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S205",
+      "kind": "analyzer-phase2",
+      "volume": 10,
+      "chapter": "05",
+      "chapter_id": "v10-ch05",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S206",
+      "kind": "sma-a",
+      "volume": 10,
+      "chapter": "06",
+      "chapter_id": "v10-ch06",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S207",
+      "kind": "sma-b",
+      "volume": 10,
+      "chapter": "06",
+      "chapter_id": "v10-ch06",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S208",
+      "kind": "sma-c",
+      "volume": 10,
+      "chapter": "06",
+      "chapter_id": "v10-ch06",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S209",
+      "kind": "analyzer-phase1",
+      "volume": 10,
+      "chapter": "06",
+      "chapter_id": "v10-ch06",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S210",
+      "kind": "analyzer-phase2",
+      "volume": 10,
+      "chapter": "06",
+      "chapter_id": "v10-ch06",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S211",
+      "kind": "sma-a",
+      "volume": 10,
+      "chapter": "07",
+      "chapter_id": "v10-ch07",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S212",
+      "kind": "sma-b",
+      "volume": 10,
+      "chapter": "07",
+      "chapter_id": "v10-ch07",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S213",
+      "kind": "sma-c",
+      "volume": 10,
+      "chapter": "07",
+      "chapter_id": "v10-ch07",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S214",
+      "kind": "analyzer-phase1",
+      "volume": 10,
+      "chapter": "07",
+      "chapter_id": "v10-ch07",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S215",
+      "kind": "analyzer-phase2",
+      "volume": 10,
+      "chapter": "07",
+      "chapter_id": "v10-ch07",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S216",
+      "kind": "sma-a",
+      "volume": 10,
+      "chapter": "08",
+      "chapter_id": "v10-ch08",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S217",
+      "kind": "sma-b",
+      "volume": 10,
+      "chapter": "08",
+      "chapter_id": "v10-ch08",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S218",
+      "kind": "sma-c",
+      "volume": 10,
+      "chapter": "08",
+      "chapter_id": "v10-ch08",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S219",
+      "kind": "analyzer-phase1",
+      "volume": 10,
+      "chapter": "08",
+      "chapter_id": "v10-ch08",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S220",
+      "kind": "analyzer-phase2",
+      "volume": 10,
+      "chapter": "08",
+      "chapter_id": "v10-ch08",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S221",
+      "kind": "sma-a",
+      "volume": 10,
+      "chapter": "09",
+      "chapter_id": "v10-ch09",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S222",
+      "kind": "sma-b",
+      "volume": 10,
+      "chapter": "09",
+      "chapter_id": "v10-ch09",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S223",
+      "kind": "sma-c",
+      "volume": 10,
+      "chapter": "09",
+      "chapter_id": "v10-ch09",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S224",
+      "kind": "analyzer-phase1",
+      "volume": 10,
+      "chapter": "09",
+      "chapter_id": "v10-ch09",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S225",
+      "kind": "analyzer-phase2",
+      "volume": 10,
+      "chapter": "09",
+      "chapter_id": "v10-ch09",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S226",
+      "kind": "sma-a",
+      "volume": 10,
+      "chapter": "10",
+      "chapter_id": "v10-ch10",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S227",
+      "kind": "sma-b",
+      "volume": 10,
+      "chapter": "10",
+      "chapter_id": "v10-ch10",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S228",
+      "kind": "sma-c",
+      "volume": 10,
+      "chapter": "10",
+      "chapter_id": "v10-ch10",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S229",
+      "kind": "analyzer-phase1",
+      "volume": 10,
+      "chapter": "10",
+      "chapter_id": "v10-ch10",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S230",
+      "kind": "analyzer-phase2",
+      "volume": 10,
+      "chapter": "10",
+      "chapter_id": "v10-ch10",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S231",
+      "kind": "sma-a",
+      "volume": 10,
+      "chapter": "epilogue",
+      "chapter_id": "v10-epilogue",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S232",
+      "kind": "sma-b",
+      "volume": 10,
+      "chapter": "epilogue",
+      "chapter_id": "v10-epilogue",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S233",
+      "kind": "sma-c",
+      "volume": 10,
+      "chapter": "epilogue",
+      "chapter_id": "v10-epilogue",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S234",
+      "kind": "analyzer-phase1",
+      "volume": 10,
+      "chapter": "epilogue",
+      "chapter_id": "v10-epilogue",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S235",
+      "kind": "analyzer-phase2",
+      "volume": 10,
+      "chapter": "epilogue",
+      "chapter_id": "v10-epilogue",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S236",
+      "kind": "sma-a",
+      "volume": 11,
+      "chapter": "afterword",
+      "chapter_id": "v11-afterword",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S237",
+      "kind": "sma-b",
+      "volume": 11,
+      "chapter": "afterword",
+      "chapter_id": "v11-afterword",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S238",
+      "kind": "sma-c",
+      "volume": 11,
+      "chapter": "afterword",
+      "chapter_id": "v11-afterword",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S239",
+      "kind": "analyzer-phase1",
+      "volume": 11,
+      "chapter": "afterword",
+      "chapter_id": "v11-afterword",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S240",
+      "kind": "analyzer-phase2",
+      "volume": 11,
+      "chapter": "afterword",
+      "chapter_id": "v11-afterword",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S241",
+      "kind": "sma-a",
+      "volume": 11,
+      "chapter": "01",
+      "chapter_id": "v11-ch01",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S242",
+      "kind": "sma-b",
+      "volume": 11,
+      "chapter": "01",
+      "chapter_id": "v11-ch01",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S243",
+      "kind": "sma-c",
+      "volume": 11,
+      "chapter": "01",
+      "chapter_id": "v11-ch01",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S244",
+      "kind": "analyzer-phase1",
+      "volume": 11,
+      "chapter": "01",
+      "chapter_id": "v11-ch01",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S245",
+      "kind": "analyzer-phase2",
+      "volume": 11,
+      "chapter": "01",
+      "chapter_id": "v11-ch01",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S246",
+      "kind": "sma-a",
+      "volume": 11,
+      "chapter": "02",
+      "chapter_id": "v11-ch02",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S247",
+      "kind": "sma-b",
+      "volume": 11,
+      "chapter": "02",
+      "chapter_id": "v11-ch02",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S248",
+      "kind": "sma-c",
+      "volume": 11,
+      "chapter": "02",
+      "chapter_id": "v11-ch02",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S249",
+      "kind": "analyzer-phase1",
+      "volume": 11,
+      "chapter": "02",
+      "chapter_id": "v11-ch02",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S250",
+      "kind": "analyzer-phase2",
+      "volume": 11,
+      "chapter": "02",
+      "chapter_id": "v11-ch02",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S251",
+      "kind": "sma-a",
+      "volume": 11,
+      "chapter": "03",
+      "chapter_id": "v11-ch03",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S252",
+      "kind": "sma-b",
+      "volume": 11,
+      "chapter": "03",
+      "chapter_id": "v11-ch03",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S253",
+      "kind": "sma-c",
+      "volume": 11,
+      "chapter": "03",
+      "chapter_id": "v11-ch03",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S254",
+      "kind": "analyzer-phase1",
+      "volume": 11,
+      "chapter": "03",
+      "chapter_id": "v11-ch03",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S255",
+      "kind": "analyzer-phase2",
+      "volume": 11,
+      "chapter": "03",
+      "chapter_id": "v11-ch03",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S256",
+      "kind": "sma-a",
+      "volume": 11,
+      "chapter": "04",
+      "chapter_id": "v11-ch04",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S257",
+      "kind": "sma-b",
+      "volume": 11,
+      "chapter": "04",
+      "chapter_id": "v11-ch04",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S258",
+      "kind": "sma-c",
+      "volume": 11,
+      "chapter": "04",
+      "chapter_id": "v11-ch04",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S259",
+      "kind": "analyzer-phase1",
+      "volume": 11,
+      "chapter": "04",
+      "chapter_id": "v11-ch04",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S260",
+      "kind": "analyzer-phase2",
+      "volume": 11,
+      "chapter": "04",
+      "chapter_id": "v11-ch04",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S261",
+      "kind": "sma-a",
+      "volume": 11,
+      "chapter": "05",
+      "chapter_id": "v11-ch05",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S262",
+      "kind": "sma-b",
+      "volume": 11,
+      "chapter": "05",
+      "chapter_id": "v11-ch05",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S263",
+      "kind": "sma-c",
+      "volume": 11,
+      "chapter": "05",
+      "chapter_id": "v11-ch05",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S264",
+      "kind": "analyzer-phase1",
+      "volume": 11,
+      "chapter": "05",
+      "chapter_id": "v11-ch05",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S265",
+      "kind": "analyzer-phase2",
+      "volume": 11,
+      "chapter": "05",
+      "chapter_id": "v11-ch05",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S266",
+      "kind": "sma-a",
+      "volume": 11,
+      "chapter": "06",
+      "chapter_id": "v11-ch06",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S267",
+      "kind": "sma-b",
+      "volume": 11,
+      "chapter": "06",
+      "chapter_id": "v11-ch06",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S268",
+      "kind": "sma-c",
+      "volume": 11,
+      "chapter": "06",
+      "chapter_id": "v11-ch06",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S269",
+      "kind": "analyzer-phase1",
+      "volume": 11,
+      "chapter": "06",
+      "chapter_id": "v11-ch06",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S270",
+      "kind": "analyzer-phase2",
+      "volume": 11,
+      "chapter": "06",
+      "chapter_id": "v11-ch06",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S271",
+      "kind": "sma-a",
+      "volume": 11,
+      "chapter": "07",
+      "chapter_id": "v11-ch07",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S272",
+      "kind": "sma-b",
+      "volume": 11,
+      "chapter": "07",
+      "chapter_id": "v11-ch07",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S273",
+      "kind": "sma-c",
+      "volume": 11,
+      "chapter": "07",
+      "chapter_id": "v11-ch07",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S274",
+      "kind": "analyzer-phase1",
+      "volume": 11,
+      "chapter": "07",
+      "chapter_id": "v11-ch07",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S275",
+      "kind": "analyzer-phase2",
+      "volume": 11,
+      "chapter": "07",
+      "chapter_id": "v11-ch07",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S276",
+      "kind": "sma-a",
+      "volume": 11,
+      "chapter": "08",
+      "chapter_id": "v11-ch08",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S277",
+      "kind": "sma-b",
+      "volume": 11,
+      "chapter": "08",
+      "chapter_id": "v11-ch08",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S278",
+      "kind": "sma-c",
+      "volume": 11,
+      "chapter": "08",
+      "chapter_id": "v11-ch08",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S279",
+      "kind": "analyzer-phase1",
+      "volume": 11,
+      "chapter": "08",
+      "chapter_id": "v11-ch08",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S280",
+      "kind": "analyzer-phase2",
+      "volume": 11,
+      "chapter": "08",
+      "chapter_id": "v11-ch08",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S281",
+      "kind": "sma-a",
+      "volume": 11,
+      "chapter": "09",
+      "chapter_id": "v11-ch09",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S282",
+      "kind": "sma-b",
+      "volume": 11,
+      "chapter": "09",
+      "chapter_id": "v11-ch09",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S283",
+      "kind": "sma-c",
+      "volume": 11,
+      "chapter": "09",
+      "chapter_id": "v11-ch09",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S284",
+      "kind": "analyzer-phase1",
+      "volume": 11,
+      "chapter": "09",
+      "chapter_id": "v11-ch09",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S285",
+      "kind": "analyzer-phase2",
+      "volume": 11,
+      "chapter": "09",
+      "chapter_id": "v11-ch09",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S286",
+      "kind": "sma-a",
+      "volume": 11,
+      "chapter": "10",
+      "chapter_id": "v11-ch10",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S287",
+      "kind": "sma-b",
+      "volume": 11,
+      "chapter": "10",
+      "chapter_id": "v11-ch10",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S288",
+      "kind": "sma-c",
+      "volume": 11,
+      "chapter": "10",
+      "chapter_id": "v11-ch10",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S289",
+      "kind": "analyzer-phase1",
+      "volume": 11,
+      "chapter": "10",
+      "chapter_id": "v11-ch10",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S290",
+      "kind": "analyzer-phase2",
+      "volume": 11,
+      "chapter": "10",
+      "chapter_id": "v11-ch10",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S291",
+      "kind": "sma-a",
+      "volume": 11,
+      "chapter": "epilogue",
+      "chapter_id": "v11-epilogue",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S292",
+      "kind": "sma-b",
+      "volume": 11,
+      "chapter": "epilogue",
+      "chapter_id": "v11-epilogue",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S293",
+      "kind": "sma-c",
+      "volume": 11,
+      "chapter": "epilogue",
+      "chapter_id": "v11-epilogue",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S294",
+      "kind": "analyzer-phase1",
+      "volume": 11,
+      "chapter": "epilogue",
+      "chapter_id": "v11-epilogue",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S295",
+      "kind": "analyzer-phase2",
+      "volume": 11,
+      "chapter": "epilogue",
+      "chapter_id": "v11-epilogue",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S296",
+      "kind": "sma-a",
+      "volume": 13,
+      "chapter": "afterword",
+      "chapter_id": "v13-afterword",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S297",
+      "kind": "sma-b",
+      "volume": 13,
+      "chapter": "afterword",
+      "chapter_id": "v13-afterword",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S298",
+      "kind": "sma-c",
+      "volume": 13,
+      "chapter": "afterword",
+      "chapter_id": "v13-afterword",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S299",
+      "kind": "analyzer-phase1",
+      "volume": 13,
+      "chapter": "afterword",
+      "chapter_id": "v13-afterword",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S300",
+      "kind": "analyzer-phase2",
+      "volume": 13,
+      "chapter": "afterword",
+      "chapter_id": "v13-afterword",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S301",
+      "kind": "sma-a",
+      "volume": 13,
+      "chapter": "01",
+      "chapter_id": "v13-ch01",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S302",
+      "kind": "sma-b",
+      "volume": 13,
+      "chapter": "01",
+      "chapter_id": "v13-ch01",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S303",
+      "kind": "sma-c",
+      "volume": 13,
+      "chapter": "01",
+      "chapter_id": "v13-ch01",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S304",
+      "kind": "analyzer-phase1",
+      "volume": 13,
+      "chapter": "01",
+      "chapter_id": "v13-ch01",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S305",
+      "kind": "analyzer-phase2",
+      "volume": 13,
+      "chapter": "01",
+      "chapter_id": "v13-ch01",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S306",
+      "kind": "sma-a",
+      "volume": 13,
+      "chapter": "02",
+      "chapter_id": "v13-ch02",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S307",
+      "kind": "sma-b",
+      "volume": 13,
+      "chapter": "02",
+      "chapter_id": "v13-ch02",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S308",
+      "kind": "sma-c",
+      "volume": 13,
+      "chapter": "02",
+      "chapter_id": "v13-ch02",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S309",
+      "kind": "analyzer-phase1",
+      "volume": 13,
+      "chapter": "02",
+      "chapter_id": "v13-ch02",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S310",
+      "kind": "analyzer-phase2",
+      "volume": 13,
+      "chapter": "02",
+      "chapter_id": "v13-ch02",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S311",
+      "kind": "sma-a",
+      "volume": 13,
+      "chapter": "03",
+      "chapter_id": "v13-ch03",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S312",
+      "kind": "sma-b",
+      "volume": 13,
+      "chapter": "03",
+      "chapter_id": "v13-ch03",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S313",
+      "kind": "sma-c",
+      "volume": 13,
+      "chapter": "03",
+      "chapter_id": "v13-ch03",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S314",
+      "kind": "analyzer-phase1",
+      "volume": 13,
+      "chapter": "03",
+      "chapter_id": "v13-ch03",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S315",
+      "kind": "analyzer-phase2",
+      "volume": 13,
+      "chapter": "03",
+      "chapter_id": "v13-ch03",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S316",
+      "kind": "sma-a",
+      "volume": 13,
+      "chapter": "04",
+      "chapter_id": "v13-ch04",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S317",
+      "kind": "sma-b",
+      "volume": 13,
+      "chapter": "04",
+      "chapter_id": "v13-ch04",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S318",
+      "kind": "sma-c",
+      "volume": 13,
+      "chapter": "04",
+      "chapter_id": "v13-ch04",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S319",
+      "kind": "analyzer-phase1",
+      "volume": 13,
+      "chapter": "04",
+      "chapter_id": "v13-ch04",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S320",
+      "kind": "analyzer-phase2",
+      "volume": 13,
+      "chapter": "04",
+      "chapter_id": "v13-ch04",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S321",
+      "kind": "sma-a",
+      "volume": 13,
+      "chapter": "05",
+      "chapter_id": "v13-ch05",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S322",
+      "kind": "sma-b",
+      "volume": 13,
+      "chapter": "05",
+      "chapter_id": "v13-ch05",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S323",
+      "kind": "sma-c",
+      "volume": 13,
+      "chapter": "05",
+      "chapter_id": "v13-ch05",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S324",
+      "kind": "analyzer-phase1",
+      "volume": 13,
+      "chapter": "05",
+      "chapter_id": "v13-ch05",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S325",
+      "kind": "analyzer-phase2",
+      "volume": 13,
+      "chapter": "05",
+      "chapter_id": "v13-ch05",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S326",
+      "kind": "sma-a",
+      "volume": 13,
+      "chapter": "06",
+      "chapter_id": "v13-ch06",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S327",
+      "kind": "sma-b",
+      "volume": 13,
+      "chapter": "06",
+      "chapter_id": "v13-ch06",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S328",
+      "kind": "sma-c",
+      "volume": 13,
+      "chapter": "06",
+      "chapter_id": "v13-ch06",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S329",
+      "kind": "analyzer-phase1",
+      "volume": 13,
+      "chapter": "06",
+      "chapter_id": "v13-ch06",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S330",
+      "kind": "analyzer-phase2",
+      "volume": 13,
+      "chapter": "06",
+      "chapter_id": "v13-ch06",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S331",
+      "kind": "sma-a",
+      "volume": 13,
+      "chapter": "07",
+      "chapter_id": "v13-ch07",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S332",
+      "kind": "sma-b",
+      "volume": 13,
+      "chapter": "07",
+      "chapter_id": "v13-ch07",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S333",
+      "kind": "sma-c",
+      "volume": 13,
+      "chapter": "07",
+      "chapter_id": "v13-ch07",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S334",
+      "kind": "analyzer-phase1",
+      "volume": 13,
+      "chapter": "07",
+      "chapter_id": "v13-ch07",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S335",
+      "kind": "analyzer-phase2",
+      "volume": 13,
+      "chapter": "07",
+      "chapter_id": "v13-ch07",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S336",
+      "kind": "sma-a",
+      "volume": 13,
+      "chapter": "08",
+      "chapter_id": "v13-ch08",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S337",
+      "kind": "sma-b",
+      "volume": 13,
+      "chapter": "08",
+      "chapter_id": "v13-ch08",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S338",
+      "kind": "sma-c",
+      "volume": 13,
+      "chapter": "08",
+      "chapter_id": "v13-ch08",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S339",
+      "kind": "analyzer-phase1",
+      "volume": 13,
+      "chapter": "08",
+      "chapter_id": "v13-ch08",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S340",
+      "kind": "analyzer-phase2",
+      "volume": 13,
+      "chapter": "08",
+      "chapter_id": "v13-ch08",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S341",
+      "kind": "sma-a",
+      "volume": 13,
+      "chapter": "epilogue",
+      "chapter_id": "v13-epilogue",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S342",
+      "kind": "sma-b",
+      "volume": 13,
+      "chapter": "epilogue",
+      "chapter_id": "v13-epilogue",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S343",
+      "kind": "sma-c",
+      "volume": 13,
+      "chapter": "epilogue",
+      "chapter_id": "v13-epilogue",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S344",
+      "kind": "analyzer-phase1",
+      "volume": 13,
+      "chapter": "epilogue",
+      "chapter_id": "v13-epilogue",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S345",
+      "kind": "analyzer-phase2",
+      "volume": 13,
+      "chapter": "epilogue",
+      "chapter_id": "v13-epilogue",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S346",
+      "kind": "sma-a",
+      "volume": 12,
+      "chapter": "afterword",
+      "chapter_id": "v12-afterword",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S347",
+      "kind": "sma-b",
+      "volume": 12,
+      "chapter": "afterword",
+      "chapter_id": "v12-afterword",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S348",
+      "kind": "sma-c",
+      "volume": 12,
+      "chapter": "afterword",
+      "chapter_id": "v12-afterword",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S349",
+      "kind": "analyzer-phase1",
+      "volume": 12,
+      "chapter": "afterword",
+      "chapter_id": "v12-afterword",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S350",
+      "kind": "analyzer-phase2",
+      "volume": 12,
+      "chapter": "afterword",
+      "chapter_id": "v12-afterword",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S351",
+      "kind": "sma-a",
+      "volume": 12,
+      "chapter": "prologue",
+      "chapter_id": "v12-prologue",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S352",
+      "kind": "sma-b",
+      "volume": 12,
+      "chapter": "prologue",
+      "chapter_id": "v12-prologue",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S353",
+      "kind": "sma-c",
+      "volume": 12,
+      "chapter": "prologue",
+      "chapter_id": "v12-prologue",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S354",
+      "kind": "analyzer-phase1",
+      "volume": 12,
+      "chapter": "prologue",
+      "chapter_id": "v12-prologue",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S355",
+      "kind": "analyzer-phase2",
+      "volume": 12,
+      "chapter": "prologue",
+      "chapter_id": "v12-prologue",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S356",
+      "kind": "sma-a",
+      "volume": 12,
+      "chapter": "01",
+      "chapter_id": "v12-ch01",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S357",
+      "kind": "sma-b",
+      "volume": 12,
+      "chapter": "01",
+      "chapter_id": "v12-ch01",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S358",
+      "kind": "sma-c",
+      "volume": 12,
+      "chapter": "01",
+      "chapter_id": "v12-ch01",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S359",
+      "kind": "analyzer-phase1",
+      "volume": 12,
+      "chapter": "01",
+      "chapter_id": "v12-ch01",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S360",
+      "kind": "analyzer-phase2",
+      "volume": 12,
+      "chapter": "01",
+      "chapter_id": "v12-ch01",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S361",
+      "kind": "sma-a",
+      "volume": 12,
+      "chapter": "02",
+      "chapter_id": "v12-ch02",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S362",
+      "kind": "sma-b",
+      "volume": 12,
+      "chapter": "02",
+      "chapter_id": "v12-ch02",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S363",
+      "kind": "sma-c",
+      "volume": 12,
+      "chapter": "02",
+      "chapter_id": "v12-ch02",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S364",
+      "kind": "analyzer-phase1",
+      "volume": 12,
+      "chapter": "02",
+      "chapter_id": "v12-ch02",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S365",
+      "kind": "analyzer-phase2",
+      "volume": 12,
+      "chapter": "02",
+      "chapter_id": "v12-ch02",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S366",
+      "kind": "sma-a",
+      "volume": 12,
+      "chapter": "04",
+      "chapter_id": "v12-ch04",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S367",
+      "kind": "sma-b",
+      "volume": 12,
+      "chapter": "04",
+      "chapter_id": "v12-ch04",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S368",
+      "kind": "sma-c",
+      "volume": 12,
+      "chapter": "04",
+      "chapter_id": "v12-ch04",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S369",
+      "kind": "analyzer-phase1",
+      "volume": 12,
+      "chapter": "04",
+      "chapter_id": "v12-ch04",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S370",
+      "kind": "analyzer-phase2",
+      "volume": 12,
+      "chapter": "04",
+      "chapter_id": "v12-ch04",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S371",
+      "kind": "sma-a",
+      "volume": 12,
+      "chapter": "05",
+      "chapter_id": "v12-ch05",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S372",
+      "kind": "sma-b",
+      "volume": 12,
+      "chapter": "05",
+      "chapter_id": "v12-ch05",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S373",
+      "kind": "sma-c",
+      "volume": 12,
+      "chapter": "05",
+      "chapter_id": "v12-ch05",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S374",
+      "kind": "analyzer-phase1",
+      "volume": 12,
+      "chapter": "05",
+      "chapter_id": "v12-ch05",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S375",
+      "kind": "analyzer-phase2",
+      "volume": 12,
+      "chapter": "05",
+      "chapter_id": "v12-ch05",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S376",
+      "kind": "sma-a",
+      "volume": 12,
+      "chapter": "07",
+      "chapter_id": "v12-ch07",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S377",
+      "kind": "sma-b",
+      "volume": 12,
+      "chapter": "07",
+      "chapter_id": "v12-ch07",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S378",
+      "kind": "sma-c",
+      "volume": 12,
+      "chapter": "07",
+      "chapter_id": "v12-ch07",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S379",
+      "kind": "analyzer-phase1",
+      "volume": 12,
+      "chapter": "07",
+      "chapter_id": "v12-ch07",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S380",
+      "kind": "analyzer-phase2",
+      "volume": 12,
+      "chapter": "07",
+      "chapter_id": "v12-ch07",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S381",
+      "kind": "sma-a",
+      "volume": 12,
+      "chapter": "08",
+      "chapter_id": "v12-ch08",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S382",
+      "kind": "sma-b",
+      "volume": 12,
+      "chapter": "08",
+      "chapter_id": "v12-ch08",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S383",
+      "kind": "sma-c",
+      "volume": 12,
+      "chapter": "08",
+      "chapter_id": "v12-ch08",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S384",
+      "kind": "analyzer-phase1",
+      "volume": 12,
+      "chapter": "08",
+      "chapter_id": "v12-ch08",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0063-S385",
+      "kind": "analyzer-phase2",
+      "volume": 12,
+      "chapter": "08",
+      "chapter_id": "v12-ch08",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    }
+  ]
+}

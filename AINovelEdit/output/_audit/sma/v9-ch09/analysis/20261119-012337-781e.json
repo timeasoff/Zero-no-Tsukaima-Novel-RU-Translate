@@ -1,0 +1,375 @@
+{
+  "analysis_id": "20261119-012337-781e",
+  "chapter": "v9-ch09",
+  "inputs": {
+    "a_runs": [
+      "20261117-042835-bfe6",
+      "20261118-154508-16c6"
+    ],
+    "b_runs": [
+      "20261117-042835-0afd",
+      "20261119-012257-8112"
+    ],
+    "c_runs": [
+      "20261117-042835-5f33"
+    ],
+    "precheck": "output/_audit/sma/v9-ch09/precheck/omission-precheck.json",
+    "phase1": "20261119-012257-4a40.phase1.json"
+  },
+  "results": [
+    {
+      "block": 1,
+      "candidate_id": "C-1-01",
+      "sources": {
+        "a": [
+          "20261117-042835-bfe6"
+        ],
+        "b": [
+          "20261117-042835-0afd"
+        ],
+        "c": [],
+        "precheck": false
+      },
+      "source": "許せない",
+      "current": "он никак не мог себе простить",
+      "fidelity": "MEANING_SHIFT",
+      "status": "FALSE_POSITIVE",
+      "reason": "A1/B-old historical: «не укладывалось в голове» исправлено на «не мог простить» — 許せない передан.",
+      "suggestion": "",
+      "action": "PRESERVED"
+    },
+    {
+      "block": 2,
+      "candidate_id": "C-2-01",
+      "sources": {
+        "a": [
+          "20261117-042835-bfe6"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "月の向こう",
+      "current": "за луной",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "A1 historical: пространственный оттенок уточнён; потери нет.",
+      "suggestion": "",
+      "action": "PRESERVED"
+    },
+    {
+      "block": 4,
+      "candidate_id": "C-4-01",
+      "sources": {
+        "a": [],
+        "b": [],
+        "c": [
+          "20261117-042835-5f33"
+        ],
+        "precheck": false
+      },
+      "source": "ироничное отрицание",
+      "current": "— И как ты можешь такое говорить!",
+      "fidelity": "MEANING_SHIFT",
+      "status": "DISPUTED",
+      "reason": "C фиксировало замену ироничного отрицания на гневный вопрос; текущая реплика сохраняет негодование, но иронический подтекст спорен. DISPUTED без правки.",
+      "suggestion": "",
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 5,
+      "candidate_id": "C-5-01",
+      "sources": {
+        "a": [
+          "20261117-042835-bfe6"
+        ],
+        "b": [
+          "20261117-042835-0afd"
+        ],
+        "c": [],
+        "precheck": false
+      },
+      "source": "貸したまえ／「одолжить»",
+      "current": "Мы хотим, чтобы ты одолжила нам силу",
+      "fidelity": "MEANING_SHIFT",
+      "status": "FALSE_POSITIVE",
+      "reason": "A1/B-old инверсия одолжения исправлена: заёмщики — «мы», а не Сайто.",
+      "suggestion": "",
+      "action": "PRESERVED"
+    },
+    {
+      "block": 7,
+      "candidate_id": "C-7-01",
+      "sources": {
+        "a": [],
+        "b": [
+          "20261117-042835-0afd"
+        ],
+        "c": [],
+        "precheck": false
+      },
+      "source": "заклинание Табиты",
+      "current": "она выкрикнула: «ДЕЛ ХАГАРАЛЬС»",
+      "fidelity": "MEANING_SHIFT",
+      "status": "FALSE_POSITIVE",
+      "reason": "B-old historical: «он выкрикнул» исправлено на «она» — субъект Табита восстановлен.",
+      "suggestion": "",
+      "action": "PRESERVED"
+    },
+    {
+      "block": 8,
+      "candidate_id": "C-8-01",
+      "sources": {
+        "a": [],
+        "b": [
+          "20261117-042835-0afd"
+        ],
+        "c": [],
+        "precheck": false
+      },
+      "source": "неспособность",
+      "current": "Без времени на заклинание он не мог применить мощные чары",
+      "fidelity": "MEANING_SHIFT",
+      "status": "FALSE_POSITIVE",
+      "reason": "B-old historical: субъект уточнён по JA (Сайто), потери нет.",
+      "suggestion": "",
+      "action": "PRESERVED"
+    },
+    {
+      "block": 9,
+      "candidate_id": "C-9-01",
+      "sources": {
+        "a": [
+          "20261117-042835-bfe6"
+        ],
+        "b": [
+          "20261119-012257-8112"
+        ],
+        "c": [],
+        "precheck": false
+      },
+      "source": "番犬",
+      "current": "верный пёс наших господ",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "CONFIRMED_ERROR",
+      "reason": "A1 и новый B: 番犬 — сторожевой пёс, «верный пёс» передаёт только преданность. Ролевой компонент стража утрачен; правка не применяется.",
+      "suggestion": "сторожевой пёс наших господ",
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 9,
+      "candidate_id": "C-9-02",
+      "sources": {
+        "a": [
+          "20261117-042835-bfe6"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "視線",
+      "current": "Табита только смотрела на него глазами",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "A1 historical: взгляд уточнён «глазами, в которых не прочесть» — оттенок передан.",
+      "suggestion": "",
+      "action": "PRESERVED"
+    },
+    {
+      "block": 10,
+      "candidate_id": "C-10-01",
+      "sources": {
+        "a": [
+          "20261117-042835-bfe6"
+        ],
+        "b": [
+          "20261117-042835-0afd"
+        ],
+        "c": [],
+        "precheck": false
+      },
+      "source": "「俺は容赦できねえ」",
+      "current": "— Ты сильная, поэтому не можешь щадить",
+      "fidelity": "MEANING_SHIFT",
+      "status": "FALSE_POSITIVE",
+      "reason": "A1/B-old инверсия субъекта исправлена (реплика Сайто о себе); по текущему тексту ошибки нет.",
+      "suggestion": "",
+      "action": "PRESERVED"
+    },
+    {
+      "block": 12,
+      "candidate_id": "C-12-01",
+      "sources": {
+        "a": [
+          "20261117-042835-bfe6"
+        ],
+        "b": [
+          "20261117-042835-0afd"
+        ],
+        "c": [],
+        "precheck": false
+      },
+      "source": "位置の逆転",
+      "current": "Он оседлал её маленькое тело и занёс меч",
+      "fidelity": "MEANING_SHIFT",
+      "status": "FALSE_POSITIVE",
+      "reason": "A1/B-old reversal устранён: Сайто сверху, Табита снизу — соответствует JA.",
+      "suggestion": "",
+      "action": "PRESERVED"
+    },
+    {
+      "block": 14,
+      "candidate_id": "C-14-01",
+      "sources": {
+        "a": [
+          "20261117-042835-bfe6"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "恥ずかしい",
+      "current": "Жалко… я почему пожалел врага",
+      "fidelity": "MEANING_SHIFT",
+      "status": "DISPUTED",
+      "reason": "A1 фиксировало замену стыда на жалость; в текущем контексте Сайто действительно жалеет Табиту, поэтому выбор эмоции неоднозначен. DISPUTED.",
+      "suggestion": "",
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 15,
+      "candidate_id": "C-15-01",
+      "sources": {
+        "a": [
+          "20261117-042835-bfe6"
+        ],
+        "b": [
+          "20261119-012257-8112"
+        ],
+        "c": [],
+        "precheck": false
+      },
+      "source": "飼い犬が主人に",
+      "current": "пёс собирается укусить госпожу?",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "CONFIRMED_ERROR",
+      "reason": "A1 и новый B: утрачены компоненты 飼い犬 (приручённый) и 主人 (хозяин); иерархия отношения «хозяин — пёс» ослаблена. Правка не применяется.",
+      "suggestion": "Приручённый пёс собрался укусить свою госпожу?",
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 16,
+      "candidate_id": "C-16-01",
+      "sources": {
+        "a": [
+          "20261117-042835-bfe6"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "большая",
+      "current": "В несколько раз крупнее предыдущей",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "A1 historical: степень уточнена «в несколько раз крупнее» — данныесоответствие передан.",
+      "suggestion": "",
+      "action": "PRESERVED"
+    },
+    {
+      "block": 16,
+      "candidate_id": "C-16-02",
+      "sources": {
+        "a": [],
+        "b": [],
+        "c": [],
+        "precheck": true
+      },
+      "source": "(precheck 16)",
+      "current": "",
+      "fidelity": "MISSING",
+      "status": "FALSE_POSITIVE",
+      "reason": "Pre-check omission-сигнал снят как сдвиг границ блоков;содержание покрыто.",
+      "suggestion": "",
+      "action": "PRESERVED"
+    },
+    {
+      "block": 17,
+      "candidate_id": "C-17-01",
+      "sources": {
+        "a": [
+          "20261117-042835-bfe6"
+        ],
+        "b": [
+          "20261117-042835-0afd"
+        ],
+        "c": [],
+        "precheck": false
+      },
+      "source": "数十匹",
+      "current": "Целая стая",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "A1/B-old историческое расхождение «около десятка» исправлено на «целая стая».",
+      "suggestion": "",
+      "action": "PRESERVED"
+    },
+    {
+      "block": 17,
+      "candidate_id": "C-17-02",
+      "sources": {
+        "a": [
+          "20261117-042835-bfe6"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "鳥→お化け",
+      "current": "То, что приняли за дикую птицу",
+      "fidelity": "MEANING_SHIFT",
+      "status": "FALSE_POSITIVE",
+      "reason": "A1 historical: «призрак» заменено «дикая птица» — образ соответствует JA.",
+      "suggestion": "",
+      "action": "PRESERVED"
+    },
+    {
+      "block": 22,
+      "candidate_id": "C-22-01",
+      "sources": {
+        "a": [
+          "20261117-042835-bfe6"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "着地しかけた",
+      "current": "чуть не приземлилась",
+      "fidelity": "MEANING_SHIFT",
+      "status": "FALSE_POSITIVE",
+      "reason": "A1 historical: «почти приземлилась» заменено «чуть не приземлилась» — событие передано.",
+      "suggestion": "",
+      "action": "PRESERVED"
+    },
+    {
+      "block": 23,
+      "candidate_id": "C-23-01",
+      "sources": {
+        "a": [
+          "20261117-042835-bfe6"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "ガーゴイルが迎えに",
+      "current": "Горгульи устремились навстречу",
+      "fidelity": "MEANING_SHIFT",
+      "status": "FALSE_POSITIVE",
+      "reason": "A1 historical: субъект реакции и направление движения уточнены по JA.",
+      "suggestion": "",
+      "action": "PRESERVED"
+    }
+  ]
+}

@@ -1,0 +1,119 @@
+{
+  "analysis_id": "20261119-165756-b1a1",
+  "chapter": "v11-ch06",
+  "inputs": {
+    "a_runs": [
+      "20261117-124512-b2bd",
+      "20261118-174255-1b8b",
+      "20261119-165756-75d7"
+    ],
+    "b_runs": [
+      "20261117-124512-162b",
+      "20261119-033905-7d63",
+      "20261119-165756-ef8d"
+    ],
+    "c_runs": [
+      "20261117-124512-2394",
+      "20261119-165756-355e"
+    ],
+    "precheck": "output/_audit/sma/v11-ch06/precheck/omission-precheck.json",
+    "phase1": "20261119-165756-7866.phase1.json"
+  },
+  "results": [
+    {
+      "block": 20,
+      "candidate_id": "CH06-01-nikai",
+      "sources": {
+        "a": [
+          "20261119-165756-75d7"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "「二回ぐらい、死になさい」",
+      "current": "— хотя бы два раза умри!",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "DISPUTED",
+      "reason": "二回ぐらい — приблизительность; «хотя бы» меняет оттенок. Фаза 1 и A; REPORT_ONLY.",
+      "suggestion": "…раз этак два умри!",
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 1,
+      "candidate_id": "CH06-02-mail1",
+      "sources": {
+        "a": [],
+        "b": [
+          "20261119-165756-ef8d"
+        ],
+        "c": [],
+        "precheck": false
+      },
+      "source": "高さは三十メイルほどもある",
+      "current": "Высота — метров тридцать",
+      "fidelity": "MEANING_SHIFT",
+      "status": "DISPUTED",
+      "reason": "メイル → «метры»: смена единицы. Фаза 1 и B; REPORT_ONLY.",
+      "suggestion": "Высота — миль тридцать.",
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 4,
+      "candidate_id": "CH06-03-mail2",
+      "sources": {
+        "a": [],
+        "b": [
+          "20261119-165756-ef8d"
+        ],
+        "c": [],
+        "precheck": false
+      },
+      "source": "二十メイルもの高さ",
+      "current": "метров на двадцать",
+      "fidelity": "MEANING_SHIFT",
+      "status": "DISPUTED",
+      "reason": "Тот же класс подмены единицы во втором вхождении. Фаза 1 и B; REPORT_ONLY.",
+      "suggestion": "миль на двадцать.",
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 12,
+      "candidate_id": "CH06-04-funiki",
+      "sources": {
+        "a": [],
+        "b": [],
+        "c": [
+          "20261119-165756-355e"
+        ],
+        "precheck": false
+      },
+      "source": "「と？」 「雰囲気よ」",
+      "current": "— Аура.",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "DISPUTED",
+      "reason": "雰囲気 → «аура»: мистический оттенок в комической реплике. Фаза 1 и C; REPORT_ONLY.",
+      "suggestion": "— Впечатление.",
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 9,
+      "candidate_id": "CH06-05-ono",
+      "sources": {
+        "a": [],
+        "b": [],
+        "c": [
+          "20261119-165756-355e"
+        ],
+        "precheck": false
+      },
+      "source": "「もう一人のあなたがいて、そう言わせているように感じる」",
+      "current": "внутри тебя есть ещё один ты — и это он заставляет тебя так говорить",
+      "fidelity": "ADDITION",
+      "status": "FALSE_POSITIVE",
+      "reason": "«он» — слабая конкретизация; по JA «もう一人のあなた» без рода, но в русском «ещё один ты» допустимо. PRESERVED.",
+      "suggestion": "Нет (текст сохранён).",
+      "action": "PRESERVED"
+    }
+  ]
+}

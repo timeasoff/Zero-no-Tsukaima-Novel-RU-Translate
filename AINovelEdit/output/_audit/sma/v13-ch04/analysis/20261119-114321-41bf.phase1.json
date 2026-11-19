@@ -1,0 +1,26 @@
+{
+  "analysis_id": "20261119-114321-41bf.phase1",
+  "chapter": "v13-ch04",
+  "phase": 1,
+  "scope": "blind",
+  "results": [
+    {
+      "block": 9,
+      "finding": "PRAGMATIC_SHIFT",
+      "note": "お気になさらないでね？: вежливое успокоение → «вы не против?» (запрос согласия); акт и учтивость изменены.",
+      "confidence": "HIGH"
+    },
+    {
+      "block": 11,
+      "finding": "PRAGMATIC_SHIFT",
+      "note": "イヤぁよ: эмоциональный отказ → мягкое «Мне не хочется»; сила отказа ослаблена.",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 12,
+      "finding": "PRAGMATIC_SHIFT",
+      "note": "イチャイチャ: игривое «милование» → нейтральное «застигнутые врасплох».",
+      "confidence": "LOW"
+    }
+  ]
+}

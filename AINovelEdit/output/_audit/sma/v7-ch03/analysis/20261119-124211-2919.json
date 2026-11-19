@@ -1,0 +1,403 @@
+{
+  "analysis_id": "20261119-124211-2919",
+  "chapter": "v7-ch03",
+  "inputs": {
+    "a_runs": [
+      "20261116-213628-f1ec",
+      "20261118-131848-b23d",
+      "20261119-124211-50c9"
+    ],
+    "b_runs": [
+      "20261116-213628-cfa3",
+      "20261118-200443-7f3a",
+      "20261119-124211-38a6"
+    ],
+    "c_runs": [
+      "20261116-213628-ee30",
+      "20261119-075402-de78",
+      "20261119-124211-6aee"
+    ],
+    "precheck": "output/_audit/sma/v7-ch03/precheck/omission-precheck.json",
+    "phase1": "20261119-124211-8e0c.phase1.json"
+  },
+  "results": [
+    {
+      "block": 1,
+      "candidate_id": "CH3-01-hyoushibatsu",
+      "sources": {
+        "a": [
+          "20261118-131848-b23d",
+          "20261119-124211-50c9"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "侵攻軍首脳部は拍子抜けした。",
+      "current": "командование были озадачены.",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "DISPUTED",
+      "reason": "Оттенок обманутых ожиданий ослаблен; замена эпитета — литературное решение, в этом раунде REPORT_ONLY.",
+      "suggestion": "были разочарованы отсутствием удара",
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 2,
+      "candidate_id": "CH3-02-niramiau",
+      "sources": {
+        "a": [
+          "20261118-131848-b23d",
+          "20261119-124211-50c9"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "二人は睨み合った。",
+      "current": "Они уставились друг на друга.",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "DISPUTED",
+      "reason": "Враждебность взгляда перед дракой сглажена; REPORT_ONLY.",
+      "suggestion": "Они злобно уставились друг на друга.",
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 5,
+      "candidate_id": "CH3-03-bonyaku",
+      "sources": {
+        "a": [
+          "20261116-213628-f1ec"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "煩そうに、将軍たちは相槌をうった。",
+      "current": "— Да, странно, — недовольно поддакнули генералы.",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "Старое «рассеянно» исправлено на «недовольно», что соответствует 煩そうに и следующей реплике «И из-за этого ты прервала совет?».",
+      "suggestion": "Нет (текст уже исправлен).",
+      "action": "PRESERVED"
+    },
+    {
+      "block": 7,
+      "candidate_id": "CH3-04-missing-boat",
+      "sources": {
+        "a": [
+          "20261116-213628-f1ec"
+        ],
+        "b": [
+          "20261116-213628-cfa3"
+        ],
+        "c": [],
+        "precheck": false
+      },
+      "source": "虚無は秘密なんだろ！ 噂が広まって敵に知られたら大変だろ！ 狙われちゃうよ！",
+      "current": "««Пустота» же секрет! Если слухи дойдут до врага — беда! Нас будут охотиться!»",
+      "fidelity": "MISSING",
+      "status": "FALSE_POSITIVE",
+      "reason": "Pre-check по ch03 кандидатов не дал; исторический omission-кандидат закрыт: текущий RU содержит полный обмен реплик Сайто.",
+      "suggestion": "Нет (текст уже исправлен).",
+      "action": "PRESERVED"
+    },
+    {
+      "block": 9,
+      "candidate_id": "CH3-05-potsunto",
+      "sources": {
+        "a": [
+          "20261116-213628-f1ec"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "ぽつんと寂しく張られているのかは",
+      "current": "Почему её поставили так одиноко, в стороне от остальных,",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "Оттенок одинокой, заброшенной палатки восстановлен («так одиноко»).",
+      "suggestion": "Нет (текст уже исправлен).",
+      "action": "PRESERVED"
+    },
+    {
+      "block": 10,
+      "candidate_id": "CH3-06-shibai",
+      "sources": {
+        "a": [
+          "20261116-213628-f1ec"
+        ],
+        "b": [
+          "20261116-213628-cfa3",
+          "20261118-200443-7f3a",
+          "20261119-124211-38a6"
+        ],
+        "c": [],
+        "precheck": false
+      },
+      "source": "「芝居じゃねえんだぞ」",
+      "current": "«Да не играет он!»",
+      "fidelity": "MEANING_SHIFT",
+      "status": "CONFIRMED_ERROR",
+      "reason": "Ось fidelity: JA — упрёк «хватит играть роль», RU отрицает сам факт лицедейства; полярность инвертирована. Ось action/status: однозначная ошибка, CONFIRMED_ERROR. По политике раунда текст не правится — REPORT_ONLY.",
+      "suggestion": "«Да это же спектакль, а не дело!»",
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 10,
+      "candidate_id": "CH3-07-daredemo",
+      "sources": {
+        "a": [],
+        "b": [
+          "20261118-200443-7f3a",
+          "20261119-124211-38a6"
+        ],
+        "c": [],
+        "precheck": false
+      },
+      "source": "「誰でもいいんだろうし」",
+      "current": "«О ком угодно, только не обо мне, да?»",
+      "fidelity": "ADDITION",
+      "status": "DISPUTED",
+      "reason": "Добавлено исключение «только не обо мне», сужающее обобщение JA. Смысл сцены не ломается; REPORT_ONLY.",
+      "suggestion": "«Ведь кто угодно сгодится, да?»",
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 10,
+      "candidate_id": "CH3-08-tsun",
+      "sources": {
+        "a": [
+          "20261118-131848-b23d"
+        ],
+        "b": [],
+        "c": [
+          "20261119-124211-6aee"
+        ],
+        "precheck": false
+      },
+      "source": "「つん、と澄ましてルイズが言った」",
+      "current": "«сказала Луиза, отвернувшись»",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "DISPUTED",
+      "reason": "Демонстративная холодность ответа заменена нейтральным жестом; прагматический оттенок утрачен, REPORT_ONLY.",
+      "suggestion": "«сухо бросила Луиза, сохраняя холодный тон»",
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 11,
+      "candidate_id": "CH3-09-gatei",
+      "sources": {
+        "a": [],
+        "b": [
+          "20261116-213628-cfa3"
+        ],
+        "c": [],
+        "precheck": false
+      },
+      "source": "「間が抜けてる以外は飛行にゃ関係ないだろ」",
+      "current": "«Помимо того что ты нелепый, прочее к полёту отношения не имеет»",
+      "fidelity": "MEANING_SHIFT",
+      "status": "FALSE_POSITIVE",
+      "reason": "Старая инверсия логической связи устранена: текущий RU точно передаёт, что нелепость — единственное related к полёту, а прочее нет.",
+      "suggestion": "Нет (текст уже исправлен).",
+      "action": "PRESERVED"
+    },
+    {
+      "block": 14,
+      "candidate_id": "CH3-10-dekiru",
+      "sources": {
+        "a": [
+          "20261119-124211-50c9"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "「どうやったらきみのような、妖精みたいに可愛い女の子ができるんだい？」",
+      "current": "«Как заполучить такую девушку, как вы, прелестную, словно фея?»",
+      "fidelity": "MEANING_SHIFT",
+      "status": "DISPUTED",
+      "reason": "できる («как создаётся такая») → «заполучить» («как добиться») меняет речевой ход; в этом раунде REPORT_ONLY.",
+      "suggestion": "«Как же получается такая девушка, как вы?»",
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 14,
+      "candidate_id": "CH3-11-futaimuku",
+      "sources": {
+        "a": [
+          "20261118-131848-b23d",
+          "20261119-124211-50c9"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "ルイズは軽く俯いた。",
+      "current": "Луиза слегка опустила глаза.",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "DISPUTED",
+      "reason": "俯いた (склонить голову) → «опустила глаза»: жест ослаблен; REPORT_ONLY.",
+      "suggestion": "Луиза слегка склонила голову.",
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 16,
+      "candidate_id": "CH3-12-kekentaru",
+      "sources": {
+        "a": [
+          "20261118-131848-b23d"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "神の敬虔なるしもべたるぼくには理解できないね",
+      "current": "Мне, смиренному слуге Бога, не понять",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "DISPUTED",
+      "reason": "敬虔なる (благочестивый) → «смиренный»: оттенок набожности заменён смирением; REPORT_ONLY.",
+      "suggestion": "Мне, благочестивому слуге Бога, не понять",
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 16,
+      "candidate_id": "CH3-13-gobunki",
+      "sources": {
+        "a": [
+          "20261119-124211-50c9"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "五分おき程度に、風竜にアルビオンの〝ダンス〟を踊らせている",
+      "current": "раз за разом заставляя Адзурро исполнять альбионский «танец»",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "DISPUTED",
+      "reason": "Интервал «каждые пять минут» утрачен; REPORT_ONLY.",
+      "suggestion": "примерно каждые пять минут",
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 19,
+      "candidate_id": "CH3-14-hesaki",
+      "sources": {
+        "a": [],
+        "b": [
+          "20261116-213628-cfa3",
+          "20261118-200443-7f3a",
+          "20261119-124211-38a6"
+        ],
+        "c": [],
+        "precheck": false
+      },
+      "source": "後ろについた敵は、てっきり囮に注意をひきつけたと思ったのだろうか。",
+      "current": "решил, что его приняли за приманку,",
+      "fidelity": "MEANING_SHIFT",
+      "status": "CONFIRMED_ERROR",
+      "reason": "Ось fidelity: референс приманки смещён с переднего драгуна на тыльного, ломается причина сближения. Ось action/status: однозначная референсная ошибка, CONFIRMED_ERROR; по политике раунда без правки — REPORT_ONLY.",
+      "suggestion": "…решил, что внимание Джулио привлекла приманка,",
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 19,
+      "candidate_id": "CH3-15-breath",
+      "sources": {
+        "a": [
+          "20261116-213628-f1ec"
+        ],
+        "b": [
+          "20261116-213628-cfa3"
+        ],
+        "c": [],
+        "precheck": false
+      },
+      "source": "「ブレスだ！ アズーロ！」",
+      "current": "«Пламя! Адзурро!»",
+      "fidelity": "MEANING_SHIFT",
+      "status": "FALSE_POSITIVE",
+      "reason": "Старая лексическая ошибка «Брешь» исправлена на «Пламя», что соответствует ブレス (огненный выдох) и следующему описанию.",
+      "suggestion": "Нет (текст уже исправлен).",
+      "action": "PRESERVED"
+    },
+    {
+      "block": 19,
+      "candidate_id": "CH3-16-usurashiki",
+      "sources": {
+        "a": [
+          "20261116-213628-f1ec"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "ジュリオは薄笑いを浮かべたまま、囮を追いかけている。",
+      "current": "Джулио, сохраняя свою усмешку, продолжал гнаться за приманкой.",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "«Лёгкая улыбка» заменена на «усмешку» — насмешливо-самоуверенный оттенок 薄笑い восстановлен.",
+      "suggestion": "Нет (текст уже исправлен).",
+      "action": "PRESERVED"
+    },
+    {
+      "block": 20,
+      "candidate_id": "CH3-17-azen",
+      "sources": {
+        "a": [
+          "20261116-213628-f1ec"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "唖然として、ルイズはことの成り行きを見守っていた。",
+      "current": "Луиза в изумлении следила за происходящим.",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "«Безмолвно» заменено на «в изумлении» — эмоция 唖然 восстановлена.",
+      "suggestion": "Нет (текст уже исправлен).",
+      "action": "PRESERVED"
+    },
+    {
+      "block": 20,
+      "candidate_id": "CH3-18-hazeru",
+      "sources": {
+        "a": [
+          "20261118-131848-b23d",
+          "20261119-124211-50c9"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "はぜるような怒りを感じたルイズは首をすくめる。",
+      "current": "почувствовала, как в воздухе пахнет яростью, и съежилась.",
+      "fidelity": "ADDITION",
+      "status": "DISPUTED",
+      "reason": "Обонятельный компонент «пахнет яростью» отсутствует в JA (はぜる — трескучая, клокочущая ярость). Сенсорная подмена; REPORT_ONLY.",
+      "suggestion": "почувствовала клокочущую ярость и съежилась.",
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 20,
+      "candidate_id": "CH3-19-ryuu-toka",
+      "sources": {
+        "a": [],
+        "b": [],
+        "c": [
+          "20261119-124211-6aee"
+        ],
+        "precheck": false
+      },
+      "source": "「りゅ、竜がこんな動きをする生き物だなんて！」",
+      "current": "«Р-разве драконы умеют такое?!»",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "DISPUTED",
+      "reason": "Восклицание изумления переоформлено в вопрос, ослаблена эмоциональная категоричность; REPORT_ONLY.",
+      "suggestion": "«Д-драконы — вот какие существа бывают!»",
+      "action": "REPORT_ONLY"
+    }
+  ]
+}

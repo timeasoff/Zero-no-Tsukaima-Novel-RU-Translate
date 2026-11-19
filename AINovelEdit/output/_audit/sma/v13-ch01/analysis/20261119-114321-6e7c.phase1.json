@@ -1,0 +1,26 @@
+{
+  "analysis_id": "20261119-114321-6e7c.phase1",
+  "chapter": "v13-ch01",
+  "phase": 1,
+  "scope": "blind",
+  "results": [
+    {
+      "block": 7,
+      "finding": "PRAGMATIC_SHIFT",
+      "note": "痛み入ります / いらしてくださいませ / お待ちでございます: скромно-почтительный регистр → нейтральный «тронут / прошу / ждёт».",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 12,
+      "finding": "PRAGMATIC_SHIFT",
+      "note": "お引き立てを頂いた: скромная самоподача → нейтральное «получил покровительство».",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 10,
+      "finding": "PRAGMATIC_SHIFT",
+      "note": "からね: объяснительный смягчитель с ね → сухая констатация с тире.",
+      "confidence": "LOW"
+    }
+  ]
+}

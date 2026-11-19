@@ -1,0 +1,197 @@
+{
+  "analysis_id": "20261118-235919-975a",
+  "chapter": "v8-ch06",
+  "inputs": {
+    "a_runs": [
+      "20261117-021957-81fd",
+      "20261118-150352-b71d"
+    ],
+    "b_runs": [
+      "20261117-021957-c040",
+      "20261118-235055-81a8"
+    ],
+    "c_runs": [
+      "20261117-021957-8469"
+    ],
+    "precheck": "output/_audit/sma/v8-ch06/precheck/omission-precheck.json",
+    "phase1": "20261118-235055-0e07.phase1.json"
+  },
+  "results": [
+    {
+      "block": 1,
+      "candidate_id": "C-01-01",
+      "sources": {
+        "a": [
+          "20261117-021957-81fd",
+          "20261118-150352-b71d"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "",
+      "current": "",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "ED_RU: «смерила его недобрым взглядом» — враждебность сохранена.",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 2,
+      "candidate_id": "C-02-01",
+      "sources": {
+        "a": [
+          "20261117-021957-81fd"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "",
+      "current": "",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "ED_RU: «Ничтожный бабник» — 色男 передан верно.",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 5,
+      "candidate_id": "C-05-01",
+      "sources": {
+        "a": [],
+        "b": [
+          "20261117-021957-c040"
+        ],
+        "c": [
+          "20261117-021957-8469"
+        ],
+        "precheck": false
+      },
+      "source": "",
+      "current": "",
+      "fidelity": "MEANING_SHIFT",
+      "status": "FALSE_POSITIVE",
+      "reason": "ED_RU: «Без него мы с вами поменялись бы местами… благословите героя» — самоуказание 小官 восстановлено.",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 14,
+      "candidate_id": "C-14-01",
+      "sources": {
+        "a": [
+          "20261118-150352-b71d"
+        ],
+        "b": [
+          "20261117-021957-c040"
+        ],
+        "c": [],
+        "precheck": false
+      },
+      "source": "",
+      "current": "",
+      "fidelity": "MEANING_SHIFT",
+      "status": "FALSE_POSITIVE",
+      "reason": "ED_RU: «Потому что я люблю — это хорошо, — сказал он во сне» — субъект речи Сайто, а не Тиффания.",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 26,
+      "candidate_id": "C-26-01",
+      "sources": {
+        "a": [],
+        "b": [
+          "20261117-021957-c040"
+        ],
+        "c": [],
+        "precheck": false
+      },
+      "source": "",
+      "current": "",
+      "fidelity": "MEANING_SHIFT",
+      "status": "FALSE_POSITIVE",
+      "reason": "ED_RU: «около полугода качали бы базовую физическую подготовку» — 半年 восстановлено.",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 22,
+      "candidate_id": "C-22-01",
+      "sources": {
+        "a": [
+          "20261118-150352-b71d"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "できそこない",
+      "current": "Убогая половинка",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "DISPUTED",
+      "reason": "«Убогая половинка» вместо できそこない («неудачница, брак»): образ изменён, хотя негативная оценка сохранена. Требуется решение человека; правка не вносится.",
+      "suggestion": null,
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 26,
+      "candidate_id": "C-26-02",
+      "sources": {
+        "a": [],
+        "b": [
+          "20261117-021957-c040"
+        ],
+        "c": [],
+        "precheck": false
+      },
+      "source": "",
+      "current": "",
+      "fidelity": "MEANING_SHIFT",
+      "status": "FALSE_POSITIVE",
+      "reason": "ED_RU: «Аньес встала боком и плавно вынесла меч» — субъект разворота верен.",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 1,
+      "candidate_id": "C-01-02",
+      "sources": {
+        "a": [
+          "20261117-021957-81fd"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "",
+      "current": "",
+      "fidelity": "RUSSIAN_ERROR",
+      "status": "FALSE_POSITIVE",
+      "reason": "Иноязычная вставка Relative к сырому RU; в ED_RU её нет.",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 13,
+      "candidate_id": "C-13-01",
+      "sources": {
+        "a": [
+          "20261117-021957-81fd"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "",
+      "current": "",
+      "fidelity": "MEANING_SHIFT",
+      "status": "FALSE_POSITIVE",
+      "reason": "Смена лица Relative к сырому RU; в ED_RU повествование от 3-го лица.",
+      "suggestion": null,
+      "action": "PRESERVED"
+    }
+  ]
+}

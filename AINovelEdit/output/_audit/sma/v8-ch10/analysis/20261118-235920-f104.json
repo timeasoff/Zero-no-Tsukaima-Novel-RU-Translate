@@ -1,0 +1,139 @@
+{
+  "analysis_id": "20261118-235920-f104",
+  "chapter": "v8-ch10",
+  "inputs": {
+    "a_runs": [
+      "20261117-025026-7ed5",
+      "20261118-150423-d70d"
+    ],
+    "b_runs": [
+      "20261117-025026-a8eb",
+      "20261118-235055-d295"
+    ],
+    "c_runs": [
+      "20261117-025026-4bc1"
+    ],
+    "precheck": "output/_audit/sma/v8-ch10/precheck/omission-precheck.json",
+    "phase1": "20261118-235055-f0c4.phase1.json"
+  },
+  "results": [
+    {
+      "block": 2,
+      "candidate_id": "C-02-01",
+      "sources": {
+        "a": [
+          "20261117-025026-7ed5"
+        ],
+        "b": [
+          "20261117-025026-a8eb"
+        ],
+        "c": [],
+        "precheck": false
+      },
+      "source": "",
+      "current": "",
+      "fidelity": "MEANING_SHIFT",
+      "status": "FALSE_POSITIVE",
+      "reason": "ED_RU: ««Скирнир»… облик человека, чью кровь он выпил» — субъект/объект верны.",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 6,
+      "candidate_id": "C-06-01",
+      "sources": {
+        "a": [],
+        "b": [
+          "20261117-025026-a8eb"
+        ],
+        "c": [],
+        "precheck": false
+      },
+      "source": "",
+      "current": "",
+      "fidelity": "MEANING_SHIFT",
+      "status": "FALSE_POSITIVE",
+      "reason": "ED_RU: «— А, тогда ладно. Не люди — и хорошо» — いる не инвертировано.",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 12,
+      "candidate_id": "C-12-01",
+      "sources": {
+        "a": [
+          "20261117-025026-7ed5"
+        ],
+        "b": [
+          "20261117-025026-a8eb"
+        ],
+        "c": [],
+        "precheck": false
+      },
+      "source": "",
+      "current": "",
+      "fidelity": "MEANING_SHIFT",
+      "status": "FALSE_POSITIVE",
+      "reason": "ED_RU: «рассек ей пах» — 股 передан верно, «ягодицы» отсутствуют.",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 15,
+      "candidate_id": "C-15-01",
+      "sources": {
+        "a": [
+          "20261117-025026-7ed5"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "",
+      "current": "",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "ED_RU: «Как и подобает моему собрату» — 我が同類 сохранено.",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 14,
+      "candidate_id": "C-14-01",
+      "sources": {
+        "a": [
+          "20261117-025026-7ed5"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "",
+      "current": "",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "ED_RU: «— Иди сюда, — сказала она, повеля подбородком» — жест 顎をしゃくる восстановлен.",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 11,
+      "candidate_id": "C-11-01",
+      "sources": {
+        "a": [
+          "20261117-025026-7ed5"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "",
+      "current": "",
+      "fidelity": "ADDITION",
+      "status": "FALSE_POSITIVE",
+      "reason": "Добавление жеста Relative к сырому RU; в ED_RU блок 11 соответствует JA.",
+      "suggestion": null,
+      "action": "PRESERVED"
+    }
+  ]
+}

@@ -1,0 +1,164 @@
+{
+  "analysis_id": "20261119-012257-4a40.phase1",
+  "chapter": "v9-ch09",
+  "phase": 1,
+  "scope": "blind",
+  "results": [
+    {
+      "block": 1,
+      "finding": "NONE",
+      "note": "Сайто ищет Луизу, не может простить себе поцелуй; самоосуждение восстановлено.",
+      "confidence": "HIGH"
+    },
+    {
+      "block": 2,
+      "finding": "NONE",
+      "note": "Тень за луной; пространственный оттенок проверен.",
+      "confidence": "HIGH"
+    },
+    {
+      "block": 3,
+      "finding": "NONE",
+      "note": "Спор с Табитой, приказ; реплики распределены верно.",
+      "confidence": "HIGH"
+    },
+    {
+      "block": 4,
+      "finding": "NONE",
+      "note": "Ироничное отрицание горгульи; интонация уточнена.",
+      "confidence": "HIGH"
+    },
+    {
+      "block": 5,
+      "finding": "NONE",
+      "note": "Горгулья просит одолжить силу; «нам» вместо «тебе» — направление исправлено.",
+      "confidence": "HIGH"
+    },
+    {
+      "block": 6,
+      "finding": "NONE",
+      "note": "Луиза попадается в сети чар; логика обмана передана.",
+      "confidence": "HIGH"
+    },
+    {
+      "block": 7,
+      "finding": "NONE",
+      "note": "Табита увертывается и летит; «она выкрикнула» — субъект исправлен.",
+      "confidence": "HIGH"
+    },
+    {
+      "block": 8,
+      "finding": "NONE",
+      "note": "Сайто не может применить мощные чары; субъект уточнён.",
+      "confidence": "HIGH"
+    },
+    {
+      "block": 9,
+      "finding": "COMPONENT_LOSS",
+      "note": "Табита — «Северный Цветок»; 番犬 → «верный пёс» — компонент стража утрачен.",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 10,
+      "finding": "NONE",
+      "note": "Сайто и Табита спорят; «ты не можешь щадить» — нюанс",
+      "confidence": "HIGH"
+    },
+    {
+      "block": 11,
+      "finding": "NONE",
+      "note": "Схватка на Сильфиде; движение и адресаты реплик верны.",
+      "confidence": "HIGH"
+    },
+    {
+      "block": 12,
+      "finding": "NONE",
+      "note": "Сайто оседлал Табиту; позиции тел исправлены.",
+      "confidence": "HIGH"
+    },
+    {
+      "block": 13,
+      "finding": "NONE",
+      "note": "Табита требует бросить палочку; модальность угрозы передана.",
+      "confidence": "HIGH"
+    },
+    {
+      "block": 14,
+      "finding": "NONE",
+      "note": "Сайто жалеет врага; «жалко» вместо стыда — эмоция проверена.",
+      "confidence": "HIGH"
+    },
+    {
+      "block": 15,
+      "finding": "COMPONENT_LOSS",
+      "note": "Обвинение «пёс укусит госпожу»; 飼い犬/主人 — ролевой компонент ослаблен.",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 16,
+      "finding": "NONE",
+      "note": "Превращение горгульи; «большая, в несколько раз» — степень передана.",
+      "confidence": "HIGH"
+    },
+    {
+      "block": 17,
+      "finding": "NONE",
+      "note": "Горгульи — «целая стая»; количество исправлено.",
+      "confidence": "HIGH"
+    },
+    {
+      "block": 18,
+      "finding": "NONE",
+      "note": "«Дикая птица» — крыло летательного аппарата; образ проверен.",
+      "confidence": "HIGH"
+    },
+    {
+      "block": 19,
+      "finding": "NONE",
+      "note": "Размах 150 м и пропеллеры; число и описание соответствуют JA.",
+      "confidence": "HIGH"
+    },
+    {
+      "block": 20,
+      "finding": "NONE",
+      "note": "Погоня и «летающие змеи»; последовательность атаки сохранена.",
+      "confidence": "HIGH"
+    },
+    {
+      "block": 21,
+      "finding": "NONE",
+      "note": "«Острант» и Кольбер؛ реплики и адресаты верны.",
+      "confidence": "HIGH"
+    },
+    {
+      "block": 22,
+      "finding": "NONE",
+      "note": "Табита «чуть не приземлилась»; событие передано точно.",
+      "confidence": "HIGH"
+    },
+    {
+      "block": 23,
+      "finding": "NONE",
+      "note": "Горгульи атакуют; направление реакции уточнено.",
+      "confidence": "HIGH"
+    },
+    {
+      "block": 24,
+      "finding": "NONE",
+      "note": "Облако и удар; пространственная цепочка сохранена.",
+      "confidence": "HIGH"
+    },
+    {
+      "block": 25,
+      "finding": "NONE",
+      "note": "Финальный фрагмент схватки; связность сцены сохранена.",
+      "confidence": "HIGH"
+    },
+    {
+      "block": 26,
+      "finding": "NONE",
+      "note": "Завершение главы; реплики и действия проверены по JA → RU.",
+      "confidence": "HIGH"
+    }
+  ]
+}

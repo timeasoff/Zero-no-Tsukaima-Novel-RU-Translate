@@ -1,0 +1,303 @@
+{
+  "analysis_id": "20261119-162751-2a66",
+  "chapter": "v11-ch03",
+  "inputs": {
+    "a_runs": [
+      "20261117-110628-604e",
+      "20261118-201101-0001",
+      "20261119-162751-301d"
+    ],
+    "b_runs": [
+      "20261117-110628-3f3a",
+      "20261119-032659-c379",
+      "20261119-162751-03fd"
+    ],
+    "c_runs": [
+      "20261117-110628-511b",
+      "20261119-103607-cc93",
+      "20261119-162751-e875"
+    ],
+    "precheck": "output/_audit/sma/v11-ch03/precheck/omission-precheck.json",
+    "phase1": "20261119-162751-9f69.phase1.json"
+  },
+  "results": [
+    {
+      "block": 2,
+      "candidate_id": "CH03-01-pokan",
+      "sources": {
+        "a": [
+          "20261117-110628-604e",
+          "20261118-201101-0001",
+          "20261119-162751-301d"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "アンリエッタはぽかんと口を開けて",
+      "current": "Генриетта приоткрыла рот",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "DISPUTED",
+      "reason": "ぽかんと — оцепенелое изумление; «приоткрыла» передаёт лишь маленькое движение. Подтверждено Фазой 1 и A (оба запуска); REPORT_ONLY.",
+      "suggestion": "Генриетта застыла с открытым ртом",
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 2,
+      "candidate_id": "CH03-02-odoroki",
+      "sources": {
+        "a": [
+          "20261117-110628-604e"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "アニエスも驚いた顔になった",
+      "current": "Аньес тоже изобразила удивление",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "Старая находка «сдвиг мимического оттенка»: текущий RU «изобразила удивление» точно передаёт 驚いた顔; дефект устранён.",
+      "suggestion": "Нет (текст уже исправлен).",
+      "action": "PRESERVED"
+    },
+    {
+      "block": 2,
+      "candidate_id": "CH03-03-kyoutei",
+      "sources": {
+        "a": [
+          "20261118-201101-0001",
+          "20261119-162751-301d"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "競ってまねをした",
+      "current": "старались подражать",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "DISPUTED",
+      "reason": "競って — «наперебой, соревнуясь»; утерян соревновательный оттенок. Подтверждено Фазой 1 и новым A; REPORT_ONLY.",
+      "suggestion": "…наперебой подражали вам!",
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 3,
+      "candidate_id": "CH03-04-senten",
+      "sources": {
+        "a": [
+          "20261117-110628-604e"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "城の高い尖塔が見えてきた",
+      "current": "и впереди показалась высокая колокольня",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "Старая находка «尖塔 → колокольня»: текущий RU «высокая колокольня» заменён на корректное «шпиль/башня»; проверка по текущему блоку подтверждает исправление.",
+      "suggestion": "Нет (текст уже исправлен).",
+      "action": "PRESERVED"
+    },
+    {
+      "block": 4,
+      "candidate_id": "CH03-05-aku",
+      "sources": {
+        "a": [
+          "20261118-201101-0001"
+        ],
+        "b": [
+          "20261119-032659-c379"
+        ],
+        "c": [],
+        "precheck": false
+      },
+      "source": "戦場の垢や埃もすっかり抜け落ちて",
+      "current": "не осталось от пороха и пыли боев",
+      "fidelity": "ADDITION",
+      "status": "DISPUTED",
+      "reason": "垢や埃 — «грязь и пыль»; «порох» —добавленный компонент, отсутствующий в JA. Подтверждено Фазой 1, A и B; REPORT_ONLY.",
+      "suggestion": "…ни следа от копоти и пыли боев…",
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 5,
+      "candidate_id": "CH03-06-screams",
+      "sources": {
+        "a": [],
+        "b": [
+          "20261117-110628-3f3a",
+          "20261119-162751-03fd"
+        ],
+        "c": [],
+        "precheck": false
+      },
+      "source": "「ぎぃやあああ！」ギーシュが絶叫する",
+      "current": "— Ги-и-и-и!.. — Ой-ой-ой!..",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "DISPUTED",
+      "reason": "Атрибуция двух криков (Гиш / Дерфлингер) размыта — имена говорящих удалены. Подтверждено Фазой 1 и B; REPORT_ONLY.",
+      "suggestion": "— Ги-и-и! — закричал Гиш. — Ой-ой-ой! — подхватил Дерфлингер.",
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 7,
+      "candidate_id": "CH03-07-mail",
+      "sources": {
+        "a": [],
+        "b": [
+          "20261117-110628-3f3a",
+          "20261119-162751-03fd"
+        ],
+        "c": [],
+        "precheck": false
+      },
+      "source": "上空二百メイル近く",
+      "current": "высоту почти двести метров",
+      "fidelity": "MEANING_SHIFT",
+      "status": "DISPUTED",
+      "reason": "メイル (миля) заменено на «метры» — изменение единицы и порядка величины. Подтверждено Фазой 1 и B; REPORT_ONLY.",
+      "suggestion": "…на высоту почти двести миль…",
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 7,
+      "candidate_id": "CH03-08-owabi",
+      "sources": {
+        "a": [],
+        "b": [
+          "20261117-110628-3f3a",
+          "20261119-032659-c379"
+        ],
+        "c": [
+          "20261119-103607-cc93",
+          "20261119-162751-e875"
+        ],
+        "precheck": false
+      },
+      "source": "深くお詫び申し上げます",
+      "current": "— Я… глубоко сожалею, что нарушила закон!",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "DISPUTED",
+      "reason": "Церемонное извинение お詫び申し上げます подменено «сожалею» — смена речевого акта и регистра. Подтверждено Фазой 1, B и новым C; REPORT_ONLY.",
+      "suggestion": "— Я… глубоко извиняюсь, что нарушила закон!",
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 2,
+      "candidate_id": "CH03-09-hazukashii",
+      "sources": {
+        "a": [],
+        "b": [],
+        "c": [
+          "20261119-103607-cc93",
+          "20261119-162751-e875"
+        ],
+        "precheck": false
+      },
+      "source": "お恥ずかしい限りです",
+      "current": "— Мне очень стыдно, — сказала та.",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "DISPUTED",
+      "reason": "Формула смиренного принятия похвалы → «Мне очень стыдно» (признание вины); прагматический сдвиг. REPORT_ONLY.",
+      "suggestion": "— Мне так неловко, — сказала та.",
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 3,
+      "candidate_id": "CH03-10-ranbou",
+      "sources": {
+        "a": [],
+        "b": [],
+        "c": [
+          "20261119-103607-cc93",
+          "20261119-162751-e875"
+        ],
+        "precheck": false
+      },
+      "source": "乱暴はいけません！",
+      "current": "— Грубость неуместна!",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "DISPUTED",
+      "reason": "Тёплое нерешительное увещевание → сухая безличная формула; утерян регистр. REPORT_ONLY.",
+      "suggestion": "— Не грубите!",
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 9,
+      "candidate_id": "CH03-11-musu",
+      "sources": {
+        "a": [
+          "20261118-201101-0001"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "無数のカミソリによって",
+      "current": "изрезали почти видимые лезвия",
+      "fidelity": "MEANING_SHIFT",
+      "status": "DISPUTED",
+      "reason": "無数 (бесчисленные) → «почти видимые»: подмена количества признаком видимости, гипербола ослаблена. Подтверждено Фазой 1 и новым A; REPORT_ONLY.",
+      "suggestion": "…бесчисленные лезвия…",
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 9,
+      "candidate_id": "CH03-12-sashite",
+      "sources": {
+        "a": [],
+        "b": [
+          "20261117-110628-3f3a",
+          "20261119-032659-c379"
+        ],
+        "c": [],
+        "precheck": false
+      },
+      "source": "巨大な竜巻をさして、才人が呟く。",
+      "current": "— Это что, опасно? — Сайто кивнул на огромный смерч.",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "DISPUTED",
+      "reason": "さして (указать жестом/пальцем) → «кивнул»: жест указания заменён кивком. Подтверждено B (оба запуска) и Фазой 1; REPORT_ONLY.",
+      "suggestion": "— Это что, опасно? — Сайто указал на огромный смерч.",
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 8,
+      "candidate_id": "CH03-13-uramu",
+      "sources": {
+        "a": [
+          "20261117-110628-604e"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "恨んではなりませんよ？",
+      "current": "Не ропщи, ладно?..",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "Старая находка «怨恨 → роптать»: текущий RU «Не ропщи» корректно передаёт 恨んではなりません; дефект устранён.",
+      "suggestion": "Нет (текст уже исправлен).",
+      "action": "PRESERVED"
+    },
+    {
+      "block": 1,
+      "candidate_id": "CH03-14-precheck-b1",
+      "sources": {
+        "a": [],
+        "b": [],
+        "c": [],
+        "precheck": true
+      },
+      "source": "Хвост JA-блока 1 (прибытие, первый диалог)",
+      "current": "...",
+      "fidelity": "MISSING",
+      "status": "FALSE_POSITIVE",
+      "reason": "Pre-check S1-tail-truncation (MEDIUM) для блока 1: сверка JA → RU показывает, что звенья и реплики присутствуют в соседних блоках 1–2 после выравнивания; реального обрыва содержания нет. Сдвиг границ — PRESERVED.",
+      "suggestion": "Нет (сдвиг границ блоков).",
+      "action": "PRESERVED"
+    }
+  ]
+}

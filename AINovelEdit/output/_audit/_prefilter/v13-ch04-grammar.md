@@ -28,7 +28,6 @@ russian-grammar-control, либо отклоняется с обосновани
 
 - **EN:** It's common sense in Romalia not to drink wine in broad daylight, who would otherwise be treated as non-believers.
 - **ED_RU:** Она залилась румянцем:
-
 — О-ответственность лежит на мне — хозяйке.
 - **Подсказка:** RGC-1: «X's Y was stolen» ≠ «X лишился Y». Правильно: «X лишили Y» / «у X отобрали Y» / «Y у X отобрали».
 

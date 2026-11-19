@@ -1,0 +1,26 @@
+{
+  "analysis_id": "20261119-114321-dad5.phase1",
+  "chapter": "v13-ch02",
+  "phase": 1,
+  "scope": "blind",
+  "results": [
+    {
+      "block": 17,
+      "finding": "PRAGMATIC_SHIFT",
+      "note": "お暇をいただきます: смиренная формула увольнения → сухое «увольняюсь»; установка говорящего сглажена.",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 12,
+      "finding": "PRAGMATIC_SHIFT",
+      "note": "買いかぶられたものですな: самоироничное ですな → восклицательная констатация.",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 29,
+      "finding": "PRAGMATIC_SHIFT",
+      "note": "ねえ / わよ / ね: уговор с подтверждающими частицами → три вопросительных крючка, «Ну?» категоричнее.",
+      "confidence": "LOW"
+    }
+  ]
+}

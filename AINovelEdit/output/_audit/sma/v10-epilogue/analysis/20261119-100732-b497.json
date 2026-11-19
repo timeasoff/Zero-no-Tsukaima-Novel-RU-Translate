@@ -1,0 +1,328 @@
+{
+  "analysis_id": "20261119-100732-b497",
+  "chapter": "v10-epilogue",
+  "inputs": {
+    "a_runs": [
+      "20261117-093248-c922",
+      "20261118-164238-62ef"
+    ],
+    "b_runs": [
+      "20261117-093248-bc4b",
+      "20261119-024140-4d3a"
+    ],
+    "c_runs": [
+      "20261117-093248-5974",
+      "20261119-100119-b216"
+    ],
+    "precheck": "output/_audit/sma/v10-epilogue/precheck/omission-precheck.json",
+    "phase1": "20261119-100119-c781.phase1.json"
+  },
+  "results": [
+    {
+      "block": 6,
+      "candidate_id": "C-06-01",
+      "sources": {
+        "a": [
+          "20261117-093248-c922"
+        ],
+        "b": [
+          "20261117-093248-bc4b"
+        ],
+        "c": [],
+        "precheck": false
+      },
+      "source": "「けだものじゃないの」",
+      "current": "— Скот, — сказал он.",
+      "fidelity": "MEANING_SHIFT",
+      "status": "FALSE_POSITIVE",
+      "reason": "Отрицание восстановлено: «Я не скот…» — инверсия смысла устранена.",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 3,
+      "candidate_id": "C-03-02",
+      "sources": {
+        "a": [
+          "20261117-093248-c922"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "「なに情けない顔してるのよ。",
+      "current": "«Чего ты что за лицо такое?»",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "«情けない顔» передано «жалкое лицо» — оттенок сохранён.",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 5,
+      "candidate_id": "C-05-03",
+      "sources": {
+        "a": [
+          "20261117-093248-c922"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "才人が焦った声で言うと",
+      "current": "— сказал он с отчаянием.",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "«焦った声» передано «растерянно», а не «с отчаянием».",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 6,
+      "candidate_id": "C-06-04",
+      "sources": {
+        "a": [
+          "20261117-093248-c922"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "得意げな仕草で髪をかきあげ、ルイズは傲慢に言い放つ。",
+      "current": "Луиза вскинула голову с довольным видом и высокомерно бросила:",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "Жест восстановлен: «с довольным видом зачесала волосы».",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 6,
+      "candidate_id": "C-06-05",
+      "sources": {
+        "a": [
+          "20261117-093248-c922"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "同時に軽蔑を多分に含んだ流し目を送る。",
+      "current": "Одновременно она бросила взгляд, полный презрения.",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "«流し目» передано «взгляд искоса» — оттенок сохранён.",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 2,
+      "candidate_id": "C-02-06",
+      "sources": {
+        "a": [
+          "20261117-093248-c922"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "じろりとギーシュを睨んで、モンモランシーは言った。",
+      "current": "Монморанси покосилась на Гиша и сказала:",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "«じろりと睨む» передано «сверкнула глазами» — резкость взгляда восстановлена.",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 7,
+      "candidate_id": "C-07-07",
+      "sources": {
+        "a": [
+          "20261118-164238-62ef"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "気味の悪い犬のよだれといっしょに、傑作単語を口にしたわよね。",
+      "current": "Вместе с противной слюной пса ты произнёс прекрасное слово.",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "DISPUTED",
+      "reason": "«傑作単語» → «прекрасное слово»; ироническое восхищение собственной остротой ослаблено — REPORT_ONLY.",
+      "suggestion": null,
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 8,
+      "candidate_id": "C-08-08",
+      "sources": {
+        "a": [
+          "20261118-164238-62ef"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "こぽっ……、と才人の口から妙な嗚咽が漏れた。",
+      "current": "«Хлюп» — изо рта Сайто вырвался странный стон.",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "DISPUTED",
+      "reason": "«こぽっ» → «Хлюп»; звуковая деталь передана приблизительно, REPORT_ONLY.",
+      "suggestion": null,
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 8,
+      "candidate_id": "C-08-09",
+      "sources": {
+        "a": [
+          "20261118-164238-62ef"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "困ったような声で、ギーシュは言った。",
+      "current": "Гиш сказал это с озабоченным видом.",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "DISPUTED",
+      "reason": "«困ったような声» → «озабоченным видом»; голос заменён видом, REPORT_ONLY.",
+      "suggestion": null,
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 8,
+      "candidate_id": "C-08-10",
+      "sources": {
+        "a": [
+          "20261118-164238-62ef"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "ギーシュたちは首を振りながら、前を見る。",
+      "current": "Гиш и остальные покачали головами и отвернулись.",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "DISPUTED",
+      "reason": "«前を見る» → «отвернулись»; направление взгляда изменено, REPORT_ONLY.",
+      "suggestion": null,
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 2,
+      "candidate_id": "C-02-11",
+      "sources": {
+        "a": [],
+        "b": [
+          "20261117-093248-bc4b"
+        ],
+        "c": [],
+        "precheck": false
+      },
+      "source": "「そ、そんな……」唖然としたギーシュの頬に、モンモランシーは唇をくっつけた。",
+      "current": "— Нет. Я к тому, что сам выбор тебя был ошибкой, — Монморанси покосилась на Гиша и сказала: — …Ну что ты застыл? — и прижалась губами к его щеке.",
+      "fidelity": "MEANING_SHIFT",
+      "status": "FALSE_POSITIVE",
+      "reason": "Атрибуция исправлена: реплику о неудачном билете произносит Монморанси, Гиш отвечает «Н-но, это же…».",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 6,
+      "candidate_id": "C-06-12",
+      "sources": {
+        "a": [],
+        "b": [
+          "20261117-093248-bc4b"
+        ],
+        "c": [],
+        "precheck": false
+      },
+      "source": "「いっぱい？ もっと具体的に言いなさいよ。あんた、わたしとキスしたいんでしょ？ おこがましいったらないわ。ご主人さまとキスしたいなんて真顔で言うけだものの存在に、わたしは感動するわ」",
+      "current": "— Очень? Говори конкретнее. Ты же хочешь поцеловать меня, верно? Какая наглость — сказать такое с серьёзным лицом госпоже, которая хочет поцеловать… госпожу? Я восхищена существом, которое называет себя «скотом»!",
+      "fidelity": "MEANING_SHIFT",
+      "status": "FALSE_POSITIVE",
+      "reason": "Субъект/объект исправлены: «Какая наглость — говорить такое с серьёзным лицом, обращаясь к своей госпоже! Я восхищена самим существованием такого зверя!»",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 6,
+      "candidate_id": "C-06-13",
+      "sources": {
+        "a": [],
+        "b": [
+          "20261117-093248-bc4b"
+        ],
+        "c": [],
+        "precheck": false
+      },
+      "source": "「けだものじゃないの」",
+      "current": "— Я не скот, — запротестовал Сайто.",
+      "fidelity": "MEANING_SHIFT",
+      "status": "FALSE_POSITIVE",
+      "reason": "Говорящий исправлен: «…у Сайто уже и правда получилось „скотом“».",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 7,
+      "candidate_id": "C-07-14",
+      "sources": {
+        "a": [],
+        "b": [
+          "20261117-093248-bc4b"
+        ],
+        "c": [],
+        "precheck": false
+      },
+      "source": "「けなしてどーすんのよ」",
+      "current": "— Зачем ты её ругаешь?..",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "DISPUTED",
+      "reason": "«Зачем ты её ругаешь?» — местоимение «её» неоднозначно (грудь/Луиза); в JA имеется в виду грудь, формулировка допускает двоякое чтение — REPORT_ONLY.",
+      "suggestion": null,
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 1,
+      "candidate_id": "C-01-15",
+      "sources": {
+        "a": [],
+        "b": [],
+        "c": [
+          "20261117-093248-5974"
+        ],
+        "precheck": false
+      },
+      "source": "たぶん大変な迷惑をかけるだろうな。いやもう、かけてるかもしれない。参っちゃうね",
+      "current": "Наверняка наделаем хлопот. Вернее, уже наделали. Плохо дело.",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "Хеджирование восстановлено: «Наверное, наделаем хлопот… Вернее, может, уже наделали».",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 6,
+      "candidate_id": "C-06-16",
+      "sources": {
+        "a": [],
+        "b": [],
+        "c": [
+          "20261119-100119-b216"
+        ],
+        "precheck": false
+      },
+      "source": "け、けだものじゃないもん",
+      "current": "Я не скот… — у Сайто уже и правда получилось «скотом».",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "DISPUTED",
+      "reason": "Новый запуск C отмечает утрату частицы もん — женски окрашенного самоуничижения Сайто; в RU эффект передан только авторским пояснением. Слепая Фаза 1 сочла это регистровым нюансом; однозначной ошибки по паре JA→RU нет — DISPUTED, REPORT_ONLY.",
+      "suggestion": "Я не скотинка, нет…",
+      "action": "REPORT_ONLY"
+    }
+  ]
+}

@@ -1,0 +1,140 @@
+{
+  "analysis_id": "20261119-123819-5f45.phase1",
+  "chapter": "v7-ch02",
+  "phase": 1,
+  "scope": "blind",
+  "results": [
+    {
+      "block": 1,
+      "finding": "NUANCE_SHIFT",
+      "note": "へろへろ→«осипшими», つむじ風→«магией»: утрачен вихрь и «выпивал».",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 2,
+      "finding": "NONE",
+      "note": "Блок 2: реплики и действия покрыты, хвост JA переведён (сдвиг границ абзацев).",
+      "confidence": "HIGH"
+    },
+    {
+      "block": 3,
+      "finding": "NUANCE_SHIFT",
+      "note": "使い魔のくせに… цепочка сокращена; ヘンな話だな → вопросительная интонация.",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 4,
+      "finding": "NUANCE_SHIFT",
+      "note": "最低→«Ужасно», すねた→«обиделась»: сдвиг оттенков.",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 5,
+      "finding": "NONE",
+      "note": "Блок 5: рассуждение о сословиях передано адекватно.",
+      "confidence": "HIGH"
+    },
+    {
+      "block": 6,
+      "finding": "MISTRANSLATION",
+      "note": "伝令→«Письмо»: гонец подменён документом; あくび→«скучал»: жест подменён состоянием.",
+      "confidence": "HIGH"
+    },
+    {
+      "block": 7,
+      "finding": "NONE",
+      "note": "Блок 7: допрос Фернана и его ответы переданы верно.",
+      "confidence": "HIGH"
+    },
+    {
+      "block": 8,
+      "finding": "NUANCE_SHIFT",
+      "note": "嘲笑→«посмеялись»: снижена насмешливость.",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 9,
+      "finding": "NONE",
+      "note": "Блок 9: появление Джулио и описание переданы верно.",
+      "confidence": "HIGH"
+    },
+    {
+      "block": 10,
+      "finding": "PRAGMATIC_SHIFT",
+      "note": "まあまあ→«Ну, иди-ка ты»: самоуспокоение заменено отторжением.",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 11,
+      "finding": "NONE",
+      "note": "Блок 11: диалог жреца и драгун передан без сдвигов.",
+      "confidence": "HIGH"
+    },
+    {
+      "block": 12,
+      "finding": "NONE",
+      "note": "Блок 12: карта и уход Джулио переданы верно.",
+      "confidence": "HIGH"
+    },
+    {
+      "block": 13,
+      "finding": "NONE",
+      "note": "Блок 13: объяснение о Ромалии и эльфах передано верно.",
+      "confidence": "HIGH"
+    },
+    {
+      "block": 14,
+      "finding": "NONE",
+      "note": "Блок 14: ревность Сайто и описание Луизы переданы верно.",
+      "confidence": "HIGH"
+    },
+    {
+      "block": 15,
+      "finding": "NONE",
+      "note": "Блок 15: догадка об отказе и удар «молотом» переданы верно.",
+      "confidence": "HIGH"
+    },
+    {
+      "block": 16,
+      "finding": "NUANCE_SHIFT",
+      "note": "可愛さ余って憎さ百倍→«один шаг»: подмена пословицы.",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 17,
+      "finding": "NONE",
+      "note": "Блок 17: суд Хираги и приговор переданы верно.",
+      "confidence": "HIGH"
+    },
+    {
+      "block": 18,
+      "finding": "NONE",
+      "note": "Блок 18: тревога Луизы и окрик переданы верно.",
+      "confidence": "HIGH"
+    },
+    {
+      "block": 19,
+      "finding": "NONE",
+      "note": "Блок 19: вспышка гнева и реакция Сайто переданы верно.",
+      "confidence": "HIGH"
+    },
+    {
+      "block": 20,
+      "finding": "NUANCE_SHIFT",
+      "note": "驚くべき→«о ужас»; 妖しく→«таинственно»; お送りさせてください→«Проводи меня».",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 21,
+      "finding": "NUANCE_SHIFT",
+      "note": "一生そこにいろ→«Оставайся здесь»: потеря «навсегда».",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 22,
+      "finding": "NONE",
+      "note": "Блок 22: финальные сомнения Луизы переданы верно.",
+      "confidence": "HIGH"
+    }
+  ]
+}

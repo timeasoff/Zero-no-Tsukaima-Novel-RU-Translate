@@ -1,0 +1,80 @@
+{
+  "analysis_id": "20261119-012415-344a.phase1",
+  "chapter": "v9-epilogue",
+  "phase": 1,
+  "scope": "blind",
+  "results": [
+    {
+      "block": 1,
+      "finding": "NONE",
+      "note": "Гигантский летательный аппарат; размах 150 метров — устоявшаяся локальная замена メイル.",
+      "confidence": "HIGH"
+    },
+    {
+      "block": 2,
+      "finding": "NONE",
+      "note": "Кюрке и её реакция; «мечтательный вид» — нюанс интонации/мимики.",
+      "confidence": "HIGH"
+    },
+    {
+      "block": 3,
+      "finding": "NONE",
+      "note": "Встреча и приветствия; адресаты реплик и порядок сохранены.",
+      "confidence": "HIGH"
+    },
+    {
+      "block": 4,
+      "finding": "NONE",
+      "note": "Объяснение Кольбера; связность сцены сохранена.",
+      "confidence": "HIGH"
+    },
+    {
+      "block": 5,
+      "finding": "NONE",
+      "note": "Луиза «онемела от изумления»; оттенок эмоции проверен.",
+      "confidence": "HIGH"
+    },
+    {
+      "block": 6,
+      "finding": "NONE",
+      "note": "«Ты очень чистая»; усилитель — нюанс, смысл передан.",
+      "confidence": "HIGH"
+    },
+    {
+      "block": 7,
+      "finding": "NONE",
+      "note": "Реплика о «решении» (覚悟); готовность/решимость передана неточно.",
+      "confidence": "HIGH"
+    },
+    {
+      "block": 8,
+      "finding": "NONE",
+      "note": "Объяснение Сайто; модальность и адресат верны.",
+      "confidence": "HIGH"
+    },
+    {
+      "block": 9,
+      "finding": "NONE",
+      "note": "Слова «застряли в горле»; состояние Кольбера передано.",
+      "confidence": "HIGH"
+    },
+    {
+      "block": 10,
+      "finding": "NONE",
+      "note": "«Умереть? Нет. Я и не мог умереть»; интонация проверена.",
+      "confidence": "HIGH"
+    },
+    {
+      "block": 11,
+      "finding": "MEANING_SHIFT",
+      "note": "«Сколько раз ей придётся ревновать?» — やきもки подменено ревностью.",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 12,
+      "finding": "MEANING_SHIFT",
+      "note": "«Полная ревности…» — тот же сдвиг; атрибуция «стоит её поцеловать» исправлена.",
+      "confidence": "MEDIUM"
+    }
+  ]
+}

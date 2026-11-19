@@ -1,0 +1,12 @@
+{
+  "analysis_id": "20261119-042917-4105",
+  "chapter": "v12-prologue",
+  "inputs": {
+    "a_runs": ["20261117-155821-fca2", "20261118-190351-60ed"],
+    "b_runs": ["20261117-155821-d016", "20261119-042917-ae47"],
+    "c_runs": ["20261117-155821-9e1b"],
+    "precheck": "output/_audit/sma/v12-prologue/precheck/omission-precheck.json",
+    "phase1": "20261119-042917-2523.phase1.json"
+  },
+  "results": []
+}

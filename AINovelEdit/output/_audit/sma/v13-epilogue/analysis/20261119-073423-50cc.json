@@ -1,0 +1,249 @@
+{
+  "analysis_id": "20261119-073423-50cc",
+  "chapter": "v13-epilogue",
+  "inputs": {
+    "a_runs": [
+      "20261118-005809-b350",
+      "20261118-213247-9dd278"
+    ],
+    "b_runs": [
+      "20261118-005809-2172",
+      "20261119-073423-fd31"
+    ],
+    "c_runs": [
+      "20261118-005809-6011"
+    ],
+    "precheck": "output/_audit/sma/v13-epilogue/precheck/omission-precheck.json",
+    "phase1": "20261119-073423-f741.phase1.json"
+  },
+  "results": [
+    {
+      "block": 3,
+      "candidate_id": "C-3-01",
+      "sources": {
+        "a": [
+          "20261118-005809-b350"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "この無能王を？ 国内外からそしられるこの余を、あなたは愛していると言ったのか？",
+      "current": "Меня — «Безумного короля»? Меня, которого поносят и внутри страны, и за её пределами — тебя и правда любишь?",
+      "fidelity": "MEANING_SHIFT",
+      "status": "FALSE_POSITIVE",
+      "reason": "В актуальном RU дефект устранён; находка историческая (evidence не голосует).",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 7,
+      "candidate_id": "C-7-01",
+      "sources": {
+        "a": [
+          "20261118-005809-b350"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "ああ、おれは人間だ。どこまでも人間だ。",
+      "current": "Ах, я человек. И везде — человек.",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "В актуальном RU дефект устранён; находка историческая (evidence не голосует).",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 4,
+      "candidate_id": "C-4-01",
+      "sources": {
+        "a": [
+          "20261118-005809-b350"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "芳しい、愛の言葉と共に……。",
+      "current": "С горячими словами любви...",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "В актуальном RU дефект устранён; находка историческая (evidence не голосует).",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 5,
+      "candidate_id": "C-5-01",
+      "sources": {
+        "a": [
+          "20261118-005809-b350"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "その刃には、艶やかに血が光っている。",
+      "current": "На лезвии блестела свежая кровь.",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "В актуальном RU дефект устранён; находка историческая (evidence не голосует).",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 1,
+      "candidate_id": "C-1-01",
+      "sources": {
+        "a": [
+          "20261118-213247-9dd278"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "モリエール夫人が感嘆の声をあげた。",
+      "current": "— Поистине великолепный розарий, — восхищённо пропищала рядом госпожа Мольер.",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "CONFIRMED_ERROR",
+      "reason": "感嘆の声をあげた — «воскликнула с восхищением»; «пропищала» добавляет визгливый тембр, которого в JA нет. Дефект жив, Фаза 1 — ADDED_CONTENT MEDIUM.",
+      "suggestion": "— Поистине великолепный розарий, — восхищённо воскликнула рядом госпожа Мольер.",
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 2,
+      "candidate_id": "C-2-01",
+      "sources": {
+        "a": [
+          "20261118-213247-9dd278"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "困ったような口調でジョゼフが言うので、モリエール夫人はさらに機嫌を損ねた。",
+      "current": "Он пропищал это с таким видом, будто сам запутался, — и госпожа Мольер ещё больше испортила настроение.",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "CONFIRMED_ERROR",
+      "reason": "困ったような口調で — «с смущённым видом/тоном»; «пропищал» подменяет смущение визгом. Дефект жив, Фаза 1 — ADDED_CONTENT MEDIUM.",
+      "suggestion": "Он сказал это с смущённым видом, будто сам запутался,",
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 3,
+      "candidate_id": "C-3-02",
+      "sources": {
+        "a": [
+          "20261118-213247-9dd278"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "さめざめと泣くモリエール夫人を、ジョゼフは驚いた顔で見つめた。",
+      "current": "Жозеф с удивлением смотрел на рыдавшую госпожу Мольер.",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "CONFIRMED_ERROR",
+      "reason": "さめざめと泣く — тихо, сдержанно плакать; «рыдавшую» усиливает до громких рыданий. Дефект жив, Фаза 1 — NUANCE_SHIFT MEDIUM.",
+      "suggestion": "Жозеф с удивлением смотрел на тихо плакавшую госпожу Мольер.",
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 6,
+      "candidate_id": "C-6-01",
+      "sources": {
+        "a": [
+          "20261118-213247-9dd278"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "慌てふためいた声で、ジョゼフの命令を確認する。",
+      "current": "Он торопливо переспросил.",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "CONFIRMED_ERROR",
+      "reason": "慌てふためいた声で — «в панике, растерянно»; «торопливо» сохраняет только скорость и теряет смятение. Дефект жив, Фаза 1 — COMPONENT_LOSS MEDIUM.",
+      "suggestion": "Он растерянно переспросил.",
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 7,
+      "candidate_id": "C-7-02",
+      "sources": {
+        "a": [
+          "20261118-213247-9dd278"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "『そ、そんな！ 意味がわかりませぬ！』",
+      "current": "«Та-ак!.. Не понимаю!»",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "CONFIRMED_ERROR",
+      "reason": "『そ、そんな！ 意味がわかりませぬ！』 — шок, недоумение («Что?! Не понимаю!»); «Та-ак!.. Не понимаю!» превращает шок в заминку; 面倒になって — «из-за досады», не «устал». Дефект жив, Фаза 1 — NUANCE_SHIFT MEDIUM.",
+      "suggestion": "«Что?!.. Не понимаю!»",
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 8,
+      "candidate_id": "C-8-01",
+      "sources": {
+        "a": [
+          "20261118-213247-9dd278"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "天使のように、無邪気に笑った。",
+      "current": "Как ангел — безобидно, наивно рассмеялся.",
+      "fidelity": "ADDITION",
+      "status": "CONFIRMED_ERROR",
+      "reason": "無邪気に — «невинно/по-детски»; «безобидно» добавляет оценку безвредности, которой в JA нет. Дефект жив, Фаза 1 — ADDED_CONTENT MEDIUM.",
+      "suggestion": "Как ангел — наивно, по-детски рассмеялся.",
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 3,
+      "candidate_id": "C-3-03",
+      "sources": {
+        "a": [],
+        "b": [
+          "20261118-005809-2172"
+        ],
+        "c": [],
+        "precheck": false
+      },
+      "source": "あなたは優しい人だな。モリエール夫人。余はあなたを愛そうと思う",
+      "current": "Ты добрая. Госпожа Мольер. Я полюблю тебя.",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "В актуальном RU дефект устранён; находка историческая (evidence не голосует).",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 2,
+      "candidate_id": "C-2-02",
+      "sources": {
+        "a": [],
+        "b": [],
+        "c": [
+          "20261118-005809-6011"
+        ],
+        "precheck": false
+      },
+      "source": "冗談？ ああ、そうだな。そう聞こえるだろうな",
+      "current": "Шучу? А, да. Так и должно звучать.",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "В актуальном RU дефект устранён; находка историческая (evidence не голосует).",
+      "suggestion": null,
+      "action": "PRESERVED"
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "analysis_id": "20261119-165938-8c5b.phase1",
+  "chapter": "v11-ch07",
+  "phase": 1,
+  "scope": "blind",
+  "results": [
+    {
+      "block": 1,
+      "finding": "NONE",
+      "note": "Блок сверён JA → RU; существенных смысловых расхождений не замечено.",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 2,
+      "finding": "NONE",
+      "note": "Блок сверён JA → RU; существенных смысловых расхождений не замечено.",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 3,
+      "finding": "NONE",
+      "note": "Блок сверён JA → RU; существенных смысловых расхождений не замечено.",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 4,
+      "finding": "LEXICAL_MISMATCH",
+      "note": "リュティス → «Лютеция»; передача имени собственного.",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 5,
+      "finding": "PRAGMATIC_SHIFT",
+      "note": "惚けた → «притворилась тупой»; установка сдвинута.",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 6,
+      "finding": "NONE",
+      "note": "Блок сверён JA → RU; существенных смысловых расхождений не замечено.",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 7,
+      "finding": "NUANCE_SHIFT",
+      "note": "先住魔法 → «магия аборигенов»; регистр сдвинут.",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 8,
+      "finding": "NONE",
+      "note": "Блок сверён JA → RU; существенных смысловых расхождений не замечено.",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 9,
+      "finding": "NONE",
+      "note": "Блок сверён JA → RU; существенных смысловых расхождений не замечено.",
+      "confidence": "MEDIUM"
+    }
+  ]
+}

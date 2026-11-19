@@ -1,0 +1,161 @@
+{
+  "analysis_id": "20261119-112144-4564",
+  "chapter": "v12-ch07",
+  "inputs": {
+    "a_runs": [
+      "20261117-182328-44ff",
+      "20261118-192456-cb91"
+    ],
+    "b_runs": [
+      "20261117-182328-4b6e",
+      "20261119-061354-1a40"
+    ],
+    "c_runs": [
+      "20261117-182328-f2ab",
+      "20261119-112144-afa6"
+    ],
+    "precheck": "output/_audit/sma/v12-ch07/precheck/omission-precheck.json",
+    "phase1": "20261119-112144-62b9.phase1.json"
+  },
+  "results": [
+    {
+      "block": 2,
+      "candidate_id": "C-R4-20261119-112144-afa6-02-01",
+      "sources": {
+        "a": [],
+        "b": [
+          "20261117-182328-4b6e"
+        ],
+        "c": [
+          "20261119-112144-afa6"
+        ],
+        "precheck": false
+      },
+      "source": "「無茶言うなよ」",
+      "current": "— Не требуй невозможного...",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "DISPUTED",
+      "reason": "Blind-Фаза 1 подтвердила сдвиг независимо. B в том же блоке отметил 香水の匂いがすんだけど (другой аспект). Ядро «не требуй» передано, регистр окрика ослаблен — DISPUTED, REPORT_ONLY. FIXED не применяется: в раунде smaC-a77bc132 текст не правится; решение выносится по паре JA → RU, majority vote не используется.",
+      "suggestion": "— Да брось, не говори глупостей...",
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 4,
+      "candidate_id": "C-R4-20261119-112144-afa6-04-01",
+      "sources": {
+        "a": [
+          "20261117-182328-44ff"
+        ],
+        "b": [],
+        "c": [
+          "20261119-112144-afa6"
+        ],
+        "precheck": false
+      },
+      "source": "「……いい加減にしろよ」",
+      "current": "— ...Хватит уже.",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "CONFIRMED_ERROR",
+      "reason": "Сверка JA → RU: しろよ после списка обид — раздражённый приказ; «Хватит уже» — ровная фраза. A в том же блоке отметил мимику/дрожь (смежный аспект). Компонент «срыв» утрачен. FIXED не применяется: в раунде smaC-a77bc132 текст не правится; решение выносится по паре JA → RU, majority vote не используется.",
+      "suggestion": "— …Да хватит же, наконец!",
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 8,
+      "candidate_id": "C-R4-20261119-112144-afa6-08-01",
+      "sources": {
+        "a": [
+          "20261117-182328-44ff"
+        ],
+        "b": [],
+        "c": [
+          "20261119-112144-afa6"
+        ],
+        "precheck": true
+      },
+      "source": "「その言葉を繰り返してくれたまえ」",
+      "current": "— Повтори это слово.",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "DISPUTED",
+      "reason": "Новый C, blind-Фаза 1 и pre-check (CANDIDATE/HIGH, BLOCK 8) сошлись на этом месте: pre-check подозревал PARTIAL-обрыв дальше по реплике («デ、デブ？…»), но все звенья на месте в RU-блоке 9. По самой просьбе: たまえ смягчает приказ — DISPUTED, REPORT_ONLY. Pre-check — evidence, а не голос. FIXED не применяется: в раунде smaC-a77bc132 текст не правится; решение выносится по паре JA → RU, majority vote не используется.",
+      "suggestion": "— Повтори это слово, ну-ка...",
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 1,
+      "candidate_id": "A-1-HIST-20261117-182328-44ff",
+      "sources": {
+        "a": [
+          "20261117-182328-44ff"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "命を奪わなかっただけでも、感謝して欲しいぐらいである。",
+      "current": "Уже за одно то, что она не лишила его жизни, она заслуживала бы благодарности...",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "A фиксировал модальный сдвиг; в актуальном RU «заслуживала бы благодарности» сохраняет сослагательность и иронию. FALSE_POSITIVE, PRESERVED.",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 4,
+      "candidate_id": "A-4-HIST-20261117-182328-44ff",
+      "sources": {
+        "a": [
+          "20261117-182328-44ff"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "大きさだけが、評価のすべてじゃないと思うんです",
+      "current": "— Хочешь потрогать сам?.. Я же думаю, один размер — не всё...",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "A фиксировал потерю んです; в актуальном RU «Я же думаю» сохраняет объяснительную модальность. FALSE_POSITIVE, PRESERVED.",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 7,
+      "candidate_id": "B-7-HIST-20261117-182328-4b6e",
+      "sources": {
+        "a": [],
+        "b": [
+          "20261117-182328-4b6e"
+        ],
+        "c": [],
+        "precheck": false
+      },
+      "source": "あなた、今では近衛の隊長じゃない。",
+      "current": "— Я волнуюсь. Ты теперь командир гвардии, правда?..",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "B фиксировал утерю вопросительного じゃない; в актуальном RU «правда?..» передаёт эту рамку. FALSE_POSITIVE, PRESERVED.",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 11,
+      "candidate_id": "B-11-HIST-20261117-182328-4b6e",
+      "sources": {
+        "a": [],
+        "b": [
+          "20261117-182328-4b6e"
+        ],
+        "c": [],
+        "precheck": false
+      },
+      "source": "自分で触ったんでしょ。自分で……。",
+      "current": "Сам же трогал, да? Сам...",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "B фиксировал неоднозначность; в актуальном RU «да? Сам...» сохраняет и вопрос, и недосказанность. FALSE_POSITIVE, PRESERVED.",
+      "suggestion": null,
+      "action": "PRESERVED"
+    }
+  ]
+}

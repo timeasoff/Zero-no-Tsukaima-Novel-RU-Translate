@@ -1,0 +1,169 @@
+{
+  "analysis_id": "20261119-160231-a289",
+  "chapter": "v10-ch10",
+  "inputs": {
+    "a_runs": ["20261117-090720-3fbf", "20261118-164233-a1c7", "20261119-160231-2934"],
+    "b_runs": ["20261117-090720-aec8", "20261119-024139-aa7e", "20261119-160231-d79c"],
+    "c_runs": ["20261117-090720-c7c2", "20261119-100119-831a", "20261119-160231-d862"],
+    "precheck": "output/_audit/sma/v10-ch10/precheck/omission-precheck.json",
+    "phase1": "20261119-160231-6a27.phase1.json"
+  },
+  "results": [
+    {
+      "block": 17,
+      "candidate_id": "CH10-01-hokubadan-kishi",
+      "sources": {"a": ["20261119-160231-2934"], "b": [], "c": [], "precheck": false},
+      "source": "北花壇騎士として恐れられた、シュヴァリエ・タバサ",
+      "current": "«Северный цветок рыцарства», грозный шевалье Табита",
+      "fidelity": "MEANING_SHIFT",
+      "status": "DISPUTED",
+      "reason": "Сверка JA→RU: титул «Рыцарь Северного партера» подменён метафорой «Северный цветок рыцарства». Подтверждено Фазой 1. FIXED=0: DISPUTED + REPORT_ONLY.",
+      "suggestion": "«Рыцарь Северного партера, грозный шевалье Табита».",
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 2,
+      "candidate_id": "CH10-02-wanawana",
+      "sources": {"a": ["20261119-160231-2934"], "b": [], "c": [], "precheck": false},
+      "source": "モンモランシーがわなわなと震える。",
+      "current": "Монморанси дрожала от негодования.",
+      "fidelity": "MEANING_SHIFT",
+      "status": "DISPUTED",
+      "reason": "Стыд/волнение от позорного наряда заменены негодованием; JA и контекст указывают на стеснение. FIXED=0: DISPUTED + REPORT_ONLY.",
+      "suggestion": "«Монморанси дрожала от смущения».",
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 6,
+      "candidate_id": "CH10-03-majou",
+      "sources": {"a": [], "b": ["20261119-160231-d79c"], "c": [], "precheck": false},
+      "source": "「貴様、メイジ……」",
+      "current": "— Ты… маг?",
+      "fidelity": "MEANING_SHIFT",
+      "status": "DISPUTED",
+      "reason": "Утверждение-разоблачение превращено в вопрос; реакция барона («стон») подтверждает утвердительный характер JA. FIXED=0: DISPUTED + REPORT_ONLY.",
+      "suggestion": "«Так ты… маг…»",
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 14,
+      "candidate_id": "CH10-04-nukasu",
+      "sources": {"a": ["20261119-160231-2934"], "b": ["20261119-160231-d79c"], "c": [], "precheck": false},
+      "source": "戦いが嫌いなんてぬかすエルフらしい",
+      "current": "раз не любят драться",
+      "fidelity": "MEANING_SHIFT",
+      "status": "DISPUTED",
+      "reason": "Ироническая передача чужого утверждения («нукасу») стала прямым фактом; потеряна ироническая дистанция говорящего. FIXED=0: DISPUTED + REPORT_ONLY.",
+      "suggestion": "«…какая у них, видите ли, «нелюбовь к драке»…»",
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 18,
+      "candidate_id": "CH10-05-kitai",
+      "sources": {"a": ["20261119-160231-2934"], "b": [], "c": [], "precheck": false},
+      "source": "期待が報われたことなど、かつて一度もなかった。",
+      "current": "Радостных ожиданий не сбывалось никогда.",
+      "fidelity": "ADDITION",
+      "status": "DISPUTED",
+      "reason": "Добавлено определение «радостных» при нейтральном «期待»; ожидание в контексте ведёт к отчаянию. FIXED=0: DISPUTED + REPORT_ONLY.",
+      "suggestion": "«Ожидания не сбывались никогда».",
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 10,
+      "candidate_id": "CH10-06-joudan-ja-nee",
+      "sources": {"a": [], "b": [], "c": ["20261119-160231-d862"], "precheck": false},
+      "source": "冗談じゃねえ。俺は怖くて震えてるんだ",
+      "current": "Не смейся. Я просто дрожу от страха.",
+      "fidelity": "MEANING_SHIFT",
+      "status": "DISPUTED",
+      "reason": "Возмущённый отпор «не выдумывай» → просьба «не смейся»; изменён речевой акт. FIXED=0: DISPUTED + REPORT_ONLY.",
+      "suggestion": "«Это ещё что за выдумки? Я дрожу от страха.»",
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 15,
+      "candidate_id": "CH10-07-doumo-koumo",
+      "sources": {"a": [], "b": [], "c": ["20261119-160231-d862"], "precheck": false},
+      "source": "どうもこうもねえだろが。",
+      "current": "Да ничего особенно.",
+      "fidelity": "MEANING_SHIFT",
+      "status": "DISPUTED",
+      "reason": "«Нет другого выхода» → «ничего особенного»: ослаблена безысходность реплики. FIXED=0: DISPUTED + REPORT_ONLY.",
+      "suggestion": "«Другого выхода нет.»",
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 7,
+      "candidate_id": "CH10-08-genjitsu-omimu",
+      "sources": {"a": [], "b": ["20261119-160231-d79c"], "c": [], "precheck": false},
+      "source": "現実を省みぬ亡霊め！",
+      "current": "Неуместный призрак!",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "DISPUTED",
+      "reason": "«Не смотрящий в реальность» → «неуместный»: loss компонента «отказ видеть правду». FIXED=0: DISPUTED + REPORT_ONLY.",
+      "suggestion": "«Призрак, что не смотрит в глаза реальности!»",
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 1,
+      "candidate_id": "CH10-09-yangotoinai",
+      "sources": {"a": [], "b": ["20261119-160231-d79c"], "c": [], "precheck": false},
+      "source": "やんごとない輝きを持っている。",
+      "current": "с неким сиянием, присущим придворным танцам.",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "«неким сиянием» сохраняет представление о возвышенной, придворной грации через соседний текст «присущим придворным танцам»; потеря ядра не подтверждена. FALSE_POSITIVE + PRESERVED.",
+      "suggestion": "Правка не требуется.",
+      "action": "PRESERVED"
+    },
+    {
+      "block": 25,
+      "candidate_id": "CH10-10-buji",
+      "sources": {"a": ["20261119-160231-2934"], "b": [], "c": [], "precheck": false},
+      "source": "「無事だったのね！ きゅい！」",
+      "current": "— Ты жива! Кьюи!",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "«Ты жива» — допустимая конкретизация «無事» в контексте после схватки; общий смысл благополучия сохранён. FALSE_POSITIVE + PRESERVED.",
+      "suggestion": "Правка не требуется.",
+      "action": "PRESERVED"
+    },
+    {
+      "block": 3,
+      "candidate_id": "CH10-11-precheck-block3",
+      "sources": {"a": [], "b": [], "c": [], "precheck": true},
+      "source": "しかし才人は、「これより剣舞をお見せします！」と、やけくその声で怒鳴る。",
+      "current": "Но Сайто крикнул в отчаянии:\n— Сейчас я покажу танец с мечом!..",
+      "fidelity": "MISSING",
+      "status": "FALSE_POSITIVE",
+      "reason": "Сигнал pre-check S1-tail-truncation проверен по полным блокам: реплика и её атрибуция («крикнул в отчаянии») присутствуют в RU; следующий блок начинается с продолжения JA. Разница в числах абзацев — допустимое слияние. Кандидат на пропуск не подтверждён: FALSE_POSITIVE + PRESERVED.",
+      "suggestion": "Правка не требуется.",
+      "action": "PRESERVED"
+    },
+    {
+      "block": 6,
+      "candidate_id": "CH10-12-precheck-block6",
+      "sources": {"a": [], "b": [], "c": [], "precheck": true},
+      "source": "指先に触れたものに気づく。…「貴様、メイジ……」…杖の先に大きな炎球が現れた。",
+      "current": "Он нащупал что-то кончиками пальцев. … — Ты… маг? … на конце посоха возник большой огненный шар.",
+      "fidelity": "MISSING",
+      "status": "FALSE_POSITIVE",
+      "reason": "Все звенья JA-хвоста присутствуют в RU того же блока (нащупал, стон, реплика, отбрасывание посоха, огненный шар); это слияние абзацев, а не обрыв. FALSE_POSITIVE + PRESERVED.",
+      "suggestion": "Правка не требуется.",
+      "action": "PRESERVED"
+    },
+    {
+      "block": 24,
+      "candidate_id": "CH10-13-precheck-block24",
+      "sources": {"a": [], "b": [], "c": [], "precheck": true},
+      "source": "イーヴァルディはルーに手を差し伸べました。…ありえないのだ。",
+      "current": "Ивальдий протянул ей руку. … Не бывает.",
+      "fidelity": "MISSING",
+      "status": "FALSE_POSITIVE",
+      "reason": "Сигнал проверен: RU блока 24 содержит все звенья JA (рука, «дракон повержен, ты свободна», взгляд на мать, шаги за дверью, ёкнувшее сердце, отрицание надежды). Пропуск не подтверждён: FALSE_POSITIVE + PRESERVED.",
+      "suggestion": "Правка не требуется.",
+      "action": "PRESERVED"
+    }
+  ]
+}

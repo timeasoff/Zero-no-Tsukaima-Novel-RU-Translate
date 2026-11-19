@@ -10,7 +10,6 @@ russian-grammar-control, либо отклоняется с обосновани
 
 - **EN:** Siesta stood in the kitchen of the women's servant quarters, as she was being constantly bombarded by her co-workers.
 - **ED_RU:** Он потряс плечами, накачанными больше как у солдата с мечом, нежели у мага, и расхохотался:
-
 — Ха-ха-ха!
 - **Подсказка:** RGC-1: «X's Y was stolen» ≠ «X лишился Y». Правильно: «X лишили Y» / «у X отобрали Y» / «Y у X отобрали».
 
@@ -25,7 +24,6 @@ Louise got a chill down her spine as she inched away from Montmorency.
 Montmorency drew closer to her with a feverish look.
 "Well, see you later. Bye."
 - **ED_RU:** »
-
 Всё же Сайто, который был уверен, что Луиза его любит, теперь, когда сомнение появилось, совсем пал духом.
 - **Подсказка:** RGC-1: RU-пассив без деятеля («был схвачен») там, где в EN деятель назван, — сигнал потери актанта. Проверь, не должен ли русский быть активом или неопределённо-личным.
 
@@ -67,7 +65,6 @@ Louise was slowly dragged back into the bushes.
 - **EN:** "Don't misunderstand! W-when I look at your face, it's just that my heart beats like crazy!"
 "H-Huh?"
 - **ED_RU:** »
-
 «А я — я была охвачена чувством собственной неполноценности рядом с Тиффанией и не смогла поверить его словам...
 - **Подсказка:** RGC-1: RU-пассив без деятеля («был схвачен») там, где в EN деятель назван, — сигнал потери актанта. Проверь, не должен ли русский быть активом или неопределённо-личным.
 

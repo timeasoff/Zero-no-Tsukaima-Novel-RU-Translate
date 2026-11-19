@@ -1,0 +1,12 @@
+{
+  "analysis_id": "20261119-042916-c458",
+  "chapter": "v12-afterword",
+  "inputs": {
+    "a_runs": ["20261117-195913-6ab0", "20261118-190355-31b0"],
+    "b_runs": ["20261117-195913-3f81", "20261119-042916-0a10"],
+    "c_runs": ["20261117-195913-c6f8"],
+    "precheck": "output/_audit/sma/v12-afterword/precheck/omission-precheck.json",
+    "phase1": "20261119-042916-5bc4.phase1.json"
+  },
+  "results": []
+}

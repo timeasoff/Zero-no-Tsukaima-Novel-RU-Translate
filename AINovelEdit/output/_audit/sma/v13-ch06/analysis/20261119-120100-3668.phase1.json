@@ -1,0 +1,26 @@
+{
+  "analysis_id": "20261119-120100-3668.phase1",
+  "chapter": "v13-ch06",
+  "phase": 1,
+  "scope": "blind",
+  "results": [
+    {
+      "block": 11,
+      "finding": "PRAGMATIC_SHIFT",
+      "note": "頂戴したい → «Ваше имя.»: смиренная просьба → сухое требование; акт и вежливость изменены.",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 14,
+      "finding": "PRAGMATIC_SHIFT",
+      "note": "あなた → «ты» при финальном «вы»: регистр внутри одной речи папы непоследователен.",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 13,
+      "finding": "PRAGMATIC_SHIFT",
+      "note": "言うな！ → «Замолчи!»: сдержанный запрет усилен до жёсткого императива.",
+      "confidence": "MEDIUM"
+    }
+  ]
+}

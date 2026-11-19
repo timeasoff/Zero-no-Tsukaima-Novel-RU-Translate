@@ -1,0 +1,20 @@
+{
+  "analysis_id": "20261119-120100-e83f.phase1",
+  "chapter": "v13-ch07",
+  "phase": 1,
+  "scope": "blind",
+  "results": [
+    {
+      "block": 17,
+      "finding": "PRAGMATIC_SHIFT",
+      "note": "いいのかい？ → «Ты и правда хочешь?»: наводящее возражение → прямой уточняющий вопрос; подтекст ослаблен.",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 5,
+      "finding": "PRAGMATIC_SHIFT",
+      "note": "なさいよ … んだからね → «жди … не кончен!»: дружеское настояние → сухой приказ.",
+      "confidence": "MEDIUM"
+    }
+  ]
+}

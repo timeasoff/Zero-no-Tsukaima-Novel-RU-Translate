@@ -1,0 +1,401 @@
+{
+  "analysis_id": "20261119-072645-2577",
+  "chapter": "v13-ch08",
+  "inputs": {
+    "a_runs": [
+      "20261118-003316-7d20",
+      "20261118-183003-7d2e"
+    ],
+    "b_runs": [
+      "20261118-003239-7761",
+      "20261119-072645-75a0"
+    ],
+    "c_runs": [
+      "20261118-003239-6c6a"
+    ],
+    "precheck": "output/_audit/sma/v13-ch08/precheck/omission-precheck.json",
+    "phase1": "20261119-072645-be01.phase1.json"
+  },
+  "results": [
+    {
+      "block": 1,
+      "candidate_id": "C-1-01",
+      "sources": {
+        "a": [
+          "20261118-003316-7d20"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "ああ、昨日は泣きつかれて寝ちまったんだ、と思いながら、才人はノートパソコンの画面を見つめた。",
+      "current": "«Ах, вчера меня до нуля довёл — и я уснул», — подумал он, глядя на экран ноутбука.",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "В актуальном RU дефект устранён; находка историческая (evidence не голосует).",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 1,
+      "candidate_id": "C-1-02",
+      "sources": {
+        "a": [
+          "20261118-003316-7d20"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "廊下をとぼとぼ歩きながら、才人は参ったな、と呟いた。",
+      "current": "Шлёпая по коридору, Сайто пропищал: «Ну и дела».",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "В актуальном RU дефект устранён; находка историческая (evidence не голосует).",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 2,
+      "candidate_id": "C-2-01",
+      "sources": {
+        "a": [
+          "20261118-003316-7d20"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "するとルイズは、コロコロと笑った。",
+      "current": "Тут Луиза закатилась смехом.",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "В актуальном RU дефект устранён; находка историческая (evidence не голосует).",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 5,
+      "candidate_id": "C-5-01",
+      "sources": {
+        "a": [
+          "20261118-003316-7d20"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "薄くも、微妙な膨らみが才人の手のひらを刺激する。",
+      "current": "Сава-сава... Даже тонкое, но всё же заметное выпуклое место щекотало ладонь.",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "В актуальном RU дефект устранён; находка историческая (evidence не голосует).",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 6,
+      "candidate_id": "C-6-01",
+      "sources": {
+        "a": [
+          "20261118-003316-7d20"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "明日に教皇就任式典を控えたロマリアの街は、前夜祭で盛り上がっていた。とはいっても、トリスタニアのように街中がお祭り騒ぎになるわけではない。露店や出し物を出せる通りがあって、そこだけが盛り上がっている感じであった。ロマリアはそれでも、各地から巡礼の旅人がやってくる土地である。巡礼に来た商人たちは、ついでにいろんな品々を運んでくる。したがって、様々な品が並んでいた。ルイズは綺麗な服が並べられている露店に釘付けになった。一生懸命、何かを選んでいる。",
+      "current": "«Ну, раз так — и я повеселюсь», — подумал Сайто. Такие беззаботные минуты выпадали нечасто. К тому же завтра он может умереть. Впрочем, он намерен выжить во что бы то ни стало... — Что это? Шарф, что ли, хочешь? Куплю получше.",
+      "fidelity": "MISSING",
+      "status": "FALSE_POSITIVE",
+      "reason": "В актуальном RU дефект устранён; находка историческая (evidence не голосует).",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 7,
+      "candidate_id": "C-7-01",
+      "sources": {
+        "a": [
+          "20261118-003316-7d20"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "なるほどこれもご褒美か、と才人は呟いた。",
+      "current": "«Так, это тоже награда», — пропищал Сайто.",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "В актуальном RU дефект устранён; находка историческая (evidence не голосует).",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 8,
+      "candidate_id": "C-8-01",
+      "sources": {
+        "a": [
+          "20261118-003316-7d20"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "ルイズのあーんは初めてで、才人は面食らう。ご褒美にしてはすごすぎる。いくらなんでも。",
+      "current": "Впервые от Луизы такое «а-ан» — Сайто остолбенел. Для награды — слишком уж. мало ли что.",
+      "fidelity": "MEANING_SHIFT",
+      "status": "FALSE_POSITIVE",
+      "reason": "В актуальном RU дефект устранён; находка историческая (evidence не голосует).",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 9,
+      "candidate_id": "C-9-01",
+      "sources": {
+        "a": [
+          "20261118-003316-7d20"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "しばらく唇を重ねたあと……、ルイズは顔を離し、またにっこりと、とびっきりの笑顔を見せた。",
+      "current": "Пока они целовались... потом Луиза отстранилась — и снова показала игрушечно-прекрасную улыбку.",
+      "fidelity": "ADDITION",
+      "status": "FALSE_POSITIVE",
+      "reason": "В актуальном RU дефект устранён; находка историческая (evidence не голосует).",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 9,
+      "candidate_id": "C-9-02",
+      "sources": {
+        "a": [
+          "20261118-003316-7d20"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "「つかれたでしょ。水飲む？」ルイズは、水差しからコップに水を注ぐと、才人に渡した。",
+      "current": "— Устала? Воды? Луиза налила воды из кувшина в стакан и подала ему.",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "В актуальном RU дефект устранён; находка историческая (evidence не голосует).",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 10,
+      "candidate_id": "C-10-01",
+      "sources": {
+        "a": [
+          "20261118-003316-7d20"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "「一生、誰も愛さない。でもあんたはだめ。誰かを好きになって、わたしにしてくれたみたいに、その子を守ってあげて。あんたの世界で……」",
+      "current": "— Никого не полюблю больше. Но тебе нельзя. Найди кого-то, полюби — и береги её, как берегла меня. В твоём мире...",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "В актуальном RU дефект устранён; находка историческая (evidence не голосует).",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 3,
+      "candidate_id": "C-3-01",
+      "sources": {
+        "a": [
+          "20261118-183003-7d2e"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "なんだ？ どうしたんだ？ とルイズを見ると、にこ、とルイズは笑みを浮かべた。",
+      "current": "«Что? Что это?» — глянул он на неё — и Луиза улыбнулась во весь рот.",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "CONFIRMED_ERROR",
+      "reason": "にこ — небольшая, сдержанная улыбка; «улыбнулась во весь рот» — широкий смех. Степень выраженности мимики усилена; дефект жив, Фаза 1 — NUANCE_SHIFT MEDIUM.",
+      "suggestion": "…и Луиза едва заметно улыбнулась.",
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 1,
+      "candidate_id": "C-1-03",
+      "sources": {
+        "a": [
+          "20261118-183003-7d2e"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "テーブルに突っ伏した自分に毛布がかけられている。",
+      "current": "На него, уткнувшегося в стол, была накинута попона.",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "CONFIRMED_ERROR",
+      "reason": "毛布 — обычное одеяло, которым накрыли спящего за столом; «попона» — покрывало для лошади, другой класс предмета. Дефект жив; Фаза 1 — LEXICAL_MISMATCH MEDIUM.",
+      "suggestion": "На него, уткнувшегося в стол, было наброшено одеяло.",
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 2,
+      "candidate_id": "C-2-02",
+      "sources": {
+        "a": [
+          "20261118-183003-7d2e"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "可愛らしい感じのブラウスに、短い紺色のシックなスカート姿だった。",
+      "current": "Милое платьице с короткими тёмно-синими юбками... вернее, блузка и аккуратная темно-синяя юбка.",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "CONFIRMED_ERROR",
+      "reason": "シックな — «стильная/элегантная»; «аккуратная» передаёт только опрятность и теряет оттенок стиля. Дефект жив; Фаза 1 — NUANCE_SHIFT MEDIUM.",
+      "suggestion": "…блузка и стильная тёмно-синяя юбка.",
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 5,
+      "candidate_id": "C-5-02",
+      "sources": {
+        "a": [
+          "20261118-183003-7d2e"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "絶対これはルイズじゃない！ 別の何かだ！",
+      "current": "Сто процентов это не Луиза! Кто-то другой!",
+      "fidelity": "MEANING_SHIFT",
+      "status": "CONFIRMED_ERROR",
+      "reason": "別の何かだ — «это что-то другое» (подозрение на магический предмет/подмену); «Кто-то другой!» сужает до человека. Смысл подозрения искажён; Фаза 1 — MISTRANSLATION MEDIUM.",
+      "suggestion": "Сто процентов это не Луиза! Что-то другое!",
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 9,
+      "candidate_id": "C-9-03",
+      "sources": {
+        "a": [
+          "20261118-183003-7d2e"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "笑顔の理由がわからぬまま、才人も曖昧に笑みを浮かべた。",
+      "current": "Не понимая причины улыбки, Сайто тоже улыбнулся в ответ.",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "CONFIRMED_ERROR",
+      "reason": "曖昧に — «неопределённо/двусмысленно»; «в ответ» подменяет характер улыбки её функцией и теряет компонент неопределённости. Дефект жив; Фаза 1 — NUANCE_SHIFT MEDIUM.",
+      "suggestion": "Не понимая причины улыбки, Сайто тоже улыбнулся неопределённо.",
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 1,
+      "candidate_id": "C-1-04",
+      "sources": {
+        "a": [],
+        "b": [
+          "20261118-003239-7761"
+        ],
+        "c": [],
+        "precheck": false
+      },
+      "source": "思い出せるぐらいに、暗記していたし……、見たところでどうしようもない。",
+      "current": "Он и так выучил всё наизусть, чтобы помнить... а увидев снова — что он сделает?",
+      "fidelity": "MEANING_SHIFT",
+      "status": "FALSE_POSITIVE",
+      "reason": "В актуальном RU дефект устранён; находка историческая (evidence не голосует).",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 8,
+      "candidate_id": "C-8-02",
+      "sources": {
+        "a": [],
+        "b": [
+          "20261118-003239-7761"
+        ],
+        "c": [],
+        "precheck": false
+      },
+      "source": "中に入ると、店主はルイズと才人に気づき、気まずそうに顔を背けた。",
+      "current": "Войдя, хозяин заметил Луизу и Сайто — и неловко отвернулся.",
+      "fidelity": "MEANING_SHIFT",
+      "status": "FALSE_POSITIVE",
+      "reason": "В актуальном RU дефект устранён; находка историческая (evidence не голосует).",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 8,
+      "candidate_id": "C-8-03",
+      "sources": {
+        "a": [],
+        "b": [
+          "20261118-003239-7761"
+        ],
+        "c": [],
+        "precheck": false
+      },
+      "source": "店主も上等な服を着てグラスを磨いていたので、二人は顔を見合わせて笑いあった。",
+      "current": "Хозяин тоже был в дорогой одежде и протирал бокалы — и они переглянулись и рассмеялись.",
+      "fidelity": "MEANING_SHIFT",
+      "status": "FALSE_POSITIVE",
+      "reason": "В актуальном RU дефект устранён; находка историческая (evidence не голосует).",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 2,
+      "candidate_id": "C-2-03",
+      "sources": {
+        "a": [],
+        "b": [
+          "20261118-003239-7761"
+        ],
+        "c": [],
+        "precheck": false
+      },
+      "source": "「あ、これ？ 昨日、街に出て買ってきたの」",
+      "current": "— А, это? Купил вчера в городе.",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "В актуальном RU дефект устранён; находка историческая (evidence не голосует).",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 12,
+      "candidate_id": "C-12-01",
+      "sources": {
+        "a": [],
+        "b": [
+          "20261118-003239-7761"
+        ],
+        "c": [],
+        "precheck": false
+      },
+      "source": "あなたたちとハルケギニアの理想のために、この一生を捧げるわ。",
+      "current": "За ваши идеалы и идеалы Халкегинии я отдаму эту жизнь.",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "В актуальном RU дефект устранён; находка историческая (evidence не голосует).",
+      "suggestion": null,
+      "action": "PRESERVED"
+    }
+  ]
+}

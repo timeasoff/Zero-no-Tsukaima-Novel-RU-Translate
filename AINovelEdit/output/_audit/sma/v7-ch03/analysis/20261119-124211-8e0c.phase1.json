@@ -1,0 +1,134 @@
+{
+  "analysis_id": "20261119-124211-8e0c.phase1",
+  "chapter": "v7-ch03",
+  "phase": 1,
+  "scope": "blind",
+  "results": [
+    {
+      "block": 1,
+      "finding": "NUANCE_SHIFT",
+      "note": "拍子抜け→«озадачены»: ослаблен оттенок обманутых ожиданий.",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 2,
+      "finding": "NUANCE_SHIFT",
+      "note": "睨み合った→«уставились»: сглажена враждебность.",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 3,
+      "finding": "NONE",
+      "note": "Блок 3: отмена плана и размышления де Пуатье переданы адекватно.",
+      "confidence": "HIGH"
+    },
+    {
+      "block": 4,
+      "finding": "NONE",
+      "note": "Блок 4: выбор Саусготы и вход Луизы переданы верно.",
+      "confidence": "HIGH"
+    },
+    {
+      "block": 5,
+      "finding": "NONE",
+      "note": "Блок 5: реакция генералов и насмешка переданы верно.",
+      "confidence": "HIGH"
+    },
+    {
+      "block": 6,
+      "finding": "NONE",
+      "note": "Блок 6: отказ и «нашлось дело» переданы верно.",
+      "confidence": "HIGH"
+    },
+    {
+      "block": 7,
+      "finding": "NONE",
+      "note": "Блок 7: слухи об Академии и ложь Луизы переданы верно.",
+      "confidence": "HIGH"
+    },
+    {
+      "block": 8,
+      "finding": "NONE",
+      "note": "Блок 8: разоблачение уловки и перепалка переданы верно.",
+      "confidence": "HIGH"
+    },
+    {
+      "block": 9,
+      "finding": "NONE",
+      "note": "Блок 9: подход к Джулио и сцена с драконом переданы верно.",
+      "confidence": "HIGH"
+    },
+    {
+      "block": 10,
+      "finding": "MISTRANSLATION",
+      "note": "芝居じゃねえんだぞ→«Да не играет он»: инверсия полярности; 誰でもいい→«только не обо мне»: добавление.",
+      "confidence": "HIGH"
+    },
+    {
+      "block": 11,
+      "finding": "NONE",
+      "note": "Блок 11: оскорбление Сайто и посадка на дракона переданы верно.",
+      "confidence": "HIGH"
+    },
+    {
+      "block": 12,
+      "finding": "NONE",
+      "note": "Блок 12: взлёт и диалог Дерфлингера переданы верно.",
+      "confidence": "HIGH"
+    },
+    {
+      "block": 13,
+      "finding": "NONE",
+      "note": "Блок 13: объяснение разведки и размышления Луизы переданы верно.",
+      "confidence": "HIGH"
+    },
+    {
+      "block": 14,
+      "finding": "MISTRANSLATION",
+      "note": "できる→«заполучить»; 俯いた→«опустила глаза»: подмена глагола и жеста.",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 15,
+      "finding": "NONE",
+      "note": "Блок 15: «чудо» и танец дракона переданы верно.",
+      "confidence": "HIGH"
+    },
+    {
+      "block": 16,
+      "finding": "NUANCE_SHIFT",
+      "note": "五分おき→«раз за разом»; 敬虔なる→«смиренному»: утрата интервала и оттенка.",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 17,
+      "finding": "NONE",
+      "note": "Блок 17: раскрытие «не вооружён» и появление эскадрильи переданы верно.",
+      "confidence": "HIGH"
+    },
+    {
+      "block": 18,
+      "finding": "NONE",
+      "note": "Блок 18: погоня и уклонение переданы верно.",
+      "confidence": "HIGH"
+    },
+    {
+      "block": 19,
+      "finding": "MISTRANSLATION",
+      "note": "囮 referent: «приманкой» назван тыльный враг, а не передний; логика сближения сломана.",
+      "confidence": "HIGH"
+    },
+    {
+      "block": 20,
+      "finding": "NUANCE_SHIFT",
+      "note": "はぜるような怒り→«пахнет яростью»: сенсорная подмена; восклицание→вопрос.",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 21,
+      "finding": "NONE",
+      "note": "Блок 21: финальное объяснение Джулио передано верно.",
+      "confidence": "HIGH"
+    }
+  ]
+}

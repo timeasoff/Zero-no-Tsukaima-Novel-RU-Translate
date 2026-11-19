@@ -1,0 +1,5093 @@
+{
+  "id": "T-0061",
+  "text": "Проверка 2 — макросемантика и логика (Semantic Audit B), тома 7-13, раунд smaB-20261118",
+  "created": "2026-11-18 22:59:32",
+  "status": "open",
+  "note": "Специализация 02-semantic-b-macro; ветка verify-v7-v13; новые TASK-ID и audit_run_id; без слияния с master",
+  "subtasks": [
+    {
+      "id": "T-0061-S1",
+      "kind": "sma-b",
+      "volume": 7,
+      "chapter": "afterword",
+      "chapter_id": "v07-afterword",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v07-afterword.sma-b.md",
+      "expected": [
+        "output/_audit/sma/v7-afterword/b/20261118-230102-0c9b.json"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-18 23:01:02",
+          "prompt": "agent_prompts/agent_prompt.v07-afterword.sma-b.md",
+          "finished": "2026-11-18 23:27:56",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S2",
+      "kind": "analyzer-phase1",
+      "volume": 7,
+      "chapter": "afterword",
+      "chapter_id": "v07-afterword",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v07-afterword.analyzer-phase1.md",
+      "expected": [],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-18 23:01:02",
+          "prompt": "agent_prompts/agent_prompt.v07-afterword.analyzer-phase1.md",
+          "finished": "2026-11-18 23:27:56",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S3",
+      "kind": "analyzer-phase2",
+      "volume": 7,
+      "chapter": "afterword",
+      "chapter_id": "v07-afterword",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v07-afterword.analyzer-phase2.md",
+      "expected": [
+        "output/_audit/sma/v7-afterword/precheck/omission-precheck.json",
+        "output/_audit/sma/v7-afterword/analysis/20261118-231155-f200.json",
+        "output/_audit/sma/v7-afterword/analysis/20261118-231155-f200.md"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-18 23:11:55",
+          "prompt": "agent_prompts/agent_prompt.v07-afterword.analyzer-phase2.md",
+          "finished": "2026-11-18 23:27:56",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S4",
+      "kind": "sma-b",
+      "volume": 7,
+      "chapter": "01",
+      "chapter_id": "v07-ch01",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v07-ch01.sma-b.md",
+      "expected": [
+        "output/_audit/sma/v7-ch01/b/20261118-230102-9aa6.json"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-18 23:01:02",
+          "prompt": "agent_prompts/agent_prompt.v07-ch01.sma-b.md",
+          "finished": "2026-11-18 23:27:57",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S5",
+      "kind": "analyzer-phase1",
+      "volume": 7,
+      "chapter": "01",
+      "chapter_id": "v07-ch01",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v07-ch01.analyzer-phase1.md",
+      "expected": [],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-18 23:01:02",
+          "prompt": "agent_prompts/agent_prompt.v07-ch01.analyzer-phase1.md",
+          "finished": "2026-11-18 23:27:57",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S6",
+      "kind": "analyzer-phase2",
+      "volume": 7,
+      "chapter": "01",
+      "chapter_id": "v07-ch01",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v07-ch01.analyzer-phase2.md",
+      "expected": [
+        "output/_audit/sma/v7-ch01/precheck/omission-precheck.json",
+        "output/_audit/sma/v7-ch01/analysis/20261118-231155-0453.json",
+        "output/_audit/sma/v7-ch01/analysis/20261118-231155-0453.md"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-18 23:11:55",
+          "prompt": "agent_prompts/agent_prompt.v07-ch01.analyzer-phase2.md",
+          "finished": "2026-11-18 23:27:57",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S7",
+      "kind": "sma-b",
+      "volume": 7,
+      "chapter": "02",
+      "chapter_id": "v07-ch02",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v07-ch02.sma-b.md",
+      "expected": [
+        "output/_audit/sma/v7-ch02/b/20261118-230102-4a3d.json"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-18 23:01:02",
+          "prompt": "agent_prompts/agent_prompt.v07-ch02.sma-b.md",
+          "finished": "2026-11-18 23:27:57",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S8",
+      "kind": "analyzer-phase1",
+      "volume": 7,
+      "chapter": "02",
+      "chapter_id": "v07-ch02",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v07-ch02.analyzer-phase1.md",
+      "expected": [],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-18 23:01:02",
+          "prompt": "agent_prompts/agent_prompt.v07-ch02.analyzer-phase1.md",
+          "finished": "2026-11-18 23:27:57",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S9",
+      "kind": "analyzer-phase2",
+      "volume": 7,
+      "chapter": "02",
+      "chapter_id": "v07-ch02",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v07-ch02.analyzer-phase2.md",
+      "expected": [
+        "output/_audit/sma/v7-ch02/precheck/omission-precheck.json",
+        "output/_audit/sma/v7-ch02/analysis/20261118-231155-e0b2.json",
+        "output/_audit/sma/v7-ch02/analysis/20261118-231155-e0b2.md"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-18 23:11:56",
+          "prompt": "agent_prompts/agent_prompt.v07-ch02.analyzer-phase2.md",
+          "finished": "2026-11-18 23:27:57",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S10",
+      "kind": "sma-b",
+      "volume": 7,
+      "chapter": "03",
+      "chapter_id": "v07-ch03",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v07-ch03.sma-b.md",
+      "expected": [
+        "output/_audit/sma/v7-ch03/b/20261118-230102-666b.json"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-18 23:01:02",
+          "prompt": "agent_prompts/agent_prompt.v07-ch03.sma-b.md",
+          "finished": "2026-11-18 23:27:58",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S11",
+      "kind": "analyzer-phase1",
+      "volume": 7,
+      "chapter": "03",
+      "chapter_id": "v07-ch03",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v07-ch03.analyzer-phase1.md",
+      "expected": [],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-18 23:01:02",
+          "prompt": "agent_prompts/agent_prompt.v07-ch03.analyzer-phase1.md",
+          "finished": "2026-11-18 23:27:58",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S12",
+      "kind": "analyzer-phase2",
+      "volume": 7,
+      "chapter": "03",
+      "chapter_id": "v07-ch03",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v07-ch03.analyzer-phase2.md",
+      "expected": [
+        "output/_audit/sma/v7-ch03/precheck/omission-precheck.json",
+        "output/_audit/sma/v7-ch03/analysis/20261118-231156-4910.json",
+        "output/_audit/sma/v7-ch03/analysis/20261118-231156-4910.md"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-18 23:11:56",
+          "prompt": "agent_prompts/agent_prompt.v07-ch03.analyzer-phase2.md",
+          "finished": "2026-11-18 23:27:58",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S13",
+      "kind": "sma-b",
+      "volume": 7,
+      "chapter": "04",
+      "chapter_id": "v07-ch04",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v07-ch04.sma-b.md",
+      "expected": [
+        "output/_audit/sma/v7-ch04/b/20261118-230102-def4.json"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-18 23:01:03",
+          "prompt": "agent_prompts/agent_prompt.v07-ch04.sma-b.md",
+          "finished": "2026-11-18 23:27:58",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S14",
+      "kind": "analyzer-phase1",
+      "volume": 7,
+      "chapter": "04",
+      "chapter_id": "v07-ch04",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v07-ch04.analyzer-phase1.md",
+      "expected": [],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-18 23:01:03",
+          "prompt": "agent_prompts/agent_prompt.v07-ch04.analyzer-phase1.md",
+          "finished": "2026-11-18 23:27:58",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S15",
+      "kind": "analyzer-phase2",
+      "volume": 7,
+      "chapter": "04",
+      "chapter_id": "v07-ch04",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v07-ch04.analyzer-phase2.md",
+      "expected": [
+        "output/_audit/sma/v7-ch04/precheck/omission-precheck.json",
+        "output/_audit/sma/v7-ch04/analysis/20261118-231156-0998.json",
+        "output/_audit/sma/v7-ch04/analysis/20261118-231156-0998.md"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-18 23:11:56",
+          "prompt": "agent_prompts/agent_prompt.v07-ch04.analyzer-phase2.md",
+          "finished": "2026-11-18 23:27:59",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S16",
+      "kind": "sma-b",
+      "volume": 7,
+      "chapter": "05",
+      "chapter_id": "v07-ch05",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v07-ch05.sma-b.md",
+      "expected": [
+        "output/_audit/sma/v7-ch05/b/20261118-230103-0165.json"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-18 23:01:03",
+          "prompt": "agent_prompts/agent_prompt.v07-ch05.sma-b.md",
+          "finished": "2026-11-18 23:27:59",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S17",
+      "kind": "analyzer-phase1",
+      "volume": 7,
+      "chapter": "05",
+      "chapter_id": "v07-ch05",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v07-ch05.analyzer-phase1.md",
+      "expected": [],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-18 23:01:03",
+          "prompt": "agent_prompts/agent_prompt.v07-ch05.analyzer-phase1.md",
+          "finished": "2026-11-18 23:27:59",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S18",
+      "kind": "analyzer-phase2",
+      "volume": 7,
+      "chapter": "05",
+      "chapter_id": "v07-ch05",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v07-ch05.analyzer-phase2.md",
+      "expected": [
+        "output/_audit/sma/v7-ch05/precheck/omission-precheck.json",
+        "output/_audit/sma/v7-ch05/analysis/20261118-231156-d810.json",
+        "output/_audit/sma/v7-ch05/analysis/20261118-231156-d810.md"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-18 23:11:56",
+          "prompt": "agent_prompts/agent_prompt.v07-ch05.analyzer-phase2.md",
+          "finished": "2026-11-18 23:27:59",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S19",
+      "kind": "sma-b",
+      "volume": 7,
+      "chapter": "06",
+      "chapter_id": "v07-ch06",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v07-ch06.sma-b.md",
+      "expected": [
+        "output/_audit/sma/v7-ch06/b/20261119-000931-e813.json"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 00:09:32",
+          "prompt": "agent_prompts/agent_prompt.v07-ch06.sma-b.md",
+          "finished": "2026-11-19 00:24:29",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S20",
+      "kind": "analyzer-phase1",
+      "volume": 7,
+      "chapter": "06",
+      "chapter_id": "v07-ch06",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v07-ch06.analyzer-phase1.md",
+      "expected": [],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 00:09:32",
+          "prompt": "agent_prompts/agent_prompt.v07-ch06.analyzer-phase1.md",
+          "finished": "2026-11-19 00:24:29",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S21",
+      "kind": "analyzer-phase2",
+      "volume": 7,
+      "chapter": "06",
+      "chapter_id": "v07-ch06",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v07-ch06.analyzer-phase2.md",
+      "expected": [
+        "output/_audit/sma/v7-ch06/precheck/omission-precheck.json",
+        "output/_audit/sma/v7-ch06/analysis/20261119-002010-0707.json",
+        "output/_audit/sma/v7-ch06/analysis/20261119-002010-0707.md"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 00:20:10",
+          "prompt": "agent_prompts/agent_prompt.v07-ch06.analyzer-phase2.md",
+          "finished": "2026-11-19 00:24:30",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S22",
+      "kind": "sma-b",
+      "volume": 7,
+      "chapter": "07",
+      "chapter_id": "v07-ch07",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v07-ch07.sma-b.md",
+      "expected": [
+        "output/_audit/sma/v7-ch07/b/20261119-000932-15ea.json"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 00:09:32",
+          "prompt": "agent_prompts/agent_prompt.v07-ch07.sma-b.md",
+          "finished": "2026-11-19 00:27:59",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S23",
+      "kind": "analyzer-phase1",
+      "volume": 7,
+      "chapter": "07",
+      "chapter_id": "v07-ch07",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v07-ch07.analyzer-phase1.md",
+      "expected": [],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 00:09:32",
+          "prompt": "agent_prompts/agent_prompt.v07-ch07.analyzer-phase1.md",
+          "finished": "2026-11-19 00:27:59",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S24",
+      "kind": "analyzer-phase2",
+      "volume": 7,
+      "chapter": "07",
+      "chapter_id": "v07-ch07",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v07-ch07.analyzer-phase2.md",
+      "expected": [
+        "output/_audit/sma/v7-ch07/precheck/omission-precheck.json",
+        "output/_audit/sma/v7-ch07/analysis/20261119-002010-b652.json",
+        "output/_audit/sma/v7-ch07/analysis/20261119-002010-b652.md"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 00:20:10",
+          "prompt": "agent_prompts/agent_prompt.v07-ch07.analyzer-phase2.md",
+          "finished": "2026-11-19 00:27:59",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S25",
+      "kind": "sma-b",
+      "volume": 7,
+      "chapter": "08",
+      "chapter_id": "v07-ch08",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v07-ch08.sma-b.md",
+      "expected": [
+        "output/_audit/sma/v7-ch08/b/20261119-000932-7836.json"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 00:09:32",
+          "prompt": "agent_prompts/agent_prompt.v07-ch08.sma-b.md",
+          "finished": "2026-11-19 00:31:10",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S26",
+      "kind": "analyzer-phase1",
+      "volume": 7,
+      "chapter": "08",
+      "chapter_id": "v07-ch08",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v07-ch08.analyzer-phase1.md",
+      "expected": [],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 00:09:32",
+          "prompt": "agent_prompts/agent_prompt.v07-ch08.analyzer-phase1.md",
+          "finished": "2026-11-19 00:31:10",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S27",
+      "kind": "analyzer-phase2",
+      "volume": 7,
+      "chapter": "08",
+      "chapter_id": "v07-ch08",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v07-ch08.analyzer-phase2.md",
+      "expected": [
+        "output/_audit/sma/v7-ch08/precheck/omission-precheck.json",
+        "output/_audit/sma/v7-ch08/analysis/20261119-002010-e438.json",
+        "output/_audit/sma/v7-ch08/analysis/20261119-002010-e438.md"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 00:20:10",
+          "prompt": "agent_prompts/agent_prompt.v07-ch08.analyzer-phase2.md",
+          "finished": "2026-11-19 00:31:10",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S28",
+      "kind": "sma-b",
+      "volume": 7,
+      "chapter": "09",
+      "chapter_id": "v07-ch09",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v07-ch09.sma-b.md",
+      "expected": [
+        "output/_audit/sma/v7-ch09/b/20261119-003125-fc96.json"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 00:31:25",
+          "prompt": "agent_prompts/agent_prompt.v07-ch09.sma-b.md",
+          "finished": "2026-11-19 00:42:36",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S29",
+      "kind": "analyzer-phase1",
+      "volume": 7,
+      "chapter": "09",
+      "chapter_id": "v07-ch09",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v07-ch09.analyzer-phase1.md",
+      "expected": [],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 00:31:25",
+          "prompt": "agent_prompts/agent_prompt.v07-ch09.analyzer-phase1.md",
+          "finished": "2026-11-19 00:42:37",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S30",
+      "kind": "analyzer-phase2",
+      "volume": 7,
+      "chapter": "09",
+      "chapter_id": "v07-ch09",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v07-ch09.analyzer-phase2.md",
+      "expected": [
+        "output/_audit/sma/v7-ch09/precheck/omission-precheck.json",
+        "output/_audit/sma/v7-ch09/analysis/20261119-003926-3c69.json",
+        "output/_audit/sma/v7-ch09/analysis/20261119-003926-3c69.md"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 00:39:27",
+          "prompt": "agent_prompts/agent_prompt.v07-ch09.analyzer-phase2.md",
+          "finished": "2026-11-19 00:42:37",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S31",
+      "kind": "sma-b",
+      "volume": 7,
+      "chapter": "10",
+      "chapter_id": "v07-ch10",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v07-ch10.sma-b.md",
+      "expected": [
+        "output/_audit/sma/v7-ch10/b/20261119-003125-352d.json"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 00:31:25",
+          "prompt": "agent_prompts/agent_prompt.v07-ch10.sma-b.md",
+          "finished": "2026-11-19 00:46:24",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S32",
+      "kind": "analyzer-phase1",
+      "volume": 7,
+      "chapter": "10",
+      "chapter_id": "v07-ch10",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v07-ch10.analyzer-phase1.md",
+      "expected": [],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 00:31:25",
+          "prompt": "agent_prompts/agent_prompt.v07-ch10.analyzer-phase1.md",
+          "finished": "2026-11-19 00:46:25",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S33",
+      "kind": "analyzer-phase2",
+      "volume": 7,
+      "chapter": "10",
+      "chapter_id": "v07-ch10",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v07-ch10.analyzer-phase2.md",
+      "expected": [
+        "output/_audit/sma/v7-ch10/precheck/omission-precheck.json",
+        "output/_audit/sma/v7-ch10/analysis/20261119-003927-4257.json",
+        "output/_audit/sma/v7-ch10/analysis/20261119-003927-4257.md"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 00:39:27",
+          "prompt": "agent_prompts/agent_prompt.v07-ch10.analyzer-phase2.md",
+          "finished": "2026-11-19 00:46:25",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S34",
+      "kind": "sma-b",
+      "volume": 7,
+      "chapter": "epilogue",
+      "chapter_id": "v07-epilogue",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v07-epilogue.sma-b.md",
+      "expected": [
+        "output/_audit/sma/v7-epilogue/b/20261119-003125-f9c6.json"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 00:31:25",
+          "prompt": "agent_prompts/agent_prompt.v07-epilogue.sma-b.md",
+          "finished": "2026-11-19 00:48:23",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S35",
+      "kind": "analyzer-phase1",
+      "volume": 7,
+      "chapter": "epilogue",
+      "chapter_id": "v07-epilogue",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v07-epilogue.analyzer-phase1.md",
+      "expected": [],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 00:31:25",
+          "prompt": "agent_prompts/agent_prompt.v07-epilogue.analyzer-phase1.md",
+          "finished": "2026-11-19 00:48:23",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S36",
+      "kind": "analyzer-phase2",
+      "volume": 7,
+      "chapter": "epilogue",
+      "chapter_id": "v07-epilogue",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v07-epilogue.analyzer-phase2.md",
+      "expected": [
+        "output/_audit/sma/v7-epilogue/precheck/omission-precheck.json",
+        "output/_audit/sma/v7-epilogue/analysis/20261119-003927-212d.json",
+        "output/_audit/sma/v7-epilogue/analysis/20261119-003927-212d.md"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 00:39:27",
+          "prompt": "agent_prompts/agent_prompt.v07-epilogue.analyzer-phase2.md",
+          "finished": "2026-11-19 00:48:24",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S37",
+      "kind": "sma-b",
+      "volume": 8,
+      "chapter": "afterword",
+      "chapter_id": "v08-afterword",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v08-afterword.sma-b.md",
+      "expected": [
+        "output/_audit/sma/v8-afterword/b/20261118-233310-0742.json"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-18 23:33:10",
+          "prompt": "agent_prompts/agent_prompt.v08-afterword.sma-b.md",
+          "finished": "2026-11-18 23:50:39",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S38",
+      "kind": "analyzer-phase1",
+      "volume": 8,
+      "chapter": "afterword",
+      "chapter_id": "v08-afterword",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v08-afterword.analyzer-phase1.md",
+      "expected": [],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-18 23:33:10",
+          "prompt": "agent_prompts/agent_prompt.v08-afterword.analyzer-phase1.md",
+          "finished": "2026-11-18 23:50:39",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S39",
+      "kind": "analyzer-phase2",
+      "volume": 8,
+      "chapter": "afterword",
+      "chapter_id": "v08-afterword",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v08-afterword.analyzer-phase2.md",
+      "expected": [
+        "output/_audit/sma/v8-afterword/precheck/omission-precheck.json",
+        "output/_audit/sma/v8-afterword/analysis/20261118-234603-dba9.json",
+        "output/_audit/sma/v8-afterword/analysis/20261118-234603-dba9.md"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-18 23:46:03",
+          "prompt": "agent_prompts/agent_prompt.v08-afterword.analyzer-phase2.md",
+          "finished": "2026-11-18 23:50:39",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S40",
+      "kind": "sma-b",
+      "volume": 8,
+      "chapter": "01",
+      "chapter_id": "v08-ch01",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v08-ch01.sma-b.md",
+      "expected": [
+        "output/_audit/sma/v8-ch01/b/20261118-233310-1f61.json"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-18 23:33:10",
+          "prompt": "agent_prompts/agent_prompt.v08-ch01.sma-b.md",
+          "finished": "2026-11-18 23:50:39",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S41",
+      "kind": "analyzer-phase1",
+      "volume": 8,
+      "chapter": "01",
+      "chapter_id": "v08-ch01",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v08-ch01.analyzer-phase1.md",
+      "expected": [],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-18 23:33:10",
+          "prompt": "agent_prompts/agent_prompt.v08-ch01.analyzer-phase1.md",
+          "finished": "2026-11-18 23:50:40",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S42",
+      "kind": "analyzer-phase2",
+      "volume": 8,
+      "chapter": "01",
+      "chapter_id": "v08-ch01",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v08-ch01.analyzer-phase2.md",
+      "expected": [
+        "output/_audit/sma/v8-ch01/precheck/omission-precheck.json",
+        "output/_audit/sma/v8-ch01/analysis/20261118-234603-bcc4.json",
+        "output/_audit/sma/v8-ch01/analysis/20261118-234603-bcc4.md"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-18 23:46:03",
+          "prompt": "agent_prompts/agent_prompt.v08-ch01.analyzer-phase2.md",
+          "finished": "2026-11-18 23:50:40",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S43",
+      "kind": "sma-b",
+      "volume": 8,
+      "chapter": "02",
+      "chapter_id": "v08-ch02",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v08-ch02.sma-b.md",
+      "expected": [
+        "output/_audit/sma/v8-ch02/b/20261118-233310-120d.json"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-18 23:33:10",
+          "prompt": "agent_prompts/agent_prompt.v08-ch02.sma-b.md",
+          "finished": "2026-11-18 23:50:40",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S44",
+      "kind": "analyzer-phase1",
+      "volume": 8,
+      "chapter": "02",
+      "chapter_id": "v08-ch02",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v08-ch02.analyzer-phase1.md",
+      "expected": [],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-18 23:33:10",
+          "prompt": "agent_prompts/agent_prompt.v08-ch02.analyzer-phase1.md",
+          "finished": "2026-11-18 23:50:40",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S45",
+      "kind": "analyzer-phase2",
+      "volume": 8,
+      "chapter": "02",
+      "chapter_id": "v08-ch02",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v08-ch02.analyzer-phase2.md",
+      "expected": [
+        "output/_audit/sma/v8-ch02/precheck/omission-precheck.json",
+        "output/_audit/sma/v8-ch02/analysis/20261118-234603-29ef.json",
+        "output/_audit/sma/v8-ch02/analysis/20261118-234603-29ef.md"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-18 23:46:03",
+          "prompt": "agent_prompts/agent_prompt.v08-ch02.analyzer-phase2.md",
+          "finished": "2026-11-18 23:50:41",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S46",
+      "kind": "sma-b",
+      "volume": 8,
+      "chapter": "03",
+      "chapter_id": "v08-ch03",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v08-ch03.sma-b.md",
+      "expected": [
+        "output/_audit/sma/v8-ch03/b/20261118-233310-fda3.json"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-18 23:33:11",
+          "prompt": "agent_prompts/agent_prompt.v08-ch03.sma-b.md",
+          "finished": "2026-11-18 23:50:41",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S47",
+      "kind": "analyzer-phase1",
+      "volume": 8,
+      "chapter": "03",
+      "chapter_id": "v08-ch03",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v08-ch03.analyzer-phase1.md",
+      "expected": [],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-18 23:33:11",
+          "prompt": "agent_prompts/agent_prompt.v08-ch03.analyzer-phase1.md",
+          "finished": "2026-11-18 23:50:41",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S48",
+      "kind": "analyzer-phase2",
+      "volume": 8,
+      "chapter": "03",
+      "chapter_id": "v08-ch03",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v08-ch03.analyzer-phase2.md",
+      "expected": [
+        "output/_audit/sma/v8-ch03/precheck/omission-precheck.json",
+        "output/_audit/sma/v8-ch03/analysis/20261118-234603-4351.json",
+        "output/_audit/sma/v8-ch03/analysis/20261118-234603-4351.md"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-18 23:46:04",
+          "prompt": "agent_prompts/agent_prompt.v08-ch03.analyzer-phase2.md",
+          "finished": "2026-11-18 23:50:41",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S49",
+      "kind": "sma-b",
+      "volume": 8,
+      "chapter": "04",
+      "chapter_id": "v08-ch04",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v08-ch04.sma-b.md",
+      "expected": [
+        "output/_audit/sma/v8-ch04/b/20261118-233311-f647.json"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-18 23:33:11",
+          "prompt": "agent_prompts/agent_prompt.v08-ch04.sma-b.md",
+          "finished": "2026-11-18 23:50:41",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S50",
+      "kind": "analyzer-phase1",
+      "volume": 8,
+      "chapter": "04",
+      "chapter_id": "v08-ch04",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v08-ch04.analyzer-phase1.md",
+      "expected": [],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-18 23:33:11",
+          "prompt": "agent_prompts/agent_prompt.v08-ch04.analyzer-phase1.md",
+          "finished": "2026-11-18 23:50:42",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S51",
+      "kind": "analyzer-phase2",
+      "volume": 8,
+      "chapter": "04",
+      "chapter_id": "v08-ch04",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v08-ch04.analyzer-phase2.md",
+      "expected": [
+        "output/_audit/sma/v8-ch04/precheck/omission-precheck.json",
+        "output/_audit/sma/v8-ch04/analysis/20261118-234604-72c7.json",
+        "output/_audit/sma/v8-ch04/analysis/20261118-234604-72c7.md"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-18 23:46:04",
+          "prompt": "agent_prompts/agent_prompt.v08-ch04.analyzer-phase2.md",
+          "finished": "2026-11-18 23:50:42",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S52",
+      "kind": "sma-b",
+      "volume": 8,
+      "chapter": "05",
+      "chapter_id": "v08-ch05",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v08-ch05.sma-b.md",
+      "expected": [
+        "output/_audit/sma/v8-ch05/b/20261118-233311-60f8.json"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-18 23:33:11",
+          "prompt": "agent_prompts/agent_prompt.v08-ch05.sma-b.md",
+          "finished": "2026-11-18 23:50:42",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S53",
+      "kind": "analyzer-phase1",
+      "volume": 8,
+      "chapter": "05",
+      "chapter_id": "v08-ch05",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v08-ch05.analyzer-phase1.md",
+      "expected": [],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-18 23:33:11",
+          "prompt": "agent_prompts/agent_prompt.v08-ch05.analyzer-phase1.md",
+          "finished": "2026-11-18 23:50:42",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S54",
+      "kind": "analyzer-phase2",
+      "volume": 8,
+      "chapter": "05",
+      "chapter_id": "v08-ch05",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v08-ch05.analyzer-phase2.md",
+      "expected": [
+        "output/_audit/sma/v8-ch05/precheck/omission-precheck.json",
+        "output/_audit/sma/v8-ch05/analysis/20261118-234604-5d2b.json",
+        "output/_audit/sma/v8-ch05/analysis/20261118-234604-5d2b.md"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-18 23:46:04",
+          "prompt": "agent_prompts/agent_prompt.v08-ch05.analyzer-phase2.md",
+          "finished": "2026-11-18 23:50:42",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S55",
+      "kind": "sma-b",
+      "volume": 8,
+      "chapter": "06",
+      "chapter_id": "v08-ch06",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v08-ch06.sma-b.md",
+      "expected": [
+        "output/_audit/sma/v8-ch06/b/20261118-235055-81a8.json"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-18 23:50:55",
+          "prompt": "agent_prompts/agent_prompt.v08-ch06.sma-b.md",
+          "finished": "2026-11-19 00:02:09",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S56",
+      "kind": "analyzer-phase1",
+      "volume": 8,
+      "chapter": "06",
+      "chapter_id": "v08-ch06",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v08-ch06.analyzer-phase1.md",
+      "expected": [],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-18 23:50:55",
+          "prompt": "agent_prompts/agent_prompt.v08-ch06.analyzer-phase1.md",
+          "finished": "2026-11-19 00:02:09",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S57",
+      "kind": "analyzer-phase2",
+      "volume": 8,
+      "chapter": "06",
+      "chapter_id": "v08-ch06",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v08-ch06.analyzer-phase2.md",
+      "expected": [
+        "output/_audit/sma/v8-ch06/precheck/omission-precheck.json",
+        "output/_audit/sma/v8-ch06/analysis/20261118-235919-975a.json",
+        "output/_audit/sma/v8-ch06/analysis/20261118-235919-975a.md"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-18 23:59:19",
+          "prompt": "agent_prompts/agent_prompt.v08-ch06.analyzer-phase2.md",
+          "finished": "2026-11-19 00:02:09",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S58",
+      "kind": "sma-b",
+      "volume": 8,
+      "chapter": "07",
+      "chapter_id": "v08-ch07",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v08-ch07.sma-b.md",
+      "expected": [
+        "output/_audit/sma/v8-ch07/b/20261118-235055-7e3c.json"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-18 23:50:55",
+          "prompt": "agent_prompts/agent_prompt.v08-ch07.sma-b.md",
+          "finished": "2026-11-19 00:02:09",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S59",
+      "kind": "analyzer-phase1",
+      "volume": 8,
+      "chapter": "07",
+      "chapter_id": "v08-ch07",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v08-ch07.analyzer-phase1.md",
+      "expected": [],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-18 23:50:55",
+          "prompt": "agent_prompts/agent_prompt.v08-ch07.analyzer-phase1.md",
+          "finished": "2026-11-19 00:02:09",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S60",
+      "kind": "analyzer-phase2",
+      "volume": 8,
+      "chapter": "07",
+      "chapter_id": "v08-ch07",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v08-ch07.analyzer-phase2.md",
+      "expected": [
+        "output/_audit/sma/v8-ch07/precheck/omission-precheck.json",
+        "output/_audit/sma/v8-ch07/analysis/20261118-235919-5cc0.json",
+        "output/_audit/sma/v8-ch07/analysis/20261118-235919-5cc0.md"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-18 23:59:20",
+          "prompt": "agent_prompts/agent_prompt.v08-ch07.analyzer-phase2.md",
+          "finished": "2026-11-19 00:02:09",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S61",
+      "kind": "sma-b",
+      "volume": 8,
+      "chapter": "08",
+      "chapter_id": "v08-ch08",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v08-ch08.sma-b.md",
+      "expected": [
+        "output/_audit/sma/v8-ch08/b/20261118-235055-0d71.json"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-18 23:50:55",
+          "prompt": "agent_prompts/agent_prompt.v08-ch08.sma-b.md",
+          "finished": "2026-11-19 00:02:10",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S62",
+      "kind": "analyzer-phase1",
+      "volume": 8,
+      "chapter": "08",
+      "chapter_id": "v08-ch08",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v08-ch08.analyzer-phase1.md",
+      "expected": [],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-18 23:50:55",
+          "prompt": "agent_prompts/agent_prompt.v08-ch08.analyzer-phase1.md",
+          "finished": "2026-11-19 00:02:10",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S63",
+      "kind": "analyzer-phase2",
+      "volume": 8,
+      "chapter": "08",
+      "chapter_id": "v08-ch08",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v08-ch08.analyzer-phase2.md",
+      "expected": [
+        "output/_audit/sma/v8-ch08/precheck/omission-precheck.json",
+        "output/_audit/sma/v8-ch08/analysis/20261118-235920-b29d.json",
+        "output/_audit/sma/v8-ch08/analysis/20261118-235920-b29d.md"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-18 23:59:20",
+          "prompt": "agent_prompts/agent_prompt.v08-ch08.analyzer-phase2.md",
+          "finished": "2026-11-19 00:02:10",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S64",
+      "kind": "sma-b",
+      "volume": 8,
+      "chapter": "09",
+      "chapter_id": "v08-ch09",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v08-ch09.sma-b.md",
+      "expected": [
+        "output/_audit/sma/v8-ch09/b/20261118-235055-a5fc.json"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-18 23:50:55",
+          "prompt": "agent_prompts/agent_prompt.v08-ch09.sma-b.md",
+          "finished": "2026-11-19 00:02:10",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S65",
+      "kind": "analyzer-phase1",
+      "volume": 8,
+      "chapter": "09",
+      "chapter_id": "v08-ch09",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v08-ch09.analyzer-phase1.md",
+      "expected": [],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-18 23:50:55",
+          "prompt": "agent_prompts/agent_prompt.v08-ch09.analyzer-phase1.md",
+          "finished": "2026-11-19 00:02:10",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S66",
+      "kind": "analyzer-phase2",
+      "volume": 8,
+      "chapter": "09",
+      "chapter_id": "v08-ch09",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v08-ch09.analyzer-phase2.md",
+      "expected": [
+        "output/_audit/sma/v8-ch09/precheck/omission-precheck.json",
+        "output/_audit/sma/v8-ch09/analysis/20261118-235920-a094.json",
+        "output/_audit/sma/v8-ch09/analysis/20261118-235920-a094.md"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-18 23:59:20",
+          "prompt": "agent_prompts/agent_prompt.v08-ch09.analyzer-phase2.md",
+          "finished": "2026-11-19 00:02:11",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S67",
+      "kind": "sma-b",
+      "volume": 8,
+      "chapter": "10",
+      "chapter_id": "v08-ch10",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v08-ch10.sma-b.md",
+      "expected": [
+        "output/_audit/sma/v8-ch10/b/20261118-235055-d295.json"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-18 23:50:55",
+          "prompt": "agent_prompts/agent_prompt.v08-ch10.sma-b.md",
+          "finished": "2026-11-19 00:02:11",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S68",
+      "kind": "analyzer-phase1",
+      "volume": 8,
+      "chapter": "10",
+      "chapter_id": "v08-ch10",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v08-ch10.analyzer-phase1.md",
+      "expected": [],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-18 23:50:55",
+          "prompt": "agent_prompts/agent_prompt.v08-ch10.analyzer-phase1.md",
+          "finished": "2026-11-19 00:02:11",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S69",
+      "kind": "analyzer-phase2",
+      "volume": 8,
+      "chapter": "10",
+      "chapter_id": "v08-ch10",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v08-ch10.analyzer-phase2.md",
+      "expected": [
+        "output/_audit/sma/v8-ch10/precheck/omission-precheck.json",
+        "output/_audit/sma/v8-ch10/analysis/20261118-235920-f104.json",
+        "output/_audit/sma/v8-ch10/analysis/20261118-235920-f104.md"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-18 23:59:20",
+          "prompt": "agent_prompts/agent_prompt.v08-ch10.analyzer-phase2.md",
+          "finished": "2026-11-19 00:02:11",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S70",
+      "kind": "sma-b",
+      "volume": 8,
+      "chapter": "epilogue",
+      "chapter_id": "v08-epilogue",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v08-epilogue.sma-b.md",
+      "expected": [
+        "output/_audit/sma/v8-epilogue/b/20261118-235055-1c89.json"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-18 23:50:55",
+          "prompt": "agent_prompts/agent_prompt.v08-epilogue.sma-b.md",
+          "finished": "2026-11-19 00:02:11",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S71",
+      "kind": "analyzer-phase1",
+      "volume": 8,
+      "chapter": "epilogue",
+      "chapter_id": "v08-epilogue",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v08-epilogue.analyzer-phase1.md",
+      "expected": [],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-18 23:50:55",
+          "prompt": "agent_prompts/agent_prompt.v08-epilogue.analyzer-phase1.md",
+          "finished": "2026-11-19 00:02:11",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S72",
+      "kind": "analyzer-phase2",
+      "volume": 8,
+      "chapter": "epilogue",
+      "chapter_id": "v08-epilogue",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v08-epilogue.analyzer-phase2.md",
+      "expected": [
+        "output/_audit/sma/v8-epilogue/precheck/omission-precheck.json",
+        "output/_audit/sma/v8-epilogue/analysis/20261118-235920-1b12.json",
+        "output/_audit/sma/v8-epilogue/analysis/20261118-235920-1b12.md"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-18 23:59:20",
+          "prompt": "agent_prompts/agent_prompt.v08-epilogue.analyzer-phase2.md",
+          "finished": "2026-11-19 00:02:12",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S73",
+      "kind": "sma-b",
+      "volume": 9,
+      "chapter": "afterword",
+      "chapter_id": "v09-afterword",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v09-afterword.sma-b.md",
+      "expected": [
+        "output/_audit/sma/v9-afterword/b/20261119-005711-8a44.json"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 00:57:11",
+          "prompt": "agent_prompts/agent_prompt.v09-afterword.sma-b.md",
+          "finished": "2026-11-19 01:00:10",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S74",
+      "kind": "analyzer-phase1",
+      "volume": 9,
+      "chapter": "afterword",
+      "chapter_id": "v09-afterword",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v09-afterword.analyzer-phase1.md",
+      "expected": [],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 00:57:12",
+          "prompt": "agent_prompts/agent_prompt.v09-afterword.analyzer-phase1.md",
+          "finished": "2026-11-19 01:00:11",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S75",
+      "kind": "analyzer-phase2",
+      "volume": 9,
+      "chapter": "afterword",
+      "chapter_id": "v09-afterword",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v09-afterword.analyzer-phase2.md",
+      "expected": [
+        "output/_audit/sma/v9-afterword/precheck/omission-precheck.json",
+        "output/_audit/sma/v9-afterword/analysis/20261119-005916-3ce3.json",
+        "output/_audit/sma/v9-afterword/analysis/20261119-005916-3ce3.md"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 00:59:16",
+          "prompt": "agent_prompts/agent_prompt.v09-afterword.analyzer-phase2.md",
+          "finished": "2026-11-19 01:00:11",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S76",
+      "kind": "sma-b",
+      "volume": 9,
+      "chapter": "01",
+      "chapter_id": "v09-ch01",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v09-ch01.sma-b.md",
+      "expected": [
+        "output/_audit/sma/v9-ch01/b/20261119-005712-feda.json"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 00:57:12",
+          "prompt": "agent_prompts/agent_prompt.v09-ch01.sma-b.md",
+          "finished": "2026-11-19 01:03:51",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S77",
+      "kind": "analyzer-phase1",
+      "volume": 9,
+      "chapter": "01",
+      "chapter_id": "v09-ch01",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v09-ch01.analyzer-phase1.md",
+      "expected": [],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 00:57:12",
+          "prompt": "agent_prompts/agent_prompt.v09-ch01.analyzer-phase1.md",
+          "finished": "2026-11-19 01:03:51",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S78",
+      "kind": "analyzer-phase2",
+      "volume": 9,
+      "chapter": "01",
+      "chapter_id": "v09-ch01",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v09-ch01.analyzer-phase2.attempt2.md",
+      "expected": [
+        "output/_audit/sma/v9-ch01/precheck/omission-precheck.json",
+        "output/_audit/sma/v9-ch01/analysis/20261119-010201-3b37.json",
+        "output/_audit/sma/v9-ch01/analysis/20261119-010201-3b37.md"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 01:02:01",
+          "prompt": "agent_prompts/agent_prompt.v09-ch01.analyzer-phase2.md",
+          "finished": "",
+          "result": "",
+          "note": ""
+        },
+        {
+          "n": 2,
+          "started": "2026-11-19 01:03:02",
+          "prompt": "agent_prompts/agent_prompt.v09-ch01.analyzer-phase2.attempt2.md",
+          "finished": "2026-11-19 01:03:51",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S79",
+      "kind": "sma-b",
+      "volume": 9,
+      "chapter": "02",
+      "chapter_id": "v09-ch02",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v09-ch02.sma-b.attempt2.md",
+      "expected": [
+        "output/_audit/sma/v9-ch02/b/20261119-005712-a171.json"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 00:57:12",
+          "prompt": "agent_prompts/agent_prompt.v09-ch02.sma-b.md",
+          "finished": "",
+          "result": "",
+          "note": ""
+        },
+        {
+          "n": 2,
+          "started": "2026-11-19 01:04:12",
+          "prompt": "agent_prompts/agent_prompt.v09-ch02.sma-b.attempt2.md",
+          "finished": "2026-11-19 01:07:44",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S80",
+      "kind": "analyzer-phase1",
+      "volume": 9,
+      "chapter": "02",
+      "chapter_id": "v09-ch02",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v09-ch02.analyzer-phase1.attempt2.md",
+      "expected": [],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 00:57:12",
+          "prompt": "agent_prompts/agent_prompt.v09-ch02.analyzer-phase1.md",
+          "finished": "",
+          "result": "",
+          "note": ""
+        },
+        {
+          "n": 2,
+          "started": "2026-11-19 01:04:12",
+          "prompt": "agent_prompts/agent_prompt.v09-ch02.analyzer-phase1.attempt2.md",
+          "finished": "2026-11-19 01:07:44",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S81",
+      "kind": "analyzer-phase2",
+      "volume": 9,
+      "chapter": "02",
+      "chapter_id": "v09-ch02",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v09-ch02.analyzer-phase2.md",
+      "expected": [
+        "output/_audit/sma/v9-ch02/precheck/omission-precheck.json",
+        "output/_audit/sma/v9-ch02/analysis/20261119-010619-d253.json",
+        "output/_audit/sma/v9-ch02/analysis/20261119-010619-d253.md"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 01:06:19",
+          "prompt": "agent_prompts/agent_prompt.v09-ch02.analyzer-phase2.md",
+          "finished": "2026-11-19 01:07:45",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S82",
+      "kind": "sma-b",
+      "volume": 9,
+      "chapter": "03",
+      "chapter_id": "v09-ch03",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v09-ch03.sma-b.attempt2.md",
+      "expected": [
+        "output/_audit/sma/v9-ch03/b/20261119-005712-e1f5.json"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 00:57:12",
+          "prompt": "agent_prompts/agent_prompt.v09-ch03.sma-b.md",
+          "finished": "",
+          "result": "",
+          "note": ""
+        },
+        {
+          "n": 2,
+          "started": "2026-11-19 01:07:56",
+          "prompt": "agent_prompts/agent_prompt.v09-ch03.sma-b.attempt2.md",
+          "finished": "2026-11-19 01:10:37",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S83",
+      "kind": "analyzer-phase1",
+      "volume": 9,
+      "chapter": "03",
+      "chapter_id": "v09-ch03",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v09-ch03.analyzer-phase1.attempt2.md",
+      "expected": [],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 00:57:12",
+          "prompt": "agent_prompts/agent_prompt.v09-ch03.analyzer-phase1.md",
+          "finished": "",
+          "result": "",
+          "note": ""
+        },
+        {
+          "n": 2,
+          "started": "2026-11-19 01:07:56",
+          "prompt": "agent_prompts/agent_prompt.v09-ch03.analyzer-phase1.attempt2.md",
+          "finished": "2026-11-19 01:10:37",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S84",
+      "kind": "analyzer-phase2",
+      "volume": 9,
+      "chapter": "03",
+      "chapter_id": "v09-ch03",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v09-ch03.analyzer-phase2.md",
+      "expected": [
+        "output/_audit/sma/v9-ch03/precheck/omission-precheck.json",
+        "output/_audit/sma/v9-ch03/analysis/20261119-010946-a717.json",
+        "output/_audit/sma/v9-ch03/analysis/20261119-010946-a717.md"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 01:09:46",
+          "prompt": "agent_prompts/agent_prompt.v09-ch03.analyzer-phase2.md",
+          "finished": "2026-11-19 01:10:37",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S85",
+      "kind": "sma-b",
+      "volume": 9,
+      "chapter": "04",
+      "chapter_id": "v09-ch04",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v09-ch04.sma-b.md",
+      "expected": [
+        "output/_audit/sma/v9-ch04/b/20261119-011048-9068.json"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 01:10:48",
+          "prompt": "agent_prompts/agent_prompt.v09-ch04.sma-b.md",
+          "finished": "2026-11-19 01:13:52",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S86",
+      "kind": "analyzer-phase1",
+      "volume": 9,
+      "chapter": "04",
+      "chapter_id": "v09-ch04",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v09-ch04.analyzer-phase1.md",
+      "expected": [],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 01:10:48",
+          "prompt": "agent_prompts/agent_prompt.v09-ch04.analyzer-phase1.md",
+          "finished": "2026-11-19 01:13:53",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S87",
+      "kind": "analyzer-phase2",
+      "volume": 9,
+      "chapter": "04",
+      "chapter_id": "v09-ch04",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v09-ch04.analyzer-phase2.md",
+      "expected": [
+        "output/_audit/sma/v9-ch04/precheck/omission-precheck.json",
+        "output/_audit/sma/v9-ch04/analysis/20261119-011313-ebec.json",
+        "output/_audit/sma/v9-ch04/analysis/20261119-011313-ebec.md"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 01:13:13",
+          "prompt": "agent_prompts/agent_prompt.v09-ch04.analyzer-phase2.md",
+          "finished": "2026-11-19 01:13:53",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S88",
+      "kind": "sma-b",
+      "volume": 9,
+      "chapter": "05",
+      "chapter_id": "v09-ch05",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v09-ch05.sma-b.md",
+      "expected": [
+        "output/_audit/sma/v9-ch05/b/20261119-011405-4132.json"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 01:14:05",
+          "prompt": "agent_prompts/agent_prompt.v09-ch05.sma-b.md",
+          "finished": "2026-11-19 01:17:39",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S89",
+      "kind": "analyzer-phase1",
+      "volume": 9,
+      "chapter": "05",
+      "chapter_id": "v09-ch05",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v09-ch05.analyzer-phase1.md",
+      "expected": [],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 01:14:05",
+          "prompt": "agent_prompts/agent_prompt.v09-ch05.analyzer-phase1.md",
+          "finished": "2026-11-19 01:17:39",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S90",
+      "kind": "analyzer-phase2",
+      "volume": 9,
+      "chapter": "05",
+      "chapter_id": "v09-ch05",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v09-ch05.analyzer-phase2.md",
+      "expected": [
+        "output/_audit/sma/v9-ch05/precheck/omission-precheck.json",
+        "output/_audit/sma/v9-ch05/analysis/20261119-011639-c188.json",
+        "output/_audit/sma/v9-ch05/analysis/20261119-011639-c188.md"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 01:16:39",
+          "prompt": "agent_prompts/agent_prompt.v09-ch05.analyzer-phase2.md",
+          "finished": "2026-11-19 01:17:39",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S91",
+      "kind": "sma-b",
+      "volume": 9,
+      "chapter": "06",
+      "chapter_id": "v09-ch06",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v09-ch06.sma-b.md",
+      "expected": [
+        "output/_audit/sma/v9-ch06/b/20261119-011757-778e.json"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 01:17:57",
+          "prompt": "agent_prompts/agent_prompt.v09-ch06.sma-b.md",
+          "finished": "2026-11-19 01:19:41",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S92",
+      "kind": "analyzer-phase1",
+      "volume": 9,
+      "chapter": "06",
+      "chapter_id": "v09-ch06",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v09-ch06.analyzer-phase1.md",
+      "expected": [],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 01:17:57",
+          "prompt": "agent_prompts/agent_prompt.v09-ch06.analyzer-phase1.md",
+          "finished": "2026-11-19 01:19:41",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S93",
+      "kind": "analyzer-phase2",
+      "volume": 9,
+      "chapter": "06",
+      "chapter_id": "v09-ch06",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v09-ch06.analyzer-phase2.md",
+      "expected": [
+        "output/_audit/sma/v9-ch06/precheck/omission-precheck.json",
+        "output/_audit/sma/v9-ch06/analysis/20261119-011912-2a6b.json",
+        "output/_audit/sma/v9-ch06/analysis/20261119-011912-2a6b.md"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 01:19:12",
+          "prompt": "agent_prompts/agent_prompt.v09-ch06.analyzer-phase2.md",
+          "finished": "2026-11-19 01:19:41",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S94",
+      "kind": "sma-b",
+      "volume": 9,
+      "chapter": "07",
+      "chapter_id": "v09-ch07",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v09-ch07.sma-b.md",
+      "expected": [
+        "output/_audit/sma/v9-ch07/b/20261119-011953-9969.json"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 01:19:53",
+          "prompt": "agent_prompts/agent_prompt.v09-ch07.sma-b.md",
+          "finished": "2026-11-19 01:21:03",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S95",
+      "kind": "analyzer-phase1",
+      "volume": 9,
+      "chapter": "07",
+      "chapter_id": "v09-ch07",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v09-ch07.analyzer-phase1.md",
+      "expected": [],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 01:19:53",
+          "prompt": "agent_prompts/agent_prompt.v09-ch07.analyzer-phase1.md",
+          "finished": "2026-11-19 01:21:04",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S96",
+      "kind": "analyzer-phase2",
+      "volume": 9,
+      "chapter": "07",
+      "chapter_id": "v09-ch07",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v09-ch07.analyzer-phase2.attempt2.md",
+      "expected": [
+        "output/_audit/sma/v9-ch07/precheck/omission-precheck.json",
+        "output/_audit/sma/v9-ch07/analysis/20261119-012020-0f87.json",
+        "output/_audit/sma/v9-ch07/analysis/20261119-012020-0f87.md"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 01:20:20",
+          "prompt": "agent_prompts/agent_prompt.v09-ch07.analyzer-phase2.md",
+          "finished": "",
+          "result": "",
+          "note": ""
+        },
+        {
+          "n": 2,
+          "started": "2026-11-19 01:20:39",
+          "prompt": "agent_prompts/agent_prompt.v09-ch07.analyzer-phase2.attempt2.md",
+          "finished": "2026-11-19 01:21:04",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S97",
+      "kind": "sma-b",
+      "volume": 9,
+      "chapter": "08",
+      "chapter_id": "v09-ch08",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v09-ch08.sma-b.md",
+      "expected": [
+        "output/_audit/sma/v9-ch08/b/20261119-012117-45ae.json"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 01:21:17",
+          "prompt": "agent_prompts/agent_prompt.v09-ch08.sma-b.md",
+          "finished": "2026-11-19 01:22:43",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S98",
+      "kind": "analyzer-phase1",
+      "volume": 9,
+      "chapter": "08",
+      "chapter_id": "v09-ch08",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v09-ch08.analyzer-phase1.md",
+      "expected": [],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 01:21:17",
+          "prompt": "agent_prompts/agent_prompt.v09-ch08.analyzer-phase1.md",
+          "finished": "2026-11-19 01:22:43",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S99",
+      "kind": "analyzer-phase2",
+      "volume": 9,
+      "chapter": "08",
+      "chapter_id": "v09-ch08",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v09-ch08.analyzer-phase2.md",
+      "expected": [
+        "output/_audit/sma/v9-ch08/precheck/omission-precheck.json",
+        "output/_audit/sma/v9-ch08/analysis/20261119-012210-7171.json",
+        "output/_audit/sma/v9-ch08/analysis/20261119-012210-7171.md"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 01:22:10",
+          "prompt": "agent_prompts/agent_prompt.v09-ch08.analyzer-phase2.md",
+          "finished": "2026-11-19 01:22:44",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S100",
+      "kind": "sma-b",
+      "volume": 9,
+      "chapter": "09",
+      "chapter_id": "v09-ch09",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v09-ch09.sma-b.md",
+      "expected": [
+        "output/_audit/sma/v9-ch09/b/20261119-012257-8112.json"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 01:22:57",
+          "prompt": "agent_prompts/agent_prompt.v09-ch09.sma-b.md",
+          "finished": "2026-11-19 01:23:59",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S101",
+      "kind": "analyzer-phase1",
+      "volume": 9,
+      "chapter": "09",
+      "chapter_id": "v09-ch09",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v09-ch09.analyzer-phase1.md",
+      "expected": [],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 01:22:57",
+          "prompt": "agent_prompts/agent_prompt.v09-ch09.analyzer-phase1.md",
+          "finished": "2026-11-19 01:23:59",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S102",
+      "kind": "analyzer-phase2",
+      "volume": 9,
+      "chapter": "09",
+      "chapter_id": "v09-ch09",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v09-ch09.analyzer-phase2.md",
+      "expected": [
+        "output/_audit/sma/v9-ch09/precheck/omission-precheck.json",
+        "output/_audit/sma/v9-ch09/analysis/20261119-012337-781e.json",
+        "output/_audit/sma/v9-ch09/analysis/20261119-012337-781e.md"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 01:23:37",
+          "prompt": "agent_prompts/agent_prompt.v09-ch09.analyzer-phase2.md",
+          "finished": "2026-11-19 01:23:59",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S103",
+      "kind": "sma-b",
+      "volume": 9,
+      "chapter": "epilogue",
+      "chapter_id": "v09-epilogue",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v09-epilogue.sma-b.md",
+      "expected": [
+        "output/_audit/sma/v9-epilogue/b/20261119-012415-f8d1.json"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 01:24:15",
+          "prompt": "agent_prompts/agent_prompt.v09-epilogue.sma-b.md",
+          "finished": "2026-11-19 01:25:52",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S104",
+      "kind": "analyzer-phase1",
+      "volume": 9,
+      "chapter": "epilogue",
+      "chapter_id": "v09-epilogue",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v09-epilogue.analyzer-phase1.md",
+      "expected": [],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 01:24:16",
+          "prompt": "agent_prompts/agent_prompt.v09-epilogue.analyzer-phase1.md",
+          "finished": "2026-11-19 01:25:52",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S105",
+      "kind": "analyzer-phase2",
+      "volume": 9,
+      "chapter": "epilogue",
+      "chapter_id": "v09-epilogue",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v09-epilogue.analyzer-phase2.md",
+      "expected": [
+        "output/_audit/sma/v9-epilogue/precheck/omission-precheck.json",
+        "output/_audit/sma/v9-epilogue/analysis/20261119-012501-a437.json",
+        "output/_audit/sma/v9-epilogue/analysis/20261119-012501-a437.md"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 01:25:01",
+          "prompt": "agent_prompts/agent_prompt.v09-epilogue.analyzer-phase2.md",
+          "finished": "2026-11-19 01:25:52",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S106",
+      "kind": "sma-b",
+      "volume": 10,
+      "chapter": "afterword",
+      "chapter_id": "v10-afterword",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v10-afterword.sma-b.md",
+      "expected": [
+        "output/_audit/sma/v10-afterword/b/20261119-013240-4b17.json"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 01:32:40",
+          "prompt": "agent_prompts/agent_prompt.v10-afterword.sma-b.md",
+          "finished": "2026-11-19 01:35:57",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S107",
+      "kind": "analyzer-phase1",
+      "volume": 10,
+      "chapter": "afterword",
+      "chapter_id": "v10-afterword",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v10-afterword.analyzer-phase1.md",
+      "expected": [],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 01:32:40",
+          "prompt": "agent_prompts/agent_prompt.v10-afterword.analyzer-phase1.md",
+          "finished": "2026-11-19 01:35:57",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S108",
+      "kind": "analyzer-phase2",
+      "volume": 10,
+      "chapter": "afterword",
+      "chapter_id": "v10-afterword",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v10-afterword.analyzer-phase2.md",
+      "expected": [
+        "output/_audit/sma/v10-afterword/precheck/omission-precheck.json",
+        "output/_audit/sma/v10-afterword/analysis/20261119-013409-03bb.json",
+        "output/_audit/sma/v10-afterword/analysis/20261119-013409-03bb.md"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 01:34:09",
+          "prompt": "agent_prompts/agent_prompt.v10-afterword.analyzer-phase2.md",
+          "finished": "2026-11-19 01:35:57",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S109",
+      "kind": "sma-b",
+      "volume": 10,
+      "chapter": "01",
+      "chapter_id": "v10-ch01",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v10-ch01.sma-b.attempt2.md",
+      "expected": [
+        "output/_audit/sma/v10-ch01/b/20261119-013240-9ad3.json"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 01:32:40",
+          "prompt": "agent_prompts/agent_prompt.v10-ch01.sma-b.md",
+          "finished": "",
+          "result": "",
+          "note": ""
+        },
+        {
+          "n": 2,
+          "started": "2026-11-19 01:44:54",
+          "prompt": "agent_prompts/agent_prompt.v10-ch01.sma-b.attempt2.md",
+          "finished": "2026-11-19 01:55:05",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S110",
+      "kind": "analyzer-phase1",
+      "volume": 10,
+      "chapter": "01",
+      "chapter_id": "v10-ch01",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v10-ch01.analyzer-phase1.attempt2.md",
+      "expected": [],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 01:32:40",
+          "prompt": "agent_prompts/agent_prompt.v10-ch01.analyzer-phase1.md",
+          "finished": "",
+          "result": "",
+          "note": ""
+        },
+        {
+          "n": 2,
+          "started": "2026-11-19 01:44:54",
+          "prompt": "agent_prompts/agent_prompt.v10-ch01.analyzer-phase1.attempt2.md",
+          "finished": "2026-11-19 01:55:06",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S111",
+      "kind": "analyzer-phase2",
+      "volume": 10,
+      "chapter": "01",
+      "chapter_id": "v10-ch01",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v10-ch01.analyzer-phase2.md",
+      "expected": [
+        "output/_audit/sma/v10-ch01/precheck/omission-precheck.json",
+        "output/_audit/sma/v10-ch01/analysis/20261119-015058-bedd.json",
+        "output/_audit/sma/v10-ch01/analysis/20261119-015058-bedd.md"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 01:50:58",
+          "prompt": "agent_prompts/agent_prompt.v10-ch01.analyzer-phase2.md",
+          "finished": "2026-11-19 01:55:06",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S112",
+      "kind": "sma-b",
+      "volume": 10,
+      "chapter": "02",
+      "chapter_id": "v10-ch02",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v10-ch02.sma-b.attempt2.md",
+      "expected": [
+        "output/_audit/sma/v10-ch02/b/20261119-013240-18d8.json"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 01:32:40",
+          "prompt": "agent_prompts/agent_prompt.v10-ch02.sma-b.md",
+          "finished": "",
+          "result": "",
+          "note": ""
+        },
+        {
+          "n": 2,
+          "started": "2026-11-19 01:44:54",
+          "prompt": "agent_prompts/agent_prompt.v10-ch02.sma-b.attempt2.md",
+          "finished": "2026-11-19 01:59:01",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S113",
+      "kind": "analyzer-phase1",
+      "volume": 10,
+      "chapter": "02",
+      "chapter_id": "v10-ch02",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v10-ch02.analyzer-phase1.attempt2.md",
+      "expected": [],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 01:32:40",
+          "prompt": "agent_prompts/agent_prompt.v10-ch02.analyzer-phase1.md",
+          "finished": "",
+          "result": "",
+          "note": ""
+        },
+        {
+          "n": 2,
+          "started": "2026-11-19 01:44:54",
+          "prompt": "agent_prompts/agent_prompt.v10-ch02.analyzer-phase1.attempt2.md",
+          "finished": "2026-11-19 01:59:01",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S114",
+      "kind": "analyzer-phase2",
+      "volume": 10,
+      "chapter": "02",
+      "chapter_id": "v10-ch02",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v10-ch02.analyzer-phase2.md",
+      "expected": [
+        "output/_audit/sma/v10-ch02/precheck/omission-precheck.json",
+        "output/_audit/sma/v10-ch02/analysis/20261119-015731-128d.json",
+        "output/_audit/sma/v10-ch02/analysis/20261119-015731-128d.md"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 01:57:31",
+          "prompt": "agent_prompts/agent_prompt.v10-ch02.analyzer-phase2.md",
+          "finished": "2026-11-19 01:59:01",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S115",
+      "kind": "sma-b",
+      "volume": 10,
+      "chapter": "03",
+      "chapter_id": "v10-ch03",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v10-ch03.sma-b.md",
+      "expected": [
+        "output/_audit/sma/v10-ch03/b/20261119-014511-9862.json"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 01:45:12",
+          "prompt": "agent_prompts/agent_prompt.v10-ch03.sma-b.md",
+          "finished": "2026-11-19 02:09:06",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S116",
+      "kind": "analyzer-phase1",
+      "volume": 10,
+      "chapter": "03",
+      "chapter_id": "v10-ch03",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v10-ch03.analyzer-phase1.md",
+      "expected": [],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 01:45:11",
+          "prompt": "agent_prompts/agent_prompt.v10-ch03.analyzer-phase1.md",
+          "finished": "2026-11-19 02:09:07",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S117",
+      "kind": "analyzer-phase2",
+      "volume": 10,
+      "chapter": "03",
+      "chapter_id": "v10-ch03",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v10-ch03.analyzer-phase2.md",
+      "expected": [
+        "output/_audit/sma/v10-ch03/precheck/omission-precheck.json",
+        "output/_audit/sma/v10-ch03/analysis/20261119-020709-446c.json",
+        "output/_audit/sma/v10-ch03/analysis/20261119-020709-446c.md"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 02:07:10",
+          "prompt": "agent_prompts/agent_prompt.v10-ch03.analyzer-phase2.md",
+          "finished": "2026-11-19 02:09:07",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S118",
+      "kind": "sma-b",
+      "volume": 10,
+      "chapter": "04",
+      "chapter_id": "v10-ch04",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v10-ch04.sma-b.md",
+      "expected": [
+        "output/_audit/sma/v10-ch04/b/20261119-014511-1fae.json"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 01:45:11",
+          "prompt": "agent_prompts/agent_prompt.v10-ch04.sma-b.md",
+          "finished": "2026-11-19 02:13:30",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S119",
+      "kind": "analyzer-phase1",
+      "volume": 10,
+      "chapter": "04",
+      "chapter_id": "v10-ch04",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v10-ch04.analyzer-phase1.md",
+      "expected": [],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 01:45:12",
+          "prompt": "agent_prompts/agent_prompt.v10-ch04.analyzer-phase1.md",
+          "finished": "2026-11-19 02:13:30",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S120",
+      "kind": "analyzer-phase2",
+      "volume": 10,
+      "chapter": "04",
+      "chapter_id": "v10-ch04",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v10-ch04.analyzer-phase2.md",
+      "expected": [
+        "output/_audit/sma/v10-ch04/precheck/omission-precheck.json",
+        "output/_audit/sma/v10-ch04/analysis/20261119-021139-514d.json",
+        "output/_audit/sma/v10-ch04/analysis/20261119-021139-514d.md"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 02:11:39",
+          "prompt": "agent_prompts/agent_prompt.v10-ch04.analyzer-phase2.md",
+          "finished": "2026-11-19 02:13:30",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S121",
+      "kind": "sma-b",
+      "volume": 10,
+      "chapter": "05",
+      "chapter_id": "v10-ch05",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v10-ch05.sma-b.md",
+      "expected": [
+        "output/_audit/sma/v10-ch05/b/20261119-014512-9b0d.json"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 01:45:12",
+          "prompt": "agent_prompts/agent_prompt.v10-ch05.sma-b.md",
+          "finished": "2026-11-19 02:17:06",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S122",
+      "kind": "analyzer-phase1",
+      "volume": 10,
+      "chapter": "05",
+      "chapter_id": "v10-ch05",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v10-ch05.analyzer-phase1.md",
+      "expected": [],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 01:45:12",
+          "prompt": "agent_prompts/agent_prompt.v10-ch05.analyzer-phase1.md",
+          "finished": "2026-11-19 02:17:06",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S123",
+      "kind": "analyzer-phase2",
+      "volume": 10,
+      "chapter": "05",
+      "chapter_id": "v10-ch05",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v10-ch05.analyzer-phase2.md",
+      "expected": [
+        "output/_audit/sma/v10-ch05/precheck/omission-precheck.json",
+        "output/_audit/sma/v10-ch05/analysis/20261119-021532-46b7.json",
+        "output/_audit/sma/v10-ch05/analysis/20261119-021532-46b7.md"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 02:15:33",
+          "prompt": "agent_prompts/agent_prompt.v10-ch05.analyzer-phase2.md",
+          "finished": "2026-11-19 02:17:06",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S124",
+      "kind": "sma-b",
+      "volume": 10,
+      "chapter": "06",
+      "chapter_id": "v10-ch06",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v10-ch06.sma-b.md",
+      "expected": [
+        "output/_audit/sma/v10-ch06/b/20261119-022432-c332.json"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 02:24:32",
+          "prompt": "agent_prompts/agent_prompt.v10-ch06.sma-b.md",
+          "finished": "2026-11-19 02:41:27",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S125",
+      "kind": "analyzer-phase1",
+      "volume": 10,
+      "chapter": "06",
+      "chapter_id": "v10-ch06",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v10-ch06.analyzer-phase1.md",
+      "expected": [],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 02:24:32",
+          "prompt": "agent_prompts/agent_prompt.v10-ch06.analyzer-phase1.md",
+          "finished": "2026-11-19 02:41:27",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S126",
+      "kind": "analyzer-phase2",
+      "volume": 10,
+      "chapter": "06",
+      "chapter_id": "v10-ch06",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v10-ch06.analyzer-phase2.md",
+      "expected": [
+        "output/_audit/sma/v10-ch06/precheck/omission-precheck.json",
+        "output/_audit/sma/v10-ch06/analysis/20261119-023606-ec08.json",
+        "output/_audit/sma/v10-ch06/analysis/20261119-023606-ec08.md"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 02:36:07",
+          "prompt": "agent_prompts/agent_prompt.v10-ch06.analyzer-phase2.md",
+          "finished": "2026-11-19 02:41:27",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S127",
+      "kind": "sma-b",
+      "volume": 10,
+      "chapter": "07",
+      "chapter_id": "v10-ch07",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v10-ch07.sma-b.md",
+      "expected": [
+        "output/_audit/sma/v10-ch07/b/20261119-022432-a8ce.json"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 02:24:32",
+          "prompt": "agent_prompts/agent_prompt.v10-ch07.sma-b.md",
+          "finished": "2026-11-19 02:41:27",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S128",
+      "kind": "analyzer-phase1",
+      "volume": 10,
+      "chapter": "07",
+      "chapter_id": "v10-ch07",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v10-ch07.analyzer-phase1.md",
+      "expected": [],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 02:24:32",
+          "prompt": "agent_prompts/agent_prompt.v10-ch07.analyzer-phase1.md",
+          "finished": "2026-11-19 02:41:27",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S129",
+      "kind": "analyzer-phase2",
+      "volume": 10,
+      "chapter": "07",
+      "chapter_id": "v10-ch07",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v10-ch07.analyzer-phase2.md",
+      "expected": [
+        "output/_audit/sma/v10-ch07/precheck/omission-precheck.json",
+        "output/_audit/sma/v10-ch07/analysis/20261119-023607-4585.json",
+        "output/_audit/sma/v10-ch07/analysis/20261119-023607-4585.md"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 02:36:07",
+          "prompt": "agent_prompts/agent_prompt.v10-ch07.analyzer-phase2.md",
+          "finished": "2026-11-19 02:41:27",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S130",
+      "kind": "sma-b",
+      "volume": 10,
+      "chapter": "08",
+      "chapter_id": "v10-ch08",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v10-ch08.sma-b.md",
+      "expected": [
+        "output/_audit/sma/v10-ch08/b/20261119-022432-9879.json"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 02:24:32",
+          "prompt": "agent_prompts/agent_prompt.v10-ch08.sma-b.md",
+          "finished": "2026-11-19 02:41:27",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S131",
+      "kind": "analyzer-phase1",
+      "volume": 10,
+      "chapter": "08",
+      "chapter_id": "v10-ch08",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v10-ch08.analyzer-phase1.md",
+      "expected": [],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 02:24:32",
+          "prompt": "agent_prompts/agent_prompt.v10-ch08.analyzer-phase1.md",
+          "finished": "2026-11-19 02:41:28",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S132",
+      "kind": "analyzer-phase2",
+      "volume": 10,
+      "chapter": "08",
+      "chapter_id": "v10-ch08",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v10-ch08.analyzer-phase2.md",
+      "expected": [
+        "output/_audit/sma/v10-ch08/precheck/omission-precheck.json",
+        "output/_audit/sma/v10-ch08/analysis/20261119-023607-5eb5.json",
+        "output/_audit/sma/v10-ch08/analysis/20261119-023607-5eb5.md"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 02:36:07",
+          "prompt": "agent_prompts/agent_prompt.v10-ch08.analyzer-phase2.md",
+          "finished": "2026-11-19 02:41:28",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S133",
+      "kind": "sma-b",
+      "volume": 10,
+      "chapter": "09",
+      "chapter_id": "v10-ch09",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v10-ch09.sma-b.md",
+      "expected": [
+        "output/_audit/sma/v10-ch09/b/20261119-024139-20a2.json"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 02:41:39",
+          "prompt": "agent_prompts/agent_prompt.v10-ch09.sma-b.md",
+          "finished": "2026-11-19 02:58:42",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S134",
+      "kind": "analyzer-phase1",
+      "volume": 10,
+      "chapter": "09",
+      "chapter_id": "v10-ch09",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v10-ch09.analyzer-phase1.md",
+      "expected": [],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 02:41:39",
+          "prompt": "agent_prompts/agent_prompt.v10-ch09.analyzer-phase1.md",
+          "finished": "2026-11-19 02:58:42",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S135",
+      "kind": "analyzer-phase2",
+      "volume": 10,
+      "chapter": "09",
+      "chapter_id": "v10-ch09",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v10-ch09.analyzer-phase2.md",
+      "expected": [
+        "output/_audit/sma/v10-ch09/precheck/omission-precheck.json",
+        "output/_audit/sma/v10-ch09/analysis/20261119-025429-44b3.json",
+        "output/_audit/sma/v10-ch09/analysis/20261119-025429-44b3.md"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 02:54:29",
+          "prompt": "agent_prompts/agent_prompt.v10-ch09.analyzer-phase2.md",
+          "finished": "2026-11-19 02:58:42",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S136",
+      "kind": "sma-b",
+      "volume": 10,
+      "chapter": "10",
+      "chapter_id": "v10-ch10",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v10-ch10.sma-b.md",
+      "expected": [
+        "output/_audit/sma/v10-ch10/b/20261119-024139-aa7e.json"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 02:41:39",
+          "prompt": "agent_prompts/agent_prompt.v10-ch10.sma-b.md",
+          "finished": "2026-11-19 02:58:42",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S137",
+      "kind": "analyzer-phase1",
+      "volume": 10,
+      "chapter": "10",
+      "chapter_id": "v10-ch10",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v10-ch10.analyzer-phase1.md",
+      "expected": [],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 02:41:40",
+          "prompt": "agent_prompts/agent_prompt.v10-ch10.analyzer-phase1.md",
+          "finished": "2026-11-19 02:58:43",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S138",
+      "kind": "analyzer-phase2",
+      "volume": 10,
+      "chapter": "10",
+      "chapter_id": "v10-ch10",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v10-ch10.analyzer-phase2.md",
+      "expected": [
+        "output/_audit/sma/v10-ch10/precheck/omission-precheck.json",
+        "output/_audit/sma/v10-ch10/analysis/20261119-025429-d40a.json",
+        "output/_audit/sma/v10-ch10/analysis/20261119-025429-d40a.md"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 02:54:29",
+          "prompt": "agent_prompts/agent_prompt.v10-ch10.analyzer-phase2.md",
+          "finished": "2026-11-19 02:58:43",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S139",
+      "kind": "sma-b",
+      "volume": 10,
+      "chapter": "epilogue",
+      "chapter_id": "v10-epilogue",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v10-epilogue.sma-b.md",
+      "expected": [
+        "output/_audit/sma/v10-epilogue/b/20261119-024140-4d3a.json"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 02:41:40",
+          "prompt": "agent_prompts/agent_prompt.v10-epilogue.sma-b.md",
+          "finished": "2026-11-19 02:58:43",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S140",
+      "kind": "analyzer-phase1",
+      "volume": 10,
+      "chapter": "epilogue",
+      "chapter_id": "v10-epilogue",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v10-epilogue.analyzer-phase1.md",
+      "expected": [],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 02:41:40",
+          "prompt": "agent_prompts/agent_prompt.v10-epilogue.analyzer-phase1.md",
+          "finished": "2026-11-19 02:58:43",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S141",
+      "kind": "analyzer-phase2",
+      "volume": 10,
+      "chapter": "epilogue",
+      "chapter_id": "v10-epilogue",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v10-epilogue.analyzer-phase2.md",
+      "expected": [
+        "output/_audit/sma/v10-epilogue/precheck/omission-precheck.json",
+        "output/_audit/sma/v10-epilogue/analysis/20261119-025429-7792.json",
+        "output/_audit/sma/v10-epilogue/analysis/20261119-025429-7792.md"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 02:54:29",
+          "prompt": "agent_prompts/agent_prompt.v10-epilogue.analyzer-phase2.md",
+          "finished": "2026-11-19 02:58:43",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S142",
+      "kind": "sma-b",
+      "volume": 11,
+      "chapter": "afterword",
+      "chapter_id": "v11-afterword",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v11-afterword.sma-b.md",
+      "expected": [
+        "output/_audit/sma/v11-afterword/b/20261119-030405-d03a.json"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 03:04:05",
+          "prompt": "agent_prompts/agent_prompt.v11-afterword.sma-b.md",
+          "finished": "2026-11-19 03:10:20",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S143",
+      "kind": "analyzer-phase1",
+      "volume": 11,
+      "chapter": "afterword",
+      "chapter_id": "v11-afterword",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v11-afterword.analyzer-phase1.md",
+      "expected": [],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 03:04:06",
+          "prompt": "agent_prompts/agent_prompt.v11-afterword.analyzer-phase1.md",
+          "finished": "2026-11-19 03:10:21",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S144",
+      "kind": "analyzer-phase2",
+      "volume": 11,
+      "chapter": "afterword",
+      "chapter_id": "v11-afterword",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v11-afterword.analyzer-phase2.md",
+      "expected": [
+        "output/_audit/sma/v11-afterword/precheck/omission-precheck.json",
+        "output/_audit/sma/v11-afterword/analysis/20261119-030726-65c1.json",
+        "output/_audit/sma/v11-afterword/analysis/20261119-030726-65c1.md"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 03:07:26",
+          "prompt": "agent_prompts/agent_prompt.v11-afterword.analyzer-phase2.md",
+          "finished": "2026-11-19 03:10:21",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S145",
+      "kind": "sma-b",
+      "volume": 11,
+      "chapter": "01",
+      "chapter_id": "v11-ch01",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v11-ch01.sma-b.md",
+      "expected": [
+        "output/_audit/sma/v11-ch01/b/20261119-030406-760a.json"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 03:04:06",
+          "prompt": "agent_prompts/agent_prompt.v11-ch01.sma-b.md",
+          "finished": "2026-11-19 03:26:45",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S146",
+      "kind": "analyzer-phase1",
+      "volume": 11,
+      "chapter": "01",
+      "chapter_id": "v11-ch01",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v11-ch01.analyzer-phase1.md",
+      "expected": [],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 03:04:06",
+          "prompt": "agent_prompts/agent_prompt.v11-ch01.analyzer-phase1.md",
+          "finished": "2026-11-19 03:26:45",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S147",
+      "kind": "analyzer-phase2",
+      "volume": 11,
+      "chapter": "01",
+      "chapter_id": "v11-ch01",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v11-ch01.analyzer-phase2.md",
+      "expected": [
+        "output/_audit/sma/v11-ch01/analysis/20261119-032403-e3a7.json",
+        "output/_audit/sma/v11-ch01/analysis/20261119-032403-e3a7.md"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 03:07:27",
+          "prompt": "agent_prompts/agent_prompt.v11-ch01.analyzer-phase2.md",
+          "finished": "2026-11-19 03:26:45",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S148",
+      "kind": "sma-b",
+      "volume": 11,
+      "chapter": "02",
+      "chapter_id": "v11-ch02",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v11-ch02.sma-b.md",
+      "expected": [
+        "output/_audit/sma/v11-ch02/b/20261119-030406-96a5.json"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 03:04:06",
+          "prompt": "agent_prompts/agent_prompt.v11-ch02.sma-b.md",
+          "finished": "2026-11-19 03:26:45",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S149",
+      "kind": "analyzer-phase1",
+      "volume": 11,
+      "chapter": "02",
+      "chapter_id": "v11-ch02",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v11-ch02.analyzer-phase1.md",
+      "expected": [],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 03:04:06",
+          "prompt": "agent_prompts/agent_prompt.v11-ch02.analyzer-phase1.md",
+          "finished": "2026-11-19 03:26:46",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S150",
+      "kind": "analyzer-phase2",
+      "volume": 11,
+      "chapter": "02",
+      "chapter_id": "v11-ch02",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v11-ch02.analyzer-phase2.md",
+      "expected": [
+        "output/_audit/sma/v11-ch02/analysis/20261119-032403-5af5.json",
+        "output/_audit/sma/v11-ch02/analysis/20261119-032403-5af5.md"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 03:07:27",
+          "prompt": "agent_prompts/agent_prompt.v11-ch02.analyzer-phase2.md",
+          "finished": "2026-11-19 03:26:46",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S151",
+      "kind": "sma-b",
+      "volume": 11,
+      "chapter": "03",
+      "chapter_id": "v11-ch03",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v11-ch03.sma-b.md",
+      "expected": [
+        "output/_audit/sma/v11-ch03/b/20261119-032659-c379.json"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 03:26:59",
+          "prompt": "agent_prompts/agent_prompt.v11-ch03.sma-b.md",
+          "finished": "2026-11-19 03:31:31",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S152",
+      "kind": "analyzer-phase1",
+      "volume": 11,
+      "chapter": "03",
+      "chapter_id": "v11-ch03",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v11-ch03.analyzer-phase1.md",
+      "expected": [],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 03:26:59",
+          "prompt": "agent_prompts/agent_prompt.v11-ch03.analyzer-phase1.md",
+          "finished": "2026-11-19 03:31:31",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S153",
+      "kind": "analyzer-phase2",
+      "volume": 11,
+      "chapter": "03",
+      "chapter_id": "v11-ch03",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v11-ch03.analyzer-phase2.md",
+      "expected": [
+        "output/_audit/sma/v11-ch03/precheck/omission-precheck.json",
+        "output/_audit/sma/v11-ch03/analysis/20261119-032912-d024.json",
+        "output/_audit/sma/v11-ch03/analysis/20261119-032912-d024.md"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 03:29:12",
+          "prompt": "agent_prompts/agent_prompt.v11-ch03.analyzer-phase2.md",
+          "finished": "2026-11-19 03:31:31",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S154",
+      "kind": "sma-b",
+      "volume": 11,
+      "chapter": "04",
+      "chapter_id": "v11-ch04",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v11-ch04.sma-b.md",
+      "expected": [
+        "output/_audit/sma/v11-ch04/b/20261119-032659-87f3.json"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 03:26:59",
+          "prompt": "agent_prompts/agent_prompt.v11-ch04.sma-b.md",
+          "finished": "2026-11-19 03:31:32",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S155",
+      "kind": "analyzer-phase1",
+      "volume": 11,
+      "chapter": "04",
+      "chapter_id": "v11-ch04",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v11-ch04.analyzer-phase1.md",
+      "expected": [],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 03:26:59",
+          "prompt": "agent_prompts/agent_prompt.v11-ch04.analyzer-phase1.md",
+          "finished": "2026-11-19 03:31:32",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S156",
+      "kind": "analyzer-phase2",
+      "volume": 11,
+      "chapter": "04",
+      "chapter_id": "v11-ch04",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v11-ch04.analyzer-phase2.md",
+      "expected": [
+        "output/_audit/sma/v11-ch04/precheck/omission-precheck.json",
+        "output/_audit/sma/v11-ch04/analysis/20261119-032912-7dfa.json",
+        "output/_audit/sma/v11-ch04/analysis/20261119-032912-7dfa.md"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 03:29:12",
+          "prompt": "agent_prompts/agent_prompt.v11-ch04.analyzer-phase2.md",
+          "finished": "2026-11-19 03:31:32",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S157",
+      "kind": "sma-b",
+      "volume": 11,
+      "chapter": "05",
+      "chapter_id": "v11-ch05",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v11-ch05.sma-b.md",
+      "expected": [
+        "output/_audit/sma/v11-ch05/b/20261119-032659-c086.json"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 03:26:59",
+          "prompt": "agent_prompts/agent_prompt.v11-ch05.sma-b.md",
+          "finished": "2026-11-19 03:31:32",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S158",
+      "kind": "analyzer-phase1",
+      "volume": 11,
+      "chapter": "05",
+      "chapter_id": "v11-ch05",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v11-ch05.analyzer-phase1.md",
+      "expected": [],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 03:26:59",
+          "prompt": "agent_prompts/agent_prompt.v11-ch05.analyzer-phase1.md",
+          "finished": "2026-11-19 03:31:32",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S159",
+      "kind": "analyzer-phase2",
+      "volume": 11,
+      "chapter": "05",
+      "chapter_id": "v11-ch05",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v11-ch05.analyzer-phase2.md",
+      "expected": [
+        "output/_audit/sma/v11-ch05/precheck/omission-precheck.json",
+        "output/_audit/sma/v11-ch05/analysis/20261119-032912-3740.json",
+        "output/_audit/sma/v11-ch05/analysis/20261119-032912-3740.md"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 03:29:12",
+          "prompt": "agent_prompts/agent_prompt.v11-ch05.analyzer-phase2.md",
+          "finished": "2026-11-19 03:31:32",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S160",
+      "kind": "sma-b",
+      "volume": 11,
+      "chapter": "06",
+      "chapter_id": "v11-ch06",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v11-ch06.sma-b.md",
+      "expected": [
+        "output/_audit/sma/v11-ch06/b/20261119-033905-7d63.json"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 03:39:05",
+          "prompt": "agent_prompts/agent_prompt.v11-ch06.sma-b.md",
+          "finished": "2026-11-19 04:06:56",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S161",
+      "kind": "analyzer-phase1",
+      "volume": 11,
+      "chapter": "06",
+      "chapter_id": "v11-ch06",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v11-ch06.analyzer-phase1.md",
+      "expected": [],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 03:39:05",
+          "prompt": "agent_prompts/agent_prompt.v11-ch06.analyzer-phase1.md",
+          "finished": "2026-11-19 04:06:56",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S162",
+      "kind": "analyzer-phase2",
+      "volume": 11,
+      "chapter": "06",
+      "chapter_id": "v11-ch06",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v11-ch06.analyzer-phase2.md",
+      "expected": [
+        "output/_audit/sma/v11-ch06/precheck/omission-precheck.json",
+        "output/_audit/sma/v11-ch06/analysis/20261119-035713-8ede.json",
+        "output/_audit/sma/v11-ch06/analysis/20261119-035713-8ede.md"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 03:57:13",
+          "prompt": "agent_prompts/agent_prompt.v11-ch06.analyzer-phase2.md",
+          "finished": "2026-11-19 04:06:56",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S163",
+      "kind": "sma-b",
+      "volume": 11,
+      "chapter": "07",
+      "chapter_id": "v11-ch07",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v11-ch07.sma-b.md",
+      "expected": [
+        "output/_audit/sma/v11-ch07/b/20261119-033905-c13c.json"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 03:39:05",
+          "prompt": "agent_prompts/agent_prompt.v11-ch07.sma-b.md",
+          "finished": "2026-11-19 04:06:57",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S164",
+      "kind": "analyzer-phase1",
+      "volume": 11,
+      "chapter": "07",
+      "chapter_id": "v11-ch07",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v11-ch07.analyzer-phase1.md",
+      "expected": [],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 03:39:05",
+          "prompt": "agent_prompts/agent_prompt.v11-ch07.analyzer-phase1.md",
+          "finished": "2026-11-19 04:06:57",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S165",
+      "kind": "analyzer-phase2",
+      "volume": 11,
+      "chapter": "07",
+      "chapter_id": "v11-ch07",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v11-ch07.analyzer-phase2.md",
+      "expected": [
+        "output/_audit/sma/v11-ch07/precheck/omission-precheck.json",
+        "output/_audit/sma/v11-ch07/analysis/20261119-035713-ce5a.json",
+        "output/_audit/sma/v11-ch07/analysis/20261119-035713-ce5a.md"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 03:57:14",
+          "prompt": "agent_prompts/agent_prompt.v11-ch07.analyzer-phase2.md",
+          "finished": "2026-11-19 04:06:57",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S166",
+      "kind": "sma-b",
+      "volume": 11,
+      "chapter": "08",
+      "chapter_id": "v11-ch08",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v11-ch08.sma-b.md",
+      "expected": [
+        "output/_audit/sma/v11-ch08/b/20261119-033905-d99c.json"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 03:39:05",
+          "prompt": "agent_prompts/agent_prompt.v11-ch08.sma-b.md",
+          "finished": "2026-11-19 04:06:57",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S167",
+      "kind": "analyzer-phase1",
+      "volume": 11,
+      "chapter": "08",
+      "chapter_id": "v11-ch08",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v11-ch08.analyzer-phase1.md",
+      "expected": [],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 03:39:05",
+          "prompt": "agent_prompts/agent_prompt.v11-ch08.analyzer-phase1.md",
+          "finished": "2026-11-19 04:06:57",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S168",
+      "kind": "analyzer-phase2",
+      "volume": 11,
+      "chapter": "08",
+      "chapter_id": "v11-ch08",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v11-ch08.analyzer-phase2.md",
+      "expected": [
+        "output/_audit/sma/v11-ch08/precheck/omission-precheck.json",
+        "output/_audit/sma/v11-ch08/analysis/20261119-035714-a6df.json",
+        "output/_audit/sma/v11-ch08/analysis/20261119-035714-a6df.md"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 03:57:14",
+          "prompt": "agent_prompts/agent_prompt.v11-ch08.analyzer-phase2.md",
+          "finished": "2026-11-19 04:06:58",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S169",
+      "kind": "sma-b",
+      "volume": 11,
+      "chapter": "09",
+      "chapter_id": "v11-ch09",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v11-ch09.sma-b.md",
+      "expected": [
+        "output/_audit/sma/v11-ch09/b/20261119-040710-9229.json"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 04:07:10",
+          "prompt": "agent_prompts/agent_prompt.v11-ch09.sma-b.md",
+          "finished": "2026-11-19 04:22:12",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S170",
+      "kind": "analyzer-phase1",
+      "volume": 11,
+      "chapter": "09",
+      "chapter_id": "v11-ch09",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v11-ch09.analyzer-phase1.md",
+      "expected": [],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 04:07:10",
+          "prompt": "agent_prompts/agent_prompt.v11-ch09.analyzer-phase1.md",
+          "finished": "2026-11-19 04:22:12",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S171",
+      "kind": "analyzer-phase2",
+      "volume": 11,
+      "chapter": "09",
+      "chapter_id": "v11-ch09",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v11-ch09.analyzer-phase2.md",
+      "expected": [
+        "output/_audit/sma/v11-ch09/precheck/omission-precheck.json",
+        "output/_audit/sma/v11-ch09/analysis/20261119-041319-c708.json",
+        "output/_audit/sma/v11-ch09/analysis/20261119-041319-c708.md"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 04:13:20",
+          "prompt": "agent_prompts/agent_prompt.v11-ch09.analyzer-phase2.md",
+          "finished": "2026-11-19 04:22:12",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S172",
+      "kind": "sma-b",
+      "volume": 11,
+      "chapter": "10",
+      "chapter_id": "v11-ch10",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v11-ch10.sma-b.md",
+      "expected": [
+        "output/_audit/sma/v11-ch10/b/20261119-040710-8148.json"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 04:07:10",
+          "prompt": "agent_prompts/agent_prompt.v11-ch10.sma-b.md",
+          "finished": "2026-11-19 04:22:12",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S173",
+      "kind": "analyzer-phase1",
+      "volume": 11,
+      "chapter": "10",
+      "chapter_id": "v11-ch10",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v11-ch10.analyzer-phase1.md",
+      "expected": [],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 04:07:10",
+          "prompt": "agent_prompts/agent_prompt.v11-ch10.analyzer-phase1.md",
+          "finished": "2026-11-19 04:22:12",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S174",
+      "kind": "analyzer-phase2",
+      "volume": 11,
+      "chapter": "10",
+      "chapter_id": "v11-ch10",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v11-ch10.analyzer-phase2.md",
+      "expected": [
+        "output/_audit/sma/v11-ch10/precheck/omission-precheck.json",
+        "output/_audit/sma/v11-ch10/analysis/20261119-041320-e0ff.json",
+        "output/_audit/sma/v11-ch10/analysis/20261119-041320-e0ff.md"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 04:13:20",
+          "prompt": "agent_prompts/agent_prompt.v11-ch10.analyzer-phase2.md",
+          "finished": "2026-11-19 04:22:12",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S175",
+      "kind": "sma-b",
+      "volume": 11,
+      "chapter": "epilogue",
+      "chapter_id": "v11-epilogue",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v11-epilogue.sma-b.md",
+      "expected": [
+        "output/_audit/sma/v11-epilogue/b/20261119-040710-f12f.json"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 04:07:10",
+          "prompt": "agent_prompts/agent_prompt.v11-epilogue.sma-b.md",
+          "finished": "2026-11-19 04:22:13",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S176",
+      "kind": "analyzer-phase1",
+      "volume": 11,
+      "chapter": "epilogue",
+      "chapter_id": "v11-epilogue",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v11-epilogue.analyzer-phase1.md",
+      "expected": [],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 04:07:10",
+          "prompt": "agent_prompts/agent_prompt.v11-epilogue.analyzer-phase1.md",
+          "finished": "2026-11-19 04:22:13",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S177",
+      "kind": "analyzer-phase2",
+      "volume": 11,
+      "chapter": "epilogue",
+      "chapter_id": "v11-epilogue",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v11-epilogue.analyzer-phase2.md",
+      "expected": [
+        "output/_audit/sma/v11-epilogue/precheck/omission-precheck.json",
+        "output/_audit/sma/v11-epilogue/analysis/20261119-041320-4c9c.json",
+        "output/_audit/sma/v11-epilogue/analysis/20261119-041320-4c9c.md"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 04:13:20",
+          "prompt": "agent_prompts/agent_prompt.v11-epilogue.analyzer-phase2.md",
+          "finished": "2026-11-19 04:22:13",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S178",
+      "kind": "sma-b",
+      "volume": 13,
+      "chapter": "afterword",
+      "chapter_id": "v13-afterword",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0061-S179",
+      "kind": "analyzer-phase1",
+      "volume": 13,
+      "chapter": "afterword",
+      "chapter_id": "v13-afterword",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0061-S180",
+      "kind": "analyzer-phase2",
+      "volume": 13,
+      "chapter": "afterword",
+      "chapter_id": "v13-afterword",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0061-S181",
+      "kind": "sma-b",
+      "volume": 13,
+      "chapter": "01",
+      "chapter_id": "v13-ch01",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0061-S182",
+      "kind": "analyzer-phase1",
+      "volume": 13,
+      "chapter": "01",
+      "chapter_id": "v13-ch01",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0061-S183",
+      "kind": "analyzer-phase2",
+      "volume": 13,
+      "chapter": "01",
+      "chapter_id": "v13-ch01",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0061-S184",
+      "kind": "sma-b",
+      "volume": 13,
+      "chapter": "02",
+      "chapter_id": "v13-ch02",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0061-S185",
+      "kind": "analyzer-phase1",
+      "volume": 13,
+      "chapter": "02",
+      "chapter_id": "v13-ch02",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0061-S186",
+      "kind": "analyzer-phase2",
+      "volume": 13,
+      "chapter": "02",
+      "chapter_id": "v13-ch02",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0061-S187",
+      "kind": "sma-b",
+      "volume": 13,
+      "chapter": "03",
+      "chapter_id": "v13-ch03",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0061-S188",
+      "kind": "analyzer-phase1",
+      "volume": 13,
+      "chapter": "03",
+      "chapter_id": "v13-ch03",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0061-S189",
+      "kind": "analyzer-phase2",
+      "volume": 13,
+      "chapter": "03",
+      "chapter_id": "v13-ch03",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0061-S190",
+      "kind": "sma-b",
+      "volume": 13,
+      "chapter": "04",
+      "chapter_id": "v13-ch04",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0061-S191",
+      "kind": "analyzer-phase1",
+      "volume": 13,
+      "chapter": "04",
+      "chapter_id": "v13-ch04",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0061-S192",
+      "kind": "analyzer-phase2",
+      "volume": 13,
+      "chapter": "04",
+      "chapter_id": "v13-ch04",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0061-S193",
+      "kind": "sma-b",
+      "volume": 13,
+      "chapter": "05",
+      "chapter_id": "v13-ch05",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0061-S194",
+      "kind": "analyzer-phase1",
+      "volume": 13,
+      "chapter": "05",
+      "chapter_id": "v13-ch05",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0061-S195",
+      "kind": "analyzer-phase2",
+      "volume": 13,
+      "chapter": "05",
+      "chapter_id": "v13-ch05",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0061-S196",
+      "kind": "sma-b",
+      "volume": 13,
+      "chapter": "06",
+      "chapter_id": "v13-ch06",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0061-S197",
+      "kind": "analyzer-phase1",
+      "volume": 13,
+      "chapter": "06",
+      "chapter_id": "v13-ch06",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0061-S198",
+      "kind": "analyzer-phase2",
+      "volume": 13,
+      "chapter": "06",
+      "chapter_id": "v13-ch06",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0061-S199",
+      "kind": "sma-b",
+      "volume": 13,
+      "chapter": "07",
+      "chapter_id": "v13-ch07",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0061-S200",
+      "kind": "analyzer-phase1",
+      "volume": 13,
+      "chapter": "07",
+      "chapter_id": "v13-ch07",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0061-S201",
+      "kind": "analyzer-phase2",
+      "volume": 13,
+      "chapter": "07",
+      "chapter_id": "v13-ch07",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0061-S202",
+      "kind": "sma-b",
+      "volume": 13,
+      "chapter": "08",
+      "chapter_id": "v13-ch08",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0061-S203",
+      "kind": "analyzer-phase1",
+      "volume": 13,
+      "chapter": "08",
+      "chapter_id": "v13-ch08",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0061-S204",
+      "kind": "analyzer-phase2",
+      "volume": 13,
+      "chapter": "08",
+      "chapter_id": "v13-ch08",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0061-S205",
+      "kind": "sma-b",
+      "volume": 13,
+      "chapter": "epilogue",
+      "chapter_id": "v13-epilogue",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0061-S206",
+      "kind": "analyzer-phase1",
+      "volume": 13,
+      "chapter": "epilogue",
+      "chapter_id": "v13-epilogue",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0061-S207",
+      "kind": "analyzer-phase2",
+      "volume": 13,
+      "chapter": "epilogue",
+      "chapter_id": "v13-epilogue",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0061-S208",
+      "kind": "sma-b",
+      "volume": 12,
+      "chapter": "afterword",
+      "chapter_id": "v12-afterword",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v12-afterword.sma-b.md",
+      "expected": [
+        "output/_audit/sma/v12-afterword/b/20261119-042916-0a10.json"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 04:29:16",
+          "prompt": "agent_prompts/agent_prompt.v12-afterword.sma-b.md",
+          "finished": "2026-11-19 05:03:03",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S209",
+      "kind": "analyzer-phase1",
+      "volume": 12,
+      "chapter": "afterword",
+      "chapter_id": "v12-afterword",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v12-afterword.analyzer-phase1.md",
+      "expected": [],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 04:29:16",
+          "prompt": "agent_prompts/agent_prompt.v12-afterword.analyzer-phase1.md",
+          "finished": "2026-11-19 05:03:03",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S210",
+      "kind": "analyzer-phase2",
+      "volume": 12,
+      "chapter": "afterword",
+      "chapter_id": "v12-afterword",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v12-afterword.analyzer-phase2.md",
+      "expected": [
+        "output/_audit/sma/v12-afterword/precheck/omission-precheck.json",
+        "output/_audit/sma/v12-afterword/analysis/20261119-042916-c458.json",
+        "output/_audit/sma/v12-afterword/analysis/20261119-042916-c458.md"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 04:29:17",
+          "prompt": "agent_prompts/agent_prompt.v12-afterword.analyzer-phase2.md",
+          "finished": "2026-11-19 05:03:03",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S211",
+      "kind": "sma-b",
+      "volume": 12,
+      "chapter": "prologue",
+      "chapter_id": "v12-prologue",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v12-prologue.sma-b.md",
+      "expected": [
+        "output/_audit/sma/v12-prologue/b/20261119-042917-ae47.json"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 04:29:17",
+          "prompt": "agent_prompts/agent_prompt.v12-prologue.sma-b.md",
+          "finished": "2026-11-19 05:03:03",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S212",
+      "kind": "analyzer-phase1",
+      "volume": 12,
+      "chapter": "prologue",
+      "chapter_id": "v12-prologue",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v12-prologue.analyzer-phase1.md",
+      "expected": [],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 04:29:17",
+          "prompt": "agent_prompts/agent_prompt.v12-prologue.analyzer-phase1.md",
+          "finished": "2026-11-19 05:03:04",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S213",
+      "kind": "analyzer-phase2",
+      "volume": 12,
+      "chapter": "prologue",
+      "chapter_id": "v12-prologue",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v12-prologue.analyzer-phase2.md",
+      "expected": [
+        "output/_audit/sma/v12-prologue/precheck/omission-precheck.json",
+        "output/_audit/sma/v12-prologue/analysis/20261119-042917-4105.json",
+        "output/_audit/sma/v12-prologue/analysis/20261119-042917-4105.md"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 04:29:17",
+          "prompt": "agent_prompts/agent_prompt.v12-prologue.analyzer-phase2.md",
+          "finished": "2026-11-19 05:03:04",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S214",
+      "kind": "sma-b",
+      "volume": 12,
+      "chapter": "01",
+      "chapter_id": "v12-ch01",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v12-ch01.sma-b.md",
+      "expected": [
+        "output/_audit/sma/v12-ch01/b/20261119-042917-6b77.json"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 04:29:17",
+          "prompt": "agent_prompts/agent_prompt.v12-ch01.sma-b.md",
+          "finished": "2026-11-19 05:23:29",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S215",
+      "kind": "analyzer-phase1",
+      "volume": 12,
+      "chapter": "01",
+      "chapter_id": "v12-ch01",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v12-ch01.analyzer-phase1.md",
+      "expected": [],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 04:29:17",
+          "prompt": "agent_prompts/agent_prompt.v12-ch01.analyzer-phase1.md",
+          "finished": "2026-11-19 05:23:29",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S216",
+      "kind": "analyzer-phase2",
+      "volume": 12,
+      "chapter": "01",
+      "chapter_id": "v12-ch01",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v12-ch01.analyzer-phase2.md",
+      "expected": [
+        "output/_audit/sma/v12-ch01/precheck/omission-precheck.json",
+        "output/_audit/sma/v12-ch01/analysis/20261119-043238-619a.json",
+        "output/_audit/sma/v12-ch01/analysis/20261119-043238-619a.md"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 04:32:38",
+          "prompt": "agent_prompts/agent_prompt.v12-ch01.analyzer-phase2.md",
+          "finished": "2026-11-19 05:23:29",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S217",
+      "kind": "sma-b",
+      "volume": 12,
+      "chapter": "02",
+      "chapter_id": "v12-ch02",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v12-ch02.sma-b.attempt3.md",
+      "expected": [
+        "output/_audit/sma/v12-ch02/b/20261119-043005-5abc.json"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 04:30:05",
+          "prompt": "agent_prompts/agent_prompt.v12-ch02.sma-b.md",
+          "finished": "",
+          "result": "",
+          "note": ""
+        },
+        {
+          "n": 2,
+          "started": "2026-11-19 04:51:54",
+          "prompt": "agent_prompts/agent_prompt.v12-ch02.sma-b.attempt2.md",
+          "finished": "",
+          "result": "",
+          "note": ""
+        },
+        {
+          "n": 3,
+          "started": "2026-11-19 05:13:23",
+          "prompt": "agent_prompts/agent_prompt.v12-ch02.sma-b.attempt3.md",
+          "finished": "2026-11-19 05:23:30",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S218",
+      "kind": "analyzer-phase1",
+      "volume": 12,
+      "chapter": "02",
+      "chapter_id": "v12-ch02",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v12-ch02.analyzer-phase1.attempt3.md",
+      "expected": [],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 04:30:05",
+          "prompt": "agent_prompts/agent_prompt.v12-ch02.analyzer-phase1.md",
+          "finished": "",
+          "result": "",
+          "note": ""
+        },
+        {
+          "n": 2,
+          "started": "2026-11-19 04:51:54",
+          "prompt": "agent_prompts/agent_prompt.v12-ch02.analyzer-phase1.attempt2.md",
+          "finished": "",
+          "result": "",
+          "note": ""
+        },
+        {
+          "n": 3,
+          "started": "2026-11-19 05:13:23",
+          "prompt": "agent_prompts/agent_prompt.v12-ch02.analyzer-phase1.attempt3.md",
+          "finished": "2026-11-19 05:23:30",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S219",
+      "kind": "analyzer-phase2",
+      "volume": 12,
+      "chapter": "02",
+      "chapter_id": "v12-ch02",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v12-ch02.analyzer-phase2.attempt2.md",
+      "expected": [
+        "output/_audit/sma/v12-ch02/precheck/omission-precheck.json",
+        "output/_audit/sma/v12-ch02/analysis/20261119-043238-b4bb.json",
+        "output/_audit/sma/v12-ch02/analysis/20261119-043238-b4bb.md"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 04:32:38",
+          "prompt": "agent_prompts/agent_prompt.v12-ch02.analyzer-phase2.md",
+          "finished": "",
+          "result": "",
+          "note": ""
+        },
+        {
+          "n": 2,
+          "started": "2026-11-19 05:13:23",
+          "prompt": "agent_prompts/agent_prompt.v12-ch02.analyzer-phase2.attempt2.md",
+          "finished": "2026-11-19 05:23:30",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S220",
+      "kind": "sma-b",
+      "volume": 12,
+      "chapter": "04",
+      "chapter_id": "v12-ch04",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v12-ch04.sma-b.md",
+      "expected": [
+        "output/_audit/sma/v12-ch04/b/20261119-052757-6be8.json"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 05:27:57",
+          "prompt": "agent_prompts/agent_prompt.v12-ch04.sma-b.md",
+          "finished": "2026-11-19 05:42:17",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S221",
+      "kind": "analyzer-phase1",
+      "volume": 12,
+      "chapter": "04",
+      "chapter_id": "v12-ch04",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v12-ch04.analyzer-phase1.md",
+      "expected": [],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 05:27:57",
+          "prompt": "agent_prompts/agent_prompt.v12-ch04.analyzer-phase1.md",
+          "finished": "2026-11-19 05:42:17",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S222",
+      "kind": "analyzer-phase2",
+      "volume": 12,
+      "chapter": "04",
+      "chapter_id": "v12-ch04",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v12-ch04.analyzer-phase2.attempt2.md",
+      "expected": [
+        "output/_audit/sma/v12-ch04/precheck/omission-precheck.json",
+        "output/_audit/sma/v12-ch04/analysis/20261119-052757-1cd8.json",
+        "output/_audit/sma/v12-ch04/analysis/20261119-052757-1cd8.md"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 05:27:57",
+          "prompt": "agent_prompts/agent_prompt.v12-ch04.analyzer-phase2.md",
+          "finished": "",
+          "result": "",
+          "note": ""
+        },
+        {
+          "n": 2,
+          "started": "2026-11-19 05:37:05",
+          "prompt": "agent_prompts/agent_prompt.v12-ch04.analyzer-phase2.attempt2.md",
+          "finished": "2026-11-19 05:42:17",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S223",
+      "kind": "sma-b",
+      "volume": 12,
+      "chapter": "05",
+      "chapter_id": "v12-ch05",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v12-ch05.sma-b.md",
+      "expected": [
+        "output/_audit/sma/v12-ch05/b/20261119-054230-b858.json"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 05:42:30",
+          "prompt": "agent_prompts/agent_prompt.v12-ch05.sma-b.md",
+          "finished": "2026-11-19 05:50:36",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S224",
+      "kind": "analyzer-phase1",
+      "volume": 12,
+      "chapter": "05",
+      "chapter_id": "v12-ch05",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v12-ch05.analyzer-phase1.md",
+      "expected": [],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 05:42:30",
+          "prompt": "agent_prompts/agent_prompt.v12-ch05.analyzer-phase1.md",
+          "finished": "2026-11-19 05:50:36",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S225",
+      "kind": "analyzer-phase2",
+      "volume": 12,
+      "chapter": "05",
+      "chapter_id": "v12-ch05",
+      "status": "done",
+      "prompt_file": "agent_prompts/agent_prompt.v12-ch05.analyzer-phase2.attempt2.md",
+      "expected": [
+        "output/_audit/sma/v12-ch05/precheck/omission-precheck.json",
+        "output/_audit/sma/v12-ch05/analysis/20261119-054230-d5f4.json",
+        "output/_audit/sma/v12-ch05/analysis/20261119-054230-d5f4.md"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 05:42:30",
+          "prompt": "agent_prompts/agent_prompt.v12-ch05.analyzer-phase2.md",
+          "finished": "",
+          "result": "",
+          "note": ""
+        },
+        {
+          "n": 2,
+          "started": "2026-11-19 05:48:07",
+          "prompt": "agent_prompts/agent_prompt.v12-ch05.analyzer-phase2.attempt2.md",
+          "finished": "2026-11-19 05:50:36",
+          "result": "done",
+          "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+        }
+      ],
+      "note": "раунд smaB-dd30d015: B+ph1+ph2, коммит не делался"
+    },
+    {
+      "id": "T-0061-S226",
+      "kind": "sma-b",
+      "volume": 12,
+      "chapter": "07",
+      "chapter_id": "v12-ch07",
+      "status": "interrupted",
+      "prompt_file": "agent_prompts/agent_prompt.v12-ch07.sma-b.md",
+      "expected": [
+        "output/_audit/sma/v12-ch07/b/20261119-060314-097f.json"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 06:03:14",
+          "prompt": "agent_prompts/agent_prompt.v12-ch07.sma-b.md",
+          "finished": "",
+          "result": "",
+          "note": ""
+        }
+      ],
+      "note": "нет результата после запуска"
+    },
+    {
+      "id": "T-0061-S227",
+      "kind": "analyzer-phase1",
+      "volume": 12,
+      "chapter": "07",
+      "chapter_id": "v12-ch07",
+      "status": "interrupted",
+      "prompt_file": "agent_prompts/agent_prompt.v12-ch07.analyzer-phase1.md",
+      "expected": [],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 06:03:14",
+          "prompt": "agent_prompts/agent_prompt.v12-ch07.analyzer-phase1.md",
+          "finished": "",
+          "result": "",
+          "note": ""
+        }
+      ],
+      "note": "нет результата после запуска"
+    },
+    {
+      "id": "T-0061-S228",
+      "kind": "analyzer-phase2",
+      "volume": 12,
+      "chapter": "07",
+      "chapter_id": "v12-ch07",
+      "status": "interrupted",
+      "prompt_file": "agent_prompts/agent_prompt.v12-ch07.analyzer-phase2.md",
+      "expected": [
+        "output/_audit/sma/v12-ch07/precheck/omission-precheck.json",
+        "output/_audit/sma/v12-ch07/analysis/20261119-060314-ddfd.json",
+        "output/_audit/sma/v12-ch07/analysis/20261119-060314-ddfd.md"
+      ],
+      "attempts": [
+        {
+          "n": 1,
+          "started": "2026-11-19 06:03:14",
+          "prompt": "agent_prompts/agent_prompt.v12-ch07.analyzer-phase2.md",
+          "finished": "",
+          "result": "",
+          "note": ""
+        }
+      ],
+      "note": "нет результата после запуска"
+    },
+    {
+      "id": "T-0061-S229",
+      "kind": "sma-b",
+      "volume": 12,
+      "chapter": "08",
+      "chapter_id": "v12-ch08",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0061-S230",
+      "kind": "analyzer-phase1",
+      "volume": 12,
+      "chapter": "08",
+      "chapter_id": "v12-ch08",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    },
+    {
+      "id": "T-0061-S231",
+      "kind": "analyzer-phase2",
+      "volume": 12,
+      "chapter": "08",
+      "chapter_id": "v12-ch08",
+      "status": "planned",
+      "prompt_file": "",
+      "expected": [],
+      "attempts": [],
+      "note": ""
+    }
+  ]
+}

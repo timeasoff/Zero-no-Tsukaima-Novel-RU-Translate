@@ -1,0 +1,32 @@
+{
+  "analysis_id": "20261119-112144-a558.phase1",
+  "chapter": "v12-ch08",
+  "phase": 1,
+  "scope": "blind",
+  "results": [
+    {
+      "block": 20,
+      "finding": "PRAGMATIC_SHIFT",
+      "note": "みなさん + 絶対に…わよ: страстный призыв → «Не дайте им уйти!» (сухой приказ).",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 25,
+      "finding": "PRAGMATIC_SHIFT",
+      "note": "やめて: испуганная просьба → «Прекрати» (властный окрик).",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 30,
+      "finding": "PRAGMATIC_SHIFT",
+      "note": "イヤね: самоупрёк → «Ненавижу» (ненависть к адресату).",
+      "confidence": "HIGH"
+    },
+    {
+      "block": 34,
+      "finding": "PRAGMATIC_SHIFT",
+      "note": "Растянутый визг с гласными → короткие «Лучше меня! Маленькая! Ребёнок!».",
+      "confidence": "MEDIUM"
+    }
+  ]
+}

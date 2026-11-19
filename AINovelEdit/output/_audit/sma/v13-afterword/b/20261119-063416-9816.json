@@ -1,0 +1,39 @@
+{
+  "audit_id": "sma-b",
+  "audit_type": "semantic-audit-b",
+  "audit_run_id": "20261119-063416-9816",
+  "chapter": "v13-afterword",
+  "findings": [
+    {
+      "block": 2,
+      "source": "現在、サラリーマンをしながらイラストを描かせて頂いてます。",
+      "current": "Сейчас, работая служащим, он по-прежнему рисует иллюстрации.",
+      "problem": "ADDED_CONTENT — наречие «по-прежнему» («как прежде») не имеет соответствия в JA",
+      "reason": "JA 現在 + 描かせて頂いてます выражают только факт в настоящем времени «сейчас рисует иллюстрации»; маркера продолжения предыдущего состояния нет. Русское наречие «по-прежнему» добавляет временную предпосылку (иллюстратор рисовал раньше и продолжает), которой в японском тексте нет. Сверка JA → RU выявляет добавленный временной смысл; это макро-временная находка, а не стилистическое предпочтение.",
+      "suggestion": "Сейчас, работая служащим, рисует иллюстрации.",
+      "issue_type": "ADDED_CONTENT",
+      "severity": "WARNING"
+    },
+    {
+      "block": 2,
+      "source": "現在、サラリーマンをしながらイラストを描かせて頂いてます。",
+      "current": "Сейчас, работая служащим, он по-прежнему рисует иллюстрации.",
+      "problem": "COMPONENT_LOSS — サラリーマン («офисный сотрудник/наёмный работник компании») сведён к нейтральному «служащему»",
+      "reason": "JA サラリーマン is a specific social-role component (company employee / office worker, 'белые воротнички'), not merely 'работающий по найму'. RU «работающий служащим» retains only the generic fact of employment and drops the 'office/company' component. The same bio line already drew a component-loss note in another volume; checked freshly against JA → RU here: the specific component is not conveyed. The humble 頂いてます nuance is likewise levelled, but the subject-perspective shift itself is treated separately below.",
+      "suggestion": "Сейчас, работая офисным сотрудником, рисует иллюстрации.",
+      "issue_type": "LEXICAL_MISMATCH",
+      "severity": "CANDIDATE"
+    },
+    {
+      "block": 2,
+      "source": "現在、サラリーマンをしながらイラストを描かせて頂いてます。",
+      "current": "Сейчас, работая служащим, он по-прежнему рисует иллюстрации.",
+      "problem": "AMBIGUITY — смена лица/перспективы субъекта (JA 1-е лицо 謙譲 → RU 3-е лицо «он»)",
+      "reason": "The verb 描かせて頂いてます contains the humble 頂く and is spoken by the illustrator about himself (1st person). RU assigns the action to 3rd person «он». The referent is the same (Usatsuka), so this is a perspective/person shift rather than a subject swap. A third-person biographical style is a legitimate adaptation, so the case is ambiguous rather than an unambiguous error; recorded as CANDIDATE with both readings. EN offers no support (its file is only the header), JA > EN.",
+      "suggestion": "Сейчас, работая служащим, рисую иллюстрации. (если сохранять 1-е лицо иллюстратора)",
+      "issue_type": "AMBIGUITY",
+      "severity": "CANDIDATE"
+    }
+  ],
+  "coverage": "Просмотрены блоки 1–2 целиком (JA ↔ RU, ~100% обоих блоков); соседние блоки 1↔2 использованы как взаимный контекст. Блок 1: проверена цепочка действий и модально-временных переходов эпизода с выпивкой (筆は進み → 楽しくなり → どうでもよくなり → 根源的な疑問 → 泣きたくなり → 幸せになり → 歌いだし → 踊りだし → ハダカで外を歩く → нотация 大家さん), рассуждение о любви (強く相手を求める / 生殖本能 / 思いやる心), логика したがって・だもんで・結論は未だ出ていない, благодарности и обе биографические справки; потери причинно-следственных и временных связей, смены субъекта/объекта не найдено. Блок 2: проверены референс субъекта, действие, время и компоненты; зафиксированы три замечания по первому предложению (added «по-прежнему», ослабление サラリーマン, смена лица). EN-файл содержит только заголовок, смысловой опоры не даёт; зеркало merged_used только для контекста блоков. Смысл оценивался строго по JA → RU."
+}

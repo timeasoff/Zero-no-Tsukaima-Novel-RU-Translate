@@ -1,0 +1,121 @@
+{
+  "analysis_id": "20261119-094428-b75c",
+  "chapter": "v10-ch04",
+  "inputs": {
+    "a_runs": ["20261117-062513-a967", "20261118-202530-4d9e"],
+    "b_runs": ["20261117-062513-3cb6", "20261119-014511-1fae"],
+    "c_runs": ["20261117-062513-133b", "20261119-094101-ab62"],
+    "precheck": "output/_audit/sma/v10-ch04/precheck/omission-precheck.json",
+    "phase1": "20261119-094101-0d8d.phase1.json"
+  },
+  "results": [
+    {
+      "block": 1,
+      "candidate_id": "C-1-01",
+      "sources": {"a": ["20261118-202530-4d9e"], "b": ["20261119-014511-1fae"], "c": ["20261117-062513-133b"], "precheck": false},
+      "source": "なんで一人で行くかな……",
+      "current": "Почему она пошла одна?..",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "A и B говорили о подмене внутреннего колебания активной просьбой, старый C — о сдвиге уверенности. В актуальном RU стоит вопрос с многоточием «Почему она пошла одна?..» — размышление вслух сохранено. Слепая Фаза 1 блок 1 ошибкой не отметила. По текущей паре JA к RU дефект не подтверждается.",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 4,
+      "candidate_id": "C-4-01",
+      "sources": {"a": ["20261117-062513-a967"], "b": ["20261117-062513-3cb6"], "c": [], "precheck": false},
+      "source": "手を腰に置いてそう言い放つルイズを、眩しく見上げた",
+      "current": "Сайто смотрел на Луизу, говорившую это с руками на бёдрах, — и был ослеплён ею",
+      "fidelity": "MEANING_SHIFT",
+      "status": "FALSE_POSITIVE",
+      "reason": "A и B фиксировали инверсию субъекта и объекта взгляда. В актуальном RU субъект — Сайто, объект — Луиза, как и в JA; «был ослеплён ею» передаёт 眩しく見上げた. FALSE_POSITIVE.",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 7,
+      "candidate_id": "C-7-01",
+      "sources": {"a": ["20261118-202530-4d9e"], "b": [], "c": [], "precheck": false},
+      "source": "曲者かと思ったが",
+      "current": "Я было подумал, разбойники, а это вы…",
+      "fidelity": "MEANING_SHIFT",
+      "status": "FALSE_POSITIVE",
+      "reason": "A отмечал конкретизацию 曲者 (подозрительные люди) до «разбойников». В контексте ночного появления у дворца это допустимый конкретный образ; смысл подозрения сохранён. Однозначной ошибки по паре JA к RU нет, FALSE_POSITIVE.",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 9,
+      "candidate_id": "C-9-01",
+      "sources": {"a": [], "b": [], "c": [], "precheck": true},
+      "source": "Сцена прощания Сильфиды",
+      "current": "Фрагмент с прощанием передан полностью",
+      "fidelity": "MISSING",
+      "status": "FALSE_POSITIVE",
+      "reason": "Pre-check signal S1-tail-truncation. Сверка с JA показывает, что весь финал блока 9 присутствует в RU: облегчение отряда, слова Генриетты и её беззащитное выражение переданы полностью. Сигнал пре-check не подтвердился.",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 11,
+      "candidate_id": "C-11-01",
+      "sources": {"a": [], "b": [], "c": ["20261119-094101-ab62"], "precheck": false},
+      "source": "命令ですからな。ゆめゆめお恨みなされるなよ",
+      "current": "Приказ есть приказ. Не взыщите, пожалуйста.",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "DISPUTED",
+      "reason": "Новый C отмечает снижение категоричности: усиленное запрещение с фамильярной концовкой заменено вежливой просьбой. Смысл приказа сохранён, но сила реплики и дистанция ослаблены. Фаза 1 (слепо) это не отметила. Степень сдвига неоднозначна — DISPUTED, REPORT_ONLY.",
+      "suggestion": "Приказ есть приказ. И не смей обижаться, ладно?",
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 12,
+      "candidate_id": "C-12-01",
+      "sources": {"a": ["20261117-062513-a967"], "b": [], "c": [], "precheck": false},
+      "source": "выпавший фрагмент диалога в середине блока",
+      "current": "Диалог Луизы и Генриетты передан полностью",
+      "fidelity": "MISSING",
+      "status": "FALSE_POSITIVE",
+      "reason": "A зафиксировал пропуск фрагмента диалога и авторской ремарки. В актуальном RU все реплики блока 12 на месте: согласие Луизы, слова Генриетты, «Только… правильное не всегда можно принять» и реакция королевы. FALSE_POSITIVE.",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 13,
+      "candidate_id": "C-13-01",
+      "sources": {"a": ["20261117-062513-a967"], "b": [], "c": [], "precheck": false},
+      "source": "わたしの貴族としての魂の在り処",
+      "current": "та душа дворянки, которую я всё больше теряла из виду",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "Историческая находка о потере компонента 魂. Актуальный RU содержит «душа дворянки» — компонент передан. FALSE_POSITIVE.",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 14,
+      "candidate_id": "C-14-01",
+      "sources": {"a": ["20261117-062513-a967", "20261118-202530-4d9e"], "b": [], "c": [], "precheck": false},
+      "source": "はぁ……、参ったなぁ。",
+      "current": "Ах, ничего не поделать…",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "A фиксировал сдвиг эмоции и степени поклона. В актуальном RU стоит «ничего не поделать» — сокрушение Гиша передано точно; «негодный я» и «низкий поклон» отсутствуют. FALSE_POSITIVE.",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 17,
+      "candidate_id": "C-17-01",
+      "sources": {"a": ["20261117-062513-a967"], "b": [], "c": [], "precheck": false},
+      "source": "笑顔を浮かべた",
+      "current": "на лице Сайто появилась улыбка",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "A отмечал замену спонтанной улыбки на намеренную. В актуальном RU стоит «появилась улыбка» — спонтанность сохранена. FALSE_POSITIVE.",
+      "suggestion": null,
+      "action": "PRESERVED"
+    }
+  ]
+}

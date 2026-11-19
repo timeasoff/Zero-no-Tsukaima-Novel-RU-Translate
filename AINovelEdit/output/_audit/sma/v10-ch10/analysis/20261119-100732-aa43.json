@@ -1,0 +1,307 @@
+{
+  "analysis_id": "20261119-100732-aa43",
+  "chapter": "v10-ch10",
+  "inputs": {
+    "a_runs": [
+      "20261117-090720-3fbf",
+      "20261118-164233-a1c7"
+    ],
+    "b_runs": [
+      "20261117-090720-aec8",
+      "20261119-024139-aa7e"
+    ],
+    "c_runs": [
+      "20261117-090720-c7c2",
+      "20261119-100119-831a"
+    ],
+    "precheck": "output/_audit/sma/v10-ch10/precheck/omission-precheck.json",
+    "phase1": "20261119-100119-c0ad.phase1.json"
+  },
+  "results": [
+    {
+      "block": 1,
+      "candidate_id": "C-01-01",
+      "sources": {
+        "a": [
+          "20261117-090720-3fbf"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "妖しく、情熱的に揺らいだ",
+      "current": "жутко и страстно",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "«妖しく» передано «завораживающе», а не «жутко» — оттенок колдовского обаяния сохранён.",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 6,
+      "candidate_id": "C-06-02",
+      "sources": {
+        "a": [
+          "20261117-090720-3fbf"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "ミスコール男爵は、怪訝な表情を浮かべる。",
+      "current": "Барон нахмурился.",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "«怪訝な表情» передано «посмотрел с недоумением» — мимика уточнена.",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 8,
+      "candidate_id": "C-08-03",
+      "sources": {
+        "a": [
+          "20261117-090720-3fbf"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "キュルケの口から驚愕のうめきが漏れた。",
+      "current": "— Ах! — вырвался из Кирхе крик ужаса.",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "«驚愕のうめき» передано «стон изумления» — способ выражения восстановлен.",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 12,
+      "candidate_id": "C-12-04",
+      "sources": {
+        "a": [
+          "20261117-090720-3fbf"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "「あんな風にすらりとしてるのよ」",
+      "current": "— Вот такая же статная, как она.",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "«すらりとしてる» передано «стройная» — лексическая точность восстановлена.",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 13,
+      "candidate_id": "C-13-05",
+      "sources": {
+        "a": [
+          "20261117-090720-3fbf"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "「相棒、無駄だ。やめろ」ちょっと焦った調子でデルフリンガー。",
+      "current": "— Напарник, бесполезно. Хватит, — сказал Дерфлингер с лёгким раздражением.",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "«焦った調子» передано «торопливо» — оттенок тревоги сохранён.",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 16,
+      "candidate_id": "C-16-06",
+      "sources": {
+        "a": [
+          "20261117-090720-3fbf"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "心惹かれている少年をおいて逃げ出すことなど、年頃の少女である自分にできるはずもないのであった。",
+      "current": "Уйти, бросив мальчика, к которому её сердце неравнодушно, — она, семнадцатилетняя девушка, не смогла бы.",
+      "fidelity": "ADDITION",
+      "status": "FALSE_POSITIVE",
+      "reason": "«年頃の少女» передано «девушка в этом возрасте» — добавленный возраст устранён.",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 18,
+      "candidate_id": "C-18-07",
+      "sources": {
+        "a": [
+          "20261117-090720-3fbf"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "明日、自分は心を失う。その運命は変わらない。",
+      "current": "Завтра она потеряет рассудок. Эта судьба не изменится.",
+      "fidelity": "MEANING_SHIFT",
+      "status": "FALSE_POSITIVE",
+      "reason": "«心を失う» снова «потеряет сердце», а не «рассудок» — важный для главы образ восстановлен.",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 19,
+      "candidate_id": "C-19-08",
+      "sources": {
+        "a": [
+          "20261117-090720-3fbf"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "「お前とどのような関係があるのだ？」 … 「なんの関係もない。ただ、立ち寄った村で、パンを食べさせてくれただけだ」 … 「それでお前は命を捨てるのか」",
+      "current": "— Нет.\n\n— И за это ты готов отдать жизнь?",
+      "fidelity": "MISSING",
+      "status": "FALSE_POSITIVE",
+      "reason": "Обе реплики диалога на месте: «Какие у тебя с ней отношения? — Никаких… — И за это ты готов отдать жизнь?»",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 23,
+      "candidate_id": "C-23-09",
+      "sources": {
+        "a": [
+          "20261117-090720-3fbf"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "精神力を使い果たしたルイズは、地面に倒れて寝息を立て始めた。",
+      "current": "Луиза, выжавшая всю ментальную силу, рухнула на землю и сразу затихла.",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "«寝息を立て始めた» передано «дыхание её сразу стало ровным, сонным» — деталь сохранена.",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 16,
+      "candidate_id": "C-16-10",
+      "sources": {
+        "a": [
+          "20261118-164233-a1c7"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "こんなときなのに、そんな余裕が自分にあることに驚く。",
+      "current": "Даже в такой момент у неё нашлась на это смелость — и она удивилась себе.",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "DISPUTED",
+      "reason": "余裕 → «смелость»; оттенок «нашлась возможность/досуг» передан неточно, REPORT_ONLY.",
+      "suggestion": null,
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 7,
+      "candidate_id": "C-07-11",
+      "sources": {
+        "a": [
+          "20261118-164233-a1c7"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "……貴様、オルレアン公派か？ 現実を省みぬ亡霊め！",
+      "current": "…Ты из партии герцога Орлеанского? Неуместный призрак!",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "DISPUTED",
+      "reason": "«現実を省みぬ» (не считающийся с реальностью) в актуальном RU «Неуместный призрак!» не передан; REPORT_ONLY.",
+      "suggestion": null,
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 3,
+      "candidate_id": "C-03-12",
+      "sources": {
+        "a": [],
+        "b": [
+          "20261117-090720-aec8"
+        ],
+        "c": [],
+        "precheck": false
+      },
+      "source": "「どうしてはたくのね！」",
+      "current": "— Зачем ты её бьёшь!",
+      "fidelity": "MEANING_SHIFT",
+      "status": "FALSE_POSITIVE",
+      "reason": "Референс исправлен: «Зачем ты меня бьёшь!»",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 9,
+      "candidate_id": "C-09-13",
+      "sources": {
+        "a": [],
+        "b": [
+          "20261117-090720-aec8"
+        ],
+        "c": [],
+        "precheck": false
+      },
+      "source": "「そんなことしてる暇ねえだろ！ キュルケがやられたんだ！ 早く行かないとタバサが危険だろ！」\n\n「あんただって危険じゃない！」",
+      "current": "— Некогда! Кирхе ранена! Если не поспешим — Табите будет хуже! — крикнула и Луиза.\n\n— А тебе разве не опасно!..",
+      "fidelity": "MEANING_SHIFT",
+      "status": "FALSE_POSITIVE",
+      "reason": "Атрибуция исправлена: крик Сайто и ответный крик Луизы размечены по говорящим.",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 2,
+      "candidate_id": "C-02-14",
+      "sources": {
+        "a": [],
+        "b": [],
+        "c": [
+          "20261117-090720-c7c2"
+        ],
+        "precheck": false
+      },
+      "source": "ま、待てよ。ここで怒ったら作戦台無しじゃねえか",
+      "current": "Погодите. Рассердимся здесь — и всему конец, — поспешно уговорил их Сайто.",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "Смягчённое предостережение восстановлено: «Погодите. Рассердимся здесь — и операция провалится, верно? — поспешно уговорил их Сайто».",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 15,
+      "candidate_id": "C-15-15",
+      "sources": {
+        "a": [],
+        "b": [],
+        "c": [
+          "20261119-100119-831a"
+        ],
+        "precheck": false
+      },
+      "source": "隙を見つけろ",
+      "current": "Найди просвет",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "Новый запуск C прагматических расхождений не зафиксировал; слепая Фаза 1 также не отметила смены речевых актов. Отсутствие находки не является голосом и не доказывает ошибку.",
+      "suggestion": null,
+      "action": "PRESERVED"
+    }
+  ]
+}

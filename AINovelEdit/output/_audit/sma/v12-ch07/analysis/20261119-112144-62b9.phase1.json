@@ -1,0 +1,26 @@
+{
+  "analysis_id": "20261119-112144-62b9.phase1",
+  "chapter": "v12-ch07",
+  "phase": 1,
+  "scope": "blind",
+  "results": [
+    {
+      "block": 2,
+      "finding": "PRAGMATIC_SHIFT",
+      "note": "無茶言うなよ: дружеский окрик → «Не требуй невозможного» (нейтральный запрет).",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 4,
+      "finding": "PRAGMATIC_SHIFT",
+      "note": "いい加減にしろよ: срыв/требование → «Хватит уже» (спокойно).",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 8,
+      "finding": "PRAGMATIC_SHIFT",
+      "note": "くれたまえ: настойчивая просьба → «Повтори» (чистый приказ).",
+      "confidence": "MEDIUM"
+    }
+  ]
+}

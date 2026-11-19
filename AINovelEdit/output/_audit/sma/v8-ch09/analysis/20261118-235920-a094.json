@@ -1,0 +1,173 @@
+{
+  "analysis_id": "20261118-235920-a094",
+  "chapter": "v8-ch09",
+  "inputs": {
+    "a_runs": [
+      "20261117-023701-9043",
+      "20261118-150134-695a"
+    ],
+    "b_runs": [
+      "20261117-023701-cb52",
+      "20261118-235055-a5fc"
+    ],
+    "c_runs": [
+      "20261117-023701-3511"
+    ],
+    "precheck": "output/_audit/sma/v8-ch09/precheck/omission-precheck.json",
+    "phase1": "20261118-235055-67aa.phase1.json"
+  },
+  "results": [
+    {
+      "block": 9,
+      "candidate_id": "C-09-01",
+      "sources": {
+        "a": [
+          "20261117-023701-9043"
+        ],
+        "b": [
+          "20261117-023701-cb52"
+        ],
+        "c": [],
+        "precheck": false
+      },
+      "source": "",
+      "current": "",
+      "fidelity": "MEANING_SHIFT",
+      "status": "FALSE_POSITIVE",
+      "reason": "ED_RU: «Они полдня блуждали по лесной тропе» — длительность восстановлена.",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 12,
+      "candidate_id": "C-12-01",
+      "sources": {
+        "a": [
+          "20261117-023701-9043"
+        ],
+        "b": [
+          "20261117-023701-cb52"
+        ],
+        "c": [],
+        "precheck": false
+      },
+      "source": "",
+      "current": "",
+      "fidelity": "MEANING_SHIFT",
+      "status": "FALSE_POSITIVE",
+      "reason": "ED_RU: «пусть я увижу могилу — я не поверю» — отрицание смерти сохранено.",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 8,
+      "candidate_id": "C-08-01",
+      "sources": {
+        "a": [],
+        "b": [
+          "20261117-023701-cb52"
+        ],
+        "c": [],
+        "precheck": false
+      },
+      "source": "",
+      "current": "",
+      "fidelity": "MEANING_SHIFT",
+      "status": "FALSE_POSITIVE",
+      "reason": "ED_RU: «— У-угу… — кивнул Сайто, гадая, к чему это» — субъект верен.",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 8,
+      "candidate_id": "C-08-02",
+      "sources": {
+        "a": [],
+        "b": [],
+        "c": [
+          "20261117-023701-3511"
+        ],
+        "precheck": false
+      },
+      "source": "",
+      "current": "",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "ED_RU: «— Значит, это, может, всё-таки та Луиза…» — хедж かも сохранён.",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 4,
+      "candidate_id": "C-04-01",
+      "sources": {
+        "a": [
+          "20261117-023701-9043"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "",
+      "current": "",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "ED_RU: «— Файто!» — JA ファイト («Fight») передразнивание имени сохранено; это не ошибка.",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 18,
+      "candidate_id": "C-18-01",
+      "sources": {
+        "a": [
+          "20261117-023701-9043"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "",
+      "current": "",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "ED_RU: ED_RU: «Дерфлингер, который я держу, — меч» — подмены нет.",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 9,
+      "candidate_id": "C-09-02",
+      "sources": {
+        "a": [],
+        "b": [],
+        "c": [],
+        "precheck": true
+      },
+      "source": "",
+      "current": "",
+      "fidelity": "MISSING",
+      "status": "FALSE_POSITIVE",
+      "reason": "Pre-check: обрыв Relative к сырому RU; ED_RU блок 9 полный.",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 10,
+      "candidate_id": "C-10-01",
+      "sources": {
+        "a": [],
+        "b": [],
+        "c": [],
+        "precheck": true
+      },
+      "source": "",
+      "current": "",
+      "fidelity": "MISSING",
+      "status": "FALSE_POSITIVE",
+      "reason": "Pre-check: обрыв Relative к сырому RU; ED_RU блок 10 полный.",
+      "suggestion": null,
+      "action": "PRESERVED"
+    }
+  ]
+}

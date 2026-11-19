@@ -1,0 +1,32 @@
+{
+  "analysis_id": "20261119-110750-60fc.phase1",
+  "chapter": "v12-prologue",
+  "phase": 1,
+  "scope": "blind",
+  "results": [
+    {
+      "block": 3,
+      "finding": "PRAGMATIC_SHIFT",
+      "note": "ちと性急な結論だな — мягкая оговорка с хеджем; RU «слишком поспешный» усиливает категоричность.",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 6,
+      "finding": "PRAGMATIC_SHIFT",
+      "note": "それほどでもないヨ — скромное самоотрицание; RU «Не преувеличивай» — упрёк-императив.",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 8,
+      "finding": "PRAGMATIC_SHIFT",
+      "note": "やだ — мягкий эмоциональный отказ; RU «нет» — прямой отказ.",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 14,
+      "finding": "PRAGMATIC_SHIFT",
+      "note": "してこようかしらー — нерешительное предложение; RU «п-пойду» — твёрдое намерение.",
+      "confidence": "MEDIUM"
+    }
+  ]
+}

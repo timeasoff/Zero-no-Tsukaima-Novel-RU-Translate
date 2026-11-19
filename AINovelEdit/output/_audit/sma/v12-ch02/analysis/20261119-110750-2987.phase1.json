@@ -1,0 +1,26 @@
+{
+  "analysis_id": "20261119-110750-2987.phase1",
+  "chapter": "v12-ch02",
+  "phase": 1,
+  "scope": "blind",
+  "results": [
+    {
+      "block": 11,
+      "finding": "PRAGMATIC_SHIFT",
+      "note": "いいこと？ — рамка привлечения внимания; RU «Запомни» — директивная установка.",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 4,
+      "finding": "PRAGMATIC_SHIFT",
+      "note": "暑いんです (きっぱり) — подчёркнуто-объяснительная модальность; RU «Жарко» — плоская констатация.",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 10,
+      "finding": "PRAGMATIC_SHIFT",
+      "note": "あっきれた (укоризна) → «Не верю» (недоверие): смена установки говорящего.",
+      "confidence": "MEDIUM"
+    }
+  ]
+}

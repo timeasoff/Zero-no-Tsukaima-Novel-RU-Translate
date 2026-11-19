@@ -1,0 +1,44 @@
+{
+  "analysis_id": "20261119-160850-126a.phase1",
+  "chapter": "v10-epilogue",
+  "phase": 1,
+  "scope": "blind",
+  "results": [
+    {
+      "block": 1,
+      "finding": "MISTRANSLATION",
+      "note": "«未だ幼生» (ещё молодая особь/дракон) → «всё ещё личинка»: неверная биологическая стадия.",
+      "confidence": "HIGH"
+    },
+    {
+      "block": 8,
+      "finding": "MISTRANSLATION",
+      "note": "«火事場のバカ力» (идиома «нечеловеческая сила в беде») → дословная калька «сила безумной пожарной».",
+      "confidence": "HIGH"
+    },
+    {
+      "block": 6,
+      "finding": "LEXICAL_MISMATCH",
+      "note": "«けだもの» (зверь) → «скот» (домашний скот): иное значение и регистр.",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 3,
+      "finding": "NUANCE_SHIFT",
+      "note": "«恵まれてる» (повезло) → «был обласкан»: подмена везучести телесной метафорой.",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 7,
+      "finding": "PRAGMATIC_SHIFT",
+      "note": "«けなしてどーすんのよ» (личный упрёк) → «Зачем ты её ругаешь?»: адресат смещён на третье лицо.",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 6,
+      "finding": "AMBIGUITY",
+      "note": "Возможный обрыв хвоста блока перед сценой с презрительным взглядом искоса; проверить покрытие всех звеньев JA при полной сверке.",
+      "confidence": "LOW"
+    }
+  ]
+}

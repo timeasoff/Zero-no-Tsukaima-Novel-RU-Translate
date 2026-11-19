@@ -1,0 +1,65 @@
+{
+  "analysis_id": "20261119-120101-5f39",
+  "chapter": "v13-ch08",
+  "inputs": {
+    "a_runs": [
+      "20261118-003316-7d20",
+      "20261118-183003-7d2e"
+    ],
+    "b_runs": [
+      "20261118-003239-7761",
+      "20261119-072645-75a0"
+    ],
+    "c_runs": [
+      "20261118-003239-6c6a",
+      "20261119-120101-65a6"
+    ],
+    "precheck": "output/_audit/sma/v13-ch08/precheck/omission-precheck.json",
+    "phase1": "20261119-120101-1cc7.phase1.json"
+  },
+  "results": [
+    {
+      "block": 9,
+      "candidate_id": "C-R4-20261119-120101-65a6-09-01",
+      "sources": {
+        "a": [
+          "20261118-003316-7d20",
+          "20261118-183003-7d2e"
+        ],
+        "b": [],
+        "c": [
+          "20261119-120101-65a6"
+        ],
+        "precheck": false
+      },
+      "source": "つかれたでしょ。水飲む？",
+      "current": "Устал? Воды?",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "DISPUTED",
+      "reason": "Новый C и blind-Фаза 1 независимо отметили потерю заботливого кадрирования (でしょ + 水飲む？). A исторически фиксировал ADDED_CONTENT / NUANCE_SHIFT в блоке 9 по другим элементам. Смысл сохранён, компонент заботы ослаблен — DISPUTED, REPORT_ONLY.",
+      "suggestion": "— Ты ведь устал? Воды принести?",
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 7,
+      "candidate_id": "C-R4-20261119-120101-65a6-07-01",
+      "sources": {
+        "a": [
+          "20261118-003316-7d20"
+        ],
+        "b": [],
+        "c": [
+          "20261119-120101-65a6"
+        ],
+        "precheck": false
+      },
+      "source": "お前、まさか、また惚れ薬でも飲んだんじゃないだろうな？",
+      "current": "Ты же не приворотное зелье опять выпила?",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "DISPUTED",
+      "reason": "Сверка JA → RU: まさか + じゃないだろうな задают полушутливое недоверие; RU уточняет напрямую. Компонент игривости ослаблен, ядро сохранено — DISPUTED, REPORT_ONLY. Confidence LOW, FIXED = 0.",
+      "suggestion": "— Неужто ты опять приворотного зелья выпила?..",
+      "action": "REPORT_ONLY"
+    }
+  ]
+}

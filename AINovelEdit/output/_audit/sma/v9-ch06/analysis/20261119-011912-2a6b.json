@@ -1,0 +1,220 @@
+{
+  "analysis_id": "20261119-011912-2a6b",
+  "chapter": "v9-ch06",
+  "inputs": {
+    "a_runs": [
+      "20261117-040031-1cbf",
+      "20261118-154526-01a0"
+    ],
+    "b_runs": [
+      "20261117-040031-21e8",
+      "20261119-011757-778e"
+    ],
+    "c_runs": [
+      "20261117-040031-7cce"
+    ],
+    "precheck": null,
+    "phase1": "20261119-011757-393d.phase1.json"
+  },
+  "results": [
+    {
+      "block": 2,
+      "candidate_id": "C-2-01",
+      "sources": {
+        "a": [
+          "20261117-040031-1cbf"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "デヴィッチェ・シャイ",
+      "current": "девичьей щепетильностью",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "A1 historical: «невинность» исправлено на «щепетильность».",
+      "suggestion": "",
+      "action": "PRESERVED"
+    },
+    {
+      "block": 3,
+      "candidate_id": "C-3-01",
+      "sources": {
+        "a": [
+          "20261117-040031-1cbf"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "半頭ほど",
+      "current": "на одну лошадиную голову позади",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "A1 historical: мера дистанции передана («одна лошадиная голова»).",
+      "suggestion": "",
+      "action": "PRESERVED"
+    },
+    {
+      "block": 4,
+      "candidate_id": "C-4-01",
+      "sources": {
+        "a": [
+          "20261118-154526-01a0"
+        ],
+        "b": [
+          "20261119-011757-778e"
+        ],
+        "c": [],
+        "precheck": false
+      },
+      "source": "Gish の腕振り",
+      "current": "Он махал рукой Сайто, шагавшему впереди",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "CONFIRMED_ERROR",
+      "reason": "A2 и новый B: размашистость жеста 腕を振って утрачена; правка не применяется.",
+      "suggestion": "Гиш размашисто махал рукой идущему впереди Сайто",
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 4,
+      "candidate_id": "C-4-02",
+      "sources": {
+        "a": [
+          "20261117-040031-1cbf"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "Gish の自己満足",
+      "current": "Гиш самодовольно склонил голову",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "A1 historical: «довольный» заменено «самодовольно» — оттенок самодовольства передан.",
+      "suggestion": "",
+      "action": "PRESERVED"
+    },
+    {
+      "block": 5,
+      "candidate_id": "C-5-01",
+      "sources": {
+        "a": [
+          "20261117-040031-1cbf"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "どよめき／嘲笑",
+      "current": "насмешливый смех",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "A1 historical: «В толпе вырвался смех» дополнено «насмешливый» — оттенок недоверия/насмешки передан.",
+      "suggestion": "",
+      "action": "PRESERVED"
+    },
+    {
+      "block": 6,
+      "candidate_id": "C-6-01",
+      "sources": {
+        "a": [
+          "20261117-040031-1cbf"
+        ],
+        "b": [
+          "20261119-011757-778e"
+        ],
+        "c": [],
+        "precheck": false
+      },
+      "source": "照れ隠し",
+      "current": "Под приветствия Сайто изобразил растерянное лицо",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "CONFIRMED_ERROR",
+      "reason": "A1 и новый B: 照れ隠し — скрываемое смущение, «растерянное лицо» подменяет состояние; правка не применяется.",
+      "suggestion": "Скорчил странную рожу, скрывая смущение",
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 7,
+      "candidate_id": "C-7-01",
+      "sources": {
+        "a": [
+          "20261117-040031-1cbf"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "寂しそうに",
+      "current": "— Правда… вы всё распродали, — грустно сказала она",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "A1 historical: «тихо» заменено «грустно» — эмоция одиночества передана.",
+      "suggestion": "",
+      "action": "PRESERVED"
+    },
+    {
+      "block": 9,
+      "candidate_id": "C-9-01",
+      "sources": {
+        "a": [
+          "20261118-154526-01a0"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "財務卿の笑み",
+      "current": "он ответил встревоженным голосом",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "A2 historical: «улыбнулся» заменено «встревоженным голосом» — мимика/эмоция исправлена.",
+      "suggestion": "",
+      "action": "PRESERVED"
+    },
+    {
+      "block": 10,
+      "candidate_id": "C-10-01",
+      "sources": {
+        "a": [
+          "20261117-040031-1cbf",
+          "20261118-154526-01a0"
+        ],
+        "b": [
+          "20261117-040031-21e8"
+        ],
+        "c": [],
+        "precheck": false
+      },
+      "source": "安心したのか／剪切",
+      "current": "Я заметила, что мне стало легче, только когда слеза уже покатилась",
+      "fidelity": "MEANING_SHIFT",
+      "status": "FALSE_POSITIVE",
+      "reason": "A1/A2/B-old historical: «обрадовалась, что слеза пошла» исправлено на «стало легче, когда слеза покатилась»; инверсия состояния устранена.",
+      "suggestion": "",
+      "action": "PRESERVED"
+    },
+    {
+      "block": 13,
+      "candidate_id": "C-13-01",
+      "sources": {
+        "a": [
+          "20261117-040031-1cbf"
+        ],
+        "b": [
+          "20261117-040031-21e8"
+        ],
+        "c": [],
+        "precheck": false
+      },
+      "source": "場所や姿まで変える",
+      "current": "Причём не просто маску или костюм…",
+      "fidelity": "ADDITION",
+      "status": "FALSE_POSITIVE",
+      "reason": "A1/B-old фиксировали добавление о смене места и облика; текущий RU оборвал фразу на «не просто маску или костюм…», добавление устранено.",
+      "suggestion": "",
+      "action": "PRESERVED"
+    }
+  ]
+}

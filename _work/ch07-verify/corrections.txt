@@ -1,0 +1,14 @@
+===AUDIT===
+- FORMAT: 6 → 2; 5 FIXED (4 исходных + 1 thoughtinline), 1 FALSE POSITIVE,
+  1 PRESERVED — FUNCTIONAL (титул).
+---
+- FORMAT: 6 исходных → 5 FIXED (2 thought, 3 blockgap) + 1 PRESERVED —
+  FUNCTIONAL (титул); после правок 2 кандидата: 1 FALSE POSITIVE
+  (thoughtinline) + 1 PRESERVED — FUNCTIONAL (титул).
+===LOG===
+  PRESERVED — JA/FUNCTIONAL и FALSE POSITIVE); format 6 → 2 (5 FIXED,
+  1 FALSE POSITIVE, 1 PRESERVED — FUNCTIONAL); address 0; check_records
+---
+  PRESERVED — JA/FUNCTIONAL и FALSE POSITIVE); format 6 → 2 (5 FIXED —
+  2 thought и 3 blockgap); после правок 1 FALSE POSITIVE + 1 PRESERVED —
+  FUNCTIONAL; address 0; check_records

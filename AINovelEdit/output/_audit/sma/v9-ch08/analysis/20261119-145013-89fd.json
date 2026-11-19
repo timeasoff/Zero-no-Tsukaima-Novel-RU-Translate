@@ -1,0 +1,575 @@
+{
+  "analysis_id": "20261119-145013-89fd",
+  "chapter": "v9-ch08",
+  "inputs": {
+    "a_runs": [
+      "20261117-041722-3ddc",
+      "20261118-154729-a3f1",
+      "20261119-145013-d77c"
+    ],
+    "b_runs": [
+      "20261117-041722-278f",
+      "20261119-012117-45ae",
+      "20261119-145013-9eb9"
+    ],
+    "c_runs": [
+      "20261117-041722-4557",
+      "20261119-091441-fe8e",
+      "20261119-145013-24da"
+    ],
+    "precheck": "output/_audit/sma/v9-ch08/precheck/omission-precheck.json",
+    "phase1": "20261119-145013-c5e2.phase1.json"
+  },
+  "notes": {
+    "mode": "A + B + C",
+    "decision_axes": "fidelity + action/status; majority vote не применялся",
+    "text_edits": "Правки в текст НЕ вносились: FIXED=0, все результаты имеют action=REPORT_ONLY или PRESERVED; поля before/after отсутствуют.",
+    "phase1_reproduction": "Слепой вывод 20261119-145013-c5e2.phase1.json сделан ДО evidence: блоки JA → RU свечены независимо; существенных mismatch, omission и добавленного смысла не найдено. Сверка в Фазе 2 выполнена именно с этим (новым) слепым прогоном.",
+    "superseded_note": "Исторические находки A/B/C не голосуют; происхождение (sources.a/b/c, precheck) фиксирует только место находки, статус определяется сверкой JA → RU по актуальному тексту."
+  },
+  "results": [
+    {
+      "block": 1,
+      "candidate_id": "C-1-01",
+      "sources": {
+        "a": [
+          "20261118-154729-a3f1",
+          "20261119-145013-d77c"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "得意げ",
+      "current": "Гиш, сидя, скрестив ноги, сказал с довольным видом",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "DISPUTED",
+      "reason": "A2 возражало против нейтрального «довольный» вместо 得意げ (самодовольство); оттенок субъективен и допускает варианты. DISPUTED без правки.",
+      "suggestion": "",
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 2,
+      "candidate_id": "C-2-01",
+      "sources": {
+        "a": [
+          "20261117-041722-3ddc",
+          "20261119-145013-d77c"
+        ],
+        "b": [
+          "20261117-041722-278f",
+          "20261119-145013-9eb9"
+        ],
+        "c": [],
+        "precheck": false
+      },
+      "source": "вопрос Слейпнира",
+      "current": "— Сегодня же бал… спросил Сайто",
+      "fidelity": "MEANING_SHIFT",
+      "status": "FALSE_POSITIVE",
+      "reason": "A1/B-old атрибуция исправлена — говорит Сайто.",
+      "suggestion": "",
+      "action": "PRESERVED"
+    },
+    {
+      "block": 2,
+      "candidate_id": "C-2-02",
+      "sources": {
+        "a": [],
+        "b": [],
+        "c": [],
+        "precheck": true
+      },
+      "source": "(precheck 2)",
+      "current": "",
+      "fidelity": "MISSING",
+      "status": "FALSE_POSITIVE",
+      "reason": "Pre-check хвоста снят: звенья покрыты в смежном фрагменте.",
+      "suggestion": "",
+      "action": "PRESERVED"
+    },
+    {
+      "block": 3,
+      "candidate_id": "C-3-01",
+      "sources": {
+        "a": [
+          "20261117-041722-3ddc",
+          "20261119-145013-d77c"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "無体",
+      "current": "такой нахал",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "DISPUTED",
+      "reason": "A1 фиксировало смещение 無体 (произвольный/грубый) в «нахал». Оценочный оттенок неоднозначен; DISPUTED.",
+      "suggestion": "",
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 4,
+      "candidate_id": "C-4-02",
+      "sources": {
+        "a": [],
+        "b": [],
+        "c": [],
+        "precheck": true
+      },
+      "source": "(precheck 4)",
+      "current": "",
+      "fidelity": "MISSING",
+      "status": "FALSE_POSITIVE",
+      "reason": "Pre-check снят как сдвиг границ блоков.",
+      "suggestion": "",
+      "action": "PRESERVED"
+    },
+    {
+      "block": 5,
+      "candidate_id": "C-5-01",
+      "sources": {
+        "a": [
+          "20261118-154729-a3f1",
+          "20261119-145013-d77c"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "「いじわるな」オーラ",
+      "current": "невероятная «обидная» аура",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "A2 historical: «обидная» передаёт провоцирующую игру いじわる; явной потери нет.",
+      "suggestion": "",
+      "action": "PRESERVED"
+    },
+    {
+      "block": 5,
+      "candidate_id": "C-5-02",
+      "sources": {
+        "a": [
+          "20261118-154729-a3f1",
+          "20261119-145013-d77c"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "足蹴り",
+      "current": "всадила ему удар в пах",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "A2 historical: «удар ногой» уточнён «всадила удар в пах» — жест 足蹴り передан.",
+      "suggestion": "",
+      "action": "PRESERVED"
+    },
+    {
+      "block": 7,
+      "candidate_id": "C-7-01",
+      "sources": {
+        "a": [
+          "20261118-154729-a3f1",
+          "20261119-145013-d77c"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "驚き／愤怒",
+      "current": "Луиза замерла",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "CONFIRMED_ERROR",
+      "reason": "A2: изумление/негодование подменено физическим замиранием. Эмоция не передана; правка не применяется.",
+      "suggestion": "Луиза замерла от изумления",
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 8,
+      "candidate_id": "C-8-01",
+      "sources": {
+        "a": [
+          "20261117-041722-3ddc",
+          "20261119-145013-d77c"
+        ],
+        "b": [
+          "20261117-041722-278f",
+          "20261119-145013-9eb9"
+        ],
+        "c": [],
+        "precheck": false
+      },
+      "source": "出席しなさい",
+      "current": "вы оба как следует присутствуйте",
+      "fidelity": "MEANING_SHIFT",
+      "status": "FALSE_POSITIVE",
+      "reason": "A1/B-old «поухаживайте за мной» исправлено на «присутствуйте» — 出席 передан.",
+      "suggestion": "",
+      "action": "PRESERVED"
+    },
+    {
+      "block": 8,
+      "candidate_id": "C-8-02",
+      "sources": {
+        "a": [
+          "20261117-041722-3ddc",
+          "20261119-145013-d77c"
+        ],
+        "b": [
+          "20261117-041722-278f",
+          "20261119-145013-9eb9"
+        ],
+        "c": [],
+        "precheck": false
+      },
+      "source": "добавленный монолог",
+      "current": "Сайто онемел: «Сейчас ты мне скажешь, как найти способ вернуться…»",
+      "fidelity": "ADDITION",
+      "status": "FALSE_POSITIVE",
+      "reason": "A1/B-old добавленный внутренний монолог устранён; текущий текст содержит лишь оправданное «Мысли его были смутны».",
+      "suggestion": "",
+      "action": "PRESERVED"
+    },
+    {
+      "block": 9,
+      "candidate_id": "C-9-01",
+      "sources": {
+        "a": [
+          "20261117-041722-3ddc",
+          "20261119-145013-d77c"
+        ],
+        "b": [
+          "20261119-012117-45ae",
+          "20261119-145013-9eb9"
+        ],
+        "c": [],
+        "precheck": false
+      },
+      "source": "釣り方",
+      "current": "— Опять ты их подкалываешь!",
+      "fidelity": "MEANING_SHIFT",
+      "status": "CONFIRMED_ERROR",
+      "reason": "A1 и новый B: 釣り方 — завлечение/«удочка», «подкалываешь» — насмешливое поддёвывание. Характер действия искажён; правка не применяется.",
+      "suggestion": "— Опять ты их завлекаешь!",
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 10,
+      "candidate_id": "C-10-01",
+      "sources": {
+        "a": [
+          "20261117-041722-3ddc",
+          "20261119-145013-d77c"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "挨拶",
+      "current": "Поздравляю вас",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "A1 historical: «поздравление» как приветствие допустимо в контексте бала; явной потери нет.",
+      "suggestion": "",
+      "action": "PRESERVED"
+    },
+    {
+      "block": 10,
+      "candidate_id": "C-10-02",
+      "sources": {
+        "a": [],
+        "b": [],
+        "c": [],
+        "precheck": true
+      },
+      "source": "(precheck 10)",
+      "current": "",
+      "fidelity": "MISSING",
+      "status": "FALSE_POSITIVE",
+      "reason": "Pre-check снят как сдвиг границ.",
+      "suggestion": "",
+      "action": "PRESERVED"
+    },
+    {
+      "block": 13,
+      "candidate_id": "C-13-01",
+      "sources": {
+        "a": [
+          "20261117-041722-3ddc",
+          "20261119-145013-d77c"
+        ],
+        "b": [
+          "20261117-041722-278f",
+          "20261119-145013-9eb9"
+        ],
+        "c": [
+          "20261117-041722-4557",
+          "20261119-145013-24da"
+        ],
+        "precheck": false
+      },
+      "source": "пропуск середины блока",
+      "current": "— …Обещание? …полный диалог…",
+      "fidelity": "MISSING",
+      "status": "FALSE_POSITIVE",
+      "reason": "A1/B-old/C фиксировали пропуск диалога; текущий RU содержит все реплики между «Обещание?» и выходом на улицу. Пропуск устранён.",
+      "suggestion": "",
+      "action": "PRESERVED"
+    },
+    {
+      "block": 17,
+      "candidate_id": "C-17-01",
+      "sources": {
+        "a": [
+          "20261118-154729-a3f1",
+          "20261119-145013-d77c"
+        ],
+        "b": [
+          "20261119-012117-45ae",
+          "20261119-145013-9eb9"
+        ],
+        "c": [],
+        "precheck": false
+      },
+      "source": "完璧な相手",
+      "current": "превращаются в «идеал»",
+      "fidelity": "MEANING_SHIFT",
+      "status": "CONFIRMED_ERROR",
+      "reason": "A2 и новый B: конкретный «идеальный партнёр» подменён абстрактным «идеалом», что ослабляет логику реплики Луизы. Правка не применяется.",
+      "suggestion": "стать «идеальным партнёром»",
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 18,
+      "candidate_id": "C-18-01",
+      "sources": {
+        "a": [
+          "20261117-041722-3ddc",
+          "20261119-145013-d77c"
+        ],
+        "b": [
+          "20261117-041722-278f",
+          "20261119-145013-9eb9"
+        ],
+        "c": [],
+        "precheck": false
+      },
+      "source": "インヴォランティア",
+      "current": "добровольцев не было",
+      "fidelity": "MEANING_SHIFT",
+      "status": "FALSE_POSITIVE",
+      "reason": "A1/B-old полярная инверсия исправлена: «никого не заставляли идти, все шли сами».",
+      "suggestion": "",
+      "action": "PRESERVED"
+    },
+    {
+      "block": 18,
+      "candidate_id": "C-18-02",
+      "sources": {
+        "a": [],
+        "b": [],
+        "c": [],
+        "precheck": true
+      },
+      "source": "(precheck 18)",
+      "current": "",
+      "fidelity": "MISSING",
+      "status": "FALSE_POSITIVE",
+      "reason": "Pre-check снят как сдвиг границ блока 18.",
+      "suggestion": "",
+      "action": "PRESERVED"
+    },
+    {
+      "block": 19,
+      "candidate_id": "C-19-01",
+      "sources": {
+        "a": [
+          "20261117-041722-3ddc",
+          "20261119-145013-d77c"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "救われた",
+      "current": "как я была спасена",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "A1 historical: «обрадовалась» заменено «была спасена» — 救われた передан.",
+      "suggestion": "",
+      "action": "PRESERVED"
+    },
+    {
+      "block": 20,
+      "candidate_id": "C-20-01",
+      "sources": {
+        "a": [
+          "20261117-041722-3ddc",
+          "20261119-145013-d77c"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "押して",
+      "current": "резко толкнула Сайто",
+      "fidelity": "MEANING_SHIFT",
+      "status": "FALSE_POSITIVE",
+      "reason": "A1 historical: «притянула к себе» исправлено на «толкнула» — 押して передан.",
+      "suggestion": "",
+      "action": "PRESERVED"
+    },
+    {
+      "block": 22,
+      "candidate_id": "C-22-01",
+      "sources": {
+        "a": [
+          "20261117-041722-3ddc",
+          "20261119-145013-d77c"
+        ],
+        "b": [
+          "20261117-041722-278f",
+          "20261119-145013-9eb9"
+        ],
+        "c": [],
+        "precheck": false
+      },
+      "source": "裏切ったのはルイズ",
+      "current": "Преданная Генриеттой, Луиза",
+      "fidelity": "MEANING_SHIFT",
+      "status": "FALSE_POSITIVE",
+      "reason": "A1/B-old инверсия субъекта исправлена: предательница — Генриетта, Луиза — пострадавшая.",
+      "suggestion": "",
+      "action": "PRESERVED"
+    },
+    {
+      "block": 9,
+      "candidate_id": "C-R4-20261119-091441-fe8e-09-01",
+      "sources": {
+        "a": [],
+        "b": [],
+        "c": [
+          "20261119-091441-fe8e",
+          "20261119-145013-24da"
+        ],
+        "precheck": false
+      },
+      "source": "「またそういう釣り方するなんて！」",
+      "current": "- Используешь такие грязные методы...",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "DISPUTED",
+      "reason": "JA「釣り方」— образ «приманки/ловушки», сказано с лёгким раздражением-ревностью; RU «грязные методы» звучит как обвинение в аморальности. Коммуникативная сила реплики усилена: игра/поддёвка → обвинение.",
+      "suggestion": "Опять ты за своё... всё те же приманки!",
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 9,
+      "candidate_id": "C-R4-20261119-091441-fe8e-09-02",
+      "sources": {
+        "a": [],
+        "b": [],
+        "c": [
+          "20261119-091441-fe8e",
+          "20261119-145013-24da"
+        ],
+        "precheck": false
+      },
+      "source": "「その……、こないだのアルビオンでの夜の続き、してあげる」",
+      "current": "- Тогда... Я разрешу тебе сделать то, что ты начал той ночью, в Альбионе.",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "DISPUTED",
+      "reason": "JA「してあげる」— «сделаю для тебя», инициатива и дар от Луизы; RU «Я разрешу тебе сделать» — разрешение, инициатива переходит к Сайто. Изменён коммуникативный акт и распределение инициативы; подтекст робкого дара утрачен.",
+      "suggestion": "Тогда... я сделаю для тебя то, что мы начали той ночью в Альбионе.",
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 14,
+      "candidate_id": "C-R4-20261119-091441-fe8e-14-03",
+      "sources": {
+        "a": [],
+        "b": [],
+        "c": [
+          "20261119-091441-fe8e",
+          "20261119-145013-24da"
+        ],
+        "precheck": false
+      },
+      "source": "「ちゃんと謝らないと、こ、ここでしちゃうからな」",
+      "current": "- В качестве извинения, я разрешаю тебе поцеловать меня в лоб.",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "CONFIRMED_ERROR",
+      "reason": "JA — поддёвка-угроза «если не извинишься как следует, я сделаю это прямо здесь» (Сайто сам собирается поцеловать); RU — «разрешаю тебе поцеловать меня в лоб» (разрешение Луизе, поцелуй в лоб). Изменён и акт (угроза → разрешение), и адресат действия; утрачен игривый подтекст сцены.",
+      "suggestion": "Если не извинишься как следует, я сделаю это прямо здесь, поняла?",
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 2,
+      "candidate_id": "PC-2-01",
+      "sources": {
+        "a": [],
+        "b": [],
+        "c": [],
+        "precheck": true
+      },
+      "source": "すっとシエスタは、一冊の本を差し出した。\n\n「なにこれ？」",
+      "current": "— Что это?",
+      "fidelity": "MISSING",
+      "status": "FALSE_POSITIVE",
+      "reason": "Детерминированный pre-check пометил хвост блока как возможный пропуск; сверка JA→RU показывает, что реплика/событие переданы, расхождение объясняется сдвигом границ блоков merged-зеркала.",
+      "suggestion": "",
+      "action": "PRESERVED"
+    },
+    {
+      "block": 4,
+      "candidate_id": "PC-4-02",
+      "sources": {
+        "a": [],
+        "b": [],
+        "c": [],
+        "precheck": true
+      },
+      "source": "「何をしろと？」\n\n才人のそばに駆け寄り、ぼそぼそとシエスタはつぶやく。\n\nブハ。\n\n瞬間、才人は鼻血を噴いた。",
+      "current": "В ту же секунду у Сайто кровь пошла фонтаном.",
+      "fidelity": "MISSING",
+      "status": "FALSE_POSITIVE",
+      "reason": "Детерминированный pre-check пометил хвост блока как возможный пропуск; сверка JA→RU показывает, что реплика/событие переданы, расхождение объясняется сдвигом границ блоков merged-зеркала.",
+      "suggestion": "",
+      "action": "PRESERVED"
+    },
+    {
+      "block": 10,
+      "candidate_id": "PC-10-03",
+      "sources": {
+        "a": [],
+        "b": [],
+        "c": [],
+        "precheck": true
+      },
+      "source": "わかるわよね、と思う。何せ、カトレアの姿なのだ。\n\n生徒たちが集まったことを見届けると……、学院長のオスマン氏が壇上に現れた。\n\n「えー、諸君。改めて挨拶じゃ。本日は、新入生との親睦を深めるための舞踏会じゃが、匿名性をも帯びている。それは、家柄、地位、国籍、爵位にとらわれず、この学園ではみな平等じゃということを、強く印象づけるためじゃ。でなければ、いっしょに机を並べて学ぶことは不可能じゃからな」",
+      "current": "— Э-э, господа. Приветствую вас. Сегодня бал для сближения с новичками — но он ещё и анонимный. Это чтобы вы крепко уяснили: в этой академии все равны — независимо от происхождения, положения, национальности и титула. Иначе нельзя и за одной партой учиться.",
+      "fidelity": "MISSING",
+      "status": "FALSE_POSITIVE",
+      "reason": "Детерминированный pre-check пометил хвост блока как возможный пропуск; сверка JA→RU показывает, что реплика/событие переданы, расхождение объясняется сдвигом границ блоков merged-зеркала.",
+      "suggestion": "",
+      "action": "PRESERVED"
+    },
+    {
+      "block": 18,
+      "candidate_id": "PC-18-04",
+      "sources": {
+        "a": [],
+        "b": [],
+        "c": [],
+        "precheck": true
+      },
+      "source": "ひどい言い方かもしれない、もしかしたら、死者を鞭うつ言葉なのかもしれないが、才人は思ったとおりを口にした。いろいろと事情はあるだろう。でも、兵のほとんどは傭兵だし、士官のほとんどは、名誉と叫ぶ貴族だったのも確かだ。\n\nアンリエッタは黙りこくった。\n\n才人は話題を変えようと、ルイズのことを口にした。\n\n「今日はどうしたんですか？ ルイズに会いにきたんですか？ 俺も捜してるんです。いったい、どこに行ったのか……」",
+      "current": "— Что вы сегодня делали? Пришли повидаться с Луизой? Я её тоже ищу. Куда она делась…",
+      "fidelity": "MISSING",
+      "status": "FALSE_POSITIVE",
+      "reason": "Детерминированный pre-check пометил хвост блока как возможный пропуск; сверка JA→RU показывает, что реплика/событие переданы, расхождение объясняется сдвигом границ блоков merged-зеркала.",
+      "suggestion": "",
+      "action": "PRESERVED"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "analysis_id": "20261119-120101-1cc7.phase1",
+  "chapter": "v13-ch08",
+  "phase": 1,
+  "scope": "blind",
+  "results": [
+    {
+      "block": 9,
+      "finding": "PRAGMATIC_SHIFT",
+      "note": "つかれたでしょ / 水飲む？ → «Устал? Воды?»: заботливое кадрирование сведено к сухому опросу.",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 7,
+      "finding": "PRAGMATIC_SHIFT",
+      "note": "まさか…じゃないだろうな → «Ты же не…?»: шутливое недоверие → прямой уточняющий вопрос.",
+      "confidence": "LOW"
+    }
+  ]
+}

@@ -1,0 +1,157 @@
+{
+  "analysis_id": "20261119-154930-e13c",
+  "chapter": "v10-ch08",
+  "inputs": {
+    "a_runs": ["20261117-080814-4474", "20261118-164025-0a02", "20261119-154930-5db0"],
+    "b_runs": ["20261117-080814-c8be", "20261119-022432-9879", "20261119-154930-6f95"],
+    "c_runs": ["20261117-080814-9900", "20261119-095250-a7f7", "20261119-154930-c03d"],
+    "precheck": "output/_audit/sma/v10-ch08/precheck/omission-precheck.json",
+    "phase1": "20261119-154930-f6f8.phase1.json"
+  },
+  "results": [
+    {
+      "block": 4,
+      "candidate_id": "CH8-01-gokaku-unazuke",
+      "sources": {"a": ["20261119-154930-5db0"], "b": [], "c": [], "precheck": false},
+      "source": "大きく、シルフィードは頷いた。",
+      "current": "Сильфида громко кивнула.",
+      "fidelity": "MEANING_SHIFT",
+      "status": "DISPUTED",
+      "reason": "Сверка JA→RU: «大きく» описывает размах кивка, RU «громко» — громкость; смысл действия искажён. Находка A совпала со слепым выводом Фазы 1. В этом раунде правки не выполняются (FIXED=0): DISPUTED + REPORT_ONLY.",
+      "suggestion": "«Сильфида энергично кивнула».",
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 14,
+      "candidate_id": "CH8-02-malicorne-speaker",
+      "sources": {"a": [], "b": ["20261119-154930-6f95"], "c": [], "precheck": false},
+      "source": "マリコルヌの発言を、ギーシュが訂正した。",
+      "current": "— Эльфов было всего две тысячи, разве нет? — уточнил Сайто.",
+      "fidelity": "MEANING_SHIFT",
+      "status": "DISPUTED",
+      "reason": "JA прямо называет Марикорна автором реплики о двух тысячах; RU приписывает её Сайто, меняя участника диалога. Подтверждено сверкой JA→RU и Фазой 1. FIXED=0: DISPUTED + REPORT_ONLY.",
+      "suggestion": "«…уточнил Марикорн».",
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 12,
+      "candidate_id": "CH8-03-sluzhba-addition",
+      "sources": {"a": [], "b": ["20261119-154930-6f95"], "c": [], "precheck": false},
+      "source": "あのろくでなしの王軍がやってきたのは、三日前の夜のことでございます。",
+      "current": "Ко мне пришла служба три дня назад вечером — этот негодный королевский отряд.",
+      "fidelity": "ADDITION",
+      "status": "DISPUTED",
+      "reason": "В RU добавлено событие «ко мне пришла служба», которого нет в JA; JA сообщает только о прибытии отряда три дня назад вечером. FIXED=0: DISPUTED + REPORT_ONLY.",
+      "suggestion": "«Этот негодный королевский отряд прибыл три дня назад вечером».",
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 9,
+      "candidate_id": "CH8-04-gowagowa",
+      "sources": {"a": ["20261119-154930-5db0"], "b": [], "c": [], "precheck": false},
+      "source": "「え、ごわごわするからやだ。きゅい」",
+      "current": "— Э, оно колючее, не хочу. Кьюи, — запротестовала та.",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "DISPUTED",
+      "reason": "Потеря тактильного оттенка: «ごわごわ» — жёсткое/шершавое, а не колючее. Расхождение не устраняет ядро смысла (отказ носить пальто), поэтому COMPONENT_LOSS. FIXED=0: DISPUTED + REPORT_ONLY.",
+      "suggestion": "«оно жёсткое, не хочу».",
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 3,
+      "candidate_id": "CH8-05-arashi-smerch",
+      "sources": {"a": ["20261119-154930-5db0"], "b": [], "c": [], "precheck": false},
+      "source": "嵐でも発生したかのように、部屋の中はめちゃくちゃになっている。",
+      "current": "Комната была перевёрнута вверх дном, будто здесь пронёсся смерч.",
+      "fidelity": "MEANING_SHIFT",
+      "status": "DISPUTED",
+      "reason": "«嵐» — буря/шторм; «смерч» — иное явление, причём ниже в тексте «竜巻状の魔法» переведено отдельно как «заклинание-смерч». FIXED=0: DISPUTED + REPORT_ONLY.",
+      "suggestion": "«будто здесь пронёсся шторм».",
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 8,
+      "candidate_id": "CH8-06-sarai-addition",
+      "sources": {"a": [], "b": ["20261119-154930-6f95"], "c": [], "precheck": false},
+      "source": "タバサの義理の妹、と名乗り、才人たちの前に現れた女性そのものであった。",
+      "current": "…и появилась перед ними в сарае.",
+      "fidelity": "ADDITION",
+      "status": "DISPUTED",
+      "reason": "Обстоятельство «в сарае» перенесено из другого эпизода; в JA появление перед Сайто и остальными не локализовано сараем. FIXED=0: DISPUTED + REPORT_ONLY.",
+      "suggestion": "«…и появилась перед Сайто и остальными».",
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 11,
+      "candidate_id": "CH8-07-oyame-kudasare",
+      "sources": {"a": [], "b": [], "c": ["20261119-154930-c03d"], "precheck": false},
+      "source": "「おやめくだされ！ おやめくだされ！」",
+      "current": "— Прошу вас! Прошу вас! — донёсся из коридора вопль.",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "DISPUTED",
+      "reason": "Потеря конкретного речевого акта: JA требует прекратить огонь, RU оставляет общую просьбу. FIXED=0: DISPUTED + REPORT_ONLY.",
+      "suggestion": "«Пожалуйста, прекратите! Пожалуйста, не стреляйте!»",
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 4,
+      "candidate_id": "CH8-08-aite-ga-warui",
+      "sources": {"a": [], "b": [], "c": ["20261119-154930-c03d"], "precheck": false},
+      "source": "「相手が悪いよ！」マリコルヌが叫んだ。",
+      "current": "— Плохой противник! — вскрикнул Маликорн.",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "DISPUTED",
+      "reason": "Потеря предупредительной силы реплики в цепочке панических возгласов; RU звучит как нейтральная оценка. FIXED=0: DISPUTED + REPORT_ONLY.",
+      "suggestion": "«Плохо дело — противник слишком силён!»",
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 14,
+      "candidate_id": "CH8-09-betsu-ni",
+      "sources": {"a": [], "b": [], "c": ["20261119-154930-c03d"], "precheck": false},
+      "source": "「別にあたしたちがエルフと対峙するって決まったわけじゃないでしょう？」",
+      "current": "— Мы же не собираемся сражаться с эльфами, верно? — заметила Кирхе.",
+      "fidelity": "MEANING_SHIFT",
+      "status": "DISPUTED",
+      "reason": "Смягчённое возражение «решение не принималось» → категоричное отрицание намерения; коммуникативная сила реплики возросла. FIXED=0: DISPUTED + REPORT_ONLY.",
+      "suggestion": "«Мы же не решали сражаться с эльфами, верно?»",
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 6,
+      "candidate_id": "CH8-10-chigau-tteyo",
+      "sources": {"a": [], "b": [], "c": ["20261119-154930-c03d"], "precheck": false},
+      "source": "「違うってよ」",
+      "current": "— Говорит, что нет, — перевёл Дерфлингер.",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "Сверка JA→RU и соседний контекст показывают, что Дерфлингер действительно истолковывает реакцию Сильфиды; добавное «перевёл» — допустимая экспликация, а не потеря смысла. Находка C не подтверждена: FALSE_POSITIVE + PRESERVED.",
+      "suggestion": "Правка не требуется.",
+      "action": "PRESERVED"
+    },
+    {
+      "block": 10,
+      "candidate_id": "CH8-11-shiratsui-denbu",
+      "sources": {"a": ["20261119-154930-5db0"], "b": [], "c": [], "precheck": false},
+      "source": "拙い伝聞であったが、まあ、なんとか様子は理解できた。",
+      "current": "Рассказ был неопытным, но в целом картину понять удалось.",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "«неопытный рассказ» — стилистически необычная, но смысл «неумелого, скудного пересказа» в цели фразы сохраняется; потеря ядра смысла не подтверждена. FALSE_POSITIVE + PRESERVED.",
+      "suggestion": "Правка не требуется.",
+      "action": "PRESERVED"
+    },
+    {
+      "block": 7,
+      "candidate_id": "CH8-12-tonae-hajimeta",
+      "sources": {"a": ["20261119-154930-5db0"], "b": [], "c": [], "precheck": false},
+      "source": "呪文を唱え始めた。",
+      "current": "и начала напевать заклинание.",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "«напевать» передаёт ритмичность произнесения заклинания; в соседнем тексте прямо назван «разговорные слова», общий смысл сохранён. Находка A не подтверждена как существенная: FALSE_POSITIVE + PRESERVED.",
+      "suggestion": "Правка не требуется.",
+      "action": "PRESERVED"
+    }
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "analysis_id": "20261119-122318-1f30.phase1",
+  "chapter": "v7-ch01",
+  "phase": 1,
+  "scope": "blind",
+  "results": [
+    {
+      "block": 1,
+      "finding": "NUANCE_SHIFT",
+      "note": "許せないほどに → «до слёз»: добавлен сентиментальный оттенок; дразнящая милота заменена «красотой + соблазнительностью».",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 2,
+      "finding": "NUANCE_SHIFT",
+      "note": "それなりに → «более чем»: завышена степень оценки обстановки.",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 3,
+      "finding": "NONE",
+      "note": "Блок 3: логика утешения и реплики переданы адекватно.",
+      "confidence": "HIGH"
+    },
+    {
+      "block": 4,
+      "finding": "NONE",
+      "note": "Блок 4: разница температур и эмоции переданы без сдвигов.",
+      "confidence": "HIGH"
+    },
+    {
+      "block": 5,
+      "finding": "NUANCE_SHIFT",
+      "note": "散々に → «целовали в шею»: утрачена интенсивность (раз за разом).",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 6,
+      "finding": "MISTRANSLATION",
+      "note": "«показывала ей грудь» — адресат действия привязан к Луизе, тогда как по контексту Сиеста показывала Сайто; референс смещён.",
+      "confidence": "HIGH"
+    },
+    {
+      "block": 7,
+      "finding": "NONE",
+      "note": "Блок 7: внутренний монолог и развязка передачи.",
+      "confidence": "HIGH"
+    },
+    {
+      "block": 8,
+      "finding": "NONE",
+      "note": "Блок 8: узнавание драгун и реплики переданы верно.",
+      "confidence": "HIGH"
+    },
+    {
+      "block": 9,
+      "finding": "NONE",
+      "note": "Блок 9: возвращение драгун и реакции переданы верно.",
+      "confidence": "HIGH"
+    },
+    {
+      "block": 10,
+      "finding": "NONE",
+      "note": "Блок 10: доклад и время («неделя») переданы верно.",
+      "confidence": "HIGH"
+    },
+    {
+      "block": 11,
+      "finding": "MISTRANSLATION",
+      "note": "王室から → «из столицы»: замена королевского двора географическим источником.",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 12,
+      "finding": "NONE",
+      "note": "Блок 12: представление Рене и пир переданы верно.",
+      "confidence": "HIGH"
+    },
+    {
+      "block": 13,
+      "finding": "NONE",
+      "note": "Блок 13: диалог о чести и идиома キリがない переданы верно.",
+      "confidence": "HIGH"
+    },
+    {
+      "block": 14,
+      "finding": "NONE",
+      "note": "Блок 14: рассуждение о мелком дворянстве и идиомы переданы.",
+      "confidence": "HIGH"
+    },
+    {
+      "block": 15,
+      "finding": "NUANCE_SHIFT",
+      "note": "可愛い → «прекрасна»: сдвиг от милоты к красоте; остальное внутреннее монологи без сдвигов.",
+      "confidence": "MEDIUM"
+    }
+  ]
+}

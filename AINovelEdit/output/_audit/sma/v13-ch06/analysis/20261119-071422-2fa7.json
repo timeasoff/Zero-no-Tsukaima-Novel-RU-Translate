@@ -1,0 +1,418 @@
+{
+  "analysis_id": "20261119-071422-2fa7",
+  "chapter": "v13-ch06",
+  "inputs": {
+    "a_runs": [
+      "20261117-233414-bce6",
+      "20261118-183316-7b2f"
+    ],
+    "b_runs": [
+      "20261117-233414-2038",
+      "20261119-071422-5f15"
+    ],
+    "c_runs": [
+      "20261117-233414-e419"
+    ],
+    "precheck": "output/_audit/sma/v13-ch06/precheck/omission-precheck.json",
+    "phase1": "20261119-071422-5100.phase1.json"
+  },
+  "results": [
+    {
+      "block": 2,
+      "candidate_id": "C-2-01",
+      "sources": {
+        "a": [
+          "20261117-233414-bce6"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "才人が身体をこすりながら言うと、ジュリオは笑みを浮かべた。",
+      "current": "Сайто поёжился — и Джулио улыбнулся:",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "В актуальном RU дефект устранён; находка историческая (evidence не голосует).",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 2,
+      "candidate_id": "C-2-02",
+      "sources": {
+        "a": [
+          "20261117-233414-bce6"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "「随分と怖いところだな。お化けでも出るんじゃないか？」",
+      "current": "— Довольно страшное место. Тут и привидения не водятся?..",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "В актуальном RU дефект устранён; находка историческая (evidence не голосует).",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 6,
+      "candidate_id": "C-6-01",
+      "sources": {
+        "a": [
+          "20261117-233414-bce6"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "舞い散る埃の中……、明かりにぼんやりと浮かんだものを見て、才人は絶句した。",
+      "current": "Сквозь неё, в свете факелов, Сайто увидел то, что потрясло его.",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "В актуальном RU дефект устранён; находка историческая (evidence не голосует).",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 6,
+      "candidate_id": "C-6-02",
+      "sources": {
+        "a": [
+          "20261117-233414-bce6"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "この戦車は生きてる、そう直感した。",
+      "current": "«Этот танк жив», — подумал он.",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "В актуальном RU дефект устранён; находка историческая (evidence не голосует).",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 8,
+      "candidate_id": "C-8-01",
+      "sources": {
+        "a": [
+          "20261117-233414-bce6"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "底知れない怖さを持ってる！",
+      "current": "Она очень страшная!",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "В актуальном RU дефект устранён; находка историческая (evidence не голосует).",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 11,
+      "candidate_id": "C-11-01",
+      "sources": {
+        "a": [
+          "20261117-233414-bce6"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "教師風情が、教皇の祈りを妨げる法はない。",
+      "current": "Учительской тени имел права мешать молитве папы.",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "В актуальном RU дефект устранён; находка историческая (evidence не голосует).",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 12,
+      "candidate_id": "C-12-01",
+      "sources": {
+        "a": [
+          "20261117-233414-bce6"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "二十年前、ダングルテールの新教徒たちの村に逃げ込んだ女性のことを……",
+      "current": "Ту, что двадцать лет назад укрылась в деревне Д'Англетер...",
+      "fidelity": "MISSING",
+      "status": "FALSE_POSITIVE",
+      "reason": "В актуальном RU дефект устранён; находка историческая (evidence не голосует).",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 13,
+      "candidate_id": "C-13-01",
+      "sources": {
+        "a": [
+          "20261117-233414-bce6"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "「そうですか……、それはよかった。あの人も、最後は人のお役に立ったのですね」",
+      "current": "— Так... значит, и она в конце концов пригодилась людям.",
+      "fidelity": "MISSING",
+      "status": "FALSE_POSITIVE",
+      "reason": "В актуальном RU дефект устранён; находка историческая (evidence не голосует).",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 13,
+      "candidate_id": "C-13-02",
+      "sources": {
+        "a": [
+          "20261117-233414-bce6"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "アニエスはコルベールを睨みつけた。",
+      "current": "Аньес зло глянула на Кольбера.",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "В актуальном RU дефект устранён; находка историческая (evidence не голосует).",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 13,
+      "candidate_id": "C-13-03",
+      "sources": {
+        "a": [
+          "20261117-233414-bce6"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "アニエスは、苦しそうな声で言った。",
+      "current": "Аньес пропищала с болью:",
+      "fidelity": "ADDITION",
+      "status": "FALSE_POSITIVE",
+      "reason": "В актуальном RU дефект устранён; находка историческая (evidence не голосует).",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 13,
+      "candidate_id": "C-13-04",
+      "sources": {
+        "a": [
+          "20261117-233414-bce6"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "まさか、教皇聖下の御母君とは……、なんと運命は残酷でありましょうか。",
+      "current": "Что ж, какая жестокость судьбы — оказаться сыном папы...",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "В актуальном RU дефект устранён; находка историческая (evidence не голосует).",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 10,
+      "candidate_id": "C-10-01",
+      "sources": {
+        "a": [
+          "20261118-183316-7b2f"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "多忙を極める教皇にとって、唯一の安らぎの時間ともいえる、長い祈りの時間であった。",
+      "current": "Для неутомимого папы это было единственное время покоя — долгая молитва.",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "CONFIRMED_ERROR",
+      "reason": "Сверка JA → RU: 多忙を極める — «крайне занятой, перегруженный делами», а не «неутомимый». Атрибут подменён; дефект сохраняется. Слепая Фаза 1 — LEXICAL_MISMATCH MEDIUM. Правка запрещена заданием → REPORT_ONLY.",
+      "suggestion": "Для крайне занятого папы это было единственное время покоя — долгая молитва.",
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 5,
+      "candidate_id": "C-5-01",
+      "sources": {
+        "a": [
+          "20261118-183316-7b2f"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "様々なハンド・ウェポンの隣に並んでいるのは、雑多な兵器たちだった。",
+      "current": "Рядом с разнообразным ручным оружием лежали самые разные зловредные штуки.",
+      "fidelity": "ADDITION",
+      "status": "CONFIRMED_ERROR",
+      "reason": "雑多な兵器たち — нейтральное «разнообразное оружие»; «зловредные штуки» приписывает предметам злонамеренность, которой в JA нет. Дефект сохраняется; Фаза 1 — ADDED_CONTENT MEDIUM. REPORT_ONLY.",
+      "suggestion": "Рядом с разнообразным ручным оружием лежали самые разные предметы вооружения.",
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 13,
+      "candidate_id": "C-13-05",
+      "sources": {
+        "a": [],
+        "b": [
+          "20261117-233414-2038"
+        ],
+        "c": [],
+        "precheck": false
+      },
+      "source": "まさか、教皇聖下の御母君とは……、なんと運命は残酷でありましょうか。",
+      "current": "Что ж, какая жестокость судьбы — оказаться сыном папы...",
+      "fidelity": "MEANING_SHIFT",
+      "status": "FALSE_POSITIVE",
+      "reason": "В актуальном RU дефект устранён; находка историческая (evidence не голосует).",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 1,
+      "candidate_id": "C-1-01",
+      "sources": {
+        "a": [],
+        "b": [
+          "20261117-233414-2038"
+        ],
+        "c": [],
+        "precheck": false
+      },
+      "source": "己の欲望のままに、自分たちを襲い、タバサの父を殺し、母の心をくるわせ、タバサ本人には地獄を見せた。",
+      "current": "По своей прихоти он нападал на них, убил отца Табиты, свёл с ума её мать, а саму Табиту заставил увидеть ад.",
+      "fidelity": "MEANING_SHIFT",
+      "status": "FALSE_POSITIVE",
+      "reason": "В актуальном RU дефект устранён; находка историческая (evidence не голосует).",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 3,
+      "candidate_id": "C-3-01",
+      "sources": {
+        "a": [],
+        "b": [],
+        "c": [
+          "20261117-233414-e419"
+        ],
+        "precheck": false
+      },
+      "source": "朝っぱらからそんなもの見せるなよ",
+      "current": "Поутру такие штуки не показывают.",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "В актуальном RU дефект устранён; находка историческая (evidence не голосует).",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 9,
+      "candidate_id": "C-9-01",
+      "sources": {
+        "a": [],
+        "b": [],
+        "c": [
+          "20261117-233414-e419"
+        ],
+        "precheck": false
+      },
+      "source": "たぶん、なんらかの〝虚無魔法〟が開けた穴だ。きっとね。",
+      "current": "Наверное, её проделала какая-то „пустая магия\". Наверное.",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "В актуальном RU дефект устранён; находка историческая (evidence не голосует).",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 10,
+      "candidate_id": "C-10-02",
+      "sources": {
+        "a": [],
+        "b": [],
+        "c": [
+          "20261117-233414-e419"
+        ],
+        "precheck": false
+      },
+      "source": "それに、こういうの好きな人がいるんだ。きっと喜ぶと思う",
+      "current": "И потом — есть люди, которые такое любят. Думаю, они будут рады.",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "В актуальном RU дефект устранён; находка историческая (evidence не голосует).",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 14,
+      "candidate_id": "C-14-01",
+      "sources": {
+        "a": [],
+        "b": [],
+        "c": [
+          "20261117-233414-e419"
+        ],
+        "precheck": false
+      },
+      "source": "あなたの手にかかったのは、神の裁きといえましょう",
+      "current": "То, что ты её убил — можно назвать судом Божьим.",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "В актуальном RU дефект устранён; находка историческая (evidence не голосует).",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 14,
+      "candidate_id": "C-14-02",
+      "sources": {
+        "a": [],
+        "b": [],
+        "c": [
+          "20261117-233414-e419"
+        ],
+        "precheck": false
+      },
+      "source": "なぜ、あなたに裁きを与えねばならないのですか？ 祝福を授けこそすれ、裁きなど与えようはずもありません",
+      "current": "Почему я должен тебя судить? Я только благословляю — судить я не могу.",
+      "fidelity": "RUSSIAN_ERROR",
+      "status": "DISPUTED",
+      "reason": "C пометил [ROUTED] (регистр вне зоны C). Сверка JA → RU: Витторио использует почтительное あなた, в текущем RU первая реплика — «тебя», а ниже «да благословят вас»; регистр рассинхронизирован внутри одной речи. Возможно намеренное сближение тона → DISPUTED, REPORT_ONLY.",
+      "suggestion": "Почему я должен вас судить? Я только благословляю — судить я не могу.",
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 11,
+      "candidate_id": "C-11-02",
+      "sources": {
+        "a": [],
+        "b": [],
+        "c": [],
+        "precheck": true
+      },
+      "source": "コルベールは深いため息を漏らしながら、ポケットの中の〝ルビー〟を握り締めた。どうやらアニエスの知り合いのようなので、聖堂騎士たちはそれ以上コルベールを詮索しようとせず、持ち場につく。\n\n三十分も待っていると、扉が開いた。聖堂騎士たちが礼をとる。\n\nヴィットーリオは、待ち人に気づくと、相好を崩した。\n\n「アニエス殿ではありませんか。いかがなされました？」",
+      "current": "— Аньес! Что за дела?..",
+      "fidelity": "MISSING",
+      "status": "FALSE_POSITIVE",
+      "reason": "Pre-check — evidence, не голос: сигнал S1-tail-truncation вызван сдвигом границ блоков; все звенья JA присутствуют в текущем RU. Полнота сохранена.",
+      "suggestion": null,
+      "action": "PRESERVED"
+    }
+  ]
+}

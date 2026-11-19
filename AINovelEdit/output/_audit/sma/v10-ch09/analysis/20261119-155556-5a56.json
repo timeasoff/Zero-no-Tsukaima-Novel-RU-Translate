@@ -1,0 +1,133 @@
+{
+  "analysis_id": "20261119-155556-5a56",
+  "chapter": "v10-ch09",
+  "inputs": {
+    "a_runs": ["20261117-083804-b09b", "20261118-164528-7316", "20261119-155556-a948"],
+    "b_runs": ["20261117-084318-be27", "20261119-024139-20a2", "20261119-155556-a10d"],
+    "c_runs": ["20261117-083804-a28c", "20261119-100119-0dd9", "20261119-155556-5568"],
+    "precheck": "output/_audit/sma/v10-ch09/precheck/omission-precheck.json",
+    "phase1": "20261119-155556-6c0b.phase1.json"
+  },
+  "results": [
+    {
+      "block": 5,
+      "candidate_id": "CH9-01-honmatsu-tenbou",
+      "sources": {"a": [], "b": ["20261119-155556-a10d"], "c": [], "precheck": false},
+      "source": "あなたたちが傷つくようなことになったら、本末転倒だわ。",
+      "current": "Если кто-то из вас пострадает — смысл пропадёт.",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "DISPUTED",
+      "reason": "Сверка JA→RU: идиома «本末転倒» несёт структуру «цель — средства», в RU осталась лишь общая бессмысленность. Совпало со слепым выводом Фазы 1. FIXED=0: DISPUTED + REPORT_ONLY.",
+      "suggestion": "«…мы переставим цель и средства с ног на голову».",
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 18,
+      "candidate_id": "CH9-02-kei-no-shikkou",
+      "sources": {"a": [], "b": ["20261119-155556-a10d"], "c": [], "precheck": false},
+      "source": "刑の執行の前の最後の慈悲",
+      "current": "последняя милость перед казнью",
+      "fidelity": "MEANING_SHIFT",
+      "status": "DISPUTED",
+      "reason": "«казнь» конкретизирует смерть, тогда как JA говорит об исполнении приговора в виде потери рассудка от зелья. FIXED=0: DISPUTED + REPORT_ONLY.",
+      "suggestion": "«перед исполнением приговора».",
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 9,
+      "candidate_id": "CH9-03-kodawaru",
+      "sources": {"a": ["20261119-155556-a948"], "b": [], "c": [], "precheck": false},
+      "source": "誰よりも己の理想にこだわるルイズ。",
+      "current": "Луиза, упрямее всех в своём идеале.",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "DISPUTED",
+      "reason": "«こだわる» (неотступная приверженность) → «упрямее» (строптивость): потеря оттенка целеустремлённости. FIXED=0: DISPUTED + REPORT_ONLY.",
+      "suggestion": "«более всех преданная своему идеалу».",
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 20,
+      "candidate_id": "CH9-04-kagamashii-doukutsu",
+      "sources": {"a": ["20261119-155556-a948"], "b": [], "c": [], "precheck": false},
+      "source": "この禍々しい洞窟から",
+      "current": "из этого зловещего логова",
+      "fidelity": "MEANING_SHIFT",
+      "status": "DISPUTED",
+      "reason": "«洞窟» (пещера дракона из книги) → «логово» (убежище зверя): образ заменён. FIXED=0: DISPUTED + REPORT_ONLY.",
+      "suggestion": "«из этой зловещей пещеры».",
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 12,
+      "candidate_id": "CH9-05-succubus",
+      "sources": {"a": ["20261119-155556-a948"], "b": [], "c": [], "precheck": false},
+      "source": "サッキュバスにでも魅入られたかのようになった。",
+      "current": "точно их будто подменила суккуба.",
+      "fidelity": "MEANING_SHIFT",
+      "status": "DISPUTED",
+      "reason": "«魅入られた» — зачарованы; «подменила» — подмена сущности, иное действие. FIXED=0: DISPUTED + REPORT_ONLY.",
+      "suggestion": "«словно их зачаровала суккуба».",
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 13,
+      "candidate_id": "CH9-06-henya-ni-tte",
+      "sources": {"a": ["20261119-155556-a948"], "b": ["20261119-155556-a10d"], "c": [], "precheck": false},
+      "source": "度胸のある女だな／彼は一目見るなりキュルケを気に入ったらしく",
+      "current": "Смелая баба／сразу её возненавидел — нет, наоборот, симпатизировал ей",
+      "fidelity": "MEANING_SHIFT",
+      "status": "DISPUTED",
+      "reason": "Два снижения регистра/добавленная самоправка: «女»→«баба», а «気に入った»→«возненавидел — нет, наоборот». Обе правки не предусмотрены JA. FIXED=0: DISPUTED + REPORT_ONLY.",
+      "suggestion": "«Смелая женщина» / «сразу расположился к ней».",
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 13,
+      "candidate_id": "CH9-07-naedine",
+      "sources": {"a": [], "b": [], "c": ["20261119-155556-5568"], "precheck": false},
+      "source": "個人的にあたしの踊りを披露してさしあげますわ",
+      "current": "я могу показать вам танец лично, наедине",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "DISPUTED",
+      "reason": "«個人的に» (лично для вас) оставляло игривый намёк; «наедине» делает подтекст прямым. FIXED=0: DISPUTED + REPORT_ONLY.",
+      "suggestion": "«показать вам танец лично для вас».",
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 2,
+      "candidate_id": "CH9-08-suteki-naohanashi",
+      "sources": {"a": [], "b": [], "c": ["20261119-155556-5568"], "precheck": false},
+      "source": "「素敵なお話じゃない？」",
+      "current": "— Разве это не занимательная история?",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "Мягкий вопросительный оборот передан риторическим вопросом; общий коммуникативный акт (вступление в разговор) сохранён, потеря не существенна. FALSE_POSITIVE + PRESERVED.",
+      "suggestion": "Правка не требуется.",
+      "action": "PRESERVED"
+    },
+    {
+      "block": 20,
+      "candidate_id": "CH9-09-oshii-kokoro",
+      "sources": {"a": [], "b": ["20261119-155556-a10d"], "c": ["20261119-155556-5568"], "precheck": false},
+      "source": "自分は素直に、そういったことを感じているのかもしれない。",
+      "current": "она позволяет себе такие чувства честно, без оглядки.",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "«без оглядки» усиливает категоричность, но основное предположение «может быть» сохранено по смыслу в соседнем контексте; находки B/C не подтверждены как потеря ядра. FALSE_POSITIVE + PRESERVED.",
+      "suggestion": "Правка не требуется.",
+      "action": "PRESERVED"
+    },
+    {
+      "block": 8,
+      "candidate_id": "CH9-10-precheck-tail",
+      "sources": {"a": [], "b": [], "c": [], "precheck": true},
+      "source": "「いや……、お前たちがちょっと羨ましくなってさ」\n\n同じ使い魔と主人でも、自分たちは全然わかり合えてない。",
+      "current": "— Да… немного завидую вам, — сказал он.\nОдни и те же фамильяр и господин — а мы совсем не понимаем друг друга.",
+      "fidelity": "MISSING",
+      "status": "FALSE_POSITIVE",
+      "reason": "Сигнал pre-check S1-tail-truncation проверен по полным блокам JA/RU: оба звена присутствуют в RU («немного завидую вам» и «совсем не понимаем друг друга»). Разница в числе абзацев — допустимое слияние при сохранении всех реплик. Кандидат на пропуск не подтверждён: FALSE_POSITIVE + PRESERVED.",
+      "suggestion": "Правка не требуется.",
+      "action": "PRESERVED"
+    }
+  ]
+}

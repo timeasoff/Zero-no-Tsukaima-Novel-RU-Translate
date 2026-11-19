@@ -1,0 +1,74 @@
+{
+  "analysis_id": "20261119-162751-9f69.phase1",
+  "chapter": "v11-ch03",
+  "phase": 1,
+  "scope": "blind",
+  "results": [
+    {
+      "block": 1,
+      "finding": "NONE",
+      "note": "Прибытие галлийской кавалькады и первая сцена переданы целиком.",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 2,
+      "finding": "NUANCE_SHIFT",
+      "note": "ぽかんと → «приоткрыла», 競って → «старались»; оттенки изумления и соревнования сглажены.",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 3,
+      "finding": "PRAGMATIC_SHIFT",
+      "note": "乱暴はいけません! → «Грубость неуместна!»; тёплое увещевание заменено сухой формулой.",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 4,
+      "finding": "ADDED_CONTENT",
+      "note": "垢 → «порох»; добавлен компонент, отсутствующий в JA.",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 5,
+      "finding": "NUANCE_SHIFT",
+      "note": "Атрибуция двух криков размыта — имена говорящих удалены.",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 6,
+      "finding": "NONE",
+      "note": "Разговор о Шторм-ветере и герцогине передан без потерь.",
+      "confidence": "HIGH"
+    },
+    {
+      "block": 7,
+      "finding": "PRAGMATIC_SHIFT",
+      "note": "お詫び → «сожалею»; извинение подменено чувством; メイル → метры (единица искажена).",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 8,
+      "finding": "NONE",
+      "note": "Эпизод с королевой и решение не наказывать Луизу переданы.",
+      "confidence": "HIGH"
+    },
+    {
+      "block": 9,
+      "finding": "LEXICAL_MISMATCH",
+      "note": "無数 → «почти видимые»; さして → кивок; количество и жест искажены.",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 10,
+      "finding": "NONE",
+      "note": "Сцена с Дерфлингером и смерчем передана.",
+      "confidence": "HIGH"
+    },
+    {
+      "block": 11,
+      "finding": "NONE",
+      "note": "Завершение сцены передано без смысловых потерь.",
+      "confidence": "MEDIUM"
+    }
+  ]
+}

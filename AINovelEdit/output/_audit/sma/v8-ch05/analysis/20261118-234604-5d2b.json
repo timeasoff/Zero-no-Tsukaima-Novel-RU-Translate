@@ -1,0 +1,310 @@
+{
+  "analysis_id": "20261118-234604-5d2b",
+  "chapter": "v8-ch05",
+  "inputs": {
+    "a_runs": [
+      "20261117-021231-76de",
+      "20261118-143441-c4a7"
+    ],
+    "b_runs": [
+      "20261117-021231-025d",
+      "20261118-233311-60f8"
+    ],
+    "c_runs": [
+      "20261117-021231-3f8f"
+    ],
+    "precheck": "output/_audit/sma/v8-ch05/precheck/omission-precheck.json",
+    "phase1": "20261118-233311-9912.phase1.json"
+  },
+  "results": [
+    {
+      "block": 1,
+      "candidate_id": "C-01-01",
+      "sources": {
+        "a": [
+          "20261117-021231-76de"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "",
+      "current": "",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "ED_RU: «— Даже бегство — это победа, — заметил меч» — тон и смысл шире сырого RU.",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 2,
+      "candidate_id": "C-02-01",
+      "sources": {
+        "a": [
+          "20261117-021231-76de"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "",
+      "current": "",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "ED_RU: «— Так-то оно так… Так-то» — уступка передана.",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 8,
+      "candidate_id": "C-08-01",
+      "sources": {
+        "a": [
+          "20261117-021231-76de"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "",
+      "current": "",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "ED_RU: «Хитрый на вид, с порезом на лбу» — описание лица верное.",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 9,
+      "candidate_id": "C-09-01",
+      "sources": {
+        "a": [
+          "20261117-021231-76de"
+        ],
+        "b": [
+          "20261117-021231-025d"
+        ],
+        "c": [],
+        "precheck": false
+      },
+      "source": "",
+      "current": "",
+      "fidelity": "MEANING_SHIFT",
+      "status": "FALSE_POSITIVE",
+      "reason": "ED_RU: «— Нам не повезло» — полярность верная.",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 9,
+      "candidate_id": "C-09-02",
+      "sources": {
+        "a": [
+          "20261117-021231-76de"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "",
+      "current": "",
+      "fidelity": "MISSING",
+      "status": "FALSE_POSITIVE",
+      "reason": "ED_RU: «— Не трогай Тэфу» — реплика на месте, пропуска нет.",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 10,
+      "candidate_id": "C-10-01",
+      "sources": {
+        "a": [
+          "20261117-021231-76de"
+        ],
+        "b": [
+          "20261117-021231-025d"
+        ],
+        "c": [],
+        "precheck": false
+      },
+      "source": "",
+      "current": "",
+      "fidelity": "MEANING_SHIFT",
+      "status": "FALSE_POSITIVE",
+      "reason": "ED_RU: «Сейчас тебе их не победить» — оценка «нет шансов» восстановлена.",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 15,
+      "candidate_id": "C-15-01",
+      "sources": {
+        "a": [
+          "20261117-021231-76de"
+        ],
+        "b": [
+          "20261117-021231-025d"
+        ],
+        "c": [],
+        "precheck": false
+      },
+      "source": "",
+      "current": "",
+      "fidelity": "RUSSIAN_ERROR",
+      "status": "FALSE_POSITIVE",
+      "reason": "Посторонний иероглиф Relative к сырому RU; в ED_RU его нет.",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 16,
+      "candidate_id": "C-16-01",
+      "sources": {
+        "a": [
+          "20261117-021231-76de"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "",
+      "current": "",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "ED_RU: «Тиффания с болевым выражением лица отпила вина» — мимика на месте.",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 1,
+      "candidate_id": "C-01-02",
+      "sources": {
+        "a": [
+          "20261118-143441-c4a7"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "アルビオン共和国軍の逆転負け",
+      "current": "о поражении Альбионской республики",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "CONFIRMED_ERROR",
+      "reason": "JA 逆転負け («поражение после перелома/неожиданное») → ED_RU «о поражении»:  оттенок внезапности. Правка не вносится.",
+      "suggestion": null,
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 16,
+      "candidate_id": "C-16-02",
+      "sources": {
+        "a": [
+          "20261118-143441-c4a7"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "あの古ぼけたオルゴール",
+      "current": "та старая шкатулка",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "CONFIRMED_ERROR",
+      "reason": "JA オルゴール («музыкальная шкатулка») → ED_RU «шкатулка»:落 компонент «музыкальная». Правка не вносится.",
+      "suggestion": null,
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 21,
+      "candidate_id": "C-21-01",
+      "sources": {
+        "a": [
+          "20261118-143441-c4a7"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "バカ言うな。何千年前だと思ってやがるんだ",
+      "current": "Не смейся. Сколько тысяч лет прошло",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "CONFIRMED_ERROR",
+      "reason": "JA バカ言うな («не говори глупости») → ED_RU «Не смейся»: смысловой сдвиг. Правка не вносится.",
+      "suggestion": null,
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 13,
+      "candidate_id": "C-13-01",
+      "sources": {
+        "a": [],
+        "b": [],
+        "c": [
+          "20261117-021231-3f8f"
+        ],
+        "precheck": false
+      },
+      "source": "",
+      "current": "",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "ED_RU: «Похоже, тебе снился очень весёлый сон» — модальность предположения сохранена.",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 16,
+      "candidate_id": "C-16-03",
+      "sources": {
+        "a": [],
+        "b": [],
+        "c": [
+          "20261117-021231-3f8f"
+        ],
+        "precheck": false
+      },
+      "source": "",
+      "current": "",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "ED_RU: «рассказала она» — источник сведений обозначен.",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 17,
+      "candidate_id": "C-17-01",
+      "sources": {
+        "a": [],
+        "b": [],
+        "c": [
+          "20261117-021231-3f8f"
+        ],
+        "precheck": false
+      },
+      "source": "",
+      "current": "",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "ED_RU: «Мало ли найдутся такие, кто захочет использовать эту силу. Опасно» — возможность, не факт.",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 10,
+      "candidate_id": "C-10-02",
+      "sources": {
+        "a": [],
+        "b": [],
+        "c": [],
+        "precheck": true
+      },
+      "source": "",
+      "current": "",
+      "fidelity": "MISSING",
+      "status": "FALSE_POSITIVE",
+      "reason": "Pre-check: обрыв Relative к сырому RU; ED_RU блок 10 полный.",
+      "suggestion": null,
+      "action": "PRESERVED"
+    }
+  ]
+}

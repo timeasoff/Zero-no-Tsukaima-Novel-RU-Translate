@@ -1,0 +1,2342 @@
+[
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S1",
+    "kind": "sma-c",
+    "chapter": "v07-afterword",
+    "status": "done",
+    "verdict": "INTERRUPTED",
+    "detail": "нет результата после запуска",
+    "fresh": []
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S2",
+    "kind": "analyzer-phase1",
+    "chapter": "v07-afterword",
+    "status": "done",
+    "verdict": "INTERRUPTED",
+    "detail": "нет результата после запуска",
+    "fresh": []
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S3",
+    "kind": "analyzer-phase2",
+    "chapter": "v07-afterword",
+    "status": "done",
+    "verdict": "INTERRUPTED",
+    "detail": "нет результата после запуска",
+    "fresh": []
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S4",
+    "kind": "sma-c",
+    "chapter": "v07-ch01",
+    "status": "done",
+    "verdict": "INTERRUPTED",
+    "detail": "нет результата после запуска",
+    "fresh": []
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S5",
+    "kind": "analyzer-phase1",
+    "chapter": "v07-ch01",
+    "status": "done",
+    "verdict": "INTERRUPTED",
+    "detail": "нет результата после запуска",
+    "fresh": []
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S6",
+    "kind": "analyzer-phase2",
+    "chapter": "v07-ch01",
+    "status": "done",
+    "verdict": "INTERRUPTED",
+    "detail": "нет результата после запуска",
+    "fresh": []
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S7",
+    "kind": "sma-c",
+    "chapter": "v07-ch02",
+    "status": "done",
+    "verdict": "INTERRUPTED",
+    "detail": "нет результата после запуска",
+    "fresh": []
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S8",
+    "kind": "analyzer-phase1",
+    "chapter": "v07-ch02",
+    "status": "done",
+    "verdict": "INTERRUPTED",
+    "detail": "нет результата после запуска",
+    "fresh": []
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S9",
+    "kind": "analyzer-phase2",
+    "chapter": "v07-ch02",
+    "status": "done",
+    "verdict": "INTERRUPTED",
+    "detail": "нет результата после запуска",
+    "fresh": []
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S10",
+    "kind": "sma-c",
+    "chapter": "v07-ch03",
+    "status": "done",
+    "verdict": "INTERRUPTED",
+    "detail": "нет результата после запуска",
+    "fresh": []
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S11",
+    "kind": "analyzer-phase1",
+    "chapter": "v07-ch03",
+    "status": "done",
+    "verdict": "INTERRUPTED",
+    "detail": "нет результата после запуска",
+    "fresh": []
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S12",
+    "kind": "analyzer-phase2",
+    "chapter": "v07-ch03",
+    "status": "done",
+    "verdict": "INTERRUPTED",
+    "detail": "нет результата после запуска",
+    "fresh": []
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S13",
+    "kind": "sma-c",
+    "chapter": "v07-ch04",
+    "status": "done",
+    "verdict": "INTERRUPTED",
+    "detail": "нет результата после запуска",
+    "fresh": []
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S14",
+    "kind": "analyzer-phase1",
+    "chapter": "v07-ch04",
+    "status": "done",
+    "verdict": "INTERRUPTED",
+    "detail": "нет результата после запуска",
+    "fresh": []
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S15",
+    "kind": "analyzer-phase2",
+    "chapter": "v07-ch04",
+    "status": "done",
+    "verdict": "INTERRUPTED",
+    "detail": "нет результата после запуска",
+    "fresh": []
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S16",
+    "kind": "sma-c",
+    "chapter": "v07-ch05",
+    "status": "done",
+    "verdict": "INTERRUPTED",
+    "detail": "нет результата после запуска",
+    "fresh": []
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S17",
+    "kind": "analyzer-phase1",
+    "chapter": "v07-ch05",
+    "status": "done",
+    "verdict": "INTERRUPTED",
+    "detail": "нет результата после запуска",
+    "fresh": []
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S18",
+    "kind": "analyzer-phase2",
+    "chapter": "v07-ch05",
+    "status": "done",
+    "verdict": "INTERRUPTED",
+    "detail": "нет результата после запуска",
+    "fresh": []
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S19",
+    "kind": "sma-c",
+    "chapter": "v07-ch06",
+    "status": "done",
+    "verdict": "INTERRUPTED",
+    "detail": "нет результата после запуска",
+    "fresh": []
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S20",
+    "kind": "analyzer-phase1",
+    "chapter": "v07-ch06",
+    "status": "done",
+    "verdict": "INTERRUPTED",
+    "detail": "нет результата после запуска",
+    "fresh": []
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S21",
+    "kind": "analyzer-phase2",
+    "chapter": "v07-ch06",
+    "status": "done",
+    "verdict": "INTERRUPTED",
+    "detail": "нет результата после запуска",
+    "fresh": []
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S22",
+    "kind": "sma-c",
+    "chapter": "v07-ch07",
+    "status": "done",
+    "verdict": "INTERRUPTED",
+    "detail": "нет результата после запуска",
+    "fresh": []
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S23",
+    "kind": "analyzer-phase1",
+    "chapter": "v07-ch07",
+    "status": "done",
+    "verdict": "INTERRUPTED",
+    "detail": "нет результата после запуска",
+    "fresh": []
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S24",
+    "kind": "analyzer-phase2",
+    "chapter": "v07-ch07",
+    "status": "done",
+    "verdict": "INTERRUPTED",
+    "detail": "нет результата после запуска",
+    "fresh": []
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S25",
+    "kind": "sma-c",
+    "chapter": "v07-ch08",
+    "status": "done",
+    "verdict": "INTERRUPTED",
+    "detail": "нет результата после запуска",
+    "fresh": []
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S26",
+    "kind": "analyzer-phase1",
+    "chapter": "v07-ch08",
+    "status": "done",
+    "verdict": "INTERRUPTED",
+    "detail": "нет результата после запуска",
+    "fresh": []
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S27",
+    "kind": "analyzer-phase2",
+    "chapter": "v07-ch08",
+    "status": "done",
+    "verdict": "INTERRUPTED",
+    "detail": "нет результата после запуска",
+    "fresh": []
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S28",
+    "kind": "sma-c",
+    "chapter": "v07-ch09",
+    "status": "done",
+    "verdict": "INTERRUPTED",
+    "detail": "нет результата после запуска",
+    "fresh": []
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S29",
+    "kind": "analyzer-phase1",
+    "chapter": "v07-ch09",
+    "status": "done",
+    "verdict": "INTERRUPTED",
+    "detail": "нет результата после запуска",
+    "fresh": []
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S30",
+    "kind": "analyzer-phase2",
+    "chapter": "v07-ch09",
+    "status": "done",
+    "verdict": "INTERRUPTED",
+    "detail": "нет результата после запуска",
+    "fresh": []
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S31",
+    "kind": "sma-c",
+    "chapter": "v07-ch10",
+    "status": "done",
+    "verdict": "INTERRUPTED",
+    "detail": "нет результата после запуска",
+    "fresh": []
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S32",
+    "kind": "analyzer-phase1",
+    "chapter": "v07-ch10",
+    "status": "done",
+    "verdict": "INTERRUPTED",
+    "detail": "нет результата после запуска",
+    "fresh": []
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S33",
+    "kind": "analyzer-phase2",
+    "chapter": "v07-ch10",
+    "status": "done",
+    "verdict": "INTERRUPTED",
+    "detail": "нет результата после запуска",
+    "fresh": []
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S34",
+    "kind": "sma-c",
+    "chapter": "v07-epilogue",
+    "status": "done",
+    "verdict": "INTERRUPTED",
+    "detail": "нет результата после запуска",
+    "fresh": []
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S35",
+    "kind": "analyzer-phase1",
+    "chapter": "v07-epilogue",
+    "status": "done",
+    "verdict": "INTERRUPTED",
+    "detail": "нет результата после запуска",
+    "fresh": []
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S36",
+    "kind": "analyzer-phase2",
+    "chapter": "v07-epilogue",
+    "status": "done",
+    "verdict": "INTERRUPTED",
+    "detail": "нет результата после запуска",
+    "fresh": []
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S37",
+    "kind": "sma-c",
+    "chapter": "v08-afterword",
+    "status": "done",
+    "verdict": "INTERRUPTED",
+    "detail": "нет результата после запуска",
+    "fresh": []
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S38",
+    "kind": "analyzer-phase1",
+    "chapter": "v08-afterword",
+    "status": "done",
+    "verdict": "INTERRUPTED",
+    "detail": "нет результата после запуска",
+    "fresh": []
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S39",
+    "kind": "analyzer-phase2",
+    "chapter": "v08-afterword",
+    "status": "done",
+    "verdict": "INTERRUPTED",
+    "detail": "нет результата после запуска",
+    "fresh": []
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S40",
+    "kind": "sma-c",
+    "chapter": "v08-ch01",
+    "status": "done",
+    "verdict": "INTERRUPTED",
+    "detail": "нет результата после запуска",
+    "fresh": []
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S41",
+    "kind": "analyzer-phase1",
+    "chapter": "v08-ch01",
+    "status": "done",
+    "verdict": "INTERRUPTED",
+    "detail": "нет результата после запуска",
+    "fresh": []
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S42",
+    "kind": "analyzer-phase2",
+    "chapter": "v08-ch01",
+    "status": "done",
+    "verdict": "INTERRUPTED",
+    "detail": "нет результата после запуска",
+    "fresh": []
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S43",
+    "kind": "sma-c",
+    "chapter": "v08-ch02",
+    "status": "done",
+    "verdict": "INTERRUPTED",
+    "detail": "нет результата после запуска",
+    "fresh": []
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S44",
+    "kind": "analyzer-phase1",
+    "chapter": "v08-ch02",
+    "status": "done",
+    "verdict": "INTERRUPTED",
+    "detail": "нет результата после запуска",
+    "fresh": []
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S45",
+    "kind": "analyzer-phase2",
+    "chapter": "v08-ch02",
+    "status": "done",
+    "verdict": "INTERRUPTED",
+    "detail": "нет результата после запуска",
+    "fresh": []
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S46",
+    "kind": "sma-c",
+    "chapter": "v08-ch03",
+    "status": "done",
+    "verdict": "INTERRUPTED",
+    "detail": "нет результата после запуска",
+    "fresh": []
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S47",
+    "kind": "analyzer-phase1",
+    "chapter": "v08-ch03",
+    "status": "done",
+    "verdict": "INTERRUPTED",
+    "detail": "нет результата после запуска",
+    "fresh": []
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S48",
+    "kind": "analyzer-phase2",
+    "chapter": "v08-ch03",
+    "status": "done",
+    "verdict": "INTERRUPTED",
+    "detail": "нет результата после запуска",
+    "fresh": []
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S49",
+    "kind": "sma-c",
+    "chapter": "v08-ch04",
+    "status": "done",
+    "verdict": "INTERRUPTED",
+    "detail": "нет результата после запуска",
+    "fresh": []
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S50",
+    "kind": "analyzer-phase1",
+    "chapter": "v08-ch04",
+    "status": "done",
+    "verdict": "INTERRUPTED",
+    "detail": "нет результата после запуска",
+    "fresh": []
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S51",
+    "kind": "analyzer-phase2",
+    "chapter": "v08-ch04",
+    "status": "done",
+    "verdict": "INTERRUPTED",
+    "detail": "нет результата после запуска",
+    "fresh": []
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S52",
+    "kind": "sma-c",
+    "chapter": "v08-ch05",
+    "status": "done",
+    "verdict": "INTERRUPTED",
+    "detail": "нет результата после запуска",
+    "fresh": []
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S53",
+    "kind": "analyzer-phase1",
+    "chapter": "v08-ch05",
+    "status": "done",
+    "verdict": "INTERRUPTED",
+    "detail": "нет результата после запуска",
+    "fresh": []
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S54",
+    "kind": "analyzer-phase2",
+    "chapter": "v08-ch05",
+    "status": "done",
+    "verdict": "INTERRUPTED",
+    "detail": "нет результата после запуска",
+    "fresh": []
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S55",
+    "kind": "sma-c",
+    "chapter": "v08-ch06",
+    "status": "done",
+    "verdict": "INTERRUPTED",
+    "detail": "нет результата после запуска",
+    "fresh": []
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S56",
+    "kind": "analyzer-phase1",
+    "chapter": "v08-ch06",
+    "status": "done",
+    "verdict": "INTERRUPTED",
+    "detail": "нет результата после запуска",
+    "fresh": []
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S57",
+    "kind": "analyzer-phase2",
+    "chapter": "v08-ch06",
+    "status": "done",
+    "verdict": "INTERRUPTED",
+    "detail": "нет результата после запуска",
+    "fresh": []
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S58",
+    "kind": "sma-c",
+    "chapter": "v08-ch07",
+    "status": "done",
+    "verdict": "INTERRUPTED",
+    "detail": "нет результата после запуска",
+    "fresh": []
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S59",
+    "kind": "analyzer-phase1",
+    "chapter": "v08-ch07",
+    "status": "done",
+    "verdict": "INTERRUPTED",
+    "detail": "нет результата после запуска",
+    "fresh": []
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S60",
+    "kind": "analyzer-phase2",
+    "chapter": "v08-ch07",
+    "status": "done",
+    "verdict": "INTERRUPTED",
+    "detail": "нет результата после запуска",
+    "fresh": []
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S61",
+    "kind": "sma-c",
+    "chapter": "v08-ch08",
+    "status": "done",
+    "verdict": "INTERRUPTED",
+    "detail": "нет результата после запуска",
+    "fresh": []
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S62",
+    "kind": "analyzer-phase1",
+    "chapter": "v08-ch08",
+    "status": "done",
+    "verdict": "INTERRUPTED",
+    "detail": "нет результата после запуска",
+    "fresh": []
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S63",
+    "kind": "analyzer-phase2",
+    "chapter": "v08-ch08",
+    "status": "done",
+    "verdict": "INTERRUPTED",
+    "detail": "нет результата после запуска",
+    "fresh": []
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S64",
+    "kind": "sma-c",
+    "chapter": "v08-ch09",
+    "status": "done",
+    "verdict": "INTERRUPTED",
+    "detail": "нет результата после запуска",
+    "fresh": []
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S65",
+    "kind": "analyzer-phase1",
+    "chapter": "v08-ch09",
+    "status": "done",
+    "verdict": "INTERRUPTED",
+    "detail": "нет результата после запуска",
+    "fresh": []
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S66",
+    "kind": "analyzer-phase2",
+    "chapter": "v08-ch09",
+    "status": "done",
+    "verdict": "INTERRUPTED",
+    "detail": "нет результата после запуска",
+    "fresh": []
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S67",
+    "kind": "sma-c",
+    "chapter": "v08-ch10",
+    "status": "done",
+    "verdict": "INTERRUPTED",
+    "detail": "нет результата после запуска",
+    "fresh": []
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S68",
+    "kind": "analyzer-phase1",
+    "chapter": "v08-ch10",
+    "status": "done",
+    "verdict": "INTERRUPTED",
+    "detail": "нет результата после запуска",
+    "fresh": []
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S69",
+    "kind": "analyzer-phase2",
+    "chapter": "v08-ch10",
+    "status": "done",
+    "verdict": "INTERRUPTED",
+    "detail": "нет результата после запуска",
+    "fresh": []
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S70",
+    "kind": "sma-c",
+    "chapter": "v08-epilogue",
+    "status": "done",
+    "verdict": "INTERRUPTED",
+    "detail": "нет результата после запуска",
+    "fresh": []
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S71",
+    "kind": "analyzer-phase1",
+    "chapter": "v08-epilogue",
+    "status": "done",
+    "verdict": "INTERRUPTED",
+    "detail": "нет результата после запуска",
+    "fresh": []
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S72",
+    "kind": "analyzer-phase2",
+    "chapter": "v08-epilogue",
+    "status": "done",
+    "verdict": "INTERRUPTED",
+    "detail": "нет результата после запуска",
+    "fresh": []
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S73",
+    "kind": "sma-c",
+    "chapter": "v09-afterword",
+    "status": "done",
+    "verdict": "INTERRUPTED",
+    "detail": "нет результата после запуска",
+    "fresh": []
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S74",
+    "kind": "analyzer-phase1",
+    "chapter": "v09-afterword",
+    "status": "done",
+    "verdict": "INTERRUPTED",
+    "detail": "нет результата после запуска",
+    "fresh": []
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S75",
+    "kind": "analyzer-phase2",
+    "chapter": "v09-afterword",
+    "status": "done",
+    "verdict": "INTERRUPTED",
+    "detail": "нет результата после запуска",
+    "fresh": []
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S76",
+    "kind": "sma-c",
+    "chapter": "v09-ch01",
+    "status": "done",
+    "verdict": "INTERRUPTED",
+    "detail": "нет результата после запуска",
+    "fresh": []
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S77",
+    "kind": "analyzer-phase1",
+    "chapter": "v09-ch01",
+    "status": "done",
+    "verdict": "INTERRUPTED",
+    "detail": "нет результата после запуска",
+    "fresh": []
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S78",
+    "kind": "analyzer-phase2",
+    "chapter": "v09-ch01",
+    "status": "done",
+    "verdict": "INTERRUPTED",
+    "detail": "нет результата после запуска",
+    "fresh": []
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S79",
+    "kind": "sma-c",
+    "chapter": "v09-ch02",
+    "status": "done",
+    "verdict": "INTERRUPTED",
+    "detail": "нет результата после запуска",
+    "fresh": []
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S80",
+    "kind": "analyzer-phase1",
+    "chapter": "v09-ch02",
+    "status": "done",
+    "verdict": "INTERRUPTED",
+    "detail": "нет результата после запуска",
+    "fresh": []
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S81",
+    "kind": "analyzer-phase2",
+    "chapter": "v09-ch02",
+    "status": "done",
+    "verdict": "INTERRUPTED",
+    "detail": "нет результата после запуска",
+    "fresh": []
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S82",
+    "kind": "sma-c",
+    "chapter": "v09-ch03",
+    "status": "done",
+    "verdict": "INTERRUPTED",
+    "detail": "нет результата после запуска",
+    "fresh": []
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S83",
+    "kind": "analyzer-phase1",
+    "chapter": "v09-ch03",
+    "status": "done",
+    "verdict": "INTERRUPTED",
+    "detail": "нет результата после запуска",
+    "fresh": []
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S84",
+    "kind": "analyzer-phase2",
+    "chapter": "v09-ch03",
+    "status": "done",
+    "verdict": "INTERRUPTED",
+    "detail": "нет результата после запуска",
+    "fresh": []
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S85",
+    "kind": "sma-c",
+    "chapter": "v09-ch04",
+    "status": "done",
+    "verdict": "INTERRUPTED",
+    "detail": "нет результата после запуска",
+    "fresh": []
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S86",
+    "kind": "analyzer-phase1",
+    "chapter": "v09-ch04",
+    "status": "done",
+    "verdict": "INTERRUPTED",
+    "detail": "нет результата после запуска",
+    "fresh": []
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S87",
+    "kind": "analyzer-phase2",
+    "chapter": "v09-ch04",
+    "status": "done",
+    "verdict": "INTERRUPTED",
+    "detail": "нет результата после запуска",
+    "fresh": []
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S88",
+    "kind": "sma-c",
+    "chapter": "v09-ch05",
+    "status": "done",
+    "verdict": "INTERRUPTED",
+    "detail": "нет результата после запуска",
+    "fresh": []
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S89",
+    "kind": "analyzer-phase1",
+    "chapter": "v09-ch05",
+    "status": "done",
+    "verdict": "INTERRUPTED",
+    "detail": "нет результата после запуска",
+    "fresh": []
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S90",
+    "kind": "analyzer-phase2",
+    "chapter": "v09-ch05",
+    "status": "done",
+    "verdict": "INTERRUPTED",
+    "detail": "нет результата после запуска",
+    "fresh": []
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S91",
+    "kind": "sma-c",
+    "chapter": "v09-ch06",
+    "status": "done",
+    "verdict": "INTERRUPTED",
+    "detail": "нет результата после запуска",
+    "fresh": []
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S92",
+    "kind": "analyzer-phase1",
+    "chapter": "v09-ch06",
+    "status": "done",
+    "verdict": "INTERRUPTED",
+    "detail": "нет результата после запуска",
+    "fresh": []
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S93",
+    "kind": "analyzer-phase2",
+    "chapter": "v09-ch06",
+    "status": "done",
+    "verdict": "INTERRUPTED",
+    "detail": "нет результата после запуска",
+    "fresh": []
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S94",
+    "kind": "sma-c",
+    "chapter": "v09-ch07",
+    "status": "done",
+    "verdict": "INTERRUPTED",
+    "detail": "нет результата после запуска",
+    "fresh": []
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S95",
+    "kind": "analyzer-phase1",
+    "chapter": "v09-ch07",
+    "status": "done",
+    "verdict": "INTERRUPTED",
+    "detail": "нет результата после запуска",
+    "fresh": []
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S96",
+    "kind": "analyzer-phase2",
+    "chapter": "v09-ch07",
+    "status": "done",
+    "verdict": "INTERRUPTED",
+    "detail": "нет результата после запуска",
+    "fresh": []
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S97",
+    "kind": "sma-c",
+    "chapter": "v09-ch08",
+    "status": "done",
+    "verdict": "INTERRUPTED",
+    "detail": "нет результата после запуска",
+    "fresh": []
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S98",
+    "kind": "analyzer-phase1",
+    "chapter": "v09-ch08",
+    "status": "done",
+    "verdict": "INTERRUPTED",
+    "detail": "нет результата после запуска",
+    "fresh": []
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S99",
+    "kind": "analyzer-phase2",
+    "chapter": "v09-ch08",
+    "status": "done",
+    "verdict": "INTERRUPTED",
+    "detail": "нет результата после запуска",
+    "fresh": []
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S100",
+    "kind": "sma-c",
+    "chapter": "v09-ch09",
+    "status": "done",
+    "verdict": "INTERRUPTED",
+    "detail": "нет результата после запуска",
+    "fresh": []
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S101",
+    "kind": "analyzer-phase1",
+    "chapter": "v09-ch09",
+    "status": "done",
+    "verdict": "INTERRUPTED",
+    "detail": "нет результата после запуска",
+    "fresh": []
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S102",
+    "kind": "analyzer-phase2",
+    "chapter": "v09-ch09",
+    "status": "done",
+    "verdict": "INTERRUPTED",
+    "detail": "нет результата после запуска",
+    "fresh": []
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S103",
+    "kind": "sma-c",
+    "chapter": "v09-epilogue",
+    "status": "done",
+    "verdict": "INTERRUPTED",
+    "detail": "нет результата после запуска",
+    "fresh": []
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S104",
+    "kind": "analyzer-phase1",
+    "chapter": "v09-epilogue",
+    "status": "done",
+    "verdict": "INTERRUPTED",
+    "detail": "нет результата после запуска",
+    "fresh": []
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S105",
+    "kind": "analyzer-phase2",
+    "chapter": "v09-epilogue",
+    "status": "done",
+    "verdict": "INTERRUPTED",
+    "detail": "нет результата после запуска",
+    "fresh": []
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S106",
+    "kind": "sma-c",
+    "chapter": "v10-afterword",
+    "status": "done",
+    "verdict": "INTERRUPTED",
+    "detail": "нет результата после запуска",
+    "fresh": []
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S107",
+    "kind": "analyzer-phase1",
+    "chapter": "v10-afterword",
+    "status": "done",
+    "verdict": "INTERRUPTED",
+    "detail": "нет результата после запуска",
+    "fresh": []
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S108",
+    "kind": "analyzer-phase2",
+    "chapter": "v10-afterword",
+    "status": "done",
+    "verdict": "INTERRUPTED",
+    "detail": "нет результата после запуска",
+    "fresh": []
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S109",
+    "kind": "sma-c",
+    "chapter": "v10-ch01",
+    "status": "done",
+    "verdict": "INTERRUPTED",
+    "detail": "нет результата после запуска",
+    "fresh": []
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S110",
+    "kind": "analyzer-phase1",
+    "chapter": "v10-ch01",
+    "status": "done",
+    "verdict": "INTERRUPTED",
+    "detail": "нет результата после запуска",
+    "fresh": []
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S111",
+    "kind": "analyzer-phase2",
+    "chapter": "v10-ch01",
+    "status": "done",
+    "verdict": "INTERRUPTED",
+    "detail": "нет результата после запуска",
+    "fresh": []
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S112",
+    "kind": "sma-c",
+    "chapter": "v10-ch02",
+    "status": "done",
+    "verdict": "INTERRUPTED",
+    "detail": "нет результата после запуска",
+    "fresh": []
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S113",
+    "kind": "analyzer-phase1",
+    "chapter": "v10-ch02",
+    "status": "done",
+    "verdict": "INTERRUPTED",
+    "detail": "нет результата после запуска",
+    "fresh": []
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S114",
+    "kind": "analyzer-phase2",
+    "chapter": "v10-ch02",
+    "status": "done",
+    "verdict": "INTERRUPTED",
+    "detail": "нет результата после запуска",
+    "fresh": []
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S115",
+    "kind": "sma-c",
+    "chapter": "v10-ch03",
+    "status": "done",
+    "verdict": "INTERRUPTED",
+    "detail": "нет результата после запуска",
+    "fresh": []
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S116",
+    "kind": "analyzer-phase1",
+    "chapter": "v10-ch03",
+    "status": "done",
+    "verdict": "INTERRUPTED",
+    "detail": "нет результата после запуска",
+    "fresh": []
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S117",
+    "kind": "analyzer-phase2",
+    "chapter": "v10-ch03",
+    "status": "done",
+    "verdict": "INTERRUPTED",
+    "detail": "нет результата после запуска",
+    "fresh": []
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S118",
+    "kind": "sma-c",
+    "chapter": "v10-ch04",
+    "status": "done",
+    "verdict": "INTERRUPTED",
+    "detail": "нет результата после запуска",
+    "fresh": []
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S119",
+    "kind": "analyzer-phase1",
+    "chapter": "v10-ch04",
+    "status": "done",
+    "verdict": "INTERRUPTED",
+    "detail": "нет результата после запуска",
+    "fresh": []
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S120",
+    "kind": "analyzer-phase2",
+    "chapter": "v10-ch04",
+    "status": "done",
+    "verdict": "INTERRUPTED",
+    "detail": "нет результата после запуска",
+    "fresh": []
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S121",
+    "kind": "sma-c",
+    "chapter": "v10-ch05",
+    "status": "done",
+    "verdict": "INTERRUPTED",
+    "detail": "нет результата после запуска",
+    "fresh": []
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S122",
+    "kind": "analyzer-phase1",
+    "chapter": "v10-ch05",
+    "status": "done",
+    "verdict": "INTERRUPTED",
+    "detail": "нет результата после запуска",
+    "fresh": []
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S123",
+    "kind": "analyzer-phase2",
+    "chapter": "v10-ch05",
+    "status": "done",
+    "verdict": "INTERRUPTED",
+    "detail": "нет результата после запуска",
+    "fresh": []
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S124",
+    "kind": "sma-c",
+    "chapter": "v10-ch06",
+    "status": "done",
+    "verdict": "INTERRUPTED",
+    "detail": "нет результата после запуска",
+    "fresh": []
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S125",
+    "kind": "analyzer-phase1",
+    "chapter": "v10-ch06",
+    "status": "done",
+    "verdict": "INTERRUPTED",
+    "detail": "нет результата после запуска",
+    "fresh": []
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S126",
+    "kind": "analyzer-phase2",
+    "chapter": "v10-ch06",
+    "status": "done",
+    "verdict": "INTERRUPTED",
+    "detail": "нет результата после запуска",
+    "fresh": []
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S127",
+    "kind": "sma-c",
+    "chapter": "v10-ch07",
+    "status": "done",
+    "verdict": "INTERRUPTED",
+    "detail": "нет результата после запуска",
+    "fresh": []
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S128",
+    "kind": "analyzer-phase1",
+    "chapter": "v10-ch07",
+    "status": "done",
+    "verdict": "INTERRUPTED",
+    "detail": "нет результата после запуска",
+    "fresh": []
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S129",
+    "kind": "analyzer-phase2",
+    "chapter": "v10-ch07",
+    "status": "done",
+    "verdict": "INTERRUPTED",
+    "detail": "нет результата после запуска",
+    "fresh": []
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S130",
+    "kind": "sma-c",
+    "chapter": "v10-ch08",
+    "status": "done",
+    "verdict": "INTERRUPTED",
+    "detail": "нет результата после запуска",
+    "fresh": []
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S131",
+    "kind": "analyzer-phase1",
+    "chapter": "v10-ch08",
+    "status": "done",
+    "verdict": "INTERRUPTED",
+    "detail": "нет результата после запуска",
+    "fresh": []
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S132",
+    "kind": "analyzer-phase2",
+    "chapter": "v10-ch08",
+    "status": "done",
+    "verdict": "INTERRUPTED",
+    "detail": "нет результата после запуска",
+    "fresh": []
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S133",
+    "kind": "sma-c",
+    "chapter": "v10-ch09",
+    "status": "done",
+    "verdict": "INTERRUPTED",
+    "detail": "нет результата после запуска",
+    "fresh": []
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S134",
+    "kind": "analyzer-phase1",
+    "chapter": "v10-ch09",
+    "status": "done",
+    "verdict": "INTERRUPTED",
+    "detail": "нет результата после запуска",
+    "fresh": []
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S135",
+    "kind": "analyzer-phase2",
+    "chapter": "v10-ch09",
+    "status": "done",
+    "verdict": "INTERRUPTED",
+    "detail": "нет результата после запуска",
+    "fresh": []
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S136",
+    "kind": "sma-c",
+    "chapter": "v10-ch10",
+    "status": "done",
+    "verdict": "INTERRUPTED",
+    "detail": "нет результата после запуска",
+    "fresh": []
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S137",
+    "kind": "analyzer-phase1",
+    "chapter": "v10-ch10",
+    "status": "done",
+    "verdict": "INTERRUPTED",
+    "detail": "нет результата после запуска",
+    "fresh": []
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S138",
+    "kind": "analyzer-phase2",
+    "chapter": "v10-ch10",
+    "status": "done",
+    "verdict": "INTERRUPTED",
+    "detail": "нет результата после запуска",
+    "fresh": []
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S139",
+    "kind": "sma-c",
+    "chapter": "v10-epilogue",
+    "status": "done",
+    "verdict": "INTERRUPTED",
+    "detail": "нет результата после запуска",
+    "fresh": []
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S140",
+    "kind": "analyzer-phase1",
+    "chapter": "v10-epilogue",
+    "status": "done",
+    "verdict": "INTERRUPTED",
+    "detail": "нет результата после запуска",
+    "fresh": []
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S141",
+    "kind": "analyzer-phase2",
+    "chapter": "v10-epilogue",
+    "status": "done",
+    "verdict": "INTERRUPTED",
+    "detail": "нет результата после запуска",
+    "fresh": []
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S142",
+    "kind": "sma-c",
+    "chapter": "v11-afterword",
+    "status": "done",
+    "verdict": "DONE",
+    "detail": "артефакт результата свежий",
+    "fresh": [
+      "AINovelEdit/output/_audit/sma/v11-afterword/c/20261119-103316-e3c8.json"
+    ]
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S143",
+    "kind": "analyzer-phase1",
+    "chapter": "v11-afterword",
+    "status": "done",
+    "verdict": "DONE",
+    "detail": "артефакт результата свежий",
+    "fresh": [
+      "AINovelEdit/output/_audit/sma/v11-afterword/analysis/20261119-103316-fe63.phase1.json"
+    ]
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S144",
+    "kind": "analyzer-phase2",
+    "chapter": "v11-afterword",
+    "status": "done",
+    "verdict": "DONE",
+    "detail": "артефакт результата свежий",
+    "fresh": [
+      "AINovelEdit/output/_audit/sma/v11-afterword/analysis/20261119-104003-708b.json",
+      "AINovelEdit/output/_audit/sma/v11-afterword/analysis/20261119-104003-708b.md"
+    ]
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S145",
+    "kind": "sma-c",
+    "chapter": "v11-ch01",
+    "status": "done",
+    "verdict": "DONE",
+    "detail": "артефакт результата свежий",
+    "fresh": [
+      "AINovelEdit/output/_audit/sma/v11-ch01/c/20261119-103607-ad94.json"
+    ]
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S146",
+    "kind": "analyzer-phase1",
+    "chapter": "v11-ch01",
+    "status": "done",
+    "verdict": "DONE",
+    "detail": "артефакт результата свежий",
+    "fresh": [
+      "AINovelEdit/output/_audit/sma/v11-ch01/analysis/20261119-103607-b4c9.phase1.json"
+    ]
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S147",
+    "kind": "analyzer-phase2",
+    "chapter": "v11-ch01",
+    "status": "done",
+    "verdict": "DONE",
+    "detail": "артефакт результата свежий",
+    "fresh": [
+      "AINovelEdit/output/_audit/sma/v11-ch01/analysis/20261119-104003-2ec3.json",
+      "AINovelEdit/output/_audit/sma/v11-ch01/analysis/20261119-104003-2ec3.md"
+    ]
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S148",
+    "kind": "sma-c",
+    "chapter": "v11-ch02",
+    "status": "done",
+    "verdict": "DONE",
+    "detail": "артефакт результата свежий",
+    "fresh": [
+      "AINovelEdit/output/_audit/sma/v11-ch02/c/20261119-103607-04aa.json"
+    ]
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S149",
+    "kind": "analyzer-phase1",
+    "chapter": "v11-ch02",
+    "status": "done",
+    "verdict": "DONE",
+    "detail": "артефакт результата свежий",
+    "fresh": [
+      "AINovelEdit/output/_audit/sma/v11-ch02/analysis/20261119-103607-ac84.phase1.json"
+    ]
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S150",
+    "kind": "analyzer-phase2",
+    "chapter": "v11-ch02",
+    "status": "done",
+    "verdict": "DONE",
+    "detail": "артефакт результата свежий",
+    "fresh": [
+      "AINovelEdit/output/_audit/sma/v11-ch02/analysis/20261119-104003-113a.json",
+      "AINovelEdit/output/_audit/sma/v11-ch02/analysis/20261119-104003-113a.md"
+    ]
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S151",
+    "kind": "sma-c",
+    "chapter": "v11-ch03",
+    "status": "done",
+    "verdict": "DONE",
+    "detail": "артефакт результата свежий",
+    "fresh": [
+      "AINovelEdit/output/_audit/sma/v11-ch03/c/20261119-103607-cc93.json"
+    ]
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S152",
+    "kind": "analyzer-phase1",
+    "chapter": "v11-ch03",
+    "status": "done",
+    "verdict": "DONE",
+    "detail": "артефакт результата свежий",
+    "fresh": [
+      "AINovelEdit/output/_audit/sma/v11-ch03/analysis/20261119-103607-3287.phase1.json"
+    ]
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S153",
+    "kind": "analyzer-phase2",
+    "chapter": "v11-ch03",
+    "status": "done",
+    "verdict": "DONE",
+    "detail": "артефакт результата свежий",
+    "fresh": [
+      "AINovelEdit/output/_audit/sma/v11-ch03/analysis/20261119-104004-0062.json",
+      "AINovelEdit/output/_audit/sma/v11-ch03/analysis/20261119-104004-0062.md"
+    ]
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S154",
+    "kind": "sma-c",
+    "chapter": "v11-ch04",
+    "status": "done",
+    "verdict": "DONE",
+    "detail": "артефакт результата свежий",
+    "fresh": [
+      "AINovelEdit/output/_audit/sma/v11-ch04/c/20261119-103608-f0ef.json"
+    ]
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S155",
+    "kind": "analyzer-phase1",
+    "chapter": "v11-ch04",
+    "status": "done",
+    "verdict": "DONE",
+    "detail": "артефакт результата свежий",
+    "fresh": [
+      "AINovelEdit/output/_audit/sma/v11-ch04/analysis/20261119-103608-97d1.phase1.json"
+    ]
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S156",
+    "kind": "analyzer-phase2",
+    "chapter": "v11-ch04",
+    "status": "done",
+    "verdict": "DONE",
+    "detail": "артефакт результата свежий",
+    "fresh": [
+      "AINovelEdit/output/_audit/sma/v11-ch04/analysis/20261119-104004-5545.json",
+      "AINovelEdit/output/_audit/sma/v11-ch04/analysis/20261119-104004-5545.md"
+    ]
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S157",
+    "kind": "sma-c",
+    "chapter": "v11-ch05",
+    "status": "done",
+    "verdict": "DONE",
+    "detail": "артефакт результата свежий",
+    "fresh": [
+      "AINovelEdit/output/_audit/sma/v11-ch05/c/20261119-103608-1d9a.json"
+    ]
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S158",
+    "kind": "analyzer-phase1",
+    "chapter": "v11-ch05",
+    "status": "done",
+    "verdict": "DONE",
+    "detail": "артефакт результата свежий",
+    "fresh": [
+      "AINovelEdit/output/_audit/sma/v11-ch05/analysis/20261119-103608-6836.phase1.json"
+    ]
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S159",
+    "kind": "analyzer-phase2",
+    "chapter": "v11-ch05",
+    "status": "done",
+    "verdict": "DONE",
+    "detail": "артефакт результата свежий",
+    "fresh": [
+      "AINovelEdit/output/_audit/sma/v11-ch05/analysis/20261119-104004-5ae2.json",
+      "AINovelEdit/output/_audit/sma/v11-ch05/analysis/20261119-104004-5ae2.md"
+    ]
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S160",
+    "kind": "sma-c",
+    "chapter": "v11-ch06",
+    "status": "running",
+    "verdict": "DONE",
+    "detail": "артефакт результата свежий",
+    "fresh": [
+      "AINovelEdit/output/_audit/sma/v11-ch06/c/20261119-105621-2bb1.json"
+    ]
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S161",
+    "kind": "analyzer-phase1",
+    "chapter": "v11-ch06",
+    "status": "running",
+    "verdict": "DONE",
+    "detail": "артефакт результата свежий",
+    "fresh": [
+      "AINovelEdit/output/_audit/sma/v11-ch06/analysis/20261119-105621-f6d0.phase1.json"
+    ]
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S162",
+    "kind": "analyzer-phase2",
+    "chapter": "v11-ch06",
+    "status": "running",
+    "verdict": "DONE",
+    "detail": "артефакт результата свежий",
+    "fresh": [
+      "AINovelEdit/output/_audit/sma/v11-ch06/analysis/20261119-105705-70d7.json",
+      "AINovelEdit/output/_audit/sma/v11-ch06/analysis/20261119-105705-70d7.md"
+    ]
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S163",
+    "kind": "sma-c",
+    "chapter": "v11-ch07",
+    "status": "running",
+    "verdict": "DONE",
+    "detail": "артефакт результата свежий",
+    "fresh": [
+      "AINovelEdit/output/_audit/sma/v11-ch07/c/20261119-105638-14d6.json"
+    ]
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S164",
+    "kind": "analyzer-phase1",
+    "chapter": "v11-ch07",
+    "status": "running",
+    "verdict": "DONE",
+    "detail": "артефакт результата свежий",
+    "fresh": [
+      "AINovelEdit/output/_audit/sma/v11-ch07/analysis/20261119-105638-4b2b.phase1.json"
+    ]
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S165",
+    "kind": "analyzer-phase2",
+    "chapter": "v11-ch07",
+    "status": "running",
+    "verdict": "DONE",
+    "detail": "артефакт результата свежий",
+    "fresh": [
+      "AINovelEdit/output/_audit/sma/v11-ch07/analysis/20261119-105705-4b23.json",
+      "AINovelEdit/output/_audit/sma/v11-ch07/analysis/20261119-105705-4b23.md"
+    ]
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S166",
+    "kind": "sma-c",
+    "chapter": "v11-ch08",
+    "status": "running",
+    "verdict": "DONE",
+    "detail": "артефакт результата свежий",
+    "fresh": [
+      "AINovelEdit/output/_audit/sma/v11-ch08/c/20261119-105638-8997.json"
+    ]
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S167",
+    "kind": "analyzer-phase1",
+    "chapter": "v11-ch08",
+    "status": "running",
+    "verdict": "DONE",
+    "detail": "артефакт результата свежий",
+    "fresh": [
+      "AINovelEdit/output/_audit/sma/v11-ch08/analysis/20261119-105638-950b.phase1.json"
+    ]
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S168",
+    "kind": "analyzer-phase2",
+    "chapter": "v11-ch08",
+    "status": "running",
+    "verdict": "DONE",
+    "detail": "артефакт результата свежий",
+    "fresh": [
+      "AINovelEdit/output/_audit/sma/v11-ch08/analysis/20261119-105705-58f4.json",
+      "AINovelEdit/output/_audit/sma/v11-ch08/analysis/20261119-105705-58f4.md"
+    ]
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S169",
+    "kind": "sma-c",
+    "chapter": "v11-ch09",
+    "status": "running",
+    "verdict": "DONE",
+    "detail": "артефакт результата свежий",
+    "fresh": [
+      "AINovelEdit/output/_audit/sma/v11-ch09/c/20261119-105638-4aba.json"
+    ]
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S170",
+    "kind": "analyzer-phase1",
+    "chapter": "v11-ch09",
+    "status": "running",
+    "verdict": "DONE",
+    "detail": "артефакт результата свежий",
+    "fresh": [
+      "AINovelEdit/output/_audit/sma/v11-ch09/analysis/20261119-105638-b666.phase1.json"
+    ]
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S171",
+    "kind": "analyzer-phase2",
+    "chapter": "v11-ch09",
+    "status": "running",
+    "verdict": "DONE",
+    "detail": "артефакт результата свежий",
+    "fresh": [
+      "AINovelEdit/output/_audit/sma/v11-ch09/analysis/20261119-105705-4920.json",
+      "AINovelEdit/output/_audit/sma/v11-ch09/analysis/20261119-105705-4920.md"
+    ]
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S172",
+    "kind": "sma-c",
+    "chapter": "v11-ch10",
+    "status": "running",
+    "verdict": "DONE",
+    "detail": "артефакт результата свежий",
+    "fresh": [
+      "AINovelEdit/output/_audit/sma/v11-ch10/c/20261119-105638-8d92.json"
+    ]
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S173",
+    "kind": "analyzer-phase1",
+    "chapter": "v11-ch10",
+    "status": "running",
+    "verdict": "DONE",
+    "detail": "артефакт результата свежий",
+    "fresh": [
+      "AINovelEdit/output/_audit/sma/v11-ch10/analysis/20261119-105638-def0.phase1.json"
+    ]
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S174",
+    "kind": "analyzer-phase2",
+    "chapter": "v11-ch10",
+    "status": "running",
+    "verdict": "DONE",
+    "detail": "артефакт результата свежий",
+    "fresh": [
+      "AINovelEdit/output/_audit/sma/v11-ch10/analysis/20261119-105706-687c.json",
+      "AINovelEdit/output/_audit/sma/v11-ch10/analysis/20261119-105706-687c.md"
+    ]
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S175",
+    "kind": "sma-c",
+    "chapter": "v11-epilogue",
+    "status": "running",
+    "verdict": "DONE",
+    "detail": "артефакт результата свежий",
+    "fresh": [
+      "AINovelEdit/output/_audit/sma/v11-epilogue/c/20261119-105638-2db2.json"
+    ]
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S176",
+    "kind": "analyzer-phase1",
+    "chapter": "v11-epilogue",
+    "status": "running",
+    "verdict": "DONE",
+    "detail": "артефакт результата свежий",
+    "fresh": [
+      "AINovelEdit/output/_audit/sma/v11-epilogue/analysis/20261119-105638-f764.phase1.json"
+    ]
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S177",
+    "kind": "analyzer-phase2",
+    "chapter": "v11-epilogue",
+    "status": "running",
+    "verdict": "DONE",
+    "detail": "артефакт результата свежий",
+    "fresh": [
+      "AINovelEdit/output/_audit/sma/v11-epilogue/analysis/20261119-105706-4e3d.json",
+      "AINovelEdit/output/_audit/sma/v11-epilogue/analysis/20261119-105706-4e3d.md"
+    ]
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S178",
+    "kind": "sma-c",
+    "chapter": "v13-afterword",
+    "status": "planned",
+    "verdict": "NO_ATTEMPTS",
+    "detail": "промпт не сгенерирован"
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S179",
+    "kind": "analyzer-phase1",
+    "chapter": "v13-afterword",
+    "status": "planned",
+    "verdict": "NO_ATTEMPTS",
+    "detail": "промпт не сгенерирован"
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S180",
+    "kind": "analyzer-phase2",
+    "chapter": "v13-afterword",
+    "status": "planned",
+    "verdict": "NO_ATTEMPTS",
+    "detail": "промпт не сгенерирован"
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S181",
+    "kind": "sma-c",
+    "chapter": "v13-ch01",
+    "status": "planned",
+    "verdict": "NO_ATTEMPTS",
+    "detail": "промпт не сгенерирован"
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S182",
+    "kind": "analyzer-phase1",
+    "chapter": "v13-ch01",
+    "status": "planned",
+    "verdict": "NO_ATTEMPTS",
+    "detail": "промпт не сгенерирован"
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S183",
+    "kind": "analyzer-phase2",
+    "chapter": "v13-ch01",
+    "status": "planned",
+    "verdict": "NO_ATTEMPTS",
+    "detail": "промпт не сгенерирован"
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S184",
+    "kind": "sma-c",
+    "chapter": "v13-ch02",
+    "status": "planned",
+    "verdict": "NO_ATTEMPTS",
+    "detail": "промпт не сгенерирован"
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S185",
+    "kind": "analyzer-phase1",
+    "chapter": "v13-ch02",
+    "status": "planned",
+    "verdict": "NO_ATTEMPTS",
+    "detail": "промпт не сгенерирован"
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S186",
+    "kind": "analyzer-phase2",
+    "chapter": "v13-ch02",
+    "status": "planned",
+    "verdict": "NO_ATTEMPTS",
+    "detail": "промпт не сгенерирован"
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S187",
+    "kind": "sma-c",
+    "chapter": "v13-ch03",
+    "status": "planned",
+    "verdict": "NO_ATTEMPTS",
+    "detail": "промпт не сгенерирован"
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S188",
+    "kind": "analyzer-phase1",
+    "chapter": "v13-ch03",
+    "status": "planned",
+    "verdict": "NO_ATTEMPTS",
+    "detail": "промпт не сгенерирован"
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S189",
+    "kind": "analyzer-phase2",
+    "chapter": "v13-ch03",
+    "status": "planned",
+    "verdict": "NO_ATTEMPTS",
+    "detail": "промпт не сгенерирован"
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S190",
+    "kind": "sma-c",
+    "chapter": "v13-ch04",
+    "status": "planned",
+    "verdict": "NO_ATTEMPTS",
+    "detail": "промпт не сгенерирован"
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S191",
+    "kind": "analyzer-phase1",
+    "chapter": "v13-ch04",
+    "status": "planned",
+    "verdict": "NO_ATTEMPTS",
+    "detail": "промпт не сгенерирован"
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S192",
+    "kind": "analyzer-phase2",
+    "chapter": "v13-ch04",
+    "status": "planned",
+    "verdict": "NO_ATTEMPTS",
+    "detail": "промпт не сгенерирован"
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S193",
+    "kind": "sma-c",
+    "chapter": "v13-ch05",
+    "status": "planned",
+    "verdict": "NO_ATTEMPTS",
+    "detail": "промпт не сгенерирован"
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S194",
+    "kind": "analyzer-phase1",
+    "chapter": "v13-ch05",
+    "status": "planned",
+    "verdict": "NO_ATTEMPTS",
+    "detail": "промпт не сгенерирован"
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S195",
+    "kind": "analyzer-phase2",
+    "chapter": "v13-ch05",
+    "status": "planned",
+    "verdict": "NO_ATTEMPTS",
+    "detail": "промпт не сгенерирован"
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S196",
+    "kind": "sma-c",
+    "chapter": "v13-ch06",
+    "status": "planned",
+    "verdict": "NO_ATTEMPTS",
+    "detail": "промпт не сгенерирован"
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S197",
+    "kind": "analyzer-phase1",
+    "chapter": "v13-ch06",
+    "status": "planned",
+    "verdict": "NO_ATTEMPTS",
+    "detail": "промпт не сгенерирован"
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S198",
+    "kind": "analyzer-phase2",
+    "chapter": "v13-ch06",
+    "status": "planned",
+    "verdict": "NO_ATTEMPTS",
+    "detail": "промпт не сгенерирован"
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S199",
+    "kind": "sma-c",
+    "chapter": "v13-ch07",
+    "status": "planned",
+    "verdict": "NO_ATTEMPTS",
+    "detail": "промпт не сгенерирован"
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S200",
+    "kind": "analyzer-phase1",
+    "chapter": "v13-ch07",
+    "status": "planned",
+    "verdict": "NO_ATTEMPTS",
+    "detail": "промпт не сгенерирован"
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S201",
+    "kind": "analyzer-phase2",
+    "chapter": "v13-ch07",
+    "status": "planned",
+    "verdict": "NO_ATTEMPTS",
+    "detail": "промпт не сгенерирован"
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S202",
+    "kind": "sma-c",
+    "chapter": "v13-ch08",
+    "status": "planned",
+    "verdict": "NO_ATTEMPTS",
+    "detail": "промпт не сгенерирован"
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S203",
+    "kind": "analyzer-phase1",
+    "chapter": "v13-ch08",
+    "status": "planned",
+    "verdict": "NO_ATTEMPTS",
+    "detail": "промпт не сгенерирован"
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S204",
+    "kind": "analyzer-phase2",
+    "chapter": "v13-ch08",
+    "status": "planned",
+    "verdict": "NO_ATTEMPTS",
+    "detail": "промпт не сгенерирован"
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S205",
+    "kind": "sma-c",
+    "chapter": "v13-epilogue",
+    "status": "planned",
+    "verdict": "NO_ATTEMPTS",
+    "detail": "промпт не сгенерирован"
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S206",
+    "kind": "analyzer-phase1",
+    "chapter": "v13-epilogue",
+    "status": "planned",
+    "verdict": "NO_ATTEMPTS",
+    "detail": "промпт не сгенерирован"
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S207",
+    "kind": "analyzer-phase2",
+    "chapter": "v13-epilogue",
+    "status": "planned",
+    "verdict": "NO_ATTEMPTS",
+    "detail": "промпт не сгенерирован"
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S208",
+    "kind": "sma-c",
+    "chapter": "v12-afterword",
+    "status": "planned",
+    "verdict": "NO_ATTEMPTS",
+    "detail": "промпт не сгенерирован"
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S209",
+    "kind": "analyzer-phase1",
+    "chapter": "v12-afterword",
+    "status": "planned",
+    "verdict": "NO_ATTEMPTS",
+    "detail": "промпт не сгенерирован"
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S210",
+    "kind": "analyzer-phase2",
+    "chapter": "v12-afterword",
+    "status": "planned",
+    "verdict": "NO_ATTEMPTS",
+    "detail": "промпт не сгенерирован"
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S211",
+    "kind": "sma-c",
+    "chapter": "v12-prologue",
+    "status": "planned",
+    "verdict": "NO_ATTEMPTS",
+    "detail": "промпт не сгенерирован"
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S212",
+    "kind": "analyzer-phase1",
+    "chapter": "v12-prologue",
+    "status": "planned",
+    "verdict": "NO_ATTEMPTS",
+    "detail": "промпт не сгенерирован"
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S213",
+    "kind": "analyzer-phase2",
+    "chapter": "v12-prologue",
+    "status": "planned",
+    "verdict": "NO_ATTEMPTS",
+    "detail": "промпт не сгенерирован"
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S214",
+    "kind": "sma-c",
+    "chapter": "v12-ch01",
+    "status": "planned",
+    "verdict": "NO_ATTEMPTS",
+    "detail": "промпт не сгенерирован"
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S215",
+    "kind": "analyzer-phase1",
+    "chapter": "v12-ch01",
+    "status": "planned",
+    "verdict": "NO_ATTEMPTS",
+    "detail": "промпт не сгенерирован"
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S216",
+    "kind": "analyzer-phase2",
+    "chapter": "v12-ch01",
+    "status": "planned",
+    "verdict": "NO_ATTEMPTS",
+    "detail": "промпт не сгенерирован"
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S217",
+    "kind": "sma-c",
+    "chapter": "v12-ch02",
+    "status": "planned",
+    "verdict": "NO_ATTEMPTS",
+    "detail": "промпт не сгенерирован"
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S218",
+    "kind": "analyzer-phase1",
+    "chapter": "v12-ch02",
+    "status": "planned",
+    "verdict": "NO_ATTEMPTS",
+    "detail": "промпт не сгенерирован"
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S219",
+    "kind": "analyzer-phase2",
+    "chapter": "v12-ch02",
+    "status": "planned",
+    "verdict": "NO_ATTEMPTS",
+    "detail": "промпт не сгенерирован"
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S220",
+    "kind": "sma-c",
+    "chapter": "v12-ch04",
+    "status": "planned",
+    "verdict": "NO_ATTEMPTS",
+    "detail": "промпт не сгенерирован"
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S221",
+    "kind": "analyzer-phase1",
+    "chapter": "v12-ch04",
+    "status": "planned",
+    "verdict": "NO_ATTEMPTS",
+    "detail": "промпт не сгенерирован"
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S222",
+    "kind": "analyzer-phase2",
+    "chapter": "v12-ch04",
+    "status": "planned",
+    "verdict": "NO_ATTEMPTS",
+    "detail": "промпт не сгенерирован"
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S223",
+    "kind": "sma-c",
+    "chapter": "v12-ch05",
+    "status": "planned",
+    "verdict": "NO_ATTEMPTS",
+    "detail": "промпт не сгенерирован"
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S224",
+    "kind": "analyzer-phase1",
+    "chapter": "v12-ch05",
+    "status": "planned",
+    "verdict": "NO_ATTEMPTS",
+    "detail": "промпт не сгенерирован"
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S225",
+    "kind": "analyzer-phase2",
+    "chapter": "v12-ch05",
+    "status": "planned",
+    "verdict": "NO_ATTEMPTS",
+    "detail": "промпт не сгенерирован"
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S226",
+    "kind": "sma-c",
+    "chapter": "v12-ch07",
+    "status": "planned",
+    "verdict": "NO_ATTEMPTS",
+    "detail": "промпт не сгенерирован"
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S227",
+    "kind": "analyzer-phase1",
+    "chapter": "v12-ch07",
+    "status": "planned",
+    "verdict": "NO_ATTEMPTS",
+    "detail": "промпт не сгенерирован"
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S228",
+    "kind": "analyzer-phase2",
+    "chapter": "v12-ch07",
+    "status": "planned",
+    "verdict": "NO_ATTEMPTS",
+    "detail": "промпт не сгенерирован"
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S229",
+    "kind": "sma-c",
+    "chapter": "v12-ch08",
+    "status": "planned",
+    "verdict": "NO_ATTEMPTS",
+    "detail": "промпт не сгенерирован"
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S230",
+    "kind": "analyzer-phase1",
+    "chapter": "v12-ch08",
+    "status": "planned",
+    "verdict": "NO_ATTEMPTS",
+    "detail": "промпт не сгенерирован"
+  },
+  {
+    "task": "T-0062",
+    "sub": "T-0062-S231",
+    "kind": "analyzer-phase2",
+    "chapter": "v12-ch08",
+    "status": "planned",
+    "verdict": "NO_ATTEMPTS",
+    "detail": "промпт не сгенерирован"
+  }
+]

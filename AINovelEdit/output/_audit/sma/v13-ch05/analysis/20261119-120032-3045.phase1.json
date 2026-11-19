@@ -1,0 +1,26 @@
+{
+  "analysis_id": "20261119-120032-3045.phase1",
+  "chapter": "v13-ch05",
+  "phase": 1,
+  "scope": "blind",
+  "results": [
+    {
+      "block": 13,
+      "finding": "PRAGMATIC_SHIFT",
+      "note": "きっと…でしょうから → «Думаю»: уверенное ожидание-утешение сведено к осторожному мнению; сила реплики упала.",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 6,
+      "finding": "PRAGMATIC_SHIFT",
+      "note": "と思います → опущено: хеджированный ответ «я думаю, вы не ошибаетесь» → плоская литота «Вы не неправы».",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 1,
+      "finding": "PRAGMATIC_SHIFT",
+      "note": "くださいまし → «подкрепитесь»: почтительное приглашение заменено нейтральным побуждением.",
+      "confidence": "MEDIUM"
+    }
+  ]
+}

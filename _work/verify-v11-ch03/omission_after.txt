@@ -1,0 +1,4 @@
+Omission pre-check: v11-ch03.md | отредактированных блоков 11 | candidates 1
+  блок 1 [S1-tail-truncation] DIALOGUE_FRAGMENT/PARTIAL conf=MEDIUM
+  report → /workspace/.tmp/verify-v7-v13/AINovelEdit/output/_audit/sma/v11-ch03/precheck/omission-precheck.md
+  evidence → /workspace/.tmp/verify-v7-v13/AINovelEdit/output/_audit/sma/v11-ch03/precheck/omission-precheck.json

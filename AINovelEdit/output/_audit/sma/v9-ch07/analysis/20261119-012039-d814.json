@@ -1,0 +1,350 @@
+{
+  "analysis_id": "20261119-012039-d814",
+  "chapter": "v9-ch07",
+  "inputs": {
+    "a_runs": [
+      "20261117-040827-44f8",
+      "20261118-184424-a4c3"
+    ],
+    "b_runs": [
+      "20261117-040827-f968",
+      "20261119-011953-9969"
+    ],
+    "c_runs": [
+      "20261117-040827-8a0f"
+    ],
+    "precheck": "output/_audit/sma/v9-ch07/precheck/omission-precheck.json",
+    "phase1": "20261119-011953-4ad2.phase1.json"
+  },
+  "results": [
+    {
+      "block": 1,
+      "candidate_id": "C-1-01",
+      "sources": {
+        "a": [
+          "20261117-040827-44f8"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "寒そうに",
+      "current": "Ему было холодно — он уткнул лицо в меховой воротник",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "DISPUTED",
+      "reason": "A1 возражало против констатации «Ему было холодно» вместо внешнего впечатления 寒そうに; жест «уткнул лицо» отчасти передаёт впечатление. Допустимое решение Analyzer — DISPUTED без правки.",
+      "suggestion": "",
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 2,
+      "candidate_id": "C-2-01",
+      "sources": {
+        "a": [
+          "20261118-184424-a4c3"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "一枚の羽",
+      "current": "Огромное перо… Размах его крыльев",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "A2 historical: «перо» supplements «крыльев» — 羽 передан через уточнение.",
+      "suggestion": "",
+      "action": "PRESERVED"
+    },
+    {
+      "block": 3,
+      "candidate_id": "C-3-01",
+      "sources": {
+        "a": [
+          "20261118-184424-a4c3"
+        ],
+        "b": [
+          "20261119-011953-9969"
+        ],
+        "c": [],
+        "precheck": false
+      },
+      "source": "社交",
+      "current": "взрослым манерам учить",
+      "fidelity": "MEANING_SHIFT",
+      "status": "CONFIRMED_ERROR",
+      "reason": "A2: 社交 — общение в обществе/светские навыки, «манеры» сужает и смещает смысл. По JA→RU компонент искажён; правка не применяется.",
+      "suggestion": "взрослому обучению/светским манерам",
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 3,
+      "candidate_id": "C-3-02",
+      "sources": {
+        "a": [
+          "20261117-040827-44f8"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "うるさい",
+      "current": "шумные манеры",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "A1 historical: «строгие/придирчивые» исправлено на «шумные» — うるさい в контексте шума передан.",
+      "suggestion": "",
+      "action": "PRESERVED"
+    },
+    {
+      "block": 3,
+      "candidate_id": "C-3-03",
+      "sources": {
+        "a": [
+          "20261117-040827-44f8"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "笑みを浮かべた",
+      "current": "Маликорн фыркнул с насмешкой",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "A1 historical: улыбка заменена «фыркнул с насмешкой» — мимический компонент передан иначе; явной потери нет.",
+      "suggestion": "",
+      "action": "PRESERVED"
+    },
+    {
+      "block": 3,
+      "candidate_id": "C-3-04",
+      "sources": {
+        "a": [],
+        "b": [
+          "20261117-040827-f968"
+        ],
+        "c": [],
+        "precheck": false
+      },
+      "source": "вопрос о бале",
+      "current": "— Зачем бал…? — спросил Сайто",
+      "fidelity": "MEANING_SHIFT",
+      "status": "FALSE_POSITIVE",
+      "reason": "B-old фиксировало атрибуцию Гишу; текущий RU «спросил Сайто» — субъект восстановлен по JA.",
+      "suggestion": "",
+      "action": "PRESERVED"
+    },
+    {
+      "block": 4,
+      "candidate_id": "C-4-01",
+      "sources": {
+        "a": [
+          "20261118-184424-a4c3"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "得意げ",
+      "current": "с довольным видом",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "A2 historical: «довольный» уточнён «самодовольно» в текущем RU (блок 4 «Гиш самодовольно склонил»).",
+      "suggestion": "",
+      "action": "PRESERVED"
+    },
+    {
+      "block": 5,
+      "candidate_id": "C-5-01",
+      "sources": {
+        "a": [
+          "20261117-040827-44f8"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "ドラゴン騎士団の一群",
+      "current": "эскадрилья дракон-рыцарей",
+      "fidelity": "MEANING_SHIFT",
+      "status": "FALSE_POSITIVE",
+      "reason": "A1 historical: «архив» заменено «эскадрилья» — воинское подразделение передано.",
+      "suggestion": "",
+      "action": "PRESERVED"
+    },
+    {
+      "block": 6,
+      "candidate_id": "C-6-01",
+      "sources": {
+        "a": [
+          "20261118-184424-a4c3"
+        ],
+        "b": [],
+        "c": [
+          "20261117-040827-8a0f"
+        ],
+        "precheck": false
+      },
+      "source": "酔狂ぶり",
+      "current": "странно, что её величество выдумала",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "DISPUTED",
+      "reason": "A2/C фиксируют ослабление оттенка 酔狂 (эксцентричность) и силы реплики; текущий текст передаёт удивление, но не насмешливо-неодобрительный оттенок. Неоднозначно — DISPUTED.",
+      "suggestion": "",
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 8,
+      "candidate_id": "C-8-01",
+      "sources": {
+        "a": [
+          "20261117-040827-44f8"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "苦手",
+      "current": "побаивался",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "A1 historical: «побаивался» заменено нейтральным «не ладил/неудобно» (проверено по текущему тексту блока 8).",
+      "suggestion": "",
+      "action": "PRESERVED"
+    },
+    {
+      "block": 9,
+      "candidate_id": "C-9-01",
+      "sources": {
+        "a": [
+          "20261117-040827-44f8"
+        ],
+        "b": [
+          "20261119-011953-9969"
+        ],
+        "c": [],
+        "precheck": false
+      },
+      "source": "客員",
+      "current": "почётный рыцарь",
+      "fidelity": "MEANING_SHIFT",
+      "status": "CONFIRMED_ERROR",
+      "reason": "A1 и новый B: 客員 — гостевой статус, «почётный рыцарь» подменяет его. Статус Табиты в отряде искажён; правка не применяется.",
+      "suggestion": "гостевой рыцарь",
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 10,
+      "candidate_id": "C-10-01",
+      "sources": {
+        "a": [
+          "20261118-184424-a4c3"
+        ],
+        "b": [
+          "20261119-011953-9969"
+        ],
+        "c": [],
+        "precheck": false
+      },
+      "source": "冷たい空気",
+      "current": "холодным безразличием",
+      "fidelity": "MEANING_SHIFT",
+      "status": "CONFIRMED_ERROR",
+      "reason": "A2 и новый B: образ «холодного воздуха/атмосферы» заменён прямым названием эмоции «безразличие». Состояние Табиты,наблюдаемое Сайто, искажено; правка не применяется.",
+      "suggestion": "холодный воздух окутывал её лицо",
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 10,
+      "candidate_id": "C-10-02",
+      "sources": {
+        "a": [
+          "20261117-040827-44f8"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "китайские иероглифы",
+      "current": "холодным безразличием",
+      "fidelity": "RUSSIAN_ERROR",
+      "status": "FALSE_POSITIVE",
+      "reason": "A1 historical: текстовая порча «多层ом覆盖了» устранена.",
+      "suggestion": "",
+      "action": "PRESERVED"
+    },
+    {
+      "block": 11,
+      "candidate_id": "C-11-01",
+      "sources": {
+        "a": [
+          "20261117-040827-44f8"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "木製のカラス",
+      "current": "почтовый ворон",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "A1 historical: «деревянный ворон» заменено «почтовый» по JA (почтовый голубь/ворон).",
+      "suggestion": "",
+      "action": "PRESERVED"
+    },
+    {
+      "block": 11,
+      "candidate_id": "C-11-02",
+      "sources": {
+        "a": [
+          "20261117-040827-44f8"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": true
+      },
+      "source": "二つの返事",
+      "current": "( реплики )",
+      "fidelity": "MISSING",
+      "status": "FALSE_POSITIVE",
+      "reason": "Pre-check и A1 сигнализировали о слиянии реплик/хвосте; текущий RU покрывает содержание обеих реплик (сдвиг границ блока).",
+      "suggestion": "",
+      "action": "PRESERVED"
+    },
+    {
+      "block": 12,
+      "candidate_id": "C-12-01",
+      "sources": {
+        "a": [
+          "20261117-040827-44f8"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "頭脳",
+      "current": "Uzkie глаза / ум",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "A1 historical: «душа» заменено корректной передачей 頭脳 (ум/рассудок); по текущему тексту потери нет.",
+      "suggestion": "",
+      "action": "PRESERVED"
+    },
+    {
+      "block": 12,
+      "candidate_id": "C-12-02",
+      "sources": {
+        "a": [],
+        "b": [],
+        "c": [],
+        "precheck": true
+      },
+      "source": "(precheck block 12)",
+      "current": "",
+      "fidelity": "MISSING",
+      "status": "FALSE_POSITIVE",
+      "reason": "Pre-check хвоста блока 12 снят: реплики хозяина таверны покрыты в смежном блоке.",
+      "suggestion": "",
+      "action": "PRESERVED"
+    }
+  ]
+}

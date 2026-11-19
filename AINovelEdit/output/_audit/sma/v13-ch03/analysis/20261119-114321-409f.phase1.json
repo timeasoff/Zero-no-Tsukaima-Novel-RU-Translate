@@ -1,0 +1,26 @@
+{
+  "analysis_id": "20261119-114321-409f.phase1",
+  "chapter": "v13-ch03",
+  "phase": 1,
+  "scope": "blind",
+  "results": [
+    {
+      "block": 1,
+      "finding": "PRAGMATIC_SHIFT",
+      "note": "話してやってくれ: дружеское поручение → «Ну-ка… поведай» (директива); эпитет 壮大なる → «важная».",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 7,
+      "finding": "PRAGMATIC_SHIFT",
+      "note": "いいんだよ: утешение с よ → плоское «Всё нормально».",
+      "confidence": "LOW"
+    },
+    {
+      "block": 3,
+      "finding": "PRAGMATIC_SHIFT",
+      "note": "もしかして…なんだわ: гипотеза + женское восклицание → «Неужто…!»; уверенность возросла.",
+      "confidence": "LOW"
+    }
+  ]
+}

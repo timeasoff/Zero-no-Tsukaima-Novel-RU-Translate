@@ -1,0 +1,172 @@
+{
+  "analysis_id": "20261119-112144-c715",
+  "chapter": "v12-ch05",
+  "inputs": {
+    "a_runs": [
+      "20261117-175541-da72",
+      "20261118-192447-8998"
+    ],
+    "b_runs": [
+      "20261117-175541-1dd7",
+      "20261119-054230-b858"
+    ],
+    "c_runs": [
+      "20261117-175541-1221",
+      "20261119-112144-cf50"
+    ],
+    "precheck": "output/_audit/sma/v12-ch05/precheck/omission-precheck.json",
+    "phase1": "20261119-112144-f579.phase1.json"
+  },
+  "results": [
+    {
+      "block": 1,
+      "candidate_id": "C-R4-20261119-112144-cf50-01-01",
+      "sources": {
+        "a": [],
+        "b": [],
+        "c": [
+          "20261119-112144-cf50"
+        ],
+        "precheck": false
+      },
+      "source": "「っさいわね」",
+      "current": "— Да отстань.",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "DISPUTED",
+      "reason": "Blind-Фаза 1 отметила тот же сдвиг: яп. ворчливый упрёк с わね стал резким отказом. Смысл «ты шумишь» передан, компонент лёгкости утрачен. Возможна допустимая адаптация под голос Луизы — DISPUTED, REPORT_ONLY. FIXED не применяется: в раунде smaC-a77bc132 текст не правится; решение выносится по паре JA → RU, majority vote не используется.",
+      "suggestion": "— Да шумишь ты...",
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 5,
+      "candidate_id": "C-R4-20261119-112144-cf50-05-01",
+      "sources": {
+        "a": [
+          "20261118-192447-8998"
+        ],
+        "b": [],
+        "c": [
+          "20261119-112144-cf50"
+        ],
+        "precheck": false
+      },
+      "source": "「勝手な理屈こねるなヨ。わがままさんだなルイズは。明日も早いんだ。ほら寝るぞ」",
+      "current": "— Не выдумывай свои правила. Капризная ты, Луиза. Завтра тоже рано вставать. Спи.",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "CONFIRMED_ERROR",
+      "reason": "Сверка JA → RU: ヨ и ぞ при ほら создают фамильярно-подталкивающий окрик; RU даёт нейтральные команды. A в том же блоке отметил смещение 涼しい声 (другой аспект). Компонент «дружеская грубоватость» утрачен. FIXED не применяется: в раунде smaC-a77bc132 текст не правится; решение выносится по паре JA → RU, majority vote не используется.",
+      "suggestion": "— Не выдумывай свои правила, ладно? Капризная ты, Луиза. Завтра рано — ну, спать!",
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 6,
+      "candidate_id": "C-R4-20261119-112144-cf50-06-01",
+      "sources": {
+        "a": [],
+        "b": [],
+        "c": [
+          "20261119-112144-cf50"
+        ],
+        "precheck": false
+      },
+      "source": "「いいもん。そんな使い魔しらない！」",
+      "current": "— Ладно. Не нужна мне такой фамильяр!..",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "DISPUTED",
+      "reason": "Новый C и blind-Фаза 1 согласны: いいもん — детская обида; «Ладно» — нейтральное согласие. Следующее за репликой выглядывание из-под одеяла сохраняет подтекст, но сама реплика ослаблена — DISPUTED, REPORT_ONLY. FIXED не применяется: в раунде smaC-a77bc132 текст не правится; решение выносится по паре JA → RU, majority vote не используется.",
+      "suggestion": "— Ну и ладно! Не нужен мне такой фамильяр!..",
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 2,
+      "candidate_id": "A-2-HIST-20261117-175541-da72",
+      "sources": {
+        "a": [
+          "20261117-175541-da72"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "「胸が大きいし？」",
+      "current": "— И грудь огромная? — Кирхе поддёвывала её голосом.",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "A фиксировал провокационную интонацию し？. В актуальном RU авторская ремарка «поддёвывала её голосом» сохраняет provoked-интонацию. FALSE_POSITIVE, PRESERVED.",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 14,
+      "candidate_id": "B-14-HIST-20261117-175541-1dd7",
+      "sources": {
+        "a": [],
+        "b": [
+          "20261117-175541-1dd7"
+        ],
+        "c": [],
+        "precheck": false
+      },
+      "source": "その秘密を知られちゃいけない、と考え、接触を控えていた部分もあった。",
+      "current": "Я боялся, что её раскроют — и потому избегал контактов.",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "CONFIRMED_ERROR",
+      "reason": "B зафиксировал ошибку; по актуальному RU: 考え (考虑) → «боялся», а 部分もあった (отчасти) → абсолютное «избегал». Ядро причины передано, компонент «частично / из соображений» утрачен. FIXED не применяется: в раунде smaC-a77bc132 текст не правится; решение выносится по паре JA → RU, majority vote не используется.",
+      "suggestion": "Я опасался, что её тайна раскроется, и потому отчасти избегал контактов.",
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 8,
+      "candidate_id": "B-8-HIST-20261119-054230-b858",
+      "sources": {
+        "a": [],
+        "b": [
+          "20261119-054230-b858"
+        ],
+        "c": [],
+        "precheck": false
+      },
+      "source": "彼女の取り巻きの中に、自分の使い魔が入らない、という保証はどこにもないのだ。",
+      "current": "Нет никакой гарантии, что её фамильяр не затесался среди её поклонников.",
+      "fidelity": "MEANING_SHIFT",
+      "status": "FALSE_POSITIVE",
+      "reason": "B фиксировал искажение; в актуальном RU «не затесался среди её поклонников» точно передаёт «入らない». FALSE_POSITIVE, PRESERVED.",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 13,
+      "candidate_id": "C-13-PRE",
+      "sources": {
+        "a": [],
+        "b": [],
+        "c": [],
+        "precheck": true
+      },
+      "source": "シエスタにそんなことを言われ、才人はぎょっとした。 「ど、どういう意味？」",
+      "current": "— Ч-что ты имеешь в виду?.. — Сиеста сказала это — и Сайто дёрнулся.",
+      "fidelity": "MISSING",
+      "status": "FALSE_POSITIVE",
+      "reason": "Pre-check (CANDIDATE/HIGH, PARTIAL) принял сдвиг границы блока за обрыв: реплика «ど、どういう意味?» на месте в RU-блоке 13. FALSE_POSITIVE, PRESERVED; pre-check — evidence, а не голос.",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 11,
+      "candidate_id": "C-11-PRE",
+      "sources": {
+        "a": [],
+        "b": [],
+        "c": [],
+        "precheck": true
+      },
+      "source": "「わたし、イヤですからね。そんなの」",
+      "current": "— Я не хочу такого. Не хочу...",
+      "fidelity": "MISSING",
+      "status": "FALSE_POSITIVE",
+      "reason": "Pre-check (CANDIDATE/MEDIUM, PARTIAL) подозревал обрыв. Все звенья реплики на месте: «Я не хочу такого. Не хочу...», далее «Сайто онемел. Да.». FALSE_POSITIVE, PRESERVED.",
+      "suggestion": null,
+      "action": "PRESERVED"
+    }
+  ]
+}

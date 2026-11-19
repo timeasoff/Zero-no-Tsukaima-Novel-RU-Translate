@@ -1,0 +1,97 @@
+{
+  "analysis_id": "20261119-160850-ee97",
+  "chapter": "v10-epilogue",
+  "inputs": {
+    "a_runs": ["20261117-093248-c922", "20261118-164238-62ef", "20261119-160850-b751"],
+    "b_runs": ["20261117-093248-bc4b", "20261119-024140-4d3a", "20261119-160850-80f2"],
+    "c_runs": ["20261117-093248-5974", "20261119-100119-b216", "20261119-160850-e5eb"],
+    "precheck": "output/_audit/sma/v10-epilogue/precheck/omission-precheck.json",
+    "phase1": "20261119-160850-126a.phase1.json"
+  },
+  "results": [
+    {
+      "block": 1,
+      "candidate_id": "EP-01-yousei",
+      "sources": {"a": ["20261119-160850-b751"], "b": [], "c": [], "precheck": false},
+      "source": "シルフィードは未だ幼生なのであった。",
+      "current": "Сильфида всё ещё была личинкой.",
+      "fidelity": "MEANING_SHIFT",
+      "status": "DISPUTED",
+      "reason": "«幼生» — молодой дракон; «личинка» — стадия развития насекомого. Подтверждено слепой Фазой 1. FIXED=0: DISPUTED + REPORT_ONLY.",
+      "suggestion": "«Сильфида была ещё молодым драконом».",
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 8,
+      "candidate_id": "EP-02-kajiba-no-bakaryoku",
+      "sources": {"a": [], "b": ["20261119-160850-80f2"], "c": [], "precheck": false},
+      "source": "火事場のバカ力で起き上がらせた。",
+      "current": "с «силой безумной пожарной» мигом подняла его.",
+      "fidelity": "MEANING_SHIFT",
+      "status": "DISPUTED",
+      "reason": "Идиома «нечеловеческая сила в критической ситуации» переведена дословной калькой; смысл утерян. FIXED=0: DISPUTED + REPORT_ONLY.",
+      "suggestion": "«с нечеловеческой силой, какая бывает в минуту опасности».",
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 6,
+      "candidate_id": "EP-03-kedamono",
+      "sources": {"a": ["20261119-160850-b751"], "b": [], "c": [], "precheck": false},
+      "source": "「け、けだものじゃないもん」",
+      "current": "— Я не скот… — у Сайто уже и правда получилось «скотом».",
+      "fidelity": "MEANING_SHIFT",
+      "status": "DISPUTED",
+      "reason": "«けだもの» — дикий зверь; «скот» — домашний скот, иной регистр оскорбления (рядом «зверь» в реплике Луизы). FIXED=0: DISPUTED + REPORT_ONLY.",
+      "suggestion": "«Я не зверь…»",
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 3,
+      "candidate_id": "EP-04-megumarete",
+      "sources": {"a": ["20261119-160850-b751"], "b": [], "c": [], "precheck": false},
+      "source": "俺なんか考えてみりゃ恵まれてるわけだよな。",
+      "current": "Я-то, если подумать, был обласкан.",
+      "fidelity": "MEANING_SHIFT",
+      "status": "DISPUTED",
+      "reason": "«恵まれてる» (повезло, в выигрышном положении) → «обласкан» (телесная метафора). FIXED=0: DISPUTED + REPORT_ONLY.",
+      "suggestion": "«Я-то, если подумать, очень даже счастливчик».",
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 7,
+      "candidate_id": "EP-05-kenashite",
+      "sources": {"a": [], "b": [], "c": ["20261119-160850-e5eb"], "precheck": false},
+      "source": "「けなしてどーすんのよ」",
+      "current": "— Зачем ты её ругаешь?..",
+      "fidelity": "MEANING_SHIFT",
+      "status": "DISPUTED",
+      "reason": "Личный упрёк в адрес говорящей → третье лицо и глагол «ругаешь» вместо «унижаешь». FIXED=0: DISPUTED + REPORT_ONLY.",
+      "suggestion": "«Зачем ты меня принижаешь?»",
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 9,
+      "candidate_id": "EP-06-ojousama-no-kyakujin",
+      "sources": {"a": [], "b": ["20261119-160850-80f2"], "c": [], "precheck": false},
+      "source": "「お嬢さまの客人がおいでになりました」",
+      "current": "«К вам пришли гости».",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "Смысл прибытия гостей сохранён; «к вам» допустимо как обращение к госпоже в комнате. Потеря ядра не подтверждена: FALSE_POSITIVE + PRESERVED.",
+      "suggestion": "Правка не требуется.",
+      "action": "PRESERVED"
+    },
+    {
+      "block": 6,
+      "candidate_id": "EP-07-precheck-block6",
+      "sources": {"a": [], "b": [], "c": [], "precheck": true},
+      "source": "「けだものじゃないの」…同時に軽蔑を多分に含んだ流し目を送る。",
+      "current": "— Не скот, говоришь? …Одновременно она бросила на него полный презрения взгляд искоса.",
+      "fidelity": "MISSING",
+      "status": "FALSE_POSITIVE",
+      "reason": "Сигнал pre-check S1-tail-truncation проверен по полным блокам JA/RU: все звенья хвоста (обиды, калейдоскоп, «маленькая дьяволица», руки в бёдра, нога у стены, взгляд искоса) присутствуют в RU блока 6. Разница в числах абзацев — допустимое слияние. Кандидат на пропуск не подтверждён: FALSE_POSITIVE + PRESERVED.",
+      "suggestion": "Правка не требуется.",
+      "action": "PRESERVED"
+    }
+  ]
+}

@@ -1,0 +1,344 @@
+{
+  "analysis_id": "20261119-021139-514d",
+  "chapter": "v10-ch04",
+  "inputs": {
+    "a_runs": [
+      "20261117-062513-a967",
+      "20261118-202530-4d9e"
+    ],
+    "b_runs": [
+      "20261117-062513-3cb6",
+      "20261119-014511-1fae"
+    ],
+    "c_runs": [
+      "20261117-062513-133b"
+    ],
+    "precheck": "output/_audit/sma/v10-ch04/precheck/omission-precheck.json",
+    "phase1": "20261119-014511-f4c5.phase1.json"
+  },
+  "results": [
+    {
+      "block": 1,
+      "candidate_id": "C-01-01",
+      "sources": {
+        "a": [
+          "20261118-202530-4d9e"
+        ],
+        "b": [
+          "20261119-014511-1fae"
+        ],
+        "c": [],
+        "precheck": false
+      },
+      "source": "いざとなると二の足を踏んだ自分が許せなかった。",
+      "current": "а когда дело дошло до этого, сам же запросил отсрочки.",
+      "fidelity": "MEANING_SHIFT",
+      "status": "DISPUTED",
+      "reason": "Слепая Фаза 1 и новый B-запуск независимо отметили замену действия: JA 二の足を踏む — внутренняя нерешительность, ED_RU «запросил отсрочки» — активная просьба. A2 дал тот же сигнал. По JA → RU действие в детали искажено, но общая логика стыда сохранена; однозначной ошибкой не названо. Правка не вносится.",
+      "suggestion": "",
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 1,
+      "candidate_id": "C-01-02",
+      "sources": {
+        "a": [
+          "20261118-202530-4d9e"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "アンリエッタに止められたとき、ほっとした自分が許せなくなった。",
+      "current": "Он не мог простить себе, что обрадовался, когда Генриетта его остановила.",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "DISPUTED",
+      "reason": "A2: JA ほっとした — облегчение, ED_RU «обрадовался» — радость; оттенок облегчения заменён. В блоке 1 то же слово переведено «обрадовался» дважды. Спорный оттенок модальности; не исправляется.",
+      "suggestion": "",
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 1,
+      "candidate_id": "C-01-03",
+      "sources": {
+        "a": [
+          "20261117-062513-a967"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "せつない声でつぶやいた。",
+      "current": "Сайто пробормотал это с тоской.",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "せつない → «с тоской»; исторический «горечь» заменён.",
+      "suggestion": "",
+      "action": "PRESERVED"
+    },
+    {
+      "block": 4,
+      "candidate_id": "C-04-01",
+      "sources": {
+        "a": [
+          "20261117-062513-a967"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "才人は…ルイズを、眩しく見上げた。",
+      "current": "Сайто смотрел на Луизу… — и был ослеплён ею.",
+      "fidelity": "MEANING_SHIFT",
+      "status": "FALSE_POSITIVE",
+      "reason": "Инверсия субъекта/объекта из исторической находки A1 устранена: ED_RU «был ослеплён ею» точно передаёт 眩しく見上げた.",
+      "suggestion": "",
+      "action": "PRESERVED"
+    },
+    {
+      "block": 10,
+      "candidate_id": "C-10-01",
+      "sources": {
+        "a": [
+          "20261117-062513-a967"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "しばらくアンリエッタは震えていたが…",
+      "current": "Генриетта ещё немного дрожала, потом…",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "дрожь → «дрожала»; историческая подмена «потрясла головой» исправлена.",
+      "suggestion": "",
+      "action": "PRESERVED"
+    },
+    {
+      "block": 11,
+      "candidate_id": "C-11-01",
+      "sources": {
+        "a": [
+          "20261117-062513-a967"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "ルイズはアンリエッタの気持ちが、かなり本気に近いことを知った。",
+      "current": "чувства Генриетты были довольно близки к искренности.",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "本気に近い → «довольно близки к искренности»; полярность и степень восстановлены.",
+      "suggestion": "",
+      "action": "PRESERVED"
+    },
+    {
+      "block": 12,
+      "candidate_id": "C-12-01",
+      "sources": {
+        "a": [
+          "20261117-062513-a967"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "「わたしたちには、わたしたちが通すべき〝筋〟があるように思います」「どうしたの？ あなたは、何を言っているの？」",
+      "current": "«Мне кажется… у нас есть свой „порядок“, который мы должны соблюсти… — Что с тобой? Что ты говоришь?…",
+      "fidelity": "MISSING",
+      "status": "FALSE_POSITIVE",
+      "reason": "A1 отметил ERROR «выпал целый фрагмент диалога», но в актуальном ED_RU реплики присутствуют: «у нас есть свой порядок… Что с тобой? Что ты говоришь?… слепая вера в принцессу — не тот путь». Находка историческая; к текущему тексту не относится.",
+      "suggestion": "",
+      "action": "PRESERVED"
+    },
+    {
+      "block": 13,
+      "candidate_id": "C-13-01",
+      "sources": {
+        "a": [
+          "20261117-062513-a967"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "己の信じる〝筋〟を通す……見失いつつあった、わたしの貴族としての魂の在り処は、そこにあると存じます",
+      "current": "Проводить свой «порядок», во что веришь… В этом — та душа дворянки, которую я всё больше теряла из виду…",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "魂の在り処 → «душа дворянки»; компонент «душа» сохранён.",
+      "suggestion": "",
+      "action": "PRESERVED"
+    },
+    {
+      "block": 14,
+      "candidate_id": "C-14-01",
+      "sources": {
+        "a": [
+          "20261117-062513-a967"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "はぁ……、参ったなぁ。",
+      "current": "Ах, ничего не поделать…",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "参ったなぁ → «ничего не поделать»; историческое «негодный я» заменено.",
+      "suggestion": "",
+      "action": "PRESERVED"
+    },
+    {
+      "block": 17,
+      "candidate_id": "C-17-01",
+      "sources": {
+        "a": [
+          "20261117-062513-a967"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "才人は、そこで笑顔を浮かべた。",
+      "current": "Тут на лице Сайто появилась улыбка.",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "笑顔を浮かべた → «на лице появилась улыбка» — спонтанность улыбки сохранена.",
+      "suggestion": "",
+      "action": "PRESERVED"
+    },
+    {
+      "block": 1,
+      "candidate_id": "C-01-04",
+      "sources": {
+        "a": [
+          "20261118-202530-4d9e"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "小屋の中は深刻な空気がただよい始めている。",
+      "current": "в сарае повисла серьёзная атмосфера.",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "小屋 → «сарай» (сарай для «Зеро» в блоке 12) — допустимое конкретизирование.",
+      "suggestion": "",
+      "action": "PRESERVED"
+    },
+    {
+      "block": 2,
+      "candidate_id": "C-02-01",
+      "sources": {
+        "a": [
+          "20261118-202530-4d9e"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "二の足を踏む者もいた。",
+      "current": "нашлись и те, кто тянул время.",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "DISPUTED",
+      "reason": "A2: JA 二の足を踏む — нерешительность, ED_RU «тянул время» — намеренное затягивание; оттенок воли усилен. Спорный нюанс, не исправляется.",
+      "suggestion": "",
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 5,
+      "candidate_id": "C-05-01",
+      "sources": {
+        "a": [
+          "20261118-202530-4d9e"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "ルイズはぐぬー、と才人を睨む。",
+      "current": "Луиза злобно глянула — «гну-у» — на Сайто.",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "DISPUTED",
+      "reason": "ぐぬー — звук досады; звук «гну-у» сохранён, но наречие «злобно» усиливает эмоцию. Спорный оттенок, не исправляется.",
+      "suggestion": "",
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 7,
+      "candidate_id": "C-07-01",
+      "sources": {
+        "a": [
+          "20261118-202530-4d9e"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "曲者かと思えば、貴殿たちか……",
+      "current": "Я было подумал, разбойники, а это вы…",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "曲者 → «разбойники» — по контексту ночного кабинета допустимо; конкретизация не создаёт нового смысла.",
+      "suggestion": "",
+      "action": "PRESERVED"
+    },
+    {
+      "block": 14,
+      "candidate_id": "C-14-02",
+      "sources": {
+        "a": [
+          "20261118-202530-4d9e"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "ぺこりと礼をすると、ルイズは杖を衛士に渡す。",
+      "current": "Луиза низко поклонилась и отдала посох стражу.",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "DISPUTED",
+      "reason": "ぺこりと — лёгкий поклон; ED_RU «низко поклонилась» преувеличивает степень жеста. Спорный нюанс, не исправляется.",
+      "suggestion": "",
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 1,
+      "candidate_id": "C-01-05",
+      "sources": {
+        "a": [],
+        "b": [],
+        "c": [
+          "20261117-062513-133b"
+        ],
+        "precheck": false
+      },
+      "source": "でも、方法がわからないなら、考えればいいじゃないか。",
+      "current": "Но если он не знает способа — так стоит его поискать!",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "C отметил ослабление побудительной силы в исторической редакции. Актуальный ED_RU «так стоит его поискать!» сохраняет риторическое побуждение. Прагматика — не зона B, finding рассмотрен как evidence; к текущему тексту не относится.",
+      "suggestion": "",
+      "action": "PRESERVED"
+    },
+    {
+      "block": 9,
+      "candidate_id": "C-09-01",
+      "sources": {
+        "a": [],
+        "b": [],
+        "c": [],
+        "precheck": true
+      },
+      "source": "ほっとしたような空気が流れた。水精霊騎士隊の面々は、女王陛下の執務室を辞していく。",
+      "current": "В воздухе разлилось облегчение. Члены Отряда водных духов удалились из кабинета королевы.",
+      "fidelity": "MISSING",
+      "status": "FALSE_POSITIVE",
+      "reason": "Pre-check пометил пропуск, но обе фразы присутствуют в ED_RU; срабатывание на границе блока. Pre-check — evidence, не голос; Фаза 1 omission не отметила.",
+      "suggestion": "",
+      "action": "PRESERVED"
+    }
+  ]
+}

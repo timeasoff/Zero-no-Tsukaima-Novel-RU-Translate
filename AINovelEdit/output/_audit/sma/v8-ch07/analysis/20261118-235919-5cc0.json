@@ -1,0 +1,171 @@
+{
+  "analysis_id": "20261118-235919-5cc0",
+  "chapter": "v8-ch07",
+  "inputs": {
+    "a_runs": [
+      "20261117-024508-e035",
+      "20261118-150321-0856"
+    ],
+    "b_runs": [
+      "20261117-023220-a1d3",
+      "20261118-235055-7e3c"
+    ],
+    "c_runs": [
+      "20261117-022510-4098",
+      "20261117-022647-c1f4"
+    ],
+    "precheck": "output/_audit/sma/v8-ch07/precheck/omission-precheck.json",
+    "phase1": "20261118-235055-dc68.phase1.json"
+  },
+  "results": [
+    {
+      "block": 9,
+      "candidate_id": "C-09-01",
+      "sources": {
+        "a": [
+          "20261117-024508-e035"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "",
+      "current": "",
+      "fidelity": "MEANING_SHIFT",
+      "status": "FALSE_POSITIVE",
+      "reason": "ED_RU: «Сайто сказал в Альбионе… и «Не волнуйся… рагу»» — субъект/объект цитируемой речи верны.",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 2,
+      "candidate_id": "C-02-01",
+      "sources": {
+        "a": [
+          "20261117-024508-e035"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "",
+      "current": "",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "ED_RU: «Как в плохой пьесе… неуклюже разыгрывали роли» — эпитет и образ сохранены.",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 10,
+      "candidate_id": "C-10-01",
+      "sources": {
+        "a": [
+          "20261117-024508-e035"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "",
+      "current": "",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "ED_RU: «шмыгая носом, вытерла слёзы рукой» — звук/эмоция переданы.",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": "4",
+      "candidate_id": "C-04-01",
+      "sources": {
+        "a": [
+          "20261118-150321-0856"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "",
+      "current": "",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "DISPUTED",
+      "reason": "ED_RU «вышла из ума» против JA 半狂乱 («наполовину безумная»): компонент «полу» ослаблен. Спорно; правка не вносится.",
+      "suggestion": null,
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 15,
+      "candidate_id": "C-15-01",
+      "sources": {
+        "a": [],
+        "b": [
+          "20261117-023220-a1d3"
+        ],
+        "c": [],
+        "precheck": false
+      },
+      "source": "ずっと甘えてきたの",
+      "current": "полагалась на его доброту",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "DISPUTED",
+      "reason": "ED_RU «полагалась на его доброту» против JA 甘えてきた («была избалованной»): оттенок самопопрека ослаблен. Требуется человек; правка не вносится.",
+      "suggestion": null,
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 17,
+      "candidate_id": "C-17-01",
+      "sources": {
+        "a": [],
+        "b": [],
+        "c": [],
+        "precheck": true
+      },
+      "source": "",
+      "current": "",
+      "fidelity": "MISSING",
+      "status": "FALSE_POSITIVE",
+      "reason": "Pre-check: обрыв Relative к сырому RU; в ED_RU блок 17 полный.",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 23,
+      "candidate_id": "C-23-01",
+      "sources": {
+        "a": [],
+        "b": [],
+        "c": [],
+        "precheck": true
+      },
+      "source": "",
+      "current": "",
+      "fidelity": "MISSING",
+      "status": "FALSE_POSITIVE",
+      "reason": "Pre-check: обрыв Relative к сырому RU; в ED_RU блок 23 полный.",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 22,
+      "candidate_id": "C-22-01",
+      "sources": {
+        "a": [],
+        "b": [],
+        "c": [
+          "20261117-022510-4098",
+          "20261117-022647-c1f4"
+        ],
+        "precheck": false
+      },
+      "source": "",
+      "current": "",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "ED_RU: «Ты молодец. — Я не молодец. Я просто говорю, что хочу вернуться» — утешающая установка сохранена.",
+      "suggestion": null,
+      "action": "PRESERVED"
+    }
+  ]
+}

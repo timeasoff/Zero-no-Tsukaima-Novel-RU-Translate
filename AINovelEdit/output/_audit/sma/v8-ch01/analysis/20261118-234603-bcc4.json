@@ -1,0 +1,315 @@
+{
+  "analysis_id": "20261118-234603-bcc4",
+  "chapter": "v8-ch01",
+  "inputs": {
+    "a_runs": [
+      "20261117-011008-516e",
+      "20261118-173342-7314"
+    ],
+    "b_runs": [
+      "20261117-011008-a39a",
+      "20261118-233310-1f61"
+    ],
+    "c_runs": [
+      "20261117-011008-94e5"
+    ],
+    "precheck": "output/_audit/sma/v8-ch01/precheck/omission-precheck.json",
+    "phase1": "20261118-233310-cea4.phase1.json"
+  },
+  "results": [
+    {
+      "block": 1,
+      "candidate_id": "C-01-01",
+      "sources": {
+        "a": [
+          "20261117-011008-516e"
+        ],
+        "b": [
+          "20261117-011008-a39a"
+        ],
+        "c": [],
+        "precheck": false
+      },
+      "source": "",
+      "current": "",
+      "fidelity": "MEANING_SHIFT",
+      "status": "FALSE_POSITIVE",
+      "reason": "ED_RU: «орден Духа с посохом и щетиной» — 剛毛 передан верно.",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 2,
+      "candidate_id": "C-02-01",
+      "sources": {
+        "a": [
+          "20261117-011008-516e"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "",
+      "current": "",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "ED_RU: «он увлёкся и раздул рассказ» — преувеличение, не сознательная ложь.",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 3,
+      "candidate_id": "C-03-01",
+      "sources": {
+        "a": [
+          "20261117-011008-516e"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "",
+      "current": "",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "ED_RU: «Зашагала прочь, чеканя шаг» — すたすた передан верно.",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 4,
+      "candidate_id": "C-04-01",
+      "sources": {
+        "a": [
+          "20261117-011008-516e",
+          "20261118-173342-7314"
+        ],
+        "b": [],
+        "c": [
+          "20261117-011008-94e5"
+        ],
+        "precheck": false
+      },
+      "source": "",
+      "current": "",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "ED_RU: «злобно глянула» — мимический оттенок にらんだ сохранён.",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 8,
+      "candidate_id": "C-08-01",
+      "sources": {
+        "a": [
+          "20261117-011008-516e"
+        ],
+        "b": [
+          "20261117-011008-a39a"
+        ],
+        "c": [],
+        "precheck": false
+      },
+      "source": "",
+      "current": "",
+      "fidelity": "MEANING_SHIFT",
+      "status": "FALSE_POSITIVE",
+      "reason": "ED_RU: «выше пяти мейлов» — единица メイル восстановлена, гипербола сохранена.",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 1,
+      "candidate_id": "C-01-02",
+      "sources": {
+        "a": [
+          "20261118-173342-7314"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "",
+      "current": "",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "CONFIRMED_ERROR",
+      "reason": "Поза «подперев локтем подбородок» вместо JA 肘をついて (локти на столе) — потеря детали.; правка не вносится по условию раунда.",
+      "suggestion": null,
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 14,
+      "candidate_id": "C-14-01",
+      "sources": {
+        "a": [
+          "20261118-173342-7314"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "",
+      "current": "",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "DISPUTED",
+      "reason": "Титул «избранника Божия» вместо JA 神の代弁者 (« Бога»); возможна допустимая contextual замена, требуется человек. Правка не вносится.",
+      "suggestion": null,
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 1,
+      "candidate_id": "C-01-03",
+      "sources": {
+        "a": [
+          "20261118-173342-7314"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "",
+      "current": "",
+      "fidelity": "RUSSIAN_ERROR",
+      "status": "CONFIRMED_ERROR",
+      "reason": "Опечатка «Готовьсь» вместо «Готовься» в блоке 1 сохраняется. Правка не вносится (зона орфографии, по условию раунда текст не трогаем).",
+      "suggestion": null,
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 15,
+      "candidate_id": "C-15-01",
+      "sources": {
+        "a": [
+          "20261118-173342-7314"
+        ],
+        "b": [
+          "20261117-011008-a39a"
+        ],
+        "c": [],
+        "precheck": false
+      },
+      "source": "",
+      "current": "",
+      "fidelity": "RUSSIAN_ERROR",
+      "status": "CONFIRMED_ERROR",
+      "reason": "Опечатка «высокли» вместо «высохли» сохраняется. Правка не вносится по условию раунда.",
+      "suggestion": null,
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 6,
+      "candidate_id": "C-06-01",
+      "sources": {
+        "a": [],
+        "b": [
+          "20261117-011008-a39a"
+        ],
+        "c": [
+          "20261117-011008-94e5"
+        ],
+        "precheck": false
+      },
+      "source": "",
+      "current": "",
+      "fidelity": "MEANING_SHIFT",
+      "status": "FALSE_POSITIVE",
+      "reason": "ED_RU: «части, которые, как считалось, отпали от союзников… снова навели палочки на альбионскую армию» — направление верное.",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 5,
+      "candidate_id": "C-05-01",
+      "sources": {
+        "a": [],
+        "b": [
+          "20261117-011008-a39a"
+        ],
+        "c": [],
+        "precheck": false
+      },
+      "source": "",
+      "current": "",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "ED_RU не содержит «вместе с ней» в спорном значении; находка относилась к сырому RU.",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 12,
+      "candidate_id": "C-12-01",
+      "sources": {
+        "a": [],
+        "b": [
+          "20261117-011008-a39a"
+        ],
+        "c": [],
+        "precheck": false
+      },
+      "source": "",
+      "current": "",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "ED_RU: «Не знаете? Нет — вы знаете» — звено рассуждения на месте; находка от сырого RU.",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 1,
+      "candidate_id": "C-01-04",
+      "sources": {
+        "a": [],
+        "b": [],
+        "c": [
+          "20261117-011008-94e5"
+        ],
+        "precheck": false
+      },
+      "source": "",
+      "current": "",
+      "fidelity": "MEANING_SHIFT",
+      "status": "FALSE_POSITIVE",
+      "reason": "ED_RU: «— Разве не «щетины», а «белой шерсти»? — заметил кто-то» — вопросительный речевой акт восстановлен.",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 6,
+      "candidate_id": "C-06-02",
+      "sources": {
+        "a": [],
+        "b": [],
+        "c": [
+          "20261117-011008-94e5"
+        ],
+        "precheck": false
+      },
+      "source": "",
+      "current": "",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "Хеджи сохранены: «Да я не особенно-то и добрая».",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 6,
+      "candidate_id": "C-06-03",
+      "sources": {
+        "a": [],
+        "b": [],
+        "c": [],
+        "precheck": true
+      },
+      "source": "12 JA-звеньев блока 6",
+      "current": "ED_RU блок 6 полон",
+      "fidelity": "MISSING",
+      "status": "FALSE_POSITIVE",
+      "reason": "Pre-check signal локальности/обреза Relative к сырому RU; в ED_RU блок 6 полностью (проверено по JA → RU), пропуска нет.",
+      "suggestion": null,
+      "action": "PRESERVED"
+    }
+  ]
+}

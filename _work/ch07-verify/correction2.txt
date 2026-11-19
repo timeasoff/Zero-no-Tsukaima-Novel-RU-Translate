@@ -1,0 +1,5 @@
+address/omission — новых дефектов нет (format 6 → 2: FIXED 4, FP 1,
+PRESERVED 1).
+---
+address/omission — новых дефектов нет (format 6 исходных → 5 FIXED:
+2 thought + 3 blockgap; после правок 2 кандидата — 1 FP, 1 PRESERVED).

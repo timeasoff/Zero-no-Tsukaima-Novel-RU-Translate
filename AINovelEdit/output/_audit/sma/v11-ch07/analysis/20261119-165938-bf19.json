@@ -1,0 +1,81 @@
+{
+  "analysis_id": "20261119-165938-bf19",
+  "chapter": "v11-ch07",
+  "inputs": {
+    "a_runs": [
+      "20261117-131101-0d68",
+      "20261118-204244-b93e",
+      "20261119-165938-740f"
+    ],
+    "b_runs": [
+      "20261117-131101-0776",
+      "20261119-033905-c13c",
+      "20261119-165938-19ee"
+    ],
+    "c_runs": [
+      "20261117-131101-66d1",
+      "20261119-165938-a385"
+    ],
+    "precheck": "output/_audit/sma/v11-ch07/precheck/omission-precheck.json",
+    "phase1": "20261119-165938-8c5b.phase1.json"
+  },
+  "results": [
+    {
+      "block": 4,
+      "candidate_id": "CH07-01-ryuthis",
+      "sources": {
+        "a": [
+          "20261119-165938-740f"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "ガリアのリュティス宮殿ほどではないが",
+      "current": "хоть и уступавшем галлийскому дворцу в Лютеции",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "DISPUTED",
+      "reason": "Передача имени リュティス как «Лютеция»; канон имени не проверен в зоне анализа. Фаза 1 и A; REPORT_ONLY.",
+      "suggestion": "…галлийскому дворцу в Лютисе…",
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 7,
+      "candidate_id": "CH07-02-senju",
+      "sources": {
+        "a": [],
+        "b": [
+          "20261119-165938-19ee"
+        ],
+        "c": [],
+        "precheck": false
+      },
+      "source": "「先住魔法を使う。そうです。」",
+      "current": "— Они владеют магией аборигенов — да.",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "DISPUTED",
+      "reason": "先住 → «аборигены»: снисходительный регистр. Фаза 1 и B; REPORT_ONLY.",
+      "suggestion": "— Они владеют исконной магией этих мест — да.",
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 5,
+      "candidate_id": "CH07-03-hoketa",
+      "sources": {
+        "a": [],
+        "b": [],
+        "c": [
+          "20261119-165938-a385"
+        ],
+        "precheck": false
+      },
+      "source": "アンリエッタは咄嗟に惚けた",
+      "current": "сразу притворилась она тупой",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "DISPUTED",
+      "reason": "惚ける → «притворилась тупой»: грубее скрытая установка. Фаза 1 и C; REPORT_ONLY.",
+      "suggestion": "…сразу притворилась она непонимающей.",
+      "action": "REPORT_ONLY"
+    }
+  ]
+}

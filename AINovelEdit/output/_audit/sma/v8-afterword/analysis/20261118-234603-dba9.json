@@ -1,0 +1,135 @@
+{
+  "analysis_id": "20261118-234603-dba9",
+  "chapter": "v8-afterword",
+  "inputs": {
+    "a_runs": [
+      "20261117-030053-0b5d",
+      "20261118-173152-6677"
+    ],
+    "b_runs": [
+      "20261117-025953-5db7",
+      "20261118-233310-0742"
+    ],
+    "c_runs": [
+      "20261117-031500-c3d1"
+    ],
+    "precheck": "output/_audit/sma/v8-afterword/precheck/omission-precheck.json",
+    "phase1": "20261118-233310-184d.phase1.json"
+  },
+  "results": [
+    {
+      "block": 1,
+      "candidate_id": "C-01-01",
+      "sources": {
+        "a": [
+          "20261117-030053-0b5d"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "予感て。もうこうなるとね、目移りますね。",
+      "current": "Предчувствие. Говорю же — предчувствие.",
+      "fidelity": "MEANING_SHIFT",
+      "status": "FALSE_POSITIVE",
+      "reason": "В текущем ED_RU стоит «Предчувствие. Говорю же — предчувствие»: находка(old A) относилась к сырому RU и устранена редактурой.",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 1,
+      "candidate_id": "C-01-02",
+      "sources": {
+        "a": [
+          "20261117-030053-0b5d"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "",
+      "current": "",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "ED_RU: «отбрасывает родину» — глагол 捨てる передан точно.",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 1,
+      "candidate_id": "C-01-03",
+      "sources": {
+        "a": [
+          "20261117-030053-0b5d"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "",
+      "current": "",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "ED_RU: «ромком с милыми девушками» — комедийный компонент ラブコме сохранён.",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 1,
+      "candidate_id": "C-01-04",
+      "sources": {
+        "a": [
+          "20261118-173152-6677"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "象徴するものはさまざまだ",
+      "current": "символов её бывает много",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "DISPUTED",
+      "reason": "さまざま («разнообразны») передано как «много»; оттенок многообразия ослаблен, но допустим в контексте перечисления примеров. Правка не вносится.",
+      "suggestion": null,
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 1,
+      "candidate_id": "C-01-05",
+      "sources": {
+        "a": [],
+        "b": [],
+        "c": [
+          "20261117-031500-c3d1"
+        ],
+        "precheck": false
+      },
+      "source": "",
+      "current": "",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "Хедж сохранён: «Быть может, человек отбрасывает родину…».",
+      "suggestion": null,
+      "action": "PRESERVED"
+    },
+    {
+      "block": 1,
+      "candidate_id": "C-01-06",
+      "sources": {
+        "a": [],
+        "b": [],
+        "c": [
+          "20261117-031500-c3d1"
+        ],
+        "precheck": false
+      },
+      "source": "",
+      "current": "",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "МаркER авторского перехода сохранён: «Впрочем, как ни важна родина…».",
+      "suggestion": null,
+      "action": "PRESERVED"
+    }
+  ]
+}

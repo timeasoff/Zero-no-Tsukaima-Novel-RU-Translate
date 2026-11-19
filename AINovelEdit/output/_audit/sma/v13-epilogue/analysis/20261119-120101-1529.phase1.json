@@ -1,0 +1,20 @@
+{
+  "analysis_id": "20261119-120101-1529.phase1",
+  "chapter": "v13-epilogue",
+  "phase": 1,
+  "scope": "blind",
+  "results": [
+    {
+      "block": 2,
+      "finding": "PRAGMATIC_SHIFT",
+      "note": "だろうな → «Похоже, так и есть»: уклончивое полусогласие → констатация; недосказанность ослаблена.",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 3,
+      "finding": "PRAGMATIC_SHIFT",
+      "note": "お思いにならないでくださいませ → «Не сочтите»: смиренная просьба → прямой запрет.",
+      "confidence": "MEDIUM"
+    }
+  ]
+}

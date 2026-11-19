@@ -1,0 +1,142 @@
+{
+  "T-0063-S41": {
+    "kind": "sma-a",
+    "chapter": "v07-ch08",
+    "expected": [
+      "output/_audit/sma/v7-ch08/a/20261119-130914-26d3.json"
+    ]
+  },
+  "T-0063-S42": {
+    "kind": "sma-b",
+    "chapter": "v07-ch08",
+    "expected": [
+      "output/_audit/sma/v7-ch08/b/20261119-130914-80ed.json"
+    ]
+  },
+  "T-0063-S43": {
+    "kind": "sma-c",
+    "chapter": "v07-ch08",
+    "expected": [
+      "output/_audit/sma/v7-ch08/c/20261119-130914-426c.json"
+    ]
+  },
+  "T-0063-S44": {
+    "kind": "analyzer-phase1",
+    "chapter": "v07-ch08",
+    "expected": []
+  },
+  "T-0063-S45": {
+    "kind": "analyzer-phase2",
+    "chapter": "v07-ch08",
+    "expected": [
+      "output/_audit/sma/v7-ch08/precheck/omission-precheck.json",
+      "output/_audit/sma/v7-ch08/analysis/20261119-130914-3d4d.json",
+      "output/_audit/sma/v7-ch08/analysis/20261119-130914-3d4d.md"
+    ]
+  },
+  "T-0063-S46": {
+    "kind": "sma-a",
+    "chapter": "v07-ch09",
+    "expected": [
+      "output/_audit/sma/v7-ch09/a/20261119-130925-eb54.json"
+    ]
+  },
+  "T-0063-S47": {
+    "kind": "sma-b",
+    "chapter": "v07-ch09",
+    "expected": [
+      "output/_audit/sma/v7-ch09/b/20261119-130925-f0fc.json"
+    ]
+  },
+  "T-0063-S48": {
+    "kind": "sma-c",
+    "chapter": "v07-ch09",
+    "expected": [
+      "output/_audit/sma/v7-ch09/c/20261119-130925-619e.json"
+    ]
+  },
+  "T-0063-S49": {
+    "kind": "analyzer-phase1",
+    "chapter": "v07-ch09",
+    "expected": []
+  },
+  "T-0063-S50": {
+    "kind": "analyzer-phase2",
+    "chapter": "v07-ch09",
+    "expected": [
+      "output/_audit/sma/v7-ch09/precheck/omission-precheck.json",
+      "output/_audit/sma/v7-ch09/analysis/20261119-130925-2029.json",
+      "output/_audit/sma/v7-ch09/analysis/20261119-130925-2029.md"
+    ]
+  },
+  "T-0063-S51": {
+    "kind": "sma-a",
+    "chapter": "v07-ch10",
+    "expected": [
+      "output/_audit/sma/v7-ch10/a/20261119-130926-c4aa.json"
+    ]
+  },
+  "T-0063-S52": {
+    "kind": "sma-b",
+    "chapter": "v07-ch10",
+    "expected": [
+      "output/_audit/sma/v7-ch10/b/20261119-130926-0446.json"
+    ]
+  },
+  "T-0063-S53": {
+    "kind": "sma-c",
+    "chapter": "v07-ch10",
+    "expected": [
+      "output/_audit/sma/v7-ch10/c/20261119-130926-d262.json"
+    ]
+  },
+  "T-0063-S54": {
+    "kind": "analyzer-phase1",
+    "chapter": "v07-ch10",
+    "expected": []
+  },
+  "T-0063-S55": {
+    "kind": "analyzer-phase2",
+    "chapter": "v07-ch10",
+    "expected": [
+      "output/_audit/sma/v7-ch10/precheck/omission-precheck.json",
+      "output/_audit/sma/v7-ch10/analysis/20261119-130926-e8ec.json",
+      "output/_audit/sma/v7-ch10/analysis/20261119-130926-e8ec.md"
+    ]
+  },
+  "T-0063-S56": {
+    "kind": "sma-a",
+    "chapter": "v07-epilogue",
+    "expected": [
+      "output/_audit/sma/v7-epilogue/a/20261119-130926-6bf4.json"
+    ]
+  },
+  "T-0063-S57": {
+    "kind": "sma-b",
+    "chapter": "v07-epilogue",
+    "expected": [
+      "output/_audit/sma/v7-epilogue/b/20261119-130926-6df4.json"
+    ]
+  },
+  "T-0063-S58": {
+    "kind": "sma-c",
+    "chapter": "v07-epilogue",
+    "expected": [
+      "output/_audit/sma/v7-epilogue/c/20261119-130926-9684.json"
+    ]
+  },
+  "T-0063-S59": {
+    "kind": "analyzer-phase1",
+    "chapter": "v07-epilogue",
+    "expected": []
+  },
+  "T-0063-S60": {
+    "kind": "analyzer-phase2",
+    "chapter": "v07-epilogue",
+    "expected": [
+      "output/_audit/sma/v7-epilogue/precheck/omission-precheck.json",
+      "output/_audit/sma/v7-epilogue/analysis/20261119-130926-829c.json",
+      "output/_audit/sma/v7-epilogue/analysis/20261119-130926-829c.md"
+    ]
+  }
+}

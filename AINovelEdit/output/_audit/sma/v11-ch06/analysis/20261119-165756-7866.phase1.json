@@ -1,0 +1,134 @@
+{
+  "analysis_id": "20261119-165756-7866.phase1",
+  "chapter": "v11-ch06",
+  "phase": 1,
+  "scope": "blind",
+  "results": [
+    {
+      "block": 1,
+      "finding": "MISTRANSLATION",
+      "note": "三十メイル → «метров»; единица длины заменена.",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 2,
+      "finding": "NONE",
+      "note": "Блок сверён JA → RU; существенных смысловых расхождений не замечено.",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 3,
+      "finding": "NONE",
+      "note": "Блок сверён JA → RU; существенных смысловых расхождений не замечено.",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 4,
+      "finding": "MISTRANSLATION",
+      "note": "二十メイル → «метров»; единица длины заменена.",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 5,
+      "finding": "NONE",
+      "note": "Блок сверён JA → RU; существенных смысловых расхождений не замечено.",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 6,
+      "finding": "NONE",
+      "note": "Блок сверён JA → RU; существенных смысловых расхождений не замечено.",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 7,
+      "finding": "NONE",
+      "note": "Блок сверён JA → RU; существенных смысловых расхождений не замечено.",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 8,
+      "finding": "NONE",
+      "note": "Блок сверён JA → RU; существенных смысловых расхождений не замечено.",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 9,
+      "finding": "ADDED_CONTENT",
+      "note": "«это он» — добавленный род для «другого я».",
+      "confidence": "LOW"
+    },
+    {
+      "block": 10,
+      "finding": "NONE",
+      "note": "Блок сверён JA → RU; существенных смысловых расхождений не замечено.",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 11,
+      "finding": "NONE",
+      "note": "Блок сверён JA → RU; существенных смысловых расхождений не замечено.",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 12,
+      "finding": "PRAGMATIC_SHIFT",
+      "note": "雰囲気 → «аура»; комический регистр сдвинут.",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 13,
+      "finding": "NONE",
+      "note": "Блок сверён JA → RU; существенных смысловых расхождений не замечено.",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 14,
+      "finding": "NONE",
+      "note": "Блок сверён JA → RU; существенных смысловых расхождений не замечено.",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 15,
+      "finding": "NONE",
+      "note": "Блок сверён JA → RU; существенных смысловых расхождений не замечено.",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 16,
+      "finding": "NONE",
+      "note": "Блок сверён JA → RU; существенных смысловых расхождений не замечено.",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 17,
+      "finding": "NONE",
+      "note": "Блок сверён JA → RU; существенных смысловых расхождений не замечено.",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 18,
+      "finding": "NONE",
+      "note": "Блок сверён JA → RU; существенных смысловых расхождений не замечено.",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 19,
+      "finding": "NONE",
+      "note": "Блок сверён JA → RU; существенных смысловых расхождений не замечено.",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 20,
+      "finding": "NUANCE_SHIFT",
+      "note": "二回ぐらい → «хотя бы»; приблизительность заменена минимумом.",
+      "confidence": "MEDIUM"
+    },
+    {
+      "block": 21,
+      "finding": "NONE",
+      "note": "Блок сверён JA → RU; существенных смысловых расхождений не замечено.",
+      "confidence": "MEDIUM"
+    }
+  ]
+}

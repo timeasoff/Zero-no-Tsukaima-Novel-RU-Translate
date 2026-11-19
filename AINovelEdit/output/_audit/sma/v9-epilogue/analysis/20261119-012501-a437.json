@@ -1,0 +1,314 @@
+{
+  "analysis_id": "20261119-012501-a437",
+  "chapter": "v9-epilogue",
+  "inputs": {
+    "a_runs": [
+      "20261117-043501-6da4",
+      "20261118-154634-50a7"
+    ],
+    "b_runs": [
+      "20261117-043501-242d",
+      "20261119-012415-f8d1"
+    ],
+    "c_runs": [
+      "20261117-043501-d3c2"
+    ],
+    "precheck": "output/_audit/sma/v9-epilogue/precheck/omission-precheck.json",
+    "phase1": "20261119-012415-344a.phase1.json"
+  },
+  "results": [
+    {
+      "block": 1,
+      "candidate_id": "C-1-01",
+      "sources": {
+        "a": [
+          "20261117-043501-6da4",
+          "20261118-154634-50a7"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "百五十メイル",
+      "current": "около ста пятидесяти метров",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "A1/A2: замена メイル на «метры» — устоявшаяся локальная конвенция перевода единиц (см. том 7–8), смыслового сдвига нет.",
+      "suggestion": "",
+      "action": "PRESERVED"
+    },
+    {
+      "block": 2,
+      "candidate_id": "C-2-01",
+      "sources": {
+        "a": [
+          "20261118-154634-50a7"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "自慢げ",
+      "current": "Кюрке довольным видом откинула волосы",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "A2 historical: «самодовольный» уточнён «довольным видом»; жест «откинула волосы» добавлен верно.",
+      "suggestion": "",
+      "action": "PRESERVED"
+    },
+    {
+      "block": 2,
+      "candidate_id": "C-2-02",
+      "sources": {
+        "a": [
+          "20261117-043501-6da4",
+          "20261118-154634-50a7"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "ため息混じりの声",
+      "current": "Кюрке замерла с мечтательным видом",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "DISPUTED",
+      "reason": "A1/A2 фиксируют потерю модальности восприятия (вздох) и замену интонации мимикой. «Мечтательный вид» передаёт настроение, но не вздох; неоднозначно — DISPUTED.",
+      "suggestion": "",
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 5,
+      "candidate_id": "C-5-01",
+      "sources": {
+        "a": [
+          "20261117-043501-6da4"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "呆気にとられた",
+      "current": "Луиза скорее онемела от изумления, чем рассердилась",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "DISPUTED",
+      "reason": "A1 возражало против «скорее удивилась, чем рассердилась»; текущий RU «онемела от изумления» усиливает компонент, но оценка оттенка субъективна. DISPUTED.",
+      "suggestion": "",
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 6,
+      "candidate_id": "C-6-01",
+      "sources": {
+        "a": [
+          "20261118-154634-50a7"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "清らか",
+      "current": "вы просто очень чистая",
+      "fidelity": "ADDITION",
+      "status": "FALSE_POSITIVE",
+      "reason": "A2: добавленное «очень» усиливает 清らか; по текущей паре JA→RU явной потери нет — PRESERVED.",
+      "suggestion": "",
+      "action": "PRESERVED"
+    },
+    {
+      "block": 7,
+      "candidate_id": "C-7-01",
+      "sources": {
+        "a": [
+          "20261117-043501-6da4"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "覚悟して来て",
+      "current": "приходите с соответствующим решением",
+      "fidelity": "MEANING_SHIFT",
+      "status": "CONFIRMED_ERROR",
+      "reason": "A1 (две находки): 覚悟 — «решимость/готовность (к смерти)», а не «решение» (answer). Смысл угрозы ослаблен; правка не применяется.",
+      "suggestion": "приходите с должной решимостью",
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 7,
+      "candidate_id": "C-7-02",
+      "sources": {
+        "a": [
+          "20261117-043501-6da4"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "独占欲",
+      "current": "гнев и ревность",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "A1 historical: «ревность» дополнена «гневом» — оттенок 独占欲 (обладание) передан через эмоциональный ряд; потери нет.",
+      "suggestion": "",
+      "action": "PRESERVED"
+    },
+    {
+      "block": 9,
+      "candidate_id": "C-9-01",
+      "sources": {
+        "a": [
+          "20261117-043501-6da4"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "言葉に詰まった",
+      "current": "всё это вылетело из головы",
+      "fidelity": "MEANING_SHIFT",
+      "status": "DISPUTED",
+      "reason": "A1 фиксировало «немота вместо забывчивости»; в текущем RU стоит «все эти слова застряли у него в горле» — состояние передано адекватно, спор снимается частично. DISPUTED.",
+      "suggestion": "",
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 10,
+      "candidate_id": "C-10-01",
+      "sources": {
+        "a": [
+          "20261118-154634-50a7"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "死ぬか？ いや…",
+      "current": "Умереть? Нет. Я и не мог умереть.",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "A2 historical: интонация и модальность реплики уточнены; потери нет.",
+      "suggestion": "",
+      "action": "PRESERVED"
+    },
+    {
+      "block": 11,
+      "candidate_id": "C-11-01",
+      "sources": {
+        "a": [
+          "20261117-043501-6da4",
+          "20261118-154634-50a7"
+        ],
+        "b": [
+          "20261119-012415-f8d1"
+        ],
+        "c": [],
+        "precheck": false
+      },
+      "source": "やきもき",
+      "current": "Сколько же ещё раз ей придётся ревновать?",
+      "fidelity": "MEANING_SHIFT",
+      "status": "CONFIRMED_ERROR",
+      "reason": "A1/A2 и новый B: やきもき — тревожное нетерпение, «ревновать» — иная эмоция. Состояние Луизы искажено; правка не применяется.",
+      "suggestion": "Сколько ещё раз ей придётся волноваться от нетерпения?",
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 11,
+      "candidate_id": "C-11-02",
+      "sources": {
+        "a": [
+          "20261118-154634-50a7"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "誤魔化す",
+      "current": "и всё будет забыто?",
+      "fidelity": "MEANING_SHIFT",
+      "status": "CONFIRMED_ERROR",
+      "reason": "A2: 誤魔化す — «замянуть/сгладить/обманом скрыть», «забыть» подменяет действие. Логика самоуспокоения Луизы искажена; правка не применяется.",
+      "suggestion": "и всё будет сглажено?",
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 11,
+      "candidate_id": "C-11-03",
+      "sources": {
+        "a": [
+          "20261118-154634-50a7"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "見られている",
+      "current": "на него все смотрят",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "A2 historical: оценочный компонент передан через «все смотрят»; явной потери нет.",
+      "suggestion": "",
+      "action": "PRESERVED"
+    },
+    {
+      "block": 12,
+      "candidate_id": "C-12-01",
+      "sources": {
+        "a": [
+          "20261117-043501-6da4",
+          "20261118-154634-50a7"
+        ],
+        "b": [
+          "20261119-012415-f8d1"
+        ],
+        "c": [],
+        "precheck": false
+      },
+      "source": "やきもき",
+      "current": "Полная ревности, Луиза надела сердитое выражение",
+      "fidelity": "MEANING_SHIFT",
+      "status": "CONFIRMED_ERROR",
+      "reason": "A1/A2 и новый B: тот же сдвиг やきもки → ревность в финале; правка не применяется.",
+      "suggestion": "Полная нетерпеливой тревоги, Луиза надела сердитое выражение",
+      "action": "REPORT_ONLY"
+    },
+    {
+      "block": 12,
+      "candidate_id": "C-12-02",
+      "sources": {
+        "a": [],
+        "b": [
+          "20261117-043501-242d"
+        ],
+        "c": [],
+        "precheck": false
+      },
+      "source": "彼女にキスさえすれば",
+      "current": "Она не могла простить себе, что стоит её только поцеловать",
+      "fidelity": "MEANING_SHIFT",
+      "status": "FALSE_POSITIVE",
+      "reason": "B-old historical: страдательная конструкция исправлена — субъект поцелуя Сайто, Луиза — объект; «простить себе»передано верно.",
+      "suggestion": "",
+      "action": "PRESERVED"
+    },
+    {
+      "block": 12,
+      "candidate_id": "C-12-03",
+      "sources": {
+        "a": [
+          "20261117-043501-6da4"
+        ],
+        "b": [],
+        "c": [],
+        "precheck": false
+      },
+      "source": "優しく抱きしめる",
+      "current": "нежно обнять",
+      "fidelity": "COMPONENT_LOSS",
+      "status": "FALSE_POSITIVE",
+      "reason": "A1 historical: «крепко» исправлено на «нежно» — 優しく передан.",
+      "suggestion": "",
+      "action": "PRESERVED"
+    }
+  ]
+}
